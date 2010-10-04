@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='app/LearnPlan.xslt'?>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>U8025</dc:creator>
+    <dc:title>Bicycle - Planning information</dc:title>
+    <dc:subject>Bicycle - Planning information</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-08-22</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H10" learnEventCode="A" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="007" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="22" />
+        <dmTitle>
+          <techName>Bicycle</techName>
+          <infoName>Planning information: Performance analysis</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"></dmCode>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningPlan>
+        <lcNeedsAnalysis>
+          <title />
+          <description />
+          <lcTask>
+            <title>Tasks:</title>
+            <lcTaskItem>
+              <description>
+                <para>Identify the main parts of a bike.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Identify the parts of a bike's steering system.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Describe the steps for installing and removing a bike's steering system.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Identify the parts of a bike's drive train.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Describe the procedures for maintaining a bike's drive train.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Identify the parts of a bike's wheels.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Describe the procedures for maintaining a bike's wheels.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Identify the parts of a bike's brake system.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Describe the procedures for maintaining a bike's brake system.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Describe general bike maintenance procedures.</para>
+              </description>
+            </lcTaskItem>
+            <lcTaskItem>
+              <description>
+                <para>Describe pre and post operation bike procedures.</para>
+              </description>
+            </lcTaskItem>
+            <lcKnowledge>
+              <description>
+                <para>
+                  <emphasis>Knowledge:</emphasis>
+                </para>
+                <para>Learners must understand the importance of bicycle maintenance and upkeep in order to do their job safely and effectively.</para>
+              </description>
+            </lcKnowledge>
+            <lcSkills>
+              <description>
+                <para>
+                  <emphasis>Skills:</emphasis>
+                </para>
+                <para>Learners must know how to maintain their own bikes.</para>
+              </description>
+            </lcSkills>
+            <lcAttitude>
+              <description>
+                <para>
+                  <emphasis>Attitude:</emphasis>
+                </para>
+                <para>In order to support the company, learners must be agreeable to take the training prior to being added to the courier roster and given a route. </para>
+              </description>
+            </lcAttitude>
+          </lcTask>
+        </lcNeedsAnalysis>
+        <lcTechnical />
+      </learningPlan>
+    </learning>
+  </content>
+</dmodule>
