@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'?>
+<!DOCTYPE dmodule [
+	<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+	<!ENTITY ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00154-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00162-A-001-01.jpg' NDATA JPEG >
+	
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Electrical system - Description of how it is made and its function:  Static content - Fact Expositive</dc:title>
+    <dc:subject>Electrical system - Description of how it is made and its function:  Static content - Fact Expositive</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-10-19</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DLIGHTING-AAA-D00-00-00-00AA-040A-T-T42C_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DLIGHTING" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="040" infoCodeVariant="A" itemLocationCode="T" learnCode="T42" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="10" day="19" />
+        <dmTitle>
+          <techName>Electrical system</techName>
+          <infoName>Description of how it is made and its function:  Static content - Fact Expositive</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"></dmCode>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title>Lighting system</title>
+        <lcInstruction>
+          <description>
+            <para>The lighting system is an accessory assembly that your bike may or may not have. It's a good idea to install a lighting system if you will be riding your bike in the evening, once the sun has gone down.</para>
+            <para>The illustration below shows a typical bike lighting system.</para>
+            <figure>
+              <title />
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00162-A-001-01" />
+            </figure>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

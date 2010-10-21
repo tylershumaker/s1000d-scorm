@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../../app/s1000d_4.xslt'?>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Steering - Description of how it is made</dc:title>
+    <dc:subject>Steering - Description of how it is made</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-07-30</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA2-10-00-00AA-041A-T-T62-E_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="T" learnCode="T62" learnEventCode="E" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="000" inWork="01" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="30" />
+        <dmTitle>
+          <techName>Steering</techName>
+          <infoName>Description of how it is made: Knowledge check</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"></dmCode>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningAssessment>
+        <title>Knowledge Check</title>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click CHECK.</para>
+                <para>The stem attaches the _________________________ to the ________________________.</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>headset / fork</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>fork / handlebar</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>handlebar / headset</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>frame / handlebar</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+            <lcFeedbackIncorrect>
+              <description>
+                <para>Incorrect. The correct answer is handlebar / headset</para>
+              </description>
+            </lcFeedbackIncorrect>
+            <lcFeedbackCorrect>
+              <description>
+                <para>Correct!</para>
+              </description>
+            </lcFeedbackCorrect>
+          </lcSingleSelect>
+        </lcInteraction>
+      </learningAssessment>
+    </learning>
+  </content>
+</dmodule>

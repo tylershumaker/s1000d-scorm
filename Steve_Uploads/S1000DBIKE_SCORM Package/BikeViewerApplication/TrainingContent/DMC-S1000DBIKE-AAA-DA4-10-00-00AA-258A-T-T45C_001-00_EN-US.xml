@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'> 
+<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00063-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00063-A-001-01.jpg' NDATA JPEG >
+	<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00188-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00188-A-001-01.jpg' NDATA JPEG >
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Chain - Oil: Static content - Fact Expositive</dc:title>
+    <dc:subject>Chain - Oil: Static content - Fact Expositive</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-08-20</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA4-10-00-00AA-258A-T-T45C_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="241" infoCodeVariant="A" itemLocationCode="T" learnCode="T42" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="08" day="20" />
+        <dmTitle>
+          <techName>Chain</techName>
+          <infoName>Oil: Static content - Fact Expositive</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"></dmCode>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>DA410</systemBreakdownCode>
+      <systemBreakdownCode>DA410</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent id="learncont-59606a5e-a11c-4e0f-a56c-650a73fb2047">
+        <title>Lubricating the Drive Train</title>
+        <lcInstruction>
+          <description>
+            <warning>
+              <warningAndCautionPara>
+					  Dry lube is a very dangerous substance. Be sure to use it in a well-ventilated area. Do not get it onto your skin. If swallowed, seek immediate medical advice. If it gets into your eyes, wash your eyes with clean water, and seek medical advice.
+				  </warningAndCautionPara>
+            </warning>
+            <warning>
+              <warningAndCautionPara>
+						Wet lube is a very dangerous substance. Be sure to use it in a well-ventilated area. Do not get it onto your skin. If swallowed, seek immediate medical advice. If it gets into your eyes, wash your eyes with clean water, and seek medical advice.
+					</warningAndCautionPara>
+            </warning>
+            <caution>
+              <warningAndCautionPara>
+					Do not get the lubrication oil into the brake system. Oil in the brake system can affect the efficiency of the brakes. Avoid getting oil onto the floor where it can easily get transferred onto the brake system.
+				</warningAndCautionPara>
+            </caution>
+            <para>Apply the penetrating lubricant into the parts of the drive train. This includes: </para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>
+						Derailleur pivots
+					</para>
+                </listItem>
+                <listItem>
+                  <para>
+						Derailleur tension
+					</para>
+                </listItem>
+                <listItem>
+                  <para>
+						Chain
+					</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00188-A-001-01" />
+            </figure>
+            <para>Before lubricating the chain, make sure it is clean and dry. To protect the floor, lay a floor covering beneath the chain. </para>
+            <para>Use a dry lube for dry conditions and a wet lube for wet conditions. Apply the lubricant to each roller of the chain, but only apply a small quantity.</para>
+            <para>Hold the nozzle of the container above the front of the chain ring, and slowly turn the cranks rearward. Let the lubricant soak into the chain before you clean the unwanted lubricant from the chain. If there are links that do not move easily or have become frozen, lubricate the chain again.</para>
+            <figure>
+              <title>Lubricate the Chain</title>
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00063-A-001-01" />
+            </figure>
+            <para>Check the rear wheel rim, and clean the unwanted lubricant as necessary. Check the remaining lubricated parts, and clean any unwanted lubricant with a clean, dry cloth.</para>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>
