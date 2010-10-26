@@ -106,7 +106,7 @@
 		</xsl:variable>
 		<!--TODO: devise means to extract launch page value -->
 		<xsl:variable name="launchPage">
-			<xsl:text>TODO:ref_to_SCO_goes_here</xsl:text>
+			<xsl:text>index.htm</xsl:text>
 		</xsl:variable>
     <resource identifer="RES-{$res_ident}" type="webcontent"
 			adlcp:scormtype="sco" href="{$launchPage}">
@@ -116,6 +116,8 @@
           <xsl:copy-of select="../lom:lom" />
         <!--</xsl:text>-->
       </xsl:element>
+      <file href="index.htm"/>
+      
       <xsl:for-each select="dmRef/dmRefIdent">
         <xsl:variable name="mic">
           <xsl:value-of select="dmCode/@modelIdentCode" />
