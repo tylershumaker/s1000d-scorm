@@ -31,16 +31,14 @@ public class Keys
     public static final String XML_SOURCE = "xml_source";
     
     /**
-     * The list of all the files that have been validated to 
-     * be referenced in the SCPM and exist in the reource package.
-     */
-    public static final String VALIDATED_RESOURCES = "validated_resources";
-    
-    /**
      * Map that associates the all the DM files that have a referenced ICN to
      * a list of the ICNs found in that file.
      */
     public static final String MEDIA_MAP = "media_map";
+    
+    /**
+     */
+    public static final String REF_DM = "refDM_map";
     
     /**
      * File that represents the directory that is being used to build the 

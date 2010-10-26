@@ -114,6 +114,7 @@ public class PreProcess implements Command
     
             ctx.put(Keys.XML_SOURCE, manifest);
             ctx.put(Keys.MEDIA_MAP, dmParser.getMedia());
+            //ctx.put(Keys.REF_DM, dmParser.getReferencedDMs());
         }
         else
         {
@@ -143,7 +144,7 @@ public class PreProcess implements Command
         Document iDoc = new Document();
         Element urnResource = new Element("urn-resource");
 
-        getFiles(resPackage);
+        getDMCFiles(resPackage);
         Iterator<File> resIterator = resources.iterator();
 
         while(resIterator.hasNext())
@@ -158,7 +159,7 @@ public class PreProcess implements Command
                 Element target = new Element("target");
                 Attribute type = new Attribute("type","figure");
                 target.setAttribute(type);
-                target.setText("resource/" + fileName.getAbsolutePath().substring(resourcePath +1));
+                target.setText("resources" + File.separator + fileName.getAbsolutePath().substring(resourcePath +1));
                 urn.addContent(target);
                 urnResource.addContent(urn);
                 existingURNs.add(urnFormat);
@@ -168,7 +169,7 @@ public class PreProcess implements Command
                 iDoc.addContent(urnResource);
                 String existingFile = ((Element) XPath.selectSingleNode(iDoc, "/urn-resource//urn[@name='"+urnFormat+"']")).getValue();
                 // removes "resource/" from the file name
-                existingFile = existingFile.substring(9);
+                existingFile = existingFile.substring(10);
                 throw new ResourceMapException(urnFormat, fileName.getAbsolutePath().substring(resourcePath +1), existingFile);
             }
             
@@ -286,10 +287,10 @@ public class PreProcess implements Command
     }
 
     /**
-     * Provides the file name for each file in the Resource Package
+     * Provides the file name for DMC file in the Resource Package
      * @param srcFile File that is the root of the Resource Package.
      */
-    public void getFiles(File srcFile)
+    private void getDMCFiles(File srcFile)
     {
         if (srcFile.isDirectory()) 
         {
@@ -297,12 +298,12 @@ public class PreProcess implements Command
             String[] oChildren = srcFile.list();
             for (int i=0; i < oChildren.length; i++) 
             {
-                getFiles(new File(srcFile, oChildren[i]));
+                getDMCFiles(new File(srcFile, oChildren[i]));
             }
         } 
         else 
         {
-             if(srcFile.getName().contains(".xml"))
+             if(srcFile.getName().endsWith(".xml"))
              resources.add(srcFile);
             
         }

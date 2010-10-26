@@ -38,6 +38,13 @@ public class DMParser extends XMLParser
     private Map<String, List<String>> media;
     
     /**
+     * Map that associates all the DM files that have a referenced DM to a list 
+     * of DMs.
+     */
+    private Map<String, List<String>> referencedDMs;
+    
+    
+    /**
      * Constructor
      */
     public DMParser()
@@ -82,6 +89,10 @@ public class DMParser extends XMLParser
                 numberOfFiles = getValue().size();
             }
             
+            //TODO: Steve start here with the resRef
+            
+            //populate referencedDMs
+            
         }
     }
 
@@ -93,6 +104,13 @@ public class DMParser extends XMLParser
     public Map<String, List<String>> getMedia()
     {
         return media;
+    }
+    
+    /**
+     */
+    public Map<String, List<String>> getReferencedDMs()
+    {
+        return referencedDMs;
     }
 
 }
