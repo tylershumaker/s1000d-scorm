@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'?>
 <!DOCTYPE dmodule [
 	<!NOTATION swf PUBLIC "-//S1000D//NOTATION X-SHOCKWAVE-FLASH 3D Models Encoding//EN">
 	<!ENTITY ICN-S1000DBIKE-AAA-D000000-0-06RT9-00536-A-04-1 SYSTEM "media/ICN-S1000DBIKE-AAA-D000000-0-06RT9-00536-A-04-1.jpg" NDATA swf>

@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'?>
 <!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
 <!ENTITY ICN-S1000DBIKE-AAA-DA53000-0-U8025-00525-A-04-1 SYSTEM "media/ICN-S1000DBIKE-AAA-DA53000-0-U8025-00525-A-04-1.jpg" NDATA JPEG>
 <!ENTITY ICN-S1000DBIKE-AAA-DA53000-0-U8025-00526-A-04-1 SYSTEM "media/ICN-S1000DBIKE-AAA-DA53000-0-U8025-00526-A-04-1.jpg" NDATA JPEG>
