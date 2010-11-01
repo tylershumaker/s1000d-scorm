@@ -9,11 +9,15 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
+import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
+import org.jdom.filter.Filter;
+import org.jdom.filter.ElementFilter;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.XMLOutputter;
 
@@ -82,6 +86,7 @@ public class XMLParser
         try
         {
             doc = parser.build(anXmlDocFile);
+            
         }
         catch (JDOMException e)
         {
@@ -105,26 +110,32 @@ public class XMLParser
      * @param element String that represents the given element.
      * @param attribute String that represents the desired attribute of the given element.
      */
-    public void getAttribute(File anXmlDocFile, String element, String attribute)
+   
+    public void getAttribute(Document doc, String element, String attribute)
     {
-        try
-        {
+    	
+//        try
+//        {
             // get the dom-document
-            Document doc = parser.build(anXmlDocFile);
+            //Document doc = parser.build(anXmlDocFile);
 
             List<Element> test = doc.getRootElement().getChildren();
 
             searchForAttribute(test, element, attribute);
+            
+            //###########STW ADDED method for finding dmrefs###################
+            //searchForDmRefs(doc);
+            
 
-        }
-        catch (JDOMException ex)
-        {
-            ex.printStackTrace();
-        }
-        catch (IOException ex)
-        {
-            ex.printStackTrace();
-        }
+//        }
+//        catch (JDOMException ex)
+//        {
+//            ex.printStackTrace();
+//        }
+//        catch (IOException ex)
+//        {
+//            ex.printStackTrace();
+//        }
 
     }
 
@@ -164,4 +175,106 @@ public class XMLParser
             ex.printStackTrace();
         }
     }
+    
+    protected List<String> searchForDmRefs(Document doc)
+    {
+    	Filter elementFilter = new ElementFilter("dmCode",null);
+    	@SuppressWarnings("unchecked")
+		Iterator<Element> refdms = doc.getRootElement().getDescendants(elementFilter);
+    	List <String> dmReferences = new ArrayList<String>();
+    	while(refdms.hasNext() == true)
+    	{
+    		Element e = refdms.next();
+    		Element theAncestor = (Element) e.getParent().getParent();
+    		String dmc;
+    		if(theAncestor.getName() == "dmRef")
+    		{
+	    		dmc = "DMC-";
+	    		@SuppressWarnings("unchecked")
+				List<Attribute> atts = e.getAttributes();
+	    		for(int i=0;i<atts.toArray().length;i++)
+	    		{
+	    			if(atts.get(i).getName() == "modelIdentCode")
+	    			{
+	    				dmc += atts.get(i).getValue() + "-";
+	    			}
+	    			else if(atts.get(i).getName() == "systemDiffCode")
+	    			{
+	    				dmc += atts.get(i).getValue() + "-";
+	    			}
+	    			else if(atts.get(i).getName() == "systemCode")
+	    			{
+	    				dmc += atts.get(i).getValue() + "-";
+	    			}
+	    			else if(atts.get(i).getName() == "subSystemCode")
+	    			{
+	    				dmc += atts.get(i).getValue();
+	    			}
+	    			else if(atts.get(i).getName() == "subSubSystemCode")
+	    			{
+	    				dmc += atts.get(i).getValue() + "-";
+	    			}
+	    			else if(atts.get(i).getName() == "assyCode")
+	    			{
+	    				dmc += atts.get(i).getValue() + "-";
+	    			}
+	    			else if(atts.get(i).getName() == "disassyCode")
+	    			{
+	    				dmc += atts.get(i).getValue();
+	    			}
+	    			else if(atts.get(i).getName() == "disassyCodeVariant")
+	    			{
+	    				dmc += atts.get(i).getValue() + "-";
+	    			}
+	    			else if(atts.get(i).getName() == "infoCode")
+	    			{
+	    				dmc += atts.get(i).getValue();
+	    			}
+	    			else if(atts.get(i).getName() == "infoCodeVariant")
+	    			{
+	    				dmc += atts.get(i).getValue() + "-";
+	    			}
+	    			else if(atts.get(i).getName() == "itemLocationCode")
+	    			{
+	    				if(atts.toArray().length > 11)
+	    				{
+	    					dmc += atts.get(i).getValue()+ "-";
+	    				}
+	    				else
+	    				{
+	    					dmc += atts.get(i).getValue();
+	    				}
+	    			}
+	    			else if(atts.get(i).getName() == "learnCode")
+	    			{
+	    				dmc += atts.get(i).getValue();
+	    			}
+	    			else if(atts.get(i).getName() == "learnEventCode")
+	    			{
+	    				dmc += atts.get(i).getValue();
+	    			}
+	    			
+	    		}// end for
+	    		
+	    		boolean found = false;
+	    		for(int i = 0;i<dmReferences.toArray().length;i++)
+	    		{
+	    			if(dmReferences.get(i) == dmc)
+	    			{
+	    			  found = true;
+	    			  break;
+	    			}
+	    		}
+	    		if(found == false)
+	    		{
+	    			dmReferences.add(dmc);
+	    		}
+	    		
+    		}//end if
+    		
+
+    	}// end while
+    	return dmReferences;
+    }
+   
 }

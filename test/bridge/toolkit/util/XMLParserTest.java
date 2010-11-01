@@ -67,7 +67,7 @@ public class XMLParserTest
         hrefs.add("S1000DBIKE-AAA-DA2-00-00-00AA-028A-T-T28C"); 
         hrefs.add("S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T88E");        
         
-        mp.getAttribute(test, "file","href");
+        mp.getAttribute(mp.getDoc(test), "file","href");
         assertEquals(hrefs, mp.getValue());
     }
     

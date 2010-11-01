@@ -41,7 +41,7 @@ import bridge.toolkit.util.Keys;
 import bridge.toolkit.util.XMLParser;
 
 /**
- * The first module in the toolkit that transforms the SCPM into a XML structur
+ * The first module in the toolkit that transforms the SCPM into a XML structure
  * to be used by the rest of the toolkit modules.
  */
 public class PreProcess implements Command
@@ -201,6 +201,7 @@ public class PreProcess implements Command
     {
         
         Document resource = xp.getDoc(iResource);
+    	//Document resource = DMParser.getDoc(iResource);
         StringBuffer urn = new StringBuffer();
         urn.append("URN:S1000D:DMC-");
         

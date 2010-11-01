@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Toolkit</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Steve_Uploads/preProcessTransform.xsl</name>
+			<type>1</type>
+			<location>C:/Users/Stephen/Documents/Visual Studio 2010/Projects/RTOC2/RTOC2/bin/Debug/preProcessTransform.xsl</location>
+		</link>
+	</linkedResources>
+</projectDescription>

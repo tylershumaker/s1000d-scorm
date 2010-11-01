@@ -6,14 +6,20 @@
 package bridge.toolkit.util;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.jdom.Document;
+import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.XMLOutputter;
+import bridge.toolkit.util.XMLParser;
+
+
 
 /**
  * Parses an S1000D DM file for any referenced ICN.
@@ -47,11 +53,14 @@ public class DMParser extends XMLParser
     /**
      * Constructor
      */
+    private XMLParser xp;
+    
     public DMParser()
     {
-        printer = new XMLOutputter();
+        printer = new  XMLOutputter();
         parser = new SAXBuilder();
         media = new HashMap<String, List<String>>();
+        xp = new XMLParser();
     }
     
     /**
@@ -60,6 +69,8 @@ public class DMParser extends XMLParser
      * 
      * @param iDMFiles List of the DM files to be parsed.
      */
+    //NOTES - changes this from getICnFile to parse DMs. Changed "anXmlFile" to Document (doc). 
+    //Calling public getDoc in xmlParser class to reduce number of build for doc.
     public void getICNFiles(List<File> iDMFiles)
     {
         int numberOfFiles = 0;
@@ -68,10 +79,13 @@ public class DMParser extends XMLParser
         while(filesIterator.hasNext())
         {
             File currentDM = filesIterator.next();
+            Document doc = xp.getDoc(currentDM);
             //search through all the possible elements that could have an infoEntityIdent attribute
-            getAttribute(currentDM, "graphic", "infoEntityIdent");
-            getAttribute(currentDM, "symbol", "infoEntityIdent");
-            getAttribute(currentDM, "multimediaObject", "infoEntityIdent");
+            getAttribute(doc, "graphic", "infoEntityIdent");
+            getAttribute(doc, "symbol", "infoEntityIdent");
+            getAttribute(doc, "multimediaObject", "infoEntityIdent");
+            
+            
             //add to a hashMap
             if(getValue().size()>numberOfFiles)
             {
@@ -83,15 +97,23 @@ public class DMParser extends XMLParser
                     {
                         icn.add(getValue().get(i)); 
                     }
-                    
                 }
                 media.put(currentDM.getName(), icn);
                 numberOfFiles = getValue().size();
             }
             
             //TODO: Steve start here with the resRef
+            // stw get the references
+           
+            List<String> refdms = searchForDmRefs(doc);
+            if (!refdms.isEmpty())
+            {
+            	 referencedDMs.put(currentDM.getName(), refdms);
+            }
             
+           
             //populate referencedDMs
+           
             
         }
     }
