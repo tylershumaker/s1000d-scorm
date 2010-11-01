@@ -60,6 +60,7 @@ public class DMParser extends XMLParser
         printer = new  XMLOutputter();
         parser = new SAXBuilder();
         media = new HashMap<String, List<String>>();
+        referencedDMs = new HashMap<String, List<String>>();
         xp = new XMLParser();
     }
     
@@ -71,7 +72,7 @@ public class DMParser extends XMLParser
      */
     //NOTES - changes this from getICnFile to parse DMs. Changed "anXmlFile" to Document (doc). 
     //Calling public getDoc in xmlParser class to reduce number of build for doc.
-    public void getICNFiles(List<File> iDMFiles)
+    public void parseDMs(List<File> iDMFiles)
     {
         int numberOfFiles = 0;
         int filesAdded = 0;

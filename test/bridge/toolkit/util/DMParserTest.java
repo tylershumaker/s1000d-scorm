@@ -45,7 +45,7 @@ public class DMParserTest
     		 dmFiles.add(contents[i]);
     	 }
 		
-    	 dmp.getICNFiles(dmFiles);
+    	 dmp.parseDMs(dmFiles);
     	 
     	 
         //C:\workspace2\bridge_open_toolkit\test_files\Keys.RESOURCE_PACKAGE

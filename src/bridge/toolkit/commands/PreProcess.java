@@ -176,7 +176,7 @@ public class PreProcess implements Command
         }
         
         iDoc.addContent(urnResource);
-        dmParser.getICNFiles(resources);
+        dmParser.parseDMs(resources);
         
         XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
         File temp = new File(System.getProperty("user.dir") + File.separator + "xsl//urn_resource_map.xml");
