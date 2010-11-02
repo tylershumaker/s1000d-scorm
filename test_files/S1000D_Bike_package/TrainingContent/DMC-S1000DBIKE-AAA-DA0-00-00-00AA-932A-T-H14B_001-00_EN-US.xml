@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Bike - Planning Information: Organizational analysis - Goal statement</dc:title>
+    <dc:subject>Bike - Planning Information: Organizational analysis - Goal statement</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-07-30</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA0-00-00-00AA-932A-T-H14B_001-00_EN-us.xml</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H14" learnEventCode="B" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="30" />
+        <dmTitle>
+          <techName>Bike</techName>
+          <infoName>Planning Information: Organizational analysis - Goal statement</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"></dmCode>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>DA000</systemBreakdownCode>
+      <systemBreakdownCode>DA000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningOverview>
+        <title>Introduction to the Bike</title>
+        <lcSection>
+          <description>
+            <para>
+              <emphasis>Background</emphasis>
+            </para>
+            <para>Department of Defense programs are preparing to make investments into making S1000D a common digital data format for all of its technical information. S1000D 4.0 can support a strategy for all program technical information to be mapped to products and their subcomponents. This project demonstrates that mapping while highlighting how technical learning content can be instructionally designed for structured markup and reuse. The intent of the project is to gain universal acceptance.</para>
+            <para>
+              <emphasis>
+								Scope
+							</emphasis>
+            </para>
+            <para>
+							The goal is to provide a sampling of S1000D Learning Data Modules (LDM) that contain learning content samples compiled into Sharable Content Object Reference Model (SCORM) 2004. The purpose of the sample is to help the public understand how the learning modules work and how they are compiled into SCORM 2004.
+						</para>
+            <para>
+							The curriculum addresses all aspects of the publicly available S1000D Bike technical manual in S1000D.
+						</para>
+            <para>
+              <emphasis>
+								Project Requirements
+							</emphasis>
+            </para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>
+										Use the entire LDM schema in the training.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Create Sharable Content Object (SCOs) to cover the operation and maintenance of the bicycle.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Use S1000D 4.0 and SCORM 2004.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Maximize reuse of Data Modules (DMs) and illustrations that populate the bicycle manual.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Use the S1000D SCORM Content Package Module (SCPM) to aggregate all data modules prior to content transformation and formatting.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Apply a LDM coding analysis to the bicycle curriculum, which is consistent with and based upon the existing DM coding in the bicycle Technical Manual (TM) DMs.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Apply the appropriate “learnCode” in the DM code to represent the chosen instructional learning strategy.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Use all branches of the LDM.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Develop a learning plan according to the options within the learnPlan branch of the LDM.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Create assessments using all interaction types.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Demonstrate that the deliverable shall support real-time updates of all SCOs in the content package regardless of distributed format.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Demonstrate that DMs will be transformed using a combination of Adobe Flash, Hyper Text Markup Language (HTML), Cascading Style Sheets (CSS), and Extensible Stylesheet Language Transformation (XSLT). Flash Actionscript will be used to transform the DMs to flash-based SCOs.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Develop so that content packages will comply with SCORM 2004.
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Develop so that content packages will operate on the Navy Learning Management System (LMS).
+									</para>
+                </listItem>
+                <listItem>
+                  <para>
+										Provide strategic consulting and advisement on promoting S1000D–SCORM harmonization as part of a suite of logistics and life cycle solutions to Navy management and key policy makers.
+									</para>
+                </listItem>
+              </randomList>
+            </para>
+            <para>
+              <emphasis>
+								Learn Schema
+							</emphasis>
+            </para>
+            <para>
+							The learn schema is made up of five branches. These include the:
+							<randomList><listItem><para>
+										Learning Plan
+										
+									</para></listItem><listItem><para>
+										Learning Overview
+										
+									</para></listItem><listItem><para>
+										Learning Content
+										
+									</para></listItem><listItem><para>
+										Learning Summary
+										
+									</para></listItem><listItem><para>
+										Learning Assessment
+
+									</para></listItem></randomList></para>
+            <para>
+							Each of the learning types is represented in the Bike Example course.
+						</para>
+            <para>
+              <emphasis>
+								Learning Plan
+							</emphasis>
+            </para>
+            <para>
+							The learning plan information model is the first branch in the learning schema. It contains content, such as learning objectives, that drives course strategy and development. The learning plan structure covers four essential components to the lesson planning process: course administrative details, needs analysis gap analysis, instructional design, and technical requirements.
+						</para>
+            <para>
+              <emphasis>
+								Learning Overview
+							</emphasis>
+            </para>
+            <para>
+							The learning overview information model is the second branch in the schema. It contains introductory information and identifies the learning objectives for the related content.
+						</para>
+            <para>
+              <emphasis>
+								Learning Content
+							</emphasis>
+            </para>
+            <para>
+							The learning content information model is the third branch in the learning schema. It provides the bulk of the learning content. This includes learning objectives and activities and language that forms the learning materials. It holds the most potential for the appropriate reuse of technical data where content supplements are useful.
+						</para>
+            <para>
+              <emphasis>
+								Learning Summary
+							</emphasis>
+            </para>
+            <para>
+							The learning summary information model is the fourth branch in the learning schema. It recaps and provides context for the achievement or accomplishment of the learning objectives, provides guidance to reinforce learning and long-term memory, and can pose questions to enhance encoding and verification of learning content.
+						</para>
+            <para>
+              <emphasis>
+								Learning Assessment
+							</emphasis>
+            </para>
+            <para>
+							The learning assessment information model is the fifth branch in the learning schema. It presents questions or interactions that measure progress, encourage recollection, and stimulate reinforcement of the learning content.
+						</para>
+            <para>
+              <emphasis>
+								Learn Codes
+							</emphasis>
+            </para>
+            <para></para>
+            <para>
+              <emphasis>
+								Learn Event Codes
+							</emphasis>
+            </para>
+            <para>
+							Learn codes are optional codes that are applied on to human performance technology (HPT) and training DMs for projects that have a requirement to be SCORM conformant or wish to use the functionality brought about by the learn code. There are two types of learn codes: H and T. The H code is for is HPT, which can be used to identify information regarding the human performance system. The T code is used for training, which can be used to identify the type of information related to training but is associated with the standard numbering system (SNS) and information code. The codes describe the type of HPT or training information that is in the content of the DM. Each learn code represents a category of HPT or training information. When used, the learn code must be used with a learn event code.
+						</para>
+            <para>
+              <emphasis>
+								Content Development
+							</emphasis>
+            </para>
+            <para>
+							Learn event codes are optional codes that are applied only to HPT and training DMs for projects that have a requirement to be SCORM conformant or wish to use the functionality brought about by the learn event code. Learn event codes describe which branch of the learn schema is being used.
+						</para>
+            <para>
+              <emphasis>
+								Content Development
+							</emphasis>
+            </para>
+            <para>
+							A multifaceted approach was used to develop the content for the Bike Example Course. From direct reuse to the use of Flash animations, Cascading Stylesheets (CSS), and Extensible Stylesheet Language Transformation (XSLT), the course showcases how DMs can be used for training purposes.
+						</para>
+            <para>
+							Module 2, Bike Overview, is an example of complete reuse. All the technical DMs were used as provided. None of the text or drawings were manipulated.
+						</para>
+            <para>
+							A variety of strategies was used for the development of Modules 3-7:
+							<randomList><listItem><para>
+										In these modules, some of the technical DMs were divided into multiple LDMs to ensure that the content was presented in manageable chunks. The text for all of the technical DMs was modified in some fashion as the LDMs were created. This was done to promote recall of the information and to ensure clarity.
+									</para></listItem><listItem><para>
+										To develop an accurate frame of reference, photographs of actual equipment were used when available. In order to promote realism, Adobe Photoshop was used to modify furnished drawings. Flash animations were used throughout to organize, bring relevance to, and assess the content.
+									</para></listItem><listItem><para>
+										A combination of XSLT and CSS was used to render the LDM data and media within a browser.
+									</para></listItem><listItem><para>
+										In addition to periodic, unscored “knowledge check” type assessments, each module includes an associated assessment that is taken after the module has been completed. These are graded assessments that were created entirely in Flash. ActionScript is used in the assessments to render the LDM data.
+									</para></listItem></randomList></para>
+            <para>
+              <emphasis>
+								Data Module Codes
+							</emphasis>
+            </para>
+            <para>
+							Each training DMC or content screen contains an “Additional Information” link that provides the InfoName, TechName, and the alpha numeric DMC containing a corresponding H or T code. The short definition of the H or T code selected for the content is included in the InfoName.
+						</para>
+          </description>
+        </lcSection>
+      </learningOverview>
+    </learning>
+  </content>
+</dmodule>
