@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA30000-0-U8025-00534-A-04-1 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA30000-0-U8025-00534-A-04-1 NDATA JPEG'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA30000-0-U8025-00503-A-04-1 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA30000-0-U8025-00503-A-04-1 NDATA JPEG'>
+]>
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/descript.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <rdf:Description>
+    <dc:creator>U8025</dc:creator>
+    <dc:title>Frame - Description of how it is made</dc:title>
+    <dc:subject>Frame - Description of how it is made</dc:subject>
+    <dc:publisher>U8025</dc:publisher>
+    <dc:contributor>U8025</dc:contributor>
+    <dc:date>2008-08-01</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA3-00-00-00AA-041A-A_006-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51_cv51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA3" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="006" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2008" month="08" day="01" />
+        <dmTitle>
+          <techName>Frame</techName>
+          <infoName>Description of how it is made</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus issueType="revised">
+      <security securityClassification="01" commercialClassification="cc51" caveat="cv51" />
+      <dataRestrictions>
+        <restrictionInstructions>
+          <dataDistribution>To be made available to all S1000D users.</dataDistribution>
+          <exportControl>
+            <exportRegistrationStmt>
+              <simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+            </exportRegistrationStmt>
+          </exportControl>
+          <dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+          <dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+          <dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+        </restrictionInstructions>
+        <restrictionInfo>
+          <copyright>
+            <copyrightPara>
+              <emphasis>Copyright (C) 2008</emphasis> by each of the following organizations:<randomList><listItem><para>AeroSpace and Defence Industries Associations of Europe - ASD.</para></listItem><listItem><para>Ministries of Defence of the member countries of ASD.</para></listItem></randomList></copyrightPara>
+            <copyrightPara>
+              <emphasis>Limitations of Liability:</emphasis>
+            </copyrightPara>
+            <copyrightPara>
+              <randomList>
+                <listItem>
+                  <para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+                </listItem>
+                <listItem>
+                  <para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+                </listItem>
+                <listItem>
+                  <para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+                </listItem>
+              </randomList>
+            </copyrightPara>
+          </copyright>
+          <policyStatement>TPSMG TOR 001</policyStatement>
+          <dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+        </restrictionInfo>
+      </dataRestrictions>
+      <responsiblePartnerCompany enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </originator>
+      <applicCrossRefTableRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D">
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D" />
+          </dmRefIdent>
+        </dmRef>
+      </applicCrossRefTableRef>
+      <applic>
+        <displayText>
+          <simplePara>Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)</simplePara>
+        </displayText>
+        <evaluate andOr="and">
+          <assert applicPropertyIdent="type" applicPropertyType="prodattr" applicPropertyValues="Mountain bicycle" />
+          <evaluate andOr="or">
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Mountain storm" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk1" />
+            </evaluate>
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Brook trekker" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk9" />
+            </evaluate>
+          </evaluate>
+        </evaluate>
+      </applic>
+      <techStandard>
+        <authorityInfoAndTp>
+          <authorityInfo>20010131</authorityInfo>
+          <techPubBase>Bike book</techPubBase>
+        </authorityInfoAndTp>
+        <authorityExceptions />
+        <authorityNotes />
+      </techStandard>
+      <brexDmRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D_007-00">
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="007" inWork="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <firstVerification verificationType="tabtop" />
+      </qualityAssurance>
+      <systemBreakdownCode>DA300</systemBreakdownCode>
+      <systemBreakdownCode>BY15</systemBreakdownCode>
+      <skillLevel skillLevelCode="sk02" />
+      <reasonForUpdate>
+        <simplePara>totally revised</simplePara>
+        <simplePara>Schema cleanup element/attribute renaming</simplePara>
+      </reasonForUpdate>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <description>
+      <levelledPara>
+        <title>The bicycle frame</title>
+        <para>The frame is the skeleton, the primary part of your bicycle. Its structure makes the bicycle resistant to large forces.</para>
+        <para>
+					The initial frames (refer to <internalRef internalRefId="fig-0001" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001" />) were tubes of aluminum or steel welded together.
+				</para>
+        <figure id="fig-0001">
+          <title>Welded frame joints</title>
+          <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA30000-0-U8025-00534-A-04-1" xlink:title="Welded frame joints" infoEntityIdent="ICN-S1000DBIKE-AAA-DA30000-0-U8025-00534-A-04-1" />
+        </figure>
+        <para>
+					Subsequent frames (refer to <internalRef internalRefId="fig-0002" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0002" />) can be made out of a wide variety of materials, including aluminium, titanium, or chrome moly.
+				</para>
+        <figure id="fig-0002">
+          <title>Frame</title>
+          <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA30000-0-U8025-00503-A-04-1" xlink:title="Frame" infoEntityIdent="ICN-S1000DBIKE-AAA-DA30000-0-U8025-00503-A-04-1" />
+        </figure>
+        <para> are different and can also be of different materials (for example, titanium or chrome moly). Some bicycle frames are of carbon fiber. To get this material, it is necessary to put sheets of carbon fiber cloth on foam forms and epoxy them in position. This procedure gives a very light, strong structure that can have different shapes.</para>
+        <para>
+					The frame includes the parts that follow: <randomList listItemPrefix="pf02"><listItem><para>the top tube (the higher bar of the bicycle frame)</para></listItem><listItem><para>the down tube (the section of the frame that extends from the stem to the bottom bracket)</para></listItem><listItem><para>the head tube (the part of the frame that the fork steerer tube goes through)</para></listItem><listItem><para>the seat tube (the vertical part of the frame that is the rear of the front triangle and that is between the bottom bracket and the top tube)</para></listItem><listItem><para>the seat stay (the tube that includes the distance between the seat tube and the rear dropouts)</para></listItem><listItem><para>the chain stay (the tube that is the bottom part of the rear triangle)</para></listItem></randomList></para>
+      </levelledPara>
+    </description>
+  </content>
+</dmodule>

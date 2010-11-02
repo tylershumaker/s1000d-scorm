@@ -1,0 +1,294 @@
+.bodyText
+{
+	font-family: Arial;
+	font-size: 12pt;
+	
+}
+
+.metadataPane
+{
+	border-right: solid black 1pt;
+	border-top: solid black 1pt;
+	padding-bottom: 5px;
+	border-left: solid black 1pt;
+	padding-top: 0px;
+	border-bottom: solid black 1pt;
+}
+
+.noteandwarning 
+{
+	margin-bottom:0px;
+	margin-top:10px;
+}
+.note_text
+{
+	color: blue;	
+
+
+}
+.note_line
+{
+	border-top: solid blue 1pt;
+	border-right: solid blue 1pt;
+	border-left: solid blue 1pt;
+	border-bottom: solid blue 1pt;
+}
+.prelreq_table
+{
+	border-top: solid black 0.75pt;
+	border-bottom: solid black 0.75pt;
+	
+}
+.line_top
+{
+	border-top: solid black 0.5pt;
+}
+.line_bottom
+{
+	border-bottom: solid black 0.5pt;
+}
+.line_right
+{
+	border-right: solid black 0.5pt;
+}
+.line_rightbottom
+{
+	border-bottom: solid black 0.5pt;
+	border-right: solid black 0.5pt;
+}
+.line_topbot
+{
+	border-top: solid black 0.5pt;
+	border-bottom: solid black 0.5pt;
+}
+.line_all
+{
+	border:solid black 0.5pt;
+}
+.line_sides
+{
+	border-left: solid black 0.5pt;
+	border-right: solid black 0.5pt;
+}
+.line_none
+{
+	border:none;
+}
+.lineTopAndBottom
+{
+	border-top: solid black 0.75pt;
+	border-bottom: solid black 0.75pt;
+}
+.lineBottom
+{
+	border-bottom: black 0.75pt solid;
+}
+.no_line
+{ 
+	border-top-style: none; border-bottom-style: none; }
+
+.theadCellLineBottom
+{
+	border-bottom: black 0.75pt solid;
+	padding-right:20px;
+}
+
+.lineBottomRed
+{
+	border-bottom: red 0.75pt solid;
+}
+.lineBottomBlue
+{
+	border-bottom: blue 0.75pt solid;
+}
+.tableCell 
+{
+	padding-top: 5px;
+	padding-bottom:5px;
+	padding-right:20px;
+}
+th
+{
+	vertical-align:top;
+	text-align:left
+}
+td
+{
+	vertical-align:top
+}
+h4
+{
+	margin-bottom: 5px;
+}
+h5
+{
+	margin-bottom: 5px;
+}
+table 
+{
+	font-size:10pt;
+	padding-top:3;
+	padding-bottom:5;
+}
+.indentMarginLeft
+{
+	margin-left:10px;
+}
+.decreaseTopBottom
+{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+.decreaseBottom
+{
+	margin-bottom: 10px;
+}
+.nomarginbottom
+{
+	margin-bottom: 10px;
+}
+.indentStep
+{
+	margin-left: 10px;
+}
+.leftMarginToZero
+{
+	margin-left:0px;
+}
+.font
+{
+	font-size: 10pt;
+	font-family: Sans-Serif;
+}
+H2
+{
+	font-weight: bold;
+}
+.para0
+{
+	font-size: 16pt;
+	color: black;
+	font-weight: bold;
+}
+.subpara1
+{
+	font-size: 14pt;
+	color: black;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.subpara2
+{
+	font-size: 12pt;
+	color: black;
+	font-weight: bold;
+	padding-left: 1em;
+}
+.subpara3
+{
+	font-weight:bold;
+	color:#3399cc;
+	font-size:14.4pt
+}
+.subpara4
+{
+	font-weight:lighter;
+	color:#3399cc;
+	font-size:14.4pt
+}
+.subpara5
+{
+	font-style: italic;
+	color:#3399cc;
+	font-size:14.4pt
+}
+li, ul
+{
+    margin-left: 8px;
+}
+.nobullet
+{
+    list-style-image: none;
+}
+.tdCrew
+{
+	padding-left: 3em;
+}
+.bold
+{
+	font-weight: bold;
+}
+.defList
+{
+	margin-left: 8px;
+}
+.def
+{
+	margin-bottom: 10px;
+}
+.term
+{
+	font-weight: bold;
+}
+.randlistItem
+{
+	padding-left: 3em;
+}
+.randlistItemBullet
+{
+	list-style-type: disc;
+	text-indent: 3em;
+}
+.randlistItemHyphen
+{
+	list-style-type: square;
+}
+intendentPadding
+{
+	padding-left: 3em;
+}
+
+.imageBorder
+{
+	border: solid black .5pt;
+	
+}
+
+.imageTitle
+{
+	align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: bold;
+	font-style: italic;
+	color: #0000FF;
+}
+
+.branchTitle
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+.coursewareTitle
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+	color: #003300;
+}
+.linkList
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: normal;
+	text-indent: 20px;
+	list-style-type: square;
+}
+.referenceText
+{
+	font-family: Arial, Helvetica, sans-serif;
+	text-indent: 20px;
+	font-size: 11pt;
+}
