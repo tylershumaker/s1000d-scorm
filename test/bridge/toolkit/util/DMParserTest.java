@@ -35,7 +35,7 @@ public class DMParserTest
     @Test
     public void testgetICNFiles()
     {
-    	 String location = System.getProperty("user.dir") + File.separator + "test_files\\S1000DBike_full_resource\\BikeViewerApplication\\TrainingContent";
+    	 String location = System.getProperty("user.dir") + File.separator + "test_resources\\bike_resources\\BikeViewerApplication\\TrainingContent";
     	 List<File> dmFiles = new ArrayList<File>();
     	 File csdbDir = new File(location);
     	 FilenameFilter select = new FileListFilter("DMC", "xml");
