@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [
+]>
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/descript.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <rdf:Description>
+    <dc:creator>U8025</dc:creator>
+    <dc:title>Bicycle - Description of function</dc:title>
+    <dc:subject>Bicycle - Description of function</dc:subject>
+    <dc:publisher>U8025</dc:publisher>
+    <dc:contributor>U8025</dc:contributor>
+    <dc:date>2008-08-01</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-042A-A_007-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="042" infoCodeVariant="A" itemLocationCode="A" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="007" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2008" month="08" day="01" />
+        <dmTitle>
+          <techName>Bicycle</techName>
+          <infoName>Description of function</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus issueType="revised">
+      <security securityClassification="01" commercialClassification="cc51" />
+      <dataRestrictions>
+        <restrictionInstructions>
+          <dataDistribution>To be made available to all S1000D users.</dataDistribution>
+          <exportControl>
+            <exportRegistrationStmt>
+              <simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+            </exportRegistrationStmt>
+          </exportControl>
+          <dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+          <dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+          <dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+        </restrictionInstructions>
+        <restrictionInfo>
+          <copyright>
+            <copyrightPara>
+              <emphasis>Copyright (C) 2008</emphasis> by each of the following organizations:<randomList><listItem><para>AeroSpace and Defence Industries Associations of Europe - ASD.</para></listItem><listItem><para>Ministries of Defence of the member countries of ASD.</para></listItem></randomList></copyrightPara>
+            <copyrightPara>
+              <emphasis>Limitations of Liability:</emphasis>
+            </copyrightPara>
+            <copyrightPara>
+              <randomList>
+                <listItem>
+                  <para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+                </listItem>
+                <listItem>
+                  <para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+                </listItem>
+                <listItem>
+                  <para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+                </listItem>
+              </randomList>
+            </copyrightPara>
+          </copyright>
+          <policyStatement>TPSMG TOR 001</policyStatement>
+          <dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+        </restrictionInfo>
+      </dataRestrictions>
+      <responsiblePartnerCompany enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </originator>
+      <applicCrossRefTableRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D">
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D" />
+          </dmRefIdent>
+        </dmRef>
+      </applicCrossRefTableRef>
+      <applic>
+        <displayText>
+          <simplePara>Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)</simplePara>
+        </displayText>
+        <evaluate andOr="and">
+          <assert applicPropertyIdent="type" applicPropertyType="prodattr" applicPropertyValues="Mountain bicycle" />
+          <evaluate andOr="or">
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Mountain storm" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk1" />
+            </evaluate>
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Brook trekker" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk9" />
+            </evaluate>
+          </evaluate>
+        </evaluate>
+      </applic>
+      <techStandard>
+        <authorityInfoAndTp>
+          <authorityInfo>20010131</authorityInfo>
+          <techPubBase>Bike book</techPubBase>
+        </authorityInfoAndTp>
+        <authorityExceptions />
+        <authorityNotes />
+      </techStandard>
+      <brexDmRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D_007-00">
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="007" inWork="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <firstVerification verificationType="tabtop" />
+      </qualityAssurance>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
+      <systemBreakdownCode>BY</systemBreakdownCode>
+      <skillLevel skillLevelCode="sk01" />
+      <reasonForUpdate>
+        <simplePara>totally revised</simplePara>
+        <simplePara>Schema cleanup element/attribute renaming</simplePara>
+      </reasonForUpdate>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <refs>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA3-00-00-00AA-041A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA3" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Frame</techName>
+            <infoName>Description of how it is made</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Wheel</techName>
+            <infoName>Description of how it is made</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-20-00-00AA-720A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Handlebar</techName>
+            <infoName>Install procedures</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="3" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Shifters</techName>
+            <infoName>Description of how it is made</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-10-00-00AA-720A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Stem</techName>
+            <infoName>Install procedures</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-10-00-00AA-520A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Stem</techName>
+            <infoName>Remove procedures</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-00-00-00AA-041A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Gears</techName>
+            <infoName>Description of how it is made</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA1" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Brake system</techName>
+            <infoName>Description of how it is made</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-20-00-00AA-520A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Handlebar</techName>
+            <infoName>Remove procedures</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA4-10-00-00AA-251B-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="251" infoCodeVariant="B" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Chain</techName>
+            <infoName>Clean with chain cleaning fluid</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Mechs</techName>
+            <infoName>Description of how it is made</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+    </refs>
+    <description>
+      <levelledPara>
+        <title>Functional description of a bicycle</title>
+        <para>
+					Below is a list of the different bicycle components and a functional description of them. <definitionList><definitionListItem><listItemTerm>Frame</listItemTerm><listItemDefinition><para>
+									The frame is the skeleton of the bicycle. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA3-00-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA3" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for a functional description of the frame system.
+								</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Wheel</listItemTerm><listItemDefinition><para>
+									The wheel is the point of contact between the bicycle and the road for the bicycle to have movement. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for a functional description of the wheel.
+								</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Spokes</listItemTerm><listItemDefinition><para>The spokes are thick wires with tension applied that connect the hub to the rim. You can adjust the tension with the nipple on the rim side.</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Hub</listItemTerm><listItemDefinition><para>The hub attaches to the center of the wheel where the axle and the bearings are.</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Metal rim</listItemTerm><listItemDefinition><para>The metal rim is a metal ring that has a U-shaped cross section to hold the spokes on the inner side and the tire on the outer side.</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Seat</listItemTerm><listItemDefinition><para>The Seat, which is also known as the 'saddle', is used as the support platform for the person to sit on the bicycle.</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Seat post</listItemTerm><listItemDefinition><para>The Seat post is used as a support post for the seat and to change the height of the seat for the rider.</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Handle bar</listItemTerm><listItemDefinition><para>
+									The handle bar is a horizontal bar with handles on each end. The handle bar is a steering mechanism that the rider uses to change the direction of the bicycle. The brake levers are also on the handle bar. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-20-00-00AA-720A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for information on how to install the handle bar. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-20-00-00AA-520A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for information on removing the handlebar.
+								</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Handle bar stem</listItemTerm><listItemDefinition><para>
+									The handle bar stem (the stem) attaches the handle bar to the steering tube. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-10-00-00AA-720A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for information on how to install a stem. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-10-00-00AA-520A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for information on how to remove the stem.
+								</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Brake levers</listItemTerm><listItemDefinition><para>When you operate the brake lever, the brake pads move against the wheel to decrease the speed. The brake lever on the left side operates the front brake. The brake lever on the right side operates the rear brake.</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Brakes</listItemTerm><listItemDefinition><para>
+									When you operate the brakes, the brake pad moves against the wheel to decrease the speed of the bicycle. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA1" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for a description of the braking system.
+								</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Shifters</listItemTerm><listItemDefinition><para>
+									The shifters are the mechanisms that you use to change the gears on the bicycle. There are 7 different types of shifters that have been developed over the years, but they all have the same functionality. When you operate the shifters, they pull the control cable to move the derailleur towards a larger diameter chain ring. The shifters can also loosen the cable to let the derailleur move towards a smaller diameter chain ring. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="3" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for a functional description of the shifters.
+								</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Crank</listItemTerm><listItemDefinition><para>The crank moves the power to the chain rings when the pedals operate.</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Pedals</listItemTerm><listItemDefinition><para>The pedals move the force of movement from the feet to the cranks.</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Chain</listItemTerm><listItemDefinition><para>
+									The chain moves the power from the chain rings to the cogs on the freewheel. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA4-10-00-00AA-251B-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="251" infoCodeVariant="B" itemLocationCode="A" /></dmRefIdent></dmRef> for the procedure on how to clean the chain.
+								</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Gears</listItemTerm><listItemDefinition><para>
+									The gears have different mechanisms that function together to change the speed of the bicycle. These mechanisms include: <randomList listItemPrefix="pf01"><listItem><para>the sprockets</para></listItem><listItem><para>the chain</para></listItem><listItem><para>the derailleur</para></listItem></randomList> Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-00-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for a functional description of the gear system.
+								</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Chain rings</listItemTerm><listItemDefinition><para>The chain rings (also known as the 'chain wheel') pull on the chain when the cranks turn.</para></listItemDefinition></definitionListItem><definitionListItem><listItemTerm>Derailleur</listItemTerm><listItemDefinition><para>
+									A derailleur moves the chain from one sprocket to another to change the gears. There are two different types of derailleur, the front and the rear. The highest ratio (highest gear) is when the chain is on the largest sprocket on the front and the smallest at the rear. To get the lowest gear, the smallest sprocket is at the front and the largest at the rear. Refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef> for a functional description of the derailleur system.
+								</para></listItemDefinition></definitionListItem></definitionList></para>
+      </levelledPara>
+    </description>
+  </content>
+</dmodule>

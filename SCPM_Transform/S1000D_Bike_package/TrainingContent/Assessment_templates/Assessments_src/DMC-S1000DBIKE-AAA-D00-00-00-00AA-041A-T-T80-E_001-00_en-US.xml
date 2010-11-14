@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/xml_schema_flat/learning.xsd">
+	<rdf:Description>
+		<dc:creator>06RT9</dc:creator>
+		<dc:title>Drive train - Description of how it is made</dc:title>
+		<dc:subject>Drive train - Description of how it is made</dc:subject>
+		<dc:publisher>06RT9</dc:publisher>
+		<dc:contributer>06RT9</dc:contributer>
+		<dc:date>09-08-20</dc:date>
+		<dc:type>text</dc:type>
+		<dc:format>text/xml</dc:format>
+		<dc:identifier>S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T80-E_001-00</dc:identifier>
+		<dc:language>en-US</dc:language>
+		<dc:rights>01_cc51</dc:rights>
+	</rdf:Description>
+	<identAndStatusSection>
+		<dmAddress>
+			<dmIdent>
+				<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="0" subSubSystemCode="0" assyCode="00" disAssyCode="00" disAssyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="T" learnCode="T80" learnEventCode="E" />
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate year="2009" month="08" day="20">
+					<dmTitle>
+						<infoName>Drive train</infoName>
+						<techName>Description of how it is made</techName>
+					</dmTitle>
+				</issueDate>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus></dmStatus>
+	</identAndStatusSection>
+	<content>
+		<learning>
+			<learningAssessment>
+				<lcInteraction>
+					<lcMultipleSelect>
+						<lcQuestion>
+							<description>
+								<para>You were recently hired by Speedy Couriers, Inc. to pick up and deliver packages around the city. The last time you rode your bike, you were trail riding through muddy puddles after a rain storm. Since you did not bother to clean your bike right away, the mud has dried on the drive train. The day before you start your job, you decide that you need to clean the bike, paying particular attention to the drive train assembly.</para>
+								<para>
+									<emphasis>Select all answers that apply, and then click CHECK.</emphasis>
+								</para>
+								<para>What do you need to do to clean the drive train?</para>
+							</description>
+						</lcQuestion>
+						<lcAnswerOptionGroup>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Dry the components with a clean, dry cloth.</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse name="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Remove excess dirt from the saddle.</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Apply grease to the chain.</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Remove caked on grime from the chain and sprockets.</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse name="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Apply degreasing agent to the chain, sprockets, derailleurs, and chain ring teeth.</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse name="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Rinse the components with water.</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse name="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+						</lcAnswerOptionGroup>
+					</lcMultipleSelect>
+				</lcInteraction>
+				<lcInteraction id="ia-001">
+					<lcSingleSelect>
+						<lcQuestion>
+							<description>
+								<para>
+									<emphasis>Select your answer, and then click NEXT.</emphasis>
+								</para>
+								<para>The drive train is a bike's primary system for __________.</para>
+							</description>
+						</lcQuestion>
+						<lcAnswerOptionGroup>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Frame</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Handlebar</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Fork</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Stem</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+						</lcAnswerOptionGroup>
+					</lcSingleSelect>
+				</lcInteraction>
+				<lcInteraction>
+					<lcMultipleSelect>
+						<lcQuestion>
+							<description>
+								<para>
+									<emphasis>Select all answers that apply, and then click CHECK.</emphasis>
+								</para>
+								<para>A typical drive train is composed of the:</para>
+							</description>
+						</lcQuestion>
+						<lcAnswerOptionGroup>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Shifters</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Brake levers</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Derailleurs</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Chain</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+						</lcAnswerOptionGroup>
+					</lcMultipleSelect>
+				</lcInteraction>
+				<lcInteraction>
+					<lcMultipleSelect>
+						<lcQuestion>
+							<description>
+								<para>
+									<emphasis>Select all answers that apply, and then click CHECK.</emphasis>
+								</para>
+								<para>What do you need to do to clean the drive train?</para>
+							</description>
+						</lcQuestion>
+						<lcAnswerOptionGroup>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Ensure the frame is clean and dry.</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Ensure the chain is clean and dry.</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse name="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Apply lubricant to each roller of the chain.</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse name="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Apply lubricant to the headset.</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Apply lubricant to the derailleur pivots and tension.</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse name="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Leave excess lubricant on the components to ensure full coverage.</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+						</lcAnswerOptionGroup>
+					</lcMultipleSelect>
+				</lcInteraction>
+				<lcInteraction>
+					<lcMultipleSelect>
+						<lcQuestion>
+							<description>
+								<para>
+									<emphasis>Select all answers that apply, and then click CHECK.</emphasis>
+								</para>
+								<para>Mountain bikes use a set of gears that include:</para>
+							</description>
+						</lcQuestion>
+						<lcAnswerOptionGroup>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Chain rings</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Brake lever</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Cassettes/cogs</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Stem</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+						</lcAnswerOptionGroup>
+					</lcMultipleSelect>
+				</lcInteraction>
+				<lcInteraction id="ia-001">
+					<lcSingleSelect>
+						<lcQuestion>
+							<description>
+								<para>
+									<emphasis>Select your answer, and then click CHECK.</emphasis>
+								</para>
+								<para>The front derailleur is installed on the bike's ___________.</para>
+							</description>
+						</lcQuestion>
+						<lcAnswerOptionGroup>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Chain</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Pedal</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Seat Tube</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Shifter</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+						</lcAnswerOptionGroup>
+					</lcSingleSelect>
+				</lcInteraction>
+				<lcInteraction id="ia-002">
+					<lcSingleSelect>
+						<lcQuestion>
+							<description>
+								<para>
+									<emphasis>Select your answer, and then click CHECK.</emphasis>
+								</para>
+								<para>A mounting bolt connects the rear derailleur to the __________.</para>
+							</description>
+						</lcQuestion>
+						<lcAnswerOptionGroup>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Frame</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Seat Tube</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Chain</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Wheel</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+						</lcAnswerOptionGroup>
+					</lcSingleSelect>
+				</lcInteraction>
+				<lcInteraction id="ia-001">
+					<lcSingleSelect>
+						<lcQuestion>
+							<description>
+								<para>
+									<emphasis>Select your answer, and then click CHECK.</emphasis>
+								</para>
+								<para>Thumb shifters are attached to the bike's __________.</para>
+							</description>
+						</lcQuestion>
+						<lcAnswerOptionGroup>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Frame</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Handle Bar</para>
+									</description>
+								</lcAnswerOptionContent>
+								<lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Fork</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+							<lcAnswerOption>
+								<lcAnswerOptionContent>
+									<description>
+										<para>Stem</para>
+									</description>
+								</lcAnswerOptionContent>
+							</lcAnswerOption>
+						</lcAnswerOptionGroup>
+					</lcSingleSelect>
+				</lcInteraction>
+			</learningAssessment>
+		</learning>
+	</content>
+</dmodule>
