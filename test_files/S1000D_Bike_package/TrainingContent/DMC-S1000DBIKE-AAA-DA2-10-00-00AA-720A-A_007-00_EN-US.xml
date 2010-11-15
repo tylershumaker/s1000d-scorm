@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1 NDATA JPEG'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1 NDATA JPEG'>
+]>
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <rdf:Description>
+    <dc:creator>U8025</dc:creator>
+    <dc:title>Stem - Install procedures</dc:title>
+    <dc:subject>Stem - Install procedures</dc:subject>
+    <dc:publisher>U8025</dc:publisher>
+    <dc:contributor>U8025</dc:contributor>
+    <dc:date>2008-08-01</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA2-10-00-00AA-720A-A_007-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51_cv51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="007" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2008" month="08" day="01" />
+        <dmTitle>
+          <techName>Stem</techName>
+          <infoName>Install procedures</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus issueType="revised">
+      <security securityClassification="01" commercialClassification="cc51" caveat="cv51" />
+      <dataRestrictions>
+        <restrictionInstructions>
+          <dataDistribution>To be made available to all S1000D users.</dataDistribution>
+          <exportControl>
+            <exportRegistrationStmt>
+              <simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+            </exportRegistrationStmt>
+          </exportControl>
+          <dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+          <dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+          <dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+        </restrictionInstructions>
+        <restrictionInfo>
+          <copyright>
+            <copyrightPara>
+              <emphasis>Copyright (C) 2008</emphasis> by each of the following organizations:<randomList><listItem><para>AeroSpace and Defence Industries Associations of Europe - ASD.</para></listItem><listItem><para>Ministries of Defence of the member countries of ASD.</para></listItem></randomList></copyrightPara>
+            <copyrightPara>
+              <emphasis>Limitations of Liability:</emphasis>
+            </copyrightPara>
+            <copyrightPara>
+              <randomList>
+                <listItem>
+                  <para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+                </listItem>
+                <listItem>
+                  <para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+                </listItem>
+                <listItem>
+                  <para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+                </listItem>
+              </randomList>
+            </copyrightPara>
+          </copyright>
+          <policyStatement>TPSMG TOR 001</policyStatement>
+          <dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+        </restrictionInfo>
+      </dataRestrictions>
+      <responsiblePartnerCompany enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </originator>
+      <applicCrossRefTableRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D">
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D" />
+          </dmRefIdent>
+        </dmRef>
+      </applicCrossRefTableRef>
+      <applic>
+        <displayText>
+          <simplePara>Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)</simplePara>
+        </displayText>
+        <evaluate andOr="and">
+          <assert applicPropertyIdent="type" applicPropertyType="prodattr" applicPropertyValues="Mountain bicycle" />
+          <evaluate andOr="or">
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Mountain storm" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk1" />
+            </evaluate>
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Brook trekker" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk9" />
+            </evaluate>
+          </evaluate>
+        </evaluate>
+      </applic>
+      <techStandard>
+        <authorityInfoAndTp>
+          <authorityInfo>20010131</authorityInfo>
+          <techPubBase>Bike book</techPubBase>
+        </authorityInfoAndTp>
+        <authorityExceptions />
+        <authorityNotes />
+      </techStandard>
+      <brexDmRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D_007-00">
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="007" inWork="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <firstVerification verificationType="tabtop" />
+      </qualityAssurance>
+      <systemBreakdownCode>DA210</systemBreakdownCode>
+      <systemBreakdownCode>BY141</systemBreakdownCode>
+      <skillLevel skillLevelCode="sk02" />
+      <reasonForUpdate>
+        <simplePara>totally revised</simplePara>
+        <simplePara>Schema cleanup element/attribute renaming</simplePara>
+      </reasonForUpdate>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <refs>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-20-00-00AA-720A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Handlebar</techName>
+            <infoName>Install procedures</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+    </refs>
+    <procedure>
+      <preliminaryRqmts>
+        <reqCondGroup>
+          <reqCondNoRef>
+            <reqCond>Make sure the bicycle is held safely on a work stand with the front wheel free of the ground</reqCond>
+          </reqCondNoRef>
+        </reqCondGroup>
+        <reqPersons>
+          <person man="A">
+            <personCategory personCategoryCode="Bike Rider" />
+            <personSkill skillLevelCode="sk02" />
+            <trade>Operator</trade>
+            <estimatedTime unitOfMeasure="h">1,0</estimatedTime>
+          </person>
+        </reqPersons>
+        <reqSupportEquips>
+          <supportEquipDescrGroup>
+            <supportEquipDescr id="seq-0001">
+              <name>Clean dry cloth</name>
+              <identNumber>
+                <manufacturerCode>KZ666</manufacturerCode>
+                <partAndSerialNumber>
+                  <partNumber>BSK-TLST-001-12</partNumber>
+                </partAndSerialNumber>
+              </identNumber>
+              <reqQuantity unitOfMeasure="EA">1</reqQuantity>
+            </supportEquipDescr>
+            <supportEquipDescr>
+              <name>Work stand</name>
+              <identNumber>
+                <manufacturerCode>KZ555</manufacturerCode>
+                <partAndSerialNumber>
+                  <partNumber>Stand-001</partNumber>
+                </partAndSerialNumber>
+              </identNumber>
+              <reqQuantity unitOfMeasure="EA">1</reqQuantity>
+            </supportEquipDescr>
+          </supportEquipDescrGroup>
+        </reqSupportEquips>
+        <reqSupplies>
+          <supplyDescrGroup>
+            <supplyDescr id="sup-0001">
+              <name>Rubbing alcohol</name>
+              <identNumber>
+                <manufacturerCode>KZ222</manufacturerCode>
+                <partAndSerialNumber>
+                  <partNumber>LL-002</partNumber>
+                </partAndSerialNumber>
+              </identNumber>
+              <reqQuantity unitOfMeasure="L">1</reqQuantity>
+            </supplyDescr>
+            <supplyDescr id="sup-0002">
+              <name>General lubricant</name>
+              <identNumber>
+                <manufacturerCode>KZ222</manufacturerCode>
+                <partAndSerialNumber>
+                  <partNumber>LL-001</partNumber>
+                </partAndSerialNumber>
+              </identNumber>
+              <reqQuantity unitOfMeasure="L">1</reqQuantity>
+            </supplyDescr>
+          </supplyDescrGroup>
+        </reqSupplies>
+        <reqSpares>
+          <spareDescrGroup>
+            <spareDescr id="spa-0002">
+              <name>Stem</name>
+              <identNumber>
+                <manufacturerCode>KZ555</manufacturerCode>
+                <partAndSerialNumber>
+                  <partNumber>St-001</partNumber>
+                </partAndSerialNumber>
+              </identNumber>
+              <reqQuantity unitOfMeasure="EA">1</reqQuantity>
+            </spareDescr>
+            <spareDescr id="spa-0001">
+              <name>Stem bolt</name>
+              <identNumber>
+                <manufacturerCode>KZ555</manufacturerCode>
+                <partAndSerialNumber>
+                  <partNumber>St-001-01</partNumber>
+                </partAndSerialNumber>
+              </identNumber>
+              <reqQuantity unitOfMeasure="EA">1</reqQuantity>
+            </spareDescr>
+          </spareDescrGroup>
+        </reqSpares>
+        <reqSafety>
+          <safetyRqmts>
+            <caution>
+              <warningAndCautionPara>Do not tighten the stem bolt too much. You can cause damage to the headset bearings if you tighten the stem too much.</warningAndCautionPara>
+            </caution>
+            <caution>
+              <warningAndCautionPara>The stem bolt does not safety the stem.</warningAndCautionPara>
+            </caution>
+            <note>
+              <notePara>The stem must point forward in alignment with the wheel.</notePara>
+            </note>
+          </safetyRqmts>
+        </reqSafety>
+      </preliminaryRqmts>
+      <mainProcedure>
+        <proceduralStep>
+          <para>
+						Remove all the rust and the corrosion with a <internalRef internalRefId="seq-0001" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0001" /> and <internalRef internalRefId="sup-0001" internalRefTargetType="supply" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0001" />.
+					</para>
+        </proceduralStep>
+        <proceduralStep>
+          <para>Install the stem.</para>
+          <proceduralStep>
+            <para>
+							Use a <internalRef internalRefId="sup-0002" internalRefTargetType="supply" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0002" /> and lubricate: <randomList listItemPrefix="pf02"><listItem><para>
+										the threads of the <internalRef internalRefId="spa-0002" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> and <internalRef internalRefId="spa-0001" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /></para></listItem><listItem><para>the sides</para></listItem><listItem><para>the top of the wedge</para></listItem></randomList></para>
+            <figure>
+              <title>Lubricate the thread</title>
+              <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1" xlink:title="Lubricate the thread" infoEntityIdent="ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1" />
+            </figure>
+          </proceduralStep>
+          <proceduralStep>
+            <para>
+							Install the <internalRef internalRefId="spa-0002" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> in the steerer tube.
+						</para>
+            <figure>
+              <title>Tighten the bolt</title>
+              <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1" xlink:title="Tighten the bolt" infoEntityIdent="ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1" />
+            </figure>
+          </proceduralStep>
+          <proceduralStep>
+            <para>
+							Adjust to align the <internalRef internalRefId="spa-0002" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> with the wheel and tighten the <internalRef internalRefId="spa-0001" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> firmly.
+						</para>
+          </proceduralStep>
+        </proceduralStep>
+        <proceduralStep>
+          <para>
+						Install the handlebars (refer to <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-20-00-00AA-720A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef>).
+					</para>
+        </proceduralStep>
+      </mainProcedure>
+      <closeRqmts>
+        <reqCondGroup>
+          <noConds />
+        </reqCondGroup>
+      </closeRqmts>
+    </procedure>
+  </content>
+</dmodule>

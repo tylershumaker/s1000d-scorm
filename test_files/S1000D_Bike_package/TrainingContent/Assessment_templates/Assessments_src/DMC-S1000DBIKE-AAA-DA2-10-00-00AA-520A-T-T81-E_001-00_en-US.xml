@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../../app/s1000d_4.xslt'?>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Stem - Remove Procedures</dc:title>
+    <dc:subject>Stem - Remove Procedures</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-07-30</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA2-10-00-00AA-520A-T-T81-E_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="T" learnCode="T81" learnEventCode="E" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="000" inWork="01" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="30" />
+        <dmTitle>
+          <techName>Remove Procedures</techName>
+          <infoName>Stem</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"></dmCode>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningAssessment>
+        <title></title>
+        <lcInteraction>
+          <lcSequencing>
+            <title></title>
+            <!--FLASH PROGRAMMERS NOTE: Randomize the display order of answer options - lcValue attribute indicates correct order after user sequencing-->
+            <lcQuestion id="ques-001">
+              <description>
+                <para>Place the steps for removing a bike's stem in the correct order. Then use the up and down arrows to move the step to the correct position. Repeat for each step, and then click NEXT.</para>
+              </description>
+            </lcQuestion>
+            <lcSequenceOptionGroup>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the handlebar.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="1" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the bolt in the center of the stem cap.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="2" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the clamp bolts.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="3" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the stem.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="4" />
+              </lcSequenceOption>
+            </lcSequenceOptionGroup>
+          </lcSequencing>
+        </lcInteraction>
+      </learningAssessment>
+    </learning>
+  </content>
+</dmodule>
