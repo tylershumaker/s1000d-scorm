@@ -43,7 +43,7 @@ public class PreProcessTest
     {
         ctx = new ContextBase();
         ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator
-                + "test_files\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+                + "test_files\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
         
         File srcPath = new File(src);
         dstPath = new File(System.getProperty("user.dir") + File.separator +
@@ -90,7 +90,7 @@ public class PreProcessTest
         try
         {
             setUp(System.getProperty("user.dir") + File.separator +
-            "test_files\\resource_package");
+            "test_files\\bike_resource_package");
             preProcess.execute(ctx);
             File test = (File)ctx.get(Keys.XML_SOURCE);
             assertEquals("imsmanifest.xml", test.getName());
@@ -128,43 +128,43 @@ public class PreProcessTest
         }
     }
     
-    @Test
-    public void createResourceMap()
-    {
-        try
-        {
-            setUp(System.getProperty("user.dir") + File.separator +
-            "test_files\\resource_package");
-            ((PreProcess)preProcess).createResourceMap(dstPath.getAbsolutePath());
-        }
-        catch(JDOMException e)
-        {
-            e.printStackTrace();
-        }
-        catch (ResourceMapException rme)
-        {
-            rme.printTrace();
-        }
-    }
-
-    @Test
-    public void createResourceMapCollision()
-    {
-        try
-        {
-            setUp(System.getProperty("user.dir") + File.separator +
-            "test_files\\resource_package_collision");
-            ((PreProcess)preProcess).createResourceMap(dstPath.getAbsolutePath());
-        }
-        catch(JDOMException e)
-        {
-            e.printStackTrace();
-        }
-        catch (ResourceMapException rme)
-        {
-            rme.printTrace();
-        }
-    }
+//    @Test
+//    public void createResourceMap()
+//    {
+//        try
+//        {
+//            setUp(System.getProperty("user.dir") + File.separator +
+//            "test_files\\resource_package");
+//            ((PreProcess)preProcess).createResourceMap(dstPath.getAbsolutePath());
+//        }
+//        catch(JDOMException e)
+//        {
+//            e.printStackTrace();
+//        }
+//        catch (ResourceMapException rme)
+//        {
+//            rme.printTrace();
+//        }
+//    }
+//
+//    @Test
+//    public void createResourceMapCollision()
+//    {
+//        try
+//        {
+//            setUp(System.getProperty("user.dir") + File.separator +
+//            "test_files\\resource_package_collision");
+//            ((PreProcess)preProcess).createResourceMap(dstPath.getAbsolutePath());
+//        }
+//        catch(JDOMException e)
+//        {
+//            e.printStackTrace();
+//        }
+//        catch (ResourceMapException rme)
+//        {
+//            rme.printTrace();
+//        }
+//    }
     
     static public boolean deleteDirectory(File path) {
         if( path.exists() ) {
