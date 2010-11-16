@@ -39,11 +39,7 @@
 			<metadata>
 				<schema>ADL SCORM</schema>
 				<schemaversion>2004 3rd Edition</schemaversion>
-        <!--<xsl:element name="metadata">-->
-          <!--<xsl:text>-->
-          <xsl:copy-of select="scormContentPackage/identAndStatusSection/lom:lom" />
-          <!--</xsl:text>-->
-        <!--</xsl:element>-->
+         <!--  <xsl:copy-of select="scormContentPackage/identAndStatusSection/lom:lom" /> -->
 			</metadata>
 			<!--Add organizations tree element -->
 			<xsl:element name="organizations">
@@ -108,16 +104,14 @@
 		<xsl:variable name="launchPage">
 			<xsl:text>index.htm</xsl:text>
 		</xsl:variable>
-    <resource identifer="RES-{$res_ident}" type="webcontent"
+    <resource identifier="RES-{$res_ident}" type="webcontent"
 			adlcp:scormtype="sco" href="{$launchPage}">
 
       <xsl:element name="metadata">
-        <!--<xsl:text>-->
-          <xsl:copy-of select="../lom:lom" />
-        <!--</xsl:text>-->
+        
+         <!-- <xsl:copy-of select="../lom:lom" />-->
+  
       </xsl:element>
-      <file href="index.htm"/>
-      
       <xsl:for-each select="dmRef/dmRefIdent">
         <xsl:variable name="mic">
           <xsl:value-of select="dmCode/@modelIdentCode" />
@@ -186,20 +180,23 @@
 
         <xsl:variable name="inwork">
           <xsl:value-of select="issueInfo/@inWork" />
-          <xsl:if test='string-length(language/@languageIsoCode)>0 '>
+          <xsl:if test='string-length(/language/@languageIsoCode)>0 '>
             <xsl:text>_</xsl:text>
           </xsl:if>
         </xsl:variable>
 
         <xsl:variable name="lang_code">
-          <xsl:value-of select="language/@languageIsoCode" />
-          <xsl:if test='string-length(language/@languageIsoCode)>0'>
+          <xsl:value-of select="/language/@languageIsoCode" />
+          <xsl:if test='string-length(/language/@languageIsoCode)>0'>
             <xsl:text>-</xsl:text>
           </xsl:if>
         </xsl:variable>
 
         <xsl:variable name="lang_country">
-          <xsl:value-of select="language/@countryIsoCode" />
+          <xsl:value-of select="/language/@countryIsoCode" />
+          <xsl:if test='string-length(/language/@countryIsoCode)>0'>
+            <xsl:text>-</xsl:text>
+          </xsl:if>
         </xsl:variable>
 
         <!--concat the variables from the scoentryAddress to form the map urn 
@@ -221,7 +218,8 @@
         <!--query the external urn map file to resolve the DM (file) urn string. 
 					NOTE: all relative paths to URN resource map must equate! -->
         <xsl:variable name="theFileName">
-          <xsl:value-of select="document('urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" />
+          <xsl:value-of
+						select="document('./urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" />
         </xsl:variable>
         <!--Show comment to identify missing or faulty DM resources -->
         <xsl:if test='string-length($theFileName)=0'>
@@ -231,7 +229,7 @@
           </xsl:comment>
         </xsl:if>
         <!--Add the resource file element -->
-        <file href="{$theFileName}" />
+        <dependency identifierref="{$infoIdent}" />
       </xsl:for-each>
     </resource>
 	</xsl:template>
@@ -239,5 +237,4 @@
   <xsl:template match="identAndStatusSection/lom:lom">
     <xsl:copy-of select="." />
   </xsl:template>
-
 </xsl:stylesheet>
