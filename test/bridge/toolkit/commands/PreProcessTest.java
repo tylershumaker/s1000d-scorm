@@ -92,14 +92,25 @@ public class PreProcessTest
             setUp(System.getProperty("user.dir") + File.separator +
             "test_files\\bike_resource_package");
             preProcess.execute(ctx);
-            File test = (File)ctx.get(Keys.XML_SOURCE);
-            assertEquals("imsmanifest.xml", test.getName());
-            
+            Document returned = (Document)ctx.get(Keys.XML_SOURCE);
+
             XMLParser parser = new XMLParser();
-            Document doc =  parser.getDoc(test);
-            XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-            String returned = outputter.outputString(doc);
-            System.out.println(returned);
+            Document expected = parser.getDoc(new File(System.getProperty("user.dir") + File.separator +
+            "test_files\\bike_imsmanifest_after_preprocess.xml"));
+
+            assertEquals(expected.getRootElement().getName(), 
+                         returned.getRootElement().getName());
+            assertEquals(expected.getRootElement().getChildren().size(), 
+                         returned.getRootElement().getChildren().size());
+            assertEquals(expected.getRootElement().getChild("resources", null).getChildren().size(),
+                         returned.getRootElement().getChild("resources", null).getChildren().size());
+            assertEquals(expected.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size(),
+                         returned.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size());            
+            
+//            XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+//            String output = outputter.outputString(returned);
+//            System.out.println(output);
+            
         }
         catch (Exception e)
         {

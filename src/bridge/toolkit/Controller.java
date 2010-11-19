@@ -27,8 +27,7 @@ public class Controller
     * Location of the XML configuration file that defines and configures 
     * commands and command chains to be registered in a Catalog. 
     */
-    private static final String CONFIG_FILE = System.getProperty("user.dir")
-            + File.separator + "conf\\chain-config.xml";
+    private static final String CONFIG_FILE = "conf/chain-config.xml";
 
     /**
      * Class to parse the contents of an XML configuration file 
@@ -61,7 +60,7 @@ public class Controller
         {
             try
             {
-                parser.parse(new File(CONFIG_FILE).toURI().toURL());
+                parser.parse(this.getClass().getResource(CONFIG_FILE));
             }
             catch (MalformedURLException e)
             {
@@ -91,6 +90,7 @@ public class Controller
                 + "test_files\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
         ctx.put(Keys.RESOURCE_PACKAGE, System.getProperty("user.dir") + File.separator +
                 "test_files\\bike_resource_package");
+        
         try
         {
             toolkit.execute(ctx);

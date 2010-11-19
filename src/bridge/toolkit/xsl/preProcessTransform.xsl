@@ -208,26 +208,29 @@
 						  $learneventcode,$issno,$inwork,$lang_code,$lang_country)" />
         <!--Configure the conformant resource mapping URN for queried document 
 					search in urn_resource_map file -->
-        <xsl:variable name="urn_prefix">
+        <!--  <xsl:variable name="urn_prefix">
           <xsl:value-of select="'URN:S1000D:'" />
         </xsl:variable>
-
+		
         <xsl:variable name="urn_string">
           <xsl:value-of select="concat($urn_prefix, $infoIdent)" />
         </xsl:variable>
+        -->
         <!--query the external urn map file to resolve the DM (file) urn string. 
 					NOTE: all relative paths to URN resource map must equate! -->
-        <xsl:variable name="theFileName">
+        <!-- <xsl:variable name="theFileName">
           <xsl:value-of
 						select="document('./urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" />
         </xsl:variable>
+        -->
         <!--Show comment to identify missing or faulty DM resources -->
-        <xsl:if test='string-length($theFileName)=0'>
+        <!--  <xsl:if test='string-length($theFileName)=0'>
           <xsl:comment>
             Unable to locate resource:
             <xsl:value-of select='$infoIdent' />
           </xsl:comment>
         </xsl:if>
+        -->
         <!--Add the resource file element -->
         <dependency identifierref="{$infoIdent}" />
       </xsl:for-each>

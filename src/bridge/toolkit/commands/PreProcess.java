@@ -9,16 +9,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
-//import java.io.FilenameFilter;
-//import java.io.StringWriter;
 
-import java.io.IOException;
 import java.util.ArrayList;
-//import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-//import java.util.ListIterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -29,10 +24,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-//import org.apache.commons.chain.Command;
-//import org.jaxen.BaseXPath;
-//import org.jaxen.JaxenException;
-//import org.apache.commons.chain.Context;
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
 import org.jdom.Attribute;
@@ -40,9 +31,6 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.Namespace;
-//import org.jdom.filter.ElementFilter;
-//import org.jdom.filter.Filter;
-import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jdom.xpath.XPath;
@@ -58,43 +46,58 @@ public class PreProcess implements Command
     /**
      * Location of the XSLT transform file.
      */
-    private static final String TRANFORM_FILE = System.getProperty("user.dir") + File.separator
-            + "xsl\\preProcessTransform.xsl";
+    private static final String TRANSFORM_FILE = "../xsl/preProcessTransform.xsl";
 
+    private static String transform;
+    
     private static String src_dir;
 
     public PreProcess()
     {
         xmlParser = new XMLParser();
     }
-    
+
+    @SuppressWarnings("unchecked")
     public boolean execute(Context ctx)
     {
-        if ((ctx.get(Keys.SCPM_FILE) != null) && 
-            (ctx.get(Keys.RESOURCE_PACKAGE) != null))
+        if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
 
-            src_dir = (String)ctx.get(Keys.RESOURCE_PACKAGE);
-            File[] src_files = getSourceFiles(src_dir);
-
+            src_dir = (String) ctx.get(Keys.RESOURCE_PACKAGE);
+            List<File> src_files = new ArrayList<File>(); 
+            try
+            {
+                src_files = getSourceFiles(src_dir);
+            }
+            catch(NullPointerException npe)
+            {
+                System.out.println("The 'Resource Package' is empty.");
+                return PROCESSING_COMPLETE;
+            }
+            
+            //URN_RESOURCE_MAP = new File(URN_MAP);
+            
             // WRITE THE URN MAP
-            writeURNMap(src_files);
+//            writeURNMap(src_files);
 
-            urn_map = xmlParser.getDoc(new File(System.getProperty("user.dir") + File.separator + "xsl//urn_resource_map.xml"));
+            urn_map = writeURNMap(src_files);
             
-            doTransform((String)ctx.get(Keys.SCPM_FILE));
-            
+            transform = this.getClass().getResource(TRANSFORM_FILE).getFile();
+            System.out.println(transform);
+
+            doTransform((String) ctx.get(Keys.SCPM_FILE));
+
             // ADD RESOURCE TYPE ASSETS
             addResources(urn_map);
 
             ctx.put(Keys.XML_SOURCE, manifest);
-            
+
             System.out.println("CONVERSION OF SCPM TO IMSMANIFEST SUCCESSSFULL!!!!");
         }
         else
         {
-            System.out.println("One of the required Context entries for the " +
-                    this.getClass().getSimpleName()+" command to be executed was null");
+            System.out.println("One of the required Context entries for the " + this.getClass().getSimpleName()
+                    + " command to be executed was null");
             return PROCESSING_COMPLETE;
         }
         return CONTINUE_PROCESSING;
@@ -130,302 +133,327 @@ public class PreProcess implements Command
             resources.addContent(resource);
             resource.setNamespace(ns);
 
-//            @SuppressWarnings("unused")
-//            boolean success = writeManifest(manifest);
+            // @SuppressWarnings("unused")
+            // boolean success = writeManifest(manifest);
 
             System.out.println("RESOURCE ADDED: " + the_name);
         }
         mapDependencies();
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings(
+    { "unchecked", "rawtypes" })
     private static void mapDependencies()
     {
-          //build the manifest to get the added resource elements
-          //manifest = buildManifest();
-          //***************************************************************
-          Namespace ns = Namespace.getNamespace("ns","http://www.imsglobal.org/xsd/imscp_v1p1");
-          @SuppressWarnings("unused")
-          Namespace adlcpNS = Namespace.getNamespace("adlcp","http://www.adlnet.org/xsd/adlcp_v1p3");
-          Map<String, List<String>> sco_map = new HashMap<String, List<String>>();
-          
-          // get the manifest sco resources
-          XPath xp;
-          List<Element> scos = null;
-          try {
-                xp = XPath.newInstance("//ns:resource[@adlcpNS:scormtype='sco']");
-                xp.addNamespace("ns","http://www.imsglobal.org/xsd/imscp_v1p1");
-                xp.addNamespace("adlcpNS","http://www.adlnet.org/xsd/adlcp_v1p3");
-                scos = (ArrayList)xp.selectNodes(manifest);
-          } catch (JDOMException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-          }
-          //iterate through the sco list 
-          Iterator <Element> iter = scos.iterator();
-          while(iter.hasNext())
-          {
-                Element sco = iter.next();
-                String sco_identifier = sco.getAttributeValue("identifier");
-//              CHANGED STW 11/16 - get list of sco dependencies vice files - use the identifierref to get the resource identifer/href
-//              List<Element> resFiles = sco.getChildren("file", ns);
-                List<Element> resFiles = sco.getChildren("dependency", ns);
-                
-                List <String> idrefs = new ArrayList<String>();
-                for(int i = 0;i<resFiles.size();i++)
+        // build the manifest to get the added resource elements
+        // manifest = buildManifest();
+        // ***************************************************************
+        Namespace ns = Namespace.getNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+        @SuppressWarnings("unused")
+        Namespace adlcpNS = Namespace.getNamespace("adlcp", "http://www.adlnet.org/xsd/adlcp_v1p3");
+        Map<String, List<String>> sco_map = new HashMap<String, List<String>>();
+
+        // get the manifest sco resources
+        XPath xp;
+        List<Element> scos = null;
+        try
+        {
+            xp = XPath.newInstance("//ns:resource[@adlcpNS:scormtype='sco']");
+            xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+            xp.addNamespace("adlcpNS", "http://www.adlnet.org/xsd/adlcp_v1p3");
+            scos = (ArrayList) xp.selectNodes(manifest);
+        }
+        catch (JDOMException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        // iterate through the sco list
+        Iterator<Element> iter = scos.iterator();
+        while (iter.hasNext())
+        {
+            Element sco = iter.next();
+            String sco_identifier = sco.getAttributeValue("identifier");
+            // CHANGED STW 11/16 - get list of sco dependencies vice files - use
+            // the identifierref to get the resource identifer/href
+            // List<Element> resFiles = sco.getChildren("file", ns);
+            List<Element> resFiles = sco.getChildren("dependency", ns);
+
+            List<String> idrefs = new ArrayList<String>();
+            for (int i = 0; i < resFiles.size(); i++)
+            {
+                // System.out.println("HREF :" + resFiles.get(i));
+                Element resFile = resFiles.get(i);
+
+                String identifierref = (resFile.getAttributeValue("identifierref"));
+                if (identifierref != "")
                 {
-                      //System.out.println("HREF :" + resFiles.get(i));
-                      Element resFile = resFiles.get(i);
-                      
-                      String identifierref = (resFile.getAttributeValue("identifierref"));
-                      if(identifierref != "")
-                      {
-//                    String [] split = file_href.split("/");
-//                    String identifier = split[split.length-1];
-                      idrefs.add(identifierref);
-                      }
+                    // String [] split = file_href.split("/");
+                    // String identifier = split[split.length-1];
+                    idrefs.add(identifierref);
                 }
-                sco_map.put(sco_identifier,idrefs);
-          }
-          @SuppressWarnings("unused")
-          int key_len = sco_map.entrySet().size();
-          System.out.println("Processing SCO Dependencies . . . .");
-          processDeps(sco_map);
-          
+            }
+            sco_map.put(sco_identifier, idrefs);
+        }
+        @SuppressWarnings("unused")
+        int key_len = sco_map.entrySet().size();
+        System.out.println("Processing SCO Dependencies . . . .");
+        processDeps(sco_map);
+
     }
-    
+
     private static void processDeps(@SuppressWarnings("rawtypes") Map sco_map)
     {
-          Namespace default_ns = manifest.getRootElement().getChild("resources",null).getNamespace();
-          Element sco_resource = null;
-          List<String> dependencies = null;
-          XPath xp = null;
-          String sco_key;
-          
-          // the updated map will track dependency addition to the sco to prevent duplicate entries before writing to the manifest
-          //iterate the sco map entries
-          @SuppressWarnings("unchecked")
-          Iterator<Entry<String, List<String>>> iter = sco_map.entrySet().iterator();
-          while (iter.hasNext())
-          {
-                Map.Entry<String, List<String>> pairs = (Map.Entry<String, List<String>>)iter.next();
-                //store the sco identifier
-                sco_key = pairs.getKey();
-                
-                try {
-                            xp = XPath.newInstance("//ns:resource[@identifier='" + sco_key + "']");
-                      } catch (JDOMException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                      }
-                xp.addNamespace("ns","http://www.imsglobal.org/xsd/imscp_v1p1");
-                try {
-                                  sco_resource = (Element) xp.selectSingleNode(manifest);
-                      } catch (JDOMException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                      }
-          Iterator<String> value = pairs.getValue().iterator();
-          //store the icn references
-          dependencies = new ArrayList<String>();
-          while(value.hasNext())
-          {
+        Namespace default_ns = manifest.getRootElement().getChild("resources", null).getNamespace();
+        Element sco_resource = null;
+        List<String> dependencies = null;
+        XPath xp = null;
+        String sco_key;
+
+        // the updated map will track dependency addition to the sco to prevent
+        // duplicate entries before writing to the manifest
+        // iterate the sco map entries
+        @SuppressWarnings("unchecked")
+        Iterator<Entry<String, List<String>>> iter = sco_map.entrySet().iterator();
+        while (iter.hasNext())
+        {
+            Map.Entry<String, List<String>> pairs = (Map.Entry<String, List<String>>) iter.next();
+            // store the sco identifier
+            sco_key = pairs.getKey();
+
+            try
+            {
+                xp = XPath.newInstance("//ns:resource[@identifier='" + sco_key + "']");
+            }
+            catch (JDOMException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+            try
+            {
+                sco_resource = (Element) xp.selectSingleNode(manifest);
+            }
+            catch (JDOMException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            Iterator<String> value = pairs.getValue().iterator();
+            // store the icn references
+            dependencies = new ArrayList<String>();
+            while (value.hasNext())
+            {
                 Element resource = null;
                 String str_current = value.next();
-                try {
-                            xp = XPath.newInstance("//ns:resource[@identifier='" + str_current + "']");
-                      } catch (JDOMException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                      }
-                         xp.addNamespace("ns","http://www.imsglobal.org/xsd/imscp_v1p1");
-                      try {
-                            resource = (Element) xp.selectSingleNode(manifest);
-                      } catch (JDOMException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                      }
-                      String [] split = resource.getAttributeValue("href").split("/");
-                      String src_href = split[split.length-1];
+                try
+                {
+                    xp = XPath.newInstance("//ns:resource[@identifier='" + str_current + "']");
+                }
+                catch (JDOMException e)
+                {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+                try
+                {
+                    resource = (Element) xp.selectSingleNode(manifest);
+                }
+                catch (JDOMException e)
+                {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                String[] split = resource.getAttributeValue("href").split("/");
+                String src_href = split[split.length - 1];
                 String resource_path = src_dir + "//" + src_href;
                 File file = new File(resource_path);
                 Document dmDoc = xmlParser.getDoc(file);
-                //reach into the dm docs and find ICN references
+                // reach into the dm docs and find ICN references
                 List<String> icnRefs = searchForICN(dmDoc);
                 Iterator<String> icn_iter = icnRefs.iterator();
-                while(icn_iter.hasNext())
+                while (icn_iter.hasNext())
                 {
-                      String the_icn = icn_iter.next();
-                      if(!dependencies.contains(the_icn))
-                            {
-                                  dependencies.add(the_icn);
-                            }     
+                    String the_icn = icn_iter.next();
+                    if (!dependencies.contains(the_icn))
+                    {
+                        dependencies.add(the_icn);
+                    }
                 }
-                
+
                 // get the dm refs
                 List<String> dmrefs = searchForDmRefs(dmDoc, sco_resource);
                 Iterator<String> dmref_iter = dmrefs.iterator();
-                while(dmref_iter.hasNext())
+                while (dmref_iter.hasNext())
                 {
-                      String dmref = dmref_iter.next();
-                      if(!dependencies.contains(dmref))
-                            {
-                                  dependencies.add(dmref);
-                            }     
+                    String dmref = dmref_iter.next();
+                    if (!dependencies.contains(dmref))
+                    {
+                        dependencies.add(dmref);
+                    }
                 }
-          }
-          // add the dependencies
-          //Iterate the icn list add dependency elements to manifest
-          Iterator<String> dependency_iter = dependencies.iterator();
-          while(dependency_iter.hasNext())
-          {
+            }
+            // add the dependencies
+            // Iterate the icn list add dependency elements to manifest
+            Iterator<String> dependency_iter = dependencies.iterator();
+            while (dependency_iter.hasNext())
+            {
                 String identifierref = dependency_iter.next();
                 Element dependency = new Element("dependency");
-                
+
                 dependency.setAttribute("identifierref", identifierref);
                 sco_resource.addContent(dependency);
                 dependency.setNamespace(default_ns);
-                System.out.println("ICN RESOUREC: " + identifierref + " ADDED TO SCO: " + sco_key);
-          }
-          //writeManifest(manifest);
-          }           
+                System.out.println("ICN RESOURCE: " + identifierref + " ADDED TO SCO: " + sco_key);
+            }
+            // writeManifest(manifest);
+        }
     }
 
-@SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings(
+    { "unchecked", "rawtypes" })
     private static List<String> searchForDmRefs(Document dmDoc, Element sco_resource)
     {
-          Namespace ns = Namespace.getNamespace("http://www.imsglobal.org/xsd/imscp_v1p1");
-          List<String> referencedDMs = new ArrayList<String>();
-          
-    XPath xp = null;
-    
-          try {
-                xp = XPath.newInstance("//dmCode");
-          } catch (JDOMException e1) {
-                // TODO Auto-generated catch block
-                e1.printStackTrace();
-          }
-    List<Element> dmc_lst = null;
-          try {
-                dmc_lst = (ArrayList) xp.selectNodes(dmDoc);
-          } catch (JDOMException e1) {
-                // TODO Auto-generated catch block
-                e1.printStackTrace();
-          }
-          
-          int len = dmc_lst.size();
-          if(len > 0)
-          {
-                System.out.println("SIZE: " + len);
-          }
-          
-    Iterator<Element> refdms = dmc_lst.iterator();
-    while(refdms.hasNext() == true)
-    {
-          Element e = refdms.next();
-          Element theAncestor = (Element) e.getParent().getParent();
-          String dmc;
-          if(theAncestor.getName() == "dmRef")
-          {
+        Namespace ns = Namespace.getNamespace("http://www.imsglobal.org/xsd/imscp_v1p1");
+        List<String> referencedDMs = new ArrayList<String>();
+
+        XPath xp = null;
+
+        try
+        {
+            xp = XPath.newInstance("//dmCode");
+        }
+        catch (JDOMException e1)
+        {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+        List<Element> dmc_lst = null;
+        try
+        {
+            dmc_lst = (ArrayList) xp.selectNodes(dmDoc);
+        }
+        catch (JDOMException e1)
+        {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+
+        int len = dmc_lst.size();
+        if (len > 0)
+        {
+            System.out.println("SIZE: " + len);
+        }
+
+        Iterator<Element> refdms = dmc_lst.iterator();
+        while (refdms.hasNext() == true)
+        {
+            Element e = refdms.next();
+            Element theAncestor = (Element) e.getParent().getParent();
+            String dmc;
+            if (theAncestor.getName() == "dmRef")
+            {
                 dmc = "DMC-";
-                @SuppressWarnings("unchecked")
-                      List<Attribute> atts = e.getAttributes();
-                for(int i=0;i<atts.toArray().length;i++)
+                List<Attribute> atts = e.getAttributes();
+                for (int i = 0; i < atts.toArray().length; i++)
                 {
-                      if(atts.get(i).getName() == "modelIdentCode")
-                      {
+                    if (atts.get(i).getName() == "modelIdentCode")
+                    {
+                        dmc += atts.get(i).getValue() + "-";
+                    }
+                    else if (atts.get(i).getName() == "systemDiffCode")
+                    {
+                        dmc += atts.get(i).getValue() + "-";
+                    }
+                    else if (atts.get(i).getName() == "systemCode")
+                    {
+                        dmc += atts.get(i).getValue() + "-";
+                    }
+                    else if (atts.get(i).getName() == "subSystemCode")
+                    {
+                        dmc += atts.get(i).getValue();
+                    }
+                    else if (atts.get(i).getName() == "subSubSystemCode")
+                    {
+                        dmc += atts.get(i).getValue() + "-";
+                    }
+                    else if (atts.get(i).getName() == "assyCode")
+                    {
+                        dmc += atts.get(i).getValue() + "-";
+                    }
+                    else if (atts.get(i).getName() == "disassyCode")
+                    {
+                        dmc += atts.get(i).getValue();
+                    }
+                    else if (atts.get(i).getName() == "disassyCodeVariant")
+                    {
+                        dmc += atts.get(i).getValue() + "-";
+                    }
+                    else if (atts.get(i).getName() == "infoCode")
+                    {
+                        dmc += atts.get(i).getValue();
+                    }
+                    else if (atts.get(i).getName() == "infoCodeVariant")
+                    {
+                        dmc += atts.get(i).getValue() + "-";
+                    }
+                    else if (atts.get(i).getName() == "itemLocationCode")
+                    {
+                        if (atts.toArray().length > 11)
+                        {
                             dmc += atts.get(i).getValue() + "-";
-                      }
-                      else if(atts.get(i).getName() == "systemDiffCode")
-                      {
-                            dmc += atts.get(i).getValue() + "-";
-                      }
-                      else if(atts.get(i).getName() == "systemCode")
-                      {
-                            dmc += atts.get(i).getValue() + "-";
-                      }
-                      else if(atts.get(i).getName() == "subSystemCode")
-                      {
+                        }
+                        else
+                        {
                             dmc += atts.get(i).getValue();
-                      }
-                      else if(atts.get(i).getName() == "subSubSystemCode")
-                      {
-                            dmc += atts.get(i).getValue() + "-";
-                      }
-                      else if(atts.get(i).getName() == "assyCode")
-                      {
-                            dmc += atts.get(i).getValue() + "-";
-                      }
-                      else if(atts.get(i).getName() == "disassyCode")
-                      {
-                            dmc += atts.get(i).getValue();
-                      }
-                      else if(atts.get(i).getName() == "disassyCodeVariant")
-                      {
-                            dmc += atts.get(i).getValue() + "-";
-                      }
-                      else if(atts.get(i).getName() == "infoCode")
-                      {
-                            dmc += atts.get(i).getValue();
-                      }
-                      else if(atts.get(i).getName() == "infoCodeVariant")
-                      {
-                            dmc += atts.get(i).getValue() + "-";
-                      }
-                      else if(atts.get(i).getName() == "itemLocationCode")
-                      {
-                            if(atts.toArray().length > 11)
-                            {
-                                  dmc += atts.get(i).getValue()+ "-";
-                            }
-                            else
-                            {
-                                  dmc += atts.get(i).getValue();
-                            }
-                      }
-                      else if(atts.get(i).getName() == "learnCode")
-                      {
-                            dmc += atts.get(i).getValue();
-                      }
-                      else if(atts.get(i).getName() == "learnEventCode")
-                      {
-                            dmc += atts.get(i).getValue();
-                      }
-                      
+                        }
+                    }
+                    else if (atts.get(i).getName() == "learnCode")
+                    {
+                        dmc += atts.get(i).getValue();
+                    }
+                    else if (atts.get(i).getName() == "learnEventCode")
+                    {
+                        dmc += atts.get(i).getValue();
+                    }
+
                 }// end for
                 boolean found = false;
-                
-                @SuppressWarnings("unchecked")
+
                 // CHANGED STW 11/16
-                      List<Element> sco_resources = sco_resource.getChildren("dependency",ns);
+                List<Element> sco_resources = sco_resource.getChildren("dependency", ns);
                 Iterator<Element> iter = sco_resources.iterator();
                 String identifierref = "";
-                while(iter.hasNext())
+                while (iter.hasNext())
                 {
-                      Element current_el = iter.next();
-                      
-                      try {
-                                  identifierref = current_el.getAttributeValue("identifierref");
-                            } catch (Exception e1) {
-                                  // TODO Auto-generated catch block
-                                  e1.printStackTrace();
-                            }
-                      if(identifierref.contains(dmc))
-                      {
-                            found = true;
-                      }
-                }
-                if(!referencedDMs.contains(dmc) & found == false & identifierref != "")
-                {
-                      System.out.println("DMC: " + dmc);
-                      referencedDMs.add(dmc);
-                }
-          }//end if
-          
-    }// end while
-    return referencedDMs;
-    }
+                    Element current_el = iter.next();
 
+                    try
+                    {
+                        identifierref = current_el.getAttributeValue("identifierref");
+                    }
+                    catch (Exception e1)
+                    {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
+                    if (identifierref.contains(dmc))
+                    {
+                        found = true;
+                    }
+                }
+                if (!referencedDMs.contains(dmc) & found == false & identifierref != "")
+                {
+                    System.out.println("DMC: " + dmc);
+                    referencedDMs.add(dmc);
+                }
+            }// end if
+
+        }// end while
+        return referencedDMs;
+    }
 
     @SuppressWarnings(
     { "unchecked", "rawtypes" })
@@ -466,7 +494,7 @@ public class PreProcess implements Command
         Transformer transformer = null;
         try
         {
-            transformer = tFactory.newTransformer(new StreamSource(TRANFORM_FILE));
+            transformer = tFactory.newTransformer(new StreamSource(transform));
         }
         catch (TransformerConfigurationException e)
         {
@@ -489,33 +517,42 @@ public class PreProcess implements Command
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        
+
         manifest = xmlParser.getDoc(the_manifest);
 
     }
 
-    private static File[] getSourceFiles(String src_dir)
+    private static List<File> getSourceFiles(String src_dir)
     {
-        //src_dir = System.getProperty("user.dir") + File.separator + "S1000D_Bike_package\\TrainingContent";
+        // src_dir = System.getProperty("user.dir") + File.separator +
+        // "S1000D_Bike_package\\TrainingContent";
         File csdb_files = new File(src_dir);
-        File[] src_files = csdb_files.listFiles();
+
+        List<File> src_files = new ArrayList<File>();
+        File [] testVR = csdb_files.listFiles();
+        for(File file : testVR)
+        {
+            src_files.add(file);
+        }            
         return src_files;
+
     }
 
-    private static void writeURNMap(File[] src_files)
+    private static Document writeURNMap(List<File> src_files)
     {
         Document urn_map = new Document();
         Element urnResource = new Element("urn-resource");
         Element urn = null;
         String file_name = null;
-        @SuppressWarnings("unused")
         String theExt = null;
         String name = null;
-        for (int i = 0; i < src_files.length; i++)
+        Iterator<File> filesIterator = src_files.iterator();
+        while(filesIterator.hasNext())
         {
-            if (!src_files[i].isDirectory())
+            File file = filesIterator.next();
+            if (!file.isDirectory())
             {
-                file_name = src_files[i].getName();
+                file_name = file.getName();
                 String[] split = file_name.split("\\.");
                 theExt = split[split.length - 1];
                 file_name = split[0] + "." + theExt;
@@ -527,10 +564,10 @@ public class PreProcess implements Command
             }
             else
             {
-                if (src_files[i].isDirectory() & src_files[i].getName().equals("media"))
+                if (file.isDirectory() & file.getName().equals("media"))
                 {
                     // recurse the media folder
-                    File[] media_files = src_files[i].listFiles();
+                    File[] media_files = file.listFiles();
                     for (int j = 0; j < media_files.length; j++)
                     {
                         file_name = media_files[j].getName();
@@ -544,21 +581,19 @@ public class PreProcess implements Command
             }
         }
         urn_map.addContent(urnResource);
-        XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-        File temp = new File(System.getProperty("user.dir") + File.separator + "xsl//urn_resource_map.xml");
-        try
-        {
-
-            FileWriter writer = new FileWriter(temp, false);
-            outputter.output(urn_map, writer);
-            writer.close();
-        }
-        catch (java.io.IOException e)
-        {
-            e.printStackTrace();
-        }
-        // cleanup
-        urn_map = null;
+//        XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+//
+//        try
+//        {
+//            FileWriter writer = new FileWriter("urn_resourc_map.xml", false);
+//            outputter.output(urn_map, writer);
+//            writer.close();
+//        }
+//        catch (java.io.IOException e)
+//        {
+//            e.printStackTrace();
+//        }
+        return urn_map;
     }
 
     private static Element writeUrn(String name, String file_name)

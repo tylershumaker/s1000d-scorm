@@ -1,0 +1,69 @@
+<project name="Toolkit" default="main">
+
+    <property name="src.dir"     value="src"/>
+    <property name="build.dir"   value="build/classes"/>
+	<property name="lib"         value="lib"/>
+		
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+	
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includes="bridge/toolkit/,
+        	bridge/toolkit/conf/chain-config.xml">
+		<classpath>
+            <pathelement location="${lib}/jdom.jar"/>                
+            <pathelement location="${lib}/jaxen-1.1.1.jar"/>   
+            <pathelement location="${lib}/commons-beanutils-core-1.8.3.jar"/>                
+            <pathelement location="${lib}/commons-chain-1.2.jar"/>                   
+            <pathelement location="${lib}/commons-digester-2.0.jar"/>                
+            <pathelement location="${lib}/commons-logging-1.1.1.jar"/>   
+        </classpath>
+        </javac>
+    </target>
+
+    <target name="moveFiles" depends="compile">
+        <echo message="moving XML rules to Jar"/>
+
+    	<mkdir dir="${build.dir}/bridge/toolkit/conf" />
+        <copy todir="${build.dir}/bridge/toolkit/conf">
+           <fileset dir="${src.dir}/bridge/toolkit/conf">
+              <include name="*.xml"/>
+           </fileset>
+        </copy>
+    	
+    	<mkdir dir="${build.dir}/bridge/toolkit/xsl" />
+        <copy todir="${build.dir}/bridge/toolkit/xsl">
+           <fileset dir="${src.dir}/bridge/toolkit/xsl">
+              <include name="*.xsl"/>
+           </fileset>
+        </copy>
+       
+    </target>	
+	
+    <target name="jar" depends="moveFiles">
+    	
+        <jar destfile="${build.dir}/Toolkit.jar" basedir="${build.dir}" 
+        	includes="bridge/toolkit/*.class, bridge/toolkit/commands/**,
+        	          bridge/toolkit/packaging/**,
+        	          bridge/toolkit/util/**,
+        	          bridge/toolkit/conf/chain-config.xml,
+        	          bridge/toolkit/xsl/preProcessTransform.xsl">
+            <manifest>
+                <attribute name="Main-Class" value="bridge.toolkit.Controller"/>
+                <attribute name="Class-Path" value="${lib}/commons-beanutils-core-1.8.3.jar ${lib}/commons-chain-1.2.jar ${lib}/commons-digester-2.0.jar ${lib}/commons-logging-1.1.1.jar ${lib}/jdom.jar ${lib}/jaxen-1.1.1.jar"/>
+            </manifest>
+        </jar>
+        <delete dir="${build.dir}/lib"/>
+        <mkdir dir="${build.dir}/lib"/>
+        <copy file="${lib}/commons-beanutils-core-1.8.3.jar" todir="${build.dir}/lib"/>
+    	<copy file="${lib}/commons-chain-1.2.jar" todir="${build.dir}/lib"/>
+        <copy file="${lib}/commons-digester-2.0.jar" todir="${build.dir}/lib"/>
+    	<copy file="${lib}/commons-logging-1.1.1.jar" todir="${build.dir}/lib"/>    	
+    	<copy file="${lib}/jaxen-1.1.1.jar" todir="${build.dir}/lib"/> 
+	    <copy file="${lib}/jdom.jar" todir="${build.dir}/lib"/> 
+    </target>
+	
+	<target name="main" depends="clean, jar"/>
+</project>

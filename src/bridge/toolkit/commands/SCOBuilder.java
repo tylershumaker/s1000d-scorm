@@ -50,19 +50,9 @@ public class SCOBuilder implements Command
             }
 
             Document doc = (Document)ctx.get(Keys.XML_SOURCE);
-            XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-            File temp = new File(System.getProperty("user.dir") + File.separator + "xsl//imsmanifest.xml");
-            try
-            {
-                FileWriter writer = new FileWriter(temp, false);
-                outputter.output(doc, writer);
-                writer.flush();
-                writer.close();
-            }
-            catch (java.io.IOException e)
-            {
-                e.printStackTrace();
-            }                
+              XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+              String output = outputter.outputString(doc);
+              System.out.println(output);             
 
             
         }
