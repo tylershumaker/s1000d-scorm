@@ -40,7 +40,7 @@ public class ZipCreator
         try
         {
             // Create the ZIP file
-            String target = "target.zip";
+            String target = "demo.zip";
             ZipOutputStream out = new ZipOutputStream(new FileOutputStream(target));
 
             File packageDir = new File(packageLocation);
