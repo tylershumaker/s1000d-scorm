@@ -98,6 +98,10 @@ public class PreProcessTest
             Document expected = parser.getDoc(new File(System.getProperty("user.dir") + File.separator +
             "test_files\\bike_imsmanifest_after_preprocess.xml"));
 
+//          XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+//          String output = outputter.outputString(returned);
+//          System.out.println(output);
+            
             assertEquals(expected.getRootElement().getName(), 
                          returned.getRootElement().getName());
             assertEquals(expected.getRootElement().getChildren().size(), 
@@ -107,9 +111,6 @@ public class PreProcessTest
             assertEquals(expected.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size(),
                          returned.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size());            
             
-//            XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-//            String output = outputter.outputString(returned);
-//            System.out.println(output);
             
         }
         catch (Exception e)
@@ -128,7 +129,7 @@ public class PreProcessTest
         try
         {
             setUp(System.getProperty("user.dir") + File.separator +
-            "test_files\\resource_package");
+            "test_files\\resource_package_slim");
             ctx.put(Keys.SCPM_FILE, null);
             assertTrue(preProcess.execute(ctx));
         }
@@ -139,43 +140,72 @@ public class PreProcessTest
         }
     }
     
-//    @Test
-//    public void createResourceMap()
-//    {
-//        try
-//        {
-//            setUp(System.getProperty("user.dir") + File.separator +
-//            "test_files\\resource_package");
-//            ((PreProcess)preProcess).createResourceMap(dstPath.getAbsolutePath());
-//        }
-//        catch(JDOMException e)
-//        {
-//            e.printStackTrace();
-//        }
-//        catch (ResourceMapException rme)
-//        {
-//            rme.printTrace();
-//        }
-//    }
-//
-//    @Test
-//    public void createResourceMapCollision()
-//    {
-//        try
-//        {
-//            setUp(System.getProperty("user.dir") + File.separator +
-//            "test_files\\resource_package_collision");
-//            ((PreProcess)preProcess).createResourceMap(dstPath.getAbsolutePath());
-//        }
-//        catch(JDOMException e)
-//        {
-//            e.printStackTrace();
-//        }
-//        catch (ResourceMapException rme)
-//        {
-//            rme.printTrace();
-//        }
-//    }
+    
+    /**
+     * Test method for {@link bridge.toolkit.PreProcess#execute(org.apache.commons.chain.Context)}.
+     */
+    @Test
+    public void testExecuteSlimPackage()
+    {
+        try
+        {
+            setUp(System.getProperty("user.dir") + File.separator +
+            "test_files\\resource_package_slim");
+            ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator +
+            "test_files\\scpm_slim\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+            assertFalse(preProcess.execute(ctx));
+            
+//            Document returned = (Document)ctx.get(Keys.XML_SOURCE);
+//          XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+//          String output = outputter.outputString(returned);
+//          System.out.println(output);            
+        }
+        catch (Exception e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }    
+
+    @Test
+    public void createResourceMapIncorrect()
+    {
+        try
+        {
+            setUp(System.getProperty("user.dir") + File.separator +
+            "test_files\\resource_package_collision");
+            ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator +
+            "test_files\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+            assertTrue(preProcess.execute(ctx));
+        }
+        catch (Exception e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    
+    @Test
+    public void createResourcePackageEmpty()
+    {
+        try
+        {
+//            File emptyResPackage = new File(System.getProperty("user.dir") + File.separator +
+//                    "test_files\\resource_package_empty");
+//            emptyResPackage.mkdir();
+            setUp(System.getProperty("user.dir") + File.separator +
+            "test_files\\resource_package_empty");
+            ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator +
+            "test_files\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+            assertTrue(preProcess.execute(ctx));
+//            deleteDirectory(emptyResPackage);
+        }
+        catch (Exception e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }    
     
     static public boolean deleteDirectory(File path) {
         if( path.exists() ) {
