@@ -1,9 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE scormContentPackage []>
-<scormContentPackage xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" 
-xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" 
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
+<scormContentPackage xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="S1000D_4-0/xml_schema_flat/scormcontentpackage.xsd">
   <identAndStatusSection>
     <scormContentPackageAddress>
       <scormContentPackageIdent>
@@ -13,21 +9,14 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
       </scormContentPackageIdent>
       <scormContentPackageAddressItems>
         <issueDate day="01" month="12" year="2009" />
-        <scormContentPackageTitle>S1000D BIKE Learning Sample</scormContentPackageTitle>
+        <scormContentPackageTitle>
+					S1000D BIKE Learning Sample
+				</scormContentPackageTitle>
       </scormContentPackageAddressItems>
     </scormContentPackageAddress>
     <scormContentPackageStatus>
       <security securityClassification="01" />
       <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
-         <!-- my place holder for brexDMRef -->
-         <brexDmRef>
-            <dmRef>
-               <dmRefIdent>
-                  <dmCode infoCode="022" disassyCodeVariant="AA" assyCode="00" systemDiffCode="AAA" infoCodeVariant="A" subSystemCode="1" itemLocationCode="D" subSubSystemCode="0" modelIdentCode="S1000DBIKE" disassyCode="00" systemCode="D04"/>
-               </dmRefIdent>
-            </dmRef>
-         </brexDmRef>
-         <!-- end of my place holder -->      
       <scormContentPackageMedia scormContentPackageMediaCode="DKS:1" scormContentPackageMediaType=""></scormContentPackageMedia>
       <qualityAssurance>
         <unverified />
@@ -160,12 +149,11 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
           </lom:copyrightAndOtherRestrictions>
         </lom:rights>
       </lom:lom>
-      <scoEntryContent>   
+      <scoEntryContent>
         <dmRef>
           <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H30" learnEventCode="A" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="007" inWork="00" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -175,7 +163,6 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
           <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H10" learnEventCode="A" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="007" inWork="00" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -185,7 +172,6 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
           <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H11" learnEventCode="A" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="007" inWork="00" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -195,7 +181,6 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
           <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H18" learnEventCode="A" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="007" inWork="00" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -205,7 +190,6 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
           <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H19" learnEventCode="A" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="007" inWork="00" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -215,7 +199,6 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
           <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H20" learnEventCode="A" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="007" inWork="00" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -225,7 +208,6 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
           <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H40" learnEventCode="A" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="007" inWork="00" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -325,10 +307,10 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
               <lom:value>author</lom:value>
             </lom:role>
             <lom:entity>
-                     BEGIN:VCARD
-                     FN: Intelligent Decision Systems, Inc.
-                     END:VCARD
-                  </lom:entity>
+							BEGIN:VCARD
+							FN: Intelligent Decision Systems, Inc.
+							END:VCARD
+						</lom:entity>
             <lom:date>
               <lom:dateTime>2009-12-03</lom:dateTime>
               <lom:description>
@@ -360,14 +342,13 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
           <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H14" learnEventCode="B" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="001" inWork="01" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="30" />
           </dmRefAddressItems>
         </dmRef>
       </scoEntryContent>
-    </scoEntry>    
+    </scoEntry>
     <scoEntry scoEntryType="scot01">
       <scoEntryAddress>
         <scoEntryCode modelIdentCode="S1000DBIKE" scormContentPackageIssuer="06RT9" scormContentPackageNumber="00001" scormContentPackageVolume="00" />
@@ -460,9 +441,8 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
       <scoEntryContent>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="T" learnCode="T28" learnEventCode="C" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="028" infoCodeVariant="A" itemLocationCode="T" learnCode="T28" learnEventCode="C" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="001" inWork="01" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="30" />
@@ -472,13 +452,12 @@ xsi:noNamespaceSchemaLocation="xml_schema_master/scormcontentpackageSchema.xsd">
           <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="T" learnCode="T88" learnEventCode="E" />
             <language countryIsoCode="US" languageIsoCode="en" />
-            <issueInfo issueNumber="001" inWork="01" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="30" />
           </dmRefAddressItems>
         </dmRef>
       </scoEntryContent>
-    </scoEntry>    
+    </scoEntry>
   </content>
 </scormContentPackage>
