@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'?>
+<!DOCTYPE dmodule [
+	<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+	<!ENTITY ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01' NDATA JPEG >
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Steering - Description of how it is made</dc:title>
+    <dc:subject>Steering - Description of how it is made: Post-test</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-07-30</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T88E_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="T" learnCode="T88" learnEventCode="E" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="01" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="30" />
+        <dmTitle>
+          <techName>Steering</techName>
+          <infoName>Description of how it is made: Post-test</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"></dmCode>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>DA200</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningAssessment>
+        <title>Steering System - Assessment</title>
+        <lcInteraction>
+          <lcSingleSelect>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>Look at the image of the bike. Which pointer is pointing to the stem?</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01" />
+                </figure>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>A.</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>B.</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>C.</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>D.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction id="ia-002">
+          <lcSingleSelect>
+            <title>Steering System - Assessment</title>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>A standard bike's handlebar is a ___________ bar that is attached to the bike's __________.</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>horizontal / headset</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>horizontal / stem</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>horizontal / steerer tube</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>horizontal / fork</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction id="ia-003">
+          <lcSingleSelect>
+            <title>Steering System - Assessment</title>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>Which part of the steering system supplies the sideways swiveling action that allows the rider to steer the bike?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Fork</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Stem</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Headset</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Fork</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction id="ia-004">
+          <lcSingleSelect>
+            <title>Steering System - Assessment</title>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>The stem attaches the handlebar to the ________________________.</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>grips</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>frame</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>fork</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>headset</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSequencing>
+            <title>Steering System - Assessment</title>
+            <!--FLASH PROGRAMMERS NOTE: Randomize the display order of answer options - lcValue attribute indicates correct order after user sequencing-->
+            <lcQuestion>
+              <description>
+                <para>Place the steps for removing a bike's stem in the correct order. Then use the up and down arrows to move the step to the correct position. Repeat for each step, and then click NEXT.</para>
+              </description>
+            </lcQuestion>
+            <lcSequenceOptionGroup>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the handlebar.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="1"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the bolt in the center of the stem cap.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="2"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the clamp bolts.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="3"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the stem.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="4"></lcSequence>
+              </lcSequenceOption>
+            </lcSequenceOptionGroup>
+          </lcSequencing>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSequencing>
+            <title>Steering System - Assessment</title>
+            <lcQuestion>
+              <description>
+                <para>Place the steps for installing a bike's stem in the correct sequence. First, select a step. Then use the up and down arrows to move the step to the correct position. Repeat for each step, and then click NEXT.</para>
+              </description>
+            </lcQuestion>
+            <lcSequenceOptionGroup>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove any rust and corrosion with a clean, dry cloth and rubbing alcohol.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="1"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Lubricate the stem threads and bolt, sides, and top of the wedge.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="2"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Install the stem in the steerer tube.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="3"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Adjust to align the stem with the wheel.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="4"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Firmly tighten the stem bolt.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="5"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Install the handlebar.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="6"></lcSequence>
+              </lcSequenceOption>
+            </lcSequenceOptionGroup>
+          </lcSequencing>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSequencing>
+            <title>Steering System - Assessment</title>
+            <!--FLASH PROGRAMMERS NOTE: Randomize the display order of answer options - lcValue attribute indicates correct order after user sequencing-->
+            <lcQuestion>
+              <description>
+                <para>Place the steps for removing and installing a bike's handlebar in the correct order. First, select a step. Then use the up and down arrows to move the step to the correct position. Repeat for each step, and then click NEXT.</para>
+              </description>
+            </lcQuestion>
+            <lcSequenceOptionGroup>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the grips</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="1"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the brake and shift levers.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="2"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the handlebar.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="3"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Insert the handlebar into the stem.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="4"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Center the handlebar in the stem, and tighten the clamp bolt.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="5"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Replace the brake and shift levers.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="6"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Replace the grips.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="7"></lcSequence>
+              </lcSequenceOption>
+            </lcSequenceOptionGroup>
+          </lcSequencing>
+        </lcInteraction>
+        <lcInteraction id="ia-001">
+          <lcSingleSelect>
+            <title>Steering System - Assessment</title>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>A headset is a group of components that provide a rotatable interface between the bicycle _________ and the __________.</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>fork / handlebar</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>stem / frame</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>stem / handlebar</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>fork / frame</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title>Steering System - Assessment</title>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>Look at the image of the bike. Which pointer is pointing to the headset?</para>
+				  <figure>
+					  <title></title>
+					  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01" />
+				  </figure>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>A</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>B</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>C</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>D</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title>Steering System - Assessment</title>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>
+						The headset consists of many components. Which component permits the bike's fork to turn rearward and forward, allowing the rider to turn the handlebar for steering?
+					</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Ball bearings</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Bearing races</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Crown race</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Washer</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title>Steering System - Assessment</title>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>When removing the headset, it is necessary to remove which of the following?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Handlebar</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Fork</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Grips</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Stem</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSequencing>
+            <title>Steering System - Assessment</title>
+            <!--FLASH PROGRAMMERS NOTE: Randomize the display order of answer options - lcValue attribute indicates correct order after user sequencing-->
+            <lcQuestion>
+              <description>
+                <para>Place the steps for installing a bike's headset in the correct order. First, select a step. Then use the up and down arrows to move the step to the correct position. Repeat for each step, and then click NEXT.</para>
+              </description>
+            </lcQuestion>
+            <lcSequenceOptionGroup>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Install the fork on the frame.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="1"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Install the upper bearing cup.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="2"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Install the components on the steerer tube.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="3"></lcSequence>
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Install the stem.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="4"></lcSequence>
+              </lcSequenceOption>
+            </lcSequenceOptionGroup>
+          </lcSequencing>
+        </lcInteraction>
+      </learningAssessment>
+    </learning>
+  </content>
+</dmodule>
