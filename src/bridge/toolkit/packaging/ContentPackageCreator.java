@@ -36,8 +36,7 @@ public class ContentPackageCreator
     /**
      * The directory where the Content Packages will be stored in the system.
      */
-    String packagesLocation = System.getProperty("user.dir") + File.separator
-                              + "packages";
+    String packagesLocation = System.getProperty("java.io.tmpdir") + File.separator + "packages";
     
 
     /**
@@ -80,13 +79,13 @@ public class ContentPackageCreator
     public File createPackage()
     {
         
-        File cp = new File(packagesLocation);
+        File cp = new File(packagesLocation); 
         
         if(!cp.exists())
         {
             cp.mkdir();
         }
-        
+
         String newPackage = "package";
         int numberOfPackages = 0;
         String[] cpPackages = cp.list();
@@ -148,4 +147,5 @@ public class ContentPackageCreator
         
         return newCP;
     }
+      
 }
