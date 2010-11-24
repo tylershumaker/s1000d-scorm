@@ -26,16 +26,14 @@
     <target name="moveFiles" depends="compile">
         <echo message="moving XML rules to Jar"/>
 
-    	<mkdir dir="${build.dir}/bridge/toolkit/conf" />
-        <copy todir="${build.dir}/bridge/toolkit/conf">
-           <fileset dir="${src.dir}/bridge/toolkit/conf">
+        <copy todir="${build.dir}/bridge/toolkit">
+           <fileset dir="conf/bridge/toolkit">
               <include name="*.xml"/>
            </fileset>
         </copy>
     	
-    	<mkdir dir="${build.dir}/bridge/toolkit/xsl" />
-        <copy todir="${build.dir}/bridge/toolkit/xsl">
-           <fileset dir="${src.dir}/bridge/toolkit/xsl">
+        <copy todir="${build.dir}/bridge/toolkit/commands">
+           <fileset dir="xsl/bridge/toolkit/commands">
               <include name="*.xsl"/>
            </fileset>
         </copy>
@@ -48,8 +46,8 @@
         	includes="bridge/toolkit/*.class, bridge/toolkit/commands/**,
         	          bridge/toolkit/packaging/**,
         	          bridge/toolkit/util/**,
-        	          bridge/toolkit/conf/chain-config.xml,
-        	          bridge/toolkit/xsl/preProcessTransform.xsl">
+        	          bridge/toolkit/chain-config.xml,
+        	          bridge/toolkit/conmands/preProcessTransform.xsl">
             <manifest>
                 <attribute name="Main-Class" value="bridge.toolkit.Controller"/>
                 <attribute name="Class-Path" value="${lib}/commons-beanutils-core-1.8.3.jar ${lib}/commons-chain-1.2.jar ${lib}/commons-digester-2.0.jar ${lib}/commons-logging-1.1.1.jar ${lib}/jdom.jar ${lib}/jaxen-1.1.1.jar"/>
