@@ -86,8 +86,8 @@ public class Controller
         Catalog sampleCatalog = loader.createCatalog();
         Command toolkit = sampleCatalog.getCommand("Toolkit");
         Context ctx = new ContextBase();
-//        c:\workspace2\sourceForge_toolkit\test_files\bike_SCPM\SMC-S1000DBIKE-06RT9-00001-00.xml 
-//        c:\workspace2\sourceForge_toolkit\test_files\resource_package_empty\
+        
+        //hardcoded files for iitsec demo, replace with args[0] and args[1] or other hardcoded files
         ctx.put(Keys.SCPM_FILE, "c:\\toolkit_demo\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
         ctx.put(Keys.RESOURCE_PACKAGE, "c:\\toolkit_demo\\bike_resource_package\\");
         
