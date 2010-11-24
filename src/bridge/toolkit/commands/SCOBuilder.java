@@ -49,17 +49,18 @@ public class SCOBuilder implements Command
                 ctx.put(Keys.CP_PACKAGE, cpPackage);
             }
 
-            Document doc = (Document)ctx.get(Keys.XML_SOURCE);
-              XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-              String output = outputter.outputString(doc);
-              System.out.println(output);             
+//            Document doc = (Document)ctx.get(Keys.XML_SOURCE);
+//              XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+//              String output = outputter.outputString(doc);
+//              System.out.println(output);             
 
             
         }
         else
+        {
             System.out.println("Keys.XML_SOURCE was null");
-
-        //ctx.put(Keys.XML_SOURCE, "the xml doc from " + this.getClass().getSimpleName());
+            return PROCESSING_COMPLETE;
+        }
 
         return CONTINUE_PROCESSING;
     }

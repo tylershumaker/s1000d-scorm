@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,28 +37,58 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jdom.xpath.XPath;
 
+import bridge.toolkit.ResourceMapException;
 import bridge.toolkit.util.Keys;
 import bridge.toolkit.util.XMLParser;
 
 public class PreProcess implements Command
 {
+    /**
+     * 
+     */
     private static XMLParser xmlParser;
+    
+    /**
+     * 
+     */
     private static Document manifest;
+    
+    /**
+     * 
+     */
     private static Document urn_map;
+    
     /**
      * Location of the XSLT transform file.
      */
-    private static final String TRANSFORM_FILE = "../xsl/preProcessTransform.xsl";
+    private static final String TRANSFORM_FILE = "preProcessTransform.xsl";
 
-    private static String transform;
+    /**
+     * 
+     */
+    private static InputStream transform;
     
+    /**
+     * 
+     */
     private static String src_dir;
+    
+    /**
+     * 
+     */
+    private static final String CONVERSION_FAILED = "CONVERSION OF SCPM TO IMSMANIFEST WAS UNSUCCESSFULL";
 
+    /**
+     * 
+     */
     public PreProcess()
     {
         xmlParser = new XMLParser();
     }
 
+    /** 
+     * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
+     */
     @SuppressWarnings("unchecked")
     public boolean execute(Context ctx)
     {
@@ -71,31 +103,46 @@ public class PreProcess implements Command
             }
             catch(NullPointerException npe)
             {
+                System.out.println(CONVERSION_FAILED);
                 System.out.println("The 'Resource Package' is empty.");
                 return PROCESSING_COMPLETE;
             }
-            
-            //URN_RESOURCE_MAP = new File(URN_MAP);
-            
-            // WRITE THE URN MAP
-//            writeURNMap(src_files);
 
             urn_map = writeURNMap(src_files);
             
-            transform = this.getClass().getResource(TRANSFORM_FILE).getFile();
-            System.out.println(transform);
+            transform = this.getClass().getResourceAsStream(TRANSFORM_FILE);
 
-            doTransform((String) ctx.get(Keys.SCPM_FILE));
+            try
+            {
+                doTransform((String) ctx.get(Keys.SCPM_FILE));
+            }
+            catch (IOException e1)
+            {
+                // TODO Auto-generated catch block
+                System.out.println(CONVERSION_FAILED);
+                e1.printStackTrace();
+                return PROCESSING_COMPLETE;
+            }
 
             // ADD RESOURCE TYPE ASSETS
-            addResources(urn_map);
+            try
+            {
+                addResources(urn_map);
+            }
+            catch (ResourceMapException e)
+            {
+                System.out.println(CONVERSION_FAILED);
+                e.printTrace();
+                return PROCESSING_COMPLETE;
+            }
 
             ctx.put(Keys.XML_SOURCE, manifest);
 
-            System.out.println("CONVERSION OF SCPM TO IMSMANIFEST SUCCESSSFULL!!!!");
+            System.out.println("CONVERSION OF SCPM TO IMSMANIFEST SUCCESSSFULL");
         }
         else
         {
+            System.out.println(CONVERSION_FAILED);
             System.out.println("One of the required Context entries for the " + this.getClass().getSimpleName()
                     + " command to be executed was null");
             return PROCESSING_COMPLETE;
@@ -103,8 +150,12 @@ public class PreProcess implements Command
         return CONTINUE_PROCESSING;
     }
 
+    /**
+     * @param urn_map
+     * @throws ResourceMapException
+     */
     @SuppressWarnings("unchecked")
-    private static void addResources(Document urn_map)
+    private static void addResources(Document urn_map) throws ResourceMapException
     {
         Element resources = manifest.getRootElement().getChild("resources", null);
         Namespace ns = resources.getNamespace();
@@ -118,7 +169,7 @@ public class PreProcess implements Command
             Element resource = new Element("resource");
             Attribute id = new Attribute("identifier", the_name);
             Attribute type = new Attribute("type", "webcontent");
-            Attribute scormtype = new Attribute("scormtype", "resource", adlcpNS);
+            Attribute scormtype = new Attribute("scormtype", "asset", adlcpNS);
             Attribute href = new Attribute("href", the_href);
             href.setValue(the_href);
             resource.setAttribute(id);
@@ -133,21 +184,18 @@ public class PreProcess implements Command
             resources.addContent(resource);
             resource.setNamespace(ns);
 
-            // @SuppressWarnings("unused")
-            // boolean success = writeManifest(manifest);
-
-            System.out.println("RESOURCE ADDED: " + the_name);
+//            System.out.println("RESOURCE ADDED: " + the_name);
         }
         mapDependencies();
     }
 
+    /**
+     * @throws ResourceMapException
+     */
     @SuppressWarnings(
     { "unchecked", "rawtypes" })
-    private static void mapDependencies()
+    private static void mapDependencies() throws ResourceMapException
     {
-        // build the manifest to get the added resource elements
-        // manifest = buildManifest();
-        // ***************************************************************
         Namespace ns = Namespace.getNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
         @SuppressWarnings("unused")
         Namespace adlcpNS = Namespace.getNamespace("adlcp", "http://www.adlnet.org/xsd/adlcp_v1p3");
@@ -197,12 +245,26 @@ public class PreProcess implements Command
         }
         @SuppressWarnings("unused")
         int key_len = sco_map.entrySet().size();
-        System.out.println("Processing SCO Dependencies . . . .");
-        processDeps(sco_map);
+//        System.out.println("Processing SCO Dependencies . . . .");
+        try
+        {
+            processDeps(sco_map);
+        }
+        catch (JDOMException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+      
 
     }
 
-    private static void processDeps(@SuppressWarnings("rawtypes") Map sco_map)
+    /**
+     * @param sco_map
+     * @throws JDOMException
+     * @throws ResourceMapException
+     */
+    private static void processDeps(@SuppressWarnings("rawtypes") Map sco_map) throws JDOMException, ResourceMapException
     {
         Namespace default_ns = manifest.getRootElement().getChild("resources", null).getNamespace();
         Element sco_resource = null;
@@ -220,26 +282,10 @@ public class PreProcess implements Command
             Map.Entry<String, List<String>> pairs = (Map.Entry<String, List<String>>) iter.next();
             // store the sco identifier
             sco_key = pairs.getKey();
-
-            try
-            {
-                xp = XPath.newInstance("//ns:resource[@identifier='" + sco_key + "']");
-            }
-            catch (JDOMException e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            xp = XPath.newInstance("//ns:resource[@identifier='" + sco_key + "']");
             xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
-            try
-            {
-                sco_resource = (Element) xp.selectSingleNode(manifest);
-            }
-            catch (JDOMException e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            sco_resource = (Element) xp.selectSingleNode(manifest);
+
             Iterator<String> value = pairs.getValue().iterator();
             // store the icn references
             dependencies = new ArrayList<String>();
@@ -247,27 +293,22 @@ public class PreProcess implements Command
             {
                 Element resource = null;
                 String str_current = value.next();
-                try
-                {
-                    xp = XPath.newInstance("//ns:resource[@identifier='" + str_current + "']");
-                }
-                catch (JDOMException e)
-                {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+                xp = XPath.newInstance("//ns:resource[@identifier='" + str_current + "']");
                 xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+                resource = (Element) xp.selectSingleNode(manifest);
+
+                String[] split;
+                String src_href = "";
                 try
                 {
-                    resource = (Element) xp.selectSingleNode(manifest);
+                    split = resource.getAttributeValue("href").split("/");
+                    src_href = split[split.length - 1];
                 }
-                catch (JDOMException e)
+                catch (NullPointerException npe)
                 {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    throw new ResourceMapException(str_current, sco_key);
                 }
-                String[] split = resource.getAttributeValue("href").split("/");
-                String src_href = split[split.length - 1];
+                
                 String resource_path = src_dir + "//" + src_href;
                 File file = new File(resource_path);
                 Document dmDoc = xmlParser.getDoc(file);
@@ -306,12 +347,16 @@ public class PreProcess implements Command
                 dependency.setAttribute("identifierref", identifierref);
                 sco_resource.addContent(dependency);
                 dependency.setNamespace(default_ns);
-                System.out.println("ICN RESOURCE: " + identifierref + " ADDED TO SCO: " + sco_key);
+//                System.out.println("ICN RESOURCE: " + identifierref + " ADDED TO SCO: " + sco_key);
             }
-            // writeManifest(manifest);
         }
     }
 
+    /**
+     * @param dmDoc
+     * @param sco_resource
+     * @return
+     */
     @SuppressWarnings(
     { "unchecked", "rawtypes" })
     private static List<String> searchForDmRefs(Document dmDoc, Element sco_resource)
@@ -342,10 +387,10 @@ public class PreProcess implements Command
         }
 
         int len = dmc_lst.size();
-        if (len > 0)
-        {
-            System.out.println("SIZE: " + len);
-        }
+//        if (len > 0)
+//        {
+//            System.out.println("SIZE: " + len);
+//        }
 
         Iterator<Element> refdms = dmc_lst.iterator();
         while (refdms.hasNext() == true)
@@ -446,7 +491,7 @@ public class PreProcess implements Command
                 }
                 if (!referencedDMs.contains(dmc) & found == false & identifierref != "")
                 {
-                    System.out.println("DMC: " + dmc);
+//                    System.out.println("DMC: " + dmc);
                     referencedDMs.add(dmc);
                 }
             }// end if
@@ -455,6 +500,10 @@ public class PreProcess implements Command
         return referencedDMs;
     }
 
+    /**
+     * @param doc
+     * @return
+     */
     @SuppressWarnings(
     { "unchecked", "rawtypes" })
     private static List<String> searchForICN(Document doc)
@@ -487,7 +536,7 @@ public class PreProcess implements Command
         return icnRefs;
     }
 
-    private static void doTransform(String scpm_source)
+    private static void doTransform(String scpm_source) throws IOException
     {
         TransformerFactory tFactory = TransformerFactory.newInstance();
 
@@ -502,7 +551,7 @@ public class PreProcess implements Command
             e.printStackTrace();
         }
 
-        File the_manifest = new File("imsmanifest.xml");
+        File the_manifest = File.createTempFile("imsmanifest", ".xml");//new File("imsmanifest.xml");
         try
         {
             transformer.transform(new StreamSource(scpm_source), new StreamResult(new FileOutputStream(the_manifest)));
@@ -522,10 +571,12 @@ public class PreProcess implements Command
 
     }
 
+    /**
+     * @param src_dir
+     * @return
+     */
     private static List<File> getSourceFiles(String src_dir)
     {
-        // src_dir = System.getProperty("user.dir") + File.separator +
-        // "S1000D_Bike_package\\TrainingContent";
         File csdb_files = new File(src_dir);
 
         List<File> src_files = new ArrayList<File>();
@@ -538,6 +589,10 @@ public class PreProcess implements Command
 
     }
 
+    /**
+     * @param src_files
+     * @return
+     */
     private static Document writeURNMap(List<File> src_files)
     {
         Document urn_map = new Document();
@@ -581,21 +636,15 @@ public class PreProcess implements Command
             }
         }
         urn_map.addContent(urnResource);
-//        XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-//
-//        try
-//        {
-//            FileWriter writer = new FileWriter("urn_resourc_map.xml", false);
-//            outputter.output(urn_map, writer);
-//            writer.close();
-//        }
-//        catch (java.io.IOException e)
-//        {
-//            e.printStackTrace();
-//        }
+
         return urn_map;
     }
 
+    /**
+     * @param name
+     * @param file_name
+     * @return
+     */
     private static Element writeUrn(String name, String file_name)
     {
         Element urn = new Element("urn");
