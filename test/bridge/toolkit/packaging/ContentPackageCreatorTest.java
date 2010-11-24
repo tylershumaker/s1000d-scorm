@@ -57,7 +57,7 @@ public class ContentPackageCreatorTest
         vr = new ArrayList<File>();
         
         File [] testVR = new File(System.getProperty("user.dir") + File.separator +
-                                  "test_files\\resource_package").listFiles();
+                                  "test_files\\resource_package_slim").listFiles();
         for(File file : testVR)
         {
             if(file.getName().endsWith(".xml")||(file.getName().endsWith(".jpg")))
@@ -70,7 +70,7 @@ public class ContentPackageCreatorTest
         cpc.createPackage();
         
         assertTrue(new File(testFile.getAbsolutePath()).exists());
-        assertTrue(new File(testLocation+File.separator+"package3\\resources"
+        assertTrue(new File(testLocation+File.separator+"resources"
                 +File.separator+"DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml").exists());
     }
 
@@ -81,13 +81,13 @@ public class ContentPackageCreatorTest
     public void testContentPackageCreatorString()
     {
         String resourcePackage = System.getProperty("user.dir") + File.separator +
-        "test_files\\resource_package";
+        "test_files\\resource_package_slim";
         cpc = new ContentPackageCreator(resourcePackage);
         cpc.setPackagesLocation(testLocation);
         cpc.createPackage();
         cpc.createPackage();
         
-        assertTrue(new File(testLocation+File.separator+"package2\\resources"
+        assertTrue(new File(testLocation+File.separator+"resources"
                 +File.separator+"DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml").exists());
     }
     

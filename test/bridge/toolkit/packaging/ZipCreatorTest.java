@@ -28,7 +28,7 @@ public class ZipCreatorTest
    @Test
    public void testZipFiles()
    {
-      String packageLoc = System.getProperty("user.dir") + File.separator + "test_files\\Test_Bike_Package";
+      String packageLoc = System.getProperty("user.dir") + File.separator + "test_files\\bike_resource_package";
       contentPackage.setPackageLocation(packageLoc);
       contentPackage.zipFiles();
    }
