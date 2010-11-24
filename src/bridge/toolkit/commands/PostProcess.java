@@ -7,11 +7,17 @@ package bridge.toolkit.commands;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -41,7 +47,6 @@ public class PostProcess implements Command
     public boolean execute(Context ctx) throws TransformerException,
             TransformerConfigurationException, FileNotFoundException, IOException
     {
-        System.out.println(this.getClass().getSimpleName());
 
         if (ctx.get(Keys.XML_SOURCE) != null)
         {
@@ -70,24 +75,14 @@ public class PostProcess implements Command
             }
 
             File cp = (File)ctx.get(Keys.CP_PACKAGE);
-            System.out.println(cp.getAbsolutePath());
 
             CopyDirectory cd = new CopyDirectory();
             cd.copyDirectory(temp, cp);
 
-            InputStream xsd = this.getClass().getResourceAsStream("lom.xsd");
+            File xsd_loc = new File(System.getProperty("user.dir") + File.separator +
+                   "xsd");
+            cd.copyDirectory(xsd_loc, cp);
             
-            try
-            {
-                File xsd_loc = new File(convertStreamToString(xsd));
-                cd.copyDirectory(xsd_loc, cp);
-            }
-            catch (Exception e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                return PROCESSING_COMPLETE;
-            }
             //temp.delete();
             temp.deleteOnExit();
             
@@ -96,7 +91,7 @@ public class PostProcess implements Command
             zipCreator.zipFiles();
             
             cp.deleteOnExit();
-            System.out.println("zip up package");
+            System.out.println("CONTENT PACKAGE CREATION SUCCESSFULL");
         }
         else
         {
@@ -106,17 +101,17 @@ public class PostProcess implements Command
         return CONTINUE_PROCESSING;
     }
 
-    public static String convertStreamToString(InputStream is) throws Exception 
+    private List<String> getxsdFiles()
     {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
-        String line = null;
-        while ((line = reader.readLine()) != null) 
-        {
-          sb.append(line + "\n");
-        }
-        is.close();
-        return sb.toString();
-      }
+        List<String> files = new ArrayList<String>();
+        files.add("adlcp_v1p3.xsd");
+        files.add("adlnav_v1p3.xsd");
+        files.add("adlseq_v1p3.xsd");
+        files.add("lom.xsd");
+        files.add("lomCustom.xsd");
+        files.add("lomLoose.xsd");
+        files.add("lomStrict.xsd");
+        return files;
+    }
 
 }
