@@ -14,6 +14,11 @@ package bridge.toolkit;
 public class ResourceMapException extends Exception
 {
     /**
+     * 
+     */
+    private static final long serialVersionUID = 8601716686561938845L;
+
+    /**
      * The URN that has been identified as existing in two separate files.
      */
     private String urn;
@@ -22,14 +27,8 @@ public class ResourceMapException extends Exception
      * The first file that was identified and already exists in the 
      * urn_resource_map.xml file.
      */
-    private String file1;
-    
-    /**
-     * The second file that was identified and now can not be added to the 
-     * urn_resource_map.xml file.
-     */
-    private String file2;
-    
+    private String file1; 
+   
     /**
      * Constructor
      * 
@@ -39,12 +38,10 @@ public class ResourceMapException extends Exception
      * @param firstFile String that represents the first file that has already 
      * been added to the urn_resource_map.xml.
      */
-    public ResourceMapException(String urnFormat, String secondFile,
-            String firstFile)
+    public ResourceMapException(String urnFormat,String firstFile)
     {
         urn = urnFormat;
         file1 = firstFile;
-        file2 = secondFile;
     }
 
     /**
@@ -53,9 +50,12 @@ public class ResourceMapException extends Exception
     public void printTrace()
     {
         StringBuffer trace = new StringBuffer();
-        trace.append("The following " + urn +"\n");
-        trace.append("was found in both the file :" +file1+ "\n");
-        trace.append("and the file : " +file2+ ".\n");
+        trace.append("<dependency identifierref='" + urn +"' /> element\n");
+        trace.append("was found in <resource identifier='" +file1 + "'.../> element ");
+        trace.append("in the file produced by the XSL Transform.\n");
+        trace.append("There was no <resource identifier='" +urn +"'.../> element\n");
+        trace.append("found in the file produced, please check the 'Resource Package'\n");
+        trace.append("provided contains a DMC that maps the to this URN.");
         System.out.println(trace);
     }
     

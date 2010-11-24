@@ -27,7 +27,7 @@ public class Controller
     * Location of the XML configuration file that defines and configures 
     * commands and command chains to be registered in a Catalog. 
     */
-    private static final String CONFIG_FILE = "conf/chain-config.xml";
+    private static final String CONFIG_FILE = "chain-config.xml";
 
     /**
      * Class to parse the contents of an XML configuration file 
@@ -86,10 +86,10 @@ public class Controller
         Catalog sampleCatalog = loader.createCatalog();
         Command toolkit = sampleCatalog.getCommand("Toolkit");
         Context ctx = new ContextBase();
-        ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator
-                + "test_files\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
-        ctx.put(Keys.RESOURCE_PACKAGE, System.getProperty("user.dir") + File.separator +
-                "test_files\\bike_resource_package");
+//        c:\workspace2\sourceForge_toolkit\test_files\bike_SCPM\SMC-S1000DBIKE-06RT9-00001-00.xml 
+//        c:\workspace2\sourceForge_toolkit\test_files\resource_package_empty\
+        ctx.put(Keys.SCPM_FILE, "c:\\toolkit_demo\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+        ctx.put(Keys.RESOURCE_PACKAGE, "c:\\toolkit_demo\\bike_resource_package\\");
         
         try
         {
@@ -99,6 +99,7 @@ public class Controller
         {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            System.out.println(e.getCause().toString());
         }
 
     }

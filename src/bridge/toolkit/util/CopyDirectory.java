@@ -65,7 +65,7 @@ public class CopyDirectory
      * being copied to.
      * @throws IOException
      */
-    public static void copyFile(File srcFile, File destFile) throws IOException 
+    private static void copyFile(File srcFile, File destFile) throws IOException 
     {
             InputStream oInStream = new FileInputStream(srcFile);
             OutputStream oOutStream = new FileOutputStream(destFile);
