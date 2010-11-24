@@ -42,25 +42,18 @@
 	
     <target name="jar" depends="moveFiles">
     	
-        <jar destfile="${build.dir}/Toolkit.jar" basedir="${build.dir}" 
+        <jar destfile="Toolkit.jar" basedir="${build.dir}" 
         	includes="bridge/toolkit/*.class, bridge/toolkit/commands/**,
         	          bridge/toolkit/packaging/**,
         	          bridge/toolkit/util/**,
         	          bridge/toolkit/chain-config.xml,
-        	          bridge/toolkit/conmands/preProcessTransform.xsl">
+        	          bridge/toolkit/commands/preProcessTransform.xsl">
             <manifest>
                 <attribute name="Main-Class" value="bridge.toolkit.Controller"/>
                 <attribute name="Class-Path" value="${lib}/commons-beanutils-core-1.8.3.jar ${lib}/commons-chain-1.2.jar ${lib}/commons-digester-2.0.jar ${lib}/commons-logging-1.1.1.jar ${lib}/jdom.jar ${lib}/jaxen-1.1.1.jar"/>
             </manifest>
         </jar>
-        <delete dir="${build.dir}/lib"/>
-        <mkdir dir="${build.dir}/lib"/>
-        <copy file="${lib}/commons-beanutils-core-1.8.3.jar" todir="${build.dir}/lib"/>
-    	<copy file="${lib}/commons-chain-1.2.jar" todir="${build.dir}/lib"/>
-        <copy file="${lib}/commons-digester-2.0.jar" todir="${build.dir}/lib"/>
-    	<copy file="${lib}/commons-logging-1.1.1.jar" todir="${build.dir}/lib"/>    	
-    	<copy file="${lib}/jaxen-1.1.1.jar" todir="${build.dir}/lib"/> 
-	    <copy file="${lib}/jdom.jar" todir="${build.dir}/lib"/> 
+
     </target>
 	
 	<target name="main" depends="clean, jar"/>
