@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../app/rtoc_1.xslt'?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'> 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0135-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0135-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0133-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0133-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0139-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0139-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0132-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0132-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0140-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0140-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0131-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0131-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0141-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0141-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0142-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0142-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0143-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0143-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A21000-N-61331-0128-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A21000-N-61331-0128-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A10000-N-61331-0113-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A10000-N-61331-0113-A-000-01.jpeg' NDATA JPEG > 
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>VSS COVER   - Install Procedure</dc:title>
+    <dc:subject>VSS COVER   - Install Procedure</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2010-01-28</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>ANAQS20A-AA-ZG3-A-2-100000-000720-A-A-T45_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ANAQS20A" systemDiffCode="AA" systemCode="ZG3" subSystemCode="A" subSubSystemCode="2" assyCode="1000" disassyCode="00" disassyCodeVariant="000" infoCode="720" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2010" month="01" day="28" />
+        <dmTitle>
+          <techName>VSS COVER  </techName>
+          <infoName>Install Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="N"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="ANAQS20A" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>ZG3A2</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title></title>
+        <lcInstruction>
+          <description>
+            <para>Replace VSS Assembly</para>
+            <para>Position VSS assembly on the nose maintenance stand assembly, and secure using straps provided on the maintenance stand.</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Using a lint-free rag and isopropyl alcohol, clean O-ring seating surfaces of VSS and midsection. Allow to dry.</para>
+                </listItem>
+                <listItem>
+                  <para>Inspect O-ring mounting surfaces on midsection and VSS assembly for nicks and other obvious damage.</para>
+                </listItem>
+                <listItem>
+                  <para>Lubricate new O-ring, and install O-ring onto seating surface of VSS. (QA)</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0135-A-000-01" />
+            </figure>
+            <para>Replace VSS Assembly (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Slide VSS forward or aft on the nose maintenance stand slide assembly leaving enough space between VSS and midsection to allow for installation of cable connectors.</para>
+                </listItem>
+                <listItem>
+                  <para>Raise or lower VSS assembly using maintenance stand scissor jacks until VSS is at the same approximate height as midsection.</para>
+                </listItem>
+                <listItem>
+                  <para>Connect ground wires A2GND11 and A1GND17 to A3GND10.</para>
+                </listItem>
+                <listItem>
+                  <para>Position nonconductive washer on each side of A2E1 ground wire lug and install ground wire on A2E1 storage point in VSS assembly using nonconductive screw.</para>
+                </listItem>
+                <listItem>
+                  <para>Connect electrical connectors A3W15P1 and A3W15P2 to connector bracket in VSS assembly.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0133-A-000-01" />
+            </figure>
+            <para>Replace VSS Assembly</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Disconnect electrical connector A3W13P14 from connector bracket inside midsection and connect it to A2W1J11 in VSS assembly. Torque hex nut IAW AE-315SA-MMO-000.</para>
+                </listItem>
+                <listItem>
+                  <para>Connect electrical connector A3W10P19 to A2W2J12.Torque hex nut IAW AE-315SA-MMO-000.</para>
+                </listItem>
+                <listItem>
+                  <para>Connect electrical connector A3W11P20 to A2W3J13. Torque hex nut IAW AE-315SA-MMO-000.</para>
+                </listItem>
+                <listItem>
+                  <para>Connect VSS electrical connector A2W5P11 to midsection electrical connector A3W23J11. Torque hex nut IAW AE-315SA-MMO-000.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <note>
+              <notePara>NOTE—As VSS assembly is mated to midsection of towed body, manually adjust interconnecting harness to lie in open cavity near bottom of midsection.</notePara>
+            </note>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0139-A-000-01" />
+            </figure>
+            <para>Diagram Sheet 5.3-89</para>
+            <para>Replace VSS Assembly (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Position alignment pin on aft end of VSS with alignment pin hole on forward end of midsection.</para>
+                </listItem>
+                <listItem>
+                  <para>Slide VSS aft on VSS/EOID maintenance stand until VSS is seated on midsection.</para>
+                </listItem>
+                <listItem>
+                  <para>Apply O-ring lubricant to joint band assembly mating surfaces, and position joint band assembly around towed body where VSS and midsection flanges meet.</para>
+                </listItem>
+                <listItem>
+                  <para>Tap around circumference of joint band assembly using rubber mallet until joint band assembly halves are close enough together to install screws.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0132-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0140-A-000-01" />
+            </figure>
+            <para>Replace VSS Assembly (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Apply sealant to screw threads, Aqua Lube to underside of screw head, and install screws in joint band assembly.</para>
+                </listItem>
+                <listItem>
+                  <para>Alternate tightening screws and tapping around circumference of joint band assembly with rubber mallet until joint band assembly is seated on VSS and midsection mating surface flanges and screws are snug.</para>
+                </listItem>
+                <listItem>
+                  <para>Continue tapping around circumference of joint band assembly with rubber mallet. In two-step method, torque joint band assembly screws 73 to 75 in.-lb, and then 100 to 105 in.-lb. (QA)</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0131-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0132-A-000-01" />
+            </figure>
+            <para>Replace VSS Assembly (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Apply thin film of Aqua Lube to threads and under heads of screws prior to installing joint band cover.</para>
+                </listItem>
+                <listItem>
+                  <para>Position joint band cover around forward joint band assembly, and secure using screws.</para>
+                </listItem>
+                <listItem>
+                  <para>Apply thin film of Aqua Lube to threads of screws prior to installing forward port and starboard SLS fairings.</para>
+                </listItem>
+                <listItem>
+                  <para>Position forward SLS fairings on midsection, and secure with screws.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0141-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0142-A-000-01" />
+            </figure>
+            <para>Replace VSS Assembly (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Insert wax filler into screw access holes on port and starboard forward SLS fairings. Trim excess wax filler until flush with SLS fairing surface.</para>
+                </listItem>
+                <listItem>
+                  <para>Install FLS assembly.</para>
+                </listItem>
+                <listItem>
+                  <para>Leak check and pressurize towed body.</para>
+                </listItem>
+                <listItem>
+                  <para>Run PUB and OIB to verify towed body RFI status.</para>
+                </listItem>
+                <listItem>
+                  <para>Disconnect grounding strap from wing center.</para>
+                </listItem>
+                <listItem>
+                  <para>Position wing center fairing on wing center and secure using captive head screws.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0143-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A21000-N-61331-0128-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A10000-N-61331-0113-A-000-01" />
+            </figure>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

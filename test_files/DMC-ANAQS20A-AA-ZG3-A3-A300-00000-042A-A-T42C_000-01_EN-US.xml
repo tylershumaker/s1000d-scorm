@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../app/rtoc_1.xslt'?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'> 
+<!NOTATION Png SYSTEM '(Portable Network Graphics) Specification Version 1.0'> 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A3A300-N-61331-0010-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A3A300-N-61331-0010-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A3A300-N-61331-0011-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A3A300-N-61331-0011-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A3A300-N-61331-0012-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A3A300-N-61331-0012-A-000-01.png' NDATA Png > 
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>GAP FILLER SONAR   - Description of Function</dc:title>
+    <dc:subject>GAP FILLER SONAR   - Description of Function</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2010-01-28</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>ANAQS20A-AA-ZG3-A-3-A30000-000042-A-A-T42_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ANAQS20A" systemDiffCode="AA" systemCode="ZG3" subSystemCode="A" subSubSystemCode="3" assyCode="A300" disassyCode="00" disassyCodeVariant="000" infoCode="042" infoCodeVariant="A" itemLocationCode="A" learnCode="T42" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2010" month="01" day="28" />
+        <dmTitle>
+          <techName>GAP FILLER SONAR  </techName>
+          <infoName>Description of Function</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="N"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="ANAQS20A" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>ZG3A3</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title></title>
+        <lcInstruction>
+          <description>
+            <para>Component Location and Function</para>
+            <para>Center Wing Assembly (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>The Tow Cable Termination Assembly is a removable assembly mounted and secured to the forward end of the wing center section using a termination screw. The Tow Cable Termination Assembly serves as the physical attachment point for connecting the tow cable to the towed body. During mission operations, the Tow Cable Termination Assembly also serves as the towed body pivot point. As the towed body is maneuvered through the water, the Tow Cable Termination Assembly allows for side to side, and forward and back movement.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A3A300-N-61331-0010-A-000-01" />
+            </figure>
+            <para>Theory of Operation</para>
+            <para>Gap-Filler Sonar</para>
+            <para>The GFS is comprised of a set of five receiving line arrays positioned on a flat horizontal surface on the underside of the midsection.</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>The receiving arrays are electronically steered to different pointing directions. The angles are arranged to allow total coverage of the bottom swath beneath the towed body.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A3A300-N-61331-0011-A-000-01" />
+            </figure>
+            <para>Theory of Operation</para>
+            <para>Gap-Filler Sonar (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Each array has 28 elements.</para>
+                </listItem>
+                <listItem>
+                  <para>The GFS preamplifiers, one for each receive element, are housed directly behind, and as close as possible, to each of the receive elements.</para>
+                </listItem>
+                <listItem>
+                  <para>The GFS preamplifiers are followed by a receive array switching matrix. This switching matrix receives the preamplifier outputs of all 5 arrays and selects the 28 outputs of 1 array to send to the towed body processor.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A3A300-N-61331-0012-A-000-01" />
+            </figure>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>
