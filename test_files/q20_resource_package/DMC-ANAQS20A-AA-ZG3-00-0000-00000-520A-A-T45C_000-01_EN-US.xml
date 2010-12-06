@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../app/rtoc_1.xslt'?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'> 
+<!NOTATION Png SYSTEM '(Portable Network Graphics) Specification Version 1.0'> 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0075-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0075-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0076-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0076-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0077-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0077-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0078-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0078-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0079-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0079-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0080-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0080-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0081-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0081-A-000-01.png' NDATA Png > 
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>TOWED BODY FROM AIRCRAFT - Removal Procedure</dc:title>
+    <dc:subject>TOWED BODY FROM AIRCRAFT - Removal Procedure</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2010-01-28</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>ANAQS20A-AA-ZG3-0-0-000000-000520-A-A-T45_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ANAQS20A" systemDiffCode="AA" systemCode="ZG3" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="000" infoCode="520" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2010" month="01" day="28" />
+        <dmTitle>
+          <techName>TOWED BODY FROM AIRCRAFT</techName>
+          <infoName>Removal Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="N"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="ANAQS20A" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>ZG300</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title></title>
+        <lcInstruction>
+          <description>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0075-A-000-01" />
+            </figure>
+            <para>R&amp;R Procedures</para>
+            <para>Remove Towed Body from Aircraft</para>
+            <para>WARNING—Wear leather gloves when handling tow cable to prevent personnelinjury due to broken wire strands in tow cable.</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Position MHU-191/M below towed body. </para>
+                </listItem>
+                <listItem>
+                  <para>Operate CSTRS winch IAW CSTRS section of A1-H60CD-60S-000 and lower towed body onto MHU-191/M. </para>
+                </listItem>
+                <listItem>
+                  <para>Secure towed body using straps provided on the MHU-191/M. </para>
+                </listItem>
+                <listItem>
+                  <para>Continue extending tow cable to allow MHU-191/M with towed body to be moved from beneath CSTRS assembly.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0076-A-000-01" />
+            </figure>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Loosen captive screws, remove center wing fairing, and slide fairing up tow cable. </para>
+                </listItem>
+                <listItem>
+                  <para>Disconnect tow cable wet-end connector. </para>
+                </listItem>
+                <listItem>
+                  <para>Install protective caps on tow cable and hull penetration electrical connectors. </para>
+                </listItem>
+                <listItem><para>Remove screw and disconnect ground wire.</para></listItem>
+                <listItem><para>Reinstall screw removed in previous step.</para></listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0077-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0078-A-000-01" />
+            </figure>
+            <warning>
+              <warningAndCautionPara>WARNING—Removal of broken or partially broken shear pin should be done withprotective gloves to protect from injury due to sharp edges.</warningAndCautionPara>
+            </warning>
+            <para>
+              <randomList>
+                <listItem><para>Remove and discard cotter pins from shear pin, and remove shear pin from tow point clevis assembly. </para></listItem>
+                <listItem><para>Remove threaded bushings from tow point clevis assembly (if applicable). </para></listItem>
+                <listItem><para>Remove flanged bushings from towed body tow termination point.</para></listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0079-A-000-01" />
+            </figure>
+            <para>
+              <randomList>
+                <listItem><para>Remove towed body center wing fairing from tow cable. </para></listItem>
+                <listItem><para>Reinstall protective cover on towed body hull penetration electrical connector. </para></listItem>
+                <listItem><para>Place fairing on towed body wing center section and secure with screws. </para></listItem>
+                <listItem>
+                  <para>Install towed body protective cover.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0080-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0081-A-000-01" />
+            </figure>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

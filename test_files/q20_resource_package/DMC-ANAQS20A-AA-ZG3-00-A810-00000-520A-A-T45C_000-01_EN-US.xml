@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../app/rtoc_1.xslt'?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'> 
+<!ENTITY ICN-ANAQS20A-AA-ZG300A810-N-61331-0107-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG300A810-N-61331-0107-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG300A810-N-61331-0108-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG300A810-N-61331-0108-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG300A810-N-61331-0109-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG300A810-N-61331-0109-A-000-01.jpeg' NDATA JPEG > 
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>DVL FAIRINGS   - Removal Procedure</dc:title>
+    <dc:subject>DVL FAIRINGS   - Removal Procedure</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2010-01-28</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>ANAQS20A-AA-ZG3-0-0-A81000-000520-A-A-T45_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ANAQS20A" systemDiffCode="AA" systemCode="ZG3" subSystemCode="0" subSubSystemCode="0" assyCode="A810" disassyCode="00" disassyCodeVariant="000" infoCode="520" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2010" month="01" day="28" />
+        <dmTitle>
+          <techName>DVL FAIRINGS  </techName>
+          <infoName>Removal Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="N"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="ANAQS20A" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>ZG300</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title></title>
+        <lcInstruction>
+          <description>
+            <para>Inspect DVL</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Inspect DVL sensor for cracks, gouges, and other obvious damage.</para>
+                </listItem>
+                <listItem>
+                  <para>Inspect DVL fairings for damage, security of attachment, and missing hardware. Ensure wax filler is present in attachment screw holes. Ensure wax filler is not present in drain holes.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG300A810-N-61331-0107-A-000-01" />
+            </figure>
+            <para>Remove DVL Fairings</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Remove wax filler from forward and aft DVL fairing attachment screw holes.</para>
+                </listItem>
+                <listItem>
+                  <para>Remove screws that attach forward and aft DVL sensor fairings to towed body.</para>
+                </listItem>
+                <listItem>
+                  <para>Remove DVL fairings.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <note>
+              <notePara>NOTE—Note the location of screws for reinstallation.</notePara>
+            </note>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG300A810-N-61331-0108-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG300A810-N-61331-0109-A-000-01" />
+            </figure>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

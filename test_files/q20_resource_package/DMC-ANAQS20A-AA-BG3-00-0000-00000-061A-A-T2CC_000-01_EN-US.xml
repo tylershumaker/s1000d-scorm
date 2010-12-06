@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../app/rtoc_1.xslt'?>
+<!DOCTYPE dmodule []>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Troubleshooting Enabling Objectives - Special Support Equipment and Tools</dc:title>
+    <dc:subject>Troubleshooting Enabling Objectives - Special Support Equipment and Tools</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2010-01-28</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>ANAQS20A-AA-BG3-0-0-000000-000061-A-A-T2C_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ANAQS20A" systemDiffCode="AA" systemCode="BG3" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="000" infoCode="061" infoCodeVariant="A" itemLocationCode="A" learnCode="T2C" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2010" month="01" day="28" />
+        <dmTitle>
+          <techName>Troubleshooting Enabling Objectives</techName>
+          <infoName>Special Support Equipment and Tools</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="N"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="ANAQS20A" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>BG300</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title></title>
+        <lcInstruction>
+          <description>
+            <para>Troubleshooting</para>
+            <para>Enabling Objectives</para>
+            <para>EO 5.2.1 Identify the AN/AQS-20A peculiar support equipment.</para>
+            <para>EO 5.2.2 Demonstrate AN/AQS-20A troubleshooting procedures by identifying instructor induced faults utilizing the PUB Initiated flowchart contained in AE-315SA-MIB-000, Chapter 5, Figures 5-1 and 5-2.</para>
+            <para>EO 5.2.3 Demonstrate the procedures for operating the AN/AQS-20A test set by actively performing a fault isolation exercise during laboratory phase of instruction.</para>
+            <para>EO 5.2.4 Perform an Operator Initiated Bit (OIB) utilizing the AN/AQS-20A Test Set as outlined in the AN/AQS-20A Test Set Procedures Manual.</para>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

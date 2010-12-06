@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../app/rtoc_1.xslt'?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'> 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0072-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0072-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0062-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0062-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0073-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0073-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3000000-N-61331-0074-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3000000-N-61331-0074-A-000-01.jpeg' NDATA JPEG > 
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>LEAK CHECKING THE TOWED BODY   - Leak Check</dc:title>
+    <dc:subject>LEAK CHECKING THE TOWED BODY   - Leak Check</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2010-01-28</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>ANAQS20A-AA-ZG3-0-0-000000-000364-A-A-T45_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ANAQS20A" systemDiffCode="AA" systemCode="ZG3" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="000" infoCode="364" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2010" month="01" day="28" />
+        <dmTitle>
+          <techName>LEAK CHECKING THE TOWED BODY  </techName>
+          <infoName>Leak Check</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="N"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="ANAQS20A" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>ZG300</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title></title>
+        <lcInstruction>
+          <description>
+            <para>Leak Checking Towed Body</para>
+            <caution>
+              <warningAndCautionPara>CAUTION - Ensure power to towed body is secured prior to energizing vacuum pump and evacuating towed body cavity. Failure to secure power prior to towed body cavity evacuation will result in damage to internal towed body electronic components.</warningAndCautionPara>
+            </caution>
+            <caution>
+              <warningAndCautionPara>CAUTION - Do not energize towed body while towed body cavity is under vacuum (negative pressure). Energizing the towed body while towed body cavity is under vacuum will result in damage to internal towed body electronic components.</warningAndCautionPara>
+            </caution>
+            <para>Leak Checking Towed Body (continued)</para>
+            <para>Perform towed body leak check.</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Remove protective cap from towed body fill and vent valve</para>
+                </listItem>
+                <listItem>
+                  <para>Set up vacuum pump, refrigeration manifold, and fill and vent valve adapter.</para>
+                </listItem>
+                <listItem>
+                  <para>Close left-hand valve on refrigeration manifold.</para>
+                </listItem>
+                <listItem>
+                  <para>Secure hose connection on right-hand side of refrigeration manifold. This hose will not be used.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0072-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0062-A-000-01" />
+            </figure>
+            <para>Leak Checking Towed Body (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Open towed body fill and vent valve by turning large outside nut counterclockwise.</para>
+                </listItem>
+                <listItem>
+                  <para>Close right-hand valve on refrigeration manifold. Verify both valves are closed.</para>
+                </listItem>
+                <listItem>
+                  <para>Energize vacuum pump.</para>
+                </listItem>
+                <listItem>
+                  <para>Open left-hand valve on refrigeration manifold.</para>
+                </listItem>
+                <listItem>
+                  <para>With vacuum pump running, close left-hand valve on refrigeration manifold every 3 to 4 min to obtain towed body pressure readings. Allow vacuum pump to run until a negative pressure of</para>
+                </listItem>
+              </randomList>
+            </para>
+            <para>-22 in. Hg is reached on vacuum gauge of refrigeration manifold.</para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0073-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0072-A-000-01" />
+            </figure>
+            <para>Leak Checking Towed Body (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Close left-hand valve on refrigeration manifold.</para>
+                </listItem>
+                <listItem>
+                  <para>Close towed body fill and vent valve by turning large outside nut clockwise.</para>
+                </listItem>
+                <listItem>
+                  <para>Turn off vacuum pump.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <note>
+              <notePara>NOTE—A reading of less than -20 in. Hg after 30 min indicates a leak in the towed body hull, which would allow water intrusion.</notePara>
+            </note>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0072-A-000-01" />
+            </figure>
+            <para>Leak Checking Towed Body (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Wait 30 min, open towed body fill and vent valve, and verify pressure. If reading of less than -20 in. Hg, replace defective hull penetration connector O-rings or towed body joint seals, and perform leak check steps above.</para>
+                </listItem>
+                <listItem>
+                  <para>Close towed body fill and vent valve.</para>
+                </listItem>
+                <listItem>
+                  <para>Disconnect center hose of refrigeration manifold from vacuum pump.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3000000-N-61331-0074-A-000-01" />
+            </figure>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

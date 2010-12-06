@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../app/rtoc_1.xslt'?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'> 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0145-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0145-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0146-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0146-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0147-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0147-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0148-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0148-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0149-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0149-A-000-01.jpeg' NDATA JPEG > 
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>GFS FAIRINGS   - Removal Procedure</dc:title>
+    <dc:subject>GFS FAIRINGS   - Removal Procedure</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2010-01-28</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>ANAQS20A-AA-ZG3-A-3-A30200-000520-A-A-T45_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ANAQS20A" systemDiffCode="AA" systemCode="ZG3" subSystemCode="A" subSubSystemCode="3" assyCode="A302" disassyCode="00" disassyCodeVariant="000" infoCode="520" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2010" month="01" day="28" />
+        <dmTitle>
+          <techName>GFS FAIRINGS  </techName>
+          <infoName>Removal Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="N"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="ANAQS20A" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>ZG3A3</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title></title>
+        <lcInstruction>
+          <description>
+            <para>Inspect GFS</para>
+            <note>
+              <notePara>NOTE—Under urethane coating there are 28 receive elements and 10 transmit elements. The receive elements are located at the leading edge of each of five arrays. The transmit elements are oval shaped and mounted in the curved housing section at leading edge of GFS.</notePara>
+            </note>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Inspect urethane on GFS arrays for cuts or nicks that exceed 0.1 in. wide, 0.25 in. long, and 0.20 in. deep. Check areas covering receive and transmit elements. GFS will not function properly if urethane is damaged over five or more receive elements on a single array, if urethane is damaged over any transmit element, or if urethane is damaged to extent where GFS internal components are exposed.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0145-A-000-01" />
+            </figure>
+            <para>Inspect GFS (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Inspect GFS fairings for damage, security of attachment, and missing hardware. Ensure wax filler is present in attachment screw holes.</para>
+                </listItem>
+                <listItem>
+                  <para>Inspect the four zinc anodes on the GFS for wear and security of attachment. Replace zinc anodes that are worn beyond 60% of normal size.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0146-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0147-A-000-01" />
+            </figure>
+            <para>Remove GFS Fairings</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Remove wax filler from forward and aft GFS fairing attachment screw holes.</para>
+                </listItem>
+                <listItem>
+                  <para>Remove screws that secure forward and aft GFS fairings to towed body    midsection.</para>
+                </listItem>
+                <listItem>
+                  <para>Remove GFS fairings.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0148-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A3A302-N-61331-0149-A-000-01" />
+            </figure>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

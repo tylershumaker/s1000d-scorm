@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../app/rtoc_1.xslt'?>
+<!DOCTYPE dmodule [<!NOTATION Png SYSTEM '(Portable Network Graphics) Specification Version 1.0'> 
+<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'> 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A20001-N-61331-0123-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A20001-N-61331-0123-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A20001-N-61331-0124-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A20001-N-61331-0124-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3001000-N-61331-0105-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3001000-N-61331-0105-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A20001-N-61331-0125-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A20001-N-61331-0125-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A20001-N-61331-0126-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A20001-N-61331-0126-A-000-01.jpeg' NDATA JPEG > 
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>VSS SACRIFICIAL ANODE   - Removal Procedure</dc:title>
+    <dc:subject>VSS SACRIFICIAL ANODE   - Removal Procedure</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2010-01-28</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>ANAQS20A-AA-ZG3-A-2-000100-000520-A-A-T45_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ANAQS20A" systemDiffCode="AA" systemCode="ZG3" subSystemCode="A" subSubSystemCode="2" assyCode="0001" disassyCode="00" disassyCodeVariant="000" infoCode="520" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2010" month="01" day="28" />
+        <dmTitle>
+          <techName>VSS SACRIFICIAL ANODE  </techName>
+          <infoName>Removal Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="N"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="ANAQS20A" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>ZG3A2</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title></title>
+        <lcInstruction>
+          <description>
+            <para>Inspect VSS</para>
+            <para>Inspect VSS top cover for damage, security of attachment, and missing hardware.</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Inspect urethane on each VSS module for cracks or gouges that result in exposure of internal components.</para>
+                </listItem>
+                <listItem>
+                  <para>Inspect zinc anode located under VSS top cover  for wear and security of attachment. Replace wing assembly zinc anode if worn beyond 60% of normal size.</para>
+                </listItem>
+                <listItem>
+                  <para>Apply thin film of Aqua Lube to screw threads and under heads when metal to metal contact will occur, where VSS cover attachment screws are to be installed. Position VSS cover at top of VSS array, and secure using screws.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A20001-N-61331-0123-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A20001-N-61331-0124-A-000-01" />
+            </figure>
+            <para>Inspect EOID</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>If EOID is installed:</para>
+                  <para>
+                    <randomList>
+                      <listItem>
+                        <para>Remove protective cover.</para>
+                      </listItem>
+                      <listItem>
+                        <para>Inspect EOID transmit and receive windows for cracks, security of attachment, and missing hardware.</para>
+                      </listItem>
+                      <listItem>
+                        <para>Reinstall protective cover.</para>
+                      </listItem>
+                    </randomList>
+                  </para>
+                </listItem>
+                <listItem>
+                  <para>Inspect zinc anode located under FLS fairing for wear and security of attachment. Replace wing assembly zinc anode if worn beyond 60% of normal size.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3001000-N-61331-0105-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A20001-N-61331-0125-A-000-01" />
+            </figure>
+            <para>Remove VSS Zinc Anode</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Remove screws that secure VSS cover to VSS array and remove cover.</para>
+                </listItem>
+                <listItem>
+                  <para>Remove screws located around trailing edge of FLS shroud.</para>
+                </listItem>
+                <listItem>
+                  <para>Slide FLS shroud forward off FLS.</para>
+                </listItem>
+                <listItem>
+                  <para>Remove screw, nut, and washers securing zinc anode to VSS hull.</para>
+                </listItem>
+                <listItem>
+                  <para>Remove zinc anode.</para>
+                </listItem>
+                <listItem>
+                  <para>Inspect area where zinc anode is mounted on VSS array and zinc anode attaching hardware for damage and corrosion.</para>
+                </listItem>
+                <listItem>
+                  <para>Clean and treat as required IAW NA-01-1A-509.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A20001-N-61331-0126-A-000-01" />
+            </figure>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A20001-N-61331-0123-A-000-01" />
+            </figure>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../app/rtoc_1.xslt'?>
+<!DOCTYPE dmodule [<!NOTATION Png SYSTEM '(Portable Network Graphics) Specification Version 1.0'> 
+<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'> 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A40000-N-61331-0016-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A40000-N-61331-0016-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A40000-N-61331-0017-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A40000-N-61331-0017-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A40000-N-61331-0018-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A40000-N-61331-0018-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A40000-N-61331-0019-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A40000-N-61331-0019-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A40000-N-61331-0020-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A40000-N-61331-0020-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A40000-N-61331-0021-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A40000-N-61331-0021-A-000-01.jpeg' NDATA JPEG > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A40000-N-61331-0022-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A40000-N-61331-0022-A-000-01.png' NDATA Png > 
+<!ENTITY ICN-ANAQS20A-AA-ZG3A40000-N-61331-0023-A-000-01 SYSTEM 'media/ICN-ANAQS20A-AA-ZG3A40000-N-61331-0023-A-000-01.png' NDATA Png > 
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>TAIL SECTION   - Description of Function</dc:title>
+    <dc:subject>TAIL SECTION   - Description of Function</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2010-01-28</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>ANAQS20A-AA-ZG3-A-4-000000-000042-A-A-T42_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ANAQS20A" systemDiffCode="AA" systemCode="ZG3" subSystemCode="A" subSubSystemCode="4" assyCode="0000" disassyCode="00" disassyCodeVariant="000" infoCode="042" infoCodeVariant="A" itemLocationCode="A" learnCode="T42" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2010" month="01" day="28" />
+        <dmTitle>
+          <techName>TAIL SECTION  </techName>
+          <infoName>Description of Function</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="N"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="ANAQS20A" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>ZG3A4</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title></title>
+        <lcInstruction>
+          <description>
+            <para>Component Location and Function</para>
+            <para>Towed Body Tail Section</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>The Tail Section provides the steering capability for the towed body. The towed body position and depth can be controlled by the system operator from the aircraft. The Tail Section is located at the aft end of the towed body and is comprised of three tail fin assemblies.</para>
+                  <para>
+                    <randomList>
+                      <listItem>
+                        <para>The control flaps are driven by electrically powered actuators installed in the tail cone. To monitor control flap attitudes, position indicators are installed in the tail cone and provide positive feedback (control flap position) to the AN/AQS-20A system operator in the aircraft.</para>
+                      </listItem>
+                    </randomList>
+                  </para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0016-A-000-01" />
+            </figure>
+            <para>Component Location and Function</para>
+            <para>Towed Body Tail Section (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>The Tail Section also houses two other sensors required for towed body operation. These are the Inertial Navigation Unit (INU) and the acoustic beacon.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0017-A-000-01" />
+            </figure>
+            <para>Component Location and Function</para>
+            <para>Inertial Navigation Unit</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>The INU is installed inside the forward end of the Tail Section. During towed body operation, the INU measures vehicle acceleration as well as roll, pitch, and yaw rates. This information is used for vehicle flight control and, when required, for precise navigation functions needed to support reacquisition of targets for identification.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0018-A-000-01" />
+            </figure>
+            <para>Component Location and Function</para>
+            <para>Acoustic Beacon</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>The acoustic beacon housing is cylindrical in shape and contains signal-sending electronics, powered by a replaceable, internal 9-Vdc battery. The acoustic beacon is used for emergency recovery of the AN/AQS-20A towed body, and activates automatically after a factory-set 6-h time delay expires. The acoustic beacon is installed in the towed body tail, and prior to installation must be operationally tested. Testing is accomplished by submerging the acoustic beacon in water and listening with an ultrasonic tester for several initial pings from the acoustic beacon.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0019-A-000-01" />
+            </figure>
+            <para>Component Location and Function</para>
+            <para>Fill and Vent Valve</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>The Fill and Vent Valve is installed in the open cavity at the back of the tail assembly. The valve is used for filling and purging the towed body with a nitrogen charge.</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0020-A-000-01" />
+            </figure>
+            <para>Theory of Operation</para>
+            <para>Tail Section</para>
+            <para>The Tail Section is an inverted "Y" tail configuration.</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Each of the three tail fins has an attitude control flap.</para>
+                </listItem>
+                <listItem>
+                  <para>Each of the three flaps moves over an angle of +/-25° and possesses a position indicator for positive feedback of the flap position to the Common Console.</para>
+                  <para>
+                    <randomList>
+                      <listItem>
+                        <para>Control is available when the towed body is in the water and the speed is greater than 6 kn.</para>
+                      </listItem>
+                    </randomList>
+                  </para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0016-A-000-01" />
+            </figure>
+            <para>Theory of Operation</para>
+            <para>Tail Section (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>The Tail Assembly also houses the Inertial Navigation Unit.</para>
+                  <para>
+                    <randomList>
+                      <listItem>
+                        <para>The INU provides the towed body processor with the X, Y, and Z acceleration of the vehicle.</para>
+                      </listItem>
+                      <listItem>
+                        <para>It also provides roll, pitch, and yaw rates for flight control.</para>
+                      </listItem>
+                      <listItem>
+                        <para>In addition, the INU produces latitude and longitude, position direction cosine matrix, altitude (depth), velocity, attitude direction cosine matrix, wander angle, and status information.</para>
+                      </listItem>
+                    </randomList>
+                  </para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0018-A-000-01" />
+            </figure>
+            <para>Theory of Operation</para>
+            <para>Inertial Navigation Unit</para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0021-A-000-01" />
+            </figure>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Provides data interface to towed body sensors</para>
+                  <para>
+                    <randomList>
+                      <listItem>
+                        <para>Altitude</para>
+                        <para>
+                          <randomList>
+                            <listItem>
+                              <para>Received from DVL</para>
+                            </listItem>
+                            <listItem>
+                              <para>Maximum: 656 ft</para>
+                            </listItem>
+                            <listItem>
+                              <para>Input from the Common Console</para>
+                            </listItem>
+                            <listItem>
+                              <para>Maximum: 499 ft</para>
+                            </listItem>
+                          </randomList>
+                        </para>
+                      </listItem>
+                      <listItem>
+                        <para>Depth</para>
+                        <para>
+                          <randomList>
+                            <listItem>
+                              <para>Received by Conductivity, Temperature, and Depth (CTD) sensor</para>
+                            </listItem>
+                          </randomList>
+                        </para>
+                      </listItem>
+                    </randomList>
+                  </para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0022-A-000-01" />
+            </figure>
+            <para>Theory of Operation</para>
+            <para>Inertial Navigation Unit (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Heading</para>
+                  <para>
+                    <randomList>
+                      <listItem>
+                        <para>Magnetic heading converted to true heading by compensating for magnetic deviation</para>
+                      </listItem>
+                      <listItem>
+                        <para>Roll</para>
+                        <para>
+                          <randomList>
+                            <listItem>
+                              <para>Roll rate maximum ±15°/s</para>
+                            </listItem>
+                            <listItem>
+                              <para>Pitch rate maximum ±15°/s</para>
+                            </listItem>
+                            <listItem>
+                              <para>Yaw rate maximum ±12°/s</para>
+                            </listItem>
+                          </randomList>
+                        </para>
+                      </listItem>
+                      <listItem>
+                        <para>Pitch</para>
+                      </listItem>
+                      <listItem>
+                        <para>Yaw</para>
+                      </listItem>
+                    </randomList>
+                  </para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0023-A-000-01" />
+            </figure>
+            <para>Theory of Operation</para>
+            <para>Inertial Navigation Unit (continued)</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Velocity</para>
+                  <para>
+                    <randomList>
+                      <listItem>
+                        <para>X (forward/aft) and Y (port/starboard) velocities received from DVL</para>
+                        <para>
+                          <randomList>
+                            <listItem>
+                              <para>Only available when altitude less than approximately 600 ft above bottom</para>
+                            </listItem>
+                          </randomList>
+                        </para>
+                      </listItem>
+                      <listItem>
+                        <para>Sensor declared stuck if velocity remains the same for at least 5 s</para>
+                      </listItem>
+                      <listItem>
+                        <para>Range: up to 31 kn</para>
+                      </listItem>
+                    </randomList>
+                  </para>
+                </listItem>
+                <listItem>
+                  <para>Software algorithms determine fin positions to maintain desired attitude and depth or altitude</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-ANAQS20A-AA-ZG3A40000-N-61331-0021-A-000-01" />
+            </figure>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>
