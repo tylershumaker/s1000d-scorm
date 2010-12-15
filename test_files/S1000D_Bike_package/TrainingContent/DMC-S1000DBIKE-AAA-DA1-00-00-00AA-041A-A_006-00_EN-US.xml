@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA10000-0-U8025-00512-A-04-1 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA10000-0-U8025-00512-A-04-1 NDATA JPEG'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA10000-0-U8025-00513-A-04-1 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA10000-0-U8025-00513-A-04-1 NDATA JPEG'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA10000-0-U8025-00514-A-04-1 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA10000-0-U8025-00514-A-04-1 NDATA JPEG'>
+]>
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/descript.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <rdf:Description>
+    <dc:creator>U8025</dc:creator>
+    <dc:title>Brake system - Description of how it is made</dc:title>
+    <dc:subject>Brake system - Description of how it is made</dc:subject>
+    <dc:publisher>U8025</dc:publisher>
+    <dc:contributor>U8025</dc:contributor>
+    <dc:date>2008-08-01</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA1-00-00-00AA-041A-A_006-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51_cv51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA1" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="006" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2008" month="08" day="01" />
+        <dmTitle>
+          <techName>Brake system</techName>
+          <infoName>Description of how it is made</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus issueType="revised">
+      <security securityClassification="01" commercialClassification="cc51" caveat="cv51" />
+      <dataRestrictions>
+        <restrictionInstructions>
+          <dataDistribution>To be made available to all S1000D users.</dataDistribution>
+          <exportControl>
+            <exportRegistrationStmt>
+              <simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+            </exportRegistrationStmt>
+          </exportControl>
+          <dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+          <dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+          <dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+        </restrictionInstructions>
+        <restrictionInfo>
+          <copyright>
+            <copyrightPara>
+              <emphasis>Copyright (C) 2008</emphasis> by each of the following organizations:<randomList><listItem><para>AeroSpace and Defence Industries Associations of Europe - ASD.</para></listItem><listItem><para>Ministries of Defence of the member countries of ASD.</para></listItem></randomList></copyrightPara>
+            <copyrightPara>
+              <emphasis>Limitations of Liability:</emphasis>
+            </copyrightPara>
+            <copyrightPara>
+              <randomList>
+                <listItem>
+                  <para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+                </listItem>
+                <listItem>
+                  <para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+                </listItem>
+                <listItem>
+                  <para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+                </listItem>
+              </randomList>
+            </copyrightPara>
+          </copyright>
+          <policyStatement>TPSMG TOR 001</policyStatement>
+          <dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+        </restrictionInfo>
+      </dataRestrictions>
+      <responsiblePartnerCompany enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </originator>
+      <applicCrossRefTableRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D">
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D" />
+          </dmRefIdent>
+        </dmRef>
+      </applicCrossRefTableRef>
+      <applic>
+        <displayText>
+          <simplePara>Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)</simplePara>
+        </displayText>
+        <evaluate andOr="and">
+          <assert applicPropertyIdent="type" applicPropertyType="prodattr" applicPropertyValues="Mountain bicycle" />
+          <evaluate andOr="or">
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Mountain storm" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk1" />
+            </evaluate>
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Brook trekker" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk9" />
+            </evaluate>
+          </evaluate>
+        </evaluate>
+      </applic>
+      <techStandard>
+        <authorityInfoAndTp>
+          <authorityInfo>20010131</authorityInfo>
+          <techPubBase>Bike book</techPubBase>
+        </authorityInfoAndTp>
+        <authorityExceptions />
+        <authorityNotes />
+      </techStandard>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <firstVerification verificationType="tabtop" />
+      </qualityAssurance>
+      <systemBreakdownCode>DA100</systemBreakdownCode>
+      <systemBreakdownCode>BY13</systemBreakdownCode>
+      <skillLevel skillLevelCode="sk01" />
+      <reasonForUpdate>
+        <simplePara>totally revised</simplePara>
+        <simplePara>Schema cleanup element/attribute renaming</simplePara>
+      </reasonForUpdate>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <description>
+      <levelledPara>
+        <title>Brake system</title>
+        <para>The most important part of the bicycle is the brake system. Only a minimum maintenance of the brake system is necessary. But, when a problem does occur, make sure you to do the necessary maintenance as quickly as possible. If you do not do this the bicycle will be dangerous to use.</para>
+        <para>
+					There are nine different types of brake systems. The one found on most bicycles is the cantilever brake (refer to <internalRef internalRefId="par-0001" internalRefTargetType="para" xlink:actuate="onRequest" xlink:show="replace" xlink:href="par-0001" />).
+				</para>
+        <levelledPara id="par-0001">
+          <title>Cantilever brake</title>
+          <para>
+						The brake system (refer to <internalRef internalRefId="fig-0001" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001" />) has these primary components: <randomList listItemPrefix="pf01"><listItem><para>
+									the brake lever (refer to <internalRef internalRefId="par-0003" internalRefTargetType="para" xlink:actuate="onRequest" xlink:show="replace" xlink:href="par-0003" />)
+								</para></listItem><listItem><para>the brake cable</para></listItem><listItem><para>the brake arm</para></listItem><listItem><para>the brake clamp (also known as callipers)</para></listItem><listItem><para>
+									the brake pads (refer to <internalRef internalRefId="par-0002" internalRefTargetType="para" xlink:actuate="onRequest" xlink:show="replace" xlink:href="par-0002" />)
+								</para></listItem></randomList></para>
+          <figure id="fig-0001">
+            <title>Cantilever brake with straddle cable</title>
+            <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA10000-0-U8025-00512-A-04-1" xlink:title="Cantilever brake with straddle cable" infoEntityIdent="ICN-S1000DBIKE-AAA-DA10000-0-U8025-00512-A-04-1" />
+          </figure>
+          <para>A cable that goes from the brake levers on the handlebars pulls the two levers on the brakes together. This presses the brake pads against the outer rim of the wheel, which decreases the speed of the bicycle.</para>
+        </levelledPara>
+        <levelledPara id="par-0002">
+          <title>Brake pads</title>
+          <para>
+						There are four brake pads (refer to <internalRef internalRefId="fig-0002" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0002" />) on the bicycle. Two are found on the front wheel and two on the rear wheel. The brake pads are made out of hard wearing rubber. The pads press against the rim of the wheel to cause friction when the you operate the brake levers.
+					</para>
+          <figure id="fig-0002">
+            <title>Exploded diagram of a brake</title>
+            <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA10000-0-U8025-00513-A-04-1" xlink:title="Exploded diagram of a brake" infoEntityIdent="ICN-S1000DBIKE-AAA-DA10000-0-U8025-00513-A-04-1" />
+          </figure>
+        </levelledPara>
+        <levelledPara id="par-0003">
+          <title>Brake lever</title>
+          <para>
+						The brake levers (refer to <internalRef internalRefId="fig-0003" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0003" />) are easily damaged. The lever is installed in the mount. A clamp bolt holds the mount. This bolt is not visible because it is found in the mount. The lever turns on a lever pivot bolt. The adjuster lock nut holds the brake cable. This lock nut adjusts the tension of the cable.
+					</para>
+          <figure id="fig-0003">
+            <title>Typical components of a mountain bicycle lever</title>
+            <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA10000-0-U8025-00514-A-04-1" xlink:title="Typical components of a mountain bicycle lever" infoEntityIdent="ICN-S1000DBIKE-AAA-DA10000-0-U8025-00514-A-04-1" />
+          </figure>
+          <para>The left brake lever holds the brake pads on the front wheel and the right brake pads hold the brakes on the rear wheel.</para>
+        </levelledPara>
+      </levelledPara>
+    </description>
+  </content>
+</dmodule>

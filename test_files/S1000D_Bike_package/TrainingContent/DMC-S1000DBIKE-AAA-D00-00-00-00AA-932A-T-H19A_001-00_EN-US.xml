@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>U8025</dc:creator>
+    <dc:title>Bicycle - Planning information: Performer analysis - Worker</dc:title>
+    <dc:subject>Bicycle - Planning information: Performer analysis - Worker</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-08-22</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H19A_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H19" learnEventCode="A" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="22" />
+        <dmTitle>
+          <techName>Bicycle</techName>
+          <infoName>Planning information: Performer analysis - Worker</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningPlan>
+        <lcNeedsAnalysis>
+          <title />
+          <description />
+          <lcPlanAudience>
+            <title>Audience Profile</title>
+            <lcGeneralDescription>
+              <description>
+                <para>Skill levels for entry level bike couriers can vary from none to novice experience levels, which range from 0 to 1 year in service. Couriers have typically learned the skills needed through trial and error.</para>
+              </description>
+            </lcGeneralDescription>
+            <lcEdLevel>
+              <description>
+                <para>
+                  <emphasis>Education Level:</emphasis>
+                </para>
+                <para>High school diploma, some college</para>
+              </description>
+            </lcEdLevel>
+            <lcAge>
+              <description>
+                <para>
+                  <emphasis>Age:</emphasis>
+                </para>
+                <para>Adults aged 18 to 21</para>
+              </description>
+            </lcAge>
+            <lcBackground>
+              <description>
+                <para>
+                  <emphasis>Background:</emphasis>
+                </para>
+                <para>The target audience for this course includes bike couriers who are responsible maintaining their own bicycles.</para>
+              </description>
+            </lcBackground>
+            <lcSkills>
+              <description>
+                <para>
+                  <emphasis>Skills:</emphasis>
+                </para>
+                <para>The audience has little to no experience with bike maintenance. Skills are mainly in bike operation.</para>
+              </description>
+            </lcSkills>
+            <lcKnowledge>
+              <description>
+                <para>
+                  <emphasis>Knowledge:</emphasis>
+                </para>
+                <para>General bike functions, simple maintenance</para>
+              </description>
+            </lcKnowledge>
+            <lcMotivation>
+              <description>
+                <para>
+                  <emphasis>Motivation:</emphasis>
+                </para>
+                <para>Bike couriers must ensure that their bikes are in safe working order for them to perform their jobs effectively.</para>
+              </description>
+            </lcMotivation>
+          </lcPlanAudience>
+        </lcNeedsAnalysis>
+        <lcTechnical />
+      </learningPlan>
+    </learning>
+  </content>
+</dmodule>

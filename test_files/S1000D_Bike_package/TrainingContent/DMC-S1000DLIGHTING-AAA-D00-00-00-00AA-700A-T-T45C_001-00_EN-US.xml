@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-D000000-A-06RT9-00165-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-D000000-A-06RT9-00165-A-001-01 NDATA JPEG'>
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Lights - Assemble, install and connect procedures:  Static content - Procedure</dc:title>
+    <dc:subject>Lights - Assemble, install and connect procedures:  Static content - Procedure</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-10-19</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DLIGHTING-AAA-D00-00-00-00AA-700A-T-T45-C_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DLIGHTING" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="700" infoCodeVariant="A" itemLocationCode="T" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="10" day="19" />
+        <dmTitle>
+          <techName>Lights</techName>
+          <infoName>Assemble, install and connect procedures:  Static content - Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title>Install the Lighting Assembly</title>
+        <lcInstruction>
+          <description>
+            <para>
+					  Remove the lighting system from the packaging. Make sure that the package contains all of its components.
+				  </para>
+            <figure>
+              <title />
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00165-A-001-01" />
+            </figure>
+            <table id="tab-0001">
+              <title>shifter correlation</title>
+              <tgroup cols="4">
+                <colspec colnum="1" colname="col1" colwidth="*" />
+                <colspec colnum="2" colname="col01" colwidth="1.50*" />
+                <colspec colnum="3" colname="col2" colwidth="*" />
+                <colspec colnum="4" colname="col02" colwidth="1.50*" />
+                <!--<thead>
+							  <row>
+								  <entry colname="col1">
+									  <para>Shifter Location</para>
+								  </entry>
+								  <entry colname="col02">
+									  <para>Affected Gears</para>
+								  </entry>
+							  </row>
+						  </thead>-->
+                <tbody>
+                  <row>
+                    <entry colname="col1">
+                      <para>1.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Light, sub-assembly front</para>
+                    </entry>
+                    <entry colname="col2">
+                      <para>11.</para>
+                    </entry>
+                    <entry colname="col02">
+                      <para>Loom wiring</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry colname="col1">
+                      <para>2.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Light, main body</para>
+                    </entry>
+                    <entry colname="col2">
+                      <para>12.</para>
+                    </entry>
+                    <entry colname="col02">
+                      <para>Bracket, light mounting</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry colname="col1">
+                      <para>3.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Light, main body</para>
+                    </entry>
+                    <entry colname="col2">
+                      <para>13.</para>
+                    </entry>
+                    <entry colname="col02">
+                      <para>Clip</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry colname="col1">
+                      <para>4.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Seal</para>
+                    </entry>
+                    <entry colname="col2">
+                      <para>14.</para>
+                    </entry>
+                    <entry colname="col02">
+                      <para>Screw, special</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry colname="col1">
+                      <para>5.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Battery</para>
+                    </entry>
+                    <entry colname="col2">
+                      <para>15</para>
+                    </entry>
+                    <entry colname="col02">
+                      <para>Washer, flat</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry colname="col1">
+                      <para>6.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Lens, assembly</para>
+                    </entry>
+                    <entry colname="col2">
+                      <para>16.</para>
+                    </entry>
+                    <entry colname="col02">
+                      <para>Grip, strip</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry colname="col1">
+                      <para>7.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Lens, sub-assembly</para>
+                    </entry>
+                    <entry colname="col2">
+                      <para>17.</para>
+                    </entry>
+                    <entry colname="col02">
+                      <para>Light, sub-assembly rear</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry colname="col1">
+                      <para>8.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Seal</para>
+                    </entry>
+                    <entry colname="col2">
+                      <para>18</para>
+                    </entry>
+                    <entry colname="col02">
+                      <para>Light, main body</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry colname="col1">
+                      <para>9.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Reflector</para>
+                    </entry>
+                    <entry colname="col2">
+                      <para>19.</para>
+                    </entry>
+                    <entry colname="col02">
+                      <para>Lens, assembly rear</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry colname="col1">
+                      <para>20.</para>
+                    </entry>
+                    <entry colname="col01">
+                      <para>Bulb</para>
+                    </entry>
+                    <entry colname="col1">
+                      <para></para>
+                    </entry>
+                    <entry colname="col01">
+                      <para></para>
+                    </entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table>
+            <para>
+					 Install the light bulbs for the front and rear lights (refer to <dmRef><dmRefIdent><dmCode modelIdentCode="S1000DLIGHTING" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="921" infoCodeVariant="A" itemLocationCode="T" learnCode="T45" learnEventCode="C" /><issueInfo issueNumber="001" inWork="01" /><language countryIsoCode="US" languageIsoCode="en" /></dmRefIdent><dmRefAddressItems><dmTitle><techName>Lighting</techName><infoName>Remove and install a new item</infoName></dmTitle></dmRefAddressItems><behavior linkActuate="onRequest" linkShow="newPane" /></dmRef>).
+				  </para>
+            <para>
+					  Attach the front light fitting on the top of the handlebar. Begin by applying the protective strip around the handlebar. Next, pull the clamp open, and put it around the protective strip with the light connector at the top.
+				  </para>
+            <para>
+					  Install the washer on the screw. Use the correct screwdriver from the specialist tool set, and tighten the screw into the hole at the bottom of the clamp. This safeties the clamp to the handlebar.
+				  </para>
+            <para>
+					  Attach the rear light fitting to the rear triangle of the bike frame. Apply the protective strip around one of the two rear triangle up-tubes. Pull the clamp open and put it around the protective strip. Make sure the light connector points rearwards. Install the washer on the screw. Use the correct screwdriver from the specialist tool set, and tighten the screw into the hole at the bottom of the clamp. This secures the clamp to the tube.
+				  </para>
+            <para>Attach the light with the white glass to the front connector.</para>
+            <para>Attach the light with the red glass to the rear connector.</para>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>
