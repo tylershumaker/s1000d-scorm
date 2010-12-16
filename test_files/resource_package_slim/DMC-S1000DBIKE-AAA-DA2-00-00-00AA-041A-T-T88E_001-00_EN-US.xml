@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'?>
-<!DOCTYPE dmodule [
-	<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
-	<!ENTITY ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01' NDATA JPEG >
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01 NDATA JPEG'>
 ]>
 <dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
   <rdf:Description>
     <dc:creator>06RT9</dc:creator>
-    <dc:title>Steering - Description of how it is made</dc:title>
+    <dc:title>Steering - Description of how it is made: Post-test</dc:title>
     <dc:subject>Steering - Description of how it is made: Post-test</dc:subject>
     <dc:publisher>06RT9</dc:publisher>
     <dc:contributor>06RT9</dc:contributor>
@@ -23,7 +21,7 @@
       <dmIdent>
         <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="T" learnCode="T88" learnEventCode="E" />
         <language countryIsoCode="US" languageIsoCode="en" />
-        <issueInfo issueNumber="001" inWork="01" />
+        <issueInfo issueNumber="001" inWork="00" />
       </dmIdent>
       <dmAddressItems>
         <issueDate year="2009" month="07" day="30" />
@@ -35,7 +33,7 @@
     </dmAddress>
     <dmStatus>
       <security securityClassification="01"></security>
-      <responsiblePartnerCompany></responsiblePartnerCompany>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
       <originator></originator>
       <applic>
         <displayText></displayText>
@@ -43,13 +41,16 @@
       <brexDmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"></dmCode>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
       <qualityAssurance>
         <unverified></unverified>
       </qualityAssurance>
+      <systemBreakdownCode>DA200</systemBreakdownCode>
       <systemBreakdownCode>DA200</systemBreakdownCode>
     </dmStatus>
   </identAndStatusSection>
@@ -451,10 +452,10 @@
               <description>
                 <para>Select your answer, and then click NEXT.</para>
                 <para>Look at the image of the bike. Which pointer is pointing to the headset?</para>
-				  <figure>
-					  <title></title>
-					  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01" />
-				  </figure>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01" />
+                </figure>
               </description>
             </lcQuestion>
             <lcAnswerOptionGroup>

@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type='text/xsl' href='app/LearnPlan.xslt'?>
 <dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
   <rdf:Description>
     <dc:creator>U8025</dc:creator>
-    <dc:title>Bicycle - Planning information</dc:title>
-    <dc:subject>Bicycle - Planning information</dc:subject>
+    <dc:title>Bicycle - Planning information: Performer analysis - Worker</dc:title>
+    <dc:subject>Bicycle - Planning information: Performer analysis - Worker</dc:subject>
     <dc:publisher>06RT9</dc:publisher>
     <dc:contributor>06RT9</dc:contributor>
     <dc:date>2009-08-22</dc:date>
@@ -19,7 +18,7 @@
       <dmIdent>
         <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H19" learnEventCode="A" />
         <language countryIsoCode="US" languageIsoCode="en" />
-        <issueInfo issueNumber="007" inWork="00" />
+        <issueInfo issueNumber="001" inWork="00" />
       </dmIdent>
       <dmAddressItems>
         <issueDate year="2009" month="07" day="22" />
@@ -31,7 +30,7 @@
     </dmAddress>
     <dmStatus>
       <security securityClassification="01"></security>
-      <responsiblePartnerCompany></responsiblePartnerCompany>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
       <originator></originator>
       <applic>
         <displayText></displayText>
@@ -39,13 +38,16 @@
       <brexDmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"></dmCode>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
       <qualityAssurance>
         <unverified></unverified>
       </qualityAssurance>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
     </dmStatus>
   </identAndStatusSection>
   <content>
