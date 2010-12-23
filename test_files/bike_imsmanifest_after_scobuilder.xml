@@ -102,7 +102,7 @@
     </organization>
   </organizations>
   <resources>
-    <resource identifier="RES-N65627" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N65627" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index0.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -172,7 +172,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index0.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H30A" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H11A" />
@@ -181,8 +181,9 @@
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H20A" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H40A" />
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N65885" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N65885" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index1.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -294,11 +295,12 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index1.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA0-00-00-00AA-932A-T-H14B" />
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N66055" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N66055" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index2.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -356,7 +358,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index2.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-041A-A" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-042A-A" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-043A-A" />
@@ -397,8 +399,9 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA53000-0-U8025-00525-A-04-1" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA53000-0-U8025-00526-A-04-1" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA53000-0-U8025-00527-A-04-1" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N66479" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N66479" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index3.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -486,7 +489,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index3.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-018A-T-T10C" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T2FB" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T30C" />
@@ -504,8 +507,9 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA23000-A-06RT9-00009-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00011-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00013-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N66809" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N66809" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index4.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -593,7 +597,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index4.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-920A-T-T2GB" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-20-00-00AA-520A-T-T45C" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-20-00-00AA-720A-T-T45C" />
@@ -615,8 +619,9 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00023-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00024-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00026-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N67163" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N67163" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index5.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -695,14 +700,15 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index5.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-028A-T-T28C" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T88E" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00028-A-001-01" />
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N67313" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N67313" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index6.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -805,7 +811,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index6.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T10B" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T2FB" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-T-T45C" />
@@ -827,8 +833,9 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA51000-A-06RT9-00056-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA51000-A-06RT9-00057-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA51000-A-06RT9-00058-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N67687" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N67687" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index7.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -937,7 +944,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index7.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T2GC" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-248A-T-T45C" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-258A-T-T62E" />
@@ -947,8 +954,9 @@
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00060-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00175-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N67949" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N67949" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index8.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1027,13 +1035,14 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index8.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA4-00-00-00AA-028A-T-T28B" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T88E" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA51000-A-06RT9-00058-A-001-01" />
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N68099" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N68099" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index9.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1115,7 +1124,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index9.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T10B" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T2FB" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T42C" />
@@ -1133,8 +1142,9 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00089-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00090-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00091-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N68397" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N68397" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index10.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1243,7 +1253,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index10.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA0-00-00-00AA-018A-T-T2GB" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA0-10-20-00AA-400A-T-T4JC" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA0-10-20-00AA-520A-T-T4JC" />
@@ -1283,8 +1293,9 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00121-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00101-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00105-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N68875" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N68875" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index11.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1360,14 +1371,15 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index11.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA0-00-00-00AA-028A-T-T28B" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T88E" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00122-A-001-01" />
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00185-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N69021" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N69021" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index12.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1455,7 +1467,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index12.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T10B" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T2FC" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T4JC" />
@@ -1471,8 +1483,9 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00128-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00130-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00131-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N69327" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N69327" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index13.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1554,7 +1567,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index13.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T2GB" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA1-00-00-00AA-310A-T-T4JC" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA1-00-00-00AA-310A-T-T62E" />
@@ -1576,8 +1589,9 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00144-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00145-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00146-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N69601" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N69601" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index14.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1650,14 +1664,15 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index14.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA1-00-00-00AA-028A-T-T28C" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA1-00-00-00AA-913A-T-T88E" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00147-A-001-01" />
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00148-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N69743" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N69743" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index15.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1766,7 +1781,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index15.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-200A-T-T10B" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-200A-T-T2GC" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-258A-T-T45C" />
@@ -1800,8 +1815,9 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00163-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00165-A-001-01" />
       <dependency identifierref="DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-921A-T-T45C" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N70221" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N70221" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index16.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1886,7 +1902,7 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index16.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-100A-T-T2GC" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-121A-T-T4JC" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-121A-T-T63E" />
@@ -1900,8 +1916,9 @@
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA4-10-00-00AA-251B-T-T4JC" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00173-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00175-A-001-01" />
+      <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N70475" type="webcontent" adlcp:scormType="sco" href="TODO:ref_to_SCO_goes_here">
+    <resource identifier="RES-N70475" type="webcontent" adlcp:scormType="sco" href="ViewerApplication/index17.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1974,11 +1991,12 @@
           </lom:rights>
         </lom:lom>
       </metadata>
-      <file href="TODO:ref_to_SCO_goes_here" />
+      <file href="ViewerApplication/index17.htm" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-028A-T-T28C" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-D00-00-00-00AA-100A-T-T88E" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00183-A-001-01" />
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
+      <dependency identifierref="RES-common-files" />
     </resource>
     <resource identifier="DMC-S1000D-A-04-10-0301-00A-022A-D" type="webcontent" adlcp:scormType="asset" href="resources/DMC-S1000D-A-04-10-0301-00A-022A-D_005-00_EN-US.XML">
       <file href="resources/DMC-S1000D-A-04-10-0301-00A-022A-D_005-00_EN-US.XML" />
@@ -2816,6 +2834,78 @@
     </resource>
     <resource identifier="ICN-S1000DBIKE-AAA-DA53000-A-06RT9-00188-A-001-01" type="webcontent" adlcp:scormType="asset" href="resources/media/ICN-S1000DBIKE-AAA-DA53000-A-06RT9-00188-A-001-01.jpg">
       <file href="resources/media/ICN-S1000DBIKE-AAA-DA53000-A-06RT9-00188-A-001-01.jpg" />
+    </resource>
+    <resource identifier="RES-common-files" type="webcontent" adlcp:scormType="asset">
+      <file href="ViewerApplication/TrainingContent/app/APIWrapper.js" />
+      <file href="ViewerApplication/TrainingContent/app/assessment.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/bottom.htm" />
+      <file href="ViewerApplication/TrainingContent/app/common.css" />
+      <file href="ViewerApplication/TrainingContent/app/common.js" />
+      <file href="ViewerApplication/TrainingContent/app/common.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/content.htm" />
+      <file href="ViewerApplication/TrainingContent/app/funcs.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/graphics.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/header.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_BLFooter.gif" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_01.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_02.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_03.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_04.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_05.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_06.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_07.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_08.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_09.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/LSC_footer_10.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/S1000DBike_Header_01.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/S1000DBike_Header_02.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/images/s1000d_bike.jpg" />
+      <file href="ViewerApplication/TrainingContent/app/lcs.css" />
+      <file href="ViewerApplication/TrainingContent/app/LearnPlan.css" />
+      <file href="ViewerApplication/TrainingContent/app/LearnPlan.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/lists.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/nav.htm" />
+      <file href="ViewerApplication/TrainingContent/app/nav.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/navigation.xml" />
+      <file href="ViewerApplication/TrainingContent/app/navPage.htm" />
+      <file href="ViewerApplication/TrainingContent/app/navScript.js" />
+      <file href="ViewerApplication/TrainingContent/app/params.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/pm.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/refs.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/s1000d_4.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/schedul.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/steps.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/table.xslt" />
+      <file href="ViewerApplication/TrainingContent/app/topz.htm" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/AssessmentEvents.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/assessment_engine_as3.html" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/assessment_engine_as3.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/kc_engine_as3.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/kc_navigation.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/ldm_loader.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/matching.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/mcma.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/mcsa.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/mcsa_as3.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/mcStep.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/navigation.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/score_assessment.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/sequence.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Assessments_src/stem.as" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/assessment_master.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/dm_content_hs.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Hotspot.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Hotspot_src/dm_content_hs.html" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Hotspot_src/dm_content_hs.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Hotspot_src/Hotspot.html" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Hotspot_src/Hotspot.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Hotspot_src/matching.html" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/Hotspot_src/matching.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/kc_engine_as3.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/kc_master.swf" />
+      <file href="ViewerApplication/TrainingContent/Assessment_templates/matching.swf" />
+      <file href="ViewerApplication/TrainingContent/app/list.js" />
+      <file href="ViewerApplication/TrainingContent/app/urn_resource_map.xml" />
     </resource>
   </resources>
 </manifest>
