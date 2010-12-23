@@ -31,59 +31,55 @@
 			<xsl:value-of
 				select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageIdent/issueInfo/@issueNumber" />
 		</xsl:variable>
-		<manifest identifier="MANIFEST-{$id}"
+		<manifest identifier="MANIFEST-{$id}" version="{$version}"
 			xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
-			xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd"
-			version="{$version}">
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+			xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd">
 			<metadata>
 				<schema>ADL SCORM</schema>
 				<schemaversion>2004 3rd Edition</schemaversion>
-				<!-- <xsl:copy-of select="scormContentPackage/identAndStatusSection/lom:lom" 
-					/> -->
 			</metadata>
 			<!--Add organizations tree element -->
 			<xsl:element name="organizations">
 				<xsl:attribute name="default">
-           <xsl:text>ORG-</xsl:text>
-           <xsl:copy-of select="$id" />
-         </xsl:attribute>
+           			<xsl:text>ORG-</xsl:text>
+           			<xsl:copy-of select="$id" />
+         		</xsl:attribute>
 				<!--Add organization tree element. NOTE: this SCPM and transform support 
 					only a single organization tree for all scos. -->
 				<xsl:element name="organization">
 					<xsl:attribute name="identifier">
-             <xsl:text>ORG-</xsl:text>
-             <xsl:copy-of select="$id" />
-           </xsl:attribute>
+             			<xsl:text>ORG-</xsl:text>
+             			<xsl:copy-of select="$id" />
+           			</xsl:attribute>
 					<xsl:attribute name="structure">
-             <xsl:text>hierarchical</xsl:text>
-           </xsl:attribute>
+             			<xsl:text>hierarchical</xsl:text>
+           			</xsl:attribute>
 					<xsl:element name="title">
-						<xsl:value-of
-							select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle" />
+						<xsl:value-of select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle" />
 					</xsl:element>
 
 					<!--Add organization tree items (SCOs) -->
 					<!--Business rule: scoEntryType attribute value 'scot01' reserved for 
 						sco type assets -->
-					<xsl:for-each
-						select="scormContentPackage/content/scoEntry[@scoEntryType='scot01']">
+					<xsl:for-each select="scormContentPackage/content/scoEntry[@scoEntryType='scot01']">
 						<xsl:element name="item">
 							<xsl:attribute name="identifier">
-                   <xsl:text>ACT-</xsl:text>
-                   <xsl:value-of
-								select="generate-id(scoEntryAddress/scoEntryTitle)" />
-                 </xsl:attribute>
+                   				<xsl:text>ACT-</xsl:text>
+                   				<xsl:value-of select="generate-id(scoEntryAddress/scoEntryTitle)" />
+                 			</xsl:attribute>
 							<xsl:attribute name="identifierref">
-                   <xsl:text>RES-</xsl:text>
-                   <xsl:value-of
-								select="generate-id(scoEntryAddress/scoEntryTitle)" />
-                 </xsl:attribute>
+                   				<xsl:text>RES-</xsl:text>
+                   				<xsl:value-of select="generate-id(scoEntryAddress/scoEntryTitle)" />
+                 			</xsl:attribute>
 							<xsl:element name="title">
 								<xsl:value-of select="scoEntryAddress/scoEntryTitle" />
 							</xsl:element>
 						</xsl:element>
 					</xsl:for-each>
+					<metadata>
+						<xsl:copy-of select="scormContentPackage/identAndStatusSection/lom:lom" />
+					</metadata>
 				</xsl:element>
 			</xsl:element>
 			<!--Add resources tree section -->
@@ -103,15 +99,12 @@
 		</xsl:variable>
 		<!--TODO: devise means to extract launch page value -->
 		<xsl:variable name="launchPage">
-			<xsl:text>index.htm</xsl:text>
+			<xsl:text>TODO:ref_to_SCO_goes_here</xsl:text>
 		</xsl:variable>
 		<resource identifier="RES-{$res_ident}" type="webcontent"
-			adlcp:scormtype="sco" href="{$launchPage}">
-
+			adlcp:scormType="sco" href="{$launchPage}">
 			<xsl:element name="metadata">
-
-				<!-- <xsl:copy-of select="../lom:lom" /> -->
-
+				<xsl:copy-of select="../lom:lom" />
 			</xsl:element>
 			<file href="{$launchPage}" />
 			<xsl:for-each select="dmRef/dmRefIdent">
@@ -155,48 +148,48 @@
 
 				<xsl:variable name="itemlocationcode">
 					<xsl:value-of select="dmCode/@itemLocationCode" />
-					<xsl:if test='string-length(dmCode/@learnEventCode)>0'>
+					<xsl:if test='string-length(dmCode/@learnEventCode)&gt;0'>
 						<xsl:text>-</xsl:text>
 					</xsl:if>
 				</xsl:variable>
 
 				<xsl:variable name="learncode">
-					<xsl:if test='string-length(dmCode/@learnCode)>0'>
+					<xsl:if test='string-length(dmCode/@learnCode)&gt;0'>
 						<xsl:value-of select="dmCode/@learnCode" />
 					</xsl:if>
 				</xsl:variable>
 
 				<xsl:variable name="learneventcode">
 					<xsl:value-of select="dmCode/@learnEventCode" />
-					<xsl:if test='string-length(issueInfo/@issueNumber)>0'>
+					<xsl:if test='string-length(issueInfo/@issueNumber)&gt;0'>
 						<xsl:text>_</xsl:text>
 					</xsl:if>
 				</xsl:variable>
 
 				<xsl:variable name="issno">
 					<xsl:value-of select="issueInfo/@issueNumber" />
-					<xsl:if test='string-length(issueInfo/@issueNumber)>0'>
+					<xsl:if test='string-length(issueInfo/@issueNumber)&gt;0'>
 						<xsl:text>-</xsl:text>
 					</xsl:if>
 				</xsl:variable>
 
 				<xsl:variable name="inwork">
 					<xsl:value-of select="issueInfo/@inWork" />
-					<xsl:if test='string-length(/language/@languageIsoCode)>0 '>
+					<xsl:if test='string-length(/language/@languageIsoCode)&gt;0 '>
 						<xsl:text>_</xsl:text>
 					</xsl:if>
 				</xsl:variable>
 
 				<xsl:variable name="lang_code">
 					<xsl:value-of select="/language/@languageIsoCode" />
-					<xsl:if test='string-length(/language/@languageIsoCode)>0'>
+					<xsl:if test='string-length(/language/@languageIsoCode)&gt;0'>
 						<xsl:text>-</xsl:text>
 					</xsl:if>
 				</xsl:variable>
 
 				<xsl:variable name="lang_country">
 					<xsl:value-of select="/language/@countryIsoCode" />
-					<xsl:if test='string-length(/language/@countryIsoCode)>0'>
+					<xsl:if test='string-length(/language/@countryIsoCode)&gt;0'>
 						<xsl:text>-</xsl:text>
 					</xsl:if>
 				</xsl:variable>
@@ -208,18 +201,6 @@
 						  $syscode,$subsyscode,$subsubsyscode,$assycode,$disassycode,$disassycodevariant,
 						  $infocode,$infocodevariant,$itemlocationcode,$learncode,
 						  $learneventcode,$issno,$inwork,$lang_code,$lang_country)" />
-				<!--Configure the conformant resource mapping URN for queried document 
-					search in urn_resource_map file -->
-				<!-- <xsl:variable name="urn_prefix"> <xsl:value-of select="'URN:S1000D:'" 
-					/> </xsl:variable> <xsl:variable name="urn_string"> <xsl:value-of select="concat($urn_prefix, 
-					$infoIdent)" /> </xsl:variable> -->
-				<!--query the external urn map file to resolve the DM (file) urn string. 
-					NOTE: all relative paths to URN resource map must equate! -->
-				<!-- <xsl:variable name="theFileName"> <xsl:value-of select="document('./urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" 
-					/> </xsl:variable> -->
-				<!--Show comment to identify missing or faulty DM resources -->
-				<!-- <xsl:if test='string-length($theFileName)=0'> <xsl:comment> Unable 
-					to locate resource: <xsl:value-of select='$infoIdent' /> </xsl:comment> </xsl:if> -->
 				<!--Add the resource file element -->
 				<dependency identifierref="{$infoIdent}" />
 			</xsl:for-each>

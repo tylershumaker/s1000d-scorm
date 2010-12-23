@@ -24,7 +24,7 @@ public class CopyDirectory
      * directory.
      * 
      * @param srcFolder File that is the source directory of files to be copied.
-     * @param dstFolder File that is the destination directory of where the files 
+     * @param destFolder File that is the destination directory of where the files 
      * are to be copied to. 
      * @throws IOException
      */
@@ -37,10 +37,14 @@ public class CopyDirectory
                 destFolder.mkdir();
             }
  
-            String[] oChildren = srcFolder.list();
-            for (int i=0; i < oChildren.length; i++) 
+            //ensures that hidden folders are not included
+            if(!srcFolder.getName().contains("."))
             {
-                copyDirectory(new File(srcFolder, oChildren[i]), new File(destFolder, oChildren[i]));
+                String[] oChildren = srcFolder.list();
+                for (int i=0; i < oChildren.length; i++) 
+                {
+                    copyDirectory(new File(srcFolder, oChildren[i]), new File(destFolder, oChildren[i]));
+                }
             }
         } 
         else 

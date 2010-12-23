@@ -70,8 +70,8 @@ public class ContentPackageCreatorTest
         cpc.createPackage();
         
         assertTrue(new File(testFile.getAbsolutePath()).exists());
-        assertTrue(new File(testLocation+File.separator+"resources"
-                +File.separator+"DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml").exists());
+        assertTrue(new File(testLocation+File.separator+"package3"+File.separator+"resources"
+                +File.separator+"DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_EN-us.xml").exists());
     }
 
     /**
@@ -87,8 +87,8 @@ public class ContentPackageCreatorTest
         cpc.createPackage();
         cpc.createPackage();
         
-        assertTrue(new File(testLocation+File.separator+"resources"
-                +File.separator+"DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml").exists());
+        assertTrue(new File(testLocation+File.separator+"package2"+File.separator+"resources"
+                +File.separator+"DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_EN-us.xml").exists());
     }
     
     static public boolean deleteDirectory(File path) {

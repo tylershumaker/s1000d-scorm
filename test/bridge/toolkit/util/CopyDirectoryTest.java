@@ -47,7 +47,7 @@ public class CopyDirectoryTest
     public void testCopyDirectory()
     {
         srcPath = new File(System.getProperty("user.dir") + File.separator +
-                "test_files\\resource_package");
+                "test_files\\bike_resource_package");
         dstPath = new File(System.getProperty("user.dir") + File.separator +
                 "test_files\\copy_test");
         try
@@ -65,7 +65,7 @@ public class CopyDirectoryTest
         assertTrue(new File(dstPath + File.separator + 
                 "DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml").exists());
         assertTrue(new File(dstPath + File.separator + 
-        "ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00028-A-001-01.jpg").exists());
+        "media"+File.separator+"ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00028-A-001-01.jpg").exists());
         
     }
     
@@ -79,7 +79,7 @@ public class CopyDirectoryTest
         List<File> vr = new ArrayList<File>();
         
         File [] testVR = new File(System.getProperty("user.dir") + File.separator +
-                                  "test_files\\resource_package").listFiles();
+                                  "test_files\\bike_resource_package").listFiles();
         for(File file : testVR)
         {
             if(file.getName().endsWith(".xml")||(file.getName().endsWith(".jpg")))
@@ -110,11 +110,8 @@ public class CopyDirectoryTest
         }
 
         assertTrue(dstPath.exists());
-        String dest = dstPath.getAbsolutePath();
         assertTrue(new File(dstPath + File.separator + 
                 "DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml").exists());
-        assertTrue(new File(dstPath + File.separator + 
-        "ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00028-A-001-01.jpg").exists());
         
     }
     

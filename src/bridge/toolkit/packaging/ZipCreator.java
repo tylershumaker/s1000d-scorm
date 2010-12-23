@@ -31,8 +31,10 @@ public class ZipCreator
 
     /**
      * Adds all the files from the list into the zip file.
+     * 
+     * @param zipName String that represent the name to be used for the zip file.
      */
-    public void zipFiles()
+    public void zipFiles(String zipName)
     {
         // Create a buffer for reading the files
         byte[] buf = new byte[24];
@@ -40,7 +42,7 @@ public class ZipCreator
         try
         {
             // Create the ZIP file
-            String target = "demo.zip";
+            String target = zipName +".zip";
             ZipOutputStream out = new ZipOutputStream(new FileOutputStream(target));
 
             File packageDir = new File(packageLocation);

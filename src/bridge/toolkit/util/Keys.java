@@ -35,4 +35,10 @@ public class Keys
      * SCORM Content Package.
      */
     public static final String CP_PACKAGE = "cp_package";
+    
+    /**
+     * The urn_resource_map.xml file that provides a way to map all of the 
+     * URN values for the resources to the file names.
+     */
+    public static final String URN_MAP = "urn_resource_map";
 }

@@ -14,9 +14,11 @@ import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
 import org.apache.commons.chain.impl.ContextBase;
 import org.jdom.Document;
+import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
+import org.jdom.xpath.XPath;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -109,9 +111,11 @@ public class PreProcessTest
             assertEquals(expected.getRootElement().getChild("resources", null).getChildren().size(),
                          returned.getRootElement().getChild("resources", null).getChildren().size());
             assertEquals(expected.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size(),
-                         returned.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size());            
-            
-            
+                         returned.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size());
+            XPath xp = XPath.newInstance("//ns:resource[@identifier='RES-N66055']");
+            xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+            assertEquals(((Element)xp.selectSingleNode(expected)).getChildren().size(),
+                         ((Element)xp.selectSingleNode(returned)).getChildren().size());
         }
         catch (Exception e)
         {

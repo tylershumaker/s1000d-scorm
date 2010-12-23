@@ -33,8 +33,6 @@ public class ResourceMapException extends Exception
      * Constructor
      * 
      * @param urnFormat String the represents the URN.
-     * @param secondFile String that is the second file to be identified with that
-     * URN.
      * @param firstFile String that represents the first file that has already 
      * been added to the urn_resource_map.xml.
      */

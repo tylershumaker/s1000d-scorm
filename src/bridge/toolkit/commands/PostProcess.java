@@ -5,30 +5,18 @@
  */
 package bridge.toolkit.commands;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
 
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
 import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
+import org.jdom.xpath.XPath;
 
-import bridge.toolkit.packaging.ContentPackageCreator;
 import bridge.toolkit.packaging.ZipCreator;
 import bridge.toolkit.util.CopyDirectory;
 import bridge.toolkit.util.Keys;
@@ -44,74 +32,76 @@ public class PostProcess implements Command
      * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
      */
     @Override
-    public boolean execute(Context ctx) throws TransformerException,
-            TransformerConfigurationException, FileNotFoundException, IOException
+    public boolean execute(Context ctx)
     {
 
-        if (ctx.get(Keys.XML_SOURCE) != null)
+        if ((ctx.get(Keys.XML_SOURCE) != null) &&
+            (ctx.get(Keys.CP_PACKAGE) != null))
         {
-            //check to see if a cp_package directory exist yet
-            if(ctx.get(Keys.CP_PACKAGE)== null)
-            {
-                
-                ContentPackageCreator cpc = new ContentPackageCreator((String) ctx.get(Keys.RESOURCE_PACKAGE));
-                File cpPackage = cpc.createPackage();
-                ctx.put(Keys.CP_PACKAGE, cpPackage);
-            }
+            File cpPackage = (File)ctx.get(Keys.CP_PACKAGE);
             
             Document manifest = (Document)ctx.get(Keys.XML_SOURCE);
             
             XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-            File temp = new File("imsmanifest.xml");
-            try {
+            File temp = new File(cpPackage + File.separator +"imsmanifest.xml");
+            try 
+            {
+                //writes the imsmanfest.xml file out to the content package
                 FileWriter writer = new FileWriter(temp,false);
                 outputter.output(manifest, writer);
                 writer.flush();
                 writer.close();
+                
+                //copies the required xsd files over to the content package
+                CopyDirectory cd = new CopyDirectory();
+                File xsd_loc = new File(System.getProperty("user.dir") + File.separator +
+                       "xsd");
+                cd.copyDirectory(xsd_loc, cpPackage);
             } 
             catch (java.io.IOException e) 
             {
+                System.out.println("CONTENT PACKAGE CREATION UNSUCCESSFULL");
                 e.printStackTrace();
+                return PROCESSING_COMPLETE;
             }
 
-            File cp = (File)ctx.get(Keys.CP_PACKAGE);
+            //get the organization title from the manifest file 
+            //replace any white spaces with 
+            Element title = null;
+            XPath xp = null;
+            try
+            {
+                xp = XPath.newInstance("//ns:organization//ns:title");
+                xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+                title = (Element) xp.selectSingleNode(manifest);
+            }
+            catch (JDOMException e)
+            {
+                System.out.println("CONTENT PACKAGE CREATION UNSUCCESSFULL");
+                e.printStackTrace();
+                return PROCESSING_COMPLETE;
+            }
 
-            CopyDirectory cd = new CopyDirectory();
-            cd.copyDirectory(temp, cp);
+            String zipName = title.getValue();
+            zipName = zipName.replace(" ", "_").trim();
+           
 
-            File xsd_loc = new File(System.getProperty("user.dir") + File.separator +
-                   "xsd");
-            cd.copyDirectory(xsd_loc, cp);
-            
-            //temp.delete();
-            temp.deleteOnExit();
-            
             ZipCreator zipCreator = new ZipCreator();
-            zipCreator.setPackageLocation(cp.getAbsolutePath());
-            zipCreator.zipFiles();
+            zipCreator.setPackageLocation(cpPackage.getAbsolutePath());
+            zipCreator.zipFiles(zipName);
             
-            cp.deleteOnExit();
+            cpPackage.deleteOnExit();
             System.out.println("CONTENT PACKAGE CREATION SUCCESSFULL");
         }
         else
         {
-            System.out.println("Keys.XML_SOURCE was null");
+            System.out.println("CONTENT PACKAGE CREATION UNSUCCESSFULL");
+            System.out.println("One of the required Context entries for the " + this.getClass().getSimpleName()
+                    + " command to be executed was null");
+            return PROCESSING_COMPLETE;
         }
 
         return CONTINUE_PROCESSING;
-    }
-
-    private List<String> getxsdFiles()
-    {
-        List<String> files = new ArrayList<String>();
-        files.add("adlcp_v1p3.xsd");
-        files.add("adlnav_v1p3.xsd");
-        files.add("adlseq_v1p3.xsd");
-        files.add("lom.xsd");
-        files.add("lomCustom.xsd");
-        files.add("lomLoose.xsd");
-        files.add("lomStrict.xsd");
-        return files;
     }
 
 }
