@@ -6,7 +6,7 @@
 	 xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
 	 version = "IMS CP 1.1.4"
 	 elementFormDefault = "qualified">
-	<xsd:import namespace = "http://www.w3.org/XML/1998/namespace" schemaLocation = "xml.xsd"/>
+	<xsd:import namespace = "http://www.w3.org/XML/1998/namespace" schemaLocation = "http://www.w3.org/2001/xml.xsd"/>
 
 	<!-- ******************** -->
 	
