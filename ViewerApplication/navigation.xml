@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='nav.xslt'?>
+<dita>
+  <topic id="topic-000">
+    <title id="topic-01" outputclass="coursewareTitle">
+			S1000D Bike Sample - Learning Content
+		</title>
+    <body></body>
+    <topic id="M00">
+      <reference id="sco-00-01">
+        <title outputclass="referenceText">Learning Plan</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <!--<link linktext="Project" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-A_001-00_en-us.xml" />-->
+          <link linktext="Needs Analysis: Tasks" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml" />
+          <link linktext="Needs Analysis: Organizational Analysis" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H11A_001-00_en-us.xml" />
+          <link linktext="Needs Analysis: Work Environment" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H18A_001-00_en-us.xml" />
+          <link linktext="Audience Profile" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H19A_001-00_en-us.xml" />
+          <link linktext="Gap Analysis" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H20A_001-00_en-us.xml" />
+          <link linktext="Intervention" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H30A_001-00_en-us.xml" />
+          <link linktext="Technical" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H40A_001-00_en-us.xml" />
+        </linklist>
+      </reference>
+    </topic>
+    <topic id="M01">
+      <title>Module 1 - Bike Project Overview</title>
+      <body />
+      <reference id="sco-01-01">
+        <title outputclass="referenceText">Introduction to the bike</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Introduction" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-932A-T-H14B_001-00_EN-us.xml" />
+        </linklist>
+      </reference>
+    </topic>
+    <topic id="M02">
+      <title>Module 2 - Bike Overview</title>
+      <body />
+      <reference id="sco-02_01" outputclass="referenceText">
+        <title>Bike Overview</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <!--<link linktext="Bicycle - Introduction Screen" href="../M02/02_01_Bike_Overview/DMC-S1000DBIKE-AAA-D01-00-00-00AA-043A-A-T10-C_001-00_en-US.xml" />-->
+          <link linktext="Bicycle - Description of how it is made" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-041A-A_007-00_EN-US.xml" />
+          <link linktext="Bicycle - Description of function" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-042A-A_007-00_EN-US.xml" />
+          <link linktext="Bicycle - Description attributed to crew" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-043A-A_007-00_EN-US.xml" />
+          <link linktext="Bicycle - Pre-operation procedures (crew)" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-121A-A_007-00_EN-US.xml" />
+          <link linktext="Wheel - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-A_007-00_EN-US.xml" />
+          <link linktext="Rear wheel - Remove procedures" href="../DMC-S1000DBIKE-AAA-DA0-20-00-00AA-520A-A_006-00_EN-US.xml" />
+          <link linktext="Brake system - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-A_006-00_EN-US.xml" />
+          <link linktext="Stem - Remove procedures" href="../DMC-S1000DBIKE-AAA-DA2-10-00-00AA-520A-A_007-00_EN-US.xml" />
+          <link linktext="Stem - Install procedures" href="../DMC-S1000DBIKE-AAA-DA2-10-00-00AA-720A-A_007-00_EN-US.xml" />
+<link linktext="Handlebar - Install procedures" href="../DMC-S1000DBIKE-AAA-DA2-20-00-00AA-720A-A_007-00_EN-US.xml" />
+          <link linktext="Handlebar - Remove procedures" href="../DMC-S1000DBIKE-AAA-DA2-20-00-00AA-520A-A_007-00_EN-US.xml" />
+          <link linktext="Frame - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA3-00-00-00AA-041A-A_006-00_EN-US.xml" />
+          <link linktext="Chain - Clean with chain cleaning fluid" href="../DMC-S1000DBIKE-AAA-DA4-10-00-00AA-251B-A_006-00_EN-US.xml" />
+          <link linktext="Gears - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA5-00-00-00AA-041A-A_006-00_EN-US.xml" />
+          <link linktext="Mechs - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-A_006-00_EN-US.xml" />
+          <link linktext="Shifters - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-A_006-00_EN-US.xml" />
+        </linklist>
+      </reference>
+    </topic>
+    <topic id="M03">
+      <title>
+				Module 3 - Steering System
+			</title>
+      <body />
+      <reference id="sco-03_01" outputclass="referenceText">
+        <title>Steering System Description</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Steering - Introduction" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-018A-T-T10C_001-00_en-US.xml" />
+          <link linktext="Steering - Overview" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T2FB_001-00_en-US.xml" />
+          <link linktext="Steering - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T30C_001-00_en-US.xml" />
+          <!--<link linktext="Steering - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T63E_001-00_en-US.xml" />-->
+          <link linktext="Steering - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T71E_001-00_en-US.xml" />
+          <link linktext="Steering - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA2-20-00-00AA-041A-T-T42C_001-00_en-US.xml" />
+          <link linktext="Steering - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA2-20-00-00AA-041A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Headset - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA2-30-00-00AA-041A-T-T42C_001-00_en-US.xml" />
+          <!--<link linktext="Headset - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA2-30-00-00AA-041A-T-T61E_001-00_en-US.xml" />-->
+          <link linktext="Steering - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA2-10-00-00AA-041A-T-T42C_001-00_en-US.xml" />
+          <link linktext="Steering - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA2-10-00-00AA-041A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Steering - Description Summary" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T36D_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco_03_02" outputclass="referenceText">
+        <title>Remove and Install Procedures</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Steering - Change = Remove and install" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-920A-T-T2GB_001-00_en-US.xml" />
+          <link linktext="Handlebar - Remove Procedures" href="../DMC-S1000DBIKE-AAA-DA2-20-00-00AA-520A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Handlebar - Install Procedures" href="../DMC-S1000DBIKE-AAA-DA2-20-00-00AA-720A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Handlebar - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA2-20-00-00AA-520A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Headset - Remove Procedures" href="../DMC-S1000DBIKE-AAA-DA2-30-00-00AA-520A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Headset - Install Procedures" href="../DMC-S1000DBIKE-AAA-DA2-30-00-00AA-720A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Headset - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA2-30-00-00AA-520A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Stem - Remove Procedures" href="../DMC-S1000DBIKE-AAA-DA2-10-00-00AA-520A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Stem - Install Procedures" href="../DMC-S1000DBIKE-AAA-DA2-10-00-00AA-720A-T-T45C_001-00_en-US.xml" />
+          <!--<link linktext="Stem - Install Procedures" href="../DMC-S1000DBIKE-AAA-DA2-10-00-00AA-720A-T-T62E_001-00_en-US.xml" />-->
+          <link linktext="Steering - Procedures Summary" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-920A-T-T36D_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco_03_03" outputclass="referenceText">
+        <title>Assessment</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Steering - Assessment Intro" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-028A-T-T28C_001-00_en-US.xml" />
+          <link linktext="Steering - Post-test" href="../DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T88E_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+    </topic>
+    <topic id="M04">
+      <title>
+				Module 4 - Drive Train
+			</title>
+      <body />
+      <reference id="sco-04_01" outputclass="referenceText">
+        <title>Description</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Drive train - Introduction" href="../DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T10B_001-00_en-US.xml" />
+          <link linktext="Drive train - Overview" href="../DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T2FB_001-00_en-US.xml" />
+          <link linktext="Shifters - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Shifters - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-T-T42C_001-00_en-US.xml" />
+          <link linktext="Shifters - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Gears - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA5-00-00-00AA-041A-T-T4RC_001-00_en-US.xml" />
+          <link linktext="Gears -  Knowledge check" href="../DMC-S1000DBIKE-AAA-DA5-00-00-00AA-041A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Mechs - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-T-T42C_001-00_en-US.xml" />
+          <link linktext="Mechs -  Knowledge check" href="../DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Drive train - Description Summary" href="../DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T36D_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco_04_02" outputclass="referenceText">
+        <title>Drive Train Maintenance</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Drive train - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T2GC_001-00_en-US.xml" />
+          <link linktext="Bicycle - Other procedures to clean" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-248A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Bicycle - Knowledge check" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-258A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Chain - Oil" href="../DMC-S1000DBIKE-AAA-DA4-10-00-00AA-258A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Chain - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA4-10-00-00AA-241A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Drive train - Procedures Summary" href="../DMC-S1000DBIKE-AAA-DA4-00-00-00AA-258A-T-T36D_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco_04_03" outputclass="referenceText">
+        <title>Assessment</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Drive train - Assessment Introduction" href="../DMC-S1000DBIKE-AAA-DA4-00-00-00AA-028A-T-T28B_001-00_en-US.xml" />
+          <link linktext="Drive train - Post-test" href="../DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-T-T88E_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+    </topic>
+    <topic id="M05">
+      <title>
+				Module 5 - Wheels
+			</title>
+      <body />
+      <reference id="sco-05_01" outputclass="referenceText">
+        <title>Description</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Wheels - Introduction Screen" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T10B_001-00_en-US.xml" />
+          <link linktext="Wheels - Overview" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T2FB_001-00_en-US.xml" />
+          <link linktext="Wheels - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T42C_001-00_en-US.xml" />
+          <link linktext="Wheels - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Wheels - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Wheels - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T4RC_001-00_en-US.xml" />
+          <link linktext="Wheels - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T61E_001-00_en-US.xml" />
+          <link linktext="Wheels - Description Summary" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T36D_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco_05_02" outputclass="referenceText">
+        <title>Wheel Maintenence</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Wheels - Procedures Introduction" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-018A-T-T2GB_001-00_en-US.xml" />
+          <link linktext="Front wheel - Fault reports and isolation procedures" href="../DMC-S1000DBIKE-AAA-DA0-10-20-00AA-400A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Front wheel - Remove procedures" href="../DMC-S1000DBIKE-AAA-DA0-10-20-00AA-520A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Rear wheel - Detected fault" href="../DMC-S1000DBIKE-AAA-DA0-20-00-00AA-412A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Rear wheel - Remove procedures" href="../DMC-S1000DBIKE-AAA-DA0-20-00-00AA-520A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Front wheel - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA0-10-20-00AA-400A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Hubs - Clean with degreasing agent" href="../DMC-S1000DBIKE-AAA-DA5-20-00-00AA-251C-T-T45C_001-00_en-US.xml" />
+          <link linktext="Hubs - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA5-20-00-00AA-251C-T-T62E_001-00_en-US.xml" />
+          <link linktext="Inner tube - Remove and install a new item" href="../DMC-S1000DBIKE-AAA-DA0-10-10-00AA-921A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Tire - Fill with air" href="../DMC-S1000DBIKE-AAA-DA0-10-20-00AA-215A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Tire - Check pressure" href="../DMC-S1000DBIKE-AAA-DA0-10-20-00AA-362B-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Inner tube - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA0-10-10-00AA-921A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Tire - Remove and install a new item" href="../DMC-S1000DBIKE-AAA-DA0-10-20-00AA-921A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Wheels - Procedures Summary" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-200A-T-T36D_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco_05_03" outputclass="referenceText">
+        <title>Assessment</title>
+        <refbody />
+        <linklist outputclass="linkList">
+          <link linktext="Wheels - Assessment Introduction" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-028A-T-T28B_001-00_en-US.xml" />
+          <link linktext="Wheels - Post-test" href="../DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T88E_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+    </topic>
+    <topic id="M06">
+      <title>Module 6 - Brake System</title>
+      <body />
+      <reference id="sco-06_01" outputclass="referenceText">
+        <title>Description</title>
+        <refbody />
+        <linklist outputclass="linklist">
+          <link linktext="Brake system - Inrtoduction" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T10B_001-00_en-US.xml" />
+          <link linktext="Brake system - Description of how it is made" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T2FC_001-00_en-US.xml" />
+          <link linktext="Brake system - Cantilever Brakes" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Brake system - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Brake system - Brake Levers" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T42C_001-00_en-US.xml" />
+          <link linktext="Brake system - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Brake system - Brake Pads" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T40C_001-00_en-US.xml" />
+          <link linktext="Brake system - Summary" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T36D_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco-06_02" outputclass="referenceText">
+        <title>Maintenance Procedures</title>
+        <refbody />
+        <linklist outputclass="linklist">
+          <link linktext="Brake system - Introduction" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-T-T2GB_001-00_en-US.xml" />
+          <link linktext="Brake system - Visual examination" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-310A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Brake system - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-310A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Brake system - Manual test" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-341A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Brake system - Knowledge check" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-341A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Brake system - General maintenance procedure" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-913A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Brake system - Summary" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-913A-T-T36D_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco-06_03" outputclass="referenceText">
+        <title>Assessment</title>
+        <refbody />
+        <linklist outputclass="linklist">
+          <link linktext="Brake system - Assessment Introduction" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-028A-T-T28C_001-00_en-US.xml" />
+          <link linktext="Brake system - Post-test" href="../DMC-S1000DBIKE-AAA-DA1-00-00-00AA-913A-T-T88E_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+    </topic>
+    <topic id="M07">
+      <title>Module 7 - Bicycle (General)</title>
+      <body />
+      <reference id="sco-07_01" outputclass="referenceText">
+        <title>Bicycle Maintenance</title>
+        <refbody />
+        <linklist outputclass="linklist">
+          <link linktext="Bicycle - Introducion" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-200A-T-T10B_001-00_en-US.xml" />
+          <link linktext="Bicycle - Servicing" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-200A-T-T2GC_001-00_en-US.xml" />
+          <link linktext="Bicycle - Other procedures to clean" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-258A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Bicycle - Knowledge check" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-258A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Bicycle - Place on test stand" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-330A-T-T42C_001-00_en-US.xml" />
+          <link linktext="Bicycle - Repair a puncture" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-663A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Bicycle - Knowledge check" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-663A-T-T62E_001-00_en-US.xml" />
+          <link linktext="Electrical system - Functional description" href="../DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-040A-T-T42C_001-00_en-US.xml" />
+          <link linktext="Lights - Manual test" href="../DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-341A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Lights - Observed fault" href="../DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-413A-T-T42C_001-00_en-US.xml" />
+          <link linktext="Lights - Assemble, install and connect procedures" href="../DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-700A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Lighting - Knowledge check" href="../DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-700A-T-T62E_001-00_en-US.xml" />
+          <!--<link linktext="Lighting - Remove and install new item" href="../DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-921A-T-T45C_001-00_en-US.xml" />-->
+          <link linktext="Horn - Remove and install a new item" href="../DMC-S1000DBIKE-AAA-DA3-10-00-00AA-921A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Bicycle - Summary" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-200A-T-T36D_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco-07_02" outputclass="referenceText">
+        <title>Pre and Post Operation Procedures</title>
+        <refbody />
+        <linklist outputclass="linklist">
+          <link linktext="Bicycle - Introduction" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-100A-T-T2GC_001-00_en-US.xml" />
+          <link linktext="Bicycle - Pre-operation procedures (crew)" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-121A-T-T4JC_001-00_en-US.xml" />
+          <link linktext="Bicycle - Knowledge check" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-121A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Bicycle - Post-operation procedures (crew)" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-151A-T-T45C_001-00_en-US.xml" />
+          <link linktext="Bicycle - Knowledge check" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-151A-T-T63E_001-00_en-US.xml" />
+          <link linktext="Bicycle - Operation" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-100A-T-T36C_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+      <reference id="sco-07_03" outputclass="referenceText">
+        <title>Assessment</title>
+        <refbody />
+        <linklist outputclass="linklist">
+          <link linktext="Bicycle - Assessment Introduction" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-028A-T-T28C_001-00_en-US.xml" />
+          <link linktext="Bicycle - Post-test" href="../DMC-S1000DBIKE-AAA-D00-00-00-00AA-100A-T-T88E_001-00_en-US.xml" />
+        </linklist>
+      </reference>
+    </topic>
+  </topic>
+</dita>
