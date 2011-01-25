@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lom.xsd">
+  <title>ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00127-A-001-01</title>
+  <general>
+    <identifier>
+      <catalog>ADL</catalog>
+      <entry>TBD</entry>
+    </identifier>
+    <language>en</language>
+    <aggregationLevel>
+      <source>LOMv1.0</source>
+      <value>1</value>
+    </aggregationLevel>
+    <description>
+      <string>Components of the hand brake</string>
+    </description>
+    <keyword>Brake Hand Lever</keyword>
+    <keyword>Pivot Bolt</keyword>
+    <keyword>Mount</keyword>
+    <keyword>Clamp Bolt</keyword>
+    <keyword>Adjuster Locknut</keyword>
+    <keyword>Adjuster Barrel</keyword>
+  </general>
+  <lifeCycle>
+    <version>
+      <string>1.0</string>
+    </version>
+    <status>
+      <source>LOMv1.0</source>
+      <value>final</value>
+    </status>
+    <contribute>
+      <role>
+        <source>LOMv1.0</source>
+        <value>publisher</value>
+      </role>
+      <entity></entity>
+      <date>
+        <dateTime>2009-06-30</dateTime>
+      </date>
+    </contribute>
+  </lifeCycle>
+  <metaMetadata>
+    <identifier>
+      <catalog>TBD</catalog>
+      <entry>TBD</entry>
+    </identifier>
+    <metadataSchema>LOMv1.0</metadataSchema>
+    <metadataSchema>SCORM_CAM_v1.3</metadataSchema>
+    <metadataSchema>ADLv1.0</metadataSchema>
+    <language>en</language>
+  </metaMetadata>
+  <rights>
+    <cost>
+      <source>LOMv1.0</source>
+      <value>no</value>
+    </cost>
+    <copyrightAndOtherRestrictions>
+      <source>LOMv1.0</source>
+      <value>no</value>
+    </copyrightAndOtherRestrictions>
+  </rights>
+  <technical>graphics/jpg</technical>
+</lom>
