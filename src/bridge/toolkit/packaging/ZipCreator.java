@@ -5,12 +5,16 @@
  */
 package bridge.toolkit.packaging;
 
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -19,105 +23,92 @@ import java.util.zip.ZipOutputStream;
  */
 public class ZipCreator
 {
-    /**
-     * Location of the root directory of the files to include in the ZIP file.
-     */
-    private String packageLocation;
 
     /**
-     * List of all the files in the directory to be zipped. 
-     */
-    private List<String> files = new ArrayList<String>();
-
-    /**
-     * Adds all the files from the list into the zip file.
+     * Adds all the files from the content package into the zip file.
      * 
-     * @param zipName String that represent the name to be used for the zip file.
+     * @param directory File that represents the location of the all the file 
+     * to be used to create the content package.
+     * @param zipfile File that will be the zip file name of the content package.
+     * @throws IOException
      */
-    public void zipFiles(String zipName)
+    public void zipFiles(File directory, File zipfile) throws IOException
     {
-        // Create a buffer for reading the files
-        byte[] buf = new byte[24];
+        URI base = directory.toURI();     
+        Deque<File> queue = new LinkedList<File>();     
+        queue.push(directory);     
+        OutputStream out = new FileOutputStream(zipfile);     
+        Closeable res = out;     
+        try 
+        {       
+            ZipOutputStream zout = new ZipOutputStream(out);       
+            res = zout;       
+            while (!queue.isEmpty()) 
+            {         
+                directory = queue.pop();         
+                for (File kid : directory.listFiles()) 
+                {           
+                    String name = base.relativize(kid.toURI()).getPath();           
+                    if (kid.isDirectory()) 
+                    {             
+                        queue.push(kid);             
+                        name = name.endsWith("/") ? name : name + "/";             
+                        zout.putNextEntry(new ZipEntry(name));           
+                    } 
+                    else 
+                    {             
+                        zout.putNextEntry(new ZipEntry(name));             
+                        copy(kid, zout);             
+                        zout.closeEntry();           
+                    }         
+                }       
+            }     
+         } 
+         finally 
+         {       
+             res.close();     
+         }   
 
+    }
+
+    /**
+     * Copies an InputStream to an OutputSteam.
+     * 
+     * @param in InputStream
+     * @param out OutputStream
+     * @throws IOException
+     */
+    private static void copy(InputStream in, OutputStream out) throws IOException
+    {
+        byte[] buffer = new byte[1024];
+        while (true)
+        {
+            int readCount = in.read(buffer);
+            if (readCount < 0)
+            {
+                break;
+            }
+            out.write(buffer, 0, readCount);
+        }
+    }
+
+    /**
+     * Copies a File object to an OutputStream.
+     * 
+     * @param file File
+     * @param out OutputStream
+     * @throws IOException
+     */
+    private static void copy(File file, OutputStream out) throws IOException
+    {
+        InputStream in = new FileInputStream(file);
         try
         {
-            // Create the ZIP file
-            String target = zipName +".zip";
-            ZipOutputStream out = new ZipOutputStream(new FileOutputStream(target));
-
-            File packageDir = new File(packageLocation);
-
-            File[] packageFiles = packageDir.listFiles();
-
-            addFiles(packageFiles);
-            
-            if (!files.isEmpty())
-            {
-                // Compress the files
-                for (int i = 0; i < files.size(); i++)
-                {
-                    FileInputStream in = new FileInputStream(files.get(i));
-
-                    // Add ZIP entry to output stream.
-                    int baseLength = packageLocation.length();
-                    String fileOut = files.get(i).substring(baseLength);
-                    out.putNextEntry(new ZipEntry(fileOut));
-
-                    // Transfer bytes from the file to the ZIP file
-                    int len;
-                    while ((len = in.read(buf)) > 0)
-                    {
-                        out.write(buf, 0, len);
-                    }
-
-                    // Complete the entry
-                    out.closeEntry();
-                    in.close();
-                }
-
-                // Complete the ZIP file
-                out.close();
-            }
-            else
-            {
-                System.out.println("There are no files to package");
-            }
+            copy(in, out);
         }
-        catch (IOException e)
+        finally
         {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Sets the packageLocation String.
-     * @param pLocation String the is the absolute path of the directory of the 
-     * files to be placed into the ZIP file.
-     */
-    public void setPackageLocation(String pLocation)
-    {
-        packageLocation = pLocation;
-    }
-
-    /**
-     * Adds all the files in the packageLocation to a list.
-     * 
-     * @param pFiles Array of Files from the packageLocation to be added to a 
-     * list.
-     */
-    private void addFiles(File[] pFiles)
-    {
-        for (File file : pFiles)
-        {
-            if (file.isDirectory())
-            {
-                File[] subDir = file.listFiles();
-                addFiles(subDir);
-            }
-            else
-            {
-                files.add(file.getAbsolutePath());
-            }
+            in.close();
         }
     }
 

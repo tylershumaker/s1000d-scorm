@@ -47,7 +47,7 @@ public class CopyDirectoryTest
     public void testCopyDirectory()
     {
         srcPath = new File(System.getProperty("user.dir") + File.separator +
-                "test_files\\bike_resource_package");
+                "examples\\bike_resource_package");
         dstPath = new File(System.getProperty("user.dir") + File.separator +
                 "test_files\\copy_test");
         try
@@ -79,7 +79,7 @@ public class CopyDirectoryTest
         List<File> vr = new ArrayList<File>();
         
         File [] testVR = new File(System.getProperty("user.dir") + File.separator +
-                                  "test_files\\bike_resource_package").listFiles();
+                                  "examples\\bike_resource_package").listFiles();
         for(File file : testVR)
         {
             if(file.getName().endsWith(".xml")||(file.getName().endsWith(".jpg")))

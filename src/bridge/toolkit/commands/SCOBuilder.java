@@ -5,9 +5,11 @@
  */
 package bridge.toolkit.commands;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -15,10 +17,14 @@ import java.util.List;
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
 import org.jdom.Attribute;
+import org.jdom.DocType;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.Namespace;
+import org.jdom.ProcessingInstruction;
+
+import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jdom.xpath.XPath;
@@ -97,6 +103,8 @@ public class SCOBuilder implements Command
             {
                 //copy necessary files over to CP folder
                 copyViewerAppFiles();
+                
+                applyStylesheetToDMCs();
             
                 //create list.js, add to CP
                 dmp = new DMParser();
@@ -108,7 +116,7 @@ public class SCOBuilder implements Command
             
                 //write urn map to cp app location
                 Document urn_map = (Document)ctx.get(Keys.URN_MAP);
-                File js = new File(cpPackage + File.separator + "ViewerApplication/TrainingContent/app/urn_resource_map.xml");
+                File js = new File(cpPackage + File.separator + "resources/s1000d/app/urn_resource_map.xml");
             
                 XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
                 FileWriter writer = new FileWriter(js);
@@ -135,6 +143,8 @@ public class SCOBuilder implements Command
                 ioe.printStackTrace();
                 return PROCESSING_COMPLETE;  
             }
+
+
             
             ctx.put(Keys.XML_SOURCE, manifest);
             System.out.println("SCOBUILDER PROCESSING WAS SUCCESSFULL");
@@ -159,7 +169,9 @@ public class SCOBuilder implements Command
     private void copyViewerAppFiles() throws IOException
     {
         File trainingContent = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
-        File cpTrainingContent = new File(cpPackage + File.separator + "ViewerApplication");
+        File cpTrainingContent = new File(cpPackage + File.separator + 
+                                         "resources" + File.separator + 
+                                         "s1000d");
         CopyDirectory cd = new CopyDirectory();
         cd.copyDirectory(trainingContent, cpTrainingContent);
         
@@ -168,6 +180,132 @@ public class SCOBuilder implements Command
     }
     
     /**
+     * Applies the appropriate XSLT style sheet to the S1000D data modules 
+     * so that they will be rendered in a human readable format in the SCORM
+     * Content Package SCOs.
+     * 
+     * @throws JDOMException
+     * @throws IOException
+     */
+    public void applyStylesheetToDMCs() throws JDOMException, IOException
+    {
+//        File dm = new File(System.getProperty("user.dir") + File.separator +
+//                "test_files\\resource_package_slim");
+        File dm = new File(cpPackage + File.separator + "resources" +
+                           File.separator + "s1000d");
+        
+        File[] resources = dm.listFiles();
+        for(File resource: resources)
+        {
+           
+            if(!resource.isDirectory())
+            {
+                SAXBuilder parser = new SAXBuilder();
+                parser.setExpandEntities(false);
+                Document doc = parser.build(resource);
+                
+                String STYLESHEET = "xml-stylesheet";
+                String STYLEPROCESSINGINSTRUCTION = "type='text/xsl' href='";
+                
+                String xslt = "app/s1000d_4.xslt";
+                
+                ProcessingInstruction stylesheet = new ProcessingInstruction(STYLESHEET, STYLEPROCESSINGINSTRUCTION+xslt+"'\n");
+                DocType docType = doc.getDocType();
+                if(docType!=null)
+                {
+                    //The JDOM parser converts the DocType and EntityRef from
+                    //relative paths to absolute paths.  So the docType is remove
+                    //then formated back to a relative path.
+                    doc.removeContent(docType);
+                    doc.setDocType(formatDocType(docType, resource));
+                }
+                doc.addContent(0,stylesheet);
+                
+                XMLOutputter outputter = new XMLOutputter(Format.getRawFormat());
+
+//                File temp = new File(System.getProperty("user.dir") + File.separator +
+//                        "test_files\\applyStyle" + File.separator +
+//                                     resource.getName());
+              File temp = new File(cpPackage + File.separator +"resources" + 
+                                   File.separator + "s1000d" + File.separator +
+                                   resource.getName());
+                FileWriter writer = new FileWriter(temp);
+                outputter.output(doc, writer);
+                writer.close();
+            }
+        }
+        
+    }
+    
+    
+    /**
+     * Formats the internal subset of the DocType of the S1000D data modules
+     * so that they will render the correct content. 
+     * 
+     * @param docT DocType object after the JDOM SAXBuilder parses the data
+     * module.
+     * @param dm File object that represents the location of the data module 
+     * file being modified. 
+     * @return DocType object with the absolute paths removed from the 
+     * internal subset.
+     * @throws IOException
+     */
+    public DocType formatDocType(DocType docT, File dm) throws IOException
+    {
+         String org = docT.getInternalSubset();
+    
+         BufferedReader in = new BufferedReader(new StringReader(org));
+    
+         List<String> lines = new ArrayList<String>();
+         String str;
+         while ((str = in.readLine()) != null) 
+         {
+            lines.add(str);
+         }
+         in.close();
+         
+         StringBuffer internalSubset = new StringBuffer();
+         Iterator<String> iterator = lines.iterator();
+         while(iterator.hasNext())
+         {
+             String line = iterator.next();
+             
+             if(line.contains("NOTATION") && !line.contains("swf"))
+             {
+                 if(line.contains("swf") || line.contains("SWF"))
+                 {
+                     internalSubset.append(line);
+                 }
+                 else
+                 {
+                     String[] notation = line.split("\"");
+                     String[] notationValue = notation[1].split("/");
+                      
+                     internalSubset.append(notation[0] + "'" +notationValue[notationValue.length-1].replaceAll("%20", " ")+"'>");                     
+                 }
+                 internalSubset.append("\n");
+             }
+             if(line.contains("ENTITY"))
+             {
+                 String[] entity = line.split("\"");
+                 String orgFileLoc = dm.getParent().replaceAll("\\\\", "/");
+                 String[] entityValue = entity[1].split(orgFileLoc + "/");
+                 
+                 internalSubset.append(entity[0] + "'" +entityValue[entityValue.length-1].replaceAll("%20", " ")+
+                                       "'" + entity[entity.length-1] );
+                 internalSubset.append("\n");
+                 
+             }
+             
+         }
+         
+         DocType newDocType = new DocType("dmodule");
+         newDocType.setInternalSubset(internalSubset.toString());
+         
+         return newDocType;
+    }
+
+   /**
      * Adds all of the Viewer Application files to a List that will be used to 
      * generate a common 'resource' element to be added to the imsmanifest.xml
      * file. 
@@ -192,6 +330,8 @@ public class SCOBuilder implements Command
         } 
         else 
         {
+            if(srcFolder.getParent().contains("app") || 
+               srcFolder.getParent().contains("Assessment_templates"))
             commonFiles.add(srcFolder.getAbsolutePath());
         }
     }
@@ -205,7 +345,7 @@ public class SCOBuilder implements Command
      */
     private void generateListFile() throws IOException, JDOMException
     {
-        File js = new File(cpPackage + File.separator + "ViewerApplication/TrainingContent/app/list.js");
+        File js = new File(cpPackage + File.separator + "resources/s1000d/app/list.js");
          
         //parse resource element to find file names...
         List<List<String>> sco_map = new ArrayList<List<String>>();
@@ -242,9 +382,9 @@ public class SCOBuilder implements Command
                 xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
                 resource = (Element) xp.selectSingleNode(manifest);
 
-                String resource_path = "../../../" + resource.getAttributeValue("href");
+                String[] resource_path = resource.getAttributeValue("href").split("/");
                 
-                page.add(resource_path);
+                page.add("../" + resource_path[resource_path.length-1]);
                 
             }
             scoPages.add(page);
@@ -358,12 +498,12 @@ public class SCOBuilder implements Command
             //replace href and file href
             Namespace ns = manifest.getRootElement().getNamespace();
             resource.setAttribute("href", 
-                    "ViewerApplication/index" + scoCounter +".htm");
+                    "resources/scos/index" + scoCounter +".htm");
             XPath xp = XPath.newInstance("//ns:file[@href='TODO:ref_to_SCO_goes_here']");
             xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
             Element file = (Element)xp.selectSingleNode(resource);
             file.setAttribute("href",
-                    "ViewerApplication/index" + scoCounter +".htm");
+                    "resources/scos/index" + scoCounter +".htm");
             
             buildHTMLFile(scoCounter);
             scoCounter++;
@@ -385,7 +525,7 @@ public class SCOBuilder implements Command
                 Element script = new Element("script");
                 List<Attribute> scriptAtts = new ArrayList<Attribute>();
                 scriptAtts.add(new Attribute("language","javascript"));
-                scriptAtts.add(new Attribute("src","TrainingContent/app/navScript.js"));
+                scriptAtts.add(new Attribute("src","../s1000d/app/navScript.js"));
                 script.setAttributes(scriptAtts);
                 script.addContent("/*        */");
            head.addContent(script);
@@ -399,7 +539,7 @@ public class SCOBuilder implements Command
                 List<Attribute> topframeAtts = new ArrayList<Attribute>();
                 topframeAtts.add(new Attribute("id","topframe"));
                 topframeAtts.add(new Attribute("name","topframe"));
-                topframeAtts.add(new Attribute("src","TrainingContent/app/topz.htm"));
+                topframeAtts.add(new Attribute("src","../s1000d/app/topz.htm"));
                 topframeAtts.add(new Attribute("scrolling","no"));
                 topframeAtts.add(new Attribute("frameborder","0"));
                 topframeAtts.add(new Attribute("marginheight","1"));
@@ -409,7 +549,7 @@ public class SCOBuilder implements Command
                 List<Attribute> contentAtts = new ArrayList<Attribute>();
                 contentAtts.add(new Attribute("id","content"));
                 contentAtts.add(new Attribute("name","content"));
-                contentAtts.add(new Attribute("src","TrainingContent/app/content.htm"));
+                contentAtts.add(new Attribute("src","../s1000d/app/content.htm"));
                 contentAtts.add(new Attribute("scrolling","auto"));
                 contentAtts.add(new Attribute("frameborder","0"));
                 content.setAttributes(contentAtts);
@@ -418,7 +558,7 @@ public class SCOBuilder implements Command
                 List<Attribute> navframeAtts = new ArrayList<Attribute>();
                 navframeAtts.add(new Attribute("id","nav_frame"));
                 navframeAtts.add(new Attribute("name","nav_frame"));
-                navframeAtts.add(new Attribute("src","TrainingContent/app/navPage.htm?loc=" + num));
+                navframeAtts.add(new Attribute("src","../s1000d/app/navPage.htm?loc=" + num));
                 navframeAtts.add(new Attribute("frameborder","0"));
                 navframe.setAttributes(navframeAtts);
                 
@@ -427,9 +567,13 @@ public class SCOBuilder implements Command
             frameset.addContent(navframe);
         html.addContent(frameset);
         
+        File scoFolder = new File(cpPackage + File.separator + 
+                             "resources/scos/");
+        scoFolder.mkdir();
+        
         XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
         FileWriter writer = new FileWriter(cpPackage + File.separator + 
-                            "ViewerApplication/index" + num +".htm");
+                            "resources/scos/index" + num +".htm");
         outputter.output(html, writer);
         writer.flush();
         writer.close();

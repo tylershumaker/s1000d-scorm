@@ -2,7 +2,21 @@ package bridge.toolkit.packaging;
 
 import static org.junit.Assert.*;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.Closeable;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipOutputStream;
 
 import org.junit.After;
 import org.junit.Before;
@@ -23,15 +37,16 @@ public class ZipCreatorTest
    @After
    public void tearDown() throws Exception
    {
-       testZip.delete();
+      // testZip.delete();
    }
 
    @Test
-   public void testZipFiles()
+   public void testZipFiles() throws IOException
    {
-      String packageLoc = System.getProperty("user.dir") + File.separator + "test_files\\bike_resource_package";
-      contentPackage.setPackageLocation(packageLoc);
-      contentPackage.zipFiles("test");
+      File directory = new File(System.getProperty("user.dir") + File.separator + "examples\\bike_resource_package");
+
+      contentPackage.zipFiles(directory, testZip);
+      
       assertTrue(testZip.exists());
    }
 

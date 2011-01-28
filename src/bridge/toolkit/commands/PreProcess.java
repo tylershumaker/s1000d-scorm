@@ -260,11 +260,11 @@ public class PreProcess implements Command
         // assume manifest is at level with resources folder
         if (name.startsWith("ICN"))
         {
-            target.setText("resources/media/" + file_name);
+            target.setText("media/" + file_name);
         }
         else
         {
-            target.setText("resources/" + file_name);
+            target.setText(file_name);
         }
         urn.addContent(target);
         return urn;
@@ -312,7 +312,7 @@ public class PreProcess implements Command
         List<Element> urns = urn_map.getRootElement().getChildren();
         for (int i = 0; i < urns.toArray().length; i++)
         {
-            String the_href = urns.get(i).getChildText("target", null);
+            String the_href = "resources/s1000d/" + urns.get(i).getChildText("target", null);
             String the_name = urns.get(i).getAttributeValue("name").replace("URN:S1000D:", "");
 
             Element resource = new Element("resource");

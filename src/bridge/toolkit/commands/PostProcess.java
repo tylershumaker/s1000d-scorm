@@ -7,6 +7,7 @@ package bridge.toolkit.commands;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
@@ -84,11 +85,19 @@ public class PostProcess implements Command
 
             String zipName = title.getValue();
             zipName = zipName.replace(" ", "_").trim();
+            File zip = new File(zipName+".zip");
            
-
             ZipCreator zipCreator = new ZipCreator();
-            zipCreator.setPackageLocation(cpPackage.getAbsolutePath());
-            zipCreator.zipFiles(zipName);
+            try
+            {
+                zipCreator.zipFiles(cpPackage, zip);
+            }
+            catch (IOException e)
+            {
+                System.out.println("CONTENT PACKAGE CREATION UNSUCCESSFULL");
+                e.printStackTrace();
+                return PROCESSING_COMPLETE;
+            }
             
             cpPackage.deleteOnExit();
             System.out.println("CONTENT PACKAGE CREATION SUCCESSFULL");

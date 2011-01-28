@@ -88,9 +88,12 @@ public class Controller
         Context ctx = new ContextBase();
         
         //hardcoded files for iitsec demo, replace with args[0] and args[1] or other hardcoded files
-        ctx.put(Keys.SCPM_FILE, "c:\\toolkit_demo\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
-        ctx.put(Keys.RESOURCE_PACKAGE, "c:\\toolkit_demo\\bike_resource_package\\");
-        
+        //ctx.put(Keys.SCPM_FILE, "c:\\toolkit_demo\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+        //ctx.put(Keys.RESOURCE_PACKAGE, "c:\\toolkit_demo\\bike_resource_package\\");
+//        ctx.put(Keys.SCPM_FILE, "c:\\toolkit_demo\\scpm_slim\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+//        ctx.put(Keys.RESOURCE_PACKAGE, "c:\\toolkit_demo\\resource_package_slim\\");
+        ctx.put(Keys.SCPM_FILE, args[0]);
+        ctx.put(Keys.RESOURCE_PACKAGE, args[1]);
         try
         {
             toolkit.execute(ctx);

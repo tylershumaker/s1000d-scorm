@@ -113,7 +113,8 @@ public class ContentPackageCreator
         
         //copy over validated packages or resource package
         CopyDirectory cd = new CopyDirectory();
-        File resource = new File(newCP.getAbsoluteFile()+ File.separator + "resources");
+        File resource = new File(newCP.getAbsoluteFile()+ File.separator + 
+                                "resources" + File.separator + "s1000d");
         resource.mkdirs();
         if(mValidatedResources != null)
         {

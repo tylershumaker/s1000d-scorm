@@ -41,9 +41,9 @@ public class PostProcessTest
         ctx = new ContextBase();
         parser = new XMLParser();
         ctx.put(Keys.XML_SOURCE, parser.getDoc(new File(System.getProperty("user.dir") + File.separator
-                + "test_files\\bike_imsmanifest_after_preprocess.xml")));
+                + "test_files\\bike_imsmanifest_after_scobuilder.xml")));
         String resources = System.getProperty("user.dir") + File.separator +
-        "test_files\\bike_resource_package";
+        "examples\\bike_resource_package";
         
         
         File srcPath = new File(resources);

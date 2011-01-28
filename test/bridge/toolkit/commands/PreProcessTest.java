@@ -45,7 +45,7 @@ public class PreProcessTest
     {
         ctx = new ContextBase();
         ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator
-                + "test_files\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+                + "examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
         
         File srcPath = new File(src);
         dstPath = new File(System.getProperty("user.dir") + File.separator +
@@ -92,7 +92,7 @@ public class PreProcessTest
         try
         {
             setUp(System.getProperty("user.dir") + File.separator +
-            "test_files\\bike_resource_package");
+            "examples\\bike_resource_package");
             preProcess.execute(ctx);
             Document returned = (Document)ctx.get(Keys.XML_SOURCE);
 
@@ -103,7 +103,11 @@ public class PreProcessTest
 //          XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
 //          String output = outputter.outputString(returned);
 //          System.out.println(output);
-            
+//            
+//          Document urnmap = (Document)ctx.get(Keys.URN_MAP);
+//          output = outputter.outputString(urnmap);
+//          System.out.println(output);
+          
             assertEquals(expected.getRootElement().getName(), 
                          returned.getRootElement().getName());
             assertEquals(expected.getRootElement().getChildren().size(), 
@@ -179,7 +183,7 @@ public class PreProcessTest
             setUp(System.getProperty("user.dir") + File.separator +
             "test_files\\resource_package_collision");
             ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator +
-            "test_files\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+            "examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
             assertTrue(preProcess.execute(ctx));
         }
         catch (Exception e)
@@ -200,7 +204,7 @@ public class PreProcessTest
             setUp(System.getProperty("user.dir") + File.separator +
             "test_files\\resource_package_empty");
             ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator +
-            "test_files\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+            "examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
             assertTrue(preProcess.execute(ctx));
 //            deleteDirectory(emptyResPackage);
         }
