@@ -1,0 +1,85 @@
+﻿body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: #000000;
+	font-weight: normal;
+	
+
+}
+.contentTitle1
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16pt;
+	color: #000000;
+	font-weight:bold;
+	text-align:left;
+	
+}
+.menuTitle
+{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: Navy;
+	font-weight:bold;
+}
+
+.floatRight 
+{
+	FLOAT: right; 
+
+}
+.floatLeft 
+{
+	FLOAT: left; 
+
+}
+
+.noFloat { CLEAR: both; FLOAT: none;}
+
+.menuItem
+{
+	font-size: 10pt;
+	
+}
+.aLink
+{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #1563A8;
+	text-decoration: none;
+	
+}
+
+.aLink A:visited{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	color: Gray;
+	font-weight : normal;
+	text-decoration : none;
+	border: none;
+}
+
+.aLink A:link 
+{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	color: #1563A8;
+	font-weight : normal;
+	text-decoration : none;
+	border: none;
+}
+
+.aLink A:hover {
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight : normal;
+	text-decoration : none;
+	color: Navy;
+	border: none;
+}
+
+a image
+{
+	border: none;
+	cursor:crosshair;
+}
