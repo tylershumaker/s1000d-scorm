@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dmodule
+[
+]>
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/appliccrossreftable.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><rdf:Description><dc:creator>SF815</dc:creator><dc:title>Mountain bicycle - Applicability cross-reference table</dc:title><dc:subject>Mountain bicycle - Applicability cross-reference table</dc:subject><dc:publisher>SF815</dc:publisher><dc:contributor>SF815</dc:contributor><dc:date>2008-08-01</dc:date><dc:type>text</dc:type><dc:format>text/xml</dc:format><dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-00WA-D_005-00</dc:identifier><dc:language>en-US</dc:language><dc:rights>01</dc:rights></rdf:Description>
+<identAndStatusSection>
+<dmAddress>
+<dmIdent>
+<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D"/>
+<language countryIsoCode="US" languageIsoCode="en"/>
+<issueInfo issueNumber="005" inWork="00"/>
+</dmIdent>
+<dmAddressItems>
+<issueDate year="2008" month="08" day="01"/>
+<dmTitle>
+<techName>Mountain bicycle</techName>
+<infoName>Applicability cross-reference table</infoName>
+</dmTitle>
+</dmAddressItems>
+</dmAddress>
+<dmStatus issueType="revised">
+<security securityClassification="01"/>
+<dataRestrictions>
+<restrictionInstructions>
+<dataDistribution>To be made available to all S1000D users.</dataDistribution><exportControl>
+<exportRegistrationStmt>
+<simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+</exportRegistrationStmt>
+</exportControl>
+<dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+<dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+<dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+</restrictionInstructions>
+<restrictionInfo>
+<copyright>
+<copyrightPara><emphasis>Copyright (C) 2008</emphasis> by each of the following organizations:<randomList>
+<listItem><para>AeroSpace and Defence Industries Associations of Europe - ASD.</para></listItem>
+<listItem><para>Ministries of Defence of the member countries of ASD.</para></listItem>
+</randomList></copyrightPara>
+<copyrightPara><emphasis>Limitations of Liability:</emphasis></copyrightPara>
+<copyrightPara><randomList>
+<listItem><para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para></listItem>
+<listItem><para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para></listItem>
+<listItem><para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para></listItem>
+</randomList></copyrightPara>
+</copyright>
+<policyStatement>TPSMG TOR 001</policyStatement>
+<dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+</restrictionInfo>
+</dataRestrictions>
+<responsiblePartnerCompany enterpriseCode="SF815">
+<enterpriseName>SIOM</enterpriseName>
+</responsiblePartnerCompany>
+<originator enterpriseCode="SF815">
+<enterpriseName>SIOM</enterpriseName>
+</originator>
+<applicCrossRefTableRef>
+<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D">
+<dmRefIdent>
+<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D"/>
+</dmRefIdent>
+</dmRef>
+</applicCrossRefTableRef>
+<applic>
+<displayText>
+<simplePara>All</simplePara>
+</displayText>
+</applic>
+<brexDmRef>
+<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D_007-00">
+<dmRefIdent>
+<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+<issueInfo issueNumber="007" inWork="00"/>
+</dmRefIdent>
+</dmRef>
+</brexDmRef>
+<qualityAssurance>
+<firstVerification verificationType="tabtop"/>
+</qualityAssurance>
+<reasonForUpdate><simplePara>totally revised</simplePara><simplePara>Schema cleanup element/attribute renaming</simplePara></reasonForUpdate></dmStatus>
+</identAndStatusSection>
+<content>
+<applicCrossRefTable>
+<productAttributeList>
+<productAttribute id="serialno">
+<name>Serial number</name>
+<displayName>SN</displayName>
+<descr>Serial number etched on the frame</descr>
+</productAttribute>
+<productAttribute id="type">
+<name>Type</name>
+<displayName/>
+<descr>Type of bike</descr>
+</productAttribute>
+<productAttribute id="model" valuePattern=".*">
+<name>Model</name>
+<displayName/>
+<descr>Model of the bike</descr>
+<enumeration applicPropertyValues="Brook trekker|Mountain storm"/>
+</productAttribute>
+<productAttribute id="version" valuePattern="Mk(1|9)">
+<name>Version</name>
+<displayName/>
+<descr>Version of the bike</descr>
+<enumeration applicPropertyValues="Mk1|Mk9"/>
+</productAttribute>
+<productAttribute id="versrank" valuePattern="\d">
+<name>Version rank</name>
+<displayName>series</displayName>
+<descr>Version rank</descr>
+<enumeration applicPropertyValues="1~3"/>
+</productAttribute>
+</productAttributeList>
+<condCrossRefTableRef>
+<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00QA-D">
+<dmRefIdent>
+<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00Q" infoCodeVariant="A" itemLocationCode="D"/>
+</dmRefIdent>
+</dmRef>
+</condCrossRefTableRef>
+<productCrossRefTableRef>
+<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00PA-D">
+<dmRefIdent>
+<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00P" infoCodeVariant="A" itemLocationCode="D"/>
+</dmRefIdent>
+</dmRef>
+</productCrossRefTableRef>
+</applicCrossRefTable>
+</content>
+</dmodule>

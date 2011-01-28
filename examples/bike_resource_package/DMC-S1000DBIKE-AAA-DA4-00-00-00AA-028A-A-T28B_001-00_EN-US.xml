@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dmodule [
+  <!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+  <!ENTITY ICN-S1000DBIKE-AAA-DA51000-A-06RT9-00058-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA51000-A-06RT9-00058-A-001-01.jpg' NDATA JPEG>
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Drive train - 
+						General: Terminal objective - Motor skill
+					</dc:title>
+    <dc:subject>Drive train - 
+						General: Terminal objective - Motor skill
+					</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-08-20</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>
+			DMC-S1000DBIKE-AAA-DA4-00-00-00AA-028A-A-T28B_001-00
+		</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="028" infoCodeVariant="A" itemLocationCode="A" learnCode="T28" learnEventCode="B" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="08" day="20" />
+        <dmTitle>
+          <techName>Drive train</techName>
+          <infoName>
+						General: Terminal objective - Motor skill
+					</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01" />
+      <responsiblePartnerCompany enterpriseCode="06RT9" />
+      <originator />
+      <applic>
+        <displayText />
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified />
+      </qualityAssurance>
+      <systemBreakdownCode>DA400</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningOverview>
+        <title />
+        <lcSection>
+          <description>
+            <figure>
+              <title />
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA51000-A-06RT9-00058-A-001-01" />
+            </figure>
+            <para>
+              <emphasis>Terminal Objective: Given a bike, you will be able to perform the steps to maintain the drive train.</emphasis>
+            </para>
+          </description>
+        </lcSection>
+      </learningOverview>
+    </learning>
+  </content>
+</dmodule>
