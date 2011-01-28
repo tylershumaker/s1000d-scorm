@@ -152,8 +152,8 @@
       <scoEntryContent>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H30" learnEventCode="A" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H30" learnEventCode="A" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -161,8 +161,8 @@
         </dmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H10" learnEventCode="A" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H10" learnEventCode="A" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -170,8 +170,8 @@
         </dmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H11" learnEventCode="A" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H11" learnEventCode="A" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -179,8 +179,8 @@
         </dmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H18" learnEventCode="A" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H18" learnEventCode="A" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -188,8 +188,8 @@
         </dmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H19" learnEventCode="A" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H19" learnEventCode="A" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -197,8 +197,8 @@
         </dmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H20" learnEventCode="A" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H20" learnEventCode="A" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -206,8 +206,8 @@
         </dmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H40" learnEventCode="A" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H40" learnEventCode="A" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="22" />
@@ -340,8 +340,8 @@
       <scoEntryContent>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="T" learnCode="H14" learnEventCode="B" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H14" learnEventCode="B" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="30" />
@@ -441,8 +441,8 @@
       <scoEntryContent>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="028" infoCodeVariant="A" itemLocationCode="T" learnCode="T28" learnEventCode="C" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="028" infoCodeVariant="A" itemLocationCode="A" learnCode="T28" learnEventCode="C" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="30" />
@@ -450,8 +450,8 @@
         </dmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="T" learnCode="T88" learnEventCode="E" />
-            <language countryIsoCode="US" languageIsoCode="en" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T88" learnEventCode="E" />
+            <language countryIsoCode="US" languageIsoCode="EN" />
           </dmRefIdent>
           <dmRefAddressItems>
             <issueDate year="2009" month="07" day="30" />
