@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dmodule [
+  <!NOTATION SWF SYSTEM "http://www.macromedia.com/software/flash">
+  <!ENTITY ICN-S1000DBIKE-AAA-DA23000-A-06RT9-00009-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA23000-A-06RT9-00009-A-001-01.swf' NDATA SWF>
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Headset - Description of how it is made: Static content - Fact Expositive</dc:title>
+    <dc:subject>Headset - Description of how it is made: Static content - Fact Expositive</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-07-30</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA2-30-00-00AA-041A-A-T42C_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="3" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T42" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="30" />
+        <dmTitle>
+          <techName>Headset</techName>
+          <infoName>Description of how it is made: Static content - Fact Expositive</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01" />
+      <responsiblePartnerCompany enterpriseCode="06RT9" />
+      <originator />
+      <applic>
+        <displayText />
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified />
+      </qualityAssurance>
+      <systemBreakdownCode>DA230</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent id="learncont-d21fa995-55c8-4f92-bc16-a6b1b791b6d5">
+        <title>Headset</title>
+        <lcInstruction id="lci-7d96f8b1-113d-4dbe-8344-ec24c262fa51">
+          <description>
+            <para>A headset is a group of components that provide a rotatable interface between the bicycle fork and the frame. There is a pair of bearings on the two ends of the frame's head tube that permits the fork to turn rearward and forward, allowing the rider to turn the handlebar for steering.</para>
+            <para>The headset includes the following parts: </para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Upper and lower head tube races</para>
+                  <para>
+                    <randomList>
+                      <listItem>
+                        <para>Bearing races that push into the head tube</para>
+                      </listItem>
+                    </randomList>
+                  </para>
+                </listItem>
+                <listItem>
+                  <para>Crown race</para>
+                  <para>
+                    <randomList>
+                      <listItem>
+                        <para>Bearing race that pushes on the fork steerer tube</para>
+                      </listItem>
+                    </randomList>
+                  </para>
+                </listItem>
+                <listItem>
+                  <para>Adjustable upper race</para>
+                </listItem>
+                <listItem>
+                  <para>Two sets of ball bearings</para>
+                </listItem>
+                <listItem>
+                  <para>Locknut</para>
+                </listItem>
+                <listItem>
+                  <para>Washer</para>
+                </listItem>
+                <listItem>
+                  <para>Seal</para>
+                </listItem>
+              </randomList>
+            </para>
+            <para>A headset has two cups that are pushed into the head tube and a ring on the fork. All three must be precisely aligned. It is often necessary to remove rough paint to get all three in alignment.</para>
+            <para>The upper race installs onto the steerer tube with a thread. A locknut is used to secure the upper race.</para>
+            <para>A clamp bolt holds the stem to the steerer tube.</para>
+            <para>The fourth remaining bearing race is part of a nut that installs on the threaded top end of the fork. This is done after it is installed in the head tube. It is sometimes necessary for some headsets to have more thread at the top of the head tube. If the fork is too long, spacer rings can be installed. If it is too short, there is a limit to the number of headsets you can use.</para>
+            <figure>
+              <title />
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA23000-A-06RT9-00009-A-001-01" />
+            </figure>
+            <para>
+              <emphasis>Click PLAY to view the headset assembly.</emphasis>
+            </para>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>
