@@ -48,12 +48,11 @@ public class ResourceMapException extends Exception
     public void printTrace()
     {
         StringBuffer trace = new StringBuffer();
-        trace.append("<dependency identifierref='" + urn +"' /> element\n");
-        trace.append("was found in <resource identifier='" +file1 + "'.../> element ");
-        trace.append("in the file produced by the XSL Transform.\n");
-        trace.append("There was no <resource identifier='" +urn +"'.../> element\n");
-        trace.append("found in the file produced, please check the 'Resource Package'\n");
-        trace.append("provided contains a DMC that maps the to this URN.");
+        trace.append("Resource " + file1 + " contains a dependency of Resource " + urn + ",\n");
+        trace.append("however the Resource " + urn + "was not found in the imsmanifest.xml \n");
+        trace.append("file produced during the transformation.  Please check the \n");
+        trace.append("\"Resource Package\" provided to the Toolkit to determine if \n");
+        trace.append("it contains all of the files referenced in the SCPM.");
         System.out.println(trace);
     }
     
