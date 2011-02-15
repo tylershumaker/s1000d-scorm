@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Open Toolkit 
+ * This file is part of the S1000D-SCORM Bridge Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
