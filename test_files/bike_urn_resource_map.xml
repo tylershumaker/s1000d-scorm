@@ -243,6 +243,9 @@
   <urn name="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T36D">
     <target type="file">DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T36D_001-00_EN-US.xml</target>
   </urn>
+  <urn name="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T71E">
+    <target type="file">DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T71E_001-00_EN-US.xml</target>
+  </urn>
   <urn name="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T88E">
     <target type="file">DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T88E_001-00_EN-US.xml</target>
   </urn>
@@ -671,6 +674,9 @@
   </urn>
   <urn name="URN:S1000D:ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01">
     <target type="file">media/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01.jpg</target>
+  </urn>
+  <urn name="URN:S1000D:ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00030-A-001-01">
+    <target type="file">media/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00030-A-001-01.jpg</target>
   </urn>
   <urn name="URN:S1000D:ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1">
     <target type="file">media/ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1.jpg</target>

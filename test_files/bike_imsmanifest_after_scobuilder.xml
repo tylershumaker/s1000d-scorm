@@ -19,46 +19,46 @@
       <item identifier="ACT-N66479" identifierref="RES-N66479">
         <title>Steering System Description</title>
       </item>
-      <item identifier="ACT-N66809" identifierref="RES-N66809">
+      <item identifier="ACT-N66833" identifierref="RES-N66833">
         <title>Remove and Install Procedures</title>
       </item>
-      <item identifier="ACT-N67163" identifierref="RES-N67163">
+      <item identifier="ACT-N67187" identifierref="RES-N67187">
         <title>Assessment</title>
       </item>
-      <item identifier="ACT-N67313" identifierref="RES-N67313">
+      <item identifier="ACT-N67337" identifierref="RES-N67337">
         <title>Description</title>
       </item>
-      <item identifier="ACT-N67687" identifierref="RES-N67687">
+      <item identifier="ACT-N67711" identifierref="RES-N67711">
         <title>Drive Train Maintenance</title>
       </item>
-      <item identifier="ACT-N67949" identifierref="RES-N67949">
+      <item identifier="ACT-N67973" identifierref="RES-N67973">
         <title>Assessment</title>
       </item>
-      <item identifier="ACT-N68099" identifierref="RES-N68099">
+      <item identifier="ACT-N68123" identifierref="RES-N68123">
         <title>Description</title>
       </item>
-      <item identifier="ACT-N68397" identifierref="RES-N68397">
+      <item identifier="ACT-N68421" identifierref="RES-N68421">
         <title>Wheel Maintenence</title>
       </item>
-      <item identifier="ACT-N68875" identifierref="RES-N68875">
+      <item identifier="ACT-N68899" identifierref="RES-N68899">
         <title>Assessment</title>
       </item>
-      <item identifier="ACT-N69021" identifierref="RES-N69021">
+      <item identifier="ACT-N69045" identifierref="RES-N69045">
         <title>Description</title>
       </item>
-      <item identifier="ACT-N69327" identifierref="RES-N69327">
+      <item identifier="ACT-N69351" identifierref="RES-N69351">
         <title>Maintenance Procedures</title>
       </item>
-      <item identifier="ACT-N69601" identifierref="RES-N69601">
+      <item identifier="ACT-N69625" identifierref="RES-N69625">
         <title>Assessment</title>
       </item>
-      <item identifier="ACT-N69743" identifierref="RES-N69743">
+      <item identifier="ACT-N69767" identifierref="RES-N69767">
         <title>Bicycle Maintenance</title>
       </item>
-      <item identifier="ACT-N70221" identifierref="RES-N70221">
+      <item identifier="ACT-N70245" identifierref="RES-N70245">
         <title>Pre and Post Operation Procedures</title>
       </item>
-      <item identifier="ACT-N70475" identifierref="RES-N70475">
+      <item identifier="ACT-N70499" identifierref="RES-N70499">
         <title>Assessment</title>
       </item>
       <metadata>
@@ -494,6 +494,7 @@
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-018A-A-T10C" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T2FB" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T30C" />
+      <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T71E" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-20-00-00AA-041A-A-T42C" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-20-00-00AA-041A-A-T62E" />
       <dependency identifierref="DMC-S1000DBIKE-AAA-DA2-30-00-00AA-041A-A-T42C" />
@@ -504,13 +505,14 @@
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00004-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00005-A-001-01" />
+      <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00030-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00007-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA23000-A-06RT9-00009-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00011-A-001-01" />
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00013-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N66809" type="webcontent" adlcp:scormType="sco" href="resources/scos/index4.htm">
+    <resource identifier="RES-N66833" type="webcontent" adlcp:scormType="sco" href="resources/scos/index4.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -622,7 +624,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00026-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N67163" type="webcontent" adlcp:scormType="sco" href="resources/scos/index5.htm">
+    <resource identifier="RES-N67187" type="webcontent" adlcp:scormType="sco" href="resources/scos/index5.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -709,7 +711,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N67313" type="webcontent" adlcp:scormType="sco" href="resources/scos/index6.htm">
+    <resource identifier="RES-N67337" type="webcontent" adlcp:scormType="sco" href="resources/scos/index6.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -836,7 +838,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA51000-A-06RT9-00058-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N67687" type="webcontent" adlcp:scormType="sco" href="resources/scos/index7.htm">
+    <resource identifier="RES-N67711" type="webcontent" adlcp:scormType="sco" href="resources/scos/index7.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -957,7 +959,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00175-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N67949" type="webcontent" adlcp:scormType="sco" href="resources/scos/index8.htm">
+    <resource identifier="RES-N67973" type="webcontent" adlcp:scormType="sco" href="resources/scos/index8.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1043,7 +1045,7 @@
       <dependency identifierref="DMC-S1000D-A-04-10-0301-00A-022A-D" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N68099" type="webcontent" adlcp:scormType="sco" href="resources/scos/index9.htm">
+    <resource identifier="RES-N68123" type="webcontent" adlcp:scormType="sco" href="resources/scos/index9.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1145,7 +1147,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00091-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N68397" type="webcontent" adlcp:scormType="sco" href="resources/scos/index10.htm">
+    <resource identifier="RES-N68421" type="webcontent" adlcp:scormType="sco" href="resources/scos/index10.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1296,7 +1298,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00105-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N68875" type="webcontent" adlcp:scormType="sco" href="resources/scos/index11.htm">
+    <resource identifier="RES-N68899" type="webcontent" adlcp:scormType="sco" href="resources/scos/index11.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1380,7 +1382,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00185-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N69021" type="webcontent" adlcp:scormType="sco" href="resources/scos/index12.htm">
+    <resource identifier="RES-N69045" type="webcontent" adlcp:scormType="sco" href="resources/scos/index12.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1486,7 +1488,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00131-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N69327" type="webcontent" adlcp:scormType="sco" href="resources/scos/index13.htm">
+    <resource identifier="RES-N69351" type="webcontent" adlcp:scormType="sco" href="resources/scos/index13.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1592,7 +1594,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00146-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N69601" type="webcontent" adlcp:scormType="sco" href="resources/scos/index14.htm">
+    <resource identifier="RES-N69625" type="webcontent" adlcp:scormType="sco" href="resources/scos/index14.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1673,7 +1675,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-DA10000-A-06RT9-00148-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N69743" type="webcontent" adlcp:scormType="sco" href="resources/scos/index15.htm">
+    <resource identifier="RES-N69767" type="webcontent" adlcp:scormType="sco" href="resources/scos/index15.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1818,7 +1820,7 @@
       <dependency identifierref="DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-921A-A-T45C" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N70221" type="webcontent" adlcp:scormType="sco" href="resources/scos/index16.htm">
+    <resource identifier="RES-N70245" type="webcontent" adlcp:scormType="sco" href="resources/scos/index16.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -1919,7 +1921,7 @@
       <dependency identifierref="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00175-A-001-01" />
       <dependency identifierref="RES-common-files" />
     </resource>
-    <resource identifier="RES-N70475" type="webcontent" adlcp:scormType="sco" href="resources/scos/index17.htm">
+    <resource identifier="RES-N70499" type="webcontent" adlcp:scormType="sco" href="resources/scos/index17.htm">
       <metadata>
         <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
           <lom:general>
@@ -2241,6 +2243,9 @@
     </resource>
     <resource identifier="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T36D" type="webcontent" adlcp:scormType="asset" href="resources/s1000d/DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T36D_001-00_EN-US.xml">
       <file href="resources/s1000d/DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T36D_001-00_EN-US.xml" />
+    </resource>
+    <resource identifier="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T71E" type="webcontent" adlcp:scormType="asset" href="resources/s1000d/DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T71E_001-00_EN-US.xml">
+      <file href="resources/s1000d/DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T71E_001-00_EN-US.xml" />
     </resource>
     <resource identifier="DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T88E" type="webcontent" adlcp:scormType="asset" href="resources/s1000d/DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T88E_001-00_EN-US.xml">
       <file href="resources/s1000d/DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T88E_001-00_EN-US.xml" />
@@ -2670,6 +2675,9 @@
     </resource>
     <resource identifier="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01" type="webcontent" adlcp:scormType="asset" href="resources/s1000d/media/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01.jpg">
       <file href="resources/s1000d/media/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01.jpg" />
+    </resource>
+    <resource identifier="ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00030-A-001-01" type="webcontent" adlcp:scormType="asset" href="resources/s1000d/media/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00030-A-001-01.jpg">
+      <file href="resources/s1000d/media/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00030-A-001-01.jpg" />
     </resource>
     <resource identifier="ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1" type="webcontent" adlcp:scormType="asset" href="resources/s1000d/media/ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1.jpg">
       <file href="resources/s1000d/media/ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1.jpg" />
