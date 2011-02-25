@@ -71,7 +71,7 @@ public class SCOBuilder implements Command
     /**
      * Message that is returned if the building of the SCOs is unsuccessful.
      */
-    String SCOBUILDER_FAILED = "SCOBUILDER PROCESSING WAS UNSUCCESSFULL";
+    String SCOBUILDER_FAILED = "SCOBuilder processing was unsuccessful";
     
     /**
      * The unit of processing work to be performed for the SCOBuilder module.
@@ -147,11 +147,11 @@ public class SCOBuilder implements Command
 
             
             ctx.put(Keys.XML_SOURCE, manifest);
-            System.out.println("SCOBUILDER PROCESSING WAS SUCCESSFULL");
+            System.out.println("SCOBuilder processing was successful");
         }
         else
         {
-            System.out.println("SCOBUILDER PROCESSING WAS UNSUCCESSFULL");
+            System.out.println(SCOBUILDER_FAILED);
             System.out.println("One of the required Context entries for the " + this.getClass().getSimpleName()
                     + " command to be executed was null");
             return PROCESSING_COMPLETE;

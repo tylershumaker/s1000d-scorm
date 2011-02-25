@@ -77,7 +77,7 @@ public class PreProcess implements Command
      * Message that is returned if the conversion from SCPM to imsmanifest.xml 
      * file is unsuccessful.
      */
-    private static final String CONVERSION_FAILED = "CONVERSION OF SCPM TO IMSMANIFEST WAS UNSUCCESSFULL";
+    private static final String CONVERSION_FAILED = "Conversion of SCPM to IMS Manifest was unsuccessful";
 
     /**
      * Constructor
@@ -150,7 +150,7 @@ public class PreProcess implements Command
             ctx.put(Keys.URN_MAP, urn_map);
             ctx.put(Keys.XML_SOURCE, manifest);
 
-            System.out.println("CONVERSION OF SCPM TO IMSMANIFEST SUCCESSFULL");
+            System.out.println("Conversion of SCPM to IMS Manifest was successful");
         }
         else
         {

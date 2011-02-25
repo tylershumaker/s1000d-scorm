@@ -61,7 +61,7 @@ public class PostProcess implements Command
             } 
             catch (java.io.IOException e) 
             {
-                System.out.println("CONTENT PACKAGE CREATION UNSUCCESSFULL");
+                System.out.println("Content Package creation was unsuccessful");
                 e.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
@@ -78,7 +78,7 @@ public class PostProcess implements Command
             }
             catch (JDOMException e)
             {
-                System.out.println("CONTENT PACKAGE CREATION UNSUCCESSFULL");
+                System.out.println("Content Package creation was unsuccessful");
                 e.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
@@ -94,17 +94,17 @@ public class PostProcess implements Command
             }
             catch (IOException e)
             {
-                System.out.println("CONTENT PACKAGE CREATION UNSUCCESSFULL");
+                System.out.println("Content Package creation was unsuccessful");
                 e.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
             
             cpPackage.deleteOnExit();
-            System.out.println("CONTENT PACKAGE CREATION SUCCESSFULL");
+            System.out.println("Content Package creation was successful");
         }
         else
         {
-            System.out.println("CONTENT PACKAGE CREATION UNSUCCESSFULL");
+            System.out.println("Content Package creation was unsuccessful");
             System.out.println("One of the required Context entries for the " + this.getClass().getSimpleName()
                     + " command to be executed was null");
             return PROCESSING_COMPLETE;
