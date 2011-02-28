@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified"
+    elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+     <xs:annotation>
+        <xs:documentation>Issue number: 4.0</xs:documentation>
+        <xs:documentation>Issue date: 2008-08-01</xs:documentation>
+        <xs:documentation>Release number: 4.0</xs:documentation>
+        <xs:documentation>Release date: 2008-08-01</xs:documentation>
+        <xs:documentation>URL: http://www.s1000d.org/S1000D_4-0/xml_schema_flat/xcf.xsd</xs:documentation>
+        <xs:documentation>Root element: webcgm</xs:documentation>
+        <xs:documentation>Copyright:
+		Copyright (C) 2008 by each of the following organizations:
+		1.  AeroSpace and Defence Industries Associations of Europe - ASD.
+		2.  Ministries of Defence of the member countries of ASD.
+
+		Limitations of Liability:
+
+		1.  This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.
+		2.  Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.
+		3.  Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable. 
+	</xs:documentation>
+	<xs:documentation>Remarks: none</xs:documentation>
+    </xs:annotation>
+    <xs:element name="webcgm" type="webcgmType"/>
+    <xs:complexType name="webcgmType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element ref="grobject"/>
+            <xs:element ref="bindById"/>
+            <xs:element ref="bindByName"/>
+        </xs:choice>
+        <xs:attribute ref="id"/>
+        <xs:attribute ref="version"/>
+        <xs:attribute ref="filename"/>
+        <xs:attribute ref="background-color"/>
+        <xs:attribute ref="pictureVisibility"/>
+        <xs:attributeGroup ref="stylePropertiesAttGroup"/>
+    </xs:complexType>
+    <xs:element name="grobject" type="grobjectType"/>
+    <xs:complexType name="grobjectType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="linkuri"/>
+        </xs:sequence>
+        <xs:attribute ref="apsid" use="required"/>
+        <xs:attribute ref="screentip"/>
+        <xs:attribute ref="region"/>
+        <xs:attribute ref="viewcontext"/>
+        <xs:attribute ref="visibility"/>
+        <xs:attribute ref="interactivity"/>
+        <xs:attributeGroup ref="stylePropertiesAttGroup"/>
+    </xs:complexType>
+    <xs:element name="linkuri" type="linkuriType"/>
+    <xs:complexType name="linkuriType">
+        <xs:attribute ref="uri" use="required"/>
+        <xs:attribute ref="behavior"/>
+        <xs:attribute ref="desc"/>
+    </xs:complexType>
+    <xs:attribute name="uri" type="xs:string"/>
+    <xs:attribute name="behavior" type="xs:string"/>
+    <xs:attribute name="desc" type="xs:string"/>
+    <xs:attribute name="apsid" type="xs:ID"/>
+    <xs:attribute name="screentip" type="xs:string"/>
+    <xs:attribute name="region" type="xs:string"/>
+    <xs:attribute name="viewcontext" type="xs:string"/>
+    <xs:attribute name="visibility" type="visibilityAttType"/>
+    <xs:simpleType name="visibilityAttType">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="off"/>
+            <xs:enumeration value="inherit"/>
+            <xs:enumeration value="on"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:attribute name="interactivity" type="interactivityAttType"/>
+    <xs:simpleType name="interactivityAttType">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="off"/>
+            <xs:enumeration value="inherit"/>
+            <xs:enumeration value="on"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:attributeGroup name="stylePropertiesAttGroup">
+        <xs:attribute ref="text-size"/>
+        <xs:attribute ref="fill-color"/>
+        <xs:attribute ref="intensity"/>
+        <xs:attribute ref="stroke-color"/>
+        <xs:attribute ref="stroke-weight"/>
+        <xs:attribute ref="text-color"/>
+        <xs:attribute ref="text-font"/>
+        <xs:attribute ref="raster-intensity"/>
+    </xs:attributeGroup>
+    <xs:attribute name="text-size" type="xs:string"/>
+    <xs:attribute name="fill-color" type="xs:string"/>
+    <xs:attribute name="intensity" type="xs:string"/>
+    <xs:attribute name="stroke-color" type="xs:string"/>
+    <xs:attribute name="stroke-weight" type="xs:string"/>
+    <xs:attribute name="text-color" type="xs:string"/>
+    <xs:attribute name="text-font" type="xs:string"/>
+    <xs:attribute name="raster-intensity" type="xs:string"/>
+    <xs:element name="bindById" type="bindByIdType"/>
+    <xs:complexType name="bindByIdType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="linkuri"/>
+        </xs:sequence>
+        <xs:attribute ref="apsid" use="required"/>
+        <xs:attribute ref="screentip"/>
+        <xs:attribute ref="region"/>
+        <xs:attribute ref="viewcontext"/>
+        <xs:attribute ref="visibility"/>
+        <xs:attribute ref="interactivity"/>
+        <xs:attributeGroup ref="stylePropertiesAttGroup"/>
+    </xs:complexType>
+    <xs:element name="bindByName" type="bindByNameType"/>
+    <xs:complexType name="bindByNameType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="linkuri"/>
+        </xs:sequence>
+        <xs:attribute ref="apstargetname" use="required"/>
+        <xs:attribute ref="screentip"/>
+        <xs:attribute ref="region"/>
+        <xs:attribute ref="viewcontext"/>
+        <xs:attribute ref="visibility"/>
+        <xs:attribute ref="interactivity"/>
+        <xs:attributeGroup ref="stylePropertiesAttGroup"/>
+    </xs:complexType>
+    <xs:attribute name="apstargetname" type="xs:string"/>
+    <xs:attribute name="id" type="xs:ID"/>
+    <xs:attribute fixed="2.0" name="version" type="xs:string"/>
+    <xs:attribute name="filename" type="xs:string"/>
+    <xs:attribute name="background-color" type="xs:string"/>
+    <xs:attribute name="pictureVisibility" type="pictureVisibilityAttType"/>
+    <xs:simpleType name="pictureVisibilityAttType">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="off"/>
+            <xs:enumeration value="on"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

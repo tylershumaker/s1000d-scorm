@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'?>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Stem - Install Procedures: Knowledge Check</dc:title>
+    <dc:subject>Stem - Install Procedures: Knowledge Check</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-07-30</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA2-10-00-00AA-720A-A-T62E_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" learnCode="T62" learnEventCode="E" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="30" />
+        <dmTitle>
+          <techName>Stem</techName>
+          <infoName>Install Procedures: Knowledge Check</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>DA210</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningAssessment>
+        <title></title>
+        <lcInteraction>
+          <lcSequencing id="sequencing">
+            <lcQuestion>
+              <description>
+                <para>Place the steps for installing a bike's stem in the correct order. First, select a step. Then use the up and down arrows to move the step to the correct position. Repeat for each step, and then click CHECK.</para>
+              </description>
+            </lcQuestion>
+            <lcSequenceOptionGroup>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove any rust and corrosion with a clean, dry cloth and rubbing alcohol.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="1" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Install the stem in the steerer tube.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="2" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Adjust to align the stem with the wheel.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="3" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Firmly tighten the stem bolt.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="4" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Install the handlebar.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="4" />
+              </lcSequenceOption>
+            </lcSequenceOptionGroup>
+            <lcFeedbackIncorrect>
+              <description>
+                <para>Incorrect. The correct answers are shown.</para>
+              </description>
+            </lcFeedbackIncorrect>
+            <lcFeedbackCorrect>
+              <description>
+                <para>Correct!</para>
+              </description>
+            </lcFeedbackCorrect>
+          </lcSequencing>
+        </lcInteraction>
+      </learningAssessment>
+    </learning>
+  </content>
+</dmodule>
