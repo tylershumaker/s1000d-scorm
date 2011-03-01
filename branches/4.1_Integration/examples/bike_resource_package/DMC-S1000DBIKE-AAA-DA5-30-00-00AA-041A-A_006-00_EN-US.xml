@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA53000-0-U8025-00525-A-04-1 SYSTEM "media/ICN-S1000DBIKE-AAA-DA53000-0-U8025-00525-A-04-1.jpg" NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA53000-0-U8025-00526-A-04-1 SYSTEM "media/ICN-S1000DBIKE-AAA-DA53000-0-U8025-00526-A-04-1.jpg" NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA53000-0-U8025-00527-A-04-1 SYSTEM "media/ICN-S1000DBIKE-AAA-DA53000-0-U8025-00527-A-04-1.jpg" NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA53000-0-U8025-00535-A-04-1 SYSTEM "media/ICN-S1000DBIKE-AAA-DA53000-0-U8025-00535-A-04-1.jpg" NDATA JPEG>
+]>
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/descript.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <rdf:Description>
+    <dc:creator>U8025</dc:creator>
+    <dc:title>Shifters - Description of how it is made</dc:title>
+    <dc:subject>Shifters - Description of how it is made</dc:subject>
+    <dc:publisher>U8025</dc:publisher>
+    <dc:contributor>U8025</dc:contributor>
+    <dc:date>2008-08-01</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA5-30-00-00AA-041A-A_006-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51_cv51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="3" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="006" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2008" month="08" day="01" />
+        <dmTitle>
+          <techName>Shifters</techName>
+          <infoName>Description of how it is made</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus issueType="revised">
+      <security securityClassification="01" commercialClassification="cc51" caveat="cv51" />
+      <dataRestrictions>
+        <restrictionInstructions>
+          <dataDistribution>To be made available to all S1000D users.</dataDistribution>
+          <exportControl>
+            <exportRegistrationStmt>
+              <simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+            </exportRegistrationStmt>
+          </exportControl>
+          <dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+          <dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+          <dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+        </restrictionInstructions>
+        <restrictionInfo>
+          <copyright>
+            <copyrightPara>
+              <emphasis>Copyright (C) 2008</emphasis> by each of the following organizations:<randomList><listItem><para>AeroSpace and Defence Industries Associations of Europe - ASD.</para></listItem><listItem><para>Ministries of Defence of the member countries of ASD.</para></listItem></randomList></copyrightPara>
+            <copyrightPara>
+              <emphasis>Limitations of Liability:</emphasis>
+            </copyrightPara>
+            <copyrightPara>
+              <randomList>
+                <listItem>
+                  <para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+                </listItem>
+                <listItem>
+                  <para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+                </listItem>
+                <listItem>
+                  <para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+                </listItem>
+              </randomList>
+            </copyrightPara>
+          </copyright>
+          <policyStatement>TPSMG TOR 001</policyStatement>
+          <dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+        </restrictionInfo>
+      </dataRestrictions>
+      <responsiblePartnerCompany enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="U8025">
+        <enterpriseName>UK MoD</enterpriseName>
+      </originator>
+      <applicCrossRefTableRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D">
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D" />
+          </dmRefIdent>
+        </dmRef>
+      </applicCrossRefTableRef>
+      <applic>
+        <displayText>
+          <simplePara>Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)</simplePara>
+        </displayText>
+        <evaluate andOr="and">
+          <assert applicPropertyIdent="type" applicPropertyType="prodattr" applicPropertyValues="Mountain bicycle" />
+          <evaluate andOr="or">
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Mountain storm" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk1" />
+            </evaluate>
+            <evaluate andOr="and">
+              <assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Brook trekker" />
+              <assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk9" />
+            </evaluate>
+          </evaluate>
+        </evaluate>
+      </applic>
+      <techStandard>
+        <authorityInfoAndTp>
+          <authorityInfo>20010131</authorityInfo>
+          <techPubBase>Bike book</techPubBase>
+        </authorityInfoAndTp>
+        <authorityExceptions />
+        <authorityNotes />
+      </techStandard>
+      <brexDmRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D_007-00">
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="007" inWork="00" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <firstVerification verificationType="tabtop" />
+      </qualityAssurance>
+      <systemBreakdownCode>BY173</systemBreakdownCode>
+      <skillLevel skillLevelCode="sk01" />
+      <reasonForUpdate>
+        <simplePara>totally revised</simplePara>
+        <simplePara>Schema cleanup element/attribute renaming</simplePara>
+      </reasonForUpdate>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <description>
+      <levelledPara>
+        <title>Shifters</title>
+        <para>
+					The thumb shifter is a usual type in modern bicycles. It is possible to adjust this type of shifter for operation in the index position or in the friction position. The differences between the two are: <randomList listItemPrefix="pf02"><listItem><para>The index shifters change the gears with a click of a lever.</para></listItem><listItem><para>The friction shifters hold the derailleur in its position by friction.</para></listItem></randomList></para>
+        <para>
+					The thumb shifters (refer to <internalRef internalRefId="fig-0001" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001" />) are held on the bicycle with a screw. The paragraph that follows gives a description of a thumb shifter.
+				</para>
+        <figure id="fig-0001">
+          <title>Thumb shifter index type</title>
+          <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA53000-0-U8025-00535-A-04-1" xlink:title="Thumb shifter index type" infoEntityIdent="ICN-S1000DBIKE-AAA-DA53000-0-U8025-00535-A-04-1" />
+        </figure>
+      </levelledPara>
+      <levelledPara>
+        <title>How a thumb shifter is made up</title>
+        <para>
+					A wing nut (refer to <internalRef internalRefId="fig-0002" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0002" />) from the top of the lever holds the thumb shifter. The lever is on top of the mount and the mount is on the handle bar with a nut. To remove the mount, it is necessary to loosen the nut of two turns (refer to <internalRef internalRefId="fig-0003" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0003" />), then the mount can move from the handle bar from the top of the lever. The lever sits on top of the mount and the mount is fixed into pace on the handle bar by a nut.
+				</para>
+        <figure id="fig-0002">
+          <title>Unscrew wingnut</title>
+          <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA53000-0-U8025-00525-A-04-1" xlink:title="Unscrew wingnut" infoEntityIdent="ICN-S1000DBIKE-AAA-DA53000-0-U8025-00525-A-04-1" />
+        </figure>
+        <figure id="fig-0003">
+          <title>Loosen the nut</title>
+          <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA53000-0-U8025-00526-A-04-1" xlink:title="Loosen the nut" infoEntityIdent="ICN-S1000DBIKE-AAA-DA53000-0-U8025-00526-A-04-1" />
+        </figure>
+        <para>
+					On modern models of this shifter, there is a clamp bolt that holds the shifter in its position (refer to <internalRef internalRefId="fig-0004" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0004" />). The user can loosen the clamp bolt with an applicable tool. This lets the shifter release the handlebar.
+				</para>
+        <figure id="fig-0004">
+          <title>Loosen the shifter clamp bolt</title>
+          <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA53000-0-U8025-00527-A-04-1" xlink:title="Loosen the shifter clamp bolt" infoEntityIdent="ICN-S1000DBIKE-AAA-DA53000-0-U8025-00527-A-04-1" />
+        </figure>
+      </levelledPara>
+    </description>
+  </content>
+</dmodule>
