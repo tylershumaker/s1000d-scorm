@@ -84,7 +84,7 @@ public class Controller
     {
         Controller loader = new Controller();
         Catalog sampleCatalog = loader.createCatalog();
-        Command toolkit = sampleCatalog.getCommand("Toolkit");
+        Command toolkit = sampleCatalog.getCommand("SCORM");
         Context ctx = new ContextBase();
         
         //hardcoded files for iitsec demo, replace with args[0] and args[1] or other hardcoded files
@@ -96,6 +96,9 @@ public class Controller
         ctx.put(Keys.RESOURCE_PACKAGE, args[1]);
         try
         {
+            if(args[2] != null && args[2].equals("-mobile"))
+                toolkit = sampleCatalog.getCommand("MobileBuilder");
+            
             toolkit.execute(ctx);
         }
         catch (Exception e)
