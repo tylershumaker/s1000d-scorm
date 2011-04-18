@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
-   <chain name="Toolkit">
+   <chain name="SCORM">
 	  <command name="PreProcess" className="bridge.toolkit.commands.PreProcess" />
-      <command id="SCOBuilder" className="bridge.toolkit.commands.SCOBuilder" />
+      <command name="SCOBuilder" className="bridge.toolkit.commands.SCOBuilder" />
       <command name="PostProcess" className="bridge.toolkit.commands.PostProcess"/>
    </chain>
+   <command name="MobileBuilder" className="bridge.toolkit.commands.MobileBuilder" />
 </catalog>

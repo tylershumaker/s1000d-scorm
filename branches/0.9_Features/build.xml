@@ -3,7 +3,7 @@
     <property name="src.dir"     value="src"/>
     <property name="build.dir"   value="build/classes"/>
 	<property name="lib"         value="lib"/>
-	<property name="release.dir" value="bridgeToolkit0.9"/>
+	<property name="release.dir" value="bridgeToolkit0.9.1"/>
 		
     <target name="clean">
         <delete dir="build"/>
@@ -54,7 +54,9 @@
         	          bridge/toolkit/packaging/**,
         	          bridge/toolkit/util/**,
         	          bridge/toolkit/chain-config.xml,
-        	          bridge/toolkit/commands/preProcessTransform.xsl">
+        	          bridge/toolkit/commands/preProcessTransform.xsl,
+        	          bridge/toolkit/commands/dmStylesheet.mobile.xsl,
+        	          bridge/toolkit/commands/scpmStylesheet.mobile.xsl">
             <manifest>
                 <attribute name="Main-Class" value="bridge.toolkit.Controller"/>
                 <attribute name="Class-Path" value="${lib}/commons-beanutils-core-1.8.3.jar ${lib}/commons-chain-1.2.jar ${lib}/commons-digester-2.0.jar ${lib}/commons-logging-1.1.1.jar ${lib}/jdom.jar ${lib}/jaxen-1.1.1.jar"/>
@@ -71,6 +73,8 @@
         	          bridge/toolkit/util/**,
         	          bridge/toolkit/chain-config.xml,
         	          bridge/toolkit/commands/preProcessTransform.xsl,
+        			  bridge/toolkit/commands/dmStylesheet.mobile.xsl,
+        	      	  bridge/toolkit/commands/scpmStylesheet.mobile.xsl,
         	          bridge/toolkit/s1-scorm-bridge-logo-408x81.jpg">
             <manifest>
                 <attribute name="Main-Class" value="bridge.toolkit.ControllerJFrame"/>
@@ -85,7 +89,7 @@
         <copy todir="${release.dir}">
            <fileset dir="." includes="build.xml, APACHE-LICENSE-2_0.html, 
 			ECLIPSE-PUBLIC-LICENSE-1_0.html, license.txt, Toolkit.jar, ToolkitGUI.jar,
-		    conf/**, doc/**, examples/**, lib/**, resources/**, src/**, 
+		    conf/**, css/**, doc/**, examples/**, js/**, lib/**, resources/**, src/**, 
            	ViewerApplication/**, xsd/**, xsl/**"/>
         </copy>
 		

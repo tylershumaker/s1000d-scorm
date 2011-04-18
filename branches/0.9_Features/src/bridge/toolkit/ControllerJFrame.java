@@ -54,6 +54,7 @@ public class ControllerJFrame extends javax.swing.JFrame
     Command toolkit;
     Context ctx;
     String currentTime;
+    Catalog sampleCatalog;
 
     /** Creates new form NewJFrame */
     public ControllerJFrame()
@@ -65,8 +66,8 @@ public class ControllerJFrame extends javax.swing.JFrame
         
         parser = new ConfigParser();
         Controller loader = new Controller();
-        Catalog sampleCatalog = loader.createCatalog();
-        toolkit = sampleCatalog.getCommand("Toolkit");
+        sampleCatalog = loader.createCatalog();
+
         ctx = new ContextBase();
         initComponents();
         System.setOut(aPrintStream); // catches System.out messages
@@ -83,6 +84,7 @@ public class ControllerJFrame extends javax.swing.JFrame
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
 
+      buttonGroup1 = new javax.swing.ButtonGroup();
       jPanel1 = new javax.swing.JPanel();
       jTextField1 = new javax.swing.JTextField();
       jButton1 = new javax.swing.JButton();
@@ -95,6 +97,9 @@ public class ControllerJFrame extends javax.swing.JFrame
       jTextArea1 = new javax.swing.JTextArea();
       jLabel3 = new javax.swing.JLabel();
       jLabel4 = new javax.swing.JLabel();
+      scormRadioButton = new javax.swing.JRadioButton();
+      mobileRadioButton2 = new javax.swing.JRadioButton();
+      jLabel5 = new javax.swing.JLabel();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,43 +132,66 @@ public class ControllerJFrame extends javax.swing.JFrame
       jTextArea1.setRows(5);
       jScrollPane1.setViewportView(jTextArea1);
 
-      jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+      jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18));
       jLabel3.setForeground(new java.awt.Color(0, 102, 0));
       jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      jLabel3.setText("S1000D-SCORM Bridge Toolkit ");
+      jLabel3.setText("S1000D-SCORM Bridge Toolkit Beta ");
 
       jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bridge/toolkit/s1-scorm-bridge-logo-408x81.jpg"))); // NOI18N
+
+      buttonGroup1.add(scormRadioButton);
+      scormRadioButton.setText("SCORM Content Package");
+      scormRadioButton.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            scormRadioButtonActionPerformed(evt);
+         }
+      });
+
+      buttonGroup1.add(mobileRadioButton2);
+      mobileRadioButton2.setText("Mobile Web App");
+      mobileRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            mobileRadioButton2ActionPerformed(evt);
+         }
+      });
+
+      jLabel5.setText("Output");
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
       jPanel1Layout.setHorizontalGroup(
          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(jPanel1Layout.createSequentialGroup()
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+               .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+               .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                   .addContainerGap()
-                  .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE))
-               .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
-               .addGroup(jPanel1Layout.createSequentialGroup()
+                  .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
+               .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                   .addContainerGap()
-                  .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE))
-               .addGroup(jPanel1Layout.createSequentialGroup()
+                  .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
+               .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                   .addContainerGap()
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                      .addComponent(jLabel2)
-                     .addComponent(jLabel1))
+                     .addComponent(jLabel1)
+                     .addComponent(jLabel5))
                   .addGap(27, 27, 27)
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
-                  .addGap(18, 18, 18)
+                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(scormRadioButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(mobileRadioButton2)))
+                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                      .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(37, 37, 37)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE))
-                     .addComponent(jButton1))))
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                        .addGap(113, 113, 113))
+                     .addComponent(jButton1)
+                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addContainerGap())
       );
       jPanel1Layout.setVerticalGroup(
@@ -182,10 +210,15 @@ public class ControllerJFrame extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(jLabel2)
                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(jButton2)
-               .addComponent(jButton3))
-            .addGap(54, 54, 54)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE))
+               .addComponent(jButton2))
+            .addGap(38, 38, 38)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+               .addComponent(scormRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(mobileRadioButton2)
+               .addComponent(jButton3)
+               .addComponent(jLabel5))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
 
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -195,7 +228,7 @@ public class ControllerJFrame extends javax.swing.JFrame
          .addGroup(layout.createSequentialGroup()
             .addContainerGap()
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(22, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
       layout.setVerticalGroup(
          layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,6 +239,16 @@ public class ControllerJFrame extends javax.swing.JFrame
 
       pack();
    }// </editor-fold>//GEN-END:initComponents
+
+    private void scormRadioButtonActionPerformed(java.awt.event.ActionEvent evt) 
+    {//GEN-FIRST:event_scormRadioButtonActionPerformed
+       outputType = "-scorm";
+    }//GEN-LAST:event_scormRadioButtonActionPerformed
+
+    private void mobileRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) 
+    {//GEN-FIRST:event_mobileRadioButton2ActionPerformed
+       outputType = "-mobile";
+    }//GEN-LAST:event_mobileRadioButton2ActionPerformed
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)
@@ -244,6 +287,11 @@ public class ControllerJFrame extends javax.swing.JFrame
 
         try
         {
+            if(outputType.equals("-mobile"))
+                toolkit = sampleCatalog.getCommand("MobileBuilder");
+            else
+                toolkit = sampleCatalog.getCommand("SCORM");
+            
             toolkit.execute(ctx);
         }
         catch (Exception e)
@@ -297,24 +345,29 @@ public class ControllerJFrame extends javax.swing.JFrame
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    // End of variables declaration//GEN-END:variables
+   // Variables declaration - do not modify//GEN-BEGIN:variables
+   private javax.swing.ButtonGroup buttonGroup1;
+   private javax.swing.JButton jButton1;
+   private javax.swing.JButton jButton2;
+   private javax.swing.JButton jButton3;
+   private javax.swing.JLabel jLabel1;
+   private javax.swing.JLabel jLabel2;
+   private javax.swing.JLabel jLabel3;
+   private javax.swing.JLabel jLabel4;
+   private javax.swing.JLabel jLabel5;
+   private javax.swing.JPanel jPanel1;
+   private javax.swing.JScrollPane jScrollPane1;
+   private javax.swing.JTextArea jTextArea1;
+   private javax.swing.JTextField jTextField1;
+   private javax.swing.JTextField jTextField2;
+   private javax.swing.JRadioButton mobileRadioButton2;
+   private javax.swing.JRadioButton scormRadioButton;
+   // End of variables declaration//GEN-END:variables
 
     private javax.swing.JFileChooser jFileChooser1 = new JFileChooser();
     private javax.swing.JFileChooser jFileChooser2 = new JFileChooser();
     PrintStream aPrintStream = new PrintStream(new FilteredStream(new ByteArrayOutputStream()));
+    private String outputType = "-scorm";
 
     class FilteredStream extends FilterOutputStream
     {

@@ -35,6 +35,7 @@ import org.jdom.xpath.XPath;
 import bridge.toolkit.ResourceMapException;
 import bridge.toolkit.util.DMParser;
 import bridge.toolkit.util.Keys;
+import bridge.toolkit.util.URNMapper;
 
 /**
  * The first module in the toolkit that transforms the SCPM into a imsmanifest.xml
@@ -98,10 +99,11 @@ public class PreProcess implements Command
         {
 
             src_dir = (String) ctx.get(Keys.RESOURCE_PACKAGE);
+            
             List<File> src_files = new ArrayList<File>(); 
             try
             {
-                src_files = getSourceFiles(src_dir);
+                src_files = URNMapper.getSourceFiles(src_dir);
             }
             catch(NullPointerException npe)
             {
@@ -110,7 +112,7 @@ public class PreProcess implements Command
                 return PROCESSING_COMPLETE;
             }
 
-            urn_map = writeURNMap(src_files);
+            urn_map = URNMapper.writeURNMap(src_files, "");
             
             transform = this.getClass().getResourceAsStream(TRANSFORM_FILE);
 
@@ -161,113 +163,6 @@ public class PreProcess implements Command
         }
         
         return CONTINUE_PROCESSING;
-    }
-
-    /**
-     * Retrieves all of the files in a specified directory and returns them
-     * in a list. 
-     * 
-     * @param src_dir String that represents the location of directory.
-     * @return List<File> List of all of the files found in the source directory.
-     */
-    private static List<File> getSourceFiles(String src_dir)
-    {
-        File csdb_files = new File(src_dir);
-
-        List<File> src_files = new ArrayList<File>();
-        File [] testVR = csdb_files.listFiles();
-        for(File file : testVR)
-        {
-            src_files.add(file);
-        }            
-        return src_files;
-
-    }
-    
-
-    /**
-     * Walks through the List of files that represent all of the files in the
-     * resource package and generates a urn_resource_map.xml files that is used
-     * to map each file by file name to the S1000D URN. 
-     * 
-     * @param src_files List<Files> of all of the files found in the resources 
-     * package.
-     * @return Document JDOM Document that represents the urn_resource_map.xml 
-     * file. 
-     */
-    private static Document writeURNMap(List<File> src_files)
-    {
-        Document urn_map = new Document();
-        Element urnResource = new Element("urn-resource");
-        Element urn = null;
-        String file_name = null;
-        String theExt = null;
-        String name = null;
-        Iterator<File> filesIterator = src_files.iterator();
-        while(filesIterator.hasNext())
-        {
-            File file = filesIterator.next();
-            if (!file.isDirectory())
-            {
-                file_name = file.getName();
-                String[] split = file_name.split("\\.");
-                theExt = split[split.length - 1];
-                file_name = split[0] + "." + theExt;
-                split = file_name.split("_");
-                name = split[0];
-
-                urn = writeUrn(name, file_name);
-                urnResource.addContent(urn);
-            }
-            else
-            {
-                if (file.isDirectory() & file.getName().equals("media"))
-                {
-                    // recurse the media folder
-                    File[] media_files = file.listFiles();
-                    for (int j = 0; j < media_files.length; j++)
-                    {
-                        file_name = media_files[j].getName();
-                        String[] split = file_name.split("\\.");
-                        name = split[0];
-                        theExt = split[split.length - 1];
-                        urn = writeUrn(name, file_name);
-                        urnResource.addContent(urn);
-                    }
-                }
-            }
-        }
-        urn_map.addContent(urnResource);
-
-        return urn_map;
-    }
-
-    /**
-     * Creates a 'urn' element for each file in the resource package to be added
-     * to the urn_resource_map.xml file.  
-     * 
-     * @param name String that represents the URN of the given file.
-     * @param file_name String that represents the actual file name for each file.
-     * @return Element JDOM Element
-     */
-    private static Element writeUrn(String name, String file_name)
-    {
-        Element urn = new Element("urn");
-        urn.setAttribute(new Attribute("name", "URN:S1000D:" + name));
-        Element target = new Element("target");
-        Attribute type = new Attribute("type", "file");
-        target.setAttribute(type);
-        // assume manifest is at level with resources folder
-        if (name.startsWith("ICN"))
-        {
-            target.setText("media/" + file_name);
-        }
-        else
-        {
-            target.setText(file_name);
-        }
-        urn.addContent(target);
-        return urn;
     }
 
     /**
