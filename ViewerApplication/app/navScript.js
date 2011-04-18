@@ -27,7 +27,7 @@ function startSCO()
 		var scoPages = getArray();
 		var newLocation = scoPages[loc][0];
 		parent.content.location=newLocation;
-		//parent.topframe.indexPage("Page 1 of " + scoPages[loc].length)
+		parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 		// call course and sco initialize
 		scoInit();
 		//alert("This is the course and first sco page");
@@ -86,7 +86,7 @@ function startSCO()
 	       scoTerminate();
 	       btnNext.disabled = true;
 	   } 
- 	       //parent.banner.indexPage("Page " + count + " of " + scoPages[0].length)
+	   parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 	}
 	
 	function goBack()
@@ -102,7 +102,7 @@ function startSCO()
 	        var backPage = scoPages[loc][count-1];
 		parent.content.location=backPage;
 	    }
-            //parent.banner.indexPage("Page " + count + " of " + scoPages[loc].length)
+	    parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 	}
 	
 	function goHome()
@@ -111,7 +111,7 @@ function startSCO()
 	    count = 1;
 	    var nextPage = scoPages[loc][count-1];
 	    parent.content.location=nextPage;
-            //parent.banner.indexPage("Page " + count + " of " + scoPages[loc].length)
+	    parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 	}
 
 	
