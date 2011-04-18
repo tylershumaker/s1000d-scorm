@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!NOTATION SWF SYSTEM 'http://www.macromedia.com/software/flash'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00094-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00094-A-001-01.swf' NDATA SWF>
+<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00065-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00065-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00066-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00066-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00067-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00067-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00068-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00068-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00069-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00069-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00070-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00070-A-001-01.jpg' NDATA JPEG>
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Chain - Clean with chemical agent: Interactive content - Procedure</dc:title>
+    <dc:subject>Chain - Clean with chemical agent: Interactive content - Procedure</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-08-20</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA4-10-00-00AA-251B-A-T4JC_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="251" infoCodeVariant="B" itemLocationCode="A" learnCode="T4J" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="08" day="20" />
+        <dmTitle>
+          <techName>Chain</techName>
+          <infoName>Clean with chemical agent: Interactive content - Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>DA410</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title>Cleaning the Chain</title>
+        <lcInstruction>
+          <description>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00094-A-001-01" />
+            </figure>
+            <levelledPara id="para-000">
+              <levelledPara id="para-001">
+                <para>
+									Cleaning your bike's chain can be very messy, so make sure you prepare the cleaning area before you start. If necessary, place a protective floor covering on the work area floor. Roll the bike onto the floor covering, or mount it on a repair stand. Clean any excess debris from the chain.
+								</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00065-A-001-01" />
+                </figure>
+              </levelledPara>
+              <levelledPara id="para-002">
+                <para>
+									Be sure that the chain is on the middle chain ring at the front of the drive train and on the middle sprocket at the rear of the drive train. Place the chain in the chain guides of the cleaning tool, and lock the tool on the chain.
+								</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00066-A-001-01" />
+                </figure>
+              </levelledPara>
+              <levelledPara id="para-003">
+                <para>
+									Fill the chain-cleaning tool with chain-cleaning fluid.
+								</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00067-A-001-01" />
+                </figure>
+              </levelledPara>
+              <levelledPara id="para-004">
+                <para>
+									Hold the tool with your left hand, and slowly turn the pedal to move the chain through the chain-cleaning tool. Make sure that the entire chain makes the trip through the tool.
+								</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00068-A-001-01" />
+                </figure>
+              </levelledPara>
+              <levelledPara id="para-005">
+                <para>
+									Unlock and remove the cleaning tool. Empty any residual chain-cleaning fluid.
+								</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00069-A-001-01" />
+                </figure>
+              </levelledPara>
+              <levelledPara id="para-006">
+                <para>
+									Once the chain is clean, you can lubricate it. Make sure the chain is dry, and then apply a general lubricant. Remove any excess lubricant as necessary. Move the bicycle to its storage area, and clean the work area.
+								</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00070-A-001-01" />
+                </figure>
+              </levelledPara>
+            </levelledPara>
+            <para>
+              <emphasis>Click the arrows to view the slide show.</emphasis>
+            </para>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>
