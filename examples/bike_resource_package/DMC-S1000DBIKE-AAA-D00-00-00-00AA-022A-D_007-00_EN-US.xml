@@ -1,0 +1,474 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dmodule
+[
+]>
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/brex.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<rdf:Description>
+		<dc:creator>SF815</dc:creator>
+		<dc:title>Mountain bicycle - Business rules</dc:title>
+		<dc:subject>Mountain bicycle - Business rules</dc:subject>
+		<dc:publisher>SF815</dc:publisher>
+		<dc:contributor>SF815</dc:contributor>
+		<dc:date>2008-08-01</dc:date>
+		<dc:type>text</dc:type>
+		<dc:format>text/xml</dc:format>
+		<dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-022A-D_007-00</dc:identifier>
+		<dc:language>en-US</dc:language>
+		<dc:rights>01</dc:rights>
+	</rdf:Description>
+	<identAndStatusSection>
+		<dmAddress>
+			<dmIdent>
+				<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+				<language countryIsoCode="US" languageIsoCode="en"/>
+				<issueInfo issueNumber="007" inWork="00"/>
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate year="2008" month="08" day="01"/>
+				<dmTitle>
+					<techName>Mountain bicycle</techName>
+					<infoName>Business rules</infoName>
+				</dmTitle>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus issueType="revised">
+			<security securityClassification="01"/>
+			<dataRestrictions>
+				<restrictionInstructions>
+					<dataDistribution>To be made available to all S1000D users.</dataDistribution>
+					<exportControl>
+						<exportRegistrationStmt>
+							<simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+						</exportRegistrationStmt>
+					</exportControl>
+					<dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+					<dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+					<dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+				</restrictionInstructions>
+				<restrictionInfo>
+					<copyright>
+						<copyrightPara>
+							<emphasis>Copyright (C) 2008</emphasis> by each of the following organizations:<randomList>
+								<listItem>
+									<para>AeroSpace and Defence Industries Associations of Europe - ASD.</para>
+								</listItem>
+								<listItem>
+									<para>Ministries of Defence of the member countries of ASD.</para>
+								</listItem>
+							</randomList>
+						</copyrightPara>
+						<copyrightPara>
+							<emphasis>Limitations of Liability:</emphasis>
+						</copyrightPara>
+						<copyrightPara>
+							<randomList>
+								<listItem>
+									<para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+								</listItem>
+								<listItem>
+									<para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+								</listItem>
+								<listItem>
+									<para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+								</listItem>
+							</randomList>
+						</copyrightPara>
+					</copyright>
+					<policyStatement>TPSMG TOR 001</policyStatement>
+					<dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+				</restrictionInfo>
+			</dataRestrictions>
+			<responsiblePartnerCompany enterpriseCode="SF815">
+				<enterpriseName>SIOM</enterpriseName>
+			</responsiblePartnerCompany>
+			<originator enterpriseCode="SF815">
+				<enterpriseName>SIOM</enterpriseName>
+			</originator>
+			<applicCrossRefTableRef>
+				<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D">
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D"/>
+					</dmRefIdent>
+				</dmRef>
+			</applicCrossRefTableRef>
+			<applic>
+				<displayText>
+					<simplePara>All</simplePara>
+				</displayText>
+			</applic>
+			<brexDmRef>
+				<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000D-A-04-10-0301-00A-022A-D_004">
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+						<issueInfo issueNumber="004" inWork="00"/>
+					</dmRefIdent>
+				</dmRef>
+			</brexDmRef>
+			<qualityAssurance>
+				<firstVerification verificationType="tabtop"/>
+			</qualityAssurance>
+			<reasonForUpdate>
+				<simplePara>totally revised</simplePara>
+				<simplePara>Schema cleanup element/attribute renaming</simplePara>
+			</reasonForUpdate>
+		</dmStatus>
+	</identAndStatusSection>
+	<content>
+		<brex>
+			<contextRules>
+				<structureObjectRuleGroup>
+					<structureObjectRule>
+						<objectPath>//dmAddress/dmIdent/dmCode@modelIdentCode</objectPath>
+						<objectUse>Bike model identification</objectUse>
+						<objectValue valueForm="single" valueAllowed="S1000DBIKE">S1000D Bike platform</objectValue>
+						<objectValue valueForm="single" valueAllowed="S1000DLIGHTING">S1000D Bike light system</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//dmAddress/dmIdent/dmCode@systemCode</objectPath>
+						<objectUse>Systems (Bike specific SNS)</objectUse>
+						<objectValue valueForm="range" valueAllowed="D00~D09"/>
+						<objectValue valueForm="range" valueAllowed="DA0~DA9"/>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//dmAddress/dmIdent/dmCode@subSystemCode</objectPath>
+						<objectUse>Subsystems (Bike specific SNS)</objectUse>
+						<objectValue valueForm="range" valueAllowed="0~9"/>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//dmAddress/dmIdent/dmCode@subSubystemCode</objectPath>
+						<objectUse>Subsubsystems</objectUse>
+						<objectValue valueForm="range" valueAllowed="0~9"/>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//dmAddress/dmIdent/dmCode@assyCode</objectPath>
+						<objectUse>Units of assembly</objectUse>
+						<objectValue valueForm="range" valueAllowed="00~99"/>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//dmAddress/dmIdent/dmCode@infoCode</objectPath>
+						<objectUse>Bike information codes</objectUse>
+						<objectValue valueForm="single" valueAllowed="000">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="022">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="029">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="040">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="041">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="042">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="043">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="056">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="057">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="058">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="121">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="131">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="151">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="215">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="241">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="251">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="258">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="330">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="341">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="362">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="400">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="411">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="412">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="413">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="414">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="520">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="663">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="700">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="720">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="921">In accordance with Issue 2.3</objectValue>
+						<objectValue valueForm="single" valueAllowed="941">In accordance with Issue 2.3</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//descendant-or-self::orderedList[not(ancestor-or-self::description)]</objectPath>
+						<objectUse>Sequential (numbered) lists not allowed unless in descriptive data modules</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//note[ancestor-or-self::warning]</objectPath>
+						<objectUse>Notes are not allowed in Warnings</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//warning/orderedList</objectPath>
+						<objectUse>Ordered lists are not allowed in Warnings</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//warning/definitionList</objectPath>
+						<objectUse>Definition lists are not allowed in Warnings</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//warning/randomList/listItem/randomList</objectPath>
+						<objectUse>Random lists must not be nested within Warnings</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//warning/randomList/title</objectPath>
+						<objectUse>Random list titles are not allowed in Warnings</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//note[ancestor-or-self::caution]</objectPath>
+						<objectUse>Notes are not allowed in Cautions</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//caution/orderedList</objectPath>
+						<objectUse>Ordered lists are not allowed in Cautions</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//caution/definitionList</objectPath>
+						<objectUse>Definition lists are not allowed in Cautions</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//caution/randomList/listItem/randomList</objectPath>
+						<objectUse>Random lists must not be nested within Cautions</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//caution/randomList/title</objectPath>
+						<objectUse>Random list titles are not allowed in Cautions</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//@accessPanelTypeValue</objectPath>
+						<objectUse>Type of access panel</objectUse>
+						<objectValue valueForm="single" valueAllowed="accpnl01">Access is a door</objectValue>
+						<objectValue valueForm="single" valueAllowed="accpnl02">Access is a panel</objectValue>
+						<objectValue valueForm="single" valueAllowed="accpnl03">Access is an electrical panel</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//acronym/@acronymtype</objectPath>
+						<objectUse>Type of acronym or abbreviation</objectUse>
+						<objectValue valueForm="single" valueAllowed="at01">Acronym (Candidate for list of abbreviations) - Default value</objectValue>
+						<objectValue valueForm="single" valueAllowed="at02">Term (Candidate for list of terms)</objectValue>
+						<objectValue valueForm="single" valueAllowed="at03">Symbol (Candidate for list of symbols)</objectValue>
+						<objectValue valueForm="single" valueAllowed="at04">Spec (Candidate for list of applicable specs)</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//dialog/@cancelCaption</objectPath>
+						<objectUse>Caption for dialog cancel function</objectUse>
+						<objectValue valueForm="single" valueAllowed="ca01">Sets the caption to "CANCEL"</objectValue>
+						<objectValue valueForm="single" valueAllowed="ca02">Sets the caption to "ABORT"</objectValue>
+						<objectValue valueForm="single" valueAllowed="ca03">Sets the caption to "NO"</objectValue>
+						<objectValue valueForm="single" valueAllowed="ca04">Sets the caption to "END"</objectValue>
+						<objectValue valueForm="single" valueAllowed="ca05">Sets the caption to "QUIT"</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//security/@securityClassification</objectPath>
+						<objectUse>Security classification</objectUse>
+						<objectValue valueForm="single" valueAllowed="01">1 (lowest level of security classification, eg Unclassified)</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//security/@commercialClassification</objectPath>
+						<objectUse>Commercial security classification</objectUse>
+						<objectValue valueForm="single" valueAllowed="cc51">Open</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//caption/@colour</objectPath>
+						<objectUse>Caption color</objectUse>
+						<objectValue valueForm="single" valueAllowed="co00">None</objectValue>
+						<objectValue valueForm="single" valueAllowed="co01">Green</objectValue>
+						<objectValue valueForm="single" valueAllowed="co02">Amber</objectValue>
+						<objectValue valueForm="single" valueAllowed="co03">Yellow</objectValue>
+						<objectValue valueForm="single" valueAllowed="co04">Red</objectValue>
+						<objectValue valueForm="single" valueAllowed="co07">White</objectValue>
+						<objectValue valueForm="single" valueAllowed="co08">Grey</objectValue>
+						<objectValue valueForm="single" valueAllowed="co09">Clear - Default value</objectValue>
+						<objectValue valueForm="single" valueAllowed="co51">Blue (used on Bike Computer Display)</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="1">//commentPriority/@commentPriorityCode</objectPath>
+						<objectUse>Priority level of a comment</objectUse>
+						<objectValue valueForm="single" valueAllowed="cp01">Routine</objectValue>
+						<objectValue valueForm="single" valueAllowed="cp02">Emergency</objectValue>
+						<objectValue valueForm="single" valueAllowed="cp03">Safety critical</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="1">//crewMember/@crewMembertype</objectPath>
+						<objectUse>Type of crew member required for drill or procedural step</objectUse>
+						<objectValue valueForm="single" valueAllowed="cm01">All</objectValue>
+						<objectValue valueForm="single" valueAllowed="cm51">Bike rider</objectValue>
+						<objectValue valueForm="single" valueAllowed="cm52">Bike technician</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//crewDrill/@drillType</objectPath>
+						<objectUse>Types of aircrew drills do not apply to the BikeDMs</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//emphasis/@emphasisType</objectPath>
+						<objectUse>Type of emphasis</objectUse>
+						<objectValue valueForm="single" valueAllowed="em01">Bold - Default value</objectValue>
+						<objectValue valueForm="single" valueAllowed="em02">Italic (only for legacy data, see Chap 3.9.1)</objectValue>
+						<objectValue valueForm="single" valueAllowed="em03">Underline (only for legacy data, see Chap 3.9.1)</objectValue>
+						<objectValue valueForm="single" valueAllowed="em04">Overline (only for marking vectors)</objectValue>
+						<objectValue valueForm="single" valueAllowed="em05">Strikethrough (not to be used to mark deleted text)</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//installationLocation/@installationLocationType</objectPath>
+						<objectUse>Type of install location</objectUse>
+						<objectValue valueForm="single" valueAllowed="instloctyp01">Zone</objectValue>
+						<objectValue valueForm="single" valueAllowed="instloctyp02">Section</objectValue>
+						<objectValue valueForm="single" valueAllowed="instloctyp03">Station</objectValue>
+						<objectValue valueForm="single" valueAllowed="instloctyp04">Water line</objectValue>
+						<objectValue valueForm="single" valueAllowed="instloctyp05">Buttock line</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//maintLevel/@maintLevelCode</objectPath>
+						<objectUse>Maintenance level</objectUse>
+						<objectValue valueForm="single" valueAllowed="ml01">Level 1 (home)</objectValue>
+						<objectValue valueForm="single" valueAllowed="ml02">Level 2 (authorized workshop)</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//@itemOriginator</objectPath>
+						<objectUse>Origin of equipment/harness/wire</objectUse>
+						<objectValue valueForm="single" valueAllowed="orig01">Manufacturer</objectValue>
+						<objectValue valueForm="single" valueAllowed="orig02">Vendor</objectValue>
+						<objectValue valueForm="single" valueAllowed="orig03">Partner</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//randomList/@listItemPrefix</objectPath>
+						<objectUse>Prefix of 'randomList' items, limited to three variants</objectUse>
+						<objectValue valueForm="single" valueAllowed="pf01">Simple (No prefix, only indent)</objectValue>
+						<objectValue valueForm="single" valueAllowed="pf02">Unorder (Depending on list level, prefix with short dash for first level, bullet for second, and short dash for third level - ISOpub: bull, dash) - Default value</objectValue>
+						<objectValue valueForm="single" valueAllowed="pf03">Dash (short dash - ISOpub: dash)</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//inlineSignificantData/@significantParaDataType</objectPath>
+						<objectUse>Paragraph significant data type</objectUse>
+						<objectValue valueForm="single" valueAllowed="psd01">Ammunition</objectValue>
+						<objectValue valueForm="single" valueAllowed="psd02">Instruction disposition</objectValue>
+						<objectValue valueForm="single" valueAllowed="psd03">Lubricant</objectValue>
+						<objectValue valueForm="single" valueAllowed="psd04">Maintenance level</objectValue>
+						<objectValue valueForm="single" valueAllowed="psd05">Manufacturer code</objectValue>
+						<objectValue valueForm="single" valueAllowed="psd06">Manufacturers recommendation</objectValue>
+						<objectValue valueForm="single" valueAllowed="psd07">Modification code</objectValue>
+						<objectValue valueForm="single" valueAllowed="psd08">Qualification code</objectValue>
+						<objectValue valueForm="single" valueAllowed="psd09">Training level</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//quantity/@quantityType</objectPath>
+						<objectUse>Quantity data type</objectUse>
+						<objectValue valueForm="single" valueAllowed="qty01">Length</objectValue>
+						<objectValue valueForm="single" valueAllowed="qty02">Price</objectValue>
+						<objectValue valueForm="single" valueAllowed="qty03">Temperature</objectValue>
+						<objectValue valueForm="single" valueAllowed="qty04">Time</objectValue>
+						<objectValue valueForm="single" valueAllowed="qty05">Torque value</objectValue>
+						<objectValue valueForm="single" valueAllowed="qty06">Voltage</objectValue>
+						<objectValue valueForm="single" valueAllowed="qty07">Volume</objectValue>
+						<objectValue valueForm="single" valueAllowed="qty08">Mass</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//dialog/@resetCaption</objectPath>
+						<objectUse>Caption for dialog reset caption</objectUse>
+						<objectValue valueForm="single" valueAllowed="re01">Sets the caption to "RESET"</objectValue>
+						<objectValue valueForm="single" valueAllowed="re02">Sets the caption to "CLEAR"</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//commentResponse/@responseType</objectPath>
+						<objectUse>Type of response to a comment</objectUse>
+						<objectValue valueForm="single" valueAllowed="rt01">Accepted</objectValue>
+						<objectValue valueForm="single" valueAllowed="rt02">Pending</objectValue>
+						<objectValue valueForm="single" valueAllowed="rt03">Partially accepted</objectValue>
+						<objectValue valueForm="single" valueAllowed="rt04">Rejected</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//@skillLevelCode</objectPath>
+						<objectUse>Personnel skill level</objectUse>
+						<objectValue valueForm="single" valueAllowed="sk01">Basic</objectValue>
+						<objectValue valueForm="single" valueAllowed="sk02">Intermediate</objectValue>
+						<objectValue valueForm="single" valueAllowed="sk03">Advanced</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath allowedObjectFlag="0">//taskDefinition/@skillType</objectPath>
+						<objectUse>Personnel skill categorization is not applied</objectUse>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//@submitCaption</objectPath>
+						<objectUse>Caption for dialog submit function</objectUse>
+						<objectValue valueForm="single" valueAllowed="ok01">Sets the caption to "OK"</objectValue>
+						<objectValue valueForm="single" valueAllowed="ok02">Sets the caption to "SUBMIT"</objectValue>
+						<objectValue valueForm="single" valueAllowed="ok03">Sets the caption to "YES"</objectValue>
+						<objectValue valueForm="single" valueAllowed="ok04">Sets the caption to "CONTINUE"</objectValue>
+						<objectValue valueForm="single" valueAllowed="ok05">Sets the caption to "EXIT"</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//supervisorLevel/@supervisorLevelCode</objectPath>
+						<objectUse>Supervisor level</objectUse>
+						<objectValue valueForm="single" valueAllowed="sl01">Low</objectValue>
+						<objectValue valueForm="single" valueAllowed="sl02">Low intermediate</objectValue>
+						<objectValue valueForm="single" valueAllowed="sl03">High intermediate</objectValue>
+						<objectValue valueForm="single" valueAllowed="sl04">High</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//@taskCode</objectPath>
+						<objectUse>Task code</objectUse>
+						<objectValue valueForm="single" valueAllowed="taskcd01">Detailed inspection (DET)</objectValue>
+						<objectValue valueForm="single" valueAllowed="taskcd02">Discard (DIS)</objectValue>
+						<objectValue valueForm="single" valueAllowed="taskcd03">Functional Check (FNC)</objectValue>
+						<objectValue valueForm="single" valueAllowed="taskcd04">General visual inspection (GVI)</objectValue>
+						<objectValue valueForm="single" valueAllowed="taskcd05">Lubrication (LUB)</objectValue>
+						<objectValue valueForm="single" valueAllowed="taskcd06">Operational check (OPC)</objectValue>
+						<objectValue valueForm="single" valueAllowed="taskcd07">Restoration (RST)</objectValue>
+						<objectValue valueForm="single" valueAllowed="taskcd08">Servicing (SVC)</objectValue>
+						<objectValue valueForm="single" valueAllowed="taskcd09">Visual check (VCK)</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//limitType/@limitUnitType</objectPath>
+						<objectUse>Limit type</objectUse>
+						<objectValue valueForm="single" valueAllowed="lt01">Time between overhaul</objectValue>
+						<objectValue valueForm="single" valueAllowed="lt02">Hard time</objectValue>
+						<objectValue valueForm="single" valueAllowed="lt03">Since last maintenance</objectValue>
+						<objectValue valueForm="single" valueAllowed="lt04">Out time limit</objectValue>
+						<objectValue valueForm="single" valueAllowed="lt05">On condition</objectValue>
+						<objectValue valueForm="single" valueAllowed="lt06">Check maintenance</objectValue>
+						<objectValue valueForm="single" valueAllowed="lt07">Functional check</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//threshold/@thresholdUnitOfMeasure</objectPath>
+						<objectUse>Unit of measurement for the threshold interval</objectUse>
+						<objectValue valueForm="single" valueAllowed="th03">Months</objectValue>
+						<objectValue valueForm="single" valueAllowed="th04">Weeks</objectValue>
+						<objectValue valueForm="single" valueAllowed="th05">Years</objectValue>
+						<objectValue valueForm="single" valueAllowed="th06">Days</objectValue>
+						<objectValue valueForm="single" valueAllowed="th11">Shop visits</objectValue>
+						<objectValue valueForm="single" valueAllowed="th12">Auxiliary power unit change</objectValue>
+						<objectValue valueForm="single" valueAllowed="th14">Wheel change</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//sourceType/@sourceTypeCode</objectPath>
+						<objectUse>indicates the type of source</objectUse>
+						<objectValue valueForm="single" valueAllowed="stc51">fec</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//sourceType/@sourceCriticality</objectPath>
+						<objectUse>indicates the impact of not complying with the requirement</objectUse>
+						<objectValue valueForm="single" valueAllowed="sc55">Evident, Safety</objectValue>
+						<objectValue valueForm="single" valueAllowed="sc56">Evident, operational</objectValue>
+						<objectValue valueForm="single" valueAllowed="sc57">Evident, Economic</objectValue>
+						<objectValue valueForm="single" valueAllowed="sc58">Hidden, Safety</objectValue>
+						<objectValue valueForm="single" valueAllowed="sc59">Hidden, Non-Safety</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//verbatimText/@verbatimStyle</objectPath>
+						<objectUse>Verbatim style</objectUse>
+						<objectValue valueForm="single" valueAllowed="vs01">Generic verbatim</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs02">Filename</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs11">XML/SGML markup</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs12">XML/SGML element name</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs13">XML/SGML attribute name</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs14">XML/SGML attribute value</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs15">XML/SGML entity name</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs16">XML/SGML processing instruction</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs21">Program prompt</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs22">User input</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs23">Computer output</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs24">Program listing</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs25">Program variable name</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs26">Program variable value</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs27">Constant</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs28">Class name</objectValue>
+						<objectValue valueForm="single" valueAllowed="vs29">Parameter name</objectValue>
+					</structureObjectRule>
+					<structureObjectRule>
+						<objectPath>//@quantityUnitOfMeasure</objectPath>
+						<objectUse>Quantity data unit of measure - for further information refer to Chap 3.9.6.2 and the corresponding xml table</objectUse>
+					</structureObjectRule>
+				</structureObjectRuleGroup>
+			</contextRules>
+		</brex>
+	</content>
+</dmodule>
