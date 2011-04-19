@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<catalog>
-   <chain name="Toolkit">
-	  <command name="PreProcess" className="bridge.toolkit.commands.PreProcess" />
-      <command id="SCOBuilder" className="bridge.toolkit.commands.SCOBuilder" />
-      <command name="PostProcess" className="bridge.toolkit.commands.PostProcess"/>
-   </chain>
-</catalog>
