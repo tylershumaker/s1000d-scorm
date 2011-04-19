@@ -90,16 +90,17 @@
                 <meta name="HandheldFriendly" content="true" />
                 <meta name="viewport"
                     content="width=device-width, height=device-height, user-scalable=no" />
+                <meta http-equiv="X-UA-Compatible" content="IE=8"/>    
                 <title>JQueryMobileTest</title>
+                <link rel="stylesheet"
+                    href="../js/jquery.mobile-1.0a4.1.min.css" />
                 <link rel="stylesheet" href="../common.css" type="text/css" />
                 <link rel="stylesheet" href="../mobile.css" type="text/css"
                     media="screen" />
-                <link rel="stylesheet"
-                    href="../js/jquery.mobile-1.0a4.min.css" />
                 <script type="text/javascript"
-                    src="../js/jquery-1.5.1.min.js"></script>
+                    src="../js/jquery-1.5.2.min.js"></script>
                 <script type="text/javascript"
-                    src="../js/jquery.mobile-1.0a4.min.js"></script>
+                    src="../js/jquery.mobile-1.0a4.1.min.js"></script>
             </head>
             <body>
                 <div data-role="page">
