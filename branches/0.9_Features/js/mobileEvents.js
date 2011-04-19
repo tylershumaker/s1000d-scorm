@@ -1,82 +1,82 @@
 /**
  * 
  */
-$(function(){
-	
+$(function() {
+
 	var scoPages = getArray();
 
-	function isNumber(o)
-	{
-		return ! isNaN (o-0);
+	//handles .indexOf() method in IE and older browsers
+	if (!Array.prototype.indexOf) {
+		Array.prototype.indexOf = function(elt /* , from */) {
+			var len = this.length;
+			var from = Number(arguments[1]) || 0;
+			from = (from < 0) ? Math.ceil(from) : Math.floor(from);
+			if (from < 0)
+				from += len;
+			for (; from < len; from++) {
+				if (from in this && this[from] === elt)
+					return from;
+			}
+			return -1;
+		};
 	}
-	
-	function getCurrentLoc()
-	{
+
+	function isNumber(o) {
+		return !isNaN(o - 0);
+	}
+
+	function getCurrentLoc() {
 		var loc = $('.ui-page-active').attr('data-url');
-	    return scoPages.indexOf(loc);
+		return scoPages.indexOf(loc);
 	}
-	
-	function findLastPage()
-	{
+
+	function findLastPage() {
 		var cur = getCurrentLoc();
-		//alert("last : " + cur);
-		if(cur == -1)
-		{
+		// alert("last : " + cur);
+		if (cur == -1) {
 			cur = 1;
-		}
-		else
-		{
+		} else {
 			var page = scoPages[cur].split("/");
-			var backPage = scoPages[cur-1].split("/");
-			
-			if(page[0]!=backPage[0])
-			{
+			var backPage = scoPages[cur - 1].split("/");
+
+			if (page[0] != backPage[0]) {
 				cur = 1;
 			}
 		}
-		return scoPages[cur-1];
+		return scoPages[cur - 1];
 	}
-	function findNextPage()
-	{
+	function findNextPage() {
 		var cur = getCurrentLoc();
-		//alert("next : " + cur);
-		if (cur == -1)
-		{
+		// alert("next : " + cur);
+		if (cur == -1) {
 			return scoPages[1];
-		}
-		else
-		{
-			if(cur == scoPages.length-1)
-			{
+		} else {
+			if (cur == scoPages.length - 1) {
 				cur = -1;
-			}
-			else
-			{
+			} else {
 				var page = scoPages[cur].split("/");
-				var nextPage = scoPages[cur+1].split("/");
-				if(page[0] != nextPage[0])
-				{
+				var nextPage = scoPages[cur + 1].split("/");
+				if (page[0] != nextPage[0]) {
 					cur = -1;
 				}
 			}
 		}
-		return scoPages[cur+1];
+		return scoPages[cur + 1];
 	}
-	
-	function goHome()
-	{
+
+	function goHome() {
 		return scoPages[0];
 	}
-	
+
 	// SWIPE LEFT EVENT
-	$(document).bind('swipeleft',function(event, ui){
+	$(document).bind('swipeleft', function(event, ui) {
 		$.mobile.changePage(findNextPage(), "slide");
 	});
 	// SWIPE RIGHT EVENT
-	$(document).bind('swiperight',function(event, ui){
+	$(document).bind('swiperight', function(event, ui) {
 		$.mobile.changePage(findLastPage(), "fade");
 	});
-	
+
 	$('#next').live('click tap', function() {
 		$.mobile.changePage(findNextPage(), "slide");
 	});
@@ -84,6 +84,6 @@ $(function(){
 		$.mobile.changePage(findLastPage(), "fade");
 	});
 	$('#home').live('click tap', function() {
-		$.mobile.changePage(goHome(),"slidedown");
+		$.mobile.changePage(goHome(), "slidedown");
 	});
 });
