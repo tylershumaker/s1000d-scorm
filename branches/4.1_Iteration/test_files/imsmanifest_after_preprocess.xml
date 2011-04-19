@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lom="http://ltsc.ieee.org/xsd/LOM" identifier="MANIFEST-S1000DBIKE-00001-06RT9-00" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd" version="001">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>2004 3rd Edition</schemaversion>
+    <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <lom:general>
+        <lom:identifier>
+          <lom:entry>S1000D-SCORM-BIKE-SAMPLE</lom:entry>
+        </lom:identifier>
+        <lom:title>
+          <lom:string>S1000D/SCORM Bike Sample</lom:string>
+        </lom:title>
+        <lom:description>
+          <lom:string>Sample courseware consisting based on the S1000D Bike sample technical data implementing the S1000D version 4.0 Learning schema markup.</lom:string>
+        </lom:description>
+        <lom:keyword>
+          <lom:string>S1000DBIKE</lom:string>
+        </lom:keyword>
+        <lom:keyword>
+          <lom:string>s1000d learning schema</lom:string>
+        </lom:keyword>
+      </lom:general>
+      <lom:lifeCycle>
+        <lom:version>
+          <lom:string language="en">1.0</lom:string>
+        </lom:version>
+        <lom:status>
+          <lom:source>LOMv1.0</lom:source>
+          <lom:value>final</lom:value>
+        </lom:status>
+      </lom:lifeCycle>
+      <lom:metaMetadata>
+        <lom:identifier>
+          <lom:catalog>GUID</lom:catalog>
+          <lom:entry>3X157197F-7BD0-4F5C-BF57-CD3C8BA242</lom:entry>
+        </lom:identifier>
+        <lom:metadataSchema>LOMv1.0</lom:metadataSchema>
+        <lom:metadataSchema>SCORM_CAM_v1.3</lom:metadataSchema>
+      </lom:metaMetadata>
+    </lom:lom>
+  </metadata>
+  <organizations default="ORG-S1000DBIKE-00001-06RT9-00">
+    <organization identifier="ORG-S1000DBIKE-00001-06RT9-00" structure="hierarchical">
+      <title>S1000D BIKE Learning Sample</title>
+      <item identifier="ACT-N65644" identifierref="RES-N65644">
+        <title>Learning Plan</title>
+      </item>
+      <item identifier="ACT-N65923" identifierref="RES-N65923">
+        <title>Introduction to the Bike</title>
+      </item>
+      <item identifier="ACT-N66096" identifierref="RES-N66096">
+        <title>Assessment</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifer="RES-N65644" type="webcontent" adlcp:scormtype="sco" href="index.htm">
+      <metadata>
+        <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <lom:general>
+            <lom:title>
+              <lom:string>00_01_Learn_plan</lom:string>
+            </lom:title>
+            <lom:identifier>
+              <lom:catalog>ADL-S1000D</lom:catalog>
+              <lom:entry>TBD</lom:entry>
+            </lom:identifier>
+            <lom:description>
+              <lom:string language="x-none">Provides detailed documentation of the learning objectives and ISD strategies implemented in the Bike sample courseware.</lom:string>
+            </lom:description>
+            <lom:keyword>
+              <lom:string language="x-none">learning</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">objectives</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">learning plan</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">bike sample</lom:string>
+            </lom:keyword>
+          </lom:general>
+          <lom:lifeCycle>
+            <lom:version>
+              <lom:string language="x-none">1.0</lom:string>
+            </lom:version>
+            <lom:status>
+              <lom:source>LOMv1.0</lom:source>
+              <lom:value>final</lom:value>
+            </lom:status>
+            <lom:contribute>
+              <lom:role>
+                <lom:source>LOMv1.0</lom:source>
+                <lom:value>author</lom:value>
+              </lom:role>
+              <lom:entity>BEGIN:VCARD
+							FN: Intelligent Decision Systems, Inc.
+							END:VCARD</lom:entity>
+              <lom:date>
+                <lom:dateTime>2009-12-03</lom:dateTime>
+                <lom:description>
+                  <lom:string language="x-none">Date Description</lom:string>
+                </lom:description>
+              </lom:date>
+            </lom:contribute>
+          </lom:lifeCycle>
+          <lom:metaMetadata>
+            <lom:metadataSchema>LOMv1.0</lom:metadataSchema>
+            <lom:metadataSchema>SCORM_CAM_v1.3</lom:metadataSchema>
+          </lom:metaMetadata>
+          <lom:technical>
+            <lom:format>text/xml</lom:format>
+          </lom:technical>
+          <lom:rights>
+            <lom:cost>
+              <lom:source>LOMv1.0</lom:source>
+              <lom:value>no</lom:value>
+            </lom:cost>
+            <lom:copyrightAndOtherRestrictions>
+              <lom:source>LOMv1.0</lom:source>
+              <lom:value>no</lom:value>
+            </lom:copyrightAndOtherRestrictions>
+          </lom:rights>
+        </lom:lom>
+      </metadata>
+      <file href="index.htm" />
+      <file href="resources\DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H30A_001-00_en-us.xml" />
+      <file href="resources\DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml" />
+      <file href="resources\DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H11A_001-00_en-us.xml" />
+      <file href="resources\DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H18A_001-00_en-us.xml" />
+      <file href="resources\DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H19A_001-00_en-us.xml" />
+      <file href="resources\DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H20A_001-00_en-us.xml" />
+      <file href="resources\DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H40A_001-00_en-us.xml" />
+    </resource>
+    <resource identifer="RES-N65923" type="webcontent" adlcp:scormtype="sco" href="index.htm">
+      <metadata>
+        <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <lom:general>
+            <lom:title>
+              <lom:string>02_01_Overview</lom:string>
+            </lom:title>
+            <lom:identifier>
+              <lom:catalog>ADL-S1000D</lom:catalog>
+              <lom:entry>TBD</lom:entry>
+            </lom:identifier>
+            <lom:description>
+              <lom:string language="x-none">Provides a high level overview of the complete bicycle. Included are short descriptions of the main bicycle components.</lom:string>
+            </lom:description>
+            <lom:keyword>
+              <lom:string language="x-none">overview</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">frame</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">wheel</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">spokes</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">metal rim</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">seat</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">post</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">handlebar</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">stem</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">brake</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">lever</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">shifter</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">crank</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">pedal</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">chain</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">gear</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">derailleur</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">bicycle</lom:string>
+            </lom:keyword>
+          </lom:general>
+          <lom:lifeCycle>
+            <lom:version>
+              <lom:string language="x-none">1.0</lom:string>
+            </lom:version>
+            <lom:status>
+              <lom:source>LOMv1.0</lom:source>
+              <lom:value>final</lom:value>
+            </lom:status>
+            <lom:contribute>
+              <lom:role>
+                <lom:source>LOMv1.0</lom:source>
+                <lom:value>author</lom:value>
+              </lom:role>
+              <lom:entity>BEGIN:VCARD
+                     FN: Intelligent Decision Systems, Inc.
+                     END:VCARD</lom:entity>
+              <lom:date>
+                <lom:dateTime>2009-12-03</lom:dateTime>
+                <lom:description>
+                  <lom:string language="x-none">Date Description</lom:string>
+                </lom:description>
+              </lom:date>
+            </lom:contribute>
+          </lom:lifeCycle>
+          <lom:metaMetadata>
+            <lom:metadataSchema>LOMv1.0</lom:metadataSchema>
+            <lom:metadataSchema>SCORM_CAM_v1.3</lom:metadataSchema>
+          </lom:metaMetadata>
+          <lom:technical>
+            <lom:format>text/xml</lom:format>
+          </lom:technical>
+          <lom:rights>
+            <lom:cost>
+              <lom:source>LOMv1.0</lom:source>
+              <lom:value>no</lom:value>
+            </lom:cost>
+            <lom:copyrightAndOtherRestrictions>
+              <lom:source>LOMv1.0</lom:source>
+              <lom:value>no</lom:value>
+            </lom:copyrightAndOtherRestrictions>
+          </lom:rights>
+        </lom:lom>
+      </metadata>
+      <file href="index.htm" />
+      <file href="resources\DMC-S1000DBIKE-AAA-DA0-00-00-00AA-932A-T-H14B_001-00_EN-us.xml" />
+    </resource>
+    <resource identifer="RES-N66096" type="webcontent" adlcp:scormtype="sco" href="index.htm">
+      <metadata>
+        <lom:lom xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <lom:general>
+            <lom:title>
+              <lom:string>03_03_Steering System Assessment</lom:string>
+            </lom:title>
+            <lom:identifier>
+              <lom:catalog>ADL-S1000D</lom:catalog>
+              <lom:entry>TBD</lom:entry>
+            </lom:identifier>
+            <lom:description>
+              <lom:string language="x-none">Provides steering system assessment questions.</lom:string>
+            </lom:description>
+            <lom:keyword>
+              <lom:string language="x-none">steering</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">system</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">assessment</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">test</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">questions</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">bike</lom:string>
+            </lom:keyword>
+            <lom:keyword>
+              <lom:string language="x-none">bicycle</lom:string>
+            </lom:keyword>
+          </lom:general>
+          <lom:lifeCycle>
+            <lom:version>
+              <lom:string language="x-none">1.0</lom:string>
+            </lom:version>
+            <lom:status>
+              <lom:source>LOMv1.0</lom:source>
+              <lom:value>final</lom:value>
+            </lom:status>
+            <lom:contribute>
+              <lom:role>
+                <lom:source>LOMv1.0</lom:source>
+                <lom:value>author</lom:value>
+              </lom:role>
+              <lom:entity>BEGIN:VCARD
+							FN: Intelligent Decision Systems, Inc.
+							END:VCARD</lom:entity>
+              <lom:date>
+                <lom:dateTime>2009-12-03</lom:dateTime>
+                <lom:description>
+                  <lom:string language="x-none">Date Description</lom:string>
+                </lom:description>
+              </lom:date>
+            </lom:contribute>
+          </lom:lifeCycle>
+          <lom:metaMetadata>
+            <lom:metadataSchema>LOMv1.0</lom:metadataSchema>
+            <lom:metadataSchema>SCORM_CAM_v1.3</lom:metadataSchema>
+          </lom:metaMetadata>
+          <lom:technical>
+            <lom:format>text/xml</lom:format>
+          </lom:technical>
+          <lom:rights>
+            <lom:cost>
+              <lom:source>LOMv1.0</lom:source>
+              <lom:value>no</lom:value>
+            </lom:cost>
+            <lom:copyrightAndOtherRestrictions>
+              <lom:source>LOMv1.0</lom:source>
+              <lom:value>no</lom:value>
+            </lom:copyrightAndOtherRestrictions>
+          </lom:rights>
+        </lom:lom>
+      </metadata>
+      <file href="index.htm" />
+      <file href="resources\DMC-S1000DBIKE-AAA-DA2-00-00-00AA-028A-T-T28C_001-00_en-US.xml" />
+      <file href="resources\DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T88E_001-00_en-US.xml" />
+    </resource>
+  </resources>
+</manifest>

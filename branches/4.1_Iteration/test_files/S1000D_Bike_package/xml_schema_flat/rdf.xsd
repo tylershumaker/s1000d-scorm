@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://www.purl.org/dc/elements/1.1/" targetNamespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>Issue number: 4.0</xs:documentation>
+		<xs:documentation>Issue date: 2008-08-01</xs:documentation>
+		<xs:documentation>Release number: 2.0</xs:documentation>
+		<xs:documentation>Release date: 2003-05-31</xs:documentation>
+		<xs:documentation>URL: http://www.s1000d.org/S1000D_4-0/xml_schema_master/rdf.xsd</xs:documentation>
+		<xs:documentation>Copyright:
+			Copyright (C) 2008 by each of the following organizations:
+			1.  AeroSpace and Defence Industries Associations of Europe - ASD.
+			2.  Ministries of Defence of the member countries of ASD.
+
+			Limitations of Liability:
+
+			1.  This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.
+			2.  Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.
+			3.  Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable. 
+		</xs:documentation>
+		<xs:documentation>Remarks: none</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.purl.org/dc/elements/1.1/" schemaLocation="dc.xsd"/>
+	<xs:element name="Description">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="dc:DCMES" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
