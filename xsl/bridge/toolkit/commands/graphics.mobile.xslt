@@ -41,7 +41,7 @@
 				<object WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" id="{$theFileName}">
 					<param NAME="movie" VALUE="{$theFileName}"></param>
                     <param NAME="FlashVars" VALUE="theFileName={$global_dmc}" />
-                    <embed src="{$theFileName}" WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}"></embed>
+                    <embed src="{$theFileName}" WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" flashvars="theFileName={$global_dmc}"></embed>
 				</object>
 			</div>
 		</xsl:when>
@@ -78,7 +78,7 @@
             <div align="center" >
                 <object WIDTH="250" HEIGHT="300" id="{$theFileName}">
                     <param NAME="movie" VALUE="{$theFileName}"></param>
-                    <embed src="{$theFileName}" WIDTH="250" HEIGHT="300"></embed>
+                    <embed src="{$theFileName}" WIDTH="250" HEIGHT="300" flashvars="theFileName={$global_dmc}"></embed>
                 </object>
             </div>
 	</xsl:template>
