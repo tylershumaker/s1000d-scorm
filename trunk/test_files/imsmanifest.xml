@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="MANIFEST-S1000DBIKE-00001-06RT9-00" version="001">
+<metadata>
+<schema>ADL SCORM</schema>
+<schemaversion>2004 3rd Edition</schemaversion>
+</metadata>
+<organizations default="ORG-S1000DBIKE-00001-06RT9-00">
+<organization identifier="ORG-S1000DBIKE-00001-06RT9-00" structure="hierarchical">
+<title>S1000D BIKE Learning Sample</title>
+<item identifier="ACT-N65644" identifierref="RES-N65644">
+<title>Learning Plan</title>
+</item>
+<item identifier="ACT-N65925" identifierref="RES-N65925">
+<title>Introduction to the Bike</title>
+</item>
+<item identifier="ACT-N66095" identifierref="RES-N66095">
+<title>Assessment</title>
+</item>
+</organization>
+</organizations>
+<resources>
+<resource identifier="RES-N65644" type="webcontent" scormType="sco" href="TODO:ref_to_SCO_goes_here">
+<file href="TODO:ref_to_SCO_goes_here"/>
+<file href="S1000DBIKE-AAA-D00-00-00-00AA-932A-T-A"/>
+<file href="S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H30A"/>
+<file href="S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A"/>
+<file href="S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H11A"/>
+<file href="S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H18A"/>
+<file href="S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H19A"/>
+<file href="S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H20A"/>
+<file href="S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H40A"/>
+</resource>
+<resource identifier="RES-N65925" type="webcontent" scormType="sco" href="TODO:ref_to_SCO_goes_here">
+<file href="TODO:ref_to_SCO_goes_here"/>
+<file href="S1000DBIKE-AAA-DA0-00-00-00AA-932A-T-H14B"/>
+</resource>
+<resource identifier="RES-N66095" type="webcontent" scormType="sco" href="TODO:ref_to_SCO_goes_here">
+<file href="TODO:ref_to_SCO_goes_here"/>
+<file href="S1000DBIKE-AAA-DA2-00-00-00AA-028A-T-T28C"/>
+<file href="S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T88E"/>
+</resource>
+</resources>
+</manifest>

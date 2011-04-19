@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>Issue number: 4.0</xs:documentation>
+		<xs:documentation>Issue date: 2008-08-01</xs:documentation>
+		<xs:documentation>Release number: 2.0</xs:documentation>
+		<xs:documentation>Release date: 2003-05-31</xs:documentation>
+		<xs:documentation>URL: http://www.s1000d.org/S1000D_4-0/xml_schema_master/xlink.xsd</xs:documentation>
+		<xs:documentation>Copyright:
+			Copyright (C) 2008 by each of the following organizations:
+			1.  AeroSpace and Defence Industries Associations of Europe - ASD.
+			2.  Ministries of Defence of the member countries of ASD.
+
+			Limitations of Liability:
+
+			1.  This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.
+			2.  Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.
+			3.  Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable. 
+		</xs:documentation>
+		<xs:documentation>Remarks: none</xs:documentation>
+	</xs:annotation>
+	<xs:attribute name="actuate">
+		<xs:simpleType>
+			<xs:restriction base="xs:NMTOKEN">
+				<xs:enumeration value="onLoad"/>
+				<xs:enumeration value="onRequest"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:element name="arc">
+		<xs:complexType>
+			<xs:attribute name="type" fixed="arc"/>
+			<xs:attribute ref="xlink:from"/>
+			<xs:attribute ref="xlink:to"/>
+			<xs:attributeGroup ref="xlink:XLINKBEH0"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="from" type="xs:NMTOKEN"/>
+	<xs:attribute name="href" type="xs:string"/>
+	<xs:attributeGroup name="HREFTITL">
+		<xs:attribute ref="xlink:href"/>
+		<xs:attribute ref="xlink:title"/>
+	</xs:attributeGroup>
+	<xs:attribute name="label" type="xs:NMTOKEN"/>
+	<xs:element name="locator">
+		<xs:complexType>
+			<xs:attribute name="type" fixed="locator"/>
+			<xs:attribute ref="xlink:href" use="required"/>
+			<xs:attribute ref="xlink:title"/>
+			<xs:attribute ref="xlink:label" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="resource">
+		<xs:complexType>
+			<xs:attribute name="type" fixed="resource"/>
+			<xs:attribute ref="xlink:title"/>
+			<xs:attribute ref="xlink:label" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="show">
+		<xs:simpleType>
+			<xs:restriction base="xs:NMTOKEN">
+				<xs:enumeration value="new"/>
+				<xs:enumeration value="replace"/>
+				<xs:enumeration value="embed"/>
+				<xs:enumeration value="other"/>
+				<xs:enumeration value="none"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="title" type="xs:string"/>
+	<xs:attribute name="to" type="xs:NMTOKEN"/>
+	<xs:attribute name="type">
+		<xs:simpleType>
+			<xs:restriction base="xs:NMTOKEN">
+				<xs:enumeration value="simple"/>
+				<xs:enumeration value="extended"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attributeGroup name="XLINKATT">
+		<xs:attribute ref="xlink:type" default="simple"/>
+		<xs:attributeGroup ref="xlink:HREFTITL"/>
+		<xs:attributeGroup ref="xlink:XLINKBEH"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XLINKATT0">
+		<xs:attribute ref="xlink:type" fixed="simple"/>
+		<xs:attributeGroup ref="xlink:HREFTITL"/>
+		<xs:attributeGroup ref="xlink:XLINKBEH0"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XLINKATT1">
+		<xs:attribute ref="xlink:type" fixed="simple"/>
+		<xs:attributeGroup ref="xlink:HREFTITL"/>
+		<xs:attributeGroup ref="xlink:XLINKBEH1"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XLINKATT2">
+		<xs:attribute ref="xlink:type" fixed="simple"/>
+		<xs:attributeGroup ref="xlink:HREFTITL"/>
+		<xs:attributeGroup ref="xlink:XLINKBEH2"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XLINKATT3">
+		<xs:attribute ref="xlink:type" fixed="simple"/>
+		<xs:attributeGroup ref="xlink:HREFTITL"/>
+		<xs:attributeGroup ref="xlink:XLINKBEH"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XLINKATT4">
+		<xs:attribute ref="xlink:type" default="simple"/>
+		<xs:attributeGroup ref="xlink:HREFTITL"/>
+		<xs:attributeGroup ref="xlink:XLINKBEH2"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XLINKBEH">
+		<xs:attribute ref="xlink:show" default="replace"/>
+		<xs:attribute ref="xlink:actuate" default="onRequest"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XLINKBEH0">
+		<xs:attribute ref="xlink:show"/>
+		<xs:attribute ref="xlink:actuate"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XLINKBEH1">
+		<xs:attribute ref="xlink:show" fixed="embed"/>
+		<xs:attribute ref="xlink:actuate" fixed="onLoad"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XLINKBEH2">
+		<xs:attribute ref="xlink:show" default="new"/>
+		<xs:attribute ref="xlink:actuate" default="onRequest"/>
+	</xs:attributeGroup>
+	<xs:group name="XLINKEXT">
+		<xs:choice>
+			<xs:element ref="xlink:resource"/>
+			<xs:element ref="xlink:locator"/>
+			<xs:element ref="xlink:arc"/>
+		</xs:choice>
+	</xs:group>
+</xs:schema>
