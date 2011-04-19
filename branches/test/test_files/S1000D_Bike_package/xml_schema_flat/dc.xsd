@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.purl.org/dc/elements/1.1/" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>Issue number: 4.0</xs:documentation>
+		<xs:documentation>Issue date: 2008-08-01</xs:documentation>
+		<xs:documentation>Release number: 2.3</xs:documentation>
+		<xs:documentation>Release date: 2007-02-28</xs:documentation>
+		<xs:documentation>URL: http://www.s1000d.org/S1000D_4-0/xml_schema_master/dc.xsd</xs:documentation>
+		<xs:documentation>Copyright:
+			Copyright (C) 2008 by each of the following organizations:
+			1.  AeroSpace and Defence Industries Associations of Europe - ASD.
+			2.  Ministries of Defence of the member countries of ASD.
+
+			Limitations of Liability:
+
+			1.  This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.
+			2.  Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.
+			3.  Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable. 
+		</xs:documentation>
+		<xs:documentation>Remarks: none</xs:documentation>
+	</xs:annotation>
+	<xs:element name="title" type="xs:string"/>
+	<xs:element name="creator" type="xs:string"/>
+	<xs:element name="subject" type="xs:string"/>
+	<xs:element name="publisher" type="xs:string"/>
+	<xs:element name="contributor" type="xs:string"/>
+	<xs:element name="date" type="xs:date"/>
+	<xs:element name="type" type="xs:string" fixed="text"/>
+	<xs:element name="format" type="xs:string" fixed="text/xml"/>
+	<xs:element name="identifier" type="xs:string"/>
+	<xs:element name="language" type="dc:LANGUAGE-COUNTRY"/>
+	<xs:element name="rights" type="dc:SECURITY"/>
+
+	<xs:group name="DCMES">
+		<xs:choice>
+			<xs:element ref="dc:title"/>
+			<xs:element ref="dc:creator"/>
+			<xs:element ref="dc:subject"/>
+			<xs:element ref="dc:publisher"/>
+			<xs:element ref="dc:contributor"/>
+			<xs:element ref="dc:date"/>
+			<xs:element ref="dc:type"/>
+			<xs:element ref="dc:format"/>
+			<xs:element ref="dc:identifier"/>
+			<xs:element ref="dc:language"/>
+			<xs:element ref="dc:rights"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:simpleType name="SECURITY">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,2}(_(cc[0-9]{2})?(_cv[0-9]{2})?)?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="LANGUAGE-COUNTRY">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-z]{2,3}(-[A-Z]{2})?"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

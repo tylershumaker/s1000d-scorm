@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00185-A-001-01 SYSTEM 'media/ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00185-A-001-01.jpg' NDATA JPEG>
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Wheels - Assessment: Post test</dc:title>
+    <dc:subject>Wheels - Assessment: Post test</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-10-02</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA0-00-00-00AA-041A-A-T88E_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T88" learnEventCode="E" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="10" day="02" />
+        <dmTitle>
+          <techName>Wheels</techName>
+          <infoName>Assessment: Post test</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>DA000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningAssessment>
+        <title>Post Test</title>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>Look at the image of the bike. Which pointer is pointing to the spoke?</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00185-A-001-01" />
+                </figure>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>A</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>B</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>C</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>D</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>Look at the image of the bike. Which pointer is pointing to the wheel rim?</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00185-A-001-01" />
+                </figure>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>A</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>B</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>C</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>D</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>Look at the image of the bike. Which pointer is pointing to the wheel tire?</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00185-A-001-01" />
+                </figure>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>A</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>B</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>C</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>D</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>Look at the image of the bike. Which pointer is pointing to the spoke nipple?</para>
+                <figure>
+                  <title></title>
+                  <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA00000-A-06RT9-00185-A-001-01" />
+                </figure>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>A</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>B</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>C</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>D</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcTrueFalse>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>All bike tires require an inner tube?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>True</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>False</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+            <lcFeedbackIncorrect>
+              <description>
+                <para>Incorrect. The correct answer is false.</para>
+              </description>
+            </lcFeedbackIncorrect>
+            <lcFeedbackCorrect>
+              <description>
+                <para>Correct!</para>
+              </description>
+            </lcFeedbackCorrect>
+          </lcTrueFalse>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>What is the function of the valve attached to a bike's inner tube?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Holds the inner tube in place</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Indicates the correct direction of rotation</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Allows Inflation of the tube and tire to the correct pressure</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Protects the tube from damage</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>A bike's spokes are attached to which part of the hubs?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Bearings
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Hub shell
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Wheel rim
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Axle</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>Which part of a bike's wheel assembly allows you to adjust the tension of the spokes?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Valve
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Bearings
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Wheel rim
+									</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Spoke nipples</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSingleSelect>
+            <title />
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>When one of your bike's wheels does not operate correctly, what should you do first?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Immediately remove the entire assembly.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Ride the bike to the nearest bike shop.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Remove and install a new inner tube.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Visually inspect the entire assembly.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSequencing>
+            <!--FLASH PROGRAMMERS NOTE: Randomize the display order of answer options - lcValue attribute indicates correct order after user sequencing-->
+            <title></title>
+            <lcQuestion id="ques-001">
+              <description>
+                <para>Place the steps for removing a bike's rear wheel in the correct order. First, select a step. Then use the up and down arrows to move the step to the correct position. Repeat for each step, and then click NEXT.</para>
+              </description>
+            </lcQuestion>
+            <lcSequenceOptionGroup>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Release the brake and/or deflate the tire.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="1" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Shift the bike gear onto the smallest cog and smallest ring.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="2" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Open the quick release, and loosen the nut on the opposite side of the wheel.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="3" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											If necessary, move the rear derailleur out of the way.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="4" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Remove the wheel.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="5" />
+              </lcSequenceOption>
+            </lcSequenceOptionGroup>
+          </lcSequencing>
+        </lcInteraction>
+        <lcInteraction>
+          <lcSequencing>
+            <!--FLASH PROGRAMMERS NOTE: Randomize the display order of answer options - lcValue attribute indicates correct order after user sequencing-->
+            <title></title>
+            <lcQuestion>
+              <description>
+                <para>
+									Place the steps for removing and installing a bike's inner tube in the correct order. First, select a step. Then use the up and down arrows to move the step to the correct position. Repeat for each step, and then click NEXT.
+								</para>
+              </description>
+            </lcQuestion>
+            <lcSequenceOptionGroup>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Remove the wheel.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="1" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Deflate the tube completely.											
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="2" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Using a tire lever, remove the tire from the rim.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="3" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Partially inflate the new tube.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="4" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Place the valve through the hole in the rim.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="5" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Place the tire over the tube, and feed the tube into the tire.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="6" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+											Reinstall the tire into the rim.
+										</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="7" />
+              </lcSequenceOption>
+              <lcSequenceOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Inflate the tube to the appropriate pressure.</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcSequence lcName="lcSequence" lcValue="8" />
+              </lcSequenceOption>
+            </lcSequenceOptionGroup>
+          </lcSequencing>
+        </lcInteraction>
+      </learningAssessment>
+    </learning>
+  </content>
+</dmodule>
