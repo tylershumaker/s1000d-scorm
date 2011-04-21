@@ -228,16 +228,12 @@ public class MobileBuilder implements Command
                 CopyDirectory cd = new CopyDirectory();
                 File mobiApp_loc = new File(System.getProperty("user.dir") + File.separator +
                 "mobiApp");
+                cd.copyDirectory(mobiApp_loc, newMobApp);
+                
                 //copy common.css from the ViewerApplication to the mobile output
                 File common_css = new File(System.getProperty("user.dir") + File.separator + 
                         "ViewerApplication" + File.separator + "app" + File.separator + "common.css");
                 cd.copyDirectory(common_css, newMobApp);
-                //now copy over all of the files in the mobiApp folder to the mobile output location
-                cd.copyDirectory(mobiApp_loc, newMobApp);
-                
-//                File js_loc = new File(System.getProperty("user.dir") + File.separator + "js");
-//                File new_js_loc = new File(newMobApp.getAbsolutePath() + File.separator + "js");
-//                cd.copyDirectory(js_loc, new_js_loc);
                 
                 //copy over media files
                 File resource_media = new File(src_dir + File.separator + "media");
