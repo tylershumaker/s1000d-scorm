@@ -226,18 +226,18 @@ public class MobileBuilder implements Command
             {
                 //copy over css and jquery mobile files
                 CopyDirectory cd = new CopyDirectory();
-                File css_loc = new File(System.getProperty("user.dir") + File.separator +
-                "css");
-                //copy common.css from the ViewerApplication to the css directory to be included in the mobile output
+                File mobiApp_loc = new File(System.getProperty("user.dir") + File.separator +
+                "mobiApp");
+                //copy common.css from the ViewerApplication to the mobile output
                 File common_css = new File(System.getProperty("user.dir") + File.separator + 
                         "ViewerApplication" + File.separator + "app" + File.separator + "common.css");
-                cd.copyDirectory(common_css, css_loc);
-                //now copy over all of the files in the css folder to the mobile output location
-                cd.copyDirectory(css_loc, newMobApp);
+                cd.copyDirectory(common_css, newMobApp);
+                //now copy over all of the files in the mobiApp folder to the mobile output location
+                cd.copyDirectory(mobiApp_loc, newMobApp);
                 
-                File js_loc = new File(System.getProperty("user.dir") + File.separator + "js");
-                File new_js_loc = new File(newMobApp.getAbsolutePath() + File.separator + "js");
-                cd.copyDirectory(js_loc, new_js_loc);
+//                File js_loc = new File(System.getProperty("user.dir") + File.separator + "js");
+//                File new_js_loc = new File(newMobApp.getAbsolutePath() + File.separator + "js");
+//                cd.copyDirectory(js_loc, new_js_loc);
                 
                 //copy over media files
                 File resource_media = new File(src_dir + File.separator + "media");
@@ -461,9 +461,7 @@ public class MobileBuilder implements Command
      */
     private void generateListFile(File mobAppDir) throws IOException, JDOMException
     {
-        File jsDir = new File(mobAppDir.getAbsolutePath() + File.separator + "js");
-        jsDir.mkdir();
-        File js = new File(jsDir.getAbsolutePath() + File.separator + "list.js");
+        File js = new File(mobAppDir.getAbsolutePath() + File.separator + "list.js");
 
         FileWriter writer = new FileWriter(js);
         int count = 0;
