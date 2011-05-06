@@ -32,14 +32,14 @@ public class CopyDirectory
     {
         if (srcFolder.isDirectory()) 
         {
-            if (!destFolder.exists()) 
-            {
-                destFolder.mkdir();
-            }
- 
             //ensures that hidden folders are not included
             if(!srcFolder.getName().contains("."))
             {
+                if (!destFolder.exists()) 
+                {
+                    destFolder.mkdir();
+                }
+
                 String[] oChildren = srcFolder.list();
                 for (int i=0; i < oChildren.length; i++) 
                 {
