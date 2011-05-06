@@ -60,7 +60,6 @@ public class URNMapper
         Element urnResource = new Element("urn-resource");
         Element urn = null;
         String file_name = null;
-        String theExt = null;
         String name = null;
         Iterator<File> filesIterator = src_files.iterator();
         while(filesIterator.hasNext())
@@ -70,31 +69,21 @@ public class URNMapper
             {
                 file_name = file.getName();
                 String[] split = file_name.split("\\.");
-                theExt = split[split.length - 1];
-                file_name = split[0] + "." + theExt;
-                split = file_name.split("_");
                 name = split[0];
-
-                urn = writeUrn(name, file_name, "");
+                if(name.contains("_"))
+                {
+                    split = name.split("_");
+                    name = split[0];
+                    urn = writeUrn(name, file_name, "");
+                }
+                else
+                {
+                    urn = writeUrn(name, file_name, directoryDepth);
+                }
+                
                 urnResource.addContent(urn);
             }
-            else
-            {
-                if (file.isDirectory() & file.getName().equals("media"))
-                {
-                    // recurse the media folder
-                    File[] media_files = file.listFiles();
-                    for (int j = 0; j < media_files.length; j++)
-                    {
-                        file_name = media_files[j].getName();
-                        String[] split = file_name.split("\\.");
-                        name = split[0];
-                        theExt = split[split.length - 1];
-                        urn = writeUrn(name, file_name, directoryDepth);
-                        urnResource.addContent(urn);
-                    }
-                }
-            }
+
         }
         urn_map.addContent(urnResource);
 
@@ -117,15 +106,8 @@ public class URNMapper
         Element target = new Element("target");
         Attribute type = new Attribute("type", "file");
         target.setAttribute(type);
-        // assume manifest is at level with resources folder
-        if (name.startsWith("ICN"))
-        {
-            target.setText(directoryDepth + "media/" + file_name);
-        }
-        else
-        {
-            target.setText(directoryDepth + file_name);
-        }
+        target.setText(directoryDepth + file_name);
+
         urn.addContent(target);
         return urn;
     }
