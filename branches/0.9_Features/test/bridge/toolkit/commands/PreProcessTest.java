@@ -60,11 +60,7 @@ public class PreProcessTest
             {
                 deleteDirectory(svn);
             }
-            File mediaSvn = new File(dstPath.getAbsolutePath()+ File.separator + "media" + File.separator + ".svn");
-            if (mediaSvn.exists())
-            {
-                deleteDirectory(mediaSvn);
-            }
+
         }
         catch (IOException e)
         {

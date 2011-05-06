@@ -59,11 +59,6 @@ public class PostProcessTest
             {
                 deleteDirectory(svn);
             }
-            File mediaSvn = new File(tempRes.getAbsolutePath()+ File.separator + "media" + File.separator + ".svn");
-            if (mediaSvn.exists())
-            {
-                deleteDirectory(mediaSvn);
-            }
 
         }
         catch (IOException e)
