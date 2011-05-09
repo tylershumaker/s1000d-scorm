@@ -89,7 +89,7 @@
         <copy todir="${release.dir}">
            <fileset dir="." includes="build.xml, APACHE-LICENSE-2_0.html, 
 			ECLIPSE-PUBLIC-LICENSE-1_0.html, license.txt, Toolkit.jar, ToolkitGUI.jar,
-		    conf/**, css/**, doc/**, examples/**, js/**, lib/**, resources/**, src/**, 
+		    conf/**, doc/**, examples/**, lib/**, mobiApp/**, resources/**, src/**, 
            	ViewerApplication/**, xsd/**, xsl/**"/>
         </copy>
 		
