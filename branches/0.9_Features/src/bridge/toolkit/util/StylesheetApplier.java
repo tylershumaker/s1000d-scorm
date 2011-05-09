@@ -23,7 +23,7 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
 /**
- *
+ * Provides the ability to apply style sheets to the data modules. 
  */
 public class StylesheetApplier
 {
@@ -33,14 +33,14 @@ public class StylesheetApplier
      * so that they will be rendered in a human readable format in the SCORM
      * Content Package SCOs.
      * 
-     * @param baseDir
-     * @param xslt
+     * @param iBaseDir File that is the base directory for the data modules.
+     * @param iStyleSheet String that represents the location of the style sheet to be added.
      * @throws JDOMException
      * @throws IOException
      */
-    public void applyStylesheetToDMCs(File baseDir, String xslt) throws JDOMException, IOException
+    public void applyStylesheetToDMCs(File iBaseDir, String iStyleSheet) throws JDOMException, IOException
     {
-        this.applyStylesheetToDMCs(baseDir, xslt, "xsl" ,"");
+        this.applyStylesheetToDMCs(iBaseDir, iStyleSheet, "xsl" ,"");
     }
     
     /**
@@ -48,16 +48,17 @@ public class StylesheetApplier
      * so that they will be rendered in a human readable format in the SCORM
      * Content Package SCOs.
      * 
-     * @param baseDir
-     * @param xslt
-     * @param mediaType
+     * @param iBaseDir File that is the base directory for the data modules.
+     * @param iStyleSheet String that represents the location of the style sheet to be added.
+     * @param iType String that represents the style sheet type. Either 'xsl' or 'css'.
+     * @param iMediaType String that represents the entire media type attribute if needed to be included.
      * @throws JDOMException
      * @throws IOException
      */
-    public void applyStylesheetToDMCs(File baseDir, String xslt, String type, String mediaType) throws JDOMException, IOException
+    public void applyStylesheetToDMCs(File iBaseDir, String iStyleSheet, String iType, String iMediaType) throws JDOMException, IOException
     {
 
-        File dm = new File(baseDir + File.separator + "resources" +
+        File dm = new File(iBaseDir + File.separator + "resources" +
                            File.separator + "s1000d");
         
         File[] resources = dm.listFiles();
@@ -70,9 +71,9 @@ public class StylesheetApplier
                 Document doc = parser.build(resource);
                 
                 String STYLESHEET = "xml-stylesheet";
-                String STYLEPROCESSINGINSTRUCTION = "type='text/"+type +"'"+ mediaType +" href='";
+                String STYLEPROCESSINGINSTRUCTION = "type='text/"+iType +"'"+ iMediaType +" href='";
                 
-                ProcessingInstruction stylesheet = new ProcessingInstruction(STYLESHEET, STYLEPROCESSINGINSTRUCTION+xslt+"'\n");
+                ProcessingInstruction stylesheet = new ProcessingInstruction(STYLESHEET, STYLEPROCESSINGINSTRUCTION+iStyleSheet+"'\n");
                 DocType docType = doc.getDocType();
                 if(docType!=null)
                 {
@@ -86,7 +87,7 @@ public class StylesheetApplier
                 
                 XMLOutputter outputter = new XMLOutputter(Format.getRawFormat());
 
-                File temp = new File(baseDir + File.separator +"resources" + 
+                File temp = new File(iBaseDir + File.separator +"resources" + 
                                    File.separator + "s1000d" + File.separator +
                                    resource.getName());
                 FileWriter writer = new FileWriter(temp);
