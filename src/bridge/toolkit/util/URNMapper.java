@@ -36,7 +36,9 @@ public class URNMapper
         File [] testVR = csdb_files.listFiles();
         for(File file : testVR)
         {
-            src_files.add(file);
+            // Add the file only if is not .svn (for test in working copy)
+            if (!file.getName().equals(".svn"))
+                src_files.add(file);
         }            
         return src_files;
 

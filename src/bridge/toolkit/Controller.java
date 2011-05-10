@@ -96,7 +96,7 @@ public class Controller
         ctx.put(Keys.RESOURCE_PACKAGE, args[1]);
         try
         {
-            if(args[2] != null && args[2].equals("-mobile"))
+            if(args.length>2 && args[2] != null && args[2].equals("-mobile"))
                 toolkit = sampleCatalog.getCommand("MobileBuilder");
             
             toolkit.execute(ctx);

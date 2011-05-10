@@ -263,10 +263,11 @@ public class SCOBuilder implements Command
                 xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
                 resource = (Element) xp.selectSingleNode(manifest);
 
-                String[] resource_path = resource.getAttributeValue("href").split("/");
-                
-                page.add("../" + resource_path[resource_path.length-1]);
-                
+                if(resource!=null)
+                {
+                    String[] resource_path = resource.getAttributeValue("href").split("/");
+                    page.add("../" + resource_path[resource_path.length-1]);
+                }
             }
             scoPages.add(page);
         }

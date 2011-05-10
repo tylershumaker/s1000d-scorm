@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat\descript.xsd">
+	<rdf:Description>
+		<dc:creator>U8025</dc:creator>
+		<dc:title>Bicycle - Description of how it is made</dc:title>
+		<dc:subject>Bicycle - Description of how it is made</dc:subject>
+		<dc:publisher>U8025</dc:publisher>
+		<dc:contributor>U8025</dc:contributor>
+		<dc:date>2008-08-01</dc:date>
+		<dc:type>text</dc:type>
+		<dc:format>text/xml</dc:format>
+		<dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-041A-A_007-00</dc:identifier>
+		<dc:language>en-US</dc:language>
+		<dc:rights>01_cc51</dc:rights>
+	</rdf:Description>
+	<identAndStatusSection>
+		<dmAddress>
+			<dmIdent>
+				<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A"/>
+				<language countryIsoCode="US" languageIsoCode="en"/>
+				<issueInfo issueNumber="007" inWork="00"/>
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate year="2008" month="08" day="01"/>
+				<dmTitle>
+					<techName>Bicycle</techName>
+					<infoName>Description of how it is made</infoName>
+				</dmTitle>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus issueType="revised">
+			<security securityClassification="01" commercialClassification="cc51"/>
+			<dataRestrictions>
+				<restrictionInstructions>
+					<dataDistribution>To be made available to all S1000D users.</dataDistribution>
+					<exportControl>
+						<exportRegistrationStmt>
+							<simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+						</exportRegistrationStmt>
+					</exportControl>
+					<dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+					<dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+					<dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+				</restrictionInstructions>
+				<restrictionInfo>
+					<copyright>
+						<copyrightPara>
+							<emphasis>Copyright (C) 2008</emphasis> by each of the following organizations:<randomList>
+								<listItem>
+									<para>AeroSpace and Defence Industries Associations of Europe - ASD.</para>
+								</listItem>
+								<listItem>
+									<para>Ministries of Defence of the member countries of ASD.</para>
+								</listItem>
+							</randomList>
+						</copyrightPara>
+						<copyrightPara>
+							<emphasis>Limitations of Liability:</emphasis>
+						</copyrightPara>
+						<copyrightPara>
+							<randomList>
+								<listItem>
+									<para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+								</listItem>
+								<listItem>
+									<para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+								</listItem>
+								<listItem>
+									<para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+								</listItem>
+							</randomList>
+						</copyrightPara>
+					</copyright>
+					<policyStatement>TPSMG TOR 001</policyStatement>
+					<dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+				</restrictionInfo>
+			</dataRestrictions>
+			<responsiblePartnerCompany enterpriseCode="U8025">
+				<enterpriseName>UK MoD</enterpriseName>
+			</responsiblePartnerCompany>
+			<originator enterpriseCode="U8025">
+				<enterpriseName>UK MoD</enterpriseName>
+			</originator>
+			<applicCrossRefTableRef>
+				<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D">
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D"/>
+					</dmRefIdent>
+				</dmRef>
+			</applicCrossRefTableRef>
+			<applic>
+				<displayText>
+					<simplePara>Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)</simplePara>
+				</displayText>
+				<evaluate andOr="and">
+					<assert applicPropertyIdent="type" applicPropertyType="prodattr" applicPropertyValues="Mountain bicycle"/>
+					<evaluate andOr="or">
+						<evaluate andOr="and">
+							<assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Mountain storm"/>
+							<assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk1"/>
+						</evaluate>
+						<evaluate andOr="and">
+							<assert applicPropertyIdent="model" applicPropertyType="prodattr" applicPropertyValues="Brook trekker"/>
+							<assert applicPropertyIdent="version" applicPropertyType="prodattr" applicPropertyValues="Mk9"/>
+						</evaluate>
+					</evaluate>
+				</evaluate>
+			</applic>
+			<techStandard>
+				<authorityInfoAndTp>
+					<authorityInfo>20010131</authorityInfo>
+					<techPubBase>Bike book</techPubBase>
+				</authorityInfoAndTp>
+				<authorityExceptions/>
+				<authorityNotes/>
+			</techStandard>
+			<brexDmRef>
+				<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D_007-00">
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+						<issueInfo issueNumber="007" inWork="00"/>
+					</dmRefIdent>
+				</dmRef>
+			</brexDmRef>
+			<qualityAssurance>
+				<firstVerification verificationType="tabtop"/>
+			</qualityAssurance>
+			<systemBreakdownCode>BY</systemBreakdownCode>
+			<skillLevel skillLevelCode="sk01"/>
+			<reasonForUpdate>
+				<simplePara>totally revised</simplePara>
+				<simplePara>Schema cleanup element/attribute renaming</simplePara>
+			</reasonForUpdate>
+		</dmStatus>
+	</identAndStatusSection>
+	<content>
+		<description>
+			<levelledPara>
+				<title>Physical description of a bicycle</title>
+				<para>
+					A bicycle (refer to <internalRef internalRefId="fig-0001" internalRefTargetType="irtt01" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001"/>) is a frame and a number of movable components with mechanical parts that are completely open. There are no covers or sheet metal panels that prevent access to the mechanical parts. Thus, you can disassemble the different components of a bicycle (refer to <internalRef internalRefId="fig-0001-gra-0001-hot-0000" internalRefTargetType="irtt01" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0000"/>) to do: <randomList listItemPrefix="pf02">
+						<listItem>
+							<para>an inspection</para>
+						</listItem>
+						<listItem>
+							<para>a maintenance task</para>
+						</listItem>
+						<listItem>
+							<para>a repair task</para>
+						</listItem>
+					</randomList>
+				</para>
+				<figure id="fig-0001">
+					<title>Complete bicycle</title>
+					<graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-D000000-0-U8025-06RT9-A-04-1" xlink:title="Complete bicycle" infoEntityIdent="ICN-S1000DBIKE-AAA-D000000-0-06RT9-00536-A-04-1">
+						<hotspot id="fig-0001-gra-0001-hot-0000" applicationStructureIdent="hot000" applicationStructureName="0" hotspotType="CALLOUT" hotspotTitle="BICYCLE" objectDescr="BICYCLE"/>
+						<hotspot id="fig-0001-gra-0001-hot-0001" applicationStructureIdent="hot001" applicationStructureName="1" hotspotType="CALLOUT" hotspotTitle="BRAKE SUB-SYSTEM" objectDescr="BRAKE SUB-SYSTEM"/>
+						<hotspot id="fig-0001-gra-0001-hot-0002" applicationStructureIdent="hot002" applicationStructureName="2" hotspotType="CALLOUT" hotspotTitle="GEAR SUB-SYSTEM" objectDescr="GEAR SUB-SYSTEM"/>
+						<hotspot id="fig-0001-gra-0001-hot-0003" applicationStructureIdent="hot003" applicationStructureName="3" hotspotType="CALLOUT" hotspotTitle="WHEEL, ASSEMBLY FRONT" objectDescr="WHEEL, ASSEMBLY FRONT"/>
+						<hotspot id="fig-0001-gra-0001-hot-0004" applicationStructureIdent="hot004" applicationStructureName="4" hotspotType="CALLOUT" hotspotTitle="PEDALS" objectDescr="PEDALS"/>
+						<hotspot id="fig-0001-gra-0001-hot-0005" applicationStructureIdent="hot005" applicationStructureName="5" hotspotType="CALLOUT" hotspotTitle="CRANKS" objectDescr="CRANKS"/>
+						<hotspot id="fig-0001-gra-0001-hot-0006" applicationStructureIdent="hot006" applicationStructureName="6" hotspotType="CALLOUT" hotspotTitle="CHAIN" objectDescr="CHAIN"/>
+						<hotspot id="fig-0001-gra-0001-hot-0007" applicationStructureIdent="hot007" applicationStructureName="7" hotspotType="CALLOUT" hotspotTitle="WHEEL, ASSEMBLY REAR" objectDescr="WHEEL, ASSEMBLY REAR"/>
+						<hotspot id="fig-0001-gra-0001-hot-0008" applicationStructureIdent="hot008" applicationStructureName="8" hotspotType="CALLOUT" hotspotTitle="SEAT, ASSEMBLY" objectDescr="SEAT, ASSEMBLY"/>
+						<hotspot id="fig-0001-gra-0001-hot-0009" applicationStructureIdent="hot009" applicationStructureName="9" hotspotType="CALLOUT" hotspotTitle="FRAME ASSEMBLY" objectDescr="FRAME ASSEMBLY"/>
+						<hotspot id="fig-0001-gra-0001-hot-0010" applicationStructureIdent="hot010" applicationStructureName="10" hotspotType="CALLOUT" hotspotTitle="HANDLE BAR STEM" objectDescr="HANDLE BAR STEM"/>
+						<hotspot id="fig-0001-gra-0001-hot-0011" applicationStructureIdent="hot011" applicationStructureName="11" hotspotType="CALLOUT" hotspotTitle="HANDLE BAR" objectDescr="HANDLE BAR"/>
+					</graphic>
+				</figure>
+				<para>The parts that you can immediately identify on a bicycle are given in Table 1.</para>
+				<table>
+					<title>Bicycle parts</title>
+					<tgroup cols="3">
+						<colspec colname="1" colwidth="40mm"/>
+						<colspec colname="2" colwidth="30mm"/>
+						<colspec colname="3" colwidth="60mm"/>
+						<thead>
+							<row>
+								<entry>
+									<para>Item</para>
+								</entry>
+								<entry>
+									<para>Refer to</para>
+								</entry>
+								<entry>
+									<para>Definition</para>
+								</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>
+									<para>Frame</para>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0009" internalRefTargetType="irtt01" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0009"/>
+								</entry>
+								<entry>
+									<para>A bicycle frame is made of metal tubes that are welded together.</para>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>Wheels</para>
+								</entry>
+								<entry/>
+								<entry>
+									<para>
+										The wheels include these parts: <randomList listItemPrefix="pf02">
+											<listItem>
+												<para>Hub</para>
+											</listItem>
+											<listItem>
+												<para>Spokes</para>
+											</listItem>
+											<listItem>
+												<para>Metal rim</para>
+											</listItem>
+											<listItem>
+												<para>Rubber tire</para>
+											</listItem>
+										</randomList>
+									</para>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<randomList listItemPrefix="pf02">
+										<listItem>
+											<para>Rear wheel</para>
+										</listItem>
+									</randomList>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0007" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0007"/>
+								</entry>
+								<entry/>
+							</row>
+							<row>
+								<entry>
+									<randomList listItemPrefix="pf02">
+										<listItem>
+											<para>Front wheel</para>
+										</listItem>
+									</randomList>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0003" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0003"/>
+								</entry>
+								<entry/>
+							</row>
+							<row>
+								<entry>
+									<para>Seat and seat post</para>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0008" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0008"/>
+								</entry>
+								<entry>
+									<para>These install into the seat tube with a mechanism you can use to change the height.</para>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>Handle bars</para>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0011" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0011"/>
+								</entry>
+								<entry>
+									<para>A horizontal bar that attaches to the stem with grips at the ends that attach to the brake levers and the shifters.</para>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>Handle bar stem</para>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0010" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0010"/>
+								</entry>
+								<entry>
+									<para>This attaches the handle bar to the steering tube (head set).</para>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>Cranks</para>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0005" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0005"/>
+								</entry>
+								<entry>
+									<para>A lever that extends from the bottom of the bracket to the pedal.</para>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>Pedals</para>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0004" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0004"/>
+								</entry>
+								<entry>
+									<para>The two platforms for the feet that attach to the crank.</para>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>Chain</para>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0006" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0006"/>
+								</entry>
+								<entry>
+									<para>A circular set of links that connect the chain ring to the cogs on the freewheel.</para>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>Gears</para>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0002" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0002"/>
+								</entry>
+								<entry>
+									<para>
+										The gears include: <randomList listItemPrefix="pf02">
+											<listItem>
+												<para>Front chain ring</para>
+											</listItem>
+											<listItem>
+												<para>Rear freewheel</para>
+											</listItem>
+											<listItem>
+												<para>Front and the rear derailleur</para>
+											</listItem>
+											<listItem>
+												<para>Shift lever on the handle bars</para>
+											</listItem>
+											<listItem>
+												<para>Cables</para>
+											</listItem>
+										</randomList>
+									</para>
+								</entry>
+							</row>
+							<row>
+								<entry>
+									<para>Brakes</para>
+								</entry>
+								<entry>
+									<internalRef internalRefId="fig-0001-gra-0001-hot-0001" internalRefTargetType="irtt11" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001-gra-0001-hot-0001"/>
+								</entry>
+								<entry>
+									<para>
+										The brakes include: <randomList listItemPrefix="pf02">
+											<listItem>
+												<para>Actuators on the handlebars</para>
+											</listItem>
+											<listItem>
+												<para>Brake cable</para>
+											</listItem>
+											<listItem>
+												<para>Brake callipers</para>
+											</listItem>
+											<listItem>
+												<para>Brake pads</para>
+											</listItem>
+										</randomList>
+									</para>
+								</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+			</levelledPara>
+		</description>
+	</content>
+</dmodule>
