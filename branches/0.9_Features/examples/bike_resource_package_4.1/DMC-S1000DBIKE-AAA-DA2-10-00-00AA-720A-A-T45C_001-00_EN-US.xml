@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00023-A-001-01 SYSTEM 'ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00023-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00024-A-001-01 SYSTEM 'ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00024-A-001-01.jpg' NDATA JPEG>
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Stem - Install Procedures: Static content - Procedure Expositive</dc:title>
+    <dc:subject>Stem - Install Procedures: Static content - Procedure Expositive</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-07-30</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA2-10-00-00AA-720A-A-T45C_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="30" />
+        <dmTitle>
+          <techName>Stem</techName>
+          <infoName>Install Procedures: Static content - Procedure Expositive</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>DA210</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent id="learncont-f0ba8886-cd99-4802-8eb0-5225575afae7">
+        <title>Installing the Stem</title>
+        <lcInstruction id="lci-1efbc79d-d685-411c-bc74-60b28a6989bd">
+          <description>
+            <caution>
+              <warningAndCautionPara>Do not tighten the stem bolt too much. You can cause damage to the headset bearings if you tighten the stem too much.</warningAndCautionPara>
+            </caution>
+            <caution>
+              <warningAndCautionPara>The stem bolt does not secure the stem safely in place. The stem is held in place by the clamping bolts.</warningAndCautionPara>
+            </caution>
+            <para>Before installing the stem, be sure to remove any rust and corrosion with a clean, dry cloth and rubbing alcohol.</para>
+            <para>Use a general lubricant and lubricate the following:</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>Threads of the stem and stem bolt</para>
+                </listItem>
+                <listItem>
+                  <para>Sides</para>
+                </listItem>
+                <listItem>
+                  <para>Top of the wedge</para>
+                </listItem>
+              </randomList>
+            </para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00023-A-001-01" />
+            </figure>
+            <para>Install the stem in the steerer tube.</para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-DA21000-A-06RT9-00024-A-001-01" />
+            </figure>
+            <para>Adjust to align the stem with the wheel, and firmly tighten the stem bolt.</para>
+            <para>
+					Install the handlebar (refer to
+					<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="new" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA2-20-00-00AA-720A-T-T45-C_001-00"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="720" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" /></dmRefIdent><dmRefAddressItems><dmTitle><techName>Handlebar</techName><infoName>Install procedures</infoName></dmTitle></dmRefAddressItems><behavior linkShow="newPane" linkActuate="onRequest" /></dmRef>).
+				</para>
+            <note>
+              <notePara>The stem must point forward in alignment with the wheel.</notePara>
+            </note>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

@@ -85,6 +85,7 @@ public class PostProcess implements Command
 
             String zipName = title.getValue();
             zipName = zipName.replace(" ", "_").trim();
+            zipName = zipName.replace("\n", "").trim();            
             File zip = new File(zipName+".zip");
            
             ZipCreator zipCreator = new ZipCreator();
