@@ -97,7 +97,7 @@ public class Controller
         try
         {
             if(args.length>2 && args[2] != null && args[2].equals("-mobile"))
-                toolkit = sampleCatalog.getCommand("MobileBuilder");
+                toolkit = sampleCatalog.getCommand("Mobile");
             
             toolkit.execute(ctx);
         }
