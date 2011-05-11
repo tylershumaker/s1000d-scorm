@@ -33,7 +33,7 @@ public class CopyDirectory
         if (srcFolder.isDirectory()) 
         {
             //ensures that hidden folders are not included
-            if(!srcFolder.getName().contains("."))
+            if(!srcFolder.getName().startsWith("."))
             {
                 if (!destFolder.exists()) 
                 {
