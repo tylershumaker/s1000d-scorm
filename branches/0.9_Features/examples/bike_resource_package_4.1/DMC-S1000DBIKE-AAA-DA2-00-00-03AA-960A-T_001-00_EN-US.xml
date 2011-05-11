@@ -66,6 +66,13 @@
       <trainingStep>
         <dmRef>
           <dmRefIdent>
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T71" learnEventCode="E" />
+          </dmRefIdent>
+        </dmRef>      
+      </trainingStep>
+      <trainingStep>
+        <dmRef>
+          <dmRefIdent>
             <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="A" learnCode="T63" learnEventCode="E" />
           </dmRefIdent>
         </dmRef>
