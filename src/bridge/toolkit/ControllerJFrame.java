@@ -288,7 +288,7 @@ public class ControllerJFrame extends javax.swing.JFrame
         try
         {
             if(outputType.equals("-mobile"))
-                toolkit = sampleCatalog.getCommand("MobileBuilder");
+                toolkit = sampleCatalog.getCommand("Mobile");
             else
                 toolkit = sampleCatalog.getCommand("SCORM");
             
