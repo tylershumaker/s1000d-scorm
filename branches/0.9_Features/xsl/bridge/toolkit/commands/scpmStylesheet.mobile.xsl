@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--  * This file is part of the S1000D Transformation Toolkit 
+ * project hosted on Sourceforge.net. See the accompanying 
+ * license.txt file for applicable licenses. -->
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 

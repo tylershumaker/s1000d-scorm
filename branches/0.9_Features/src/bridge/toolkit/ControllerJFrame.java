@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Toolkit 
+ * This file is part of the S1000D Transformation Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
@@ -29,7 +29,7 @@ import org.apache.commons.chain.impl.ContextBase;
 import bridge.toolkit.util.Keys;
 
 /**
- * GUI created to execute the S1000D-SCORM Bridge Toolkit.
+ * GUI created to execute the S1000D Transformation Toolkit.
  */
 public class ControllerJFrame extends javax.swing.JFrame
 {
@@ -135,7 +135,7 @@ public class ControllerJFrame extends javax.swing.JFrame
       jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18));
       jLabel3.setForeground(new java.awt.Color(0, 102, 0));
       jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      jLabel3.setText("S1000D-SCORM Bridge Toolkit Beta ");
+      jLabel3.setText("S1000D Transformation Toolkit Beta ");
 
       jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bridge/toolkit/s1-scorm-bridge-logo-408x81.jpg"))); // NOI18N

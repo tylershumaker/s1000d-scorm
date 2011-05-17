@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--  * This file is part of the S1000D Transformation Toolkit 
+ * project hosted on Sourceforge.net. See the accompanying 
+ * license.txt file for applicable licenses. -->
 <!--Version Summary 1.1 MODIFIED STW 10/06/2010 This version handles variance 
 	of DMC in URN_RESOURCE mapping file. Also, namespace errors handled through 
 	use of XSL literals. Compiled transform successfully tested against full 
