@@ -1,9 +1,11 @@
 <project name="Toolkit" default="main">
-
+<!--  * This file is part of the S1000D Transformation Toolkit 
+ * project hosted on Sourceforge.net. See the accompanying 
+ * license.txt file for applicable licenses. -->
     <property name="src.dir"     value="src"/>
     <property name="build.dir"   value="build/classes"/>
 	<property name="lib"         value="lib"/>
-	<property name="release.dir" value="bridgeToolkit0.9.1"/>
+	<property name="release.dir" value="s1000DToolkit0.9.1"/>
 		
     <target name="clean">
         <delete dir="build"/>
