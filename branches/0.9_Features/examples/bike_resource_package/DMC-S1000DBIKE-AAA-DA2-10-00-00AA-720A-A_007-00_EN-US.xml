@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
-<!ENTITY ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1 SYSTEM "media/ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1.jpg" NDATA JPEG>
-<!ENTITY ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1 SYSTEM "media/ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1.jpg" NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1 SYSTEM "ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1.jpg" NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1 SYSTEM "ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1.jpg" NDATA JPEG>
 ]>
 <dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <rdf:Description>
