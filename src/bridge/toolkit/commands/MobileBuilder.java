@@ -446,10 +446,10 @@ public class MobileBuilder implements Command
                         String[] entityValue = entity[1].split(orgFileLoc + "/");
                         
                         File media = new File(src_dir + File.separator + entityValue[entityValue.length-1].replaceAll("%20", " ").replaceAll("/", "\\\\"));
-                        File mediaLoc = new File(newChild.getAbsolutePath() + File.separator + "media");
-                        mediaLoc.mkdir();
+                        //File mediaLoc = new File(newChild.getAbsolutePath() + File.separator + "media");
+                        //mediaLoc.mkdir();
                         if(!media.getName().contains(".swf"))
-                            cd.copyDirectory(media, mediaLoc);
+                            cd.copyDirectory(media, newChild);
                     }
                     
                 }
