@@ -8,14 +8,12 @@ package bridge.toolkit.packaging;
 import static org.junit.Assert.*;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import bridge.toolkit.util.Keys;
 
 /**
  *
@@ -44,35 +42,7 @@ public class ContentPackageCreatorTest
     @After
     public void tearDown() throws Exception
     {
-        deleteDirectory(test);
-    }
-
-    /**
-     * Test method for {@link bridge.toolkit.packaging.ContentPackageCreator#ContentPackageCreator(java.util.List)}.
-     */
-    @Test
-    public void testContentPackageCreatorListOfString()
-    {
-        //builds test validated resources list
-        vr = new ArrayList<File>();
-        
-        File [] testVR = new File(System.getProperty("user.dir") + File.separator +
-                                  "test_files\\resource_package_slim").listFiles();
-        for(File file : testVR)
-        {
-            if(file.getName().endsWith(".xml")||(file.getName().endsWith(".jpg")))
-            vr.add(file);
-        }
-        cpc = new ContentPackageCreator(vr);
-        cpc.setPackagesLocation(testLocation);
-        cpc.createPackage();
-        File testFile = cpc.createPackage();
-        cpc.createPackage();
-        
-        assertTrue(new File(testFile.getAbsolutePath()).exists());
-        assertTrue(new File(testLocation+File.separator+"package3"+File.separator+"resources"
-                +File.separator + "s1000d" + File.separator + 
-                "DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_EN-us.xml").exists());
+       deleteDirectory(test);
     }
 
     /**
@@ -88,9 +58,9 @@ public class ContentPackageCreatorTest
         cpc.createPackage();
         cpc.createPackage();
         
-        assertTrue(new File(testLocation+File.separator+"package2"+File.separator+"resources"
+        assertTrue(new File(testLocation+File.separator+"package1"+File.separator+"resources"
                 +File.separator + "s1000d" + File.separator +
-                "DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_EN-us.xml").exists());
+                "DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H10A_001-00_EN-us.xml").exists());
     }
     
     static public boolean deleteDirectory(File path) {

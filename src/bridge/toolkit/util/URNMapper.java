@@ -34,11 +34,28 @@ public class URNMapper
 
         List<File> src_files = new ArrayList<File>();
         File [] testVR = csdb_files.listFiles();
+        
         for(File file : testVR)
         {
             // Add the file only if is not .svn (for test in working copy)
+            // and check for s1000d 4.1 scoContent data modules
             if (!file.getName().equals(".svn"))
-                src_files.add(file);
+            {
+                if(file.getName().endsWith(".xml"))
+                {    
+                    if(!SCOContentDMChecker.isSCOContentDM(file))
+                    {
+                        src_files.add(file);
+                    }
+                }
+                else
+                {
+                    src_files.add(file);
+                }
+            }
+                
+            
+            //check for s1000d 4.1 scoContent data modules
         }            
         return src_files;
 
