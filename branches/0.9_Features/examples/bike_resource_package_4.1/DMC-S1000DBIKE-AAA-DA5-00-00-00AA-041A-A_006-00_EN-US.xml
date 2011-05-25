@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [
 ]>
-<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/descript.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <rdf:Description>
     <dc:creator>U8025</dc:creator>
-    <dc:title>Rear wheel - Remove procedures</dc:title>
-    <dc:subject>Rear wheel - Remove procedures</dc:subject>
+    <dc:title>Gears - Description of how it is made</dc:title>
+    <dc:subject>Gears - Description of how it is made</dc:subject>
     <dc:publisher>U8025</dc:publisher>
     <dc:contributor>U8025</dc:contributor>
     <dc:date>2008-08-01</dc:date>
     <dc:type>text</dc:type>
     <dc:format>text/xml</dc:format>
-    <dc:identifier>S1000DBIKE-AAA-DA0-20-00-00AA-520A-A_006-00</dc:identifier>
+    <dc:identifier>S1000DBIKE-AAA-DA5-00-00-00AA-041A-A_006-00</dc:identifier>
     <dc:language>en-US</dc:language>
     <dc:rights>01_cc51_cv51</dc:rights>
   </rdf:Description>
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="A" />
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
         <language countryIsoCode="US" languageIsoCode="en" />
         <issueInfo issueNumber="006" inWork="00" />
       </dmIdent>
       <dmAddressItems>
         <issueDate year="2008" month="08" day="01" />
         <dmTitle>
-          <techName>Rear wheel</techName>
-          <infoName>Remove procedures</infoName>
+          <techName>Gears</techName>
+          <infoName>Description of how it is made</infoName>
         </dmTitle>
       </dmAddressItems>
     </dmAddress>
@@ -109,17 +109,18 @@
         <authorityNotes />
       </techStandard>
       <brexDmRef>
-        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D_007-00">
+        <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
-            <issueInfo issueNumber="007" inWork="00" />
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
       <qualityAssurance>
         <firstVerification verificationType="tabtop" />
       </qualityAssurance>
-      <systemBreakdownCode>BY12</systemBreakdownCode>
+      <systemBreakdownCode>BY17</systemBreakdownCode>
       <skillLevel skillLevelCode="sk01" />
       <reasonForUpdate>
         <simplePara>totally revised</simplePara>
@@ -128,46 +129,45 @@
     </dmStatus>
   </identAndStatusSection>
   <content>
-    <procedure>
-      <preliminaryRqmts>
-        <reqCondGroup>
-          <noConds />
-        </reqCondGroup>
-        <reqPersons>
-          <personnel />
-        </reqPersons>
-        <reqSupportEquips>
-          <noSupportEquips />
-        </reqSupportEquips>
-        <reqSupplies>
-          <noSupplies />
-        </reqSupplies>
-        <reqSpares>
-          <noSpares />
-        </reqSpares>
-        <reqSafety>
-          <noSafety />
-        </reqSafety>
-      </preliminaryRqmts>
-      <mainProcedure>
-        <proceduralStep>
-          <para>Hold the rear of the bicycle.</para>
-        </proceduralStep>
-        <proceduralStep>
-          <para>Push the wheel forwards and down to disengage the chain from the sprocket.</para>
-        </proceduralStep>
-        <proceduralStep>
-          <para>Turn the wheel to the side and lift it away from the frame.</para>
-        </proceduralStep>
-        <proceduralStep>
-          <para>Put the frame on the floor.</para>
-        </proceduralStep>
-      </mainProcedure>
-      <closeRqmts>
-        <reqCondGroup>
-          <noConds />
-        </reqCondGroup>
-      </closeRqmts>
-    </procedure>
+    <refs>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Mechs</techName>
+            <infoName>Description of how it is made</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-A">
+        <dmRefIdent>
+          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="3" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        </dmRefIdent>
+        <dmRefAddressItems>
+          <dmTitle>
+            <techName>Shifters</techName>
+            <infoName>Description of how it is made</infoName>
+          </dmTitle>
+        </dmRefAddressItems>
+      </dmRef>
+    </refs>
+    <description>
+      <levelledPara>
+        <title>Gears</title>
+        <para>The gears include the mechanism, the hubs and the shifters.</para>
+        <para>
+					The description of the mechanisms is given in <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef></para>
+        <para>
+					The description of the shifters is given in <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="3" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef></para>
+        <para>
+					The bicycles of these days can have 27 gears or more. The mountain bikes use a set that includes: <randomList listItemPrefix="pf02"><listItem><para>Three socket sprockets of different dimension on the front</para></listItem><listItem><para>Nine socket sprockets of different dimensions at the rear</para></listItem></randomList></para>
+        <para>This set gives the gear ratios.</para>
+        <para>The shifters installed on the handlebars change the gears and operate the mechanisms (also known as derailleurs). These derailleurs are cable-actuated mechanisms. They move the chain from the different sprockets.</para>
+        <para>The hub is the center of the wheel and contains the axle and bearings.</para>
+        <para>The gears let the rider crank at the pedals at a constant movement on slopes of different angles.</para>
+      </levelledPara>
+    </description>
   </content>
 </dmodule>

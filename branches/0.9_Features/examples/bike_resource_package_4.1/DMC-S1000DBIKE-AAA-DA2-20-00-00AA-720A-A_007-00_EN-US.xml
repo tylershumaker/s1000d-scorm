@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [
 ]>
-<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <rdf:Description>
     <dc:creator>U8025</dc:creator>
     <dc:title>Handlebar - Install procedures</dc:title>
@@ -132,7 +132,7 @@
       <preliminaryRqmts>
         <reqCondGroup>
           <reqCondNoRef>
-            <reqCond>The bicycle is held safely on work stand. Refer to (<internalRef internalRefId="seq-0003" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0003" />)</reqCond>
+            <reqCond>The bicycle is held safely on work stand. Refer to (<internalRef internalRefId="seq-0003" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0003" />)</reqCond>
           </reqCondNoRef>
         </reqCondGroup>
         <reqPersons>
@@ -260,30 +260,30 @@
       </preliminaryRqmts>
       <mainProcedure>
         <proceduralStep>
-          <para>Put the <internalRef internalRefId="spa-0001" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> in the stem and tighten the clamp bolt with a <internalRef internalRefId="seq-0001" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0001" />. Make sure the handlebar is correctly aligned in the center of the stem. Tighten the clamp bolt.</para>
+          <para>Put the <internalRef internalRefId="spa-0001" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> in the stem and tighten the clamp bolt with a <internalRef internalRefId="seq-0001" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0001" />. Make sure the handlebar is correctly aligned in the center of the stem. Tighten the clamp bolt.</para>
         </proceduralStep>
         <proceduralStep>
-          <para>Put the <internalRef internalRefId="spa-0002" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> and <internalRef internalRefId="spa-0003" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0003" /> on the handlebar.</para>
+          <para>Put the <internalRef internalRefId="spa-0002" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> and <internalRef internalRefId="spa-0003" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0003" /> on the handlebar.</para>
           <proceduralStep>
-            <para>Move the <internalRef internalRefId="spa-0003" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0003" /> on the <internalRef internalRefId="spa-0001" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> again and make sure you do not catch the cables.</para>
+            <para>Move the <internalRef internalRefId="spa-0003" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0003" /> on the <internalRef internalRefId="spa-0001" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> again and make sure you do not catch the cables.</para>
           </proceduralStep>
           <proceduralStep>
             <para>Tighten the clamp bolt.</para>
           </proceduralStep>
           <proceduralStep>
-            <para>Move the <internalRef internalRefId="spa-0004" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0004" /> and the brake lever on the <internalRef internalRefId="spa-0001" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> again.</para>
+            <para>Move the <internalRef internalRefId="spa-0004" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0004" /> and the brake lever on the <internalRef internalRefId="spa-0001" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> again.</para>
           </proceduralStep>
           <proceduralStep>
             <para>Tighten the clamp screw.</para>
           </proceduralStep>
         </proceduralStep>
         <proceduralStep>
-          <para>Replace the <internalRef internalRefId="spa-0005" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0005" />.</para>
+          <para>Replace the <internalRef internalRefId="spa-0005" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0005" />.</para>
           <proceduralStep>
-            <para>Apply with the <internalRef internalRefId="seq-0002" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0002" /> to the <internalRef internalRefId="spa-0005" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0005" /> area of the <internalRef internalRefId="spa-0004" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0004" />.</para>
+            <para>Apply with the <internalRef internalRefId="seq-0002" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0002" /> to the <internalRef internalRefId="spa-0005" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0005" /> area of the <internalRef internalRefId="spa-0004" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0004" />.</para>
           </proceduralStep>
           <proceduralStep>
-            <para>Before the <internalRef internalRefId="seq-0002" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0002" /> becomes dry, move the <internalRef internalRefId="spa-0005" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0005" /> into the correct position. Make sure the grip protects the end of the <internalRef internalRefId="spa-0001" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> or install a <internalRef internalRefId="spa-0006" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0006" />.</para>
+            <para>Before the <internalRef internalRefId="seq-0002" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0002" /> becomes dry, move the <internalRef internalRefId="spa-0005" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0005" /> into the correct position. Make sure the grip protects the end of the <internalRef internalRefId="spa-0001" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> or install a <internalRef internalRefId="spa-0006" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0006" />.</para>
           </proceduralStep>
         </proceduralStep>
       </mainProcedure>

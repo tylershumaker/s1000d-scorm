@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
-<!ENTITY ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00013-A-001-01 SYSTEM 'ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00013-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00013-A-001-01 SYSTEM  'ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00013-A-001-01.jpg' NDATA JPEG>
 ]>
-<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/learning.xsd">
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
   <rdf:Description>
     <dc:creator>06RT9</dc:creator>
     <dc:title>Steering - Description of how it is made: Prerequisite concept review</dc:title>

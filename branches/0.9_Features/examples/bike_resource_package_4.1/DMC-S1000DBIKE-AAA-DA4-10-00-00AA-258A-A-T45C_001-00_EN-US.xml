@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
-<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00188-A-001-01 SYSTEM 'ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00188-A-001-01.jpg' NDATA JPEG>
-<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00063-A-001-01 SYSTEM 'ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00063-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00188-A-001-01 SYSTEM  'ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00188-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00063-A-001-01 SYSTEM  'ICN-S1000DBIKE-AAA-DA41000-A-06RT9-00063-A-001-01.jpg' NDATA JPEG>
 ]>
-<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/learning.xsd">
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
   <rdf:Description>
     <dc:creator>06RT9</dc:creator>
     <dc:title>Chain - Oil: Static content - Fact Expositive</dc:title>
@@ -20,7 +20,7 @@
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="241" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="258" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
         <language countryIsoCode="US" languageIsoCode="en" />
         <issueInfo issueNumber="001" inWork="00" />
       </dmIdent>

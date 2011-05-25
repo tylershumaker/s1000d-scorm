@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
 <!NOTATION swf PUBLIC "-//S1000D//NOTATION X-SHOCKWAVE-FLASH 3D Models Encoding//EN">
 <!ENTITY ICN-S1000DBIKE-AAA-DA10000-0-U8025-00515-A-04-1 SYSTEM "ICN-S1000DBIKE-AAA-DA10000-0-U8025-00515-A-04-1.jpg" NDATA JPEG>
 <!ENTITY ICN-S1000DBIKE-AAA-DA10000-0-U8025-00537-A-03-1 SYSTEM "ICN-S1000DBIKE-AAA-DA10000-0-U8025-00537-A-03-1.SWF" NDATA swf>
 ]>
-<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <rdf:Description>
     <dc:creator>U8025</dc:creator>
     <dc:title>Bicycle - Pre-operation procedures (crew)</dc:title>
@@ -235,7 +235,7 @@
           <proceduralStep>
             <caution>
               <warningAndCautionPara>
-								If the position of the pads is too low on the rim, as shown in <internalRef internalRefId="fig-0001" internalRefTargetType="irtt01" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001" /> , the pads can move. This could cause the separation of the spokes from their mountings., they could slip off causing the spokes to be torn out of their mountings.
+								If the position of the pads is too low on the rim, as shown in <internalRef internalRefId="fig-0001" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001" /> , the pads can move. This could cause the separation of the spokes from their mountings., they could slip off causing the spokes to be torn out of their mountings.
 							</warningAndCautionPara>
             </caution>
             <figure id="fig-0001">
@@ -249,7 +249,7 @@
           <para>Do a check of the tire pressure.</para>
           <proceduralStep>
             <para>
-							Do a check of the tire pressure with the <internalRef internalRefId="seq-0001" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0001" /> .
+							Do a check of the tire pressure with the <internalRef internalRefId="seq-0001" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0001" /> .
 						</para>
           </proceduralStep>
           <proceduralStep>
@@ -290,7 +290,7 @@
             </proceduralStep>
             <proceduralStep>
               <para>
-								Apply the necessary <internalRef internalRefId="sup-0001" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0001" /> .
+								Apply the necessary <internalRef internalRefId="sup-0001" internalRefTargetType="supply" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0001" /> .
 							</para>
             </proceduralStep>
           </proceduralStep>
@@ -308,7 +308,7 @@
             </proceduralStep>
             <proceduralStep>
               <para>
-								Tighten the chain with the Allen wrench from the <internalRef internalRefId="seq-0002" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0002" />.
+								Tighten the chain with the Allen wrench from the <internalRef internalRefId="seq-0002" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0002" />.
 							</para>
             </proceduralStep>
           </proceduralStep>

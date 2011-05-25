@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
 <!ENTITY ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1 SYSTEM "ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1.jpg" NDATA JPEG>
 <!ENTITY ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1 SYSTEM "ICN-S1000DBIKE-AAA-DA21000-0-U8025-00530-A-04-1.jpg" NDATA JPEG>
 ]>
-<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <rdf:Description>
     <dc:creator>U8025</dc:creator>
     <dc:title>Stem - Install procedures</dc:title>
@@ -247,15 +247,15 @@
       <mainProcedure>
         <proceduralStep>
           <para>
-						Remove all the rust and the corrosion with a <internalRef internalRefId="seq-0001" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0001" /> and <internalRef internalRefId="sup-0001" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0001" />.
+						Remove all the rust and the corrosion with a <internalRef internalRefId="seq-0001" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0001" /> and <internalRef internalRefId="sup-0001" internalRefTargetType="supply" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0001" />.
 					</para>
         </proceduralStep>
         <proceduralStep>
           <para>Install the stem.</para>
           <proceduralStep>
             <para>
-							Use a <internalRef internalRefId="sup-0002" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0002" /> and lubricate: <randomList listItemPrefix="pf02"><listItem><para>
-										the threads of the <internalRef internalRefId="spa-0002" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> and <internalRef internalRefId="spa-0001" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /></para></listItem><listItem><para>the sides</para></listItem><listItem><para>the top of the wedge</para></listItem></randomList></para>
+							Use a <internalRef internalRefId="sup-0002" internalRefTargetType="supply" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0002" /> and lubricate: <randomList listItemPrefix="pf02"><listItem><para>
+										the threads of the <internalRef internalRefId="spa-0002" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> and <internalRef internalRefId="spa-0001" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /></para></listItem><listItem><para>the sides</para></listItem><listItem><para>the top of the wedge</para></listItem></randomList></para>
             <figure>
               <title>Lubricate the thread</title>
               <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1" xlink:title="Lubricate the thread" infoEntityIdent="ICN-S1000DBIKE-AAA-DA21000-0-U8025-00529-A-04-1" />
@@ -263,7 +263,7 @@
           </proceduralStep>
           <proceduralStep>
             <para>
-							Install the <internalRef internalRefId="spa-0002" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> in the steerer tube.
+							Install the <internalRef internalRefId="spa-0002" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> in the steerer tube.
 						</para>
             <figure>
               <title>Tighten the bolt</title>
@@ -272,7 +272,7 @@
           </proceduralStep>
           <proceduralStep>
             <para>
-							Adjust to align the <internalRef internalRefId="spa-0002" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> with the wheel and tighten the <internalRef internalRefId="spa-0001" internalRefTargetType="irtt06" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> firmly.
+							Adjust to align the <internalRef internalRefId="spa-0002" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0002" /> with the wheel and tighten the <internalRef internalRefId="spa-0001" internalRefTargetType="spares" xlink:actuate="onRequest" xlink:show="replace" xlink:href="spa-0001" /> firmly.
 						</para>
           </proceduralStep>
         </proceduralStep>

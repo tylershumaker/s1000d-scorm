@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [
 ]>
-<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/proced.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <rdf:Description>
     <dc:creator>U8025</dc:creator>
     <dc:title>Chain - Clean with chain cleaning fluid</dc:title>
@@ -222,7 +222,7 @@
           <para>Prepare the cleaning area.</para>
           <proceduralStep>
             <para>
-							Put the <internalRef internalRefId="sup-0001" internalRefTargetType="irtt04" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0001" /> on a satisfactory floor area.
+							Put the <internalRef internalRefId="sup-0001" internalRefTargetType="supply" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0001" /> on a satisfactory floor area.
 						</para>
           </proceduralStep>
           <proceduralStep>
@@ -233,7 +233,7 @@
           <para>Clean debris from the chain.</para>
           <proceduralStep>
             <para>
-							Use the <internalRef internalRefId="seq-0001" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0001" /> and loosen as much unwanted material as possible.
+							Use the <internalRef internalRefId="seq-0001" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0001" /> and loosen as much unwanted material as possible.
 						</para>
           </proceduralStep>
           <proceduralStep>
@@ -244,7 +244,7 @@
           <para>Clean the chain.</para>
           <proceduralStep>
             <para>
-							Open the <internalRef internalRefId="sup-0003" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0003" /> and fill with the <internalRef internalRefId="seq-0002" internalRefTargetType="irtt05" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0002" />.
+							Open the <internalRef internalRefId="sup-0003" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0003" /> and fill with the <internalRef internalRefId="seq-0002" internalRefTargetType="supequip" xlink:actuate="onRequest" xlink:show="replace" xlink:href="seq-0002" />.
 						</para>
           </proceduralStep>
           <proceduralStep>
@@ -267,7 +267,7 @@
           <para>Lubricate the chain.</para>
           <proceduralStep>
             <para>
-							Use the <internalRef internalRefId="sup-0002" internalRefTargetType="irtt04" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0002" /> and lubricate the chain.
+							Use the <internalRef internalRefId="sup-0002" internalRefTargetType="supply" xlink:actuate="onRequest" xlink:show="replace" xlink:href="sup-0002" /> and lubricate the chain.
 						</para>
           </proceduralStep>
           <proceduralStep>
