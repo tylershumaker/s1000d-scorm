@@ -19,11 +19,11 @@
 	</xsl:variable>
 	<xsl:variable name="graphWidth">
 		<xsl:value-of select="./@reproductionWidth"/>
-		<xsl:value-of select="'250'"/>
+		<xsl:value-of select="'100%'"/>
 	</xsl:variable>
 	<xsl:variable name="graphHeight">
 		<xsl:value-of select="./@reproductionHeight"/>
-		<xsl:value-of select="'300'"/>
+		<xsl:value-of select="'100%'"/>
 	</xsl:variable>
 	
 	<xsl:variable name="fig_id">
@@ -79,9 +79,9 @@
 		<xsl:value-of select="document('../../../../ViewerApplication/app/urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]"/>
 	</xsl:variable>
             <div align="center" >
-                <object WIDTH="250" HEIGHT="300" id="{$theFileName}">
+                <object WIDTH="100%" HEIGHT="100%" id="{$theFileName}">
                     <param NAME="movie" VALUE="{$theFileName}"></param>
-                    <embed src="{$theFileName}" WIDTH="250" HEIGHT="300" flashvars="theFileName={$global_dmc}"></embed>
+                    <embed src="{$theFileName}" WIDTH="100%" HEIGHT="100%" flashvars="theFileName={$global_dmc}"></embed>
                 </object>
             </div>
 	</xsl:template>
