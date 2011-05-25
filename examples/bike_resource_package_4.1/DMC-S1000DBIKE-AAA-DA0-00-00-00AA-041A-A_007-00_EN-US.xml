@@ -1,31 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [
+<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-DA00000-0-U8025-00504-B-04-1 SYSTEM "ICN-S1000DBIKE-AAA-DA00000-0-U8025-00504-B-04-1.jpg" NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA00000-0-U8025-00504-A-04-1 SYSTEM "ICN-S1000DBIKE-AAA-DA00000-0-U8025-00504-A-04-1.jpg" NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-DA00000-0-U8025-00505-A-04-1 SYSTEM "ICN-S1000DBIKE-AAA-DA00000-0-U8025-00505-A-04-1.jpg" NDATA JPEG>
 ]>
-<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0-1/xml_schema_flat/descript.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/descript.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <rdf:Description>
     <dc:creator>U8025</dc:creator>
-    <dc:title>Gears - Description of how it is made</dc:title>
-    <dc:subject>Gears - Description of how it is made</dc:subject>
+    <dc:title>Wheel - Description of how it is made</dc:title>
+    <dc:subject>Wheel - Description of how it is made</dc:subject>
     <dc:publisher>U8025</dc:publisher>
     <dc:contributor>U8025</dc:contributor>
     <dc:date>2008-08-01</dc:date>
     <dc:type>text</dc:type>
     <dc:format>text/xml</dc:format>
-    <dc:identifier>S1000DBIKE-AAA-DA5-00-00-00AA-041A-A_006-00</dc:identifier>
+    <dc:identifier>S1000DBIKE-AAA-DA0-00-00-00AA-041A-A_007-00</dc:identifier>
     <dc:language>en-US</dc:language>
     <dc:rights>01_cc51_cv51</dc:rights>
   </rdf:Description>
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
         <language countryIsoCode="US" languageIsoCode="en" />
-        <issueInfo issueNumber="006" inWork="00" />
+        <issueInfo issueNumber="007" inWork="00" />
       </dmIdent>
       <dmAddressItems>
         <issueDate year="2008" month="08" day="01" />
         <dmTitle>
-          <techName>Gears</techName>
+          <techName>Wheel</techName>
           <infoName>Description of how it is made</infoName>
         </dmTitle>
       </dmAddressItems>
@@ -109,18 +113,17 @@
         <authorityNotes />
       </techStandard>
       <brexDmRef>
-        <dmRef>
+        <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D_007-00">
           <dmRefIdent>
-            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
-            <issueInfo issueNumber="005" inWork="00" />
-            <language languageIsoCode="en" countryIsoCode="US" />
+            <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="007" inWork="00" />
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
       <qualityAssurance>
         <firstVerification verificationType="tabtop" />
       </qualityAssurance>
-      <systemBreakdownCode>BY17</systemBreakdownCode>
+      <systemBreakdownCode>BY</systemBreakdownCode>
       <skillLevel skillLevelCode="sk01" />
       <reasonForUpdate>
         <simplePara>totally revised</simplePara>
@@ -129,44 +132,40 @@
     </dmStatus>
   </identAndStatusSection>
   <content>
-    <refs>
-      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-A">
-        <dmRefIdent>
-          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
-        </dmRefIdent>
-        <dmRefAddressItems>
-          <dmTitle>
-            <techName>Mechs</techName>
-            <infoName>Description of how it is made</infoName>
-          </dmTitle>
-        </dmRefAddressItems>
-      </dmRef>
-      <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-A">
-        <dmRefIdent>
-          <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="3" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" />
-        </dmRefIdent>
-        <dmRefAddressItems>
-          <dmTitle>
-            <techName>Shifters</techName>
-            <infoName>Description of how it is made</infoName>
-          </dmTitle>
-        </dmRefAddressItems>
-      </dmRef>
-    </refs>
     <description>
       <levelledPara>
-        <title>Gears</title>
-        <para>The gears include the mechanism, the hubs and the shifters.</para>
+        <title>The bicycle wheel</title>
         <para>
-					The description of the mechanisms is given in <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef></para>
-        <para>
-					The description of the shifters is given in <dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-A"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA5" subSystemCode="3" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" /></dmRefIdent></dmRef></para>
-        <para>
-					The bicycles of these days can have 27 gears or more. The mountain bikes use a set that includes: <randomList listItemPrefix="pf02"><listItem><para>Three socket sprockets of different dimension on the front</para></listItem><listItem><para>Nine socket sprockets of different dimensions at the rear</para></listItem></randomList></para>
-        <para>This set gives the gear ratios.</para>
-        <para>The shifters installed on the handlebars change the gears and operate the mechanisms (also known as derailleurs). These derailleurs are cable-actuated mechanisms. They move the chain from the different sprockets.</para>
-        <para>The hub is the center of the wheel and contains the axle and bearings.</para>
-        <para>The gears let the rider crank at the pedals at a constant movement on slopes of different angles.</para>
+					The wheel (refer to <internalRef internalRefId="fig-0001" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001" />) of a bicycle is a complex structure. The wheel assembly has these parts: <randomList listItemPrefix="pf01"><listItem><para>the tire</para></listItem><listItem><para>the tube</para></listItem><listItem><para>the spokes</para></listItem><listItem><para>the spoke nipples</para></listItem><listItem><para>the valve</para></listItem><listItem><para>the hub</para></listItem></randomList> On their own, the individual components are not very strong. But, when they are installed together, the components make the complete wheel (refer to <internalRef internalRefId="fig-0001" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0001" />). The complete wheel is resistant to almost any type of heavy loads and operation.
+				</para>
+        <figure id="fig-0001">
+          <title>Parts of the wheel</title>
+          <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA00000-0-U8025-00504-A-04-1" xlink:title="Parts of the wheel" infoEntityIdent="ICN-S1000DBIKE-AAA-DA00000-0-U8025-00504-A-04-1" reproductionWidth="510" />
+        </figure>
+        <levelledPara id="par-0001">
+          <title>Spokes</title>
+          <para>The spokes go out from the hub and go across and below each other. The spoke nipples attach the spokes to the rim with the threads on the end of the spokes. You can use the spoke nipples to adjust the tension of the spokes. The tension on each of the spokes must be equal.</para>
+        </levelledPara>
+        <levelledPara id="par-0002">
+          <title>Wheel rim</title>
+          <para>
+						The rim (refer to <internalRef internalRefId="fig-0002" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0002" />) of the wheel has a lining of rim tape. This tape protects the tube from damage that the rough edges on the spoke nipples can cause.
+					</para>
+          <figure id="fig-0002">
+            <title>The tire and rim</title>
+            <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA00000-0-U8025-00504-B-04-1" xlink:title="The tire and rim" infoEntityIdent="ICN-S1000DBIKE-AAA-DA00000-0-U8025-00504-B-04-1" reproductionWidth="510" />
+          </figure>
+        </levelledPara>
+        <levelledPara id="par-0003">
+          <title>Tube and tire</title>
+          <para>
+						The tube and the tire install on the rim. The sidewalls of the tire have markings on them. These which are used to indicate the correct direction of rotation. The markings also make sure the tire installs on the rim and that the directional arrows points in the correct direction. You install the tube into the tire before you inflate it. The tube has a valve (refer to <internalRef internalRefId="fig-0003" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0003" />) which you put through the hole in the rim. This valve (refer to <internalRef internalRefId="fig-0003" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0003" />) is used to inflate the tube and the tire to the correct pressure. A dust cap installs on the valve (refer to <internalRef internalRefId="fig-0003" internalRefTargetType="figure" xlink:actuate="onRequest" xlink:show="replace" xlink:href="#fig-0003" />) to prevent damage that dust and debris can cause.
+					</para>
+          <figure id="fig-0003">
+            <title>Valve</title>
+            <graphic xlink:type="simple" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA00000-0-U8025-00505-A-04-1" xlink:title="Valve" infoEntityIdent="ICN-S1000DBIKE-AAA-DA00000-0-U8025-00505-A-04-1" reproductionWidth="510" />
+          </figure>
+        </levelledPara>
       </levelledPara>
     </description>
   </content>
