@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'?>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>U8025</dc:creator>
+    <dc:title>Bicycle - Planning information: Environmental analysis - Work environment</dc:title>
+    <dc:subject>Bicycle - Planning information: Environmental analysis - Work environment</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-08-22</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H18A_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H18" learnEventCode="A" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="22" />
+        <dmTitle>
+          <techName>Bicycle</techName>
+          <infoName>Planning information: Environmental analysis - Work environment</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningPlan>
+        <lcNeedsAnalysis>
+          <title />
+          <lcWorkEnv>
+            <title>Work Environment</title>
+            <lcWorkEnvDescription>
+              <description>
+                <para>The environment in which bike couriers work is typically outside, where the courier and his or her bike are subject to atmospheric conditions such as sun, rain, sleet, snow, etc. Bike maintenance will most likely be performed inside the courier's dwelling or a garage.</para>
+              </description>
+            </lcWorkEnvDescription>
+            <lcPlanResources>
+              <description>
+                <para>
+                  <emphasis>Resources:</emphasis>
+                </para>
+                <para>Learners will have access to a desktop or laptop PC, a bike, bike parts, and tools.</para>
+              </description>
+            </lcPlanResources>
+            <lcProcesses>
+              <description>
+                <para>
+                  <emphasis>Processes:</emphasis>
+                </para>
+                <para>Pre-operation inspection, troubleshoot as necessary, maintenanace as necessary, operation, post operation inspection, troubleshoot as necessary, maintenance as necessary</para>
+              </description>
+            </lcProcesses>
+          </lcWorkEnv>
+        </lcNeedsAnalysis>
+        <lcTechnical />
+      </learningPlan>
+    </learning>
+  </content>
+</dmodule>

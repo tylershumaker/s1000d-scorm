@@ -1,0 +1,26 @@
+	html, body {
+		font: 12px/15px sans-serif;
+		background: #fff;
+		padding: 3px;
+		color: #000;
+		margin: 0;
+		}
+	#sidebar, #footer {
+		display: none;
+		}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+		}
+	img { 
+		max-width: 100%;
+		}
+	.center {
+		width: 100% !important;
+		text-align: center;
+		}
+	a {
+		text-decoration: underline;
+		color: #FFF;
+	}
+
+
