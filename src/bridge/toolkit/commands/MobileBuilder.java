@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Toolkit 
+ * This file is part of the S1000D Transformation Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
@@ -84,8 +84,7 @@ public class MobileBuilder implements Command
     private List<String> mobileList = new ArrayList<String>();
 
     /**
-     * Message that is returned if the conversion from SCPM to imsmanifest.xml
-     * file is unsuccessful.
+     * Message that is returned if the MobileBuilder is unsuccessful.
      */
     private static final String MOBILEBUILDER_FAILED = "MobileBuilder processing was unsuccessful";
 
@@ -115,7 +114,7 @@ public class MobileBuilder implements Command
                 return PROCESSING_COMPLETE;
             }
 
-            urn_map = URNMapper.writeURNMap(src_files, "../");
+            urn_map = URNMapper.writeURNMap(src_files, "../media/");
             
             //write urn map file out to the ViewerApplication directory temporarily.  
             File js = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication/app/urn_resource_map.xml");
@@ -226,23 +225,29 @@ public class MobileBuilder implements Command
             {
                 //copy over css and jquery mobile files
                 CopyDirectory cd = new CopyDirectory();
-                File css_loc = new File(System.getProperty("user.dir") + File.separator +
-                "css");
-                //copy common.css from the ViewerApplication to the css directory to be included in the mobile output
+                File mobiApp_loc = new File(System.getProperty("user.dir") + File.separator +
+                "mobiApp");
+                cd.copyDirectory(mobiApp_loc, newMobApp);
+                
+                //copy common.css from the ViewerApplication to the mobile output
                 File common_css = new File(System.getProperty("user.dir") + File.separator + 
                         "ViewerApplication" + File.separator + "app" + File.separator + "common.css");
-                cd.copyDirectory(common_css, css_loc);
-                //now copy over all of the files in the css folder to the mobile output location
-                cd.copyDirectory(css_loc, newMobApp);
-                
-                File js_loc = new File(System.getProperty("user.dir") + File.separator + "js");
-                File new_js_loc = new File(newMobApp.getAbsolutePath() + File.separator + "js");
-                cd.copyDirectory(js_loc, new_js_loc);
+                cd.copyDirectory(common_css, newMobApp);
                 
                 //copy over media files
-                File resource_media = new File(src_dir + File.separator + "media");
                 File new_media_loc = new File(newMobApp.getAbsolutePath() + File.separator + "media");
-                cd.copyDirectory(resource_media, new_media_loc);
+                new_media_loc.mkdir();
+                Iterator<File> srcIterator = src_files.iterator();
+                while(srcIterator.hasNext())
+                {
+                    File src = srcIterator.next();
+                    if(!src.getName().endsWith(".xml") && 
+                       !src.getName().endsWith(".XML"))
+                    {
+                        cd.copyDirectory(src, new_media_loc);
+                    }
+                }
+
             }
             catch (IOException e)
             {
@@ -441,10 +446,10 @@ public class MobileBuilder implements Command
                         String[] entityValue = entity[1].split(orgFileLoc + "/");
                         
                         File media = new File(src_dir + File.separator + entityValue[entityValue.length-1].replaceAll("%20", " ").replaceAll("/", "\\\\"));
-                        File mediaLoc = new File(newChild.getAbsolutePath() + File.separator + "media");
-                        mediaLoc.mkdir();
+                        //File mediaLoc = new File(newChild.getAbsolutePath() + File.separator + "media");
+                        //mediaLoc.mkdir();
                         if(!media.getName().contains(".swf"))
-                            cd.copyDirectory(media, mediaLoc);
+                            cd.copyDirectory(media, newChild);
                     }
                     
                 }
@@ -461,9 +466,7 @@ public class MobileBuilder implements Command
      */
     private void generateListFile(File mobAppDir) throws IOException, JDOMException
     {
-        File jsDir = new File(mobAppDir.getAbsolutePath() + File.separator + "js");
-        jsDir.mkdir();
-        File js = new File(jsDir.getAbsolutePath() + File.separator + "list.js");
+        File js = new File(mobAppDir.getAbsolutePath() + File.separator + "list.js");
 
         FileWriter writer = new FileWriter(js);
         int count = 0;

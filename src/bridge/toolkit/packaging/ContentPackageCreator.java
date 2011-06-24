@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Toolkit 
+ * This file is part of the S1000D Transformation Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
@@ -7,10 +7,9 @@ package bridge.toolkit.packaging;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
 
 import bridge.toolkit.util.CopyDirectory;
+import bridge.toolkit.util.SCOContentDMChecker;
 
 /**
  * Creates a directory to place all the files required to build the SCORM 
@@ -20,12 +19,6 @@ import bridge.toolkit.util.CopyDirectory;
 public class ContentPackageCreator
 {
 
-    /**
-     * List of files that have been validated as referenced resources for the 
-     * SCPM/imsmanifest file being converted/created.
-     */
-    List<File> mValidatedResources = null;
-    
     /**
      * The location of the resource package that contains
      * all the S1000D files referenced in the SCPM to be included in the SCORM 
@@ -39,16 +32,6 @@ public class ContentPackageCreator
     String packagesLocation = System.getProperty("java.io.tmpdir") + File.separator + "packages";
     
 
-    /**
-     * Operator that takes in a List object.
-     * 
-     * @param list List of File objects are validated resources.
-     */
-    public ContentPackageCreator(List<File> list)
-    {
-        mValidatedResources = list;
-    }
-    
     /**
      * Operator that takes in a String object.
      * 
@@ -111,42 +94,54 @@ public class ContentPackageCreator
             newCP.mkdirs();
         }
         
-        //copy over validated packages or resource package
-        CopyDirectory cd = new CopyDirectory();
+        //copy over resource package
         File resource = new File(newCP.getAbsoluteFile()+ File.separator + 
                                 "resources" + File.separator + "s1000d");
         resource.mkdirs();
-        if(mValidatedResources != null)
+
+        try
         {
-            
-            Iterator<File> iterator = mValidatedResources.iterator();
-            for(; iterator.hasNext();)
-            {
-                try
-                {
-                    cd.copyDirectory(iterator.next(), resource);
-                } 
-                catch (IOException e)
-                {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
+            copyResources(new File(mResourcePackage), resource);
         }
-        else
+        catch (IOException e)
         {
-            try
-            {
-                cd.copyDirectory(new File(mResourcePackage), resource);
-            } 
-            catch (IOException e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
         
         return newCP;
+    }
+    
+    /**
+     * Copies the data modules and ICN files provided in the resource package 
+     * to the directory where the Content Package is being built. 
+     * 
+     * Note: S1000D 4.1 SCO content data modules are not copied over. 
+     * 
+     * @param srcDir File that represents the location of the resource package.
+     * @param destDir File that represents the location of the in the Content Package 
+     * where the data modules and ICN files will be copied.  
+     * @throws IOException
+     */
+    private void copyResources(File srcDir, File destDir) throws IOException
+    {
+        CopyDirectory cd = new CopyDirectory();
+        File[] srcArray = srcDir.listFiles();
+        for(File file: srcArray)
+        {
+            if(file.getName().endsWith(".xml"))
+            {    
+                if(!SCOContentDMChecker.isSCOContentDM(file))
+                {
+                    cd.copyDirectory(file, destDir);
+                }
+            }
+            else
+            {
+                cd.copyDirectory(file, destDir);
+            }
+        }
+        
     }
       
 }

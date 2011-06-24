@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scormContentPackage xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:ns3="http://ltsc.ieee.org/xsd/LOM/extend" xmlns:ns1="http://ltsc.ieee.org/xsd/LOM/unique" xmlns:ns2="http://ltsc.ieee.org/xsd/LOM/vocab" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\simplicio\Toolkit\toolkit\examples\4_1\xsd\xml_schema_flat\scormcontentpackage.xsd">
+	<identAndStatusSection>
+		<scormContentPackageAddress>
+			<scormContentPackageIdent>
+				<scormContentPackageCode modelIdentCode="S1000DBIKE" scormContentPackageIssuer="AH019" scormContentPackageNumber="00001" scormContentPackageVolume="00"/>
+				<language countryIsoCode="US" languageIsoCode="en"/>
+				<issueInfo inWork="00" issueNumber="001"/>
+			</scormContentPackageIdent>
+			<scormContentPackageAddressItems>
+				<issueDate day="12" month="01" year="2010"/>
+				<scormContentPackageTitle>S1000D BIKE Learning Sample</scormContentPackageTitle>
+			</scormContentPackageAddressItems>
+		</scormContentPackageAddress>
+		<scormContentPackageStatus>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="AH019"/>
+			<originator enterpriseCode="AH019"/>
+			<brexDmRef>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode systemDiffCode="1" infoCode="111" subSystemCode="1" modelIdentCode="11" infoCodeVariant="1" disassyCodeVariant="1" subSubSystemCode="1" itemLocationCode="1" assyCode="11" systemCode="11" disassyCode="11"/>
+					</dmRefIdent>
+				</dmRef>
+			</brexDmRef>
+			<scormContentPackageMedia scormContentPackageMediaCode="DKS:1" scormContentPackageMediaType=""/>
+			<qualityAssurance>
+				<unverified/>
+			</qualityAssurance>
+			<personSkill skillLevelCode="sk01"/>
+		</scormContentPackageStatus>
+		<lom:lom>
+			<lom:general>
+				<lom:identifier>
+					<lom:entry>S1000D-SCORM-BIKE-SAMPLE</lom:entry>
+				</lom:identifier>
+				<lom:title>
+					<lom:string>
+S1000D/SCORM Bike Sample
+          </lom:string>
+				</lom:title>
+				<lom:description>
+					<lom:string>
+            Sample courseware consisting based on the S1000D Bike sample technical data implementing the S1000D version 4.0 Learning schema markup.
+          </lom:string>
+				</lom:description>
+				<lom:keyword>
+					<lom:string>
+            S1000DBIKE
+          </lom:string>
+				</lom:keyword>
+				<lom:keyword>
+					<lom:string>
+            s1000d learning schema
+          </lom:string>
+				</lom:keyword>
+			</lom:general>
+			<lom:lifeCycle>
+				<lom:version>
+					<lom:string language="en">1.0</lom:string>
+				</lom:version>
+				<lom:status>
+					<lom:source>LOMv1.0</lom:source>
+					<lom:value>final</lom:value>
+				</lom:status>
+			</lom:lifeCycle>
+			<lom:metaMetadata>
+				<lom:identifier>
+					<lom:catalog>GUID</lom:catalog>
+					<lom:entry>3X157197F-7BD0-4F5C-BF57-CD3C8BA242</lom:entry>
+				</lom:identifier>
+				<lom:metadataSchema>LOMv1.0</lom:metadataSchema>
+				<lom:metadataSchema>SCORM_CAM_v1.3</lom:metadataSchema>
+			</lom:metaMetadata>
+		</lom:lom>
+	</identAndStatusSection>
+	<content>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Learning Plan</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 1: Introduction to the bike</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="01" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 2: Bike Overview</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="02" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 3: Steering System (1)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="03" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 3: Steering System (2)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="04" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 3: Steering System (3)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA2" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="05" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 4 - Drive Train Description (1)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="06" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 4 - Drive Train Maintenance (2)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="07" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 4 - Drive Train Assessment (3)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="08" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 5 - Wheels (1)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="09" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 5 - Wheels Maintenance (2)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="10" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 5 - Wheels Assessment (3)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="11" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 6 - Brake System (1)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA1" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="12" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 6 - Brake System Maintenance Procedures (2)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA1" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="13" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 6 - Brake System Assessment (3)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA1" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="14" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 7 - Bicycle (General) (1)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="15" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 7 - Bicycle (General) Pre and Post Operation Procedures (2)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="16" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+		<scoEntry scoEntryType="scot01">
+			<scoEntryTitle>Module 7 - Bicycle (General)Assessment (3)</scoEntryTitle>
+			<scoEntryItem>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="17" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+						<issueInfo inWork="00" issueNumber="001"/>
+						<language countryIsoCode="US" languageIsoCode="en"/>
+					</dmRefIdent>
+				</dmRef>
+			</scoEntryItem>
+		</scoEntry>
+	</content>
+</scormContentPackage>
