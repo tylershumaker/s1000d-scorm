@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Toolkit 
+ * This file is part of the S1000D Transformation Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
@@ -33,6 +33,7 @@ import bridge.toolkit.packaging.ContentPackageCreator;
 import bridge.toolkit.util.CopyDirectory;
 import bridge.toolkit.util.DMParser;
 import bridge.toolkit.util.Keys;
+import bridge.toolkit.util.StylesheetApplier;
 
 /**
  * Builds the launchable learning resources (SCOs) from the DMs found in the 
@@ -40,7 +41,6 @@ import bridge.toolkit.util.Keys;
  */
 public class SCOBuilder implements Command
 {
-
 
     /**
      * File that represents the location of the content package directory.
@@ -71,7 +71,12 @@ public class SCOBuilder implements Command
     /**
      * Message that is returned if the building of the SCOs is unsuccessful.
      */
-    String SCOBUILDER_FAILED = "SCOBuilder processing was unsuccessful";
+    final String SCOBUILDER_FAILED = "SCOBuilder processing was unsuccessful";
+    
+    /**
+     * SCORM CP XSLT StyleSheet to be applied to the data modules
+     */
+    final String CPSTYLESHEET = "app/s1000d_4.xslt";
     
     /**
      * The unit of processing work to be performed for the SCOBuilder module.
@@ -104,7 +109,9 @@ public class SCOBuilder implements Command
                 //copy necessary files over to CP folder
                 copyViewerAppFiles();
                 
-                applyStylesheetToDMCs();
+                //apply the SCORM CP XSLT StyleSheet to the data modules
+                StylesheetApplier sa = new StylesheetApplier();
+                sa.applyStylesheetToDMCs(cpPackage, CPSTYLESHEET);
             
                 //create list.js, add to CP
                 dmp = new DMParser();
@@ -177,132 +184,6 @@ public class SCOBuilder implements Command
         
         listViewerAppFiles(cpTrainingContent);
 
-    }
-    
-    /**
-     * Applies the appropriate XSLT style sheet to the S1000D data modules 
-     * so that they will be rendered in a human readable format in the SCORM
-     * Content Package SCOs.
-     * 
-     * @throws JDOMException
-     * @throws IOException
-     */
-    public void applyStylesheetToDMCs() throws JDOMException, IOException
-    {
-//        File dm = new File(System.getProperty("user.dir") + File.separator +
-//                "test_files\\resource_package_slim");
-        File dm = new File(cpPackage + File.separator + "resources" +
-                           File.separator + "s1000d");
-        
-        File[] resources = dm.listFiles();
-        for(File resource: resources)
-        {
-           
-            if(!resource.isDirectory())
-            {
-                SAXBuilder parser = new SAXBuilder();
-                parser.setExpandEntities(false);
-                Document doc = parser.build(resource);
-                
-                String STYLESHEET = "xml-stylesheet";
-                String STYLEPROCESSINGINSTRUCTION = "type='text/xsl' href='";
-                
-                String xslt = "app/s1000d_4.xslt";
-                
-                ProcessingInstruction stylesheet = new ProcessingInstruction(STYLESHEET, STYLEPROCESSINGINSTRUCTION+xslt+"'\n");
-                DocType docType = doc.getDocType();
-                if(docType!=null)
-                {
-                    //The JDOM parser converts the DocType and EntityRef from
-                    //relative paths to absolute paths.  So the docType is remove
-                    //then formated back to a relative path.
-                    doc.removeContent(docType);
-                    doc.setDocType(formatDocType(docType, resource));
-                }
-                doc.addContent(0,stylesheet);
-                
-                XMLOutputter outputter = new XMLOutputter(Format.getRawFormat());
-
-//                File temp = new File(System.getProperty("user.dir") + File.separator +
-//                        "test_files\\applyStyle" + File.separator +
-//                                     resource.getName());
-              File temp = new File(cpPackage + File.separator +"resources" + 
-                                   File.separator + "s1000d" + File.separator +
-                                   resource.getName());
-                FileWriter writer = new FileWriter(temp);
-                outputter.output(doc, writer);
-                writer.close();
-            }
-        }
-        
-    }
-    
-    
-    /**
-     * Formats the internal subset of the DocType of the S1000D data modules
-     * so that they will render the correct content. 
-     * 
-     * @param docT DocType object after the JDOM SAXBuilder parses the data
-     * module.
-     * @param dm File object that represents the location of the data module 
-     * file being modified. 
-     * @return DocType object with the absolute paths removed from the 
-     * internal subset.
-     * @throws IOException
-     */
-    public DocType formatDocType(DocType docT, File dm) throws IOException
-    {
-         String org = docT.getInternalSubset();
-    
-         BufferedReader in = new BufferedReader(new StringReader(org));
-    
-         List<String> lines = new ArrayList<String>();
-         String str;
-         while ((str = in.readLine()) != null) 
-         {
-            lines.add(str);
-         }
-         in.close();
-         
-         StringBuffer internalSubset = new StringBuffer();
-         Iterator<String> iterator = lines.iterator();
-         while(iterator.hasNext())
-         {
-             String line = iterator.next();
-             
-             if(line.contains("NOTATION") && !line.contains("swf"))
-             {
-                 if(line.contains("swf") || line.contains("SWF"))
-                 {
-                     internalSubset.append(line);
-                 }
-                 else
-                 {
-                     String[] notation = line.split("\"");
-                     String[] notationValue = notation[1].split("/");
-                      
-                     internalSubset.append(notation[0] + "'" +notationValue[notationValue.length-1].replaceAll("%20", " ")+"'>");                     
-                 }
-                 internalSubset.append("\n");
-             }
-             if(line.contains("ENTITY"))
-             {
-                 String[] entity = line.split("\"");
-                 String orgFileLoc = dm.getParent().replaceAll("\\\\", "/");
-                 String[] entityValue = entity[1].split(orgFileLoc + "/");
-                 
-                 internalSubset.append(entity[0] + "'" +entityValue[entityValue.length-1].replaceAll("%20", " ")+
-                                       "'" + entity[entity.length-1] );
-                 internalSubset.append("\n");
-                 
-             }
-             
-         }
-         
-         DocType newDocType = new DocType("dmodule");
-         newDocType.setInternalSubset(internalSubset.toString());
-         
-         return newDocType;
     }
 
    /**
@@ -382,10 +263,11 @@ public class SCOBuilder implements Command
                 xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
                 resource = (Element) xp.selectSingleNode(manifest);
 
-                String[] resource_path = resource.getAttributeValue("href").split("/");
-                
-                page.add("../" + resource_path[resource_path.length-1]);
-                
+                if(resource!=null)
+                {
+                    String[] resource_path = resource.getAttributeValue("href").split("/");
+                    page.add("../" + resource_path[resource_path.length-1]);
+                }
             }
             scoPages.add(page);
         }

@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Toolkit 
+ * This file is part of the S1000D Transformation Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
@@ -96,8 +96,8 @@ public class Controller
         ctx.put(Keys.RESOURCE_PACKAGE, args[1]);
         try
         {
-            if(args[2] != null && args[2].equals("-mobile"))
-                toolkit = sampleCatalog.getCommand("MobileBuilder");
+            if(args.length>2 && args[2] != null && args[2].equals("-mobile"))
+                toolkit = sampleCatalog.getCommand("Mobile");
             
             toolkit.execute(ctx);
         }
