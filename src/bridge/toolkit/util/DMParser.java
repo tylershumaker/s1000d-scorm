@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Toolkit 
+ * This file is part of the S1000D Transformation Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
@@ -89,81 +89,97 @@ public class DMParser extends XMLParser
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
-
+                
         Iterator<Element> refdms = dmc_lst.iterator();
         while (refdms.hasNext() == true)
         {
             Element e = refdms.next();
             Element theAncestor = (Element) e.getParent().getParent();
             String dmc;
+            String modelIdentCode="";
+            String systemDiffCode="";
+            String systemCode="";
+            String subSystemCode="";    
+            String subSubSystemCode="";    
+            String assyCode="";    
+            String disassyCode="";    
+            String disassyCodeVariant="";    
+            String infoCode="";    
+            String infoCodeVariant="";    
+            String itemLocationCode="";    
+            String learnCode="";    
+            String learnEventCode="";              
+            
             if (theAncestor.getName() == "dmRef")
             {
-                dmc = "DMC-";
+            	dmc = "DMC-";
                 List<Attribute> atts = e.getAttributes();
                 for (int i = 0; i < atts.toArray().length; i++)
                 {
                     if (atts.get(i).getName() == "modelIdentCode")
                     {
-                        dmc += atts.get(i).getValue() + "-";
+                    	modelIdentCode=atts.get(i).getValue() + "-";
                     }
                     else if (atts.get(i).getName() == "systemDiffCode")
                     {
-                        dmc += atts.get(i).getValue() + "-";
+                    	systemDiffCode= atts.get(i).getValue() + "-";
                     }
                     else if (atts.get(i).getName() == "systemCode")
                     {
-                        dmc += atts.get(i).getValue() + "-";
+                    	systemCode= atts.get(i).getValue() + "-";
                     }
                     else if (atts.get(i).getName() == "subSystemCode")
                     {
-                        dmc += atts.get(i).getValue();
+                    	subSystemCode= atts.get(i).getValue();
                     }
                     else if (atts.get(i).getName() == "subSubSystemCode")
                     {
-                        dmc += atts.get(i).getValue() + "-";
+                    	subSubSystemCode= atts.get(i).getValue() + "-";
                     }
                     else if (atts.get(i).getName() == "assyCode")
                     {
-                        dmc += atts.get(i).getValue() + "-";
+                    	assyCode= atts.get(i).getValue() + "-";
                     }
                     else if (atts.get(i).getName() == "disassyCode")
                     {
-                        dmc += atts.get(i).getValue();
+                    	disassyCode=atts.get(i).getValue();
                     }
                     else if (atts.get(i).getName() == "disassyCodeVariant")
                     {
-                        dmc += atts.get(i).getValue() + "-";
+                    	disassyCodeVariant=atts.get(i).getValue() + "-";
                     }
                     else if (atts.get(i).getName() == "infoCode")
                     {
-                        dmc += atts.get(i).getValue();
+                    	infoCode= atts.get(i).getValue();
                     }
                     else if (atts.get(i).getName() == "infoCodeVariant")
                     {
-                        dmc += atts.get(i).getValue() + "-";
+                    	infoCodeVariant= atts.get(i).getValue() + "-";
                     }
                     else if (atts.get(i).getName() == "itemLocationCode")
                     {
                         if (atts.toArray().length > 11)
                         {
-                            dmc += atts.get(i).getValue() + "-";
+                        	itemLocationCode= atts.get(i).getValue() + "-";
                         }
                         else
                         {
-                            dmc += atts.get(i).getValue();
+                        	learnCode= atts.get(i).getValue();
                         }
                     }
                     else if (atts.get(i).getName() == "learnCode")
                     {
-                        dmc += atts.get(i).getValue();
+                    	learnCode=atts.get(i).getValue();
                     }
                     else if (atts.get(i).getName() == "learnEventCode")
                     {
-                        dmc += atts.get(i).getValue();
+                    	learnEventCode=atts.get(i).getValue();
                     }
 
                 }// end for
-
+                dmc = dmc +modelIdentCode+systemDiffCode+systemCode+subSystemCode
+                +subSubSystemCode+assyCode+disassyCode+disassyCodeVariant+infoCode+infoCodeVariant
+                +itemLocationCode+learnCode+learnEventCode;    
                 referencedDMs.add(dmc);
                 
             }//end if

@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Toolkit 
+ * This file is part of the S1000D Transformation Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
@@ -85,6 +85,7 @@ public class PostProcess implements Command
 
             String zipName = title.getValue();
             zipName = zipName.replace(" ", "_").trim();
+            zipName = zipName.replace("\n", "").trim();            
             File zip = new File(zipName+".zip");
            
             ZipCreator zipCreator = new ZipCreator();

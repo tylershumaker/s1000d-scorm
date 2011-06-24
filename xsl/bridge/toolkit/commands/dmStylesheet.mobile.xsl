@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--  * This file is part of the S1000D Transformation Toolkit 
+ * project hosted on Sourceforge.net. See the accompanying 
+ * license.txt file for applicable licenses. -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -93,14 +96,14 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=8"/>    
                 <title>JQueryMobileTest</title>
                 <link rel="stylesheet"
-                    href="../js/jquery.mobile-1.0a4.1.min.css" />
+                    href="../jquery.mobile-1.0a4.1.min.css" />
                 <link rel="stylesheet" href="../common.css" type="text/css" />
                 <link rel="stylesheet" href="../mobile.css" type="text/css"
                     media="screen" />
                 <script type="text/javascript"
-                    src="../js/jquery-1.5.2.min.js"></script>
+                    src="../jquery-1.5.2.min.js"></script>
                 <script type="text/javascript"
-                    src="../js/jquery.mobile-1.0a4.1.min.js"></script>
+                    src="../jquery.mobile-1.0a4.1.min.js"></script>
             </head>
             <body>
                 <div data-role="page">

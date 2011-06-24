@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Toolkit 
+ * This file is part of the S1000D Transformation Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
@@ -32,14 +32,14 @@ public class CopyDirectory
     {
         if (srcFolder.isDirectory()) 
         {
-            if (!destFolder.exists()) 
-            {
-                destFolder.mkdir();
-            }
- 
             //ensures that hidden folders are not included
-            if(!srcFolder.getName().contains("."))
+            if(!srcFolder.getName().startsWith("."))
             {
+                if (!destFolder.exists()) 
+                {
+                    destFolder.mkdir();
+                }
+
                 String[] oChildren = srcFolder.list();
                 for (int i=0; i < oChildren.length; i++) 
                 {

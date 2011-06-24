@@ -1,5 +1,5 @@
 /**
- * This file is part of the S1000D-SCORM Bridge Toolkit 
+ * This file is part of the S1000D Transformation Toolkit 
  * project hosted on Sourceforge.net. See the accompanying 
  * license.txt file for applicable licenses.
  */
@@ -76,11 +76,6 @@ public class SCOBuilderTest
             if (svn.exists())
             {
                 deleteDirectory(svn);
-            }
-            File mediaSvn = new File(tempRes.getAbsolutePath()+ File.separator + "media" + File.separator + ".svn");
-            if (mediaSvn.exists())
-            {
-                deleteDirectory(mediaSvn);
             }
 
         }
