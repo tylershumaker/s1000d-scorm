@@ -32,7 +32,7 @@ public class ControllerTest
         String[] MOBI40 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
                            System.getProperty("user.dir") +"\\examples\\bike_resource_package",
                            "-mobile"};
-        Controller.main(SCORM41);
+        Controller.main(SCORM40);
     }
 
 }
