@@ -29,12 +29,22 @@ $(function() {
 
 	function getCurrentLoc() {
 		var loc = $('.ui-page-active').attr('data-url');
-		return scoPages.indexOf(loc);
+		//alert("loc = " + loc);
+		if(loc===undefined){
+			return -1;
+		}
+		for (var i = 0; i < scoPages.length; i++) {
+			if (loc.indexOf(scoPages[i]) !== -1) {
+				return i;
+			}
+		}
+		
+		return -1;
 	}
 
 	function findLastPage() {
 		var cur = getCurrentLoc();
-		// alert("last : " + cur);
+		//alert("last : " + cur);
 		if (cur == -1) {
 			cur = 1;
 		} else {
@@ -49,7 +59,7 @@ $(function() {
 	}
 	function findNextPage() {
 		var cur = getCurrentLoc();
-		// alert("next : " + cur);
+		//alert("next : " + cur);
 		if (cur == -1) {
 			return scoPages[1];
 		} else {
@@ -70,22 +80,24 @@ $(function() {
 		return scoPages[0];
 	}
 
+
+	
 	// SWIPE LEFT EVENT
 	$(document).bind('swipeleft', function(event, ui) {
-		$.mobile.changePage(findNextPage(), "slide");
+		$.mobile.changePage(findNextPage(), { transition: "slide"});
 	});
 	// SWIPE RIGHT EVENT
 	$(document).bind('swiperight', function(event, ui) {
-		$.mobile.changePage(findLastPage(), "fade");
+		$.mobile.changePage(findLastPage(), { transition: "slide", reverse: true});
 	});
 
-	$('#next').live('click tap', function() {
-		$.mobile.changePage(findNextPage(), "slide");
+	$('#next').live('tap', function() {
+		$.mobile.changePage(findNextPage(), { transition: "slide"});
 	});
-	$('#last').live('click tap', function() {
-		$.mobile.changePage(findLastPage(), "fade");
+	$('#last').live('tap', function() {
+		$.mobile.changePage(findLastPage(), { transition: "slide", reverse: true});
 	});
-	$('#home').live('click tap', function() {
-		$.mobile.changePage(goHome(), "slidedown");
+	$('#home').live('tap', function() {
+		$.mobile.changePage(goHome(), { transition: "slidedown"});
 	});
 });

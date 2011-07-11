@@ -96,14 +96,14 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=8"/>    
                 <title>JQueryMobileTest</title>
                 <link rel="stylesheet"
-                    href="../jquery.mobile-1.0a4.1.min.css" />
+                    href="../jquery.mobile-1.0b1.min.css" />
                 <link rel="stylesheet" href="../common.css" type="text/css" />
                 <link rel="stylesheet" href="../mobile.css" type="text/css"
                     media="screen" />
                 <script type="text/javascript"
-                    src="../jquery-1.5.2.min.js"></script>
+                    src="../jquery-1.6.1.min.js"></script>
                 <script type="text/javascript"
-                    src="../jquery.mobile-1.0a4.1.min.js"></script>
+                    src="../jquery.mobile-1.0b1.min.js"></script>
             </head>
             <body>
                 <div data-role="page">
