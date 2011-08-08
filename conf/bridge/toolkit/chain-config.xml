@@ -10,4 +10,8 @@
     <command name="PreProcess41" className="bridge.toolkit.commands.PreProcess41" />   
     <command name="MobileBuilder" className="bridge.toolkit.commands.MobileBuilder" />
    </chain>
+   <chain name="PDF">
+    <command name="PreProcess41" className="bridge.toolkit.commands.PreProcess41" />
+    <command name="PDFBuilder" className="bridge.toolkit.commands.PDFBuilder" />
+   </chain>
 </catalog>
