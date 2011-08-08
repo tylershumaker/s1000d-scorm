@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="mobiApp"/>
+	<classpathentry kind="src" path="pdfCSS"/>
 	<classpathentry kind="src" path="conf"/>
 	<classpathentry kind="src" path="xsd"/>
 	<classpathentry kind="src" path="test"/>
