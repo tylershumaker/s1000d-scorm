@@ -5,7 +5,6 @@
  */
 package bridge.toolkit;
 
-import java.io.File;
 import java.net.MalformedURLException;
 
 import org.apache.commons.chain.Catalog;
@@ -98,6 +97,9 @@ public class Controller
         {
             if(args.length>2 && args[2] != null && args[2].equals("-mobile"))
                 toolkit = sampleCatalog.getCommand("Mobile");
+            
+            else if(args.length>2 && args[2] != null && args[2].equals("-pdf"))
+                toolkit = sampleCatalog.getCommand("PDF");
             
             toolkit.execute(ctx);
         }
