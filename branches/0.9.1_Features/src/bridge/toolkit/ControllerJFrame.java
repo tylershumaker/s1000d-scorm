@@ -100,6 +100,7 @@ public class ControllerJFrame extends javax.swing.JFrame
       scormRadioButton = new javax.swing.JRadioButton();
       mobileRadioButton2 = new javax.swing.JRadioButton();
       jLabel5 = new javax.swing.JLabel();
+      pdfRadioButton = new javax.swing.JRadioButton();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,7 +133,7 @@ public class ControllerJFrame extends javax.swing.JFrame
       jTextArea1.setRows(5);
       jScrollPane1.setViewportView(jTextArea1);
 
-      jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18));
+      jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
       jLabel3.setForeground(new java.awt.Color(0, 102, 0));
       jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       jLabel3.setText("S1000D Transformation Toolkit Beta ");
@@ -158,19 +159,27 @@ public class ControllerJFrame extends javax.swing.JFrame
 
       jLabel5.setText("Output");
 
+      buttonGroup1.add(pdfRadioButton);
+      pdfRadioButton.setText("PDF");
+      pdfRadioButton.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            pdfRadioButtonActionPerformed(evt);
+         }
+      });
+
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
       jPanel1Layout.setHorizontalGroup(
          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-               .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+               .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)
                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                   .addContainerGap()
-                  .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
+                  .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE))
                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                   .addContainerGap()
-                  .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
+                  .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE))
                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                   .addContainerGap()
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,19 +188,24 @@ public class ControllerJFrame extends javax.swing.JFrame
                      .addComponent(jLabel5))
                   .addGap(27, 27, 27)
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
                      .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(scormRadioButton)
                         .addGap(18, 18, 18)
-                        .addComponent(mobileRadioButton2)))
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mobileRadioButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(pdfRadioButton)))
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                      .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                        .addGap(113, 113, 113))
-                     .addComponent(jButton1)
-                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                           .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                           .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                  .addGap(42, 42, 42)))
             .addContainerGap())
       );
       jPanel1Layout.setVerticalGroup(
@@ -214,9 +228,10 @@ public class ControllerJFrame extends javax.swing.JFrame
             .addGap(38, 38, 38)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(scormRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(mobileRadioButton2)
+               .addComponent(mobileRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(jButton3)
-               .addComponent(jLabel5))
+               .addComponent(jLabel5)
+               .addComponent(pdfRadioButton))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
@@ -249,6 +264,10 @@ public class ControllerJFrame extends javax.swing.JFrame
     {//GEN-FIRST:event_mobileRadioButton2ActionPerformed
        outputType = "-mobile";
     }//GEN-LAST:event_mobileRadioButton2ActionPerformed
+
+    private void pdfRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdfRadioButtonActionPerformed
+       outputType = "-pdf";
+    }//GEN-LAST:event_pdfRadioButtonActionPerformed
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)
@@ -289,6 +308,8 @@ public class ControllerJFrame extends javax.swing.JFrame
         {
             if(outputType.equals("-mobile"))
                 toolkit = sampleCatalog.getCommand("Mobile");
+            else if(outputType.equals("-pdf"))
+                toolkit = sampleCatalog.getCommand("PDF");
             else
                 toolkit = sampleCatalog.getCommand("SCORM");
             
@@ -361,6 +382,7 @@ public class ControllerJFrame extends javax.swing.JFrame
    private javax.swing.JTextField jTextField1;
    private javax.swing.JTextField jTextField2;
    private javax.swing.JRadioButton mobileRadioButton2;
+   private javax.swing.JRadioButton pdfRadioButton;
    private javax.swing.JRadioButton scormRadioButton;
    // End of variables declaration//GEN-END:variables
 
