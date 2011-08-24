@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dmodule [
 	<!NOTATION swf PUBLIC "-//S1000D//NOTATION X-SHOCKWAVE-FLASH 3D Models Encoding//EN">
-	<!ENTITY ICN-S1000DBIKE-AAA-D000000-0-06RT9-00536-A-04-1 SYSTEM "ICN-S1000DBIKE-AAA-D000000-0-06RT9-00536-A-04-1.jpg" NDATA swf>
+	<!ENTITY ICN-S1000DBIKE-AAA-D000000-0-06RT9-00536-A-04-1 SYSTEM "ICN-S1000DBIKE-AAA-D000000-0-06RT9-00536-A-04-1.swf" NDATA swf>
 ]>
 <dmodule xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/descript.xsd" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <rdf:Description>
