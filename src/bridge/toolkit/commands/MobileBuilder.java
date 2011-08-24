@@ -113,6 +113,18 @@ public class MobileBuilder implements Command
                 System.out.println("The 'Resource Package' is empty.");
                 return PROCESSING_COMPLETE;
             }
+            catch (JDOMException e)
+            {
+                System.out.println(MOBILEBUILDER_FAILED);
+                e.printStackTrace();
+                return PROCESSING_COMPLETE;
+            }
+            catch (IOException e)
+            {
+                System.out.println(MOBILEBUILDER_FAILED);
+                e.printStackTrace();
+                return PROCESSING_COMPLETE;
+            }
 
             urn_map = URNMapper.writeURNMap(src_files, "../media/");
             
