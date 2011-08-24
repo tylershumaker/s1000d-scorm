@@ -8,6 +8,7 @@ package bridge.toolkit.commands;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,6 +19,7 @@ import org.apache.commons.chain.Context;
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jdom.JDOMException;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jdom.xpath.XPath;
@@ -69,7 +71,22 @@ public class PDFBuilder implements Command
 
         String resource_dir = (String) ctx.get(Keys.RESOURCE_PACKAGE);
         ContentPackageCreator cpc = new ContentPackageCreator(resource_dir);
-        src_dir = cpc.createPackage();
+        try
+        {
+            src_dir = cpc.createPackage();
+        }
+        catch (IOException e1)
+        {
+            System.out.println(PDFBUILDER_FAILED);
+            e1.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
+        catch (JDOMException e1)
+        {
+            System.out.println(PDFBUILDER_FAILED);
+            e1.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
         scpm_file = (String) ctx.get(Keys.SCPM_FILE);
         System.out.println(src_dir.getAbsolutePath());
         List<File> src_files = new ArrayList<File>();
@@ -81,6 +98,18 @@ public class PDFBuilder implements Command
         {
             System.out.println(PDFBUILDER_FAILED);
             System.out.println("The 'Resource Package' is empty.");
+            return PROCESSING_COMPLETE;
+        }
+        catch (JDOMException e)
+        {
+            System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
+        catch (IOException e)
+        {
+            System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
             return PROCESSING_COMPLETE;
         }
 

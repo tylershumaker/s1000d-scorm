@@ -50,9 +50,24 @@ public class XMLParser
      * @throws IOException 
      * @throws JDOMException 
      */
-    public Document getDoc(File anXmlDocFile) throws JDOMException, IOException
+    public Document getDoc(File anXmlDocFile) throws JDOMException, IOException 
     {
-        Document doc = parser.build(anXmlDocFile);
+        Document doc = new Document();
+        try
+        {
+            doc = parser.build(anXmlDocFile);
+        }
+        catch (JDOMException e)
+        {
+            throw new JDOMException("File : " + anXmlDocFile + " is causing " +
+                    "a JDOMParseException. \n " + e.getMessage());
+            //e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            throw new IOException("File : " + anXmlDocFile + " is causing " +
+            		"a IOException. \n " + e.getMessage());
+        }
             
         return doc;
     }

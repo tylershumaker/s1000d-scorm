@@ -8,8 +8,10 @@ package bridge.toolkit.packaging;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import org.jdom.JDOMException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -55,8 +57,34 @@ public class ContentPackageCreatorTest
         "test_files\\resource_package_slim";
         cpc = new ContentPackageCreator(resourcePackage);
         cpc.setPackagesLocation(testLocation);
-        cpc.createPackage();
-        cpc.createPackage();
+        try
+        {
+            cpc.createPackage();
+        }
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        catch (JDOMException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        try
+        {
+            cpc.createPackage();
+        }
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        catch (JDOMException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         
         assertTrue(new File(testLocation+File.separator+"package1"+File.separator+"resources"
                 +File.separator + "s1000d" + File.separator +

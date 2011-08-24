@@ -6,6 +6,7 @@
 package bridge.toolkit.util;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jdom.JDOMException;
 
 /**
  * Generates a urn_resource_map.xml file that is used
@@ -27,8 +29,10 @@ public class URNMapper
      * 
      * @param src_dir String that represents the location of directory.
      * @return List<File> List of all of the files found in the source directory.
+     * @throws IOException 
+     * @throws JDOMException 
      */
-    public static List<File> getSourceFiles(String src_dir)
+    public static List<File> getSourceFiles(String src_dir) throws JDOMException, IOException
     {
         File csdb_files = new File(src_dir);
 

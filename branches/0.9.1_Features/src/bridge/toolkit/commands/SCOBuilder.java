@@ -96,7 +96,22 @@ public class SCOBuilder implements Command
             {
                 
                 ContentPackageCreator cpc = new ContentPackageCreator((String) ctx.get(Keys.RESOURCE_PACKAGE));
-                cpPackage = cpc.createPackage();
+                try
+                {
+                    cpPackage = cpc.createPackage();
+                }
+                catch (IOException e)
+                {
+                    System.out.println(SCOBUILDER_FAILED);
+                    e.printStackTrace();
+                    return PROCESSING_COMPLETE;  
+                }
+                catch (JDOMException e)
+                {
+                    System.out.println(SCOBUILDER_FAILED);
+                    e.printStackTrace();
+                    return PROCESSING_COMPLETE;  
+                }
                 ctx.put(Keys.CP_PACKAGE, cpPackage);
             }
             else
