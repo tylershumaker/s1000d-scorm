@@ -31,6 +31,13 @@ public class Keys
     public static final String XML_SOURCE = "xml_source";
     
     /**
+     * Output directory defaults to the directory of the toolkit 
+     * if none is specified 
+     */
+    public static final String OUTPUT_DIRECTORY = "output_directory";
+    
+    
+    /**
      * File that represents the directory that is being used to build the 
      * SCORM Content Package.
      */

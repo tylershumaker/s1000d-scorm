@@ -74,10 +74,16 @@ public class PreProcess41 implements Command
 
     public boolean execute(Context ctx)
     {
-
         if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
-
+        	/*
+        	 * check the output directory in the context if it does not exist make it
+        	 */
+        	if (!(ctx.containsKey(Keys.OUTPUT_DIRECTORY)))
+        	{
+        		ctx.put(Keys.OUTPUT_DIRECTORY, "");
+        	}
+        	
             resourcepack = ctx.get(Keys.RESOURCE_PACKAGE).toString();
             /*
              * if SCPM is 4.1 then Move the original file to the temp directory

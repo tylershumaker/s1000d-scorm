@@ -86,7 +86,8 @@ public class SCOBuilder implements Command
     @Override
     public boolean execute(Context ctx)
     {
-
+    	//System.out.println("Executing SCOBuilder");
+    	//System.out.flush();
         if ((ctx.get(Keys.XML_SOURCE) != null) &&
             (ctx.get(Keys.RESOURCE_PACKAGE) != null) &&
             (ctx.get(Keys.SCPM_FILE) != null))
@@ -123,7 +124,6 @@ public class SCOBuilder implements Command
             {
                 //copy necessary files over to CP folder
                 copyViewerAppFiles();
-                
                 //apply the SCORM CP XSLT StyleSheet to the data modules
                 StylesheetApplier sa = new StylesheetApplier();
                 sa.applyStylesheetToDMCs(cpPackage, CPSTYLESHEET);
@@ -166,7 +166,6 @@ public class SCOBuilder implements Command
                 return PROCESSING_COMPLETE;  
             }
 
-
             
             ctx.put(Keys.XML_SOURCE, manifest);
             System.out.println("SCOBuilder processing was successful");
@@ -190,13 +189,17 @@ public class SCOBuilder implements Command
      */
     private void copyViewerAppFiles() throws IOException
     {
-        File trainingContent = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
+    	//.out.println("at copyViewerAppFiles");
+        //File trainingContent = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
         File cpTrainingContent = new File(cpPackage + File.separator + 
                                          "resources" + File.separator + 
                                          "s1000d");
         CopyDirectory cd = new CopyDirectory();
-        cd.copyDirectory(trainingContent, cpTrainingContent);
-        
+        //cd.copyDirectory(trainingContent, cpTrainingContent);
+        //System.out.println("Before SCO Copy");
+        cd.CopyJarFiles(this.getClass(), "ViewerApplication", cpTrainingContent.getAbsolutePath());
+        //System.out.println("After SCO Copy");
+        //System.out.flush();
         listViewerAppFiles(cpTrainingContent);
 
     }
