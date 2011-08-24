@@ -6,11 +6,14 @@
 package bridge.toolkit.util;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 /**
@@ -58,6 +61,85 @@ public class CopyDirectory
                 copyFile(srcFolder, destFolder);
             }
         }
+        
+    }
+    
+    /**
+     * Copies the files from a directory in a jar file using the FileList in the base directory to copy the files
+     * @param jarDirectory String indicating the directory to look in
+     * @param OutputDirectory The file location to copy the files to
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public void CopyJarFiles(Class currclass, String jarDirectory, String OutputDirectory) throws IOException, FileNotFoundException
+    {
+    	//get the file list
+        InputStream FileListinput = currclass.getResourceAsStream(jarDirectory+"/FileList.txt");
+        
+        BufferedReader reader = new BufferedReader( new InputStreamReader(FileListinput));
+        String CurrentFile = "";
+        while(( CurrentFile = reader.readLine()) != null)
+        {
+        	String path = "";
+        	if (CurrentFile.indexOf('/') != -1)
+        	{
+        		path = "\\" + CurrentFile.substring(0,CurrentFile.lastIndexOf('/'));
+        		path = path.replace('/', '\\');
+        	}
+        	
+        	CopyJarFile(currclass,CurrentFile,OutputDirectory + path,jarDirectory);
+        }
+    }
+    
+    /**
+     * Copies a file from a directory in a jar file the the path specified by the outputFile
+     * @param currclass the class that the jar file is relative to
+     * @param jarFile The file to copy from the jar
+     * @param OutputDirectory The file location to copy the files to
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public void CopyJarFile(Class currclass, String jarFile, String OutputDirectory) throws IOException, FileNotFoundException
+    {
+    	CopyJarFile(currclass,jarFile,OutputDirectory, "");
+    }
+    
+    /**
+     * Copies a file from a directory in a jar file the the path specified by the outputFile
+     * @param currclass the class that the jar file and directory is relative to
+     * @param jarFile The file to copy from the jar in the jar Directory
+     * @param OutputDirectory The file location to copy the files to
+     * @param jarDirectory String indicating the directory to look in reletive to the class
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public void CopyJarFile(Class currclass, String jarFile, String OutputDirectory, String jarDirectory) throws IOException, FileNotFoundException
+    {
+    	//Check if the path exists
+    	if (jarFile.indexOf('/') != -1)
+    	{
+    		//this file has a path
+    		File testFileObject = new File( OutputDirectory );
+        	if (!(testFileObject.exists()))
+        	{
+        		testFileObject.mkdirs();
+        	}
+    	}
+    	InputStream input = currclass.getResourceAsStream(jarDirectory +"/" + jarFile);
+    	String Filename = jarFile;
+    	if (Filename.indexOf('/') != -1)
+    	{
+    		Filename = Filename.substring(Filename.lastIndexOf('/'));
+    	}
+        FileOutputStream output = new FileOutputStream(OutputDirectory + File.separator + Filename);
+        byte buffer[] = new byte[1024];
+        int length = 0;
+        while((length=input.read(buffer)) > 0)
+        {
+        	output.write(buffer,0,length);
+        }
+        input.close();
+        output.close();
         
     }
     

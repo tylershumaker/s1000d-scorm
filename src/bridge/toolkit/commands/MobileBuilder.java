@@ -7,12 +7,18 @@ package bridge.toolkit.commands;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.Reader;
 import java.io.StringReader;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -34,6 +40,8 @@ import org.jdom.JDOMException;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jdom.xpath.XPath;
+
+
 
 import bridge.toolkit.util.CopyDirectory;
 import bridge.toolkit.util.DMParser;
@@ -98,7 +106,7 @@ public class MobileBuilder implements Command
     {
         if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
-
+        	CopyDirectory cd = new CopyDirectory();
             src_dir = (String) ctx.get(Keys.RESOURCE_PACKAGE);
             scpm_file = (String) ctx.get(Keys.SCPM_FILE);
 
@@ -125,19 +133,45 @@ public class MobileBuilder implements Command
                 e.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
-
+            
+            
+            
             urn_map = URNMapper.writeURNMap(src_files, "../media/");
             
             //write urn map file out to the ViewerApplication directory temporarily.  
-            File js = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication/app/urn_resource_map.xml");
-            XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-            FileWriter writer;
+            File js = null;
+            File jsviewer = null;
+            File xsldir = null;
             try
             {
+            	
+            	jsviewer= new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
+            	js = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication/app/urn_resource_map.xml");
+            	
+                if (!(jsviewer.exists()))
+                {
+                	//System.out.println("Path directory creation " + jsapp.getAbsolutePath());
+                	jsviewer.mkdirs();
+                }
+                
+                xsldir = new File(System.getProperty("user.dir") + File.separator + "xsl");
+                if (!(xsldir.exists()))
+                {
+                	//System.out.println("jsviewer directory creation " + jsviewer.getAbsolutePath());
+                	xsldir.mkdirs();
+                }
+                
+                cd.CopyJarFiles(this.getClass(), "ViewerApplication", jsviewer.getAbsolutePath());
+                cd.CopyJarFiles(this.getClass(), "xsl", xsldir.getAbsolutePath());
+                
+                XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+                FileWriter writer;
                 writer = new FileWriter(js);
                 outputter.output(urn_map, writer);
                 writer.flush();
                 writer.close();
+                
+                
             }
             catch (IOException e)
             {
@@ -146,8 +180,18 @@ public class MobileBuilder implements Command
                 return PROCESSING_COMPLETE;
             }
             
+            String outputPath = "";
+            if (ctx.get(Keys.OUTPUT_DIRECTORY) != null)
+            {
+            	outputPath = (String)ctx.get(Keys.OUTPUT_DIRECTORY);
+            	if (outputPath.length() > 0)
+            	{
+            		outputPath = outputPath + File.separator;
+            	}
+            }
+            
             //create new directory and folder for mobile_output
-            File newMobApp = createOutputLocation();
+            File newMobApp = createOutputLocation(outputPath);
 
             //transform SCPM to main index.htm file
             try
@@ -236,15 +280,21 @@ public class MobileBuilder implements Command
             try
             {
                 //copy over css and jquery mobile files
-                CopyDirectory cd = new CopyDirectory();
+                
+                /*
                 File mobiApp_loc = new File(System.getProperty("user.dir") + File.separator +
                 "mobiApp");
                 cd.copyDirectory(mobiApp_loc, newMobApp);
+                */
+                
+                cd.CopyJarFiles(this.getClass(),"mobiApp",newMobApp.getAbsolutePath());
                 
                 //copy common.css from the ViewerApplication to the mobile output
-                File common_css = new File(System.getProperty("user.dir") + File.separator + 
-                        "ViewerApplication" + File.separator + "app" + File.separator + "common.css");
-                cd.copyDirectory(common_css, newMobApp);
+                //File common_css = new File(System.getProperty("user.dir") + File.separator + 
+                //        "ViewerApplication" + File.separator + "app" + File.separator + "common.css");
+                //cd.copyDirectory(common_css, newMobApp);
+                
+                cd.CopyJarFile(this.getClass(), "app/common.css", newMobApp.getAbsolutePath(), "ViewerApplication");
                 
                 //copy over media files
                 File new_media_loc = new File(newMobApp.getAbsolutePath() + File.separator + "media");
@@ -269,20 +319,61 @@ public class MobileBuilder implements Command
             }
             
             //delete the urn map from the ViewerApplication location
-            js.deleteOnExit();
+            
+            if (jsviewer != null)
+            {
+            	DeleteDirectoryOnExit(jsviewer);
+            }
+            if (js != null)
+            {
+            	js.deleteOnExit();
+            }
+            if (xsldir != null)
+            {
+            	DeleteDirectoryOnExit(xsldir);
+            }
+            
             System.out.println("MobileBuilder processing was successful");
+            
         }
         return CONTINUE_PROCESSING;
 
     }
     
     /**
+     * Iterates over a directory and sets the files inside to be deleted when the program exits
+     * @param dir the directory file to delete
+     */
+    private void DeleteDirectoryOnExit(File dir)
+    {
+    	dir.deleteOnExit();
+    	if (dir.isDirectory())
+    	{
+    		String files[] = dir.list();
+    		for (int f = 0; f < files.length; f++)
+        	{
+        		File innerFile = new File(dir, files[f]);
+        		if (innerFile.isDirectory())
+        		{
+        			DeleteDirectoryOnExit(innerFile);
+        		}
+        		else
+        		{
+        			innerFile.deleteOnExit();
+        		}
+        	}
+    	}
+    }
+    
+
+    /**
      * Creates a new directory and folder for the mobile output
+     * @param outputDirectory the directory to write the mobile web app to.
      * @return File object that represents the location of the mobile output.
      */
-    private File createOutputLocation()
+    private File createOutputLocation(String outputDirectory)
     {
-        File mobileLocation = new File("mobile");
+        File mobileLocation = new File(outputDirectory+"mobile");
         if(!mobileLocation.exists())
         {
             mobileLocation.mkdirs();
@@ -348,8 +439,8 @@ public class MobileBuilder implements Command
         
         XPath xp = XPath.newInstance("//scoEntry[@scoEntryType='scot01']");
         @SuppressWarnings("unchecked")
-        List<Element> scos = xp.selectNodes(dmp.getDoc(new File(scpm_file)));
         
+        List<Element> scos = xp.selectNodes(dmp.getDoc(new File(scpm_file)));
         int folderCount = 1;
         Iterator<Element> iterator = scos.iterator();
         while(iterator.hasNext())
@@ -377,10 +468,8 @@ public class MobileBuilder implements Command
                 Document currDM = dmp.getDoc(dataModule);
                 xp = XPath.newInstance("//dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnEventCode");
                 Attribute learnEventCode = (Attribute)xp.selectSingleNode(currDM);
-
                 xp = XPath.newInstance("//dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnCode");
                 Attribute learnCode = (Attribute)xp.selectSingleNode(currDM);
-                
                 if(learnEventCode==null || !learnEventCode.getValue().equals("E"))
                 {
                     if(learnCode==null ||!learnCode.getValue().equals("T28"))

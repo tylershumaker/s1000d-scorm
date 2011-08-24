@@ -95,6 +95,7 @@ public class PreProcess implements Command
     @SuppressWarnings("unchecked")
     public boolean execute(Context ctx)
     {
+    	System.out.println("Executing PreProcess");
         if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
 

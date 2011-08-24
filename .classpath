@@ -9,7 +9,7 @@
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="src" path="xsl"/>
 	<classpathentry kind="src" path="ViewerApplication"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/commons-beanutils-core-1.8.3.jar"/>
 	<classpathentry kind="lib" path="lib/commons-chain-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/commons-digester-2.0.jar"/>
@@ -20,5 +20,6 @@
 	<classpathentry kind="lib" path="lib/core-renderer.jar"/>
 	<classpathentry kind="lib" path="lib/iText-5.0.6.jar"/>
 	<classpathentry kind="lib" path="lib/xml-apis-xerces-2.9.1.jar"/>
+	<classpathentry kind="lib" path="ListBuilder/buildlist.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

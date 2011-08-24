@@ -102,7 +102,7 @@ public class ContentPackageCreator
         File resource = new File(newCP.getAbsoluteFile()+ File.separator + 
                                 "resources" + File.separator + "s1000d");
         resource.mkdirs();
-
+        
         copyResources(new File(mResourcePackage), resource);
         
         return newCP;

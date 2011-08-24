@@ -69,7 +69,6 @@ public class StylesheetApplier
                 SAXBuilder parser = new SAXBuilder();
                 parser.setExpandEntities(false);
                 Document doc = parser.build(resource);
-                
                 String STYLESHEET = "xml-stylesheet";
                 String STYLEPROCESSINGINSTRUCTION = "type='text/"+iType +"'"+ iMediaType +" href='";
                 

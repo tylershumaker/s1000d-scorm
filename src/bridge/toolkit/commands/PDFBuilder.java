@@ -88,7 +88,7 @@ public class PDFBuilder implements Command
             return PROCESSING_COMPLETE;
         }
         scpm_file = (String) ctx.get(Keys.SCPM_FILE);
-        System.out.println(src_dir.getAbsolutePath());
+        //System.out.println(src_dir.getAbsolutePath());
         List<File> src_files = new ArrayList<File>();
         try
         {
@@ -125,11 +125,22 @@ public class PDFBuilder implements Command
 
         //Copy the css file to the data modules location
         CopyDirectory cd = new CopyDirectory();
-        File pdfCss = new File(System.getProperty("user.dir") + File.separator + "pdfCSS" +
-                File.separator + "s1000d.css");
-        cd.copyDirectory(pdfCss, new File(src_dir +File.separator + "resources" +File.separator + "s1000d"));
+        //File pdfCss = new File(System.getProperty("user.dir") + File.separator + "pdfCSS" +
+        //        File.separator + "s1000d.css");
+        cd.CopyJarFiles(this.getClass(), "pdfCSS", src_dir +File.separator + "resources" +File.separator + "s1000d");
         
-        String outputFile = "out/doc.pdf";
+        
+        String outputPath = "";
+        if (ctx.get(Keys.OUTPUT_DIRECTORY) != null)
+        {
+        	outputPath = (String)ctx.get(Keys.OUTPUT_DIRECTORY);
+        	if (outputPath.length() > 0)
+        	{
+        		outputPath = outputPath + File.separator;
+        	}
+        }
+        
+        String outputFile = outputPath + "doc.pdf";
         OutputStream os = new FileOutputStream(outputFile);
         ITextRenderer renderer = new ITextRenderer();
         
@@ -252,6 +263,7 @@ public class PDFBuilder implements Command
         }
         catch (Exception e) {
             // TODO: handle exception
+        	System.out.println("Error-----");
             System.out.println(e.getMessage());
         }
         return false;

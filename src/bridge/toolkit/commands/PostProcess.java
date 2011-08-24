@@ -55,9 +55,9 @@ public class PostProcess implements Command
                 
                 //copies the required xsd files over to the content package
                 CopyDirectory cd = new CopyDirectory();
-                File xsd_loc = new File(System.getProperty("user.dir") + File.separator +
-                       "xsd");
-                cd.copyDirectory(xsd_loc, cpPackage);
+                //File xsd_loc = new File(System.getProperty("user.dir") + File.separator +
+                //       "xsd");
+                cd.CopyJarFiles(this.getClass(), "xsd", cpPackage.getAbsolutePath());
             } 
             catch (java.io.IOException e) 
             {
@@ -82,11 +82,19 @@ public class PostProcess implements Command
                 e.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
-
+            String outputPath = "";
+            if (ctx.get(Keys.OUTPUT_DIRECTORY) != null)
+            {
+            	outputPath = (String)ctx.get(Keys.OUTPUT_DIRECTORY);
+            	if (outputPath.length() > 0)
+            	{
+            		outputPath = outputPath + File.separator;
+            	}
+            }
             String zipName = title.getValue();
             zipName = zipName.replace(" ", "_").trim();
             zipName = zipName.replace("\n", "").trim();            
-            File zip = new File(zipName+".zip");
+            File zip = new File(outputPath + zipName + ".zip");
            
             ZipCreator zipCreator = new ZipCreator();
             try
