@@ -55,7 +55,7 @@ $(function() {
 				cur = 1;
 			}
 		}
-		return scoPages[cur - 1];
+		return "../" + scoPages[cur - 1];
 	}
 	function findNextPage() {
 		var cur = getCurrentLoc();
@@ -73,15 +73,14 @@ $(function() {
 				}
 			}
 		}
-		return scoPages[cur + 1];
+		return "../" + scoPages[cur + 1];
 	}
 
 	function goHome() {
-		return scoPages[0];
+		return "../" + scoPages[0];
 	}
-
-
 	
+
 	// SWIPE LEFT EVENT
 	$(document).bind('swipeleft', function(event, ui) {
 		$.mobile.changePage(findNextPage(), { transition: "slide"});
@@ -90,6 +89,7 @@ $(function() {
 	$(document).bind('swiperight', function(event, ui) {
 		$.mobile.changePage(findLastPage(), { transition: "slide", reverse: true});
 	});
+
 
 	$('#next').live('tap', function() {
 		$.mobile.changePage(findNextPage(), { transition: "slide"});
