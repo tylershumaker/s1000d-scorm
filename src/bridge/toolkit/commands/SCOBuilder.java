@@ -51,7 +51,7 @@ public class SCOBuilder implements Command
      * List of Strings that represent the file found in the Viewer Application
      * directory. 
      */
-    List<String> commonFiles = new ArrayList<String>();
+    List<String> commonFiles;
     
     /**
      * JDOM Document that is used for the imsmanifest.xml file.
@@ -86,6 +86,7 @@ public class SCOBuilder implements Command
     @Override
     public boolean execute(Context ctx)
     {
+    	commonFiles = new ArrayList<String>();
     	//System.out.println("Executing SCOBuilder");
     	//System.out.flush();
         if ((ctx.get(Keys.XML_SOURCE) != null) &&
@@ -145,6 +146,7 @@ public class SCOBuilder implements Command
                 outputter.output(urn_map, writer);
                 writer.flush();
                 writer.close();
+                //System.out.println("A " + js.getAbsolutePath());
                 commonFiles.add(js.getAbsolutePath());
                 
                 //add as a common resource element
@@ -190,14 +192,20 @@ public class SCOBuilder implements Command
     private void copyViewerAppFiles() throws IOException
     {
     	//.out.println("at copyViewerAppFiles");
-        //File trainingContent = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
+        File trainingContent = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
         File cpTrainingContent = new File(cpPackage + File.separator + 
                                          "resources" + File.separator + 
                                          "s1000d");
         CopyDirectory cd = new CopyDirectory();
-        //cd.copyDirectory(trainingContent, cpTrainingContent);
-        //System.out.println("Before SCO Copy");
-        cd.CopyJarFiles(this.getClass(), "ViewerApplication", cpTrainingContent.getAbsolutePath());
+        //check if the directory exists if it does use it else copy it from the jar
+        if (trainingContent.exists())
+        {
+        	cd.copyDirectory(trainingContent, cpTrainingContent);
+        }
+        else
+        {
+        	cd.CopyJarFiles(this.getClass(), "ViewerApplication", cpTrainingContent.getAbsolutePath());
+        }
         //System.out.println("After SCO Copy");
         //System.out.flush();
         listViewerAppFiles(cpTrainingContent);
@@ -231,7 +239,7 @@ public class SCOBuilder implements Command
         {
             if(srcFolder.getParent().contains("app") || 
                srcFolder.getParent().contains("Assessment_templates"))
-            commonFiles.add(srcFolder.getAbsolutePath());
+            		commonFiles.add(srcFolder.getAbsolutePath());
         }
     }
     
@@ -312,7 +320,6 @@ public class SCOBuilder implements Command
         writer.write("{\n return scoPages;\n}");
         writer.close();
 
-        
         commonFiles.add(js.getAbsolutePath());
     }
     
