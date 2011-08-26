@@ -22,5 +22,9 @@
 		text-decoration: underline;
 		color: #FFF;
 	}
-
+.randlistItemBullet
+{
+	list-style-type: disc;
+	text-indent: 5px;
+}
 
