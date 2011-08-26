@@ -55,9 +55,16 @@ public class PostProcess implements Command
                 
                 //copies the required xsd files over to the content package
                 CopyDirectory cd = new CopyDirectory();
-                //File xsd_loc = new File(System.getProperty("user.dir") + File.separator +
-                //       "xsd");
-                cd.CopyJarFiles(this.getClass(), "xsd", cpPackage.getAbsolutePath());
+                //check if the directory exists if it does use it else copy it from the jar
+                File xsd_loc = new File(System.getProperty("user.dir") + File.separator + "xsd");
+                if (xsd_loc.exists())
+                {
+                	cd.copyDirectory(xsd_loc, cpPackage);
+                }
+                else
+                {
+                	cd.CopyJarFiles(this.getClass(), "xsd", cpPackage.getAbsolutePath());
+                }
             } 
             catch (java.io.IOException e) 
             {

@@ -125,10 +125,16 @@ public class PDFBuilder implements Command
 
         //Copy the css file to the data modules location
         CopyDirectory cd = new CopyDirectory();
-        //File pdfCss = new File(System.getProperty("user.dir") + File.separator + "pdfCSS" +
-        //        File.separator + "s1000d.css");
-        cd.CopyJarFiles(this.getClass(), "pdfCSS", src_dir +File.separator + "resources" +File.separator + "s1000d");
-        
+        //check if the directory exists if it does use it else copy it from the jar
+        File pdfCss = new File(System.getProperty("user.dir") + File.separator + "pdfCSS" + File.separator + "s1000d.css");
+        if (pdfCss.exists())
+        {
+        	cd.copyDirectory(pdfCss, new File(src_dir +File.separator + "resources" +File.separator + "s1000d"));
+        }
+        else
+        {
+        	cd.CopyJarFiles(this.getClass(), "pdfCSS", src_dir +File.separator + "resources" +File.separator + "s1000d");
+        }
         
         String outputPath = "";
         if (ctx.get(Keys.OUTPUT_DIRECTORY) != null)
@@ -260,6 +266,7 @@ public class PDFBuilder implements Command
         // complete the PDF
         renderer.finishPDF();
         os.close(); 
+        System.out.println("Successfully created PDF");
         }
         catch (Exception e) {
             // TODO: handle exception

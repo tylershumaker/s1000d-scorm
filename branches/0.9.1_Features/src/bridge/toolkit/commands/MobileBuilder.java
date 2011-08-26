@@ -96,6 +96,11 @@ public class MobileBuilder implements Command
      */
     private static final String MOBILEBUILDER_FAILED = "MobileBuilder processing was unsuccessful";
 
+    /**
+     * List of files to delete when processing is complete
+     */
+    private ArrayList<String> files_to_delete;
+    
     /** 
      * The unit of processing work to be performed for the MobileBuilder module.
      * 
@@ -147,22 +152,32 @@ public class MobileBuilder implements Command
             	
             	jsviewer= new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
             	js = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication/app/urn_resource_map.xml");
-            	
-                if (!(jsviewer.exists()))
+            	//check if the directory exists if it does use it and set the file object to null so it will not be deleted
+            	// else copy it from the jar and delete it when finished processing.
+            	if (!(jsviewer.exists()))
                 {
                 	//System.out.println("Path directory creation " + jsapp.getAbsolutePath());
                 	jsviewer.mkdirs();
+                	cd.CopyJarFiles(this.getClass(), "ViewerApplication", jsviewer.getAbsolutePath());
                 }
-                
+                else
+                {
+                	jsviewer = null;
+                }
+            	
+            	//check if the directory exists if it does use it and set the file object to null so it will not be deleted
+            	// else copy it from the jar and delete it when finished processing.
                 xsldir = new File(System.getProperty("user.dir") + File.separator + "xsl");
                 if (!(xsldir.exists()))
                 {
                 	//System.out.println("jsviewer directory creation " + jsviewer.getAbsolutePath());
                 	xsldir.mkdirs();
+                	cd.CopyJarFiles(this.getClass(), "xsl", xsldir.getAbsolutePath());
                 }
-                
-                cd.CopyJarFiles(this.getClass(), "ViewerApplication", jsviewer.getAbsolutePath());
-                cd.CopyJarFiles(this.getClass(), "xsl", xsldir.getAbsolutePath());
+                else
+                {
+                	xsldir = null;
+                }
                 
                 XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
                 FileWriter writer;
@@ -281,20 +296,30 @@ public class MobileBuilder implements Command
             {
                 //copy over css and jquery mobile files
                 
-                /*
-                File mobiApp_loc = new File(System.getProperty("user.dir") + File.separator +
-                "mobiApp");
-                cd.copyDirectory(mobiApp_loc, newMobApp);
-                */
                 
-                cd.CopyJarFiles(this.getClass(),"mobiApp",newMobApp.getAbsolutePath());
-                
+                File mobiApp_loc = new File(System.getProperty("user.dir") + File.separator + "mobiApp");
+                //check if the directory exists if it doee use it else copy it from the jar
+                if (mobiApp_loc.exists())
+                {
+                	cd.copyDirectory(mobiApp_loc, newMobApp);
+                }
+                else
+                {
+                	cd.CopyJarFiles(this.getClass(),"mobiApp",newMobApp.getAbsolutePath());
+                }
                 //copy common.css from the ViewerApplication to the mobile output
-                //File common_css = new File(System.getProperty("user.dir") + File.separator + 
-                //        "ViewerApplication" + File.separator + "app" + File.separator + "common.css");
-                //cd.copyDirectory(common_css, newMobApp);
                 
-                cd.CopyJarFile(this.getClass(), "app/common.css", newMobApp.getAbsolutePath(), "ViewerApplication");
+                File common_css = new File(System.getProperty("user.dir") + File.separator +   "ViewerApplication" + File.separator + "app" + File.separator + "common.css");
+                //check if the directory exists if it does use it else copy it from the jar
+                if (common_css.exists())
+                {
+                	cd.copyDirectory(common_css, newMobApp);
+                }
+                else
+                {
+                	cd.CopyJarFile(this.getClass(), "app/common.css", newMobApp.getAbsolutePath(), "ViewerApplication");
+                }
+                
                 
                 //copy over media files
                 File new_media_loc = new File(newMobApp.getAbsolutePath() + File.separator + "media");
@@ -319,20 +344,20 @@ public class MobileBuilder implements Command
             }
             
             //delete the urn map from the ViewerApplication location
-            
+            ArrayList<String> files_to_delete = new ArrayList<String>();
             if (jsviewer != null)
             {
-            	DeleteDirectoryOnExit(jsviewer);
+            	DeleteDirectoryOnExit(jsviewer,files_to_delete);
             }
             if (js != null)
             {
-            	js.deleteOnExit();
+            	files_to_delete.add(js.getAbsolutePath());
             }
             if (xsldir != null)
             {
-            	DeleteDirectoryOnExit(xsldir);
+            	DeleteDirectoryOnExit(xsldir,files_to_delete);
             }
-            
+            ctx.put(Keys.MOBLIE_FILES_TO_DELETE,files_to_delete);
             System.out.println("MobileBuilder processing was successful");
             
         }
@@ -344,9 +369,9 @@ public class MobileBuilder implements Command
      * Iterates over a directory and sets the files inside to be deleted when the program exits
      * @param dir the directory file to delete
      */
-    private void DeleteDirectoryOnExit(File dir)
+    private void DeleteDirectoryOnExit(File dir,ArrayList<String> files_to_delete)
     {
-    	dir.deleteOnExit();
+    	files_to_delete.add(dir.getAbsolutePath());
     	if (dir.isDirectory())
     	{
     		String files[] = dir.list();
@@ -355,11 +380,11 @@ public class MobileBuilder implements Command
         		File innerFile = new File(dir, files[f]);
         		if (innerFile.isDirectory())
         		{
-        			DeleteDirectoryOnExit(innerFile);
+        			DeleteDirectoryOnExit(innerFile,files_to_delete);
         		}
         		else
         		{
-        			innerFile.deleteOnExit();
+        			files_to_delete.add(innerFile.getAbsolutePath());
         		}
         	}
     	}
