@@ -30,7 +30,11 @@
             <pathelement location="${lib}/commons-logging-1.1.1.jar"/> 
             <pathelement location="${lib}/core-renderer.jar"/>                
             <pathelement location="${lib}/iText-5.0.6.jar"/>                
-            <pathelement location="${lib}/xml-apis-xerces-2.9.1.jar"/>               
+            <pathelement location="${lib}/xml-apis-xerces-2.9.1.jar"/>
+			<pathelement location="${lib}/serializer.jar"/>
+			<pathelement location="${lib}/xalan.jar"/>
+			<pathelement location="${lib}/xercesImpl.jar"/>
+			<pathelement location="${lib}/xml-apis.jar"/>
         </classpath>
         </javac>
     	<mkdir dir="${build.dir}/bridge/toolkit/commands/mobiApp"/>
@@ -116,6 +120,10 @@
             <zipfileset includes="**" src="${lib}/jdom.jar" />
             <zipfileset includes="**" src="${lib}/jaxen-1.1.1.jar" />
         	<zipfileset includes="**" src="${lib}/xml-apis-xerces-2.9.1.jar" />
+        	<zipfileset includes="**" src="${lib}/serializer.jar"/>
+        	<zipfileset includes="**" src="${lib}/xalan.jar"/>
+        	<zipfileset includes="**" src="${lib}/xercesImpl.jar"/>
+        	<zipfileset includes="**" src="${lib}/xml-apis.jar"/>
         </jar>
 
     </target>
@@ -145,6 +153,10 @@
             <zipfileset includes="**" src="${lib}/jdom.jar" />
             <zipfileset includes="**" src="${lib}/jaxen-1.1.1.jar" />
         	<zipfileset includes="**" src="${lib}/xml-apis-xerces-2.9.1.jar" />
+        	<zipfileset includes="**" src="${lib}/serializer.jar"/>
+        	<zipfileset includes="**" src="${lib}/xalan.jar"/>
+        	<zipfileset includes="**" src="${lib}/xercesImpl.jar"/>
+        	<zipfileset includes="**" src="${lib}/xml-apis.jar"/>
         </jar>
 
     </target>
