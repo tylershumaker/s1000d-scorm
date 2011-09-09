@@ -174,7 +174,6 @@ public class PreProcess implements Command
                     + " command to be executed was null");
             return PROCESSING_COMPLETE;
         }
-        
         return CONTINUE_PROCESSING;
     }
 

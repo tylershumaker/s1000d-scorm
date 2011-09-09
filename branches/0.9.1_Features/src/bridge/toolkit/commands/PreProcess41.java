@@ -74,6 +74,7 @@ public class PreProcess41 implements Command
 
     public boolean execute(Context ctx)
     {
+    	System.out.println("Executing PreProcess 41");
         if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
         	/*
@@ -184,7 +185,6 @@ public class PreProcess41 implements Command
             System.out.println("One of the required Context entries for the " + this.getClass().getSimpleName() + " command to be executed was null");
             return PROCESSING_COMPLETE;
         }
-
         return CONTINUE_PROCESSING;
     }
 

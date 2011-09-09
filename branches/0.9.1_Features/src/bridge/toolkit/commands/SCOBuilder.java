@@ -86,6 +86,7 @@ public class SCOBuilder implements Command
     @Override
     public boolean execute(Context ctx)
     {
+    	System.out.println("Executing SCOBuilder");
     	commonFiles = new ArrayList<String>();
     	//System.out.println("Executing SCOBuilder");
     	//System.out.flush();

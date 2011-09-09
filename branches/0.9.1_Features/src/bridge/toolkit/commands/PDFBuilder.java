@@ -68,7 +68,7 @@ public class PDFBuilder implements Command
     @Override
     public boolean execute(Context ctx) 
     {
-
+    	System.out.println("Executing PDF Builder");
         String resource_dir = (String) ctx.get(Keys.RESOURCE_PACKAGE);
         ContentPackageCreator cpc = new ContentPackageCreator(resource_dir);
         try
@@ -273,6 +273,7 @@ public class PDFBuilder implements Command
         	System.out.println("Error-----");
             System.out.println(e.getMessage());
         }
+        
         return false;
     }
 
