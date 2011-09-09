@@ -109,6 +109,7 @@ public class MobileBuilder implements Command
     @Override
     public boolean execute(Context ctx)
     {
+    	System.out.println("Executing Mobile Builder");
         if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
         	CopyDirectory cd = new CopyDirectory();
@@ -366,7 +367,7 @@ public class MobileBuilder implements Command
     }
     
     /**
-     * Iterates over a directory and sets the files inside to be deleted when the program exits
+     * Iterates over a directory and sets the files inside to be deleted when processing is complete
      * @param dir the directory file to delete
      */
     private void DeleteDirectoryOnExit(File dir,ArrayList<String> files_to_delete)

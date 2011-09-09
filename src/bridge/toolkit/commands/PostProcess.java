@@ -35,7 +35,7 @@ public class PostProcess implements Command
     @Override
     public boolean execute(Context ctx)
     {
-
+    	System.out.println("Executing Post Process");
         if ((ctx.get(Keys.XML_SOURCE) != null) &&
             (ctx.get(Keys.CP_PACKAGE) != null))
         {
@@ -125,7 +125,6 @@ public class PostProcess implements Command
                     + " command to be executed was null");
             return PROCESSING_COMPLETE;
         }
-
         return CONTINUE_PROCESSING;
     }
 
