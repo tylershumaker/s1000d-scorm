@@ -98,8 +98,10 @@ public class PreProcess41 implements Command
             {
                 new40 = getDoc(new File(ctx.get(Keys.SCPM_FILE).toString()));
                 if (processXPathSingleNode("/scormContentPackage/content/scoEntry/scoEntryItem", new40) == null)
+                {
+                	System.out.println(" PreProcess 41 Complete");
                     return CONTINUE_PROCESSING;
-
+                }
                 tempSCPM = File.createTempFile(new File(ctx.get(Keys.SCPM_FILE).toString()).getName(), ".xml");
                 copy(ctx.get(Keys.SCPM_FILE).toString(), tempSCPM.toString());
                 ctx.put(Keys.SCPM_FILE, tempSCPM.getAbsolutePath());
