@@ -41,6 +41,15 @@ function startSCO()
 	        initialized = doInitialize();
 	        is_initialized = true;
 	    }
+	    btnBack.disabled = true;
+	    if (scoPages[loc].length == 1)
+	    {
+	    	btnNext.disabled = true;
+	    }
+	    if (scoPages[loc].length > 1)
+	    {
+	    	doSetValue("cmi.completion_status", "incomplete");
+	    }
 	}
 
 	function scoTerminate()
@@ -70,37 +79,41 @@ function startSCO()
 	}
 	
 	function goNext()
-	{  
+	{
+       btnBack.disabled = false;
 	   if (count < scoPages[loc].length)
 	   {
 	       var nextPage = "";
 	       nextPage = scoPages[loc][count];
 	       count++;
 	       setStatus("false");
-	       parent.content.location=nextPage;
-	      
+	       parent.content.location=nextPage;  
 	   }
 	   if (count == scoPages[loc].length)
 	   {   
-	       setStatus("true");
-	       scoTerminate();
+		   setStatus("true");
+		   if (is_initialized != false)
+		   {
+			   scoTerminate();
+		   }
 	       btnNext.disabled = true;
 	   } 
 	   parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 	}
 	
 	function goBack()
-	{   
-
-	    //btnNext.disabled = false;
+	{
+        btnNext.disabled = false;
+		//btnNext.disabled = false;
+	    if (count > 1)
+	    {
+	    	count--;
+	    	var backPage = scoPages[loc][count-1];
+	        parent.content.location=backPage;
+	    }
 	    if (count == 1)
 	    {
-	    }
-	    else
-	    {   
-	        count--;
-	        var backPage = scoPages[loc][count-1];
-		parent.content.location=backPage;
+	    	btnBack.disabled = true;			
 	    }
 	    parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 	}

@@ -96,23 +96,22 @@ public class Controller
         
         try
         {
-            if(args.length>2 && args[2] != null && args[2].equals("-mobile"))
-                toolkit = sampleCatalog.getCommand("Mobile");
-            else if(args.length>2 && args[2] != null && args[2].equals("-pdf"))
+            if(args.length>2 && args[2] != null && args[2].equals("-pdf"))
                 toolkit = sampleCatalog.getCommand("PDF");
-            else if(args.length>3 && args[3] != null && args[3].equals("-mobile"))
-            {
-                toolkit = sampleCatalog.getCommand("Mobile");
-                ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
-            }
             else if(args.length>3 && args[3] != null && args[3].equals("-pdf"))
             {
                 toolkit = sampleCatalog.getCommand("PDF");
                 ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
             }
+            else if (args.length>2 && args[2] != null && args[2].equals("-SCORMHTML"))
+            	ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
+            else if (args.length>3 && args[3] != null && args[3].equals("-SCORMHTML"))
+            {
+            	ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
+            	ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
+            }
             else if(args.length>2 && args[2] != null)
             	ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
-            
             
             toolkit.execute(ctx);
         }
