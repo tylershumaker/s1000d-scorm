@@ -1,3 +1,4 @@
+@import url("assessment.css");
 .bodyText
 {
 	font-family: Arial;
@@ -291,4 +292,68 @@ intendentPadding
 	font-family: Arial, Helvetica, sans-serif;
 	text-indent: 20px;
 	font-size: 11pt;
+}
+.slide
+{
+	border: solid grey .5pt;
+	padding: 5px;
+	display: none;
+	background-color: #CCCCCC;
+}
+
+#slide1 /* This needs set to block so original slide will show up */
+{
+	display: block;
+}
+.figure
+{
+	
+}
+.figureDescription
+{
+	font-size: 10pt;
+	margin: 20px 10px 20px 10px;
+	border: 1px solid black;
+	padding: 5px;
+	background-color: white;
+}
+.slideNavigation
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+.previousButton
+{
+	/* do I need the following to make previous arrow?*/
+  	width: 0;
+	height: 0;
+	/*border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid black;*/
+	/* border-color: transparent black transparent transparent; */
+	border-color: transparent black transparent transparent;
+	border-style: solid;
+	border-width: 20px;
+	margin-right: 10px;
+}
+.nextButton
+{
+	/* do I need the following to make next arrow?*/
+	width: 0;
+	height: 0;
+	/*border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid black;*/
+	border-color: transparent transparent transparent black;
+	border-style: solid;
+	border-width: 20px;
+	margin-left: 10px;
+}
+.previousButton:hover
+{
+	border-right: #333333;
+}
+.nextButton:hover
+{
+	border-left: #333333;
 }

@@ -52,4 +52,9 @@ public class Keys
      * URN values for the resources to the file names.
      */
     public static final String URN_MAP = "urn_resource_map";
+    
+    /**
+     * String that represents whether or not to render in html
+     */
+    public static final String OUTPUT_TYPE = null; 
 }

@@ -64,6 +64,7 @@ var _GeneralException = 101;
 var _GeneralInitializationFailure = 102;
 var _AlreadyInitialized = 103;
 var _ContentInstanceTerminated = 104;
+var _NotInitialized = 105;
 var _GeneralTerminationFailure = 111;
 var _TerminationBeforeInitialization = 112;
 var _TerminationAfterTermination = 113;
