@@ -299,7 +299,7 @@ public class MobileBuilder implements Command
                 
                 
                 File mobiApp_loc = new File(System.getProperty("user.dir") + File.separator + "mobiApp");
-                //check if the directory exists if it doee use it else copy it from the jar
+                //check if the directory exists if it does use it else copy it from the jar
                 if (mobiApp_loc.exists())
                 {
                 	cd.copyDirectory(mobiApp_loc, newMobApp);

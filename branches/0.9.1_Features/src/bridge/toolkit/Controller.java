@@ -93,26 +93,75 @@ public class Controller
 //        ctx.put(Keys.RESOURCE_PACKAGE, "c:\\toolkit_demo\\resource_package_slim\\");
         ctx.put(Keys.SCPM_FILE, args[0]);
         ctx.put(Keys.RESOURCE_PACKAGE, args[1]);
-        
         try
         {
-            if(args.length>2 && args[2] != null && args[2].equals("-pdf"))
-                toolkit = sampleCatalog.getCommand("PDF");
-            else if(args.length>3 && args[3] != null && args[3].equals("-pdf"))
+        	if (args.length > 3)
+        	{
+        		if (args[2] != null && args[2].equalsIgnoreCase("-scormflash"))
+  				{
+        			toolkit = sampleCatalog.getCommand("SCORM");
+        			ctx.put(Keys.OUTPUT_TYPE, null);
+   				}
+        		else if (args[2] != null && args[2].equalsIgnoreCase("-scormhtml"))
+  				{
+        			toolkit = sampleCatalog.getCommand("SCORM");
+        			ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
+   				}
+        		else if (args[2] != null && args[2].equalsIgnoreCase("-mobile"))
+  				{
+        			toolkit = sampleCatalog.getCommand("Mobile");
+   				}
+        		else if (args[2] != null && args[2].equalsIgnoreCase("-pdfinstructor"))
+  				{
+        			toolkit = sampleCatalog.getCommand("PDF");
+                    ctx.put(Keys.PDF_OUTPUT_OPTION,"-instructor");
+   				}
+        		else if (args[2] != null && args[2].equalsIgnoreCase("-pdfstudent"))
+  				{
+        			toolkit = sampleCatalog.getCommand("PDF");
+                    ctx.put(Keys.PDF_OUTPUT_OPTION,"-student");
+   				}
+        		
+        		if (args.length > 4 && args[3] != null)
+        		{
+        			ctx.put(Keys.OUTPUT_DIRECTORY, args[3]);
+        		}
+        	}
+        	
+        	/*
+            if(args.length>2 && args[2] != null && args[2].equals("-mobile"))
+                toolkit = sampleCatalog.getCommand("Mobile");
+            else if(args.length>2 && args[2] != null && args[2].equals("-pdfstudent"))
             {
                 toolkit = sampleCatalog.getCommand("PDF");
+                ctx.put(Keys.PDF_OUTPUT_OPTION,"-student");
+            }
+            else if(args.length>2 && args[2] != null && args[2].equals("-pdfinstructor"))
+            {
+                toolkit = sampleCatalog.getCommand("PDF");
+                ctx.put(Keys.PDF_OUTPUT_OPTION,"-instructor");
+            }
+            else if(args.length>3 && args[3] != null && args[3].equals("-mobile"))
+            {
+                toolkit = sampleCatalog.getCommand("Mobile");
                 ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
             }
-            else if (args.length>2 && args[2] != null && args[2].equals("-SCORMHTML"))
-            	ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
-            else if (args.length>3 && args[3] != null && args[3].equals("-SCORMHTML"))
+            else if(args.length>3 && args[3] != null && args[3].equals("-pdfstudent"))
             {
-            	ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
-            	ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
+                toolkit = sampleCatalog.getCommand("PDF");
+                ctx.put(Keys.PDF_OUTPUT_OPTION,"-student");
+                ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
+            }
+            else if(args.length>3 && args[3] != null && args[3].equals("-pdfinstructor"))
+            {
+                toolkit = sampleCatalog.getCommand("PDF");
+                ctx.put(Keys.PDF_OUTPUT_OPTION,"-instructor");
+                ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
             }
             else if(args.length>2 && args[2] != null)
             	ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
             
+        	*/
             toolkit.execute(ctx);
         }
         catch (Exception e)
@@ -121,7 +170,6 @@ public class Controller
             e.printStackTrace();
             System.out.println(e.getCause().toString());
         }
-
     }
 
 }

@@ -6,6 +6,7 @@
 package bridge.toolkit.commands;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,6 +25,8 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jdom.xpath.XPath;
 import org.xhtmlrenderer.pdf.ITextRenderer;
+
+import com.itextpdf.text.DocumentException;
 
 import bridge.toolkit.packaging.ContentPackageCreator;
 import bridge.toolkit.util.CopyDirectory;
@@ -55,7 +58,13 @@ public class PDFBuilder implements Command
     /**
      * CSS that is applied to the data modules to produce the PDF output
      */
-    final String PDFSTYLESHEET = "s1000d.css";
+    final String STUDENTPDFSTYLESHEET = "s1000d_student.css";
+    
+    
+    /**
+     * CSS that is applied to the data modules to produce the PDF output
+     */
+    final String INSTRUCTORPDFSTYLESHEET = "s1000d_instructor.css";
     
     /**
      * Message that is returned if the PDFBuilder is unsuccessful.
@@ -87,8 +96,9 @@ public class PDFBuilder implements Command
             e1.printStackTrace();
             return PROCESSING_COMPLETE;
         }
+        
         scpm_file = (String) ctx.get(Keys.SCPM_FILE);
-        //System.out.println(src_dir.getAbsolutePath());
+        
         List<File> src_files = new ArrayList<File>();
         try
         {
@@ -114,167 +124,184 @@ public class PDFBuilder implements Command
         }
 
         urn_map = URNMapper.writeURNMap(src_files, "");
+        String Stylesheet = ""; 
+        try
+        {
+	        //Apply css to the data modules
+	        StylesheetApplier sa = new StylesheetApplier();
+	        if (((String)ctx.get(Keys.PDF_OUTPUT_OPTION)) == "-instructor")
+	        {
+	        	sa.applyStylesheetToDMCs(src_dir, INSTRUCTORPDFSTYLESHEET, "css", " media='all'");
+	        	Stylesheet = INSTRUCTORPDFSTYLESHEET;
+	        }
+	        else
+	        {
+	        	sa.applyStylesheetToDMCs(src_dir, STUDENTPDFSTYLESHEET, "css", " media='all'");
+	        	Stylesheet = STUDENTPDFSTYLESHEET;
+	        }
+        }
+        catch (JDOMException e)
+        {
+            System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
+        catch (IOException e)
+        {
+        	System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
+        
+        //Copy the css file to the data modules location
+        try
+        {
+	        CopyDirectory cd = new CopyDirectory();
+	        //check if the directory exists if it does use it else copy it from the jar
+	        File pdfCss = new File(System.getProperty("user.dir") + File.separator + "pdfCSS" + File.separator + Stylesheet);
+	        if (pdfCss.exists())
+	        {
+	        	cd.copyDirectory(pdfCss, new File(src_dir +File.separator + "resources" +File.separator + "s1000d"));
+	        }
+	        else
+	        {
+	        	cd.CopyJarFiles(this.getClass(), "pdfCSS", src_dir +File.separator + "resources" +File.separator + "s1000d");
+	        }
+        }
+        catch (FileNotFoundException e)
+        {
+        	System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
+        catch (IOException e)
+        {
+        	System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
         
         try
         {
-            
-        
-        //Apply css to the data modules
-        StylesheetApplier sa = new StylesheetApplier();
-        sa.applyStylesheetToDMCs(src_dir, PDFSTYLESHEET, "css", " media='all'");
-
-        //Copy the css file to the data modules location
-        CopyDirectory cd = new CopyDirectory();
-        //check if the directory exists if it does use it else copy it from the jar
-        File pdfCss = new File(System.getProperty("user.dir") + File.separator + "pdfCSS" + File.separator + "s1000d.css");
-        if (pdfCss.exists())
+	        String outputPath = "";
+	        if (ctx.get(Keys.OUTPUT_DIRECTORY) != null)
+	        {
+	        	outputPath = (String)ctx.get(Keys.OUTPUT_DIRECTORY);
+	        	if (outputPath.length() > 0)
+	        	{
+	        		outputPath = outputPath + File.separator;
+	        	}
+	        }
+	        
+	        String outputFile = outputPath + "doc.pdf";
+	        OutputStream os = new FileOutputStream(outputFile);
+	        ITextRenderer renderer = new ITextRenderer();
+	        
+	        DMParser dmp = new DMParser();
+	        boolean created = false;
+	        
+	        XPath xp = XPath.newInstance("//scoEntry[@scoEntryType='scot01']");
+	        @SuppressWarnings("unchecked")
+	        List<Element> scos = xp.selectNodes(dmp.getDoc(new File(scpm_file)));
+	
+	        Iterator<Element> iterator = scos.iterator();
+	        while(iterator.hasNext())
+	        {
+	            Element sco = iterator.next();
+	            sco.detach();
+	            Document temp = new Document(sco);
+	            List<String> dms = dmp.searchForDmRefs(temp);
+	            Iterator<String> childIterator = dms.iterator();
+	            
+	            while(childIterator.hasNext())
+	            {
+	                String urnDM = childIterator.next();
+	                xp = XPath.newInstance("//urn[@name='URN:S1000D:"+urnDM+"']");
+	                Element urn = (Element)xp.selectSingleNode(urn_map);
+	
+	                File dataModule = new File(src_dir + File.separator + "resources" + File.separator +
+	                        "s1000d" + File.separator + urn.getChild("target").getValue());
+	                
+	                xp = XPath.newInstance("//graphic");
+	                Document dmDoc = dmp.getDoc(dataModule);
+	                @SuppressWarnings("unchecked")
+	                List<Element> graphics = xp.selectNodes(dmDoc);
+	                
+	                Iterator<Element> graphicIterator = graphics.iterator();
+	                while(graphicIterator.hasNext())
+	                {
+	                    Element graphic = graphicIterator.next();
+	                    Attribute infoEntityIdent = graphic.getAttribute("infoEntityIdent");
+	                    
+	                    Element graphicParent = graphic.getParentElement();
+	                    Element img = new Element("img");
+	                    Attribute src = new Attribute("src", "file:///" + src_dir + File.separator + "resources" + File.separator +
+	                        "s1000d" + File.separator + infoEntityIdent.getValue() + ".jpg");
+	                    img.setAttribute(src);
+	                    graphicParent.addContent(img);
+	
+	                    XMLOutputter outputter = new XMLOutputter(Format.getRawFormat());
+	
+	                    File updatedDM = new File(src_dir + File.separator +"resources" + 
+	                                       File.separator + "s1000d" + File.separator +
+	                                       dataModule.getName());
+	                    FileWriter writer = new FileWriter(updatedDM);
+	                    outputter.output(dmDoc, writer);
+	                    writer.close();
+	                }
+	                
+	
+	                renderer.setDocument(dataModule);
+	                renderer.layout();
+	                if(!created)
+	                {
+	                    renderer.createPDF(os, false);
+	                    created = true;
+	                }
+	                else
+	                {
+	                    renderer.writeNextDocument();
+	                }
+	            }
+	        }
+	
+	
+	        // complete the PDF
+	        renderer.finishPDF();
+	        os.close(); 
+	        System.out.println("Successfully created PDF");
+        }
+        catch (JDOMException e)
         {
-        	cd.copyDirectory(pdfCss, new File(src_dir +File.separator + "resources" +File.separator + "s1000d"));
+            System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
         }
-        else
+        catch (DocumentException e)
         {
-        	cd.CopyJarFiles(this.getClass(), "pdfCSS", src_dir +File.separator + "resources" +File.separator + "s1000d");
+        	System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
         }
-        
-        String outputPath = "";
-        if (ctx.get(Keys.OUTPUT_DIRECTORY) != null)
+        catch (FileNotFoundException e)
         {
-        	outputPath = (String)ctx.get(Keys.OUTPUT_DIRECTORY);
-        	if (outputPath.length() > 0)
-        	{
-        		outputPath = outputPath + File.separator;
-        	}
+        	System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
         }
-        
-        String outputFile = outputPath + "doc.pdf";
-        OutputStream os = new FileOutputStream(outputFile);
-        ITextRenderer renderer = new ITextRenderer();
-        
-        DMParser dmp = new DMParser();
-        boolean created = false;
-        
-        XPath xp = XPath.newInstance("//scoEntry[@scoEntryType='scot01']");
-        @SuppressWarnings("unchecked")
-        List<Element> scos = xp.selectNodes(dmp.getDoc(new File(scpm_file)));
-
-        Iterator<Element> iterator = scos.iterator();
-        while(iterator.hasNext())
+        catch (IOException e)
         {
-            Element sco = iterator.next();
-            sco.detach();
-            Document temp = new Document(sco);
-            List<String> dms = dmp.searchForDmRefs(temp);
-            Iterator<String> childIterator = dms.iterator();
-            
-            while(childIterator.hasNext())
-            {
-                String urnDM = childIterator.next();
-                //System.out.println(urnDM);
-                //file:///C:/workspace2/0.9.1_Features/test_files/resource_package_slim/ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00029-A-001-01.jpg 
-                xp = XPath.newInstance("//urn[@name='URN:S1000D:"+urnDM+"']");
-                Element urn = (Element)xp.selectSingleNode(urn_map);
-
-                File dataModule = new File(src_dir + File.separator + "resources" + File.separator +
-                        "s1000d" + File.separator + urn.getChild("target").getValue());
-                
-                xp = XPath.newInstance("//graphic");
-                Document dmDoc = dmp.getDoc(dataModule);
-                @SuppressWarnings("unchecked")
-                List<Element> graphics = xp.selectNodes(dmDoc);
-                
-                Iterator<Element> graphicIterator = graphics.iterator();
-                while(graphicIterator.hasNext())
-                {
-                    Element graphic = graphicIterator.next();
-                    Attribute infoEntityIdent = graphic.getAttribute("infoEntityIdent");
-                    
-                    Element graphicParent = graphic.getParentElement();
-                    Element img = new Element("img");
-                    Attribute src = new Attribute("src", "file:///" + src_dir + File.separator + "resources" + File.separator +
-                        "s1000d" + File.separator + infoEntityIdent.getValue() + ".jpg");
-                    img.setAttribute(src);
-                    graphicParent.addContent(img);
-
-                    XMLOutputter outputter = new XMLOutputter(Format.getRawFormat());
-
-                    File updatedDM = new File(src_dir + File.separator +"resources" + 
-                                       File.separator + "s1000d" + File.separator +
-                                       dataModule.getName());
-                    FileWriter writer = new FileWriter(updatedDM);
-                    outputter.output(dmDoc, writer);
-                    writer.close();
-                }
-                
-
-                renderer.setDocument(dataModule);
-                renderer.layout();
-                if(!created)
-                {
-                    renderer.createPDF(os, false);
-                    created = true;
-                }
-                else
-                {
-                    renderer.writeNextDocument();
-                }
-            }
+        	System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
         }
-
-
-//      String outputFile = "out/doc.pdf";
-////      File out = new File(outputFile);
-////      if(!out.exists())
-////          out.mkdirs();
-//      OutputStream os = new FileOutputStream(outputFile);
-//      ITextRenderer renderer = new ITextRenderer();        
-//        //\mobile\output17\1
-//      File test = new File(System.getProperty("user.dir")+ "\\mobile\\output3\\8");
-//      File[] list = test.listFiles();
-//      boolean created = false;
-//      for(File temp: list)
-//      {
-//          if(temp.getName().endsWith(".htm"))
-//          {
-//              FileInputStream is = new FileInputStream(temp);
-//              Tidy tidy = new Tidy();
-//              tidy.setXHTML(true);
-//              ByteArrayOutputStream tidyOut = new ByteArrayOutputStream();
-//              tidy.parse(is, tidyOut);
-//
-//              InputStream tidyIn = new ByteArrayInputStream(tidyOut.toByteArray());  
-//              DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-//              
-//              dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", Boolean.FALSE);  
-//              dbf.setFeature("http://xml.org/sax/features/validation", Boolean.FALSE);  
-//              DocumentBuilder db = dbf.newDocumentBuilder();  
-//              org.w3c.dom.Document doc = db.parse(tidyIn);  
-//              
-//              renderer.setDocument(doc, null);
-//              renderer.layout();
-//              
-//              if(!created)
-//              {
-//                  renderer.createPDF(os, false);
-//                  created = true;
-//              }
-//              else
-//              {
-//                  renderer.writeNextDocument();
-//              }
-//          }
-//      }
-        // complete the PDF
-        renderer.finishPDF();
-        os.close(); 
-        System.out.println("Successfully created PDF");
+        catch (Exception e) 
+        {
+        	System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
         }
-        catch (Exception e) {
-            // TODO: handle exception
-        	System.out.println("Error-----");
-            System.out.println(e.getMessage());
-        }
-        
-        return false;
+        return CONTINUE_PROCESSING;
     }
 
 }
