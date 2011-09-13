@@ -79,6 +79,11 @@ public class SCOBuilder implements Command
     final String CPSTYLESHEET = "app/s1000d_4.xslt";
     
     /**
+     * SCORM CP XSLT StyleSheet to be applied to the data modules (HTML option)
+     */
+    final String CPHTMLSTYLESHEET = "app/s1000d_4html.xslt";
+    
+    /**
      * The unit of processing work to be performed for the SCOBuilder module.
      * 
      * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
@@ -126,10 +131,18 @@ public class SCOBuilder implements Command
             {
                 //copy necessary files over to CP folder
                 copyViewerAppFiles();
+                
                 //apply the SCORM CP XSLT StyleSheet to the data modules
                 StylesheetApplier sa = new StylesheetApplier();
-                sa.applyStylesheetToDMCs(cpPackage, CPSTYLESHEET);
-            
+                if (ctx.get(Keys.OUTPUT_TYPE) == "mobileCourse" || ctx.get(Keys.OUTPUT_TYPE) == "SCORMHTML")
+                {
+                	sa.applyStylesheetToDMCs(cpPackage, CPHTMLSTYLESHEET);
+                }
+                else
+                {
+                	sa.applyStylesheetToDMCs(cpPackage, CPSTYLESHEET);
+                }
+                
                 //create list.js, add to CP
                 dmp = new DMParser();
                 manifest = (Document)ctx.get(Keys.XML_SOURCE);
@@ -168,8 +181,7 @@ public class SCOBuilder implements Command
                 ioe.printStackTrace();
                 return PROCESSING_COMPLETE;  
             }
-
-            
+          
             ctx.put(Keys.XML_SOURCE, manifest);
             System.out.println("SCOBuilder processing was successful");
         }
@@ -240,7 +252,9 @@ public class SCOBuilder implements Command
         {
             if(srcFolder.getParent().contains("app") || 
                srcFolder.getParent().contains("Assessment_templates"))
-            		commonFiles.add(srcFolder.getAbsolutePath());
+            {
+            	commonFiles.add(srcFolder.getAbsolutePath());          	
+            }
         }
     }
     
