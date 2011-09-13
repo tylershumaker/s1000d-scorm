@@ -250,3 +250,8 @@ table.checkboxClass label
 	margin-left: 25px;
 	display: block;
 }
+.questionCount
+{
+	font-size: 10pt;
+	float: right;
+}
