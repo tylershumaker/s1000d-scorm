@@ -51,7 +51,7 @@ public class ControllerJFrame extends javax.swing.JFrame
      * set of commands that should be performed.
      */
     private Catalog catalog;
-    Command toolkit;
+    Command toolkit = null;
     Context ctx;
     String currentTime;
     Catalog sampleCatalog;
@@ -75,8 +75,7 @@ public class ControllerJFrame extends javax.swing.JFrame
 
     }
 
-
-    @SuppressWarnings("unchecked")
+    
     private void initComponents() {
 
         OutputButtonGroup = new javax.swing.ButtonGroup();
@@ -92,34 +91,35 @@ public class ControllerJFrame extends javax.swing.JFrame
         ResourceBrowseButton = new javax.swing.JButton();
         OutputDirectoryBrowseButton = new javax.swing.JButton();
         OutputLabel = new javax.swing.JLabel();
-        ScormRadioButton = new javax.swing.JRadioButton();
+        ScormFlashRadioButton = new javax.swing.JRadioButton();
         MobileRadioButton = new javax.swing.JRadioButton();
-        PDFRadioButton = new javax.swing.JRadioButton();
+        PDFStudentRadioButton = new javax.swing.JRadioButton();
         RunButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        PDFInstructorRadioButton = new javax.swing.JRadioButton();
+        ScormHTMLRadioButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        
         ImageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bridge/toolkit/s1-scorm-bridge-logo-408x81.jpg"))); // NOI18N
 
-        TitleLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        TitleLabel.setFont(new java.awt.Font("Tahoma", 1, 18));
         TitleLabel.setForeground(new java.awt.Color(0, 102, 0));
         TitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TitleLabel.setText("S1000D Transformation Toolkit Beta");
 
-        SCPMLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        SCPMLabel.setFont(new java.awt.Font("Arial", 1, 12));
         SCPMLabel.setText("SCPM");
 
-        ResourceLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ResourceLabel.setFont(new java.awt.Font("Arial", 1, 12));
         ResourceLabel.setText("Resource Package");
 
-        OutputDirectoryLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        OutputDirectoryLabel.setFont(new java.awt.Font("Arial", 1, 12));
         OutputDirectoryLabel.setText("Output Directory");
 
-        SCPMBrowseButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        SCPMBrowseButton.setFont(new java.awt.Font("Arial", 1, 12));
         SCPMBrowseButton.setText("Browse..");
         SCPMBrowseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +127,7 @@ public class ControllerJFrame extends javax.swing.JFrame
             }
         });
 
-        ResourceBrowseButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ResourceBrowseButton.setFont(new java.awt.Font("Arial", 1, 12));
         ResourceBrowseButton.setText("Browse..");
         ResourceBrowseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +135,7 @@ public class ControllerJFrame extends javax.swing.JFrame
             }
         });
 
-        OutputDirectoryBrowseButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        OutputDirectoryBrowseButton.setFont(new java.awt.Font("Arial", 1, 12));
         OutputDirectoryBrowseButton.setText("Browse..");
         OutputDirectoryBrowseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,20 +143,20 @@ public class ControllerJFrame extends javax.swing.JFrame
             }
         });
 
-        OutputLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        OutputLabel.setFont(new java.awt.Font("Arial", 1, 12));
         OutputLabel.setText("Output");
 
-        OutputButtonGroup.add(ScormRadioButton);
-        ScormRadioButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        ScormRadioButton.setText("SCORM Content Package");
-        ScormRadioButton.addActionListener(new java.awt.event.ActionListener() {
+        OutputButtonGroup.add(ScormFlashRadioButton);
+        ScormFlashRadioButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ScormFlashRadioButton.setText("SCORM w/ Flash Assessments");
+        ScormFlashRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ScormRadioButtonActionPerformed(evt);
+                ScormFlashRadioButtonActionPerformed(evt);
             }
         });
 
         OutputButtonGroup.add(MobileRadioButton);
-        MobileRadioButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        MobileRadioButton.setFont(new java.awt.Font("Arial", 1, 12));
         MobileRadioButton.setText("Mobile Web App");
         MobileRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,16 +164,16 @@ public class ControllerJFrame extends javax.swing.JFrame
             }
         });
 
-        OutputButtonGroup.add(PDFRadioButton);
-        PDFRadioButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        PDFRadioButton.setText("PDF");
-        PDFRadioButton.addActionListener(new java.awt.event.ActionListener() {
+        OutputButtonGroup.add(PDFStudentRadioButton);
+        PDFStudentRadioButton.setFont(new java.awt.Font("Arial", 1, 12));
+        PDFStudentRadioButton.setText("PDF Student");
+        PDFStudentRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PDFRadioButtonActionPerformed(evt);
+                PDFStudentRadioButtonActionPerformed(evt);
             }
         });
 
-        RunButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        RunButton.setFont(new java.awt.Font("Arial", 1, 12));
         RunButton.setText("Run");
         RunButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,18 +185,36 @@ public class ControllerJFrame extends javax.swing.JFrame
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        OutputButtonGroup.add(PDFInstructorRadioButton);
+        PDFInstructorRadioButton.setFont(new java.awt.Font("Arial", 1, 12));
+        PDFInstructorRadioButton.setText("PDF Instructor");
+        PDFInstructorRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PDFInstructorRadioButtonActionPerformed(evt);
+            }
+        });
+
+        OutputButtonGroup.add(ScormHTMLRadioButton);
+        ScormHTMLRadioButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ScormHTMLRadioButton.setText("SCORM w/ HTML Assessments");
+        ScormHTMLRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ScormHTMLRadioButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
+                .addContainerGap(169, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(TitleLabel)
                     .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(123, 123, 123))
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SCPMLabel)
                     .addComponent(ResourceLabel)
@@ -204,26 +222,31 @@ public class ControllerJFrame extends javax.swing.JFrame
                     .addComponent(OutputLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ScormRadioButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(MobileRadioButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(PDFRadioButton))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(OutputDirectoryField)
                         .addComponent(ResourceField)
-                        .addComponent(SCPMField, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(RunButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SCPMBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SCPMField, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
+                        .addComponent(OutputDirectoryField, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ScormFlashRadioButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(MobileRadioButton))
+                            .addComponent(ScormHTMLRadioButton))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PDFInstructorRadioButton)
+                            .addComponent(PDFStudentRadioButton))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ResourceBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(OutputDirectoryBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(33, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addComponent(OutputDirectoryBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SCPMBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(RunButton))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -235,8 +258,8 @@ public class ControllerJFrame extends javax.swing.JFrame
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SCPMField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SCPMBrowseButton)
-                    .addComponent(SCPMLabel))
+                    .addComponent(SCPMLabel)
+                    .addComponent(SCPMBrowseButton))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ResourceLabel)
@@ -245,25 +268,36 @@ public class ControllerJFrame extends javax.swing.JFrame
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(OutputDirectoryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(OutputDirectoryBrowseButton)
-                    .addComponent(OutputDirectoryLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RunButton)
-                    .addComponent(OutputLabel)
-                    .addComponent(ScormRadioButton)
-                    .addComponent(MobileRadioButton)
-                    .addComponent(PDFRadioButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(OutputDirectoryLabel)
+                    .addComponent(OutputDirectoryBrowseButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(OutputLabel)
+                            .addComponent(ScormFlashRadioButton)
+                            .addComponent(MobileRadioButton)
+                            .addComponent(PDFStudentRadioButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ScormHTMLRadioButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RunButton)
+                        .addGap(18, 18, 18)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(293, Short.MAX_VALUE)
+                .addComponent(PDFInstructorRadioButton)
+                .addGap(137, 137, 137))
         );
 
         pack();
-    }
+    }           
 
-    private void SCPMBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {
+    private void SCPMBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
     	int returnVal = SCPMFileChooser.showOpenDialog(ControllerJFrame.this);
 
         if (returnVal == JFileChooser.APPROVE_OPTION)
@@ -271,10 +305,9 @@ public class ControllerJFrame extends javax.swing.JFrame
             File file = SCPMFileChooser.getSelectedFile();
             SCPMField.setText(file.getAbsolutePath());
         }
-    }
+    }                                                
 
-    private void ResourceBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {
+    private void ResourceBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
     	ResourceFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnVal = ResourceFileChooser.showOpenDialog(ControllerJFrame.this);
 
@@ -283,10 +316,10 @@ public class ControllerJFrame extends javax.swing.JFrame
             File file = ResourceFileChooser.getSelectedFile();
             ResourceField.setText(file.getAbsolutePath());
         }
-    }
+    }                                                    
 
-    private void OutputDirectoryBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {
+    private void OutputDirectoryBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                            
+       
     	OutputFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnVal = OutputFileChooser.showOpenDialog(ControllerJFrame.this);
 
@@ -295,21 +328,31 @@ public class ControllerJFrame extends javax.swing.JFrame
             File file = OutputFileChooser.getSelectedFile();
             OutputDirectoryField.setText(file.getAbsolutePath());
         }
-    }
+    }                                                                                              
 
-    private void PDFRadioButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {
-    	outputType = "-pdf";
-    }
+    private void PDFStudentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        // TODO add your handling code here:
+        outputType = "-pdfstudent";
+    }                                                     
 
-    private void MobileRadioButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {
-    	outputType = "-mobile";
-    }
+    private void MobileRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+        outputType = "-mobile";
+    }                                                 
 
-    private void ScormRadioButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {
-    	outputType = "-scorm";
+    private void ScormFlashRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        // TODO add your handling code here:
+        outputType = "-scormflash";
+    }                                                
+
+    private void PDFInstructorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+        // TODO add your handling code here:
+        outputType = "-pdfinstructor";
+    }                                                        
+
+    private void ScormHTMLRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        outputType = "-scormhtml";
     }
 
     private void RunButtonActionPerformed(java.awt.event.ActionEvent evt)
@@ -318,17 +361,38 @@ public class ControllerJFrame extends javax.swing.JFrame
         ctx.put(Keys.SCPM_FILE, SCPMField.getText());
         ctx.put(Keys.RESOURCE_PACKAGE, ResourceField.getText());
         ctx.put(Keys.OUTPUT_DIRECTORY, OutputDirectoryField.getText());
-
         try
         {
+        	
+        	System.out.println("outputType " + outputType);
             if(outputType.equals("-mobile"))
+            {
                 toolkit = sampleCatalog.getCommand("Mobile");
-            else if(outputType.equals("-pdf"))
+            }
+            else if (outputType.equals("-scormflash"))
+            {
+            	toolkit = sampleCatalog.getCommand("SCORM");
+            	ctx.put(Keys.OUTPUT_TYPE, null);
+            }
+            else if (outputType.equals("-scormhtml"))
+            {
+            	toolkit = sampleCatalog.getCommand("SCORM");
+            	ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
+            }	
+            else if(outputType.equals("-pdfinstructor"))
+            {
+            	toolkit = sampleCatalog.getCommand("PDF");
+            	ctx.put(Keys.PDF_OUTPUT_OPTION,"-instructor");
+            }
+            else if(outputType.equals("-pdfstudent"))
+            {
                 toolkit = sampleCatalog.getCommand("PDF");
-            else
-                toolkit = sampleCatalog.getCommand("SCORM");
-            
-            toolkit.execute(ctx);
+                ctx.put(Keys.PDF_OUTPUT_OPTION,"-student");
+            }
+            if (toolkit != null)
+            {
+            	toolkit.execute(ctx);
+            }
         }
         catch (Exception e)
         {
@@ -388,7 +452,8 @@ public class ControllerJFrame extends javax.swing.JFrame
     private javax.swing.JTextField OutputDirectoryField;
     private javax.swing.JLabel OutputDirectoryLabel;
     private javax.swing.JLabel OutputLabel;
-    private javax.swing.JRadioButton PDFRadioButton;
+    private javax.swing.JRadioButton PDFInstructorRadioButton;
+    private javax.swing.JRadioButton PDFStudentRadioButton;
     private javax.swing.JButton ResourceBrowseButton;
     private javax.swing.JTextField ResourceField;
     private javax.swing.JLabel ResourceLabel;
@@ -396,7 +461,8 @@ public class ControllerJFrame extends javax.swing.JFrame
     private javax.swing.JButton SCPMBrowseButton;
     private javax.swing.JTextField SCPMField;
     private javax.swing.JLabel SCPMLabel;
-    private javax.swing.JRadioButton ScormRadioButton;
+    private javax.swing.JRadioButton ScormFlashRadioButton;
+    private javax.swing.JRadioButton ScormHTMLRadioButton;
     private javax.swing.JLabel TitleLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;

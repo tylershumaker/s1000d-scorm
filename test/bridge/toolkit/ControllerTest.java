@@ -74,27 +74,38 @@ public class ControllerTest
     public void testMain()
     {
         //4.1 - SCORM
-        String[] SCORM41 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
-                            System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1"};
+        String[] SCORM41FLASH = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+                            System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
+                            "-scormflash"};
+        String[] SCORM41HTML = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+                				 System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
+                				 "-scormhtml"};
         String[] MOBI41 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
                            System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
                            "-mobile"};
-        String[] PDF41  = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
-		                  System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
-		                  "-pdf"};
+        String[] PDF41STUDENT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+		                  		 System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
+		                         "-pdfstudent"};
+        String[] PDF41INSTRUCTOR = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+                					System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
+        							"-pdfinstructor"};
         
-        String[] SCORM40 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
-                            System.getProperty("user.dir") +"\\examples\\bike_resource_package"};
+        
+        String[] SCORM40FLASH = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+                            System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+                            "-scormflash"};
+        String[] SCORM40HTML = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+                				 System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+                				 "-scormhtml"};
         String[] MOBI40 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
                            System.getProperty("user.dir") +"\\examples\\bike_resource_package",
                            "-mobilePerformanceSupport"};
-        String[] PDF40 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
-			              System.getProperty("user.dir") +"\\examples\\bike_resource_package",
-			              "-pdf"};
-
-        String[] SCORM40HTML = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
-								System.getProperty("user.dir") +"\\examples\\bike_resource_package",
-								"-SCORMHTML"}; //Not sure if this works...html should probably be a 4th arg
+        String[] PDF40STUDENT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+			              		 System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+			              		 "-pdfstudent"};
+        String[] PDF40INSTRUCTOR = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+        							System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+	              					"-pdfinstructor"};
 
         String[] SCORM40HTMLSLIM = {System.getProperty("user.dir") +"\\test_files\\scpm_slim\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 								System.getProperty("user.dir") +"\\test_files\\resource_package_slim",
@@ -102,30 +113,53 @@ public class ControllerTest
         
         // need to test non-HTML Mobile, HTML Mobile (if added for assessments), non-HTML SCORM, and HTML SCORM
 
-        String[] SCORM41WOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+        String[] SCORM41FLASHWOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
                 				System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
+                				"-scormflash",
                 				System.getProperty("user.dir") +"\\output"};
+        String[] SCORM41HTMLWOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+								System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
+								"-scormhtml",
+								System.getProperty("user.dir") +"\\output"};
+        
 		String[] MOBI41WOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 		               		   System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
-		               		   System.getProperty("user.dir") +"\\output",
-		                       "-mobile"};
-		String[] PDF41WOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
-		                      System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
-		                      System.getProperty("user.dir") +"\\output",
-		                      "-pdf"};
+		               		   "-mobile",
+		               		   System.getProperty("user.dir") +"\\output"};
 		
-		String[] SCORM40WOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
-								System.getProperty("user.dir") +"\\examples\\bike_resource_package",
-								System.getProperty("user.dir") +"\\output"};
+		String[] PDF41WOUTSTUDENT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+		                      		 System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
+		                      		"-pdfstudent",
+		                      		System.getProperty("user.dir") +"\\output"};
+		
+		String[] PDF41WOUTINSTRUCTOR = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+		                				System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
+		                				"-pdfinstructor",
+		                				System.getProperty("user.dir") +"\\output"};
+		
+		String[] SCORM40FLASHWOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+									System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+									"-scormflash",
+									System.getProperty("user.dir") +"\\output"};
+		String[] SCORM40HTMLWOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+									System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+									"-scormhtml",
+									System.getProperty("user.dir") +"\\output"};
 		String[] MOBI40WOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 		                       System.getProperty("user.dir") +"\\examples\\bike_resource_package",
-		                       System.getProperty("user.dir") +"\\output",
-		                       "-mobile"};
-		String[] PDF40WOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+		                       "-mobile",
+		                       System.getProperty("user.dir") +"\\output"};
+		
+		String[] PDF40WOUTSTUDENT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 		                      System.getProperty("user.dir") +"\\examples\\bike_resource_package",
-		                      System.getProperty("user.dir") +"\\output",
-		                      "-pdf"};
+		                      "-pdfstudent",
+		                      System.getProperty("user.dir") +"\\output" };
+		String[] PDF40WOUTINSTRUCTOR = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+				                System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+				                "-pdfinstructor",
+				                System.getProperty("user.dir") +"\\output"};
 
-		Controller.main(SCORM40HTML);
+        Controller.main(PDF40WOUTSTUDENT);
+
     }
 }

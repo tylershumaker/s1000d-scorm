@@ -1,5 +1,4 @@
 
-
 Description{
 	display:none;
 	}
@@ -49,14 +48,3 @@ lcFeedbackIncorrect description para
 {
 	display:none;
 }
-
-@page {
-        counter-increment: page;
- 
-     @bottom-right {
-padding-right:20px;
-        content: "Page " counter(page);
-      }
- 
-    }
-
