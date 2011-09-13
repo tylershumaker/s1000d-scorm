@@ -232,3 +232,21 @@
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
+table.radioButtonClass input
+{
+	float: left;
+}
+table.radioButtonClass label
+{
+	margin-left: 25px;
+	display: block;
+}
+table.checkboxClass input
+{
+	float: left;
+}
+table.checkboxClass label
+{
+	margin-left: 25px;
+	display: block;
+}
