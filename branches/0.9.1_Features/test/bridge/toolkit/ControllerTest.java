@@ -87,11 +87,20 @@ public class ControllerTest
                             System.getProperty("user.dir") +"\\examples\\bike_resource_package"};
         String[] MOBI40 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
                            System.getProperty("user.dir") +"\\examples\\bike_resource_package",
-                           "-mobile"};
+                           "-mobilePerformanceSupport"};
         String[] PDF40 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 			              System.getProperty("user.dir") +"\\examples\\bike_resource_package",
 			              "-pdf"};
 
+        String[] SCORM40HTML = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+								System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+								"-SCORMHTML"}; //Not sure if this works...html should probably be a 4th arg
+
+        String[] SCORM40HTMLSLIM = {System.getProperty("user.dir") +"\\test_files\\scpm_slim\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+								System.getProperty("user.dir") +"\\test_files\\resource_package_slim",
+								"-SCORMHTML"}; //Not sure if this works...html should probably be a 4th arg
+        
+        // need to test non-HTML Mobile, HTML Mobile (if added for assessments), non-HTML SCORM, and HTML SCORM
 
         String[] SCORM41WOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
                 				System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
@@ -117,7 +126,6 @@ public class ControllerTest
 		                      System.getProperty("user.dir") +"\\output",
 		                      "-pdf"};
 
-        Controller.main(PDF40);
+		Controller.main(SCORM40HTML);
     }
-
 }
