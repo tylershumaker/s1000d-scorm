@@ -32,10 +32,11 @@
 							<xsl:value-of select="position()"/>
 						</xsl:variable>
 						<xsl:variable name="count">
-							<xsl:value-of select="count(//.)"/>
+							<xsl:value-of select="count(//lcInteraction)"/>
 						</xsl:variable>
 						<form name="answerOptionsForm{$position}">
 							<div class="questionNumber" id="questionNumber{$position}">
+								<p class="questionCount">Question <xsl:value-of select="$position"/> of <xsl:value-of select="$count"/></p><br/>
 								<ol>
 									<xsl:apply-templates/>
 									<xsl:for-each select="lcSingleSelect">
