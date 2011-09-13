@@ -80,7 +80,13 @@ function startSCO()
 	
 	function goNext()
 	{
-       btnBack.disabled = false;
+	   // Only enable the back button if section is not an assessment
+	   var inString = scoPages[loc][1].indexOf("-T88");
+	   if (inString == -1)
+	   {
+		   btnBack.disabled = false;
+	   }
+
 	   if (count < scoPages[loc].length)
 	   {
 	       var nextPage = "";
