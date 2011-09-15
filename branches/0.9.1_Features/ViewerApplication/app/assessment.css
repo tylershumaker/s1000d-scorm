@@ -2,11 +2,6 @@
 {
    list-style-type: lower-alpha;
 }
-.question
-{
-    /*color:blue;*/
-    
-}
 #feedbackCorrect
 {
 	text-align: center;
@@ -43,23 +38,6 @@
 	padding-left: 0.5em;
 	bottom: 0.7em;
 	margin-top: 1em; 
-	/* color: #374F3F; */
-	/* Old browsers */
-	/* background: #B6BFCB;  */
-	/* FF3.6+ */
-	/* background: -moz-linear-gradient(top, #B6BFCB, #5F738A); */ /* from(#E2E7E9), to(#7E929A) ? */
-	/* Chrome,Safari4+ */
-	/* background: -webkit-gradient(linear, left top, left bottom, from(#B6BFCB), to(#5F738A));  */
-	/* Chrome10+,Safari5.1+ */
-	/* background: -webkit-linear-gradient(top, #B6BFCB, #5F738A); */
-	/* Opera11.10+ */
-	/* background: -o-linear-gradient(top, #B6BFCB, #5F738A); */
-	/* IE10+ */
-	/* background: -ms-linear-gradient(top, #B6BFCB, #5F738A); */
-	/* IE6-9 */
-	/* filter: progid:DXImageTransform.Microsoft.gradient( startColorStr='#B6BFCB', EndColorStr='#5F738A'); *//*startColorstr='#cedce7', endColorstr='#596a72', GradientType=0 );*/ 
-	/* W3C */
-	/* background: linear-gradient(top, #B6BFCB, #5F738A); */
 }
 .fancySmallLine
 {
@@ -231,24 +209,6 @@
 {
 	margin-top: 10px;
 	margin-bottom: 20px;
-}
-table.radioButtonClass input
-{
-	float: left;
-}
-table.radioButtonClass label
-{
-	margin-left: 25px;
-	display: block;
-}
-table.checkboxClass input
-{
-	float: left;
-}
-table.checkboxClass label
-{
-	margin-left: 25px;
-	display: block;
 }
 .questionCount
 {
