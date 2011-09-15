@@ -102,9 +102,7 @@
   </xsl:template>
   
   <xsl:template match="lcQuestion">
-  	<div class="question">
-    	<xsl:apply-templates/>
-    </div>
+    <xsl:apply-templates />
   </xsl:template>
   
 <xsl:template match="lcAnswerOptionGroup">
@@ -124,19 +122,19 @@
 		    </xsl:variable>
 		    <xsl:choose>
 				<xsl:when test="ancestor::lcSingleSelect or ancestor::lcTrueFalse">
-					<table class="radioButtonClass">
-				    <input type="radio" id="{$id}" name="answerChoice" value="{$id}, {$correct}">
-		  	 	 		<xsl:value-of select="lcAnswerOptionContent/description/para/."/><br/>
-		    		</input>
-		    		</table>
+					<div class="radioButtonClass">
+					    <input type="radio" id="{$id}" name="answerChoice" value="{$id}, {$correct}">
+			  	 	 		<xsl:value-of select="lcAnswerOptionContent/description/para/."/><br/>
+			    		</input>
+		    		</div>
 		    		<br />
 				 </xsl:when>
 				 <xsl:when test="ancestor::lcMultipleSelect">
-				 	<table class="checkboxClass">
-		    		<input type="checkbox" id="{$id}" name="answerChoice" value="{$id}, {$correct}">
-		  	 	 		<xsl:value-of select="lcAnswerOptionContent/description/para/."/><br/>
-		    		</input>
-		    		</table>
+				 	<div class="checkboxClass">
+			    		<input type="checkbox" id="{$id}" name="answerChoice" value="{$id}, {$correct}">
+			  	 	 		<xsl:value-of select="lcAnswerOptionContent/description/para/."/><br/>
+			    		</input>
+		    		</div>
 		    		<br />
 				</xsl:when>
 			</xsl:choose>
