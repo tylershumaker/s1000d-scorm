@@ -123,17 +123,17 @@
 		    <xsl:choose>
 				<xsl:when test="ancestor::lcSingleSelect or ancestor::lcTrueFalse">
 					<div class="radioButtonClass">
-					    <input type="radio" id="{$id}" name="answerChoice" value="{$id}, {$correct}">
-			  	 	 		<xsl:value-of select="lcAnswerOptionContent/description/para/."/><br/>
-			    		</input>
+					    <input type="radio" id="{$id}" name="answerChoiceRadio" value="{$id}, {$correct}"/>
+			  	 	 		<label for="answerChoiceRadio"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
+			    		<!-- </input> -->
 		    		</div>
 		    		<br />
 				 </xsl:when>
 				 <xsl:when test="ancestor::lcMultipleSelect">
 				 	<div class="checkboxClass">
-			    		<input type="checkbox" id="{$id}" name="answerChoice" value="{$id}, {$correct}">
-			  	 	 		<xsl:value-of select="lcAnswerOptionContent/description/para/."/><br/>
-			    		</input>
+			    		<input type="checkbox" id="{$id}" name="answerChoiceCheckbox" value="{$id}, {$correct}"/>
+			  	 	 		<label for="answerChoiceCheckbox"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
+			    		<!-- </input> -->
 		    		</div>
 		    		<br />
 				</xsl:when>

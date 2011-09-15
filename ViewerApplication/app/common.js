@@ -58,16 +58,16 @@ function showNextQuestion()
 
 function checkIfSingleTrue(radioObj, quizType)
 {
-	var radioLength = radioObj.answerChoice.length;
+	var radioLength = radioObj.answerChoiceRadio.length;
 	var feedbackCorrect = document.getElementById('feedbackCorrect');
 	var feedbackIncorrect = document.getElementById('feedbackIncorrect');
 	var answer = null;
 	
 	for(var i=0; i < radioLength; i++)
 	{
-		if(radioObj.answerChoice[i].checked)
+		if(radioObj.answerChoiceRadio[i].checked)
 		{
-			answer = radioObj.answerChoice[i].value.split(", ");
+			answer = radioObj.answerChoiceRadio[i].value.split(", ");
 		}
 	}
 	
@@ -113,7 +113,7 @@ function checkIfMultipleTrue(checkObj, quizType)
 {
 	var feedbackCorrect = document.getElementById('feedbackCorrect');
 	var feedbackIncorrect = document.getElementById('feedbackIncorrect');
-	var checkLength = checkObj.answerChoice.length;
+	var checkLength = checkObj.answerChoiceCheckbox.length;
 	var answer = null;
 	var correctAnswers = [];
 	var chosenAnswers = [];
@@ -123,12 +123,12 @@ function checkIfMultipleTrue(checkObj, quizType)
 
 	for(var i=0; i < checkLength; i++)
 	{
-		answer = checkObj.answerChoice[i].value.split(", ");
+		answer = checkObj.answerChoiceCheckbox[i].value.split(", ");
 		if (answer[1] != "")
 		{
 			correctAnswers.push(answer[1]);
 		}
-		if (checkObj.answerChoice[i].checked)
+		if (checkObj.answerChoiceCheckbox[i].checked)
 		{
 			chosenAnswers.push(answer[0]);
 			if (answer[1] != "")
