@@ -23,6 +23,7 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=8"/>    
                 <title>JQueryMobileTest</title>
                 <link rel="stylesheet" href="jquery.mobile-1.0b3.min.css" />
+                <link rel="stylesheet" href="jquery.mobile.scrollview.css" />
                 <link rel="stylesheet" href="common.css" type="text/css" />
                 <link rel="stylesheet" href="mobile.css" type="text/css"
                     media="screen" />
@@ -35,6 +36,8 @@
                     });
                 </script>
                 <script type="text/javascript" src="jquery.mobile-1.0b3.min.js"></script>
+                <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+                <script type="text/javascript" src="jquery.mobile.scrollview.js"></script>
             </head>
             <body>
                 <div data-role="page" data-theme="a">
