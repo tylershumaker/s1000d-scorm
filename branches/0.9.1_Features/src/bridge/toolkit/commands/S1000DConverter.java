@@ -36,7 +36,7 @@ import bridge.toolkit.util.Keys;
 import com.sun.org.apache.xpath.internal.NodeSet;
 import com.sun.org.apache.xpath.internal.XPathAPI;
 
-public class PreProcess41 implements Command
+public class S1000DConverter implements Command
 {
 
     /**
@@ -74,7 +74,7 @@ public class PreProcess41 implements Command
 
     public boolean execute(Context ctx)
     {
-    	System.out.println("Executing PreProcess 41");
+    	System.out.println("Executing S1000D Converter");
         if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
         	/*
@@ -99,7 +99,7 @@ public class PreProcess41 implements Command
                 new40 = getDoc(new File(ctx.get(Keys.SCPM_FILE).toString()));
                 if (processXPathSingleNode("/scormContentPackage/content/scoEntry/scoEntryItem", new40) == null)
                 {
-                	System.out.println("PreProcess 41 Complete");
+                	System.out.println("S1000D Converter Complete");
                     return CONTINUE_PROCESSING;
                 }
                 tempSCPM = File.createTempFile(new File(ctx.get(Keys.SCPM_FILE).toString()).getName(), ".xml");
