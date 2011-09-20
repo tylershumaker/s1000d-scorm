@@ -95,7 +95,8 @@ public class Controller
         ctx.put(Keys.RESOURCE_PACKAGE, args[1]);
         try
         {
-        	if (args.length > 3)
+        
+        	if (args.length > 2)
         	{
         		if (args[2] != null && args[2].equalsIgnoreCase("-scormflash"))
   				{
