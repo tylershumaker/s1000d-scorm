@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
    <chain name="SCORM">
-      <command name="PreProcess41" className="bridge.toolkit.commands.PreProcess41" />
+      <command name="PreProcess41" className="bridge.toolkit.commands.S1000DConverter" ></command>
 	  <command name="PreProcess" className="bridge.toolkit.commands.PreProcess" />
       <command name="SCOBuilder" className="bridge.toolkit.commands.SCOBuilder" />
       <command name="PostProcess" className="bridge.toolkit.commands.PostProcess"/>
-      <command name="CleanUp" className="bridge.toolkit.commands.CleanUp"/>
+      <command name="CleanUp" className="bridge.toolkit.commands.CleanUp"></command>
    </chain>
    <chain name="Mobile">
-    <command name="PreProcess41" className="bridge.toolkit.commands.PreProcess41" />   
+    <command name="S1000DConverter" className="bridge.toolkit.commands.S1000DConverter" />   
     <command name="MobileBuilder" className="bridge.toolkit.commands.MobileBuilder" />
     <command name="CleanUp" className="bridge.toolkit.commands.CleanUp"/>
    </chain>
    <chain name="PDF">
-    <command name="PreProcess41" className="bridge.toolkit.commands.PreProcess41" />
+    <command name="S1000DConverter" className="bridge.toolkit.commands.S1000DConverter" />
     <command name="PDFBuilder" className="bridge.toolkit.commands.PDFBuilder" />
     <command name="CleanUp" className="bridge.toolkit.commands.CleanUp"/>
    </chain>

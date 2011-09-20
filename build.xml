@@ -5,7 +5,7 @@
     <property name="src.dir"     value="src"/>
     <property name="build.dir"   value="build/classes"/>
 	<property name="lib"         value="lib"/>
-	<property name="release.dir" value="s1000DToolkit0.9.2"/>
+	<property name="release.dir" value="s1000DToolkit1.0"/>
 	
 	
 	<taskdef name="buildlist"
@@ -164,7 +164,7 @@
 	<target name="releasezip" depends="jar, guibuild">
 	
         <copy todir="${release.dir}">
-           <fileset dir="." includes="build.xml, APACHE-LICENSE-2_0.html, 
+           <fileset dir="." includes="build.xml, APACHE-LICENSE-2_0.html, lgpl-3.0.html,
 			ECLIPSE-PUBLIC-LICENSE-1_0.html, license.txt, Toolkit.jar, ToolkitGUI.jar,
 		    conf/**, doc/**, examples/**, lib/**, mobiApp/**, resources/**, src/**, 
            	ViewerApplication/**, xsd/**, xsl/**, pdfCSS/**"/>
@@ -172,6 +172,10 @@
 		
 		<zip destfile="${release.dir}.zip" >
 			<fileset dir="." includes="${release.dir}/**"/>
+		</zip>
+		
+		<zip destfile="${release.dir}_bin.zip" >
+			<fileset dir="." includes="${release.dir}/*.jar, ${release.dir}/*.html, ${release.dir}/license.txt,"/>
 		</zip>
 		
 	</target>

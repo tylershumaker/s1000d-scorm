@@ -26,7 +26,7 @@ import bridge.toolkit.util.XMLParser;
 /**
  *
  */
-public class PreProcess41Test
+public class S1000DConverterTest
 {
     Context ctx;
     Command rb;
@@ -70,7 +70,7 @@ public class PreProcess41Test
         }
         
         ctx.put(Keys.RESOURCE_PACKAGE, tempRes.getAbsolutePath());
-        rb = new PreProcess41();
+        rb = new S1000DConverter();
     }
 
     /**
