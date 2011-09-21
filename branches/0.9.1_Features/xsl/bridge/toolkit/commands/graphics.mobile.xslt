@@ -40,13 +40,14 @@
   
 	<xsl:choose>
 		<xsl:when test="$theExt ='swf'">
-			<div align="center" id="{$fig_id}">
+		<!-- I do not want the swf files to show up - changed this while working on slide shows. May need to revisit -->
+			<!-- <div align="center" id="{$fig_id}">
 				<object WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" id="{$theFileName}">
 					<param NAME="movie" VALUE="{$theFileName}"></param>
                     <param NAME="FlashVars" VALUE="theFileName={$global_dmc}" />
                     <embed src="{$theFileName}" WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" flashvars="theFileName={$global_dmc}"></embed>
 				</object>
-			</div>
+			</div> -->
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:choose>
@@ -56,9 +57,70 @@
 					</div>
 				</xsl:when>
 				<xsl:when test="$hotspots > 0">
-					<div align="center">
-						<img src="{$theFileName}" class="imageBorder" />
+					<xsl:variable name="correctAnswer">
+				    	<xsl:if test="hotspot/lcCorrectResponse">
+				    		<xsl:value-of select="hotspot/@id"/>
+				    	</xsl:if>
+					</xsl:variable>
+					<xsl:variable name="countTotalHotspots">
+						<xsl:value-of select="count(hotspot)"/>
+					</xsl:variable>
+					<div id="hotspotContent">
+						<img id="hotspotImage" src="{$theFileName}" usemap="#hotspotMap" class="imageBorder hotspotImage"/>
+						<map name="hotspotMap">
+							<xsl:for-each select="hotspot">
+  								<xsl:variable name="hotspotID">
+  									<xsl:value-of select="position()"/>
+									<!-- <xsl:value-of select="@id"/> -->
+								</xsl:variable>
+ 								<xsl:variable name="countTotal">
+									<xsl:value-of select="count(//hotspot)"/>
+								</xsl:variable>
+								<xsl:variable name="coordinates">
+									<xsl:value-of select="@objectCoordinates"/>
+								</xsl:variable>
+ 								<div id="div{$hotspotID}" class="hotspotDiv" onClick="highlightArea('{$hotspotID}', '{$coordinates}', '{$countTotal}')"> <!-- onClick="selectArea('{$hotspotID}')"> -->
+  									<area shape="poly" name="{$hotspotID}" id="{$hotspotID}" coords="{$coordinates}"/>
+  								</div>
+ 							</xsl:for-each>
+						</map>
 					</div>
+					<script type="text/javascript">
+				   		//$(function()
+						//$(document).ready()
+						//$(window).load( function()
+						
+						function pageScript(func) {
+							var $context = $("div:jqmData(role='page'):last");
+							func($context);
+						}						
+						
+						pageScript(function($context)
+						{
+							//$context.bind("pagecreate", function(event, ui)
+							$context.bind("pageshow", function(event, ui)
+							{
+								initializeHotspots(<xsl:value-of select="$countTotalHotspots"/>);
+							});
+						});
+					</script>
+					<input type="submit" class="checkButton hotspotCheckButton" value="Check" onClick="checkHotspotCorrect('{$correctAnswer}', '{$countTotalHotspots}'); return false;"/>
+					<xsl:for-each select="hotspot">
+						<xsl:if test="lcFeedbackCorrect">
+							<div id="feedbackCorrect">
+								<div class="line"/>
+							  	<xsl:apply-templates select="lcFeedbackCorrect/description/para/."/>
+								<div class="line"/>
+							</div>
+						</xsl:if>
+						<xsl:if test="lcFeedbackIncorrect">
+						    <div id="feedbackIncorrect">
+						    	<div class="line"/>
+						  	  	<xsl:apply-templates select="lcFeedbackIncorrect/description/para/."/>
+						  		<div class="line"/>
+						  	</div>
+						</xsl:if>
+					</xsl:for-each>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:otherwise>
@@ -85,7 +147,5 @@
                 </object>
             </div>
 	</xsl:template>
-	
 </xsl:stylesheet>
-
   
