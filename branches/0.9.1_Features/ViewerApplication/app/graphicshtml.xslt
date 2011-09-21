@@ -36,17 +36,19 @@
 	</xsl:variable>
 	<xsl:choose>
 		<xsl:when test="$theExt ='swf'">
-		<!-- I do not want the swf files to show up for slide shows. May need to revisit -->
-<!--  			<div align="center" id="{$fig_id}">
-				<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
-						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" 
-						WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" id="{$theFileName}">
-					<param NAME="movie" VALUE="{$theFileName}" />
-					<param NAME="FlashVars" VALUE="theFileName={$global_dmc}" />
-					<param NAME="quality" VALUE="high"/>
-					<param NAME="bgcolor" VALUE="#FFFFFF" />
-				</object>
-			</div> -->
+			<!-- I do not want the swf files to show up for slide shows. May need to revisit -->
+			<xsl:if test="not(../../levelledPara)">
+	  			<div align="center" id="{$fig_id}">
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+							codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" 
+							WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" id="{$theFileName}">
+						<param NAME="movie" VALUE="{$theFileName}" />
+						<param NAME="FlashVars" VALUE="theFileName={$global_dmc}" />
+						<param NAME="quality" VALUE="high"/>
+						<param NAME="bgcolor" VALUE="#FFFFFF" />
+					</object>
+				</div>
+			</xsl:if>
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:choose>
