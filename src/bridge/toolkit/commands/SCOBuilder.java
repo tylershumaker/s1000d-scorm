@@ -134,7 +134,7 @@ public class SCOBuilder implements Command
                 
                 //apply the SCORM CP XSLT StyleSheet to the data modules
                 StylesheetApplier sa = new StylesheetApplier();
-                if (ctx.get(Keys.OUTPUT_TYPE) == "mobileCourse" || ctx.get(Keys.OUTPUT_TYPE) == "SCORMHTML")
+                if (ctx.get(Keys.OUTPUT_TYPE) == "SCORMHTML")
                 {
                 	sa.applyStylesheetToDMCs(cpPackage, CPHTMLSTYLESHEET);
                 }

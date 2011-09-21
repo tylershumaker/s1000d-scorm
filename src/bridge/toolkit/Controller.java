@@ -86,11 +86,6 @@ public class Controller
         Command toolkit = sampleCatalog.getCommand("SCORM");
         Context ctx = new ContextBase();
         
-        //hardcoded files for iitsec demo, replace with args[0] and args[1] or other hardcoded files
-        //ctx.put(Keys.SCPM_FILE, "c:\\toolkit_demo\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
-        //ctx.put(Keys.RESOURCE_PACKAGE, "c:\\toolkit_demo\\bike_resource_package\\");
-//        ctx.put(Keys.SCPM_FILE, "c:\\toolkit_demo\\scpm_slim\\SMC-S1000DBIKE-06RT9-00001-00.xml");
-//        ctx.put(Keys.RESOURCE_PACKAGE, "c:\\toolkit_demo\\resource_package_slim\\");
         ctx.put(Keys.SCPM_FILE, args[0]);
         ctx.put(Keys.RESOURCE_PACKAGE, args[1]);
         try
@@ -108,10 +103,15 @@ public class Controller
         			toolkit = sampleCatalog.getCommand("SCORM");
         			ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
    				}
-        		else if (args[2] != null && args[2].equalsIgnoreCase("-mobile"))
-  				{
-        			toolkit = sampleCatalog.getCommand("Mobile");
-   				}
+        	    else if(args.length>2 && args[2] != null && (args[2].equals("-mobileCourse")))
+        	    {
+        	        toolkit = sampleCatalog.getCommand("Mobile"); 
+        	        ctx.put(Keys.OUTPUT_TYPE, "mobileCourse");
+        	    }
+        	    else if(args.length>2 && args[2] != null && (args[2].equals("-mobilePerformanceSupport")))
+        	    {
+        	        toolkit = sampleCatalog.getCommand("Mobile");
+        	    }
         		else if (args[2] != null && args[2].equalsIgnoreCase("-pdfinstructor"))
   				{
         			toolkit = sampleCatalog.getCommand("PDF");
@@ -128,41 +128,7 @@ public class Controller
         			ctx.put(Keys.OUTPUT_DIRECTORY, args[3]);
         		}
         	}
-        	
-        	/*
-            if(args.length>2 && args[2] != null && args[2].equals("-mobile"))
-                toolkit = sampleCatalog.getCommand("Mobile");
-            else if(args.length>2 && args[2] != null && args[2].equals("-pdfstudent"))
-            {
-                toolkit = sampleCatalog.getCommand("PDF");
-                ctx.put(Keys.PDF_OUTPUT_OPTION,"-student");
-            }
-            else if(args.length>2 && args[2] != null && args[2].equals("-pdfinstructor"))
-            {
-                toolkit = sampleCatalog.getCommand("PDF");
-                ctx.put(Keys.PDF_OUTPUT_OPTION,"-instructor");
-            }
-            else if(args.length>3 && args[3] != null && args[3].equals("-mobile"))
-            {
-                toolkit = sampleCatalog.getCommand("Mobile");
-                ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
-            }
-            else if(args.length>3 && args[3] != null && args[3].equals("-pdfstudent"))
-            {
-                toolkit = sampleCatalog.getCommand("PDF");
-                ctx.put(Keys.PDF_OUTPUT_OPTION,"-student");
-                ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
-            }
-            else if(args.length>3 && args[3] != null && args[3].equals("-pdfinstructor"))
-            {
-                toolkit = sampleCatalog.getCommand("PDF");
-                ctx.put(Keys.PDF_OUTPUT_OPTION,"-instructor");
-                ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
-            }
-            else if(args.length>2 && args[2] != null)
-            	ctx.put(Keys.OUTPUT_DIRECTORY, args[2]);
-            
-        	*/
+
             toolkit.execute(ctx);
         }
         catch (Exception e)

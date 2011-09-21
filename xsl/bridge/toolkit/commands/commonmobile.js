@@ -231,17 +231,16 @@ function checkIfMatchingTrue(selectObj, selectBoxCount)
 }
 
 // NOTE: This function does not deal with Knowledge Check because there were no Sortable Questions in Knowledge Check to test
-function checkSortableCorrect (position)
+function checkSortableCorrect (selectObj, quizType)
 {
 	var feedbackCorrect = document.getElementById('feedbackCorrect');
 	var feedbackIncorrect = document.getElementById('feedbackIncorrect');
-	var questionNumber = "#questionNumber" + position;
-	var newOrdering = $(questionNumber).find( ".sortable" ).sortable('toArray');
+	var selectLength = selectObj.order.length;
 	var isCorrect = true;
 
-	for (var v = 0; v < newOrdering.length; v++)
+	for (var v = 0; v < selectLength; v++)
 	{
-		if (newOrdering[v] != (v + 1))
+		if (selectObj.order[v].id != selectObj.order[v].value)
 		{
 			isCorrect= false;
 		}
@@ -273,6 +272,14 @@ function checkSortableCorrect (position)
 	count++;
 	showNextQuestion();
 	//}
+}
+
+function validateInput(value, count)
+{
+	if (/[^1-9]/.test(value) || (value > count))
+	{
+		alert('Please enter a number between 1 and ' + count + '!');
+	}
 }
 
 function shuffle(elems)
@@ -323,11 +330,16 @@ function showSlide(currentSlide, direction)
 	}
 }
 
-function highlightArea(id, coords, countTotal)
+function initializeHotspots(countTotal)
 {
-	var coordsArray = new Array();
-	coordsArray = coords.split(",");
+	for (var j=1; j <= countTotal; j++)
+	{
+		initializeCoords(j);
+	}
+}
 
+function initializeCoords(id)
+{
 	// left and right coordinates
 	var xCoords = new Array();
 	var minXCoord = null;
@@ -336,13 +348,27 @@ function highlightArea(id, coords, countTotal)
 	var yCoords = new Array();
 	var minYCoord = null;
 	var maxYCoord = null;
-
+	
+	// coordinate percentages
+	var originalWidth = document.getElementById('hotspotImage').naturalWidth; //width;
+	var originalHeight = document.getElementById('hotspotImage').naturalHeight; //height;
+	var minYCoordPercent = null;
+	var maxYCoordPercent = null;
+	var minXCoordPercent = null;
+	var maxXCoordPercent = null;
+	var areaHeight = null;
+	var areaWidth = null;
+	
+	var coordsString =  null;
+	coordsString = document.getElementById(id).getAttribute('coords');
+	
+	var coordsArray = new Array();
+	coordsArray = coordsString.split(",");
+	
 	for (var i=0; i < coordsArray.length; i=i+2)
 	{
 		xCoords.push(coordsArray[i]);
 		yCoords.push(coordsArray[i + 1]);
-		/*xCoords = xCoords.concat(coordsArray[i]);
-		yCoords = yCoords.concat(coordsArray[i + 1]);*/
 	}
 
 	minXCoord = Math.min.apply(Math, xCoords);
@@ -350,18 +376,36 @@ function highlightArea(id, coords, countTotal)
 	
 	minYCoord = Math.min.apply(Math, yCoords);
 	maxYCoord = Math.max.apply(Math, yCoords);
-
-	document.getElementById('div' + id).style.top = minYCoord;
-	document.getElementById('div' + id).style.left = minXCoord;
-	document.getElementById('div' + id).style.height = maxYCoord - minYCoord;//left = minXCoord;
-	document.getElementById('div' + id).style.width = maxXCoord - minXCoord;//right = maxXCoord;
 	
-	// unhighlight all hotspots
+	minYCoordPercent = (minYCoord * 100)/originalHeight;
+	maxYCoordPercent = (maxYCoord * 100)/originalHeight;
+	minXCoordPercent = (minXCoord * 100)/originalWidth;
+	maxXCoordPercent = (maxXCoord * 100)/originalWidth;
+	
+	areaHeight = maxYCoordPercent - minYCoordPercent;
+	areaWidth = maxXCoordPercent - minXCoordPercent;
+	
+	document.getElementById('div' + id).style.top = minYCoordPercent + '%';
+	document.getElementById('div' + id).style.left = minXCoordPercent + '%';
+	document.getElementById('div' + id).style.height = areaHeight + '%';
+	document.getElementById('div' + id).style.width = areaWidth + '%';
+	
+	// set max height and width of hotspotContent
+	document.getElementById('hotspotContent').style.maxHeight = originalWidth;
+	document.getElementById('hotspotContent').style.maxWidth = originalHeight;
+}
+
+function highlightArea(id, countTotal)
+{
+	selectedHotspot = id;
+	// unhilight all unselected hotspots
 	unhighlightArea(countTotal);
 
-	// highlight only hotspot curser is over
-	document.getElementById('div' + id).style.display = 'block';
+	// highlight only hotspot cursor is over
+	document.getElementById('div' + id).style.borderWidth = '2px';
+	document.getElementById('div' + id).style.borderColor = '#6CB7E8';
 }
+
 
 function unhighlightArea(countTotal)
 {
@@ -369,15 +413,10 @@ function unhighlightArea(countTotal)
 	{
 		if (j != selectedHotspot)
 		{
-			document.getElementById('div' + j).style.display = 'none';
+			document.getElementById('div' + j).style.borderWidth = '1px';
+			document.getElementById('div' + j).style.borderColor = '#C7C7C7';
 		}
 	}
-}
-
-function selectArea(id, countTotal)
-{
-	selectedHotspot = id;
-	unhighlightArea(countTotal);
 }
 
 function checkHotspotCorrect(correctAnswer, countTotal)
@@ -398,12 +437,12 @@ function checkHotspotCorrect(correctAnswer, countTotal)
 		{
 			feedbackIncorrect.style.display = 'block';
 			feedbackCorrect.style.display = 'none';
-			document.getElementById('div' + selectedHotspot).style.display = 'none';
 			
 			// Changed the selected hotspot to be the correct hotspot for feedback
 			selectedHotspot = correctId;
-			highlightArea(correctId, correctCoords, countTotal);
-			document.getElementById('div' + correctId).style.backgroundColor = '#30BF30';
+			unhighlightArea(countTotal);
+			document.getElementById('div' + correctId).style.borderColor = '#30BF30';
+			document.getElementById('div' + correctId).style.borderWidth = '2px';
 		}
 	}
 }

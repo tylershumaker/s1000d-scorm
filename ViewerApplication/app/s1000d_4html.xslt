@@ -64,6 +64,7 @@
 				<!-- Detailed layout -->
 				<meta http-equiv="X-UA-Compatible" content="IE=7" />
 				<link rel="stylesheet" href="app/common.css" type="text/css" />
+				<link rel="stylesheet" href="app/assessment.css" type="text/css" />
 				<script type="text/javascript" src="app/common.js"></script>
 				<!-- Sortable -->
 				<script type="text/javascript" src="app/jquery-ui/js/jquery-1.6.2.min.js"></script>

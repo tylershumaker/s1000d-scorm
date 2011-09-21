@@ -97,16 +97,18 @@ public class ControllerTest
         String[] SCORM40HTML = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
                 				 System.getProperty("user.dir") +"\\examples\\bike_resource_package",
                 				 "-scormhtml"};
-        String[] MOBI40 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
-                           System.getProperty("user.dir") +"\\examples\\bike_resource_package",
-                           "-mobilePerformanceSupport"};
+        String[] MOBI40HTML = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+			                System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+			                "-mobileCourse"};
+        String[] MOBI40HTMLSLIM = {System.getProperty("user.dir") +"\\test_files\\scpm_slim\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+                System.getProperty("user.dir") +"\\test_files\\resource_package_slim",
+                "-mobileCourse"};
         String[] PDF40STUDENT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 			              		 System.getProperty("user.dir") +"\\examples\\bike_resource_package",
 			              		 "-pdfstudent"};
         String[] PDF40INSTRUCTOR = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
         							System.getProperty("user.dir") +"\\examples\\bike_resource_package",
 	              					"-pdfinstructor"};
-
         String[] SCORM40HTMLSLIM = {System.getProperty("user.dir") +"\\test_files\\scpm_slim\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 								System.getProperty("user.dir") +"\\test_files\\resource_package_slim",
 								"-SCORMHTML"}; //Not sure if this works...html should probably be a 4th arg
@@ -159,7 +161,6 @@ public class ControllerTest
 				                "-pdfinstructor",
 				                System.getProperty("user.dir") +"\\output"};
 
-        Controller.main(PDF40WOUTSTUDENT);
-
+        Controller.main(MOBI40HTML); //PDF40WOUTSTUDENT);
     }
 }

@@ -4,7 +4,9 @@
 <script language='javascript' type="text/javascript">
     function indexPage(val) {
         var e = document.getElementById('page_index');
-        e.innerHTML = "<p>" + val + "</p>";
+        // changed next line so that it would line up correctly in Firefox - still works in IE and Chrome
+        // e.innerHTML = "<p>" + val + "</p>";
+        e.innerHTML = val;
     }
 
 </script>
