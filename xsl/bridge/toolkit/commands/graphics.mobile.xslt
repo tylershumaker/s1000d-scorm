@@ -40,14 +40,7 @@
   
 	<xsl:choose>
 		<xsl:when test="$theExt ='swf'">
-		<!-- I do not want the swf files to show up - changed this while working on slide shows. May need to revisit -->
-			<!-- <div align="center" id="{$fig_id}">
-				<object WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" id="{$theFileName}">
-					<param NAME="movie" VALUE="{$theFileName}"></param>
-                    <param NAME="FlashVars" VALUE="theFileName={$global_dmc}" />
-                    <embed src="{$theFileName}" WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" flashvars="theFileName={$global_dmc}"></embed>
-				</object>
-			</div> -->
+		<!-- I do not want the swf files to show up -->
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:choose>
