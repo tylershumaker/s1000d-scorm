@@ -249,31 +249,12 @@
 {
 	position: absolute;
 	z-index: 1;
-	border: 1px solid #C7C7C7; /* #6CB7E8; */
-	/* background-color: #C7C7C7; */ /* need to have no background color until selected in mobile */
-	/* display: none; */ /* need to always show hotspotDivs on mobile */
-	/* filter:alpha(opacity=70); */
+	border: 1px solid #C7C7C7;
 }
 .hotspotCheckButton
 {
 	margin-top: 10px;
 	margin-bottom: 20px;
-}
-.radioButtonClass input /*.ui-radio*/
-{
-	margin: 0;
-}
-.radioButtonClass label /*.ui-radio*/
-{
-	margin-left: 40px;
-}
-.checkboxClass input /*.ui-checkbox*/
-{
-	margin: 0;
-}
-.checkboxClass label /*.ui-checkbox*/
-{
-	margin-left: 20px;
 }
 .questionCount
 {
