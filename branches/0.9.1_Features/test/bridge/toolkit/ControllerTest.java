@@ -81,7 +81,7 @@ public class ControllerTest
                 				"-scormhtml"};
         String[] MOBI41 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
                            System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
-                           "-mobileperformancesupport"};
+                           "-mobilePerformanceSupport"};
         String[] MOBI41COURSE = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
                 				 System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
                 				 "-mobilecourse"};
@@ -101,7 +101,7 @@ public class ControllerTest
                 				"-scormhtml"};
         String[] MOBI40 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 			     		   System.getProperty("user.dir") +"\\examples\\bike_resource_package",
-                		   "-mobileperformancesupport"};
+                		   "-mobilePerformanceSupport"};
         String[] MOBI40COURSE = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
         					     System.getProperty("user.dir") +"\\examples\\bike_resource_package",
 			                     "-mobileCourse"};
@@ -129,7 +129,7 @@ public class ControllerTest
 									System.getProperty("user.dir") +"\\output"};
 		String[] MOBI40WOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 					           System.getProperty("user.dir") +"\\examples\\bike_resource_package",
-					           "-mobileperformancesupport",
+					           "-mobilePerformanceSupport",
 					           System.getProperty("user.dir") +"\\output"};
 		String[] MOBI40WOUTCOURSE = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 									 System.getProperty("user.dir") +"\\examples\\bike_resource_package",
@@ -155,7 +155,7 @@ public class ControllerTest
 									System.getProperty("user.dir") +"\\output"};
 		String[] MOBI41WOUT = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 		               		   System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
-		               		   "-mobileperformancesupport",
+		               		   "-mobilePerformanceSupport",
 		               		   System.getProperty("user.dir") +"\\output"};		
 		String[] MOBI41WOUTCOURSE = {System.getProperty("user.dir") +"\\examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml",
 					        		 System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
@@ -170,6 +170,6 @@ public class ControllerTest
 		                				"-pdfinstructor",
 		                				System.getProperty("user.dir") +"\\output"};
 
-        Controller.main(PDF40WOUTSTUDENT);
+        Controller.main(MOBI40COURSE);
     }
 }

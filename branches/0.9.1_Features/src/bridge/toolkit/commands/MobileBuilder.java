@@ -69,9 +69,13 @@ public class MobileBuilder implements Command
     /**
      * Location of the XSLT transform file used to transform the data modules to mobile app html file.
      */
-    /*private static final String DM_TRANSFORM_FILE = "dmStylesheet.mobile.xsl";*/
-    private static final String DM_TRANSFORM_FILE = "dmStylesheetCourse.mobile.xsl";
-    
+    private static final String DM_TRANSFORM_FILE = "dmStylesheet.mobile.xsl";
+
+    /**
+     * Location of the XSLT transform file used to transform the data modules to mobile app html file. (includes assessments)
+     */
+    private static final String DM_TRANSFORM_FILE_WITH_ASSESSMENTS = "dmStylesheetCourse.mobile.xsl";
+
     /**
      * InputStream for the xsl file that is used to transform the SCPM file and data modules
      * to mobile app html files.
@@ -452,10 +456,13 @@ public class MobileBuilder implements Command
     private void transformSCPM(File newMobApp, Object outputType) throws FileNotFoundException, TransformerException
     {
     	if (outputType != "mobileCourse")
+    	{
     		transform = this.getClass().getResourceAsStream(SCPM_TRANSFORM_FILE);
+    	}		
     	else
-        	transform = this.getClass().getResourceAsStream(SCPM_TRANSFORM_FILE_WITH_ASSESSMENTS);
-    	
+    	{
+    		transform = this.getClass().getResourceAsStream(SCPM_TRANSFORM_FILE_WITH_ASSESSMENTS);
+    	}
         File index = new File(newMobApp +File.separator +"index.htm");
         mobileList.add("index.htm");
         TransformerFactory tFactory = TransformerFactory.newInstance();
@@ -516,7 +523,14 @@ public class MobileBuilder implements Command
                     {
                         File newChild = new File(newMobApp + File.separator + Integer.toString(folderCount));
                         newChild.mkdir();
-                        transform = this.getClass().getResourceAsStream(DM_TRANSFORM_FILE);
+                        if (outputType != "mobileCourse")
+                        {
+                        	transform = this.getClass().getResourceAsStream(DM_TRANSFORM_FILE);
+                        }
+                        else
+                        {
+                        	transform = this.getClass().getResourceAsStream(DM_TRANSFORM_FILE_WITH_ASSESSMENTS);
+                        }
                         TransformerFactory tFactory = TransformerFactory.newInstance();
                         Transformer transformer = tFactory.newTransformer(new StreamSource(transform));
 
