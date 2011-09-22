@@ -72,7 +72,7 @@
 								<xsl:variable name="coordinates">
 									<xsl:value-of select="@objectCoordinates"/>
 								</xsl:variable>
- 								<div id="div{$hotspotID}" class="hotspotDiv" onClick="highlightArea('{$hotspotID}', '{$coordinates}', '{$countTotal}')"> <!-- onClick="selectArea('{$hotspotID}')"> -->
+ 								<div id="div{$hotspotID}" class="hotspotDiv" onClick="highlightArea('{$hotspotID}', '{$countTotal}')"> <!-- onClick="selectArea('{$hotspotID}')"> -->
   									<area shape="poly" name="{$hotspotID}" id="{$hotspotID}" coords="{$coordinates}"/>
   								</div>
  							</xsl:for-each>
