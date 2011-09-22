@@ -20,79 +20,54 @@
     <!--For future use module specific elements inclusions -->
 
     <!--global vars -->
-    <xsl:variable name="mic"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@modelIdentCode" />
-    <xsl:variable name="sysdif"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@systemDiffCode" />
-    <xsl:variable name="syscode"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@systemCode" />
-    <xsl:variable name="subsyscode"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@subSystemCode" />
-    <xsl:variable name="subsubsyscode"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@subSubSystemCode" />
-    <xsl:variable name="assycode"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@assyCode" />
-    <xsl:variable name="disassycode"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@disassyCode" />
-    <xsl:variable name="disassycodevariant"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@disassyCodeVariant" />
-    <xsl:variable name="infocode"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@infoCode" />
-    <xsl:variable name="infocodevariant"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@infoCodeVariant" />
-    <xsl:variable name="itemlocationcode"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@itemLocationCode" />
-    <xsl:variable name="learncode"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnCode" />
-    <xsl:variable name="learneventcode"
-        select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnEventCode" />
-    <xsl:variable name="infoname"
-        select="dmodule/identAndStatusSection/dmAddress/dmAddressItems/dmTitle/infoName" />
+    <xsl:variable name="mic" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@modelIdentCode" />
+    <xsl:variable name="sysdif" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@systemDiffCode" />
+    <xsl:variable name="syscode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@systemCode" />
+    <xsl:variable name="subsyscode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@subSystemCode" />
+    <xsl:variable name="subsubsyscode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@subSubSystemCode" />
+    <xsl:variable name="assycode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@assyCode" />
+    <xsl:variable name="disassycode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@disassyCode" />
+    <xsl:variable name="disassycodevariant" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@disassyCodeVariant" />
+    <xsl:variable name="infocode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@infoCode" />
+    <xsl:variable name="infocodevariant" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@infoCodeVariant" />
+    <xsl:variable name="itemlocationcode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@itemLocationCode" />
+    <xsl:variable name="learncode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnCode" />
+    <xsl:variable name="learneventcode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnEventCode" />
+    <xsl:variable name="infoname" select="dmodule/identAndStatusSection/dmAddress/dmAddressItems/dmTitle/infoName" />
 
     <xsl:variable name="this_dmc">
         <xsl:choose>
-            <xsl:when
-                test="string-length($learncode) = 0 and string-length($learneventcode) = 0">
-                <xsl:value-of
-                    select="concat($mic,'-',$sysdif,'-',
-      $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
-      $infocode,$infocodevariant,'-',$itemlocationcode)" />
+            <xsl:when test="string-length($learncode) = 0 and string-length($learneventcode) = 0">
+                <xsl:value-of select="concat($mic,'-',$sysdif,'-',
+								      $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
+								      $infocode,$infocodevariant,'-',$itemlocationcode)" />
             </xsl:when>
-            <xsl:when
-                test="string-length($learncode) > 0 and string-length($learneventcode) = 0">
-                <xsl:value-of
-                    select="concat($mic,'-',$sysdif,'-',
-      $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
-      $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learncode)" />
+            <xsl:when test="string-length($learncode) > 0 and string-length($learneventcode) = 0">
+                <xsl:value-of select="concat($mic,'-',$sysdif,'-',
+									  $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
+									  $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learncode)" />
             </xsl:when>
-            <xsl:when
-                test="string-length($learncode) = 0 and string-length($learneventcode) > 0">
-                <xsl:value-of
-                    select="concat($mic,'-',$sysdif,'-',
-      $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
-      $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learneventcode)" />
+            <xsl:when test="string-length($learncode) = 0 and string-length($learneventcode) > 0">
+                <xsl:value-of select="concat($mic,'-',$sysdif,'-',
+									  $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
+									  $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learneventcode)" />
             </xsl:when>
-            <xsl:when
-                test="string-length($learncode) > 0 and string-length($learneventcode) > 0">
-                <xsl:value-of
-                    select="concat($mic,'-',$sysdif,'-',
-      $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
-      $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learncode,$learneventcode)" />
+            <xsl:when test="string-length($learncode) > 0 and string-length($learneventcode) > 0">
+                <xsl:value-of select="concat($mic,'-',$sysdif,'-',
+								      $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
+								      $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learncode,$learneventcode)" />
             </xsl:when>
         </xsl:choose>
     </xsl:variable>
 
     <xsl:variable name="global_dmc">
-        <xsl:value-of
-            select="document('ViewerApplication/app/urn_resource_map.xml')//target[parent::urn[contains(@name, $this_dmc)]]" />
+        <xsl:value-of select="document('ViewerApplication/app/urn_resource_map.xml')//target[parent::urn[contains(@name, $this_dmc)]]" />
     </xsl:variable>
     <xsl:template match="/">
-
         <html>
             <head>
                 <meta name="HandheldFriendly" content="true" />
-                <meta name="viewport"
-                    content="width=device-width, height=device-height, user-scalable=no" />
+                <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
                 <meta http-equiv="X-UA-Compatible" content="IE=8"/>    
                 <title>JQueryMobileTest</title>
                 <link rel="stylesheet" href="../jquery.mobile-1.0b3.min.css" />
@@ -142,5 +117,4 @@
             </table> </div> <p> <a href="javascript:void(toggle_visibility('metadataDiv'))">Additional 
             Information</a> </p> -->
     </xsl:template>
-
 </xsl:stylesheet>

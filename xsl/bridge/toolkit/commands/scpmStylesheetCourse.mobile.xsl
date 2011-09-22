@@ -8,8 +8,7 @@
     <xsl:output method="html" indent="yes" />
     <xsl:strip-space elements="*" />
     <xsl:variable name="title">
-        <xsl:value-of
-            select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle"></xsl:value-of>
+        <xsl:value-of select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle"></xsl:value-of>
     </xsl:variable>
 
     <xsl:variable name="folder" select="0" />
@@ -22,18 +21,21 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=8"/>    
                 <title>JQueryMobileTest</title>
                 <link rel="stylesheet" href="jquery.mobile-1.0b3.min.css" />
+                <link rel="stylesheet" href="jquery.mobile.scrollview.css" />
                 <link rel="stylesheet" href="common.css" type="text/css" />
                 <link rel="stylesheet" href="mobile.css" type="text/css"
                     media="screen" />
-                <script type="text/javascript" src="jquery-1.6.2.min.js"></script> 
+                <script type="text/javascript" src="jquery-1.6.2.min.js"></script>
                 <script type="text/javascript" src="mobileEvents.js"></script>
                 <script type="text/javascript" src="list.js"></script>
-				<script type="text/javascript">
+                <script type="text/javascript">
                     $(document).bind("mobileinit", function() {
                         $.mobile.page.prototype.options.addBackBtn = true;
                     });
                 </script>
                 <script type="text/javascript" src="jquery.mobile-1.0b3.min.js"></script>
+                <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+                <script type="text/javascript" src="jquery.mobile.scrollview.js"></script>
             	<script type="text/javascript" src="commonmobile.js"></script> <!-- to get assessments working -->
             </head>
             <body>

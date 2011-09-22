@@ -44,13 +44,13 @@
             </xsl:when>
             <xsl:when test="string-length($learncode) > 0 and string-length($learneventcode) = 0">
                 <xsl:value-of select="concat($mic,'-',$sysdif,'-',
-									    $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
-									    $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learncode)" />
+									  $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
+									  $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learncode)" />
             </xsl:when>
-            <xsl:when  test="string-length($learncode) = 0 and string-length($learneventcode) > 0">
+            <xsl:when test="string-length($learncode) = 0 and string-length($learneventcode) > 0">
                 <xsl:value-of select="concat($mic,'-',$sysdif,'-',
-									     $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
-									     $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learneventcode)" />
+									  $syscode,'-',$subsyscode,$subsubsyscode,'-',$assycode,'-',$disassycode,$disassycodevariant,'-',
+									  $infocode,$infocodevariant,'-',$itemlocationcode,'-',$learneventcode)" />
             </xsl:when>
             <xsl:when test="string-length($learncode) > 0 and string-length($learneventcode) > 0">
                 <xsl:value-of select="concat($mic,'-',$sysdif,'-',
@@ -70,17 +70,20 @@
                 <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
                 <meta http-equiv="X-UA-Compatible" content="IE=8"/>    
                 <title>JQueryMobileTest</title>
-                <link rel="stylesheet" href="../jquery.mobile-1.0b3.min.css" type="text/css" />
+                <link rel="stylesheet" href="../jquery.mobile-1.0b3.min.css" />
+                <link rel="stylesheet" href="../jquery.mobile.scrollview.css" />
                 <link rel="stylesheet" href="../common.css" type="text/css" />
                 <link rel="stylesheet" href="../mobile.css" type="text/css"
                     media="screen" />
                 <script type="text/javascript" src="../jquery-1.6.2.min.js"></script>
                 <script type="text/javascript" src="../jquery.mobile-1.0b3.min.js"></script>
+                <script type="text/javascript" src="../jquery.easing.1.3.js"></script>
+                <script type="text/javascript" src="../jquery.mobile.scrollview.js"></script>
                 <script type="text/javascript" src="../commonmobile.js"></script> <!-- to get assessments working -->
             </head>
             <body>
                 <div data-role="page">
-                    <div data-role="header" data-position="fixed">
+                    <div  role="banner" data-role="header" data-position="fixed">
                         <h1><xsl:value-of select="$infoname"></xsl:value-of></h1>
                         <a href="#" data-icon="home" data-iconpos="notext" class="ui-btn-right" id="home">Menu</a>
                     </div><!-- /header -->
