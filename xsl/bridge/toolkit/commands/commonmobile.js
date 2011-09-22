@@ -276,7 +276,7 @@ function checkSortableCorrect (selectObj, quizType)
 
 function validateInput(value, count)
 {
-	if (/[^1-9]/.test(value) || (value > count))
+	if (/[^1-9]/.test(value) || (parseInt(value) > count))
 	{
 		alert('Please enter a number between 1 and ' + count + '!');
 	}
