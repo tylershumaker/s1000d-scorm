@@ -106,32 +106,30 @@
   	</xsl:variable>
     <div class="answerList">
 	    <ul>
-	  	<xsl:for-each select="lcAnswerOption">
-			<xsl:variable name="id">
-		    	<xsl:value-of select="lcAnswerOptionContent/description/para/."/>
-		    </xsl:variable>
-		    <xsl:variable name="correct">
-		    	<xsl:if test="lcCorrectResponse">
-		    		<xsl:value-of select="$id"/>
-		    	</xsl:if>
-		    </xsl:variable>
-		    <xsl:choose>
-				<xsl:when test="ancestor::lcSingleSelect or ancestor::lcTrueFalse">
-					<div class="radioButtonClass">
-					    <input type="radio" id="{$id}" name="answerChoiceRadio" value="{$id}, {$correct}"/>
-					    <label for="{$id}"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
-		    		</div>
-		    		<br />
-				 </xsl:when>
-				 <xsl:when test="ancestor::lcMultipleSelect">
-				 	<div class="checkboxClass">
-			    		<input type="checkbox" id="{$id}" name="answerChoiceCheckbox" value="{$id}, {$correct}"/>
-			    		<label for="{$id}"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
-		    		</div>
-		    		<br />
-				</xsl:when>
-			</xsl:choose>
-		</xsl:for-each>
+	    	<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup">
+				  	<xsl:for-each select="lcAnswerOption">
+						<xsl:variable name="id">
+					    	<xsl:value-of select="lcAnswerOptionContent/description/para/."/>
+					    </xsl:variable>
+					    <xsl:variable name="correct">
+					    	<xsl:if test="lcCorrectResponse">
+					    		<xsl:value-of select="$id"/>
+					    	</xsl:if>
+					    </xsl:variable>
+					    <xsl:choose>
+							<xsl:when test="ancestor::lcSingleSelect or ancestor::lcTrueFalse">
+						    	<input type="radio" id="{$id}" name="answerChoiceRadio" value="{$id}, {$correct}"/>
+						    	<label for="{$id}"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
+							 </xsl:when>
+							 <xsl:when test="ancestor::lcMultipleSelect">
+				    			<input type="checkbox" id="{$id}" name="answerChoiceCheckbox" value="{$id}, {$correct}"/>
+				    			<label for="{$id}"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
+							</xsl:when>
+						</xsl:choose>
+					</xsl:for-each>
+				</fieldset>
+			</div>
 		<xsl:choose>
 	 		<xsl:when test="//title/.='Knowledge Check'">
 				<xsl:choose>
