@@ -123,7 +123,7 @@ public class Controller
                     ctx.put(Keys.PDF_OUTPUT_OPTION,"-student");
    				}
         		
-        		if (args.length > 4 && args[3] != null)
+        		if (args.length > 3 && args[3] != null)
         		{
         			ctx.put(Keys.OUTPUT_DIRECTORY, args[3]);
         		}

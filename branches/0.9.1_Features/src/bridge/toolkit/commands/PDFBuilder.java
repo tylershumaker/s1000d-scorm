@@ -10,10 +10,17 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
@@ -60,6 +67,21 @@ public class PDFBuilder implements Command
      */
     final String STUDENTPDFSTYLESHEET = "s1000d_student.css";
     
+    /**
+     * Location of the XSLT transform file.
+     */
+    private static final String TRANSFORM_FILE = "preProcessTransform.xsl";
+    
+    /**
+     * JDOM Document that is used to create the imsmanifest.xml file.
+     */
+    private static Document manifest;
+    
+    /**
+     * InputStream for the xsl file that is used to transform the SCPM file to 
+     * an imsmanifest.xml file.
+     */
+    private static InputStream transform;
     
     /**
      * CSS that is applied to the data modules to produce the PDF output
@@ -125,6 +147,7 @@ public class PDFBuilder implements Command
 
         urn_map = URNMapper.writeURNMap(src_files, "");
         String Stylesheet = ""; 
+        String filenameending = "";
         try
         {
 	        //Apply css to the data modules
@@ -133,11 +156,13 @@ public class PDFBuilder implements Command
 	        {
 	        	sa.applyStylesheetToDMCs(src_dir, INSTRUCTORPDFSTYLESHEET, "css", " media='all'");
 	        	Stylesheet = INSTRUCTORPDFSTYLESHEET;
+	        	filenameending = "-instructor";
 	        }
 	        else
 	        {
 	        	sa.applyStylesheetToDMCs(src_dir, STUDENTPDFSTYLESHEET, "css", " media='all'");
 	        	Stylesheet = STUDENTPDFSTYLESHEET;
+	        	filenameending = "-student";
 	        }
         }
         catch (JDOMException e)
@@ -183,6 +208,65 @@ public class PDFBuilder implements Command
         
         try
         {
+        	transform = this.getClass().getResourceAsStream(TRANSFORM_FILE);
+        	doTransform(scpm_file);
+        }
+        catch (TransformerException e) 
+        {
+        	System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+		}
+        catch (JDOMException e)
+        {
+            System.out.println("Content Package creation was unsuccessful");
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
+        catch (IOException e)
+        {
+        	System.out.println(PDFBUILDER_FAILED);
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
+        
+        XMLOutputter imsoutputter = new XMLOutputter(Format.getPrettyFormat());
+        File imsfile = new File(src_dir + File.separator +"imsmanifest.xml");
+        try 
+        {
+            //writes the imsmanfest.xml file out to the content package
+            FileWriter writer = new FileWriter(imsfile,false);
+            imsoutputter.output(manifest, writer);
+            writer.flush();
+            writer.close();
+        } 
+        catch (java.io.IOException e) 
+        {
+            System.out.println("Content Package creation was unsuccessful");
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
+
+        //get the organization title from the manifest file 
+        //replace any white spaces with 
+        Element title = null;
+        XPath xp = null;
+        try
+        {
+            xp = XPath.newInstance("//ns:organization//ns:title");
+            xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+            title = (Element) xp.selectSingleNode(manifest);
+        }
+        catch (JDOMException e)
+        {
+            System.out.println("Content Package creation was unsuccessful");
+            e.printStackTrace();
+            return PROCESSING_COMPLETE;
+        }
+        String FileName = title.getValue();
+        
+        try
+        {
 	        String outputPath = "";
 	        if (ctx.get(Keys.OUTPUT_DIRECTORY) != null)
 	        {
@@ -193,14 +277,14 @@ public class PDFBuilder implements Command
 	        	}
 	        }
 	        
-	        String outputFile = outputPath + "doc.pdf";
+	        String outputFile = outputPath + FileName.trim() + filenameending + ".pdf";
 	        OutputStream os = new FileOutputStream(outputFile);
 	        ITextRenderer renderer = new ITextRenderer();
 	        
 	        DMParser dmp = new DMParser();
 	        boolean created = false;
 	        
-	        XPath xp = XPath.newInstance("//scoEntry[@scoEntryType='scot01']");
+	        xp = XPath.newInstance("//scoEntry[@scoEntryType='scot01']");
 	        @SuppressWarnings("unchecked")
 	        List<Element> scos = xp.selectNodes(dmp.getDoc(new File(scpm_file)));
 	
@@ -302,6 +386,32 @@ public class PDFBuilder implements Command
             return PROCESSING_COMPLETE;
         }
         return CONTINUE_PROCESSING;
+    }
+    
+    
+    /**
+     * Performs the transformation of the S1000D file to the imsmanifest.xml.
+     * 
+     * @param scpm_source String that represents the location of the S1000D 
+     * SCPM file.
+     * @throws IOException
+     * @throws JDOMException
+     * @throws TransformerException
+     */
+    private static void doTransform(String scpm_source) throws IOException, JDOMException, TransformerException
+    {
+    	DMParser dmParser = new DMParser();
+    	
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+
+        Transformer transformer = tFactory.newTransformer(new StreamSource(transform));
+
+        File the_manifest = File.createTempFile("imsmanifest", ".xml");
+
+        transformer.transform(new StreamSource(scpm_source), new StreamResult(new FileOutputStream(the_manifest)));
+
+        manifest = dmParser.getDoc(the_manifest);
+
     }
 
 }
