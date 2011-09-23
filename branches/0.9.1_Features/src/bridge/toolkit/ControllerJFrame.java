@@ -154,7 +154,7 @@ public class ControllerJFrame extends javax.swing.JFrame
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SCORM With Flash Assessments", "SCORM With HTML Assessments", "Mobile Web App", "PDF Instructor Version", "PDF Student Version" }));
+        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SCORM With Flash Assessments", "SCORM With HTML Assessments", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version" }));
         SelectionDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SelectionDropDownActionPerformed(evt);
@@ -292,11 +292,11 @@ public class ControllerJFrame extends javax.swing.JFrame
         outputType = "-scormhtml";
     }
 
-    private void SelectionDropDownActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    private void SelectionDropDownActionPerformed(java.awt.event.ActionEvent evt) 
+    {                                                  
         // TODO add your handling code here:
         javax.swing.JComboBox cb = (javax.swing.JComboBox)(evt.getSource());
-        int val = 0;
-        val = cb.getSelectedIndex();
+        int val = cb.getSelectedIndex();
         switch (val)
         {
             case 0:
@@ -309,13 +309,16 @@ public class ControllerJFrame extends javax.swing.JFrame
                 outputType = "-mobile";
                 break;
             case 3:
-                outputType = "-pdfinstructor";
+                outputType = "-mobilecourse";
                 break;
             case 4:
+                outputType = "-pdfinstructor";
+                break;
+            case 5:
                 outputType = "-pdfstudent";
                 break;
         }
-    }   
+    }
     
     private void RunButtonActionPerformed(java.awt.event.ActionEvent evt)
     {
@@ -325,11 +328,8 @@ public class ControllerJFrame extends javax.swing.JFrame
         ctx.put(Keys.OUTPUT_DIRECTORY, OutputDirectoryField.getText());
         try
         {
-            if(outputType.equals("-mobile"))
-            {
-                toolkit = sampleCatalog.getCommand("Mobile");
-            }
-            else if (outputType.equals("-scormflash"))
+            
+            if (outputType.equals("-scormflash"))
             {
             	toolkit = sampleCatalog.getCommand("SCORM");
             	ctx.put(Keys.OUTPUT_TYPE, null);
@@ -339,6 +339,15 @@ public class ControllerJFrame extends javax.swing.JFrame
             	toolkit = sampleCatalog.getCommand("SCORM");
             	ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
             }	
+            else if(outputType.equals("-mobile"))
+            {
+            	toolkit = sampleCatalog.getCommand("Mobile"); 
+            }
+            else if(outputType.equals("-mobilecourse"))
+            {
+            	toolkit = sampleCatalog.getCommand("Mobile");
+            	ctx.put(Keys.OUTPUT_TYPE, "mobileCourse");
+            }
             else if(outputType.equals("-pdfinstructor"))
             {
             	toolkit = sampleCatalog.getCommand("PDF");
