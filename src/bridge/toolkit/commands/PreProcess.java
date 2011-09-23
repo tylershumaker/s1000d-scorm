@@ -193,7 +193,7 @@ public class PreProcess implements Command
         Transformer transformer = tFactory.newTransformer(new StreamSource(transform));
 
         File the_manifest = File.createTempFile("imsmanifest", ".xml");
-        
+
         transformer.transform(new StreamSource(scpm_source), new StreamResult(new FileOutputStream(the_manifest)));
 
         manifest = dmParser.getDoc(the_manifest);

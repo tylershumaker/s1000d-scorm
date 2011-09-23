@@ -38,3 +38,37 @@ para, shortDescr{
 	left:20px;
 	width:7in;
 }
+
+
+lcFeedback description para
+{
+	display:none;
+}
+
+lcFeedbackCorrect description para
+{
+	display:none;
+}
+
+lcFeedbackIncorrect description para
+{
+	display:none;
+}
+
+lcAnswerOption lcAnswerOptionContent description para
+{
+	display:block;
+	float:right;
+}
+
+lcAnswerOption lcCorrectResponse
+{
+	display:block;
+	float:right;
+	width:10px;
+	height:10px;
+	margin:0;
+	padding:0;
+	border:0;
+	background-color:#00CC33;
+}
