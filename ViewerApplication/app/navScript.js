@@ -42,9 +42,11 @@ function scoInit()
         is_initialized = true;
     }
     document.getElementById('btnBack').disabled = true;
+    document.getElementById('btnBack').style.cursor = "default"; // for Firefox and Chrome
     if (scoPages[loc].length == 1)
     {
     	document.getElementById('btnNext').disabled = true;
+    	document.getElementById('btnNext').style.cursor = "default"; // for Firefox and Chrome
     }
     if (scoPages[loc].length > 1)
     {
@@ -85,6 +87,7 @@ function goNext()
    if (inString == -1)
    {
 	   document.getElementById('btnBack').disabled = false;
+	   document.getElementById('btnBack').style.cursor = "pointer"; // for Firefox and Chrome
    }
 
    if (count < scoPages[loc].length)
@@ -103,6 +106,7 @@ function goNext()
 		   scoTerminate();
 	   }
 	   document.getElementById('btnNext').disabled = true;
+	   document.getElementById('btnNext').style.cursor = "default"; // for Firefox and Chrome
    } 
    parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 }
@@ -110,6 +114,7 @@ function goNext()
 function goBack()
 {
     document.getElementById('btnNext').disabled = false;
+    document.getElementById('btnNext').style.cursor = "pointer"; // for Firefox and Chrome
     if (count > 1)
     {
     	count--;
@@ -118,15 +123,14 @@ function goBack()
     }
     if (count == 1)
     {
-    	//btnBack.disabled = true;
     	document.getElementById('btnBack').disabled = true;
+    	document.getElementById('btnBack').style.cursor = "default"; // for Firefox and Chrome
     }
     parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 }
 
 function goHome()
 {   
-    //btnNext.disabled = false;
     count = 1;
     var nextPage = scoPages[loc][count-1];
     parent.content.location=nextPage;
