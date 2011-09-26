@@ -40,7 +40,19 @@
   
 	<xsl:choose>
 		<xsl:when test="$theExt ='swf'">
-		<!-- I do not want the swf files to show up -->
+			<!-- I do not want the swf files to show up for slide shows. May need to revisit -->
+			<xsl:if test="not(../../levelledPara)">
+	  			<div align="center" id="{$fig_id}">
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+							codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" 
+							WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" id="{$theFileName}">
+						<param NAME="movie" VALUE="{$theFileName}" />
+						<param NAME="FlashVars" VALUE="theFileName={$global_dmc}" />
+						<param NAME="quality" VALUE="high"/>
+						<param NAME="bgcolor" VALUE="#FFFFFF" />
+					</object>
+				</div>
+			</xsl:if>
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:choose>
@@ -79,10 +91,6 @@
 						</map>
 					</div>
 					<script type="text/javascript">
-				   		//$(function()
-						//$(document).ready()
-						//$(window).load( function()
-						
 						function pageScript(func) {
 							var $context = $("div:jqmData(role='page'):last");
 							func($context);
@@ -90,7 +98,6 @@
 						
 						pageScript(function($context)
 						{
-							//$context.bind("pagecreate", function(event, ui)
 							$context.bind("pageshow", function(event, ui)
 							{
 								initializeHotspots(<xsl:value-of select="$countTotalHotspots"/>);
