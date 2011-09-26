@@ -69,7 +69,9 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Sprockets</para>
+                    <para>
+										Sprockets
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -77,14 +79,18 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Spokes</para>
+                    <para>
+										Spokes
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Chain ring teeth</para>
+                    <para>
+										Chain ring teeth
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />

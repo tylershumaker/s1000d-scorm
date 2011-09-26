@@ -113,7 +113,7 @@
 	    <ul>
 	  	<xsl:for-each select="lcAnswerOption">
 			<xsl:variable name="id">
-		    	<xsl:value-of select="lcAnswerOptionContent/description/para/."/>
+		    	<xsl:value-of select="normalize-space(lcAnswerOptionContent/description/para/.)"/>
 		    </xsl:variable>
 		    <xsl:variable name="correct">
 		    	<xsl:if test="lcCorrectResponse">
@@ -124,7 +124,7 @@
 				<xsl:when test="ancestor::lcSingleSelect or ancestor::lcTrueFalse">
 					<div class="radioButtonClass">
 					    <input type="radio" id="{$id}" name="answerChoiceRadio" value="{$id}, {$correct}"/>
-			  	 	 		<label for="answerChoiceRadio"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
+			  	 	 		<label for="answerChoiceRadio"><xsl:value-of select="normalize-space(lcAnswerOptionContent/description/para/.)"/></label>
 			    		<!-- </input> -->
 		    		</div>
 		    		<br />
@@ -132,7 +132,7 @@
 				 <xsl:when test="ancestor::lcMultipleSelect">
 				 	<div class="checkboxClass">
 			    		<input type="checkbox" id="{$id}" name="answerChoiceCheckbox" value="{$id}, {$correct}"/>
-			  	 	 		<label for="answerChoiceCheckbox"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
+			  	 	 		<label for="answerChoiceCheckbox"><xsl:value-of select="normalize-space(lcAnswerOptionContent/description/para/.)"/></label>
 			    		<!-- </input> -->
 		    		</div>
 		    		<br />

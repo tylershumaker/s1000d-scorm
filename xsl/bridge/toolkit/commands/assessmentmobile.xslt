@@ -110,7 +110,7 @@
 				<fieldset data-role="controlgroup">
 				  	<xsl:for-each select="lcAnswerOption">
 						<xsl:variable name="id">
-					    	<xsl:value-of select="lcAnswerOptionContent/description/para/."/>
+					    	<xsl:value-of select="normalize-space(lcAnswerOptionContent/description/para/.)"/>
 					    </xsl:variable>
 					    <xsl:variable name="correct">
 					    	<xsl:if test="lcCorrectResponse">
@@ -120,11 +120,11 @@
 					    <xsl:choose>
 							<xsl:when test="ancestor::lcSingleSelect or ancestor::lcTrueFalse">
 						    	<input type="radio" id="{$id}" name="answerChoiceRadio" value="{$id}, {$correct}"/>
-						    	<label for="{$id}"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
+						    	<label for="{$id}"><xsl:value-of select="normalize-space(lcAnswerOptionContent/description/para/.)"/></label>
 							 </xsl:when>
 							 <xsl:when test="ancestor::lcMultipleSelect">
 				    			<input type="checkbox" id="{$id}" name="answerChoiceCheckbox" value="{$id}, {$correct}"/>
-				    			<label for="{$id}"><xsl:value-of select="lcAnswerOptionContent/description/para/."/></label>
+				    			<label for="{$id}"><xsl:value-of select="normalize-space(lcAnswerOptionContent/description/para/.)"/></label>
 							</xsl:when>
 						</xsl:choose>
 					</xsl:for-each>

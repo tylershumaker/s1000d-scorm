@@ -69,14 +69,18 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>true</para>
+                    <para>
+										true
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>false</para>
+                    <para>
+										false
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -97,7 +101,9 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Shift levers</para>
+                    <para>
+										Shift levers
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -105,14 +111,18 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Spokes</para>
+                    <para>
+										Spokes
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Brakes</para>
+                    <para>
+										Brakes
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -140,14 +150,18 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Frame</para>
+                    <para>
+										Frame
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Chain ring teeth</para>
+                    <para>
+										Chain ring teeth
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -155,7 +169,9 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Sprockets</para>
+                    <para>
+										Sprockets
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -184,7 +200,9 @@
               <lcSequenceOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Remove the wheel.</para>
+                    <para>
+										Remove the wheel.
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcSequence lcName="lcSequence" lcValue="1" />
@@ -192,7 +210,9 @@
               <lcSequenceOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Unseat the tire.</para>
+                    <para>
+										Unseat the tire.
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcSequence lcName="lcSequence" lcValue="2" />
@@ -200,7 +220,9 @@
               <lcSequenceOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Examine tube for leak.</para>
+                    <para>
+										Examine tube for leak.
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcSequence lcName="lcSequence" lcValue="3" />
@@ -208,7 +230,9 @@
               <lcSequenceOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Mark puncture.</para>
+                    <para>
+										Mark puncture.
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcSequence lcName="lcSequence" lcValue="4" />
@@ -216,7 +240,9 @@
               <lcSequenceOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Sand patch application area.</para>
+                    <para>
+										Sand patch application area.
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcSequence lcName="lcSequence" lcValue="5" />
@@ -224,7 +250,9 @@
               <lcSequenceOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Apply the glue.</para>
+                    <para>
+										Apply the glue.
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcSequence lcName="lcSequence" lcValue="6" />
@@ -232,7 +260,9 @@
               <lcSequenceOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Reinstall the tube.</para>
+                    <para>
+										Reinstall the tube.
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcSequence lcName="lcSequence" lcValue="7" />
@@ -240,7 +270,9 @@
               <lcSequenceOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Reinstall the tire.</para>
+                    <para>
+										Reinstall the tire.
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcSequence lcName="lcSequence" lcValue="8" />
@@ -261,28 +293,36 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Phillips head screwdriver</para>
+                    <para>
+										Phillips head screwdriver
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Standard head screwdriver</para>
+                    <para>
+										Standard head screwdriver
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>4mm Allen wrench</para>
+                    <para>
+										4mm Allen wrench
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>8mm Allen wrench</para>
+                    <para>
+										8mm Allen wrench
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -303,14 +343,18 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Malfunctioning horn</para>
+                    <para>
+										Malfunctioning horn
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Loose spokes</para>
+                    <para>
+										Loose spokes
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -318,7 +362,9 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Frozen or tight chain links</para>
+                    <para>
+										Frozen or tight chain links
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -347,22 +393,18 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Ammonia</para>
+                    <para>
+										Ammonia
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Scrubbing pad</para>
-                  </description>
-                </lcAnswerOptionContent>
-                <lcCorrectResponse lcName="lcCorrectResponse" />
-              </lcAnswerOption>
-              <lcAnswerOption>
-                <lcAnswerOptionContent>
-                  <description>
-                    <para>Rubbing alcohol</para>
+                    <para>
+										Scrubbing pad
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -370,7 +412,19 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Steel wool</para>
+                    <para>
+										Rubbing alcohol
+									</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse" />
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>
+										Steel wool
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
@@ -390,7 +444,9 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Lubricant</para>
+                    <para>
+										Lubricant
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -398,21 +454,27 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Degreaser</para>
+                    <para>
+										Degreaser
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Rubbing alcohol</para>
+                    <para>
+										Rubbing alcohol
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Water</para>
+                    <para>
+										Water
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
@@ -432,7 +494,9 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Brake-lever pivots</para>
+                    <para>
+										Brake-lever pivots
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -440,7 +504,9 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Gear sprockets</para>
+                    <para>
+										Gear sprockets
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -448,7 +514,9 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Derailleur pivots</para>
+                    <para>
+										Derailleur pivots
+									</para>
                   </description>
                 </lcAnswerOptionContent>
                 <lcCorrectResponse lcName="lcCorrectResponse" />
@@ -456,7 +524,9 @@
               <lcAnswerOption>
                 <lcAnswerOptionContent>
                   <description>
-                    <para>Stem</para>
+                    <para>
+										Stem
+									</para>
                   </description>
                 </lcAnswerOptionContent>
               </lcAnswerOption>
