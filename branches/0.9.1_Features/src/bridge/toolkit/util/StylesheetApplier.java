@@ -64,7 +64,7 @@ public class StylesheetApplier
         File[] resources = dm.listFiles();
         for(File resource: resources)
         {
-            if((!resource.isDirectory()) && (!resource.getName().contains("ICN")))
+            if((!resource.isDirectory()) && (!resource.getName().contains("ICN")) && !resource.getName().endsWith(".ent"))
             {
                 SAXBuilder parser = new SAXBuilder();
                 parser.setExpandEntities(false);
@@ -147,14 +147,23 @@ public class StylesheetApplier
              }
              if(line.contains("ENTITY"))
              {
-                 String[] entity = line.split("\"");
-                 String orgFileLoc = dm.getParent().replaceAll("\\\\", "/");
-                 String[] entityValue = entity[1].split(orgFileLoc + "/");
+            	 if (line.contains("\""))
+                 {
+            		 String[] entity = line.split("\"");
                  
-                 internalSubset.append(entity[0] + "'" +entityValue[entityValue.length-1].replaceAll("%20", " ")+
+            		 String orgFileLoc = dm.getParent().replaceAll("\\\\", "/");
+                 	String[] entityValue = entity[1].split(orgFileLoc + "/");
+                 
+                 	internalSubset.append(entity[0] + "'" +entityValue[entityValue.length-1].replaceAll("%20", " ")+
                                        "'" + entity[entity.length-1] );
-                 internalSubset.append("\n");
-                 
+                 	internalSubset.append("\n");
+                 }
+            	 else
+            	 {
+            		 internalSubset.append(line);
+            		 internalSubset.append("\n"); 
+            	 }
+            	 
              }
              
          }
