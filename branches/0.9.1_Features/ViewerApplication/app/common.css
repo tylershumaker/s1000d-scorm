@@ -350,9 +350,9 @@ intendentPadding
 }
 .previousButton:hover
 {
-	border-right: #333333;
+	border-color: transparent #333333 transparent transparent;
 }
 .nextButton:hover
 {
-	border-left: #333333;
+	border-color: transparent transparent transparent #333333;
 }
