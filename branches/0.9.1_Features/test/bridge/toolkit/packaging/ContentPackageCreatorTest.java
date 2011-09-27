@@ -63,12 +63,10 @@ public class ContentPackageCreatorTest
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         catch (JDOMException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         try
@@ -77,12 +75,10 @@ public class ContentPackageCreatorTest
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         catch (JDOMException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         

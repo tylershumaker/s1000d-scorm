@@ -108,7 +108,6 @@ public class S1000DConverter implements Command
             }
             catch (Exception e)
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
@@ -498,7 +497,6 @@ public class S1000DConverter implements Command
      */
     public static void writeOnDisk(File file, String contenuto) throws Exception
     {
-
         try
         {
             BufferedWriter outWriter = null;
@@ -507,13 +505,11 @@ public class S1000DConverter implements Command
             outWriter.write(contenuto);
             outWriter.flush();
             outWriter.close();
-
         }
         catch (Exception ex)
         {
             throw ex;
         }
-
     }
 
     /**
@@ -531,7 +527,6 @@ public class S1000DConverter implements Command
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         return builder.parse(filetempXML);
-
     }
 
     /**
@@ -547,10 +542,10 @@ public class S1000DConverter implements Command
         try
         {
             writeNode(node, writer, false, null, null);
-
         }
         catch (Exception e)
         {
+        	e.printStackTrace();
         }
 
         return writer.toString();

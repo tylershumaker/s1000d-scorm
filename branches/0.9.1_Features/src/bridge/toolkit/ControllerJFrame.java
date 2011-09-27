@@ -268,33 +268,27 @@ public class ControllerJFrame extends javax.swing.JFrame
     }                                                                                              
 
     private void PDFStudentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        // TODO add your handling code here:
         outputType = "-pdfstudent";
     }                                                     
 
     private void MobileRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
         outputType = "-mobile";
     }                                                 
 
     private void ScormFlashRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
         outputType = "-scormflash";
     }                                                
 
     private void PDFInstructorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-        // TODO add your handling code here:
         outputType = "-pdfinstructor";
     }                                                        
 
     private void ScormHTMLRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         outputType = "-scormhtml";
     }
 
     private void SelectionDropDownActionPerformed(java.awt.event.ActionEvent evt) 
     {                                                  
-        // TODO add your handling code here:
         javax.swing.JComboBox cb = (javax.swing.JComboBox)(evt.getSource());
         int val = cb.getSelectedIndex();
         switch (val)
@@ -386,12 +380,10 @@ public class ControllerJFrame extends javax.swing.JFrame
             }
             catch (MalformedURLException e)
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             catch (Exception e)
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

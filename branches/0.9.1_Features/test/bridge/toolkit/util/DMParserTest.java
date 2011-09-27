@@ -42,12 +42,10 @@ public class DMParserTest
         }
         catch (JDOMException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -66,5 +64,3 @@ public class DMParserTest
         assertEquals(expected, dmp.searchForDmRefs(test));
     }
 }
-
-

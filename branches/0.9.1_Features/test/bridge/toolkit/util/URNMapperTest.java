@@ -59,7 +59,6 @@ public class URNMapperTest
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             fail();
         }
@@ -70,14 +69,4 @@ public class URNMapperTest
             System.out.println(iterator.next().getName());
         }
     }
-
-    /**
-     * Test method for {@link bridge.toolkit.util.URNMapper#writeURNMap(java.util.List, java.lang.String)}.
-     */
-    @Test
-    public void testWriteURNMap()
-    {
-        //fail("Not yet implemented");
-    }
-
 }

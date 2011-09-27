@@ -76,7 +76,6 @@ public class DMParser extends XMLParser
         }
         catch (JDOMException e1)
         {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
         List<Element> dmc_lst = null;
@@ -86,7 +85,6 @@ public class DMParser extends XMLParser
         }
         catch (JDOMException e1)
         {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
                 
