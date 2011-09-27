@@ -314,17 +314,17 @@ function showSlide(currentSlide, direction)
 	
 	if (direction == 'next')
 	{
-		document.getElementById('slide' + currentSlide).style.display = 'none';
 		if (document.getElementById('slide' + nextSlide))
 		{
+			document.getElementById('slide' + currentSlide).style.display = 'none';
 			document.getElementById('slide' + nextSlide).style.display = 'block';
 		}
 	}
 	if (direction == 'previous')
 	{
-		document.getElementById('slide' + currentSlide).style.display = 'none';
 		if (document.getElementById('slide' + previousSlide))
 		{
+			document.getElementById('slide' + currentSlide).style.display = 'none';
 			document.getElementById('slide' + previousSlide).style.display = 'block';
 		}
 	}
