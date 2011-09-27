@@ -315,18 +315,6 @@ public class MobileBuilder implements Command
                 {
                 	cd.CopyJarFiles(this.getClass(),"mobiApp",newMobApp.getAbsolutePath());
                 }
-                
-                //copy common.css from the ViewerApplication to the mobile output                
-                File common_css = new File(System.getProperty("user.dir") + File.separator +   "ViewerApplication" + File.separator + "app" + File.separator + "common.css");
-                //check if the directory exists if it does use it else copy it from the jar
-                if (common_css.exists())
-                {
-                	cd.copyDirectory(common_css, newMobApp);
-                }
-                else
-                {
-                	cd.CopyJarFile(this.getClass(), "app/common.css", newMobApp.getAbsolutePath(), "ViewerApplication");
-                }
                  
                 //copy commonmobile.js
                 File commonmobile_js = new File(System.getProperty("user.dir") + File.separator +   "xsl" + File.separator + "bridge" + File.separator + "toolkit" + File.separator + "commands" + File.separator + "commonmobile.js");

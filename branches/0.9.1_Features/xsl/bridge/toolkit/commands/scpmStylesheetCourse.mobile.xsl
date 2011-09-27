@@ -22,7 +22,6 @@
                 <title>JQueryMobileTest</title>
                 <link rel="stylesheet" href="jquery.mobile-1.0b3.min.css" />
                 <link rel="stylesheet" href="jquery.mobile.scrollview.css" />
-                <link rel="stylesheet" href="common.css" type="text/css" />
                 <link rel="stylesheet" href="mobile.css" type="text/css"
                     media="screen" />
                 <script type="text/javascript" src="jquery-1.6.2.min.js"></script>
