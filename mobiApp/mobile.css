@@ -1,52 +1,58 @@
-	html, body {
-		font: 12px/15px sans-serif;
-		background: #fff;
-		padding: 3px;
-		color: #000;
-		margin: 0;
-		}
-	#sidebar, #footer {
-		display: none;
-		}
-	h1, h2, h3, h4, h5, h6 {
-		font-weight: normal;
-		}
-	img { 
-		max-width: 100%;
-		}
-	.center {
-		width: 100% !important;
-		text-align: center;
-		}
-	a {
-		text-decoration: underline;
-		color: #FFF;
-	}
-.randlistItemBullet
+html, body
 {
-	list-style-type: disc;
-	text-indent: 5px;
+	font: 12px/15px sans-serif;
+	background: #fff;
+	padding: 3px;
+	color: #000;
+	margin: 0;
 }
-/* begin assessment stuff */
-.seqAnswerList
+#sidebar, #footer
 {
-   list-style-type: lower-alpha;
-}
-#feedbackCorrect
-{
-	text-align: center;
 	display: none;
-    color: green;
 }
-#feedbackIncorrect
+h1, h3, h4, h5, h6
 {
-	text-align: center;
-	display: none;
-	color: red;
+	font-weight: normal;
 }
-#noAnswerChosen
+h2
 {
-	display: block;
+	font-weight: bold;
+}
+h4
+{
+	margin-bottom: 5px;
+}
+h5
+{
+	margin-bottom: 5px;
+}
+img
+{ 
+	max-width: 100%;
+}
+a
+{
+	text-decoration: underline;
+	color: #FFF;
+}
+li, ul
+{
+    margin-left: 8px;
+}
+th
+{
+	vertical-align:top;
+	text-align:left
+}
+td
+{
+	vertical-align:top
+}
+table 
+{
+	font-size:10pt;
+	padding-top:3;
+	padding-bottom:5;
 }
 .answerList ul
 {
@@ -57,76 +63,25 @@
 {
 	padding-left: 0;
 }
-.knowledgeCheckHeader
+.bodyText
 {
+	font-family: Arial;
+	font-size: 12pt;
+}
+.bold
+{
+	font-weight: bold;
+}
+.branchTitle
+{
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 	font-weight: bold;
-	color: #374F3F;
-	padding-left: 0.5em;
-	z-index: 10;
-	position: relative;
 }
-.fancySmallLine
+.center
 {
-	top: 0.005em;
-	position: relative;
-	height: 0.1em;
-	width: 100%;
-	bottom: 2.45em;
-	border: 0; /* none; */
-}
-.fancySmallLineGradient
-{
-	/* Old browsers */
-	background: rgb(206, 220, 231); 
-	/* FF3.6+ */
-	background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
-	/* Chrome,Safari4+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(165, 175, 188, 1))); 
-	/* Chrome10+,Safari5.1+ */
-	background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
-	/* Opera11.10+ */
-	background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
-	/* IE10+ */
-	background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
-	/* IE6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#A5AFBC', GradientType=1 ); 
-	/* W3C */
-	background: linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
-}
-.fancyLine
-{
-	top: 0.005em;
-	position: relative;
-	float: left;
-	height: 0.8em;
-	width: 100%;
-	bottom: 2.4em;
-	border: 0; /* none; */
-}
-.fancyLineGradient
-{
-	/* Old browsers */
-	background: rgb(206, 220, 231); 
-	/* FF3.6+ */
-	background: -moz-linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
-	/* Chrome,Safari4+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(206, 220, 231, 1)), color-stop(100%, rgba(89, 106, 114, 1))); 
-	/* Chrome10+,Safari5.1+ */
-	background: -webkit-linear-gradient(top, rgba(206,220,231,1) 0%, rgba(89, 106, 114, 1) 100%); 
-	/* Opera11.10+ */
-	background: -o-linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
-	/* IE10+ */
-	background: -ms-linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
-	/* IE6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72', GradientType=0 ); 
-	/* W3C */
-	background: linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
-}
-.content /* use with image*/
-{
-	/*display: inline;*/
-	width: 632px; /* how wide the picture is...may not be the best way to keep everything lined up horizontally */
+	width: 100% !important;
+	text-align: center;
 }
 .checkButton
 {
@@ -160,6 +115,178 @@
 	margin: auto;
 	display: block;
 }
+.content /* use with image*/
+{
+	width: 632px; /* how wide the picture is...may not be the best way to keep everything lined up horizontally */
+}
+.coursewareTitle
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+	color: #003300;
+}
+.decreaseBottom
+{
+	margin-bottom: 10px;
+}
+.decreaseTopBottom
+{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+.def
+{
+	margin-bottom: 10px;
+}
+.defList
+{
+	margin-left: 8px;
+}
+.fancyLine
+{
+	top: 0.005em;
+	position: relative;
+	float: left;
+	height: 0.8em;
+	width: 100%;
+	bottom: 2.4em;
+	border: 0; /* none; */
+}
+.fancyLineGradient
+{
+	/* Old browsers */
+	background: rgb(206, 220, 231); 
+	/* FF3.6+ */
+	background: -moz-linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(206, 220, 231, 1)), color-stop(100%, rgba(89, 106, 114, 1))); 
+	/* Chrome10+,Safari5.1+ */
+	background: -webkit-linear-gradient(top, rgba(206,220,231,1) 0%, rgba(89, 106, 114, 1) 100%); 
+	/* Opera11.10+ */
+	background: -o-linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
+	/* IE10+ */
+	background: -ms-linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72', GradientType=0 ); 
+	/* W3C */
+	background: linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
+}
+.fancySmallLine
+{
+	top: 0.005em;
+	position: relative;
+	height: 0.1em;
+	width: 100%;
+	bottom: 2.45em;
+	border: 0; /* none; */
+}
+.fancySmallLineGradient
+{
+	/* Old browsers */
+	background: rgb(206, 220, 231); 
+	/* FF3.6+ */
+	background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(165, 175, 188, 1))); 
+	/* Chrome10+,Safari5.1+ */
+	background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+	/* Opera11.10+ */
+	background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+	/* IE10+ */
+	background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#A5AFBC', GradientType=1 ); 
+	/* W3C */
+	background: linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+}
+#feedbackCorrect
+{
+	text-align: center;
+	display: none;
+    color: green;
+}
+#feedbackIncorrect
+{
+	text-align: center;
+	display: none;
+	color: red;
+}
+.figureDescription
+{
+	font-size: 10pt;
+	margin: 20px 10px 20px 10px;
+	border: 1px solid black;
+	padding: 5px;
+	background-color: white;
+}
+.font
+{
+	font-size: 10pt;
+	font-family: Sans-Serif;
+}
+#grade
+{
+	display: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #919393 #E4E5E5 #E4E5E5 #E4E5E5;
+	padding: 10px;
+}
+#hotspotContent
+{
+	position: relative;
+}
+.hotspotImage
+{
+	z-index: 0;
+}
+.hotspotDiv
+{
+	position: absolute;
+	z-index: 1;
+	border: 1px solid #C7C7C7;
+}
+.hotspotCheckButton
+{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.indentMarginLeft
+{
+	margin-left:10px;
+}
+.indentStep
+{
+	margin-left: 10px;
+}
+.imageBorder
+{
+	border: solid black .5pt;
+	
+}
+.imageTitle
+{
+	align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: bold;
+	font-style: italic;
+	color: #0000FF;
+}
+.knowledgeCheckHeader
+{
+	font-size: 18pt;
+	font-weight: bold;
+	color: #374F3F;
+	padding-left: 0.5em;
+	z-index: 10;
+	position: relative;
+}
+.leftMarginToZero
+{
+	margin-left:0px;
+}
 .line
 {
 	height: 2px;
@@ -179,6 +306,205 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorStr='#FFFFFF', endColorStr='#DEE2E7', gradientType='1');/*middleColorStr='#DEE2E7', endColorStr='#FFFFFF'); doesn't seem to work*/
 	/* W3C */
 	background: linear-gradient(top, #FFFFFF, #DEE2E7, #FFFFFF);
+}
+.lineBottom
+{
+	border-bottom: black 0.75pt solid;
+}
+.lineBottomBlue
+{
+	border-bottom: blue 0.75pt solid;
+}
+.lineBottomRed
+{
+	border-bottom: red 0.75pt solid;
+}
+.lineTopAndBottom
+{
+	border-top: solid black 0.75pt;
+	border-bottom: solid black 0.75pt;
+}
+.line_top
+{
+	border-top: solid black 0.5pt;
+}
+.line_bottom
+{
+	border-bottom: solid black 0.5pt;
+}
+.line_right
+{
+	border-right: solid black 0.5pt;
+}
+.line_rightbottom
+{
+	border-bottom: solid black 0.5pt;
+	border-right: solid black 0.5pt;
+}
+.line_topbot
+{
+	border-top: solid black 0.5pt;
+	border-bottom: solid black 0.5pt;
+}
+.line_all
+{
+	border:solid black 0.5pt;
+}
+.line_none
+{
+	border:none;
+}
+.line_sides
+{
+	border-left: solid black 0.5pt;
+	border-right: solid black 0.5pt;
+}
+.linkList
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: normal;
+	text-indent: 20px;
+	list-style-type: square;
+}
+.metadataPane
+{
+	border-right: solid black 1pt;
+	border-top: solid black 1pt;
+	padding-bottom: 5px;
+	border-left: solid black 1pt;
+	padding-top: 0px;
+	border-bottom: solid black 1pt;
+}
+.nextButton
+{
+	width: 0;
+	height: 0;
+	border-color: transparent transparent transparent black;
+	border-style: solid;
+	border-width: 20px;
+	margin-left: 10px;
+}
+.nomarginbottom
+{
+	margin-bottom: 10px;
+}
+#noAnswerChosen
+{
+	display: block;
+}
+.nobullet
+{
+    list-style-image: none;
+}
+.noteandwarning 
+{
+	margin-bottom:0px;
+	margin-top:10px;
+}
+.note_text
+{
+	color: blue;	
+}
+.note_line
+{
+	border-top: solid blue 1pt;
+	border-right: solid blue 1pt;
+	border-left: solid blue 1pt;
+	border-bottom: solid blue 1pt;
+}
+.no_line
+{ 
+	border-top-style: none; border-bottom-style: none;
+}
+.orderInput
+{
+	width: 40px !important;
+	display: block;
+	float: left;
+}
+.orderLabel
+{
+	display: block;
+	margin-left: 2%;
+	float: left;
+	clear: right;
+}
+.para0
+{
+	font-size: 16pt;
+	color: black;
+	font-weight: bold;
+}
+.prelreq_table
+{
+	border-top: solid black 0.75pt;
+	border-bottom: solid black 0.75pt;
+}
+.previousButton
+{
+  	width: 0;
+	height: 0;
+	border-color: transparent black transparent transparent;
+	border-style: solid;
+	border-width: 20px;
+	margin-right: 10px;
+}
+.questionCount
+{
+	font-size: 10pt;
+	float: right;
+}
+.questionNumber
+{
+	display: none;
+}
+#questionNumber1 /* This needs set to block so original question will show up */
+{
+	display: block;
+}
+.questionNumber ul
+{
+	padding-left: 0;
+}
+.randlistItem
+{
+	padding-left: 3em;
+}
+.randlistItemBullet
+{
+	list-style-type: disc;
+	text-indent: 5px;
+}
+.randlistItemHyphen
+{
+	list-style-type: square;
+}
+.referenceText
+{
+	font-family: Arial, Helvetica, sans-serif;
+	text-indent: 20px;
+	font-size: 11pt;
+}
+.seqAnswerList
+{
+   list-style-type: lower-alpha;
+}
+.slide
+{
+	border: solid grey .5pt;
+	padding: 5px;
+	display: none;
+	background-color: #CCCCCC;
+}
+#slide1 /* This needs set to block so original slide will show up */
+{
+	display: block;
+}
+.slideNavigation
+{
+	margin-left: auto;
+	margin-right: auto;
 }
 .sortable
 {
@@ -204,61 +530,54 @@
 	float: none;
 	overflow: auto;
 }
-.orderInput
+.subpara1
 {
-	width: 40px !important;
-	display: block;
-	float: left;
+	font-size: 14pt;
+	color: black;
+	font-weight: bold;
+	text-decoration: underline;
 }
-.orderLabel
+.subpara2
 {
-	display: block;
-	margin-left: 2%;
-	float: left;
-	clear: right;
+	font-size: 12pt;
+	color: black;
+	font-weight: bold;
+	padding-left: 1em;
 }
-.questionNumber
+.subpara3
 {
-	display: none;
+	font-weight: bold;
+	color: #3399cc;
+	font-size: 14.4pt
 }
-#questionNumber1 /* This needs set to block so original question will show up */
+.subpara4
 {
-	display: block;
+	font-weight: lighter;
+	color: #3399cc;
+	font-size: 14.4pt
 }
-.questionNumber ul
+.subpara5
 {
-	padding-left: 0;
+	font-style: italic;
+	color: #3399cc;
+	font-size: 14.4pt
 }
-#grade
+.tableCell 
 {
-	display: none;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #919393 #E4E5E5 #E4E5E5 #E4E5E5; /*#999999 #CCCCCC #CCCCCC #CCCCCC;*/
-	padding: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 20px;
 }
-#hotspotContent
+.tdCrew
 {
-	position: relative;
+	padding-left: 3em;
 }
-.hotspotImage
+.term
 {
-	z-index: 0;
+	font-weight: bold;
 }
-.hotspotDiv
+.theadCellLineBottom
 {
-	position: absolute;
-	z-index: 1;
-	border: 1px solid #C7C7C7;
+	border-bottom: black 0.75pt solid;
+	padding-right: 20px;
 }
-.hotspotCheckButton
-{
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-.questionCount
-{
-	font-size: 10pt;
-	float: right;
-}
-/* end assessment stuff */

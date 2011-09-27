@@ -304,10 +304,6 @@ intendentPadding
 {
 	display: block;
 }
-.figure
-{
-	
-}
 .figureDescription
 {
 	font-size: 10pt;
@@ -323,13 +319,8 @@ intendentPadding
 }
 .previousButton
 {
-	/* do I need the following to make previous arrow?*/
   	width: 0;
 	height: 0;
-	/*border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 10px solid black;*/
-	/* border-color: transparent black transparent transparent; */
 	border-color: transparent black transparent transparent;
 	border-style: solid;
 	border-width: 20px;
@@ -337,12 +328,8 @@ intendentPadding
 }
 .nextButton
 {
-	/* do I need the following to make next arrow?*/
 	width: 0;
 	height: 0;
-	/*border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-right: 10px solid black;*/
 	border-color: transparent transparent transparent black;
 	border-style: solid;
 	border-width: 20px;
