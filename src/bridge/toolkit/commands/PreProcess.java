@@ -38,7 +38,7 @@ import bridge.toolkit.util.Keys;
 import bridge.toolkit.util.URNMapper;
 
 /**
- * The first module in the toolkit that transforms the SCPM into a imsmanifest.xml
+ * Module in the toolkit that transforms the SCPM into a imsmanifest.xml
  * file and generates a urn_resource_map.xml file from the resource package.
  */
 public class PreProcess implements Command
@@ -411,11 +411,15 @@ public class PreProcess implements Command
     }
 
     /**
-     * TODO:  Finish javaDoc
+     * Finds the file that is referenced in a 'href' attribute associated with a 
+     * given 'resource' element in imsmanifest.xml file. 
      * 
-     * @param sco_key
-     * @param str_current
-     * @return
+     * @param sco_key - String that represents the value of 'identifier' attribute of a
+     *                  'resource' element that contains the 'resource' being retrieved as 
+     *                  a 'dependency' element.  
+     * @param str_current - String that represents the value of 'identifier' attribute of a
+     *                  'resource' element being retrieved. 
+     * @return - Document object that represents the file in the 'resource' element. 
      * @throws JDOMException
      * @throws ResourceMapException
      * @throws IOException
