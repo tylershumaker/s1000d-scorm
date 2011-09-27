@@ -539,76 +539,12 @@ public class MobileBuilder implements Command
                         mobileList.add(newChild.getName() + "/" + htmName);
                         transformer.transform(new StreamSource(dataModule), 
                                               new StreamResult(new FileOutputStream(htmlFile)));
-
-                        handleSlideShows(currDM, learnCode, dataModule, newChild);
                     }
                 }
              
             }
             
             folderCount++;
-        }
-    }
-    
-    /**
-     * Gathers the required ICN files and data modules needed for Flash slide shows that exist 
-     * in the example data. 
-     * 
-     * @param currDM JDom Document object that represents the current data module being processed. 
-     * @param learnCode JDome Attribute object that is found in the current data module's dmCode.
-     * @param dataModule File object that represents the location of the current data module file.
-     * @param newChild File object that represents the mobile output child folder that the current mobile
-     * output files are being output to. 
-     * @throws JDOMException
-     * @throws IOException
-     */
-    private void handleSlideShows(Document currDM, Attribute learnCode, File dataModule, File newChild) throws JDOMException, IOException
-    {
-        //check to see if the levelledPara element exists in the data module
-        XPath xp = XPath.newInstance("//levelledPara");
-        Element levelledPara = (Element)xp.selectSingleNode(currDM);
-        if(levelledPara != null && learnCode != null)
-        {
-            //check to see if the learnCode is T4J - Interactive Content Procedure
-            //Exploratory interactive simulation, animation or video used to
-            //provide the learner with a procedure to be learned.
-            if(learnCode.getValue().equals("T4J"))
-            {
-                CopyDirectory cd = new CopyDirectory();
-                cd.copyDirectory(dataModule, newChild);
-                
-                String org = currDM.getDocType().getInternalSubset();
-                
-                BufferedReader in = new BufferedReader(new StringReader(org));
-           
-                List<String> lines = new ArrayList<String>();
-                String str;
-                while ((str = in.readLine()) != null) 
-                {
-                   lines.add(str);
-                }
-                in.close();
-                
-                Iterator<String> iterator2 = lines.iterator();
-                while(iterator2.hasNext())
-                {
-                    String line = iterator2.next();
-                    
-                    if(line.contains("ENTITY"))
-                    {
-                        String[] entity = line.split("\"");
-                        String orgFileLoc = dataModule.getParent().replaceAll("\\\\", "/");
-                        String[] entityValue = entity[1].split(orgFileLoc + "/");
-                        
-                        File media = new File(src_dir + File.separator + entityValue[entityValue.length-1].replaceAll("%20", " ").replaceAll("/", "\\\\"));
-                        //File mediaLoc = new File(newChild.getAbsolutePath() + File.separator + "media");
-                        //mediaLoc.mkdir();
-                        if(!media.getName().contains(".swf"))
-                            cd.copyDirectory(media, newChild);
-                    }
-                    
-                }
-            }
         }
     }
     
