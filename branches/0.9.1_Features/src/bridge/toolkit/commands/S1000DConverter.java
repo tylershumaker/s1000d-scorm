@@ -22,7 +22,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
-import org.jdom.Attribute;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Comment;
 import org.w3c.dom.DocumentType;
@@ -36,15 +35,13 @@ import bridge.toolkit.util.Keys;
 import com.sun.org.apache.xpath.internal.NodeSet;
 import com.sun.org.apache.xpath.internal.XPathAPI;
 
+/**
+ *  Converts S1000D 4.1 learning data into S1000D 4.0 learning data so that 
+ *  it can be processed by the toolkit. 
+ */
 public class S1000DConverter implements Command
 {
 
-    /**
-     * The unit of processing work to be performed for the PreProcess module.
-     * 
-     * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
-     */
-    @SuppressWarnings("unchecked")
     /**
      * modelic SCPM
      */
@@ -70,8 +67,15 @@ public class S1000DConverter implements Command
      */
     public static Node qualityAssurance;
 
+    /**
+     * 
+     */
     public static String resourcepack;
 
+    /** 
+     * The unit of processing work to be performed for the S1000DConverter module.
+     * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
+     */
     public boolean execute(Context ctx)
     {
     	System.out.println("Executing S1000D Converter");
