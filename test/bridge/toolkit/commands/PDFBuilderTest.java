@@ -53,7 +53,6 @@ public class PDFBuilderTest
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -86,7 +85,6 @@ public class PDFBuilderTest
         }
         catch (Exception e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

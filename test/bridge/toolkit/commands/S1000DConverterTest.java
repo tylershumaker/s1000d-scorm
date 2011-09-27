@@ -65,7 +65,6 @@ public class S1000DConverterTest
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -99,7 +98,6 @@ public class S1000DConverterTest
         }
         catch (Exception e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

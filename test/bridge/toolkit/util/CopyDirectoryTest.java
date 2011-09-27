@@ -56,7 +56,6 @@ public class CopyDirectoryTest
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -102,7 +101,6 @@ public class CopyDirectoryTest
             }
             catch (IOException e)
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         

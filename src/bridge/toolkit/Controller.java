@@ -63,12 +63,10 @@ public class Controller
             }
             catch (MalformedURLException e)
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             catch (Exception e)
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
@@ -133,7 +131,6 @@ public class Controller
         }
         catch (Exception e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             System.out.println(e.getCause().toString());
         }
