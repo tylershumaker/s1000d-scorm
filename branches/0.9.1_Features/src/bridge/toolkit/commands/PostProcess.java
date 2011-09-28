@@ -98,10 +98,16 @@ public class PostProcess implements Command
             		outputPath = outputPath + File.separator;
             	}
             }
+            File outputDir = new File(outputPath);
+            if(!outputDir.exists())
+            {
+                outputDir.mkdirs();
+            }    
+            
             String zipName = title.getValue();
             zipName = zipName.replace(" ", "_").trim();
             zipName = zipName.replace("\n", "").trim();            
-            File zip = new File(outputPath + zipName + ".zip");
+            File zip = new File(outputDir + File.separator + zipName + ".zip");
            
             ZipCreator zipCreator = new ZipCreator();
             try

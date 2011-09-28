@@ -276,8 +276,12 @@ public class PDFBuilder implements Command
 	        		outputPath = outputPath + File.separator;
 	        	}
 	        }
-	        
-	        String outputFile = outputPath + FileName.trim() + filenameending + ".pdf";
+            File outputDir = new File(outputPath);
+            if(!outputDir.exists())
+            {
+                outputDir.mkdirs();
+            }
+	        String outputFile = outputDir.getAbsolutePath() +File.separator + FileName.trim() + filenameending + ".pdf";
 	        OutputStream os = new FileOutputStream(outputFile);
 	        ITextRenderer renderer = new ITextRenderer();
 	        
