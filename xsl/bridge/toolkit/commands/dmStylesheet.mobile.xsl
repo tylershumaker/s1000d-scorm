@@ -9,7 +9,7 @@
     <xsl:output method="html" indent="yes" />
     <xsl:include href="ViewerApplication/app/params.xslt" />
     <xsl:include href="ViewerApplication/app/funcs.xslt" />
-    <xsl:include href="ViewerApplication/app/common.xslt" />
+    <xsl:include href="ViewerApplication/app/commonhtml.xslt" />
     <xsl:include href="ViewerApplication/app/lists.xslt" />
     <xsl:include href="xsl/bridge/toolkit/commands/graphics.mobile.xslt" />
     <xsl:include href="ViewerApplication/app/assessment.xslt" />

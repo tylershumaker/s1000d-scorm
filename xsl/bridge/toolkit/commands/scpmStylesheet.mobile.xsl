@@ -35,6 +35,7 @@
                 <script type="text/javascript" src="jquery.mobile-1.0b3.min.js"></script>
                 <script type="text/javascript" src="jquery.easing.1.3.js"></script>
                 <script type="text/javascript" src="jquery.mobile.scrollview.js"></script>
+            	<script type="text/javascript" src="commonmobile.js"></script> <!-- to get assessments working -->
             </head>
             <body>
                 <div data-role="page" data-theme="a">
