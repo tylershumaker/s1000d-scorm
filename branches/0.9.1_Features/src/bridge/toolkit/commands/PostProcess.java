@@ -106,8 +106,11 @@ public class PostProcess implements Command
             
             String zipName = title.getValue();
             zipName = zipName.replace(" ", "_").trim();
-            zipName = zipName.replace("\n", "").trim();            
-            File zip = new File(outputDir + File.separator + zipName + ".zip");
+            zipName = zipName.replace("\n", "").trim();    
+            
+            File zip = new File(zipName + ".zip");
+            if(!outputDir.getName().equals(""))
+                zip = new File(outputDir + File.separator + zipName + ".zip");
            
             ZipCreator zipCreator = new ZipCreator();
             try
