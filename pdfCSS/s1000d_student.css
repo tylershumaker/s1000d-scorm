@@ -39,6 +39,11 @@ para, shortDescr{
 	width:7in;
 }
 
+lcFeedback description para
+{
+	display:none;
+}
+
 lcFeedbackCorrect description para
 {
 	display:none;
