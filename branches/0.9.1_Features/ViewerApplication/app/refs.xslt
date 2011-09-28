@@ -303,7 +303,8 @@
 		
 		<xsl:choose>
 			<xsl:when test="$actuateMode='onRequest'">
-				<xsl:choose>
+			<!-- Ignoring showMode for SCORM output usability -->
+<!-- 				<xsl:choose>
 					<xsl:when test="$showMode='replace'">
 						<a>
 							<xsl:attribute name="href">
@@ -312,15 +313,18 @@
 							<xsl:value-of select="$xlinkhref" />
 						</a>
 					</xsl:when>
-				</xsl:choose>
+				</xsl:choose> -->
 				<!--add conditons for new window here-->
-				<xsl:choose>
+<!-- 				<xsl:choose>
 					<xsl:when test="$showMode='new'">
 						<a href="javascript:void(window.open('{$xlinkhref}'))">
 							<xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
 						</a>
 					</xsl:when>
-				</xsl:choose>
+				</xsl:choose> -->
+				<a href="javascript:void(window.open('{$xlinkhref}'))">
+					<xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
+				</a>
 			</xsl:when>
 		</xsl:choose>
 	</xsl:template>
