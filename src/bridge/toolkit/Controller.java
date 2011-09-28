@@ -101,12 +101,12 @@ public class Controller
         			toolkit = sampleCatalog.getCommand("SCORM");
         			ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
    				}
-        	    else if(args.length>2 && args[2] != null && (args[2].equals("-mobileCourse")))
+        	    else if(args.length>2 && args[2] != null && (args[2].equalsIgnoreCase("-mobileCourse")))
         	    {
         	        toolkit = sampleCatalog.getCommand("Mobile"); 
         	        ctx.put(Keys.OUTPUT_TYPE, "mobileCourse");
         	    }
-        	    else if(args.length>2 && args[2] != null && (args[2].equals("-mobilePerformanceSupport")))
+        	    else if(args.length>2 && args[2] != null && (args[2].equalsIgnoreCase("-mobilePerformanceSupport")))
         	    {
         	        toolkit = sampleCatalog.getCommand("Mobile");
         	    }
