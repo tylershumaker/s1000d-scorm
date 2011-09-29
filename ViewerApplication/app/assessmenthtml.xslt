@@ -113,7 +113,7 @@
 	    <ul>
 	  	<xsl:for-each select="lcAnswerOption">
 			<xsl:variable name="id">
-		    	<xsl:value-of select="normalize-space(lcAnswerOptionContent/description/para/.)"/>
+		    	<xsl:value-of select="position()"/>
 		    </xsl:variable>
 		    <xsl:variable name="correct">
 		    	<xsl:if test="lcCorrectResponse">
