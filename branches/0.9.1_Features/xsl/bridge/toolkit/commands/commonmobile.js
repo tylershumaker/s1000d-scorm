@@ -360,7 +360,7 @@ function initializeCoords(id)
 	var areaWidth = null;
 	
 	var coordsString =  null;
-	coordsString = document.getElementById(id).getAttribute('coords');
+	coordsString = document.getElementById('area' + id).getAttribute('coords');
 	
 	var coordsArray = new Array();
 	coordsArray = coordsString.split(",");
@@ -391,8 +391,8 @@ function initializeCoords(id)
 	document.getElementById('div' + id).style.width = areaWidth + '%';
 	
 	// set max height and width of hotspotContent
-	document.getElementById('hotspotContent').style.maxHeight = originalWidth;
-	document.getElementById('hotspotContent').style.maxWidth = originalHeight;
+	document.getElementById('hotspotContent').style.maxHeight = originalHeight;
+	document.getElementById('hotspotContent').style.maxWidth = originalWidth;
 }
 
 function highlightArea(id, countTotal)
@@ -424,7 +424,7 @@ function checkHotspotCorrect(correctAnswer, countTotal)
 	var correctId = correctAnswer.replace(/^(hotspot)0*/, '');
 	var feedbackCorrect = document.getElementById('feedbackCorrect');
 	var feedbackIncorrect = document.getElementById('feedbackIncorrect');
-	var correctCoords = document.getElementById(correctId).getAttribute('coords');
+	var correctCoords = document.getElementById('area' + correctId).getAttribute('coords');
 
 	if (correctId == selectedHotspot)
 	{
@@ -445,4 +445,69 @@ function checkHotspotCorrect(correctAnswer, countTotal)
 			document.getElementById('div' + correctId).style.borderWidth = '2px';
 		}
 	}
+}
+
+function changeCallout(id, coords, countTotal)
+{
+	for (var j=1; j <= countTotal; j++)
+	{
+		document.getElementById('callout' + j).style.display = 'none';
+	}
+	
+	// left and right coordinates
+	var xCoords = new Array();
+	var minXCoord = null;
+	var maxXCoord = null;
+	// up and down coordinates
+	var yCoords = new Array();
+	var minYCoord = null;
+	var maxYCoord = null;
+	
+	// coordinate percentages
+	var originalWidth = document.getElementById('hotspotImage').naturalWidth; //width;
+	var originalHeight = document.getElementById('hotspotImage').naturalHeight; //height;
+	var minYCoordPercent = null;
+	var maxYCoordPercent = null;
+	var minXCoordPercent = null;
+	var maxXCoordPercent = null;
+	var areaHeight = null; //not sure if I need this
+	var areaWidth = null;
+	
+	var coordsString =  null;
+	coordsString = document.getElementById('area' + id).getAttribute('coords');
+	
+	var coordsArray = new Array();
+	coordsArray = coordsString.split(",");
+	
+	for (var i=0; i < coordsArray.length; i=i+2)
+	{
+		xCoords.push(coordsArray[i]);
+		yCoords.push(coordsArray[i + 1]);
+	}
+
+	minXCoord = Math.min.apply(Math, xCoords);
+	maxXCoord = Math.max.apply(Math, xCoords);
+	
+	minYCoord = Math.min.apply(Math, yCoords);
+	maxYCoord = Math.max.apply(Math, yCoords);
+	
+	minYCoordPercent = (minYCoord * 100)/originalHeight;
+	maxYCoordPercent = (maxYCoord * 100)/originalHeight;
+	minXCoordPercent = (minXCoord * 100)/originalWidth;
+	maxXCoordPercent = (maxXCoord * 100)/originalWidth;
+
+	areaHeight = maxYCoordPercent - minYCoordPercent; //not sure on this
+	areaWidth = maxXCoordPercent - minXCoordPercent;
+	
+	document.getElementById('callout' + id).style.top = minYCoordPercent + '%';
+	document.getElementById('callout' + id).style.left = minXCoordPercent + '%';
+	document.getElementById('div' + id).style.height = areaHeight + '%'; // don't think I need this
+	document.getElementById('callout' + id).style.width = areaWidth + '%';
+	
+	// set max height and width of hotspotContent
+	document.getElementById('hotspotContent').style.maxHeight = originalHeight; // probably do not need this
+	document.getElementById('hotspotContent').style.maxWidth = originalWidth;
+	
+	// set max height and width of calloutDiv
+	document.getElementById('callout' + id).style.display = "block";
 }

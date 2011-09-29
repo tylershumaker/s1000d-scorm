@@ -74,7 +74,7 @@
 						<img id="hotspotImage" src="{$theFileName}" usemap="#hotspotMap" class="imageBorder hotspotImage"/>
 						<map name="hotspotMap">
 							<xsl:for-each select="hotspot">
-  								<xsl:variable name="hotspotID">
+					  			<xsl:variable name="hotspotID">
   									<xsl:value-of select="position()"/>
 									<!-- <xsl:value-of select="@id"/> -->
 								</xsl:variable>
@@ -84,11 +84,46 @@
 								<xsl:variable name="coordinates">
 									<xsl:value-of select="@objectCoordinates"/>
 								</xsl:variable>
- 								<div id="div{$hotspotID}" class="hotspotDiv" onClick="highlightArea('{$hotspotID}', '{$countTotal}')"> <!-- onClick="selectArea('{$hotspotID}')"> -->
-  									<area shape="poly" name="{$hotspotID}" id="{$hotspotID}" coords="{$coordinates}"/>
-  								</div>
+								<xsl:choose>
+							    	<xsl:when test="@hotspotType = 'CALLOUT' or @hotspotType = 'callout'">
+							    		<div id="div{$hotspotID}" class="hotspotCalloutDiv" onClick="changeCallout('{$hotspotID}', '{$coordinates}', '{$countTotal}')">
+		  									<area shape="poly" name="{$hotspotID}" id="area{$hotspotID}" coords="{$coordinates}"/>
+										</div>
+										<div id="callout{$hotspotID}" class="calloutDiv">
+		  									<xsl:for-each select="internalRef">
+												<xsl:variable name="intrefid" select="@internalRefId"/>
+												<xsl:value-of select="//para/definitionList/definitionListItem[@id=$intrefid]/listItemTerm/." /><br/>
+												<xsl:value-of select="//para/definitionList/definitionListItem[@id=$intrefid]/listItemDefinition/para/." />
+											</xsl:for-each>
+		  								</div>
+							    	</xsl:when>
+								    <xsl:otherwise>
+		 								<div id="div{$hotspotID}" class="hotspotDiv" onClick="highlightArea('{$hotspotID}', '{$countTotal}')">
+		  									<area shape="poly" name="{$hotspotID}" id="area{$hotspotID}" coords="{$coordinates}"/>
+		  								</div>
+	  								</xsl:otherwise>
+  								</xsl:choose>
  							</xsl:for-each>
 						</map>
+						<xsl:if test="not(hotspot/internalRef)">
+							<input type="submit" class="checkButton hotspotCheckButton" value="Check" onClick="checkHotspotCorrect('{$correctAnswer}', '{$countTotalHotspots}'); return false;"/>
+						</xsl:if>
+	 					<xsl:for-each select="hotspot">
+							<xsl:if test="lcFeedbackCorrect">
+								<div id="feedbackCorrect">
+									<div class="line"/>
+								  	<xsl:apply-templates select="lcFeedbackCorrect/description/para/."/>
+									<div class="line"/>
+								</div>
+							</xsl:if>
+							<xsl:if test="lcFeedbackIncorrect">
+							    <div id="feedbackIncorrect">
+							    	<div class="line"/>
+							  	  	<xsl:apply-templates select="lcFeedbackIncorrect/description/para/."/>
+							  		<div class="line"/>
+							  	</div>
+							</xsl:if>
+						</xsl:for-each>
 					</div>
 					<script type="text/javascript">
 						function pageScript(func) {
@@ -104,23 +139,6 @@
 							});
 						});
 					</script>
-					<input type="submit" class="checkButton hotspotCheckButton" value="Check" onClick="checkHotspotCorrect('{$correctAnswer}', '{$countTotalHotspots}'); return false;"/>
-					<xsl:for-each select="hotspot">
-						<xsl:if test="lcFeedbackCorrect">
-							<div id="feedbackCorrect">
-								<div class="line"/>
-							  	<xsl:apply-templates select="lcFeedbackCorrect/description/para/."/>
-								<div class="line"/>
-							</div>
-						</xsl:if>
-						<xsl:if test="lcFeedbackIncorrect">
-						    <div id="feedbackIncorrect">
-						    	<div class="line"/>
-						  	  	<xsl:apply-templates select="lcFeedbackIncorrect/description/para/."/>
-						  		<div class="line"/>
-						  	</div>
-						</xsl:if>
-					</xsl:for-each>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:otherwise>
