@@ -341,8 +341,6 @@ function highlightArea(id, coords, countTotal)
 	{
 		xCoords.push(coordsArray[i]);
 		yCoords.push(coordsArray[i + 1]);
-		/*xCoords = xCoords.concat(coordsArray[i]);
-		yCoords = yCoords.concat(coordsArray[i + 1]);*/
 	}
 
 	minXCoord = Math.min.apply(Math, xCoords);
@@ -385,7 +383,7 @@ function checkHotspotCorrect(correctAnswer, countTotal)
 	var correctId = correctAnswer.replace(/^(hotspot)0*/, '');
 	var feedbackCorrect = document.getElementById('feedbackCorrect');
 	var feedbackIncorrect = document.getElementById('feedbackIncorrect');
-	var correctCoords = document.getElementById(correctId).getAttribute('coords');
+	var correctCoords = document.getElementById('area' + correctId).getAttribute('coords');
 
 	if (correctId == selectedHotspot)
 	{
@@ -406,4 +404,42 @@ function checkHotspotCorrect(correctAnswer, countTotal)
 			document.getElementById('div' + correctId).style.backgroundColor = '#30BF30';
 		}
 	}
+}
+
+function changeCallout(id, coords, countTotal)
+{
+	for (var j=1; j <= countTotal; j++)
+	{
+		document.getElementById('callout' + j).style.display = 'none';
+	}
+	
+	var coordsArray = new Array();
+	coordsArray = coords.split(",");
+
+	// left and right coordinates
+	var xCoords = new Array();
+	var minXCoord = null;
+	var maxXCoord = null;
+	// up and down coordinates
+	var yCoords = new Array();
+	var minYCoord = null;
+	var maxYCoord = null;
+
+	for (var i=0; i < coordsArray.length; i=i+2)
+	{
+		xCoords.push(coordsArray[i]);
+		yCoords.push(coordsArray[i + 1]);
+	}
+
+	minXCoord = Math.min.apply(Math, xCoords);
+	maxXCoord = Math.max.apply(Math, xCoords);
+	
+	minYCoord = Math.min.apply(Math, yCoords);
+	maxYCoord = Math.max.apply(Math, yCoords);
+
+	document.getElementById('callout' + id).style.top = minYCoord;
+	document.getElementById('callout' + id).style.left = minXCoord;
+	document.getElementById('callout' + id).style.maxWidth = maxXCoord - minXCoord;
+	
+	document.getElementById('callout' + id).style.display = "block";
 }

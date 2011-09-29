@@ -4,7 +4,6 @@
 	font-size: 12pt;
 	
 }
-
 .metadataPane
 {
 	border-right: solid black 1pt;
@@ -14,7 +13,6 @@
 	padding-top: 0px;
 	border-bottom: solid black 1pt;
 }
-
 .noteandwarning 
 {
 	margin-bottom:0px;
@@ -37,7 +35,6 @@
 {
 	border-top: solid black 0.75pt;
 	border-bottom: solid black 0.75pt;
-	
 }
 .line_top
 {
@@ -251,7 +248,6 @@ intendentPadding
 .imageBorder
 {
 	border: solid black .5pt;
-	
 }
 
 .imageTitle
@@ -263,14 +259,12 @@ intendentPadding
 	font-style: italic;
 	color: #0000FF;
 }
-
 .branchTitle
 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 	font-weight: bold;
 }
-
 .coursewareTitle
 {
 	font-family: Arial, Helvetica, sans-serif;
@@ -299,7 +293,6 @@ intendentPadding
 	display: none;
 	background-color: #CCCCCC;
 }
-
 #slide1 /* This needs set to block so original slide will show up */
 {
 	display: block;
@@ -342,4 +335,14 @@ intendentPadding
 .nextButton:hover
 {
 	border-color: transparent transparent transparent #333333;
+}
+.calloutDiv
+{
+	position: absolute;
+	background-color: white;
+	border: 1px solid black;
+	display: none;
+	z-index: 1;
+	font-size: 10px;
+	padding: 1px;
 }
