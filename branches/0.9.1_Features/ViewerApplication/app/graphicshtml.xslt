@@ -67,7 +67,7 @@
 						    	</xsl:if>
 							</xsl:variable>
 							<xsl:variable name="countTotalHotspots">
-								<xsl:value-of select="count(hotspots)"/>
+								<xsl:value-of select="count(hotspot)"/>
 							</xsl:variable>
 							<xsl:for-each select="hotspot">
   								<xsl:variable name="hotspotID">
@@ -80,17 +80,30 @@
 								<xsl:variable name="coordinates">
 									<xsl:value-of select="@objectCoordinates"/>
 								</xsl:variable>
-<!--  								<xsl:variable name="correct">
-							    	<xsl:if test="lcCorrectResponse">
-							    		<xsl:value-of select="position()"/>
-							    	</xsl:if>
-							    </xsl:variable> -->
- 								<div id="div{$hotspotID}" class="hotspotDiv" onMouseOver="highlightArea('{$hotspotID}', '{$coordinates}', '{$countTotal}')" onMouseOut="unhighlightArea('{$countTotal}')" onClick="selectArea('{$hotspotID}', '{$countTotal}')"> <!-- onClick="selectArea('{$hotspotID}')"> -->
-  									<area shape="poly" name="{$hotspotID}" id="{$hotspotID}" coords="{$coordinates}"/>
-  								</div>
+							    <xsl:choose>
+							    	<xsl:when test="@hotspotType = 'CALLOUT' or @hotspotType = 'callout'">
+							    		<div id="div{$hotspotID}" class="hotspotCalloutDiv" onMouseOver="changeCallout('{$hotspotID}', '{$coordinates}', '{$countTotal}')">
+		  									<area shape="poly" name="{$hotspotID}" id="{$hotspotID}" coords="{$coordinates}"/>
+										</div>
+										<div id="callout{$hotspotID}" class="calloutDiv">
+		  									<xsl:for-each select="internalRef">
+												<xsl:variable name="intrefid" select="@internalRefId"/>
+												<xsl:value-of select="//para/definitionList/definitionListItem[@id=$intrefid]/listItemTerm/." /><br/>
+												<xsl:value-of select="//para/definitionList/definitionListItem[@id=$intrefid]/listItemDefinition/para/." />
+											</xsl:for-each>
+		  								</div>
+							    	</xsl:when>
+								    <xsl:otherwise>
+		 								<div id="div{$hotspotID}" class="hotspotDiv" onMouseOver="highlightArea('{$hotspotID}', '{$coordinates}', '{$countTotal}')" onMouseOut="unhighlightArea('{$countTotal}')" onClick="selectArea('{$hotspotID}', '{$countTotal}')">
+		  									<area shape="poly" name="{$hotspotID}" id="area{$hotspotID}" coords="{$coordinates}"/>
+		  								</div>
+	  								</xsl:otherwise>
+  								</xsl:choose>
  							</xsl:for-each>
 						</map>
- 						<input type="submit" class="checkButton hotspotCheckButton" value="Check" onClick="checkHotspotCorrect('{$correctAnswer}', '{$countTotalHotspots}'); return false;"/>
+						<xsl:if test="not(hotspot/internalRef)">
+ 							<input type="submit" class="checkButton hotspotCheckButton" value="Check" onClick="checkHotspotCorrect('{$correctAnswer}', '{$countTotalHotspots}'); return false;"/>
+ 						</xsl:if>
 						<xsl:for-each select="hotspot">
 							<xsl:if test="lcFeedbackCorrect">
 								<div id="feedbackCorrect">
