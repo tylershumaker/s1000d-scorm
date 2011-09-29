@@ -78,6 +78,16 @@ table
 	font-size: 18pt;
 	font-weight: bold;
 }
+.calloutDiv
+{
+	position: absolute;
+	background-color: white;
+	border: 1px solid black;
+	display: none;
+	z-index: 1;
+	font-size: 10px;
+	padding: 1px;
+}
 .center
 {
 	width: 100% !important;
