@@ -36,7 +36,7 @@ function startSCO()
 function scoInit() 
 {
     //trigger call to init the sco through the APIWrapper.js
-    if (initialized == null) 
+    if (initialized == null || initialized == false) 
     {
         initialized = doInitialize();
         is_initialized = true;
@@ -66,7 +66,7 @@ function setStatus(status)
 {
 	if (status == "true")
 	{   
-	    //trigger call to set complete status the sco through the APIWrapper.js 
+		//trigger call to set complete status the sco through the APIWrapper.js 
 	    if (is_initialized == true) {
 	        doSetValue("cmi.completion_status", "completed");
 	    }
