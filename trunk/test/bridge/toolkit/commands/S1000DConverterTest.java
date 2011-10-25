@@ -26,7 +26,7 @@ import bridge.toolkit.util.XMLParser;
 /**
  *
  */
-public class PreProcess41Test
+public class S1000DConverterTest
 {
     Context ctx;
     Command rb;
@@ -65,12 +65,11 @@ public class PreProcess41Test
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
         ctx.put(Keys.RESOURCE_PACKAGE, tempRes.getAbsolutePath());
-        rb = new PreProcess41();
+        rb = new S1000DConverter();
     }
 
     /**
@@ -99,7 +98,6 @@ public class PreProcess41Test
         }
         catch (Exception e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

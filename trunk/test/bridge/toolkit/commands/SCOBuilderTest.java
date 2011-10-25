@@ -81,7 +81,6 @@ public class SCOBuilderTest
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -114,7 +113,6 @@ public class SCOBuilderTest
         }
         catch (Exception e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -128,12 +126,10 @@ public class SCOBuilderTest
 //        }
 //        catch (JDOMException e)
 //        {
-//            // TODO Auto-generated catch block
 //            e.printStackTrace();
 //        }
 //        catch (IOException e)
 //        {
-//            // TODO Auto-generated catch block
 //            e.printStackTrace();
 //        }
 //

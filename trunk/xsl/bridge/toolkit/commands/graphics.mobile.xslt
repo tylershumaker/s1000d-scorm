@@ -40,13 +40,19 @@
   
 	<xsl:choose>
 		<xsl:when test="$theExt ='swf'">
-			<div align="center" id="{$fig_id}">
-				<object WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" id="{$theFileName}">
-					<param NAME="movie" VALUE="{$theFileName}"></param>
-                    <param NAME="FlashVars" VALUE="theFileName={$global_dmc}" />
-                    <embed src="{$theFileName}" WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" flashvars="theFileName={$global_dmc}"></embed>
-				</object>
-			</div>
+			<!-- I do not want the swf files to show up for slide shows. May need to revisit -->
+			<xsl:if test="not(../../levelledPara)">
+	  			<div align="center" id="{$fig_id}">
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+							codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" 
+							WIDTH="{$graphWidth}" HEIGHT="{$graphHeight}" id="{$theFileName}">
+						<param NAME="movie" VALUE="{$theFileName}" />
+						<param NAME="FlashVars" VALUE="theFileName={$global_dmc}" />
+						<param NAME="quality" VALUE="high"/>
+						<param NAME="bgcolor" VALUE="#FFFFFF" />
+					</object>
+				</div>
+			</xsl:if>
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:choose>
@@ -56,9 +62,83 @@
 					</div>
 				</xsl:when>
 				<xsl:when test="$hotspots > 0">
-					<div align="center">
-						<img src="{$theFileName}" class="imageBorder" />
+					<xsl:variable name="correctAnswer">
+				    	<xsl:if test="hotspot/lcCorrectResponse">
+				    		<xsl:value-of select="hotspot/@id"/>
+				    	</xsl:if>
+					</xsl:variable>
+					<xsl:variable name="countTotalHotspots">
+						<xsl:value-of select="count(hotspot)"/>
+					</xsl:variable>
+					<div id="hotspotContent">
+						<img id="hotspotImage" src="{$theFileName}" usemap="#hotspotMap" class="imageBorder hotspotImage"/>
+						<map name="hotspotMap">
+							<xsl:for-each select="hotspot">
+					  			<xsl:variable name="hotspotID">
+  									<xsl:value-of select="position()"/>
+									<!-- <xsl:value-of select="@id"/> -->
+								</xsl:variable>
+ 								<xsl:variable name="countTotal">
+									<xsl:value-of select="count(//hotspot)"/>
+								</xsl:variable>
+								<xsl:variable name="coordinates">
+									<xsl:value-of select="@objectCoordinates"/>
+								</xsl:variable>
+								<xsl:choose>
+							    	<xsl:when test="@hotspotType = 'CALLOUT' or @hotspotType = 'callout'">
+							    		<div id="div{$hotspotID}" class="hotspotCalloutDiv" onClick="changeCallout('{$hotspotID}', '{$coordinates}', '{$countTotal}')">
+		  									<area shape="poly" name="{$hotspotID}" id="area{$hotspotID}" coords="{$coordinates}"/>
+										</div>
+										<div id="callout{$hotspotID}" class="calloutDiv">
+		  									<xsl:for-each select="internalRef">
+												<xsl:variable name="intrefid" select="@internalRefId"/>
+												<xsl:value-of select="//para/definitionList/definitionListItem[@id=$intrefid]/listItemTerm/." /><br/>
+												<xsl:value-of select="//para/definitionList/definitionListItem[@id=$intrefid]/listItemDefinition/para/." />
+											</xsl:for-each>
+		  								</div>
+							    	</xsl:when>
+								    <xsl:otherwise>
+		 								<div id="div{$hotspotID}" class="hotspotDiv" onClick="highlightArea('{$hotspotID}', '{$countTotal}')">
+		  									<area shape="poly" name="{$hotspotID}" id="area{$hotspotID}" coords="{$coordinates}"/>
+		  								</div>
+	  								</xsl:otherwise>
+  								</xsl:choose>
+ 							</xsl:for-each>
+						</map>
+						<xsl:if test="not(hotspot/internalRef)">
+							<input type="submit" class="checkButton hotspotCheckButton" value="Check" onClick="checkHotspotCorrect('{$correctAnswer}', '{$countTotalHotspots}'); return false;"/>
+						</xsl:if>
+	 					<xsl:for-each select="hotspot">
+							<xsl:if test="lcFeedbackCorrect">
+								<div id="feedbackCorrect">
+									<div class="line"/>
+								  	<xsl:apply-templates select="lcFeedbackCorrect/description/para/."/>
+									<div class="line"/>
+								</div>
+							</xsl:if>
+							<xsl:if test="lcFeedbackIncorrect">
+							    <div id="feedbackIncorrect">
+							    	<div class="line"/>
+							  	  	<xsl:apply-templates select="lcFeedbackIncorrect/description/para/."/>
+							  		<div class="line"/>
+							  	</div>
+							</xsl:if>
+						</xsl:for-each>
 					</div>
+					<script type="text/javascript">
+						function pageScript(func) {
+							var $context = $("div:jqmData(role='page'):last");
+							func($context);
+						}						
+						
+						pageScript(function($context)
+						{
+							$context.bind("pageshow", function(event, ui)
+							{
+								initializeHotspots(<xsl:value-of select="$countTotalHotspots"/>);
+							});
+						});
+					</script>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:otherwise>
@@ -85,7 +165,5 @@
                 </object>
             </div>
 	</xsl:template>
-	
 </xsl:stylesheet>
-
   

@@ -51,7 +51,7 @@ public class SCOBuilder implements Command
      * List of Strings that represent the file found in the Viewer Application
      * directory. 
      */
-    List<String> commonFiles = new ArrayList<String>();
+    List<String> commonFiles;
     
     /**
      * JDOM Document that is used for the imsmanifest.xml file.
@@ -79,6 +79,11 @@ public class SCOBuilder implements Command
     final String CPSTYLESHEET = "app/s1000d_4.xslt";
     
     /**
+     * SCORM CP XSLT StyleSheet to be applied to the data modules (HTML option)
+     */
+    final String CPHTMLSTYLESHEET = "app/s1000d_4html.xslt";
+    
+    /**
      * The unit of processing work to be performed for the SCOBuilder module.
      * 
      * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
@@ -86,7 +91,10 @@ public class SCOBuilder implements Command
     @Override
     public boolean execute(Context ctx)
     {
-
+    	System.out.println("Executing SCOBuilder");
+    	commonFiles = new ArrayList<String>();
+    	//System.out.println("Executing SCOBuilder");
+    	//System.out.flush();
         if ((ctx.get(Keys.XML_SOURCE) != null) &&
             (ctx.get(Keys.RESOURCE_PACKAGE) != null) &&
             (ctx.get(Keys.SCPM_FILE) != null))
@@ -96,7 +104,22 @@ public class SCOBuilder implements Command
             {
                 
                 ContentPackageCreator cpc = new ContentPackageCreator((String) ctx.get(Keys.RESOURCE_PACKAGE));
-                cpPackage = cpc.createPackage();
+                try
+                {
+                    cpPackage = cpc.createPackage();
+                }
+                catch (IOException e)
+                {
+                    System.out.println(SCOBUILDER_FAILED);
+                    e.printStackTrace();
+                    return PROCESSING_COMPLETE;  
+                }
+                catch (JDOMException e)
+                {
+                    System.out.println(SCOBUILDER_FAILED);
+                    e.printStackTrace();
+                    return PROCESSING_COMPLETE;  
+                }
                 ctx.put(Keys.CP_PACKAGE, cpPackage);
             }
             else
@@ -111,8 +134,15 @@ public class SCOBuilder implements Command
                 
                 //apply the SCORM CP XSLT StyleSheet to the data modules
                 StylesheetApplier sa = new StylesheetApplier();
-                sa.applyStylesheetToDMCs(cpPackage, CPSTYLESHEET);
-            
+                if (ctx.get(Keys.OUTPUT_TYPE) == "SCORMHTML")
+                {
+                	sa.applyStylesheetToDMCs(cpPackage, CPHTMLSTYLESHEET);
+                }
+                else
+                {
+                	sa.applyStylesheetToDMCs(cpPackage, CPSTYLESHEET);
+                }
+                
                 //create list.js, add to CP
                 dmp = new DMParser();
                 manifest = (Document)ctx.get(Keys.XML_SOURCE);
@@ -130,6 +160,7 @@ public class SCOBuilder implements Command
                 outputter.output(urn_map, writer);
                 writer.flush();
                 writer.close();
+                //System.out.println("A " + js.getAbsolutePath());
                 commonFiles.add(js.getAbsolutePath());
                 
                 //add as a common resource element
@@ -150,9 +181,7 @@ public class SCOBuilder implements Command
                 ioe.printStackTrace();
                 return PROCESSING_COMPLETE;  
             }
-
-
-            
+          
             ctx.put(Keys.XML_SOURCE, manifest);
             System.out.println("SCOBuilder processing was successful");
         }
@@ -175,13 +204,23 @@ public class SCOBuilder implements Command
      */
     private void copyViewerAppFiles() throws IOException
     {
+    	//.out.println("at copyViewerAppFiles");
         File trainingContent = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
         File cpTrainingContent = new File(cpPackage + File.separator + 
                                          "resources" + File.separator + 
                                          "s1000d");
         CopyDirectory cd = new CopyDirectory();
-        cd.copyDirectory(trainingContent, cpTrainingContent);
-        
+        //check if the directory exists if it does use it else copy it from the jar
+        if (trainingContent.exists())
+        {
+        	cd.copyDirectory(trainingContent, cpTrainingContent);
+        }
+        else
+        {
+        	cd.CopyJarFiles(this.getClass(), "ViewerApplication", cpTrainingContent.getAbsolutePath());
+        }
+        //System.out.println("After SCO Copy");
+        //System.out.flush();
         listViewerAppFiles(cpTrainingContent);
 
     }
@@ -213,7 +252,9 @@ public class SCOBuilder implements Command
         {
             if(srcFolder.getParent().contains("app") || 
                srcFolder.getParent().contains("Assessment_templates"))
-            commonFiles.add(srcFolder.getAbsolutePath());
+            {
+            	commonFiles.add(srcFolder.getAbsolutePath());          	
+            }
         }
     }
     
@@ -294,7 +335,6 @@ public class SCOBuilder implements Command
         writer.write("{\n return scoPages;\n}");
         writer.close();
 
-        
         commonFiles.add(js.getAbsolutePath());
     }
     

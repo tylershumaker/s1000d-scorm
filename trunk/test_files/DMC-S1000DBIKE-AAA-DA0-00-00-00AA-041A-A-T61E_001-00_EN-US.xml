@@ -1,0 +1,1125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [
+<!ENTITY nsupE "&#x2289;">
+<!ENTITY rarrw "&#x219D;">
+<!ENTITY hcirc "&#x0125;">
+<!ENTITY ffllig "&#xFB04;">
+<!ENTITY supnE "&#x228B;">
+<!ENTITY eacute "&#x00E9;">
+<!ENTITY boxVH "&#x256B;">
+<!ENTITY gEl "&#x22DB;">
+<!ENTITY ecolon "&#x2255;">
+<!ENTITY curarr "&#x21B7;">
+<!ENTITY prap "&#x227E;">
+<!ENTITY Yuml "&#x0178;">
+<!ENTITY ycirc "&#x0177;">
+<!ENTITY gE "&#x2267;">
+<!ENTITY planck "&#x210F;">
+<!ENTITY sect "&#x00A7;">
+<!ENTITY diams "&#x2666;">
+<!ENTITY boxUR "&#x2558;">
+<!ENTITY xgr "&#x03BE;">
+<!ENTITY zhcy "&#x0436;">
+<!ENTITY para "&#x00B6;">
+<!ENTITY xrArr "&#x21D2;">
+<!ENTITY aacute "&#x00E1;">
+<!ENTITY kcedil "&#x0137;">
+<!ENTITY ENG "&#x014A;">
+<!ENTITY pgr "&#x03C0;">
+<!ENTITY kappa "&#x03BA;">
+<!ENTITY b.alpha "&#x03B1;">
+<!ENTITY phgr "&#x03C6;">
+<!ENTITY rect "&#x25AD;">
+<!ENTITY boxUL "&#x255B;">
+<!ENTITY b.Gamma "&#x0393;">
+<!ENTITY rtimes "&#x22CA;">
+<!ENTITY ucy "&#x0443;">
+<!ENTITY caret "&#x2041;">
+<!ENTITY utri "&#x25B5;">
+<!ENTITY Dagger "&#x2021;">
+<!ENTITY rpargt "&#xE291;">
+<!ENTITY Phi "&#x03A6;">
+<!ENTITY larr "&#x2190;">
+<!ENTITY sigmav "&#x03C2;">
+<!ENTITY Jcirc "&#x0134;">
+<!ENTITY curren "&#x00A4;">
+<!ENTITY mcy "&#x043C;">
+<!ENTITY empty "&#x2205;">
+<!ENTITY ohgr "&#x03C9;">
+<!ENTITY ffilig "&#xFB03;">
+<!ENTITY Oacgr "&#x038C;">
+<!ENTITY quest "&#x003F;">
+<!ENTITY ssetmn "&#x2216;">
+<!ENTITY gjcy "&#x0453;">
+<!ENTITY acute "&#x00B4;">
+<!ENTITY Xgr "&#x039E;">
+<!ENTITY frac78 "&#x215E;">
+<!ENTITY sccue "&#x227D;">
+<!ENTITY ecy "&#x044D;">
+<!ENTITY image "&#x2111;">
+<!ENTITY Theta "&#x0398;">
+<!ENTITY bsol "&#x005C;">
+<!ENTITY dashv "&#x22A3;">
+<!ENTITY amacr "&#x0101;">
+<!ENTITY Pgr "&#x03A0;">
+<!ENTITY Scaron "&#x0160;">
+<!ENTITY Jukcy "&#x0404;">
+<!ENTITY b.lambda "&#x03BB;">
+<!ENTITY AElig "&#x00C6;">
+<!ENTITY times "&#x00D7;">
+<!ENTITY Ucy "&#x0423;">
+<!ENTITY b.kappav "&#x03F0;">
+<!ENTITY eegr "&#x03B7;">
+<!ENTITY ccedil "&#x00E7;">
+<!ENTITY Uuml "&#x00DC;">
+<!ENTITY Yacute "&#x00DD;">
+<!ENTITY zdot "&#x017C;">
+<!ENTITY telrec "&#x2315;">
+<!ENTITY lArr "&#x21D0;">
+<!ENTITY Mcy "&#x041C;">
+<!ENTITY sube "&#x2286;">
+<!ENTITY nlt "&#x226E;">
+<!ENTITY dzcy "&#x045F;">
+<!ENTITY aelig "&#x00E6;">
+<!ENTITY Ecy "&#x042D;">
+<!ENTITY xutri "&#x25B3;">
+<!ENTITY Aring "&#x00C5;">
+<!ENTITY rtri "&#x25B9;">
+<!ENTITY aleph "&#x2135;">
+<!ENTITY sim "&#x223C;">
+<!ENTITY lsh "&#x21B0;">
+<!ENTITY period "&#x002E;">
+<!ENTITY cir "&#x25CB;">
+<!ENTITY b.sigmav "&#x03C2;">
+<!ENTITY block "&#x2588;">
+<!ENTITY ang90 "&#x221F;">
+<!ENTITY rlhar2 "&#x21CC;">
+<!ENTITY Ntilde "&#x00D1;">
+<!ENTITY Uacute "&#x00DA;">
+<!ENTITY djcy "&#x0452;">
+<!ENTITY shy "&#x00AD;">
+<!ENTITY prime "&#x2032;">
+<!ENTITY ape "&#x224A;">
+<!ENTITY cularr "&#x21B6;">
+<!ENTITY ocir "&#x229A;">
+<!ENTITY lambda "&#x03BB;">
+<!ENTITY frac25 "&#x2156;">
+<!ENTITY harr "&#x2194;">
+<!ENTITY gammad "&#x03DC;">
+<!ENTITY tstrok "&#x0167;">
+<!ENTITY frac23 "&#x2154;">
+<!ENTITY khgr "&#x03C7;">
+<!ENTITY ograve "&#x00F2;">
+<!ENTITY samalg "&#x2210;">
+<!ENTITY nsim "&#x2241;">
+<!ENTITY orarr "&#x21BB;">
+<!ENTITY tshcy "&#x045B;">
+<!ENTITY IJlig "&#x0132;">
+<!ENTITY b.piv "&#x03D6;">
+<!ENTITY rthree "&#x22CC;">
+<!ENTITY xlArr "&#x21D0;">
+<!ENTITY vsupnE "&#x228B;">
+<!ENTITY nle "&#x2270;">
+<!ENTITY uogon "&#x0173;">
+<!ENTITY emacr "&#x0113;">
+<!ENTITY rtrif "&#x25B8;">
+<!ENTITY puncsp "&#x2008;">
+<!ENTITY rtrie "&#x22B5;">
+<!ENTITY TSHcy "&#x040B;">
+<!ENTITY udiagr "&#x03B0;">
+<!ENTITY clubs "&#x2663;">
+<!ENTITY cross "&#x2717;">
+<!ENTITY mnplus "&#x2213;">
+<!ENTITY nvDash "&#x22AD;">
+<!ENTITY rAarr "&#x21DB;">
+<!ENTITY shcy "&#x0448;">
+<!ENTITY rarrlp "&#x21AC;">
+<!ENTITY vDash "&#x22A8;">
+<!ENTITY tcaron "&#x0165;">
+<!ENTITY real "&#x211C;">
+<!ENTITY hArr "&#x21D4;">
+<!ENTITY ring "&#x02DA;">
+<!ENTITY uacgr "&#x03CD;">
+<!ENTITY ijlig "&#x0133;">
+<!ENTITY frac18 "&#x215B;">
+<!ENTITY gimel "&#x2137;">
+<!ENTITY int "&#x222B;">
+<!ENTITY oplus "&#x2295;">
+<!ENTITY frac16 "&#x2159;">
+<!ENTITY frac15 "&#x2155;">
+<!ENTITY rang "&#x3009;">
+<!ENTITY lsim "&#x2272;">
+<!ENTITY zacute "&#x017A;">
+<!ENTITY frac14 "&#x00BC;">
+<!ENTITY fnof "&#x0192;">
+<!ENTITY odblac "&#x0151;">
+<!ENTITY frac13 "&#x2153;">
+<!ENTITY gnsim "&#x22E7;">
+<!ENTITY xharr "&#x2194;">
+<!ENTITY lstrok "&#x0142;">
+<!ENTITY frac12 "&#x00BD;">
+<!ENTITY dash "&#x2010;">
+<!ENTITY ap "&#x2248;">
+<!ENTITY map "&#x21A6;">
+<!ENTITY psgr "&#x03C8;">
+<!ENTITY idigr "&#x03CA;">
+<!ENTITY Ccaron "&#x010C;">
+<!ENTITY chi "&#x03C7;">
+<!ENTITY b.Xi "&#x039E;">
+<!ENTITY b.delta "&#x03B4;">
+<!ENTITY % ISOnum PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN//XML" "iso-num.ent">
+<!ENTITY Gt "&#x226B;">
+<!ENTITY iecy "&#x0435;">
+<!ENTITY sgr "&#x03C3;">
+<!ENTITY omega "&#x03C9;">
+<!ENTITY subE "&#x2286;">
+<!ENTITY Acirc "&#x00C2;">
+<!ENTITY kgr "&#x03BA;">
+<!ENTITY Iacute "&#x00CD;">
+<!ENTITY Ouml "&#x00D6;">
+<!ENTITY Scedil "&#x015E;">
+<!ENTITY darr "&#x2193;">
+<!ENTITY tdot "&#x20DB;">
+<!ENTITY sime "&#x2243;">
+<!ENTITY otilde "&#x00F5;">
+<!ENTITY lvnE "&#x2268;">
+<!ENTITY b.Omega "&#x03A9;">
+<!ENTITY nVdash "&#x22AE;">
+<!ENTITY hstrok "&#x0127;">
+<!ENTITY radic "&#x221A;">
+<!ENTITY Vdash "&#x22A9;">
+<!ENTITY pcy "&#x043F;">
+<!ENTITY ang "&#x2220;">
+<!ENTITY rarr2 "&#x21C9;">
+<!ENTITY thetav "&#x03D1;">
+<!ENTITY lcaron "&#x013E;">
+<!ENTITY ltri "&#x25C3;">
+<!ENTITY starf "&#x2605;">
+<!ENTITY sdot "&#x22C5;">
+<!ENTITY xhArr "&#x2194;">
+<!ENTITY check "&#x2713;">
+<!ENTITY ccirc "&#x0109;">
+<!ENTITY frac45 "&#x2158;">
+<!ENTITY thetas "&#x03B8;">
+<!ENTITY imacr "&#x012B;">
+<!ENTITY and "&#x2227;">
+<!ENTITY boxv "&#x2502;">
+<!ENTITY Sgr "&#x03A3;">
+<!ENTITY Eacute "&#x00C9;">
+<!ENTITY isin "&#x220A;">
+<!ENTITY Gg "&#x22D9;">
+<!ENTITY racute "&#x0155;">
+<!ENTITY idiagr "&#x0390;">
+<!ENTITY dArr "&#x21D3;">
+<!ENTITY Kgr "&#x039A;">
+<!ENTITY dstrok "&#x0111;">
+<!ENTITY boxhu "&#x2534;">
+<!ENTITY nlE "&#x2270;">
+<!ENTITY sext "&#x2736;">
+<!ENTITY olarr "&#x21BA;">
+<!ENTITY Pcy "&#x041F;">
+<!ENTITY cire "&#x2257;">
+<!ENTITY loz "&#x25CA;">
+<!ENTITY circ "&#x005E;">
+<!ENTITY Aacute "&#x00C1;">
+<!ENTITY Kcedil "&#x0136;">
+<!ENTITY prnsim "&#x22E8;">
+<!ENTITY vprime "&#x2032;">
+<!ENTITY nsmid "&#xE2AA;">
+<!ENTITY nacute "&#x0144;">
+<!ENTITY gsdot "&#x22D7;">
+<!ENTITY frac38 "&#x215C;">
+<!ENTITY b.pi "&#x03C0;">
+<!ENTITY gsim "&#x2273;">
+<!ENTITY b.Phi "&#x03A6;">
+<!ENTITY colon "&#x003A;">
+<!ENTITY spar "&#x2225;">
+<!ENTITY boxh "&#x2500;">
+<!ENTITY b.epsi "&#x03B5;">
+<!ENTITY dcaron "&#x010F;">
+<!ENTITY frac35 "&#x2157;">
+<!ENTITY top "&#x22A4;">
+<!ENTITY lrhar2 "&#x21CB;">
+<!ENTITY Ecirc "&#x00CA;">
+<!ENTITY frac34 "&#x00BE;">
+<!ENTITY dot "&#x02D9;">
+<!ENTITY Gcedil "&#x0122;">
+<!ENTITY dlcrop "&#x230D;">
+<!ENTITY lang "&#x3008;">
+<!ENTITY tscy "&#x0446;">
+<!ENTITY tcedil "&#x0163;">
+<!ENTITY rpar "&#x0029;">
+<!ENTITY DotDot "&#x20DC;">
+<!ENTITY odot "&#x2299;">
+<!ENTITY b.thetav "&#x03D1;">
+<!ENTITY boxhd "&#x252C;">
+<!ENTITY gvnE "&#x2269;">
+<!ENTITY b.Lambda "&#x039B;">
+<!ENTITY gcirc "&#x011D;">
+<!ENTITY sfgr "&#x03C2;">
+<!ENTITY b.thetas "&#x03B8;">
+<!ENTITY ubreve "&#x016D;">
+<!ENTITY ecir "&#x2256;">
+<!ENTITY khcy "&#x0445;">
+<!ENTITY nabla "&#x2207;">
+<!ENTITY xcirc "&#x25CB;">
+<!ENTITY Ccedil "&#x00C7;">
+<!ENTITY Iuml "&#x00CF;">
+<!ENTITY Dot "&#x00A8;">
+<!ENTITY malt "&#x2720;">
+<!ENTITY lagran "&#x2112;">
+<!ENTITY boxV "&#x2551;">
+<!ENTITY b.nu "&#x03BD;">
+<!ENTITY xi "&#x03BE;">
+<!ENTITY par "&#x2225;">
+<!ENTITY OHacgr "&#x038F;">
+<!ENTITY rsquo "&#x2019;">
+<!ENTITY boxhU "&#x2567;">
+<!ENTITY nwarr "&#x2196;">
+<!ENTITY sbsol "&#xFE68;">
+<!ENTITY lcedil "&#x013C;">
+<!ENTITY nrtrie "&#x22ED;">
+<!ENTITY frown "&#x2322;">
+<!ENTITY Lambda "&#x039B;">
+<!ENTITY numero "&#x2116;">
+<!ENTITY ngt "&#x226F;">
+<!ENTITY ldot "&#x22D6;">
+<!ENTITY Tstrok "&#x0166;">
+<!ENTITY cuvee "&#x22CE;">
+<!ENTITY Icirc "&#x00CE;">
+<!ENTITY ngr "&#x03BD;">
+<!ENTITY b.beta "&#x03B2;">
+<!ENTITY Ograve "&#x00D2;">
+<!ENTITY Omacr "&#x014C;">
+<!ENTITY bsim "&#x223D;">
+<!ENTITY iota "&#x03B9;">
+<!ENTITY npar "&#x2226;">
+<!ENTITY weierp "&#x2118;">
+<!ENTITY dtri "&#x25BF;">
+<!ENTITY scy "&#x0441;">
+<!ENTITY lne "&#x2268;">
+<!ENTITY boxH "&#x2550;">
+<!ENTITY nequiv "&#x2262;">
+<!ENTITY male "&#x2642;">
+<!ENTITY rarrhk "&#x21AA;">
+<!ENTITY Iukcy "&#x0406;">
+<!ENTITY Sigma "&#x03A3;">
+<!ENTITY zeta "&#x03B6;">
+<!ENTITY equiv "&#x2261;">
+<!ENTITY kcy "&#x043A;">
+<!ENTITY b.mu "&#x03BC;">
+<!ENTITY odash "&#x229D;">
+<!ENTITY Tcaron "&#x0164;">
+<!ENTITY otimes "&#x2297;">
+<!ENTITY Euml "&#x00CB;">
+<!ENTITY Ngr "&#x039D;">
+<!ENTITY boxhD "&#x2564;">
+<!ENTITY nge "&#x2271;">
+<!ENTITY b.rhov "&#x03F1;">
+<!ENTITY bprime "&#x2035;">
+<!ENTITY Zacute "&#x0179;">
+<!ENTITY Odblac "&#x0150;">
+<!ENTITY lpar "&#x0028;">
+<!ENTITY exist "&#x2203;">
+<!ENTITY angsph "&#x2222;">
+<!ENTITY Scy "&#x0421;">
+<!ENTITY b.chi "&#x03C7;">
+<!ENTITY napos "&#x0149;">
+<!ENTITY Lstrok "&#x0141;">
+<!ENTITY Aogon "&#x0104;">
+<!ENTITY sharp "&#x266F;">
+<!ENTITY Kcy "&#x041A;">
+<!ENTITY lfloor "&#x230A;">
+<!ENTITY udigr "&#x03CB;">
+<!ENTITY thorn "&#x00FE;">
+<!ENTITY xdtri "&#x25BD;">
+<!ENTITY rsh "&#x21B1;">
+<!ENTITY Aacgr "&#x0386;">
+<!ENTITY thinsp "&#x2009;">
+<!ENTITY ICN-MK50SUW-A-C2000103-N-0WWV3-00153-A-01-1 SYSTEM "R:\Panama City\PC Programs\0199-036 Tactics\MK 50 IETM\anita ICN work\ready for upload\ICN-MK50SUW-A-C2000103-N-0WWV3-00153-A-01-1.tif" NDATA tif>
+<!ENTITY Otilde "&#x00D5;">
+<!ENTITY sce "&#x227D;">
+<!ENTITY softcy "&#x044C;">
+<!ENTITY Hstrok "&#x0126;">
+<!ENTITY nrarr "&#x219B;">
+<!ENTITY Lcaron "&#x013D;">
+<!ENTITY harrw "&#x21AD;">
+<!ENTITY gdot "&#x0121;">
+<!ENTITY excl "&#x0021;">
+<!ENTITY abreve "&#x0103;">
+<!ENTITY nbsp "&#x00A0;">
+<!ENTITY plusmn "&#x00B1;">
+<!ENTITY b.Sigma "&#x03A3;">
+<!ENTITY larrtl "&#x21A2;">
+<!ENTITY scap "&#x227F;">
+<!ENTITY boxdr "&#x250C;">
+<!ENTITY ocirc "&#x00F4;">
+<!ENTITY Racute "&#x0154;">
+<!ENTITY chcy "&#x0447;">
+<!ENTITY umacr "&#x016B;">
+<!ENTITY nsce "&#x22E1;">
+<!ENTITY Auml "&#x00C4;">
+<!ENTITY Dstrok "&#x0110;">
+<!ENTITY half "&#x00BD;">
+<!ENTITY bsime "&#x22CD;">
+<!ENTITY lnE "&#x2268;">
+<!ENTITY ogon "&#x02DB;">
+<!ENTITY boxdl "&#x2510;">
+<!ENTITY incare "&#x2105;">
+<!ENTITY nrArr "&#x21CF;">
+<!ENTITY cuesc "&#x22DF;">
+<!ENTITY Ubrcy "&#x040E;">
+<!ENTITY edot "&#x0117;">
+<!ENTITY hamilt "&#x210B;">
+<!ENTITY Nacute "&#x0143;">
+<!ENTITY ulcrop "&#x230F;">
+<!ENTITY bottom "&#x22A5;">
+<!ENTITY fork "&#x22D4;">
+<!ENTITY Eogon "&#x0118;">
+<!ENTITY barwed "&#x22BC;">
+<!ENTITY Uring "&#x016E;">
+<!ENTITY sstarf "&#x22C6;">
+<!ENTITY ngE "&#x2271;">
+<!ENTITY divonx "&#x22C7;">
+<!ENTITY IOcy "&#x0401;">
+<!ENTITY Dcaron "&#x010E;">
+<!ENTITY Eacgr "&#x0388;">
+<!ENTITY marker "&#x25AE;">
+<!ENTITY YUcy "&#x042E;">
+<!ENTITY Tcedil "&#x0162;">
+<!ENTITY dtrif "&#x25BE;">
+<!ENTITY cap "&#x2229;">
+<!ENTITY eDot "&#x2251;">
+<!ENTITY prnap "&#x22E8;">
+<!ENTITY cdot "&#x010B;">
+<!ENTITY igr "&#x03B9;">
+<!ENTITY vcy "&#x0432;">
+<!ENTITY yicy "&#x0457;">
+<!ENTITY utrif "&#x25B4;">
+<!ENTITY hybull "&#x2043;">
+<!ENTITY agr "&#x03B1;">
+<!ENTITY Ubreve "&#x016C;">
+<!ENTITY ncy "&#x043D;">
+<!ENTITY gne "&#x2269;">
+<!ENTITY yacy "&#x044F;">
+<!ENTITY b.phiv "&#x03D5;">
+<!ENTITY scirc "&#x015D;">
+<!ENTITY Rarr "&#x21A0;">
+<!ENTITY kgreen "&#x0138;">
+<!ENTITY blank "&#x2423;">
+<!ENTITY drcorn "&#x231F;">
+<!ENTITY fcy "&#x0444;">
+<!ENTITY b.phis "&#x03C6;">
+<!ENTITY sacute "&#x015B;">
+<!ENTITY there4 "&#x2234;">
+<!ENTITY eth "&#x00F0;">
+<!ENTITY nlarr "&#x219A;">
+<!ENTITY Cap "&#x22D2;">
+<!ENTITY boxdR "&#x2554;">
+<!ENTITY rdquor "&#x201C;">
+<!ENTITY Igr "&#x0399;">
+<!ENTITY b.gammad "&#x03DC;">
+<!ENTITY Vcy "&#x0412;">
+<!ENTITY plusb "&#x229E;">
+<!ENTITY boxHu "&#x2569;">
+<!ENTITY Iogon "&#x012E;">
+<!ENTITY NJcy "&#x040A;">
+<!ENTITY Agr "&#x0391;">
+<!ENTITY eta "&#x03B7;">
+<!ENTITY Lcedil "&#x013B;">
+<!ENTITY phone "&#x260E;">
+<!ENTITY boxdL "&#x2556;">
+<!ENTITY Ncy "&#x041D;">
+<!ENTITY b.Upsi "&#x03D2;">
+<!ENTITY oacute "&#x00F3;">
+<!ENTITY brvbar "&#x00A6;">
+<!ENTITY verbar "&#x007C;">
+<!ENTITY lsquor "&#x201A;">
+<!ENTITY minus "&#x2212;">
+<!ENTITY Fcy "&#x0424;">
+<!ENTITY cuepr "&#x22DE;">
+<!ENTITY darr2 "&#x21CA;">
+<!ENTITY Iacgr "&#x038A;">
+<!ENTITY scnsim "&#x22E9;">
+<!ENTITY ecaron "&#x011B;">
+<!ENTITY rx "&#x211E;">
+<!ENTITY nlArr "&#x21CD;">
+<!ENTITY dscy "&#x0455;">
+<!ENTITY b.Pi "&#x03A0;">
+<!ENTITY Ucirc "&#x00DB;">
+<!ENTITY phmmat "&#x2133;">
+<!ENTITY prop "&#x221D;">
+<!ENTITY uarr2 "&#x21C8;">
+<!ENTITY jsercy "&#x0458;">
+<!ENTITY micro "&#x00B5;">
+<!ENTITY nsube "&#x2288;">
+<!ENTITY nexist "&#x2204;">
+<!ENTITY sc "&#x227B;">
+<!ENTITY THgr "&#x0398;">
+<!ENTITY Delta "&#x0394;">
+<!ENTITY % ISOlat2 PUBLIC "ISO 8879-1986//ENTITIES Added Latin 2//EN//XML" "iso-lat2.ent">
+<!ENTITY copy "&#x00A9;">
+<!ENTITY nrtri "&#x22EB;">
+<!ENTITY Gamma "&#x0393;">
+<!ENTITY % ISOlat1 PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN//XML" "iso-lat1.ent">
+<!ENTITY uhblk "&#x2580;">
+<!ENTITY LJcy "&#x0409;">
+<!ENTITY iff "&#x21D4;">
+<!ENTITY wcirc "&#x0175;">
+<!ENTITY yen "&#x00A5;">
+<!ENTITY perp "&#x22A5;">
+<!ENTITY boxHd "&#x2566;">
+<!ENTITY oslash "&#x00F8;">
+<!ENTITY rdquo "&#x201D;">
+<!ENTITY rceil "&#x2309;">
+<!ENTITY scsim "&#x227F;">
+<!ENTITY nharr "&#x21AE;">
+<!ENTITY KJcy "&#x040C;">
+<!ENTITY prod "&#x220F;">
+<!ENTITY sfrown "&#x2322;">
+<!ENTITY thkap "&#x2248;">
+<!ENTITY die "&#x00A8;">
+<!ENTITY gacute "&#x01F5;">
+<!ENTITY gnE "&#x2269;">
+<!ENTITY smile "&#x2323;">
+<!ENTITY upsi "&#x03C5;">
+<!ENTITY Larr "&#x219E;">
+<!ENTITY Xi "&#x039E;">
+<!ENTITY Hcirc "&#x0124;">
+<!ENTITY % ISOtech PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN//XML" "iso-tech.ent">
+<!ENTITY cacute "&#x0107;">
+<!ENTITY trade "&#x2122;">
+<!ENTITY nap "&#x2249;">
+<!ENTITY nhArr "&#x21CE;">
+<!ENTITY ZHcy "&#x0416;">
+<!ENTITY boxHU "&#x2568;">
+<!ENTITY Ycirc "&#x0176;">
+<!ENTITY % ISOEntities PUBLIC "ISO 8879-1986//ENTITIES ISO Character Entities 20030531//EN//XML" "http://www.s1000d.org/S1000D_3-0/ent/xml/ISOEntities">
+<!ENTITY cupre "&#x227C;">
+<!ENTITY SOFTcy "&#x042C;">
+<!ENTITY tgr "&#x03C4;">
+<!ENTITY EEacgr "&#x0389;">
+<!ENTITY b.gamma "&#x03B3;">
+<!ENTITY ltrif "&#x25C2;">
+<!ENTITY ltrie "&#x22B4;">
+<!ENTITY alpha "&#x03B1;">
+<!ENTITY Abreve "&#x0102;">
+<!ENTITY PHgr "&#x03A6;">
+<!ENTITY dollar "&#x0024;">
+<!ENTITY raquo "&#x00BB;">
+<!ENTITY supe "&#x2287;">
+<!ENTITY lAarr "&#x21DA;">
+<!ENTITY breve "&#x02D8;">
+<!ENTITY lgr "&#x03BB;">
+<!ENTITY jcirc "&#x0135;">
+<!ENTITY ycy "&#x044B;">
+<!ENTITY nearr "&#x2197;">
+<!ENTITY ndash "&#x2013;">
+<!ENTITY shchcy "&#x0449;">
+<!ENTITY oacgr "&#x03CC;">
+<!ENTITY dgr "&#x03B4;">
+<!ENTITY Zdot "&#x017B;">
+<!ENTITY hairsp "&#x200A;">
+<!ENTITY yuml "&#x00FF;">
+<!ENTITY copysr "&#x2117;">
+<!ENTITY rharu "&#x21C0;">
+<!ENTITY OHgr "&#x03A9;">
+<!ENTITY nsubE "&#x2288;">
+<!ENTITY szlig "&#x00DF;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY icy "&#x0438;">
+<!ENTITY nsime "&#x2244;">
+<!NOTATION tif SYSTEM "tif">
+<!ENTITY GJcy "&#x0403;">
+<!ENTITY jukcy "&#x0454;">
+<!ENTITY timesb "&#x22A0;">
+<!ENTITY pr "&#x227A;">
+<!ENTITY % ISOamsr PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Relations//EN//XML" "iso-amsr.ent">
+<!ENTITY inodot "&#x0131;">
+<!ENTITY rlarr2 "&#x21C4;">
+<!ENTITY Tgr "&#x03A4;">
+<!ENTITY acy "&#x0430;">
+<!ENTITY forall "&#x2200;">
+<!ENTITY asymp "&#x224D;">
+<!ENTITY nltri "&#x22EA;">
+<!ENTITY Lgr "&#x039B;">
+<!ENTITY epsiv "&#x03B5;">
+<!ENTITY Ycy "&#x042B;">
+<!ENTITY boxHD "&#x2565;">
+<!ENTITY Barwed "&#x2306;">
+<!ENTITY Amacr "&#x0100;">
+<!ENTITY EEgr "&#x0397;">
+<!ENTITY Dgr "&#x0394;">
+<!ENTITY epsis "&#x220A;">
+<!ENTITY ltimes "&#x22C9;">
+<!ENTITY aring "&#x00E5;">
+<!ENTITY ugrave "&#x00F9;">
+<!ENTITY thksim "&#x223C;">
+<!ENTITY sdotb "&#x22A1;">
+<!ENTITY lnap "&#xE2A2;">
+<!ENTITY pi "&#x03C0;">
+<!ENTITY larr2 "&#x21C7;">
+<!ENTITY Icy "&#x0418;">
+<!ENTITY DZcy "&#x040F;">
+<!ENTITY ohacgr "&#x03CE;">
+<!ENTITY urcorn "&#x231D;">
+<!ENTITY psi "&#x03C8;">
+<!ENTITY compfn "&#x2218;">
+<!ENTITY lowbar "&#x005F;">
+<!ENTITY natur "&#x266E;">
+<!ENTITY Acy "&#x0410;">
+<!ENTITY rhard "&#x21C1;">
+<!ENTITY lhblk "&#x2584;">
+<!ENTITY pound "&#x00A3;">
+<!ENTITY or "&#x2228;">
+<!ENTITY sqsupe "&#x2292;">
+<!ENTITY DJcy "&#x0402;">
+<!ENTITY zcaron "&#x017E;">
+<!ENTITY cong "&#x2245;">
+<!ENTITY vrtri "&#x22B3;">
+<!ENTITY emsp "&#x2003;">
+<!ENTITY uuml "&#x00FC;">
+<!ENTITY sqcap "&#x2293;">
+<!ENTITY KHgr "&#x03A7;">
+<!ENTITY Sacute "&#x015A;">
+<!ENTITY sung "&#x2669;">
+<!ENTITY nspar "&#x2226;">
+<!ENTITY cedil "&#x00B8;">
+<!ENTITY blk34 "&#x2593;">
+<!ENTITY Prime "&#x2033;">
+<!ENTITY supE "&#x2287;">
+<!ENTITY les "&#x2264;">
+<!ENTITY boxDr "&#x2553;">
+<!ENTITY prnE "&#xE2B3;">
+<!ENTITY udblac "&#x0171;">
+<!ENTITY target "&#x2316;">
+<!ENTITY sup "&#x2283;">
+<!ENTITY comp "&#x2201;">
+<!ENTITY Psi "&#x03A8;">
+<!ENTITY lmidot "&#x0140;">
+<!ENTITY macr "&#x00AF;">
+<!ENTITY twixt "&#x226C;">
+<!ENTITY sum "&#x2211;">
+<!ENTITY hyphen "&#x002D;">
+<!ENTITY wedgeq "&#x2259;">
+<!ENTITY b.eta "&#x03B7;">
+<!ENTITY b.epsiv "&#x03B5;">
+<!ENTITY conint "&#x222E;">
+<!ENTITY becaus "&#x2235;">
+<!ENTITY boxDl "&#x2557;">
+<!ENTITY nu "&#x03BD;">
+<!ENTITY rcub "&#x007D;">
+<!ENTITY cup "&#x222A;">
+<!ENTITY SHcy "&#x0428;">
+<!ENTITY Oacute "&#x00D3;">
+<!ENTITY Verbar "&#x2016;">
+<!ENTITY b.epsis "&#x03B5;">
+<!ENTITY utilde "&#x0169;">
+<!ENTITY Emacr "&#x0112;">
+<!ENTITY Uogon "&#x0172;">
+<!ENTITY ohm "&#x2126;">
+<!ENTITY beth "&#x2136;">
+<!ENTITY pre "&#x227C;">
+<!ENTITY nsup "&#x2285;">
+<!ENTITY nles "&#x2270;">
+<!ENTITY nVDash "&#x22AF;">
+<!ENTITY daleth "&#x2138;">
+<!ENTITY Ecaron "&#x011A;">
+<!ENTITY leg "&#x22DA;">
+<!ENTITY % ISOamso PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Ordinary//EN//XML" "iso-amso.ent">
+<!ENTITY Sup "&#x22D1;">
+<!ENTITY igrave "&#x00EC;">
+<!ENTITY rcaron "&#x0159;">
+<!ENTITY % ISOamsn PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Negated Relations//EN//XML" "iso-amsn.ent">
+<!ENTITY veebar "&#x22BB;">
+<!ENTITY Uacgr "&#x038E;">
+<!ENTITY commat "&#x0040;">
+<!ENTITY vsubne "&#x228A;">
+<!ENTITY Jsercy "&#x0408;">
+<!ENTITY sub "&#x2282;">
+<!ENTITY PSgr "&#x03A8;">
+<!ENTITY acirc "&#x00E2;">
+<!ENTITY deg "&#x00B0;">
+<!ENTITY lthree "&#x22CB;">
+<!ENTITY gnap "&#xE411;">
+<!ENTITY beta "&#x03B2;">
+<!ENTITY IEcy "&#x0415;">
+<!ENTITY bernou "&#x212C;">
+<!ENTITY Cup "&#x22D3;">
+<!ENTITY boxvr "&#x251C;">
+<!ENTITY b.omega "&#x03C9;">
+<!ENTITY semi "&#x003B;">
+<!ENTITY sup3 "&#x00B3;">
+<!ENTITY ni "&#x220D;">
+<!ENTITY nvdash "&#x22AC;">
+<!ENTITY npre "&#x22E0;">
+<!ENTITY cuwed "&#x22CF;">
+<!ENTITY ogr "&#x03BF;">
+<!ENTITY sup2 "&#x00B2;">
+<!ENTITY angst "&#x212B;">
+<!ENTITY vdash "&#x22A2;">
+<!ENTITY Idigr "&#x03AA;">
+<!ENTITY sup1 "&#x00B9;">
+<!ENTITY lowast "&#x2217;">
+<!ENTITY larrlp "&#x21AB;">
+<!ENTITY % ISOcyr2 PUBLIC "ISO 8879-1986//ENTITIES Non-Russian Cyrillic//EN//XML" "iso-cyr2.ent">
+<!ENTITY b.Delta "&#x0394;">
+<!ENTITY egrave "&#x00E8;">
+<!ENTITY ncaron "&#x0148;">
+<!ENTITY % ISOcyr1 PUBLIC "ISO 8879-1986//ENTITIES Russian Cyrillic//EN//XML" "iso-cyr1.ent">
+<!ENTITY caron "&#x02C7;">
+<!ENTITY ggr "&#x03B3;">
+<!ENTITY Omega "&#x03A9;">
+<!ENTITY mu "&#x03BC;">
+<!ENTITY Oslash "&#x00D8;">
+<!ENTITY ne "&#x2260;">
+<!ENTITY tcy "&#x0442;">
+<!ENTITY boxvl "&#x2524;">
+<!ENTITY trie "&#x225C;">
+<!ENTITY nsub "&#x2284;">
+<!ENTITY oS "&#x24C8;">
+<!ENTITY % ISOamsc PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Delimiters//EN//XML" "iso-amsc.ent">
+<!ENTITY eng "&#x014B;">
+<!ENTITY emsp14 "&#x2005;">
+<!ENTITY % ISOamsb PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Binary Operators//EN//XML" "iso-amsb.ent">
+<!ENTITY THORN "&#x00DE;">
+<!ENTITY emsp13 "&#x2004;">
+<!ENTITY Sub "&#x22D0;">
+<!ENTITY % ISOamsa PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Arrow Relations//EN//XML" "iso-amsa.ent">
+<!ENTITY lcy "&#x043B;">
+<!ENTITY hearts "&#x2665;">
+<!ENTITY intcal "&#x22BA;">
+<!ENTITY setmn "&#x2216;">
+<!ENTITY lsquo "&#x2018;">
+<!ENTITY nldr "&#x2025;">
+<!ENTITY boxvh "&#x253C;">
+<!ENTITY esdot "&#x2250;">
+<!ENTITY dcy "&#x0434;">
+<!ENTITY lrarr2 "&#x21C6;">
+<!ENTITY uml "&#x00A8;">
+<!ENTITY rhov "&#x03F1;">
+<!ENTITY horbar "&#x2015;">
+<!ENTITY nltrie "&#x22EC;">
+<!ENTITY agrave "&#x00E0;">
+<!ENTITY vltri "&#x22B2;">
+<!ENTITY Ogr "&#x039F;">
+<!ENTITY blk14 "&#x2591;">
+<!ENTITY boxDR "&#x2552;">
+<!ENTITY Ccirc "&#x0108;">
+<!ENTITY subne "&#x228A;">
+<!ENTITY ouml "&#x00F6;">
+<!ENTITY Imacr "&#x012A;">
+<!ENTITY mldr "&#x2026;">
+<!ENTITY blk12 "&#x2592;">
+<!ENTITY drarr "&#x2198;">
+<!ENTITY boxur "&#x2514;">
+<!ENTITY Ggr "&#x0393;">
+<!ENTITY Cacute "&#x0106;">
+<!ENTITY Tcy "&#x0422;">
+<!ENTITY mumap "&#x22B8;">
+<!ENTITY itilde "&#x0129;">
+<!ENTITY ominus "&#x2296;">
+<!ENTITY comma "&#x002C;">
+<!ENTITY Lcy "&#x041B;">
+<!ENTITY plusdo "&#x2214;">
+<!ENTITY boxDL "&#x2555;">
+<!ENTITY boxul "&#x2518;">
+<!ENTITY ecirc "&#x00EA;">
+<!ENTITY Dcy "&#x0414;">
+<!ENTITY lcub "&#x007B;">
+<!ENTITY star "&#x22C6;">
+<!ENTITY bumpe "&#x224F;">
+<!ENTITY els "&#x22DC;">
+<!ENTITY lacute "&#x013A;">
+<!ENTITY tprime "&#x2034;">
+<!ENTITY erDot "&#x2253;">
+<!ENTITY SHCHcy "&#x0429;">
+<!ENTITY TScy "&#x0426;">
+<!ENTITY uplus "&#x228E;">
+<!ENTITY amalg "&#x2210;">
+<!ENTITY boxvR "&#x255E;">
+<!ENTITY ell "&#x2113;">
+<!ENTITY lg "&#x2276;">
+<!ENTITY ges "&#x2265;">
+<!ENTITY epsi "&#x220A;">
+<!ENTITY b.Theta "&#x0398;">
+<!ENTITY atilde "&#x00E3;">
+<!ENTITY rcedil "&#x0157;">
+<!ENTITY divide "&#x00F7;">
+<!ENTITY order "&#x2134;">
+<!ENTITY le "&#x2264;">
+<!ENTITY KHcy "&#x0425;">
+<!ENTITY dblac "&#x02DD;">
+<!ENTITY boxvL "&#x2561;">
+<!ENTITY rho "&#x03C1;">
+<!ENTITY num "&#x0023;">
+<!ENTITY bowtie "&#x22C8;">
+<!ENTITY Ugrave "&#x00D9;">
+<!ENTITY Gcirc "&#x011C;">
+<!ENTITY tau "&#x03C4;">
+<!ENTITY b.psi "&#x03C8;">
+<!ENTITY squ "&#x25A1;">
+<!ENTITY gel "&#x22DB;">
+<!ENTITY boxvH "&#x256A;">
+<!ENTITY numsp "&#x2007;">
+<!ENTITY ncedil "&#x0146;">
+<!ENTITY nges "&#x2271;">
+<!ENTITY tilde "&#x02DC;">
+<!ENTITY rsqb "&#x005D;">
+<!ENTITY subnE "&#x228A;">
+<!ENTITY icirc "&#x00EE;">
+<!ENTITY boxuR "&#x2559;">
+<!ENTITY zgr "&#x03B6;">
+<!ENTITY Zcaron "&#x017D;">
+<!ENTITY omacr "&#x014D;">
+<!ENTITY mdash "&#x2014;">
+<!ENTITY lap "&#x2272;">
+<!ENTITY hardcy "&#x044A;">
+<!ENTITY OElig "&#x0152;">
+<!ENTITY rgr "&#x03C1;">
+<!ENTITY iuml "&#x00EF;">
+<!ENTITY dlarr "&#x2199;">
+<!ENTITY b.Psi "&#x03A8;">
+<!ENTITY equals "&#x003D;">
+<!ENTITY boxuL "&#x255D;">
+<!ENTITY iukcy "&#x0456;">
+<!ENTITY sigma "&#x03C3;">
+<!ENTITY Udblac "&#x0170;">
+<!ENTITY Vvdash "&#x22AA;">
+<!ENTITY Lmidot "&#x013F;">
+<!ENTITY ETH "&#x00D0;">
+<!ENTITY Idot "&#x0130;">
+<!ENTITY bgr "&#x03B2;">
+<!ENTITY ocy "&#x043E;">
+<!ENTITY oelig "&#x0153;">
+<!ENTITY rfloor "&#x230B;">
+<!ENTITY Zgr "&#x0396;">
+<!ENTITY % ISOgrk4 PUBLIC "ISO 8879-1986//ENTITIES Alternative Greek Symbols//EN//XML" "iso-grk4.ent">
+<!ENTITY bcong "&#x224C;">
+<!ENTITY gcy "&#x0433;">
+<!ENTITY % ISOgrk3 PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN//XML" "iso-grk3.ent">
+<!ENTITY % ISOgrk2 PUBLIC "ISO 8879-1986//ENTITIES Monotoniko Greek//EN//XML" "iso-grk2.ent">
+<!ENTITY Utilde "&#x0168;">
+<!ENTITY fllig "&#xFB02;">
+<!ENTITY sqsup "&#x2290;">
+<!ENTITY % ISOgrk1 PUBLIC "ISO 8879-1986//ENTITIES Greek Letters//EN//XML" "iso-grk1.ent">
+<!ENTITY Rgr "&#x03A1;">
+<!ENTITY angmsd "&#x2221;">
+<!ENTITY infin "&#x221E;">
+<!ENTITY minusb "&#x229F;">
+<!ENTITY aogon "&#x0105;">
+<!ENTITY smid "&#xE301;">
+<!ENTITY Igrave "&#x00CC;">
+<!ENTITY Rcaron "&#x0158;">
+<!ENTITY drcrop "&#x230C;">
+<!ENTITY lE "&#x2266;">
+<!ENTITY gbreve "&#x011F;">
+<!ENTITY Gdot "&#x0120;">
+<!ENTITY sqcup "&#x2294;">
+<!ENTITY Bgr "&#x0392;">
+<!ENTITY cent "&#x00A2;">
+<!ENTITY Ocy "&#x041E;">
+<!ENTITY rarrtl "&#x21A3;">
+<!ENTITY aacgr "&#x03AC;">
+<!ENTITY Pi "&#x03A0;">
+<!ENTITY diam "&#x22C4;">
+<!ENTITY larrhk "&#x21A9;">
+<!ENTITY Gcy "&#x0413;">
+<!ENTITY dlcorn "&#x231E;">
+<!ENTITY Egrave "&#x00C8;">
+<!ENTITY euml "&#x00EB;">
+<!ENTITY Ncaron "&#x0147;">
+<!ENTITY squf "&#x25AA;">
+<!ENTITY dharr "&#x21C2;">
+<!ENTITY eeacgr "&#x03AE;">
+<!ENTITY sqsub "&#x228F;">
+<!ENTITY Udigr "&#x03AB;">
+<!ENTITY b.sigma "&#x03C3;">
+<!ENTITY percnt "&#x0025;">
+<!ENTITY nsc "&#x2281;">
+<!ENTITY uharr "&#x21BE;">
+<!ENTITY Edot "&#x0116;">
+<!ENTITY filig "&#xFB01;">
+<!ENTITY square "&#x25A1;">
+<!ENTITY dharl "&#x21C3;">
+<!ENTITY sol "&#x002F;">
+<!ENTITY lsqb "&#x005B;">
+<!ENTITY Agrave "&#x00C0;">
+<!ENTITY notin "&#x2209;">
+<!ENTITY CHcy "&#x0427;">
+<!ENTITY mid "&#x2223;">
+<!ENTITY uharl "&#x21BF;">
+<!ENTITY osol "&#x2298;">
+<!ENTITY grave "&#x0060;">
+<!ENTITY dagger "&#x2020;">
+<!ENTITY ubrcy "&#x045E;">
+<!ENTITY % ISObox PUBLIC "ISO 8879-1986//ENTITIES Box and Line Drawing//EN//XML" "iso-box.ent">
+<!ENTITY middot "&#x00B7;">
+<!ENTITY bump "&#x224E;">
+<!ENTITY Ocirc "&#x00D4;">
+<!ENTITY Itilde "&#x0128;">
+<!ENTITY eogon "&#x0119;">
+<!ENTITY Umacr "&#x016A;">
+<!ENTITY vsubnE "&#xE2B8;">
+<!ENTITY Cdot "&#x010A;">
+<!ENTITY uring "&#x016F;">
+<!ENTITY ssmile "&#x2323;">
+<!ENTITY vsupne "&#x228B;">
+<!ENTITY scaron "&#x0161;">
+<!ENTITY reg "&#x00AE;">
+<!ENTITY eacgr "&#x03AD;">
+<!ENTITY nmid "&#x2224;">
+<!ENTITY lEg "&#x22DA;">
+<!ENTITY iocy "&#x0451;">
+<!ENTITY Lacute "&#x0139;">
+<!ENTITY fflig "&#xFB00;">
+<!ENTITY varr "&#x2195;">
+<!ENTITY yacute "&#x00FD;">
+<!ENTITY auml "&#x00E4;">
+<!ENTITY ldquo "&#x201C;">
+<!ENTITY lceil "&#x2308;">
+<!ENTITY efDot "&#x2252;">
+<!ENTITY wreath "&#x2240;">
+<!ENTITY b.xi "&#x03BE;">
+<!ENTITY ugr "&#x03C5;">
+<!ENTITY gap "&#x2273;">
+<!ENTITY yucy "&#x044E;">
+<!ENTITY boxVr "&#x2560;">
+<!ENTITY b.kappa "&#x03BA;">
+<!ENTITY flat "&#x266D;">
+<!ENTITY % ISOdia PUBLIC "ISO 8879-1986//ENTITIES Diacritical Marks//EN//XML" "iso-dia.ent">
+<!ENTITY mgr "&#x03BC;">
+<!ENTITY zcy "&#x0437;">
+<!ENTITY uarr "&#x2191;">
+<!ENTITY egs "&#x22DD;">
+<!ENTITY YIcy "&#x0407;">
+<!ENTITY egr "&#x03B5;">
+<!ENTITY Atilde "&#x00C3;">
+<!ENTITY Rcedil "&#x0156;">
+<!ENTITY iexcl "&#x00A1;">
+<!ENTITY rcy "&#x0440;">
+<!ENTITY b.rho "&#x03C1;">
+<!ENTITY uacute "&#x00FA;">
+<!ENTITY ntilde "&#x00F1;">
+<!ENTITY ordm "&#x00BA;">
+<!ENTITY rsquor "&#x2018;">
+<!ENTITY gl "&#x2277;">
+<!ENTITY YAcy "&#x042F;">
+<!ENTITY boxVl "&#x2563;">
+<!ENTITY b.iota "&#x03B9;">
+<!ENTITY bull "&#x2022;">
+<!ENTITY nsupe "&#x2289;">
+<!ENTITY scnap "&#x22E9;">
+<!ENTITY jcy "&#x0439;">
+<!ENTITY vArr "&#x21D5;">
+<!ENTITY b.tau "&#x03C4;">
+<!ENTITY % ISOpub PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN//XML" "iso-pub.ent">
+<!ENTITY supne "&#x228B;">
+<!ENTITY npr "&#x2280;">
+<!ENTITY boxVh "&#x256C;">
+<!ENTITY Ugr "&#x03A5;">
+<!ENTITY b.zeta "&#x03B6;">
+<!ENTITY colone "&#x2254;">
+<!ENTITY bcy "&#x0431;">
+<!ENTITY Scirc "&#x015C;">
+<!ENTITY iogon "&#x012F;">
+<!ENTITY ordf "&#x00AA;">
+<!ENTITY Mgr "&#x039C;">
+<!ENTITY Ncedil "&#x0145;">
+<!ENTITY ge "&#x2265;">
+<!ENTITY Zcy "&#x0417;">
+<!ENTITY uArr "&#x21D1;">
+<!ENTITY laquo "&#x00AB;">
+<!ENTITY piv "&#x03D6;">
+<!ENTITY boxUr "&#x255A;">
+<!ENTITY Egr "&#x0395;">
+<!ENTITY phiv "&#x03D5;">
+<!ENTITY ast "&#x002A;">
+<!ENTITY bepsi "&#x220D;">
+<!ENTITY Rcy "&#x0420;">
+<!ENTITY iacgr "&#x03AF;">
+<!ENTITY njcy "&#x045A;">
+<!ENTITY phis "&#x03C6;">
+<!ENTITY ucirc "&#x00FB;">
+<!ENTITY models "&#x22A7;">
+<!ENTITY Jcy "&#x0419;">
+<!ENTITY scnE "&#xE2B5;">
+<!ENTITY oast "&#x229B;">
+<!ENTITY lharu "&#x21BC;">
+<!ENTITY rarr "&#x2192;">
+<!ENTITY Lt "&#x226A;">
+<!ENTITY kappav "&#x03F0;">
+<!ENTITY permil "&#x2030;">
+<!ENTITY coprod "&#x2210;">
+<!ENTITY boxUl "&#x255C;">
+<!ENTITY Bcy "&#x0411;">
+<!ENTITY HARDcy "&#x042A;">
+<!ENTITY DScy "&#x0405;">
+<!ENTITY delta "&#x03B4;">
+<!ENTITY gamma "&#x03B3;">
+<!ENTITY not "&#x00AC;">
+<!ENTITY lnsim "&#x22E6;">
+<!ENTITY ccaron "&#x010D;">
+<!ENTITY vellip "&#x22EE;">
+<!ENTITY ldquor "&#x201E;">
+<!ENTITY prsim "&#x227E;">
+<!ENTITY thgr "&#x03B8;">
+<!ENTITY Upsi "&#x03D2;">
+<!ENTITY frac58 "&#x215D;">
+<!ENTITY ensp "&#x2002;">
+<!ENTITY urcrop "&#x230E;">
+<!ENTITY spades "&#x2660;">
+<!ENTITY Ll "&#x22D8;">
+<!ENTITY vprop "&#x221D;">
+<!ENTITY ljcy "&#x0459;">
+<!ENTITY plus "&#x002B;">
+<!ENTITY frac56 "&#x215A;">
+<!ENTITY part "&#x2202;">
+<!ENTITY b.upsi "&#x03C5;">
+<!ENTITY iquest "&#x00BF;">
+<!ENTITY boxVR "&#x255F;">
+<!ENTITY iacute "&#x00ED;">
+<!ENTITY scedil "&#x015F;">
+<!ENTITY rArr "&#x21D2;">
+<!ENTITY sqsube "&#x2291;">
+<!ENTITY ncong "&#x2247;">
+<!ENTITY ulcorn "&#x231C;">
+<!ENTITY kjcy "&#x045C;">
+<!ENTITY Wcirc "&#x0174;">
+<!ENTITY lhard "&#x21BD;">
+<!ENTITY Gbreve "&#x011E;">
+<!ENTITY lozf "&#x2726;">
+<!ENTITY female "&#x2640;">
+<!ENTITY boxVL "&#x2562;">
+<!ENTITY ICN-MK50SUW-A-C20001030-N-0WWV3-00153-A-01-1 SYSTEM "R:\Panama City\PC Programs\0199-036 Tactics\MK 50 IETM\ICNs for delivery 06-04\ICN-MK50SUW-A-C20001030-N-0WWV3-00153-A-01-1.tif" NDATA tif>
+%ISOEntities;
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Wheels - Description of how it is made: Knowledge Check</dc:title>
+    <dc:subject>Wheels - Description of how it is made: Knowledge Check</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-10-02</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-DA0-00-00-00AA-041A-A-T61E_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T61" learnEventCode="E" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="10" day="02" />
+        <dmTitle>
+          <techName>Wheels</techName>
+          <infoName>Description of how it is made: Knowledge Check</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>DA000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningAssessment>
+        <title>Knowledge Check</title>
+        <lcInteraction>
+          <lcMatching id="matching">
+            <title></title>
+            <lcQuestion>
+              <description>
+                <para>Use the drop-down menus to answer the questions, and then click CHECK</para>
+              </description>
+            </lcQuestion>
+            <lcMatchTable>
+              <!--<lcMatchingHeader>
+                <lcItem>
+                  <description>
+                    <para>Team</para>
+                  </description>
+                </lcItem>
+                <lcMatchingItem>
+                  <description>
+                    <para>City</para>
+                  </description>
+                </lcMatchingItem>
+              </lcMatchingHeader>-->
+              <lcMatchingPair>
+                <lcItem>
+                  <description>
+                    <para>Which part of the hub assembly allows wheel components to rotate freely around the axle?</para>
+                  </description>
+                </lcItem>
+                <lcMatchingItem>
+                  <description>
+                    <para>Bearings</para>
+                  </description>
+                </lcMatchingItem>
+              </lcMatchingPair>
+              <lcMatchingPair>
+                <lcItem>
+                  <description>
+                    <para>To which part of the assembly are the spokes attached?</para>
+                  </description>
+                </lcItem>
+                <lcMatchingItem>
+                  <description>
+                    <para>Hub shell</para>
+                  </description>
+                </lcMatchingItem>
+              </lcMatchingPair>
+              <lcMatchingPair>
+                <lcItem>
+                  <description>
+                    <para>Which part of the hub assembly is attached to the dropouts?</para>
+                  </description>
+                </lcItem>
+                <lcMatchingItem>
+                  <description>
+                    <para>Axle</para>
+                  </description>
+                </lcMatchingItem>
+              </lcMatchingPair>
+            </lcMatchTable>
+            <lcFeedbackIncorrect>
+              <description>
+                <para>Incorrect. The correct matches are shown.</para>
+              </description>
+            </lcFeedbackIncorrect>
+            <lcFeedbackCorrect>
+              <description>
+                <para>Correct!</para>
+              </description>
+            </lcFeedbackCorrect>
+          </lcMatching>
+        </lcInteraction>
+      </learningAssessment>
+    </learning>
+  </content>
+</dmodule>

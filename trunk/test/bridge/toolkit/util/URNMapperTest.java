@@ -8,9 +8,12 @@ package bridge.toolkit.util;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.jdom.JDOMException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +47,21 @@ public class URNMapperTest
     @Test
     public void testGetSourceFiles()
     {
-        List<File> resourceFiles = URNMapper.getSourceFiles(System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1");
+        List<File> resourceFiles = new ArrayList<File>();
+        try
+        {
+            resourceFiles = URNMapper.getSourceFiles(System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1");
+        }
+        catch (JDOMException e)
+        {
+            e.printStackTrace();
+            fail();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            fail();
+        }
         
         Iterator<File> iterator = resourceFiles.iterator();
         while(iterator.hasNext())
@@ -52,14 +69,4 @@ public class URNMapperTest
             System.out.println(iterator.next().getName());
         }
     }
-
-    /**
-     * Test method for {@link bridge.toolkit.util.URNMapper#writeURNMap(java.util.List, java.lang.String)}.
-     */
-    @Test
-    public void testWriteURNMap()
-    {
-        //fail("Not yet implemented");
-    }
-
 }

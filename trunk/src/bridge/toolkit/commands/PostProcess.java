@@ -35,7 +35,7 @@ public class PostProcess implements Command
     @Override
     public boolean execute(Context ctx)
     {
-
+    	System.out.println("Executing Post Process");
         if ((ctx.get(Keys.XML_SOURCE) != null) &&
             (ctx.get(Keys.CP_PACKAGE) != null))
         {
@@ -55,9 +55,16 @@ public class PostProcess implements Command
                 
                 //copies the required xsd files over to the content package
                 CopyDirectory cd = new CopyDirectory();
-                File xsd_loc = new File(System.getProperty("user.dir") + File.separator +
-                       "xsd");
-                cd.copyDirectory(xsd_loc, cpPackage);
+                //check if the directory exists if it does use it else copy it from the jar
+                File xsd_loc = new File(System.getProperty("user.dir") + File.separator + "xsd");
+                if (xsd_loc.exists())
+                {
+                	cd.copyDirectory(xsd_loc, cpPackage);
+                }
+                else
+                {
+                	cd.CopyJarFiles(this.getClass(), "xsd", cpPackage.getAbsolutePath());
+                }
             } 
             catch (java.io.IOException e) 
             {
@@ -82,11 +89,28 @@ public class PostProcess implements Command
                 e.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
-
+            String outputPath = "";
+            if (ctx.get(Keys.OUTPUT_DIRECTORY) != null)
+            {
+            	outputPath = (String)ctx.get(Keys.OUTPUT_DIRECTORY);
+            	if (outputPath.length() > 0)
+            	{
+            		outputPath = outputPath + File.separator;
+            	}
+            }
+            File outputDir = new File(outputPath);
+            if(!outputDir.exists())
+            {
+                outputDir.mkdirs();
+            }    
+            
             String zipName = title.getValue();
             zipName = zipName.replace(" ", "_").trim();
-            zipName = zipName.replace("\n", "").trim();            
-            File zip = new File(zipName+".zip");
+            zipName = zipName.replace("\n", "").trim();    
+            
+            File zip = new File(zipName + ".zip");
+            if(!outputDir.getName().equals(""))
+                zip = new File(outputDir + File.separator + zipName + ".zip");
            
             ZipCreator zipCreator = new ZipCreator();
             try
@@ -110,7 +134,6 @@ public class PostProcess implements Command
                     + " command to be executed was null");
             return PROCESSING_COMPLETE;
         }
-
         return CONTINUE_PROCESSING;
     }
 

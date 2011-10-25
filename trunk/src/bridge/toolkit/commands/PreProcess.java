@@ -38,7 +38,7 @@ import bridge.toolkit.util.Keys;
 import bridge.toolkit.util.URNMapper;
 
 /**
- * The first module in the toolkit that transforms the SCPM into a imsmanifest.xml
+ * Module in the toolkit that transforms the SCPM into a imsmanifest.xml
  * file and generates a urn_resource_map.xml file from the resource package.
  */
 public class PreProcess implements Command
@@ -95,6 +95,7 @@ public class PreProcess implements Command
     @SuppressWarnings("unchecked")
     public boolean execute(Context ctx)
     {
+    	System.out.println("Executing PreProcess");
         if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
 
@@ -109,6 +110,18 @@ public class PreProcess implements Command
             {
                 System.out.println(CONVERSION_FAILED);
                 System.out.println("The 'Resource Package' is empty.");
+                return PROCESSING_COMPLETE;
+            }
+            catch (JDOMException e)
+            {
+                System.out.println(CONVERSION_FAILED);
+                e.printStackTrace();
+                return PROCESSING_COMPLETE;
+            }
+            catch (IOException e)
+            {
+                System.out.println(CONVERSION_FAILED);
+                e.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
 
@@ -161,7 +174,6 @@ public class PreProcess implements Command
                     + " command to be executed was null");
             return PROCESSING_COMPLETE;
         }
-        
         return CONTINUE_PROCESSING;
     }
 
@@ -181,7 +193,7 @@ public class PreProcess implements Command
         Transformer transformer = tFactory.newTransformer(new StreamSource(transform));
 
         File the_manifest = File.createTempFile("imsmanifest", ".xml");
-        
+
         transformer.transform(new StreamSource(scpm_source), new StreamResult(new FileOutputStream(the_manifest)));
 
         manifest = dmParser.getDoc(the_manifest);
@@ -339,36 +351,8 @@ public class PreProcess implements Command
             {
                 Element resource = null;
                 String str_current = value.next();
-                xp = XPath.newInstance("//ns:resource[@identifier='" + str_current + "']");
-                xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
-                resource = (Element) xp.selectSingleNode(manifest);
-
-                String[] split;
-                String src_href = "";
-                try
-                {
-                    split = resource.getAttributeValue("href").split("/");
-                    src_href = split[split.length - 1];
-                }
-                catch (NullPointerException npe)
-                {
-                    throw new ResourceMapException(str_current, sco_key);
-                }
-                
-                String resource_path = src_dir + "//" + src_href;
-                File file = new File(resource_path);
-                Document dmDoc = dmParser.getDoc(file);
-                // reach into the dm docs and find ICN references
-                List<String> icnRefs = searchForICN(dmDoc);
-                Iterator<String> icn_iter = icnRefs.iterator();
-                while (icn_iter.hasNext())
-                {
-                    String the_icn = icn_iter.next();
-                    if (!dependencies.contains(the_icn))
-                    {
-                        dependencies.add(the_icn);
-                    }
-                }
+                Document dmDoc = getResourceHref(sco_key, str_current);
+                dependencies = addICNDependencies(dependencies, dmDoc);
 
                 // get the dm refs
                 List<String> dmrefs = searchForDmRefs(dmDoc, sco_resource);
@@ -379,6 +363,9 @@ public class PreProcess implements Command
                     if (!dependencies.contains(dmref))
                     {
                         dependencies.add(dmref);
+                        //add dmref icn files as dependencies
+                        Document dmRefDoc = getResourceHref(sco_key, dmref);
+                        dependencies = addICNDependencies(dependencies, dmRefDoc);
                     }
                 }
             }
@@ -395,6 +382,72 @@ public class PreProcess implements Command
                 dependency.setNamespace(default_ns);
             }
         }
+    }
+
+    /**
+     * Adds ICN references from referenced data modules to the list of files
+     * to be used as dependencies in the resources section.  
+     * 
+     * @param dependencies - List of Strings that will be used as "Dependency" elements for "SCO" resources.
+     * @param dmDoc - Document object that represents the data module file being used. 
+     * @throws JDOMException
+     */
+    private static List<String> addICNDependencies(List<String> dependencies, Document dmDoc) throws JDOMException
+    {
+        // reach into the dm docs and find ICN references
+        List<String> icnRefs = searchForICN(dmDoc);
+
+        Iterator<String> icn_iter = icnRefs.iterator();
+        while (icn_iter.hasNext())
+        {
+            String the_icn = icn_iter.next();
+            if (!dependencies.contains(the_icn))
+            {
+                dependencies.add(the_icn);
+            }
+        }
+        
+        return dependencies;
+    }
+
+    /**
+     * Finds the file that is referenced in a 'href' attribute associated with a 
+     * given 'resource' element in imsmanifest.xml file. 
+     * 
+     * @param sco_key - String that represents the value of 'identifier' attribute of a
+     *                  'resource' element that contains the 'resource' being retrieved as 
+     *                  a 'dependency' element.  
+     * @param str_current - String that represents the value of 'identifier' attribute of a
+     *                  'resource' element being retrieved. 
+     * @return - Document object that represents the file in the 'resource' element. 
+     * @throws JDOMException
+     * @throws ResourceMapException
+     * @throws IOException
+     */
+    private static Document getResourceHref(String sco_key, String str_current) throws JDOMException, ResourceMapException, IOException
+    {
+        XPath xp;
+        Element resource;
+        xp = XPath.newInstance("//ns:resource[@identifier='" + str_current + "']");
+        xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+        resource = (Element) xp.selectSingleNode(manifest);
+        
+        String[] split;
+        String src_href = "";
+        try
+        {
+            split = resource.getAttributeValue("href").split("/");
+            src_href = split[split.length - 1];
+        }
+        catch (NullPointerException npe)
+        {
+            throw new ResourceMapException(str_current, sco_key);
+        }
+        
+        String resource_path = src_dir + "//" + src_href;
+        File file = new File(resource_path);
+        Document dmDoc = dmParser.getDoc(file);
+        return dmDoc;
     }
 
     /**

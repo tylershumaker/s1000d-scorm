@@ -63,7 +63,6 @@ public class PostProcessTest
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -98,7 +97,6 @@ public class PostProcessTest
         }
         catch (Exception e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -113,7 +111,6 @@ public class PostProcessTest
         }
         catch (Exception e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -128,7 +125,6 @@ public class PostProcessTest
         }
         catch (Exception e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -148,5 +144,4 @@ public class PostProcessTest
         }
         return( path.delete() );
       }
-
 }

@@ -23,29 +23,19 @@ public class SCOContentDMChecker
      * SCO content data module.
      * @param dataModule File that represents a data module file.
      * @return boolean Boolean that indicates if the data module was a SCO content data module.
+     * @throws IOException 
+     * @throws JDOMException 
      */
-    public static boolean isSCOContentDM(File dataModule) 
+    public static boolean isSCOContentDM(File dataModule) throws JDOMException, IOException 
     {
         boolean isSCOContentDM = false;
         XMLParser xp = new XMLParser();
         
-        try
-        {
             Document dmDoc = xp.getDoc(dataModule);
             XPath xpath = XPath.newInstance("//identAndStatusSection/dmAddress/dmIdent/dmCode[@infoCode='960']");
             if(xpath.selectSingleNode(dmDoc)!=null)
                 isSCOContentDM = true;
-        }
-        catch (JDOMException e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        catch (IOException e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+
 
         return isSCOContentDM;
     }
