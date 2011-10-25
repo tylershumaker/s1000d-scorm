@@ -5,15 +5,21 @@
     <property name="src.dir"     value="src"/>
     <property name="build.dir"   value="build/classes"/>
 	<property name="lib"         value="lib"/>
-	<property name="release.dir" value="s1000DToolkit0.9.1"/>
-		
-    <target name="clean">
+	<property name="release.dir" value="s1000DToolkit1.0"/>
+	
+	
+	<taskdef name="buildlist"
+	        classname="ListBuilder.buildlist"
+	        classpath="ListBuilder/buildlist.jar"/>
+	
+	<target name="clean">
         <delete dir="build"/>
     </target>
 	
     <target name="compile">
         <mkdir dir="${build.dir}"/>
-        <javac srcdir="${src.dir}" destdir="${build.dir}" includes="bridge/toolkit/,
+        <javac srcdir="${src.dir}" destdir="${build.dir}" 
+        	includes="bridge/toolkit/,
         	bridge/toolkit/conf/chain-config.xml">
 		<classpath>
             <pathelement location="${lib}/jdom.jar"/>                
@@ -21,14 +27,55 @@
             <pathelement location="${lib}/commons-beanutils-core-1.8.3.jar"/>                
             <pathelement location="${lib}/commons-chain-1.2.jar"/>                   
             <pathelement location="${lib}/commons-digester-2.0.jar"/>                
-            <pathelement location="${lib}/commons-logging-1.1.1.jar"/>   
+            <pathelement location="${lib}/commons-logging-1.1.1.jar"/> 
+            <pathelement location="${lib}/core-renderer.jar"/>                
+            <pathelement location="${lib}/iText-5.0.6.jar"/>                
+            <pathelement location="${lib}/xml-apis-xerces-2.9.1.jar"/>
+			<pathelement location="${lib}/serializer.jar"/>
+			<pathelement location="${lib}/xalan.jar"/>
+			<pathelement location="${lib}/xercesImpl.jar"/>
+			<pathelement location="${lib}/xml-apis.jar"/>
         </classpath>
         </javac>
+    	<mkdir dir="${build.dir}/bridge/toolkit/commands/mobiApp"/>
+    	
     </target>
 
     <target name="moveFiles" depends="compile">
         <echo message="moving XML rules to Jar"/>
-
+    	<!--copy the resource files over to the build directory and make the FileLists dynamically
+    	    then delete the file lists from the main directories so they are not added to the project in error-->
+    	
+    	<buildlist directory="mobiApp"/>
+    	<copy todir="${build.dir}/bridge/toolkit/commands/mobiApp">
+    		<fileset dir="mobiApp" includes="**"/>
+    	</copy>
+    	<delete file="mobiApp/FileList.txt" />
+    	
+    	<buildlist directory="ViewerApplication"/>
+    	<copy todir="${build.dir}/bridge/toolkit/commands/ViewerApplication">
+    		<fileset dir="ViewerApplication" includes="**"/>
+    	</copy>
+    	<delete file="ViewerApplication/FileList.txt" />
+    	
+    	<buildlist directory="xsd"/>
+    	<copy todir="${build.dir}/bridge/toolkit/commands/xsd">
+    		<fileset dir="xsd" includes="**"/>
+    	</copy>
+    	<delete file="xsd/FileList.txt" />
+    	
+    	<buildlist directory="xsl"/>
+    	<copy todir="${build.dir}/bridge/toolkit/commands/xsl">
+    	    <fileset dir="xsl" includes="**"/>
+    	</copy>
+    	<delete file="xsl/FileList.txt" />
+    	
+    	<buildlist directory="pdfCSS"/>
+    	<copy todir="${build.dir}/bridge/toolkit/commands/pdfCSS">
+    	    <fileset dir="pdfCSS" includes="**"/>
+    	</copy>
+    	<delete file="pdfCSS/FileList.txt" />
+    	
         <copy todir="${build.dir}/bridge/toolkit">
            <fileset dir="conf/bridge/toolkit">
               <include name="*.xml"/>
@@ -53,6 +100,7 @@
     	
         <jar destfile="Toolkit.jar" basedir="${build.dir}" 
         	includes="bridge/toolkit/*.class, bridge/toolkit/commands/**,
+        		 	  bridge/toolkit/lib/**,
         	          bridge/toolkit/packaging/**,
         	          bridge/toolkit/util/**,
         	          bridge/toolkit/chain-config.xml,
@@ -61,8 +109,21 @@
         	          bridge/toolkit/commands/scpmStylesheet.mobile.xsl">
             <manifest>
                 <attribute name="Main-Class" value="bridge.toolkit.Controller"/>
-                <attribute name="Class-Path" value="${lib}/commons-beanutils-core-1.8.3.jar ${lib}/commons-chain-1.2.jar ${lib}/commons-digester-2.0.jar ${lib}/commons-logging-1.1.1.jar ${lib}/jdom.jar ${lib}/jaxen-1.1.1.jar"/>
+                <attribute name="Class-Path" value="commons-beanutils-core-1.8.3.jar commons-chain-1.2.jar commons-digester-2.0.jar commons-logging-1.1.1.jar jdom.jar jaxen-1.1.1.jar core-renderer.jar iText-5.0.6.jar xml-apis-xerces-2.9.1.jar"/>
             </manifest>
+        	<zipfileset includes="**" src="${lib}/commons-beanutils-core-1.8.3.jar" />
+            <zipfileset includes="**" src="${lib}/commons-chain-1.2.jar" />
+            <zipfileset includes="**" src="${lib}/commons-digester-2.0.jar" />
+            <zipfileset includes="**" src="${lib}/commons-logging-1.1.1.jar" />
+        	<zipfileset includes="**" src="${lib}/core-renderer.jar" />
+            <zipfileset includes="**" src="${lib}/iText-5.0.6.jar" />
+            <zipfileset includes="**" src="${lib}/jdom.jar" />
+            <zipfileset includes="**" src="${lib}/jaxen-1.1.1.jar" />
+        	<zipfileset includes="**" src="${lib}/xml-apis-xerces-2.9.1.jar" />
+        	<zipfileset includes="**" src="${lib}/serializer.jar"/>
+        	<zipfileset includes="**" src="${lib}/xalan.jar"/>
+        	<zipfileset includes="**" src="${lib}/xercesImpl.jar"/>
+        	<zipfileset includes="**" src="${lib}/xml-apis.jar"/>
         </jar>
 
     </target>
@@ -71,6 +132,7 @@
     	
         <jar destfile="ToolkitGUI.jar" basedir="${build.dir}" 
         	includes="bridge/toolkit/*.class, bridge/toolkit/commands/**,
+        			  bridge/toolkit/lib/**,
         	          bridge/toolkit/packaging/**,
         	          bridge/toolkit/util/**,
         	          bridge/toolkit/chain-config.xml,
@@ -80,8 +142,21 @@
         	          bridge/toolkit/s1-scorm-bridge-logo-408x81.jpg">
             <manifest>
                 <attribute name="Main-Class" value="bridge.toolkit.ControllerJFrame"/>
-                <attribute name="Class-Path" value="${lib}/commons-beanutils-core-1.8.3.jar ${lib}/commons-chain-1.2.jar ${lib}/commons-digester-2.0.jar ${lib}/commons-logging-1.1.1.jar ${lib}/jdom.jar ${lib}/jaxen-1.1.1.jar"/>
+                <attribute name="Class-Path" value="${lib}/commons-beanutils-core-1.8.3.jar ${lib}/commons-chain-1.2.jar ${lib}/commons-digester-2.0.jar ${lib}/commons-logging-1.1.1.jar ${lib}/jdom.jar ${lib}/jaxen-1.1.1.jar ${lib}/core-renderer.jar ${lib}/iText-5.0.6.jar ${lib}/xml-apis-xerces-2.9.1.jar"/>
             </manifest>
+        	<zipfileset includes="**" src="${lib}/commons-beanutils-core-1.8.3.jar" />
+            <zipfileset includes="**" src="${lib}/commons-chain-1.2.jar" />
+            <zipfileset includes="**" src="${lib}/commons-digester-2.0.jar" />
+            <zipfileset includes="**" src="${lib}/commons-logging-1.1.1.jar" />
+        	<zipfileset includes="**" src="${lib}/core-renderer.jar" />
+            <zipfileset includes="**" src="${lib}/iText-5.0.6.jar" />
+            <zipfileset includes="**" src="${lib}/jdom.jar" />
+            <zipfileset includes="**" src="${lib}/jaxen-1.1.1.jar" />
+        	<zipfileset includes="**" src="${lib}/xml-apis-xerces-2.9.1.jar" />
+        	<zipfileset includes="**" src="${lib}/serializer.jar"/>
+        	<zipfileset includes="**" src="${lib}/xalan.jar"/>
+        	<zipfileset includes="**" src="${lib}/xercesImpl.jar"/>
+        	<zipfileset includes="**" src="${lib}/xml-apis.jar"/>
         </jar>
 
     </target>
@@ -89,14 +164,18 @@
 	<target name="releasezip" depends="jar, guibuild">
 	
         <copy todir="${release.dir}">
-           <fileset dir="." includes="build.xml, APACHE-LICENSE-2_0.html, 
+           <fileset dir="." includes="build.xml, APACHE-LICENSE-2_0.html, lgpl-3.0.html,
 			ECLIPSE-PUBLIC-LICENSE-1_0.html, license.txt, Toolkit.jar, ToolkitGUI.jar,
 		    conf/**, doc/**, examples/**, lib/**, mobiApp/**, resources/**, src/**, 
-           	ViewerApplication/**, xsd/**, xsl/**"/>
+           	ViewerApplication/**, xsd/**, xsl/**, pdfCSS/**"/>
         </copy>
 		
 		<zip destfile="${release.dir}.zip" >
 			<fileset dir="." includes="${release.dir}/**"/>
+		</zip>
+		
+		<zip destfile="${release.dir}_bin.zip" >
+			<fileset dir="." includes="${release.dir}/*.jar, ${release.dir}/*.html, ${release.dir}/license.txt,"/>
 		</zip>
 		
 	</target>

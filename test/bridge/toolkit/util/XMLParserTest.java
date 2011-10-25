@@ -30,14 +30,15 @@ public class XMLParserTest
     public void setUp() throws Exception
     {
         mp = new XMLParser();
-        test = new File(System.getProperty("user.dir") + File.separator
-                + "test_files\\imsmanifest.xml");
+
     }
 
 
     @Test
     public void testGetDoc()
     {
+        test = new File(System.getProperty("user.dir") + File.separator
+                + "test_files\\imsmanifest.xml");
         Document doc = null;
         try
         {
@@ -55,4 +56,23 @@ public class XMLParserTest
         System.out.println(doc.getRootElement().getChildren().toString());
     }
 
+    @Test
+    public void testGetInvalidDoc()
+    {
+        test = new File(System.getProperty("user.dir") + File.separator
+                + "test_files\\DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-A-T61E_001-00_EN-US.xml");
+        Document doc = null;
+        try
+        {
+            doc = mp.getDoc(test);
+        }
+        catch (JDOMException jde)
+        {
+            jde.printStackTrace();
+        }
+        catch (IOException ioe)
+        {
+            ioe.printStackTrace();
+        }
+    }
 }

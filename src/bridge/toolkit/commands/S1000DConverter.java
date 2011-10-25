@@ -22,7 +22,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
-import org.jdom.Attribute;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Comment;
 import org.w3c.dom.DocumentType;
@@ -36,15 +35,13 @@ import bridge.toolkit.util.Keys;
 import com.sun.org.apache.xpath.internal.NodeSet;
 import com.sun.org.apache.xpath.internal.XPathAPI;
 
-public class PreProcess41 implements Command
+/**
+ *  Converts S1000D 4.1 learning data into S1000D 4.0 learning data so that 
+ *  it can be processed by the toolkit. 
+ */
+public class S1000DConverter implements Command
 {
 
-    /**
-     * The unit of processing work to be performed for the PreProcess module.
-     * 
-     * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
-     */
-    @SuppressWarnings("unchecked")
     /**
      * modelic SCPM
      */
@@ -70,14 +67,28 @@ public class PreProcess41 implements Command
      */
     public static Node qualityAssurance;
 
+    /**
+     * 
+     */
     public static String resourcepack;
 
+    /** 
+     * The unit of processing work to be performed for the S1000DConverter module.
+     * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
+     */
     public boolean execute(Context ctx)
     {
-
+    	System.out.println("Executing S1000D Converter");
         if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
-
+        	/*
+        	 * check the output directory in the context if it does not exist make it
+        	 */
+        	if (!(ctx.containsKey(Keys.OUTPUT_DIRECTORY)))
+        	{
+        		ctx.put(Keys.OUTPUT_DIRECTORY, "");
+        	}
+        	
             resourcepack = ctx.get(Keys.RESOURCE_PACKAGE).toString();
             /*
              * if SCPM is 4.1 then Move the original file to the temp directory
@@ -91,15 +102,16 @@ public class PreProcess41 implements Command
             {
                 new40 = getDoc(new File(ctx.get(Keys.SCPM_FILE).toString()));
                 if (processXPathSingleNode("/scormContentPackage/content/scoEntry/scoEntryItem", new40) == null)
+                {
+                	System.out.println("S1000D Converter Complete");
                     return CONTINUE_PROCESSING;
-
+                }
                 tempSCPM = File.createTempFile(new File(ctx.get(Keys.SCPM_FILE).toString()).getName(), ".xml");
                 copy(ctx.get(Keys.SCPM_FILE).toString(), tempSCPM.toString());
                 ctx.put(Keys.SCPM_FILE, tempSCPM.getAbsolutePath());
             }
             catch (Exception e)
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
@@ -178,7 +190,6 @@ public class PreProcess41 implements Command
             System.out.println("One of the required Context entries for the " + this.getClass().getSimpleName() + " command to be executed was null");
             return PROCESSING_COMPLETE;
         }
-
         return CONTINUE_PROCESSING;
     }
 
@@ -490,7 +501,6 @@ public class PreProcess41 implements Command
      */
     public static void writeOnDisk(File file, String contenuto) throws Exception
     {
-
         try
         {
             BufferedWriter outWriter = null;
@@ -499,13 +509,11 @@ public class PreProcess41 implements Command
             outWriter.write(contenuto);
             outWriter.flush();
             outWriter.close();
-
         }
         catch (Exception ex)
         {
             throw ex;
         }
-
     }
 
     /**
@@ -523,7 +531,6 @@ public class PreProcess41 implements Command
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         return builder.parse(filetempXML);
-
     }
 
     /**
@@ -539,10 +546,10 @@ public class PreProcess41 implements Command
         try
         {
             writeNode(node, writer, false, null, null);
-
         }
         catch (Exception e)
         {
+        	e.printStackTrace();
         }
 
         return writer.toString();

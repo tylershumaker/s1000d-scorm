@@ -8,6 +8,8 @@ package bridge.toolkit.packaging;
 import java.io.File;
 import java.io.IOException;
 
+import org.jdom.JDOMException;
+
 import bridge.toolkit.util.CopyDirectory;
 import bridge.toolkit.util.SCOContentDMChecker;
 
@@ -58,8 +60,10 @@ public class ContentPackageCreator
      * created by the toolkit.
      * 
      * @return File that is the location of the new directory created.
+     * @throws JDOMException 
+     * @throws IOException 
      */
-    public File createPackage()
+    public File createPackage() throws IOException, JDOMException
     {
         
         File cp = new File(packagesLocation); 
@@ -98,16 +102,8 @@ public class ContentPackageCreator
         File resource = new File(newCP.getAbsoluteFile()+ File.separator + 
                                 "resources" + File.separator + "s1000d");
         resource.mkdirs();
-
-        try
-        {
-            copyResources(new File(mResourcePackage), resource);
-        }
-        catch (IOException e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        
+        copyResources(new File(mResourcePackage), resource);
         
         return newCP;
     }
@@ -122,8 +118,9 @@ public class ContentPackageCreator
      * @param destDir File that represents the location of the in the Content Package 
      * where the data modules and ICN files will be copied.  
      * @throws IOException
+     * @throws JDOMException 
      */
-    private void copyResources(File srcDir, File destDir) throws IOException
+    private void copyResources(File srcDir, File destDir) throws IOException, JDOMException
     {
         CopyDirectory cd = new CopyDirectory();
         File[] srcArray = srcDir.listFiles();

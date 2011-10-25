@@ -4,7 +4,7 @@
     <title>Navigation</title>
     <script language='javascript' src='navScript.js'>
     </script>
-    <script language='javascript' src='APIWrapper.js'></script>
+    <script language='javascript' src='SCORM_2004_APIWrapper.js'></script>
     <script language='javascript' src='list.js'></script>
 </head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="startSCO()">
@@ -20,10 +20,10 @@
 		    <img src="images/toolkit_footer_03.jpg" width="289" height="26" alt="">
 		</td>
 		<td>
-		    <a href="#" onclick="goBack()"><img src="images/toolkit_footer_04.jpg" width="86" height="26" border="0" alt=""></a>
+			<input type="image" src="images/toolkit_footer_04.jpg" name="btnBack" id="btnBack" onclick="goBack()">
 		</td>
 		<td>
-		    <input type="image" src="images/toolkit_footer_05.jpg" name="btnNext" onclick="goNext()">
+		    <input type="image" src="images/toolkit_footer_05.jpg" name="btnNext" id="btnNext" onclick="goNext()">
 		<td>
 		    <img src="images/toolkit_footer_06.jpg" width="6" height="26" alt="">
 		</td>

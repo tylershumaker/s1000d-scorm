@@ -42,29 +42,25 @@ public class DMParserTest
         }
         catch (JDOMException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
         List<String> expected = new ArrayList<String>();
-        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H30A");
-        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A");
-        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H11A");
-        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H18A");
-        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H19A");
-        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H20A");
-        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H40A");
-        expected.add("DMC-S1000DBIKE-AAA-DA0-00-00-00AA-932A-T-H14B");
-        expected.add("DMC-S1000DBIKE-AAA-DA2-00-00-00AA-028A-T-T28C");
-        expected.add("DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-T-T88E");
+        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H30A");
+        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H10A");
+        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H11A");
+        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H18A");
+        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H19A");
+        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H20A");
+        expected.add("DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H40A");
+        expected.add("DMC-S1000DBIKE-AAA-DA0-00-00-00AA-932A-A-H14B");
+        expected.add("DMC-S1000DBIKE-AAA-DA2-00-00-00AA-028A-A-T28C");
+        expected.add("DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A-T88E");
         
         assertEquals(expected, dmp.searchForDmRefs(test));
     }
 }
-
-

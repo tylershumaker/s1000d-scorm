@@ -56,16 +56,14 @@ public class CopyDirectoryTest
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
         assertTrue(dstPath.exists());
         String dest = dstPath.getAbsolutePath();
         assertTrue(new File(dstPath + File.separator + 
-                "DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml").exists());
-        assertTrue(new File(dstPath + File.separator + 
-        "media"+File.separator+"ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00028-A-001-01.jpg").exists());
+                "DMC-S1000DBIKE-AAA-D00-00-00-00AA-100A-A-T36C_001-00_EN-US.xml").exists());
+        assertTrue(new File(dstPath +File.separator+"ICN-S1000DBIKE-AAA-DA20000-A-06RT9-00028-A-001-01.jpg").exists());
         
     }
     
@@ -103,7 +101,6 @@ public class CopyDirectoryTest
             }
             catch (IOException e)
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         
@@ -111,7 +108,7 @@ public class CopyDirectoryTest
 
         assertTrue(dstPath.exists());
         assertTrue(new File(dstPath + File.separator + 
-                "DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-T-H10A_001-00_en-us.xml").exists());
+                "DMC-S1000DBIKE-AAA-D00-00-00-00AA-100A-A-T36C_001-00_EN-US.xml").exists());
         
     }
     

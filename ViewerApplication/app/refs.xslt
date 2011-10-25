@@ -303,7 +303,8 @@
 		
 		<xsl:choose>
 			<xsl:when test="$actuateMode='onRequest'">
-				<xsl:choose>
+			<!-- Ignoring showMode for SCORM output usability -->
+<!-- 				<xsl:choose>
 					<xsl:when test="$showMode='replace'">
 						<a>
 							<xsl:attribute name="href">
@@ -312,15 +313,18 @@
 							<xsl:value-of select="$xlinkhref" />
 						</a>
 					</xsl:when>
-				</xsl:choose>
+				</xsl:choose> -->
 				<!--add conditons for new window here-->
-				<xsl:choose>
+<!-- 				<xsl:choose>
 					<xsl:when test="$showMode='new'">
 						<a href="javascript:void(window.open('{$xlinkhref}'))">
 							<xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
 						</a>
 					</xsl:when>
-				</xsl:choose>
+				</xsl:choose> -->
+				<a href="javascript:void(window.open('{$xlinkhref}'))">
+					<xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
+				</a>
 			</xsl:when>
 		</xsl:choose>
 	</xsl:template>
@@ -357,13 +361,26 @@
 	<xsl:template match="internalRef[@internalRefTargetType='figure']">
 		<xsl:variable name="href" select="@xlink:href"/>
 		<xsl:variable name="intrefid" select="@internalRefId"/>
-		<!--<xsl:variable name ="urn" select="//figure[@id=$intrefid]" />-->
+		<xsl:variable name ="urn" select="//figure[@id=$intrefid]" />
 		<xsl:variable name="link_text" select="//figure[@id=$intrefid]/title" />
 		<a href="{$href}">
 			<xsl:value-of select="$link_text" />
 		</a>
 	</xsl:template>
-	
+ 	<xsl:template match="internalRef[@internalRefTargetType='supply']">
+		<xsl:variable name="href" select="@xlink:href"/>
+		<xsl:variable name="intrefid" select="@internalRefId"/>
+		<xsl:variable name ="urn" select="//figure[@id=$intrefid]" />
+		<xsl:variable name="link_text" select="//preliminaryRqmts/reqSupplies/supplyDescrGroup/supplyDescr[@id=$intrefid]/name" />
+		<xsl:value-of select="$link_text" />
+	</xsl:template>
+	<xsl:template match="internalRef[@internalRefTargetType='supequip']">
+		<xsl:variable name="href" select="@xlink:href"/>
+		<xsl:variable name="intrefid" select="@internalRefId"/>
+		<xsl:variable name ="urn" select="//figure[@id=$intrefid]" />
+		<xsl:variable name="link_text" select="//preliminaryRqmts/reqSupportEquips/supportEquipDescrGroup/supportEquipDescr[@id=$intrefid]/name" />
+		<xsl:value-of select="$link_text" />
+	</xsl:template>
 	<xsl:template match="internalRef[@internalRefTargetType='para']">
 		<xsl:variable name="xrefid" select="@xrefid"/>
 		<xsl:variable name="href" select="@xlink:href"/>
@@ -373,6 +390,24 @@
 			<xsl:value-of select="$link_text" />
 		</a>
 	</xsl:template>
+	
+	<xsl:template match="internalRef[@internalRefTargetType='hotspot']">
+		<xsl:variable name="href" select="@xlink:href"/>
+		<xsl:variable name="intrefid" select="@internalRefId"/>
+		<!-- <xsl:variable name ="urn" select="//figure[@id=$intrefid]" /> -->
+		<xsl:variable name="link_text" select="//figure/graphic/hotspot[@id=$intrefid]/@hotspotTitle" />
+		<xsl:value-of select="$link_text" />
+	</xsl:template>
+
+	<!-- Doesn't want to work -->
+	<!-- <xsl:template match="internalRef">
+		<xsl:variable name="intrefid" select="@internalRefId"/>
+		<xsl:variable name="href" select="@xlink:href"/>
+		<xsl:variable name="link_text" select="/root/descendant::node[@id=$intrefid]/title" />
+		<a href="{$href}">
+			<xsl:value-of select="$link_text" />
+		</a>
+	</xsl:template> -->
 
 </xsl:stylesheet>
 

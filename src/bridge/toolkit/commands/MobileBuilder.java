@@ -7,12 +7,18 @@ package bridge.toolkit.commands;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.Reader;
 import java.io.StringReader;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -31,14 +37,17 @@ import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
+import org.jdom.Namespace;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jdom.xpath.XPath;
 
+import bridge.toolkit.packaging.ContentPackageCreator;
 import bridge.toolkit.util.CopyDirectory;
 import bridge.toolkit.util.DMParser;
 import bridge.toolkit.util.Keys;
 import bridge.toolkit.util.URNMapper;
+
 
 /**
  * Builds a HTML, CSS, and JQueryMobile based mobile web app output from the S1000D SCPM and referenced
@@ -51,12 +60,22 @@ public class MobileBuilder implements Command
      * Location of the XSLT transform file used to transform the SCPM to mobile app html file.
      */
     private static final String SCPM_TRANSFORM_FILE = "scpmStylesheet.mobile.xsl";
+
+    /**
+     * Location of the XSLT transform file used to transform the SCPM to mobile app html file. (includes assessments)
+     */
+    private static final String SCPM_TRANSFORM_FILE_WITH_ASSESSMENTS = "scpmStylesheetCourse.mobile.xsl";
     
     /**
      * Location of the XSLT transform file used to transform the data modules to mobile app html file.
      */
     private static final String DM_TRANSFORM_FILE = "dmStylesheet.mobile.xsl";
-    
+
+    /**
+     * Location of the XSLT transform file used to transform the data modules to mobile app html file. (includes assessments)
+     */
+    private static final String DM_TRANSFORM_FILE_WITH_ASSESSMENTS = "dmStylesheetCourse.mobile.xsl";
+
     /**
      * InputStream for the xsl file that is used to transform the SCPM file and data modules
      * to mobile app html files.
@@ -88,6 +107,11 @@ public class MobileBuilder implements Command
      */
     private static final String MOBILEBUILDER_FAILED = "MobileBuilder processing was unsuccessful";
 
+    /**
+     * List of files to delete when processing is complete
+     */
+    private ArrayList<String> files_to_delete;
+
     /** 
      * The unit of processing work to be performed for the MobileBuilder module.
      * 
@@ -96,9 +120,10 @@ public class MobileBuilder implements Command
     @Override
     public boolean execute(Context ctx)
     {
+    	System.out.println("Executing Mobile Builder");
         if ((ctx.get(Keys.SCPM_FILE) != null) && (ctx.get(Keys.RESOURCE_PACKAGE) != null))
         {
-
+        	CopyDirectory cd = new CopyDirectory();
             src_dir = (String) ctx.get(Keys.RESOURCE_PACKAGE);
             scpm_file = (String) ctx.get(Keys.SCPM_FILE);
 
@@ -113,19 +138,64 @@ public class MobileBuilder implements Command
                 System.out.println("The 'Resource Package' is empty.");
                 return PROCESSING_COMPLETE;
             }
+            catch (JDOMException e)
+            {
+                System.out.println(MOBILEBUILDER_FAILED);
+                e.printStackTrace();
+                return PROCESSING_COMPLETE;
+            }
+            catch (IOException e)
+            {
+                System.out.println(MOBILEBUILDER_FAILED);
+                e.printStackTrace();
+                return PROCESSING_COMPLETE;
+            }
 
             urn_map = URNMapper.writeURNMap(src_files, "../media/");
             
             //write urn map file out to the ViewerApplication directory temporarily.  
-            File js = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication/app/urn_resource_map.xml");
-            XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-            FileWriter writer;
+            File js = null;
+            File jsviewer = null;
+            File xsldir = null;
             try
             {
+            	
+            	jsviewer= new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
+            	js = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication/app/urn_resource_map.xml");
+            	//check if the directory exists if it does use it and set the file object to null so it will not be deleted
+            	// else copy it from the jar and delete it when finished processing.
+            	if (!(jsviewer.exists()))
+                {
+                	//System.out.println("Path directory creation " + jsapp.getAbsolutePath());
+                	jsviewer.mkdirs();
+                	cd.CopyJarFiles(this.getClass(), "ViewerApplication", jsviewer.getAbsolutePath());
+                }
+                else
+                {
+                	jsviewer = null;
+                }
+            	
+            	//check if the directory exists if it does use it and set the file object to null so it will not be deleted
+            	// else copy it from the jar and delete it when finished processing.
+                xsldir = new File(System.getProperty("user.dir") + File.separator + "xsl");
+                if (!(xsldir.exists()))
+                {
+                	//System.out.println("jsviewer directory creation " + jsviewer.getAbsolutePath());
+                	xsldir.mkdirs();
+                	cd.CopyJarFiles(this.getClass(), "xsl", xsldir.getAbsolutePath());
+                }
+                else
+                {
+                	xsldir = null;
+                }
+                
+                XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+                FileWriter writer;
                 writer = new FileWriter(js);
                 outputter.output(urn_map, writer);
                 writer.flush();
                 writer.close();
+
             }
             catch (IOException e)
             {
@@ -134,13 +204,23 @@ public class MobileBuilder implements Command
                 return PROCESSING_COMPLETE;
             }
             
+           String outputPath = "";
+            if (ctx.get(Keys.OUTPUT_DIRECTORY) != null)
+            {
+            	outputPath = (String)ctx.get(Keys.OUTPUT_DIRECTORY);
+            	if (outputPath.length() > 0)
+            	{
+            		outputPath = outputPath + File.separator;
+            	}
+            }
+            
             //create new directory and folder for mobile_output
-            File newMobApp = createOutputLocation();
+            File newMobApp = createOutputLocation(outputPath);
 
             //transform SCPM to main index.htm file
             try
             {
-                transformSCPM(newMobApp);
+                transformSCPM(newMobApp, ctx.get(Keys.OUTPUT_TYPE));
             }
             catch (FileNotFoundException e)
             {
@@ -164,7 +244,8 @@ public class MobileBuilder implements Command
             //parse SCPM for list of files in each scoEntry to create the individual mobile app pages
             try
             {
-                generateMobilePages(newMobApp);
+            		generateMobilePages(newMobApp, (String)ctx.get(Keys.OUTPUT_TYPE));
+
             }
             catch (TransformerConfigurationException e2)
             {
@@ -223,18 +304,27 @@ public class MobileBuilder implements Command
             
             try
             {
-                //copy over css and jquery mobile files
-                CopyDirectory cd = new CopyDirectory();
-                File mobiApp_loc = new File(System.getProperty("user.dir") + File.separator +
-                "mobiApp");
-                cd.copyDirectory(mobiApp_loc, newMobApp);
-                
-                //copy common.css from the ViewerApplication to the mobile output
-                File common_css = new File(System.getProperty("user.dir") + File.separator + 
-                        "ViewerApplication" + File.separator + "app" + File.separator + "common.css");
-                cd.copyDirectory(common_css, newMobApp);
-                
-                //copy over media files
+                //copy over css and jquery mobile files              
+                File mobiApp_loc = new File(System.getProperty("user.dir") + File.separator + "mobiApp");
+                //check if the directory exists if it does use it else copy it from the jar
+                if (mobiApp_loc.exists())
+                {
+                	cd.copyDirectory(mobiApp_loc, newMobApp);
+                }
+                else
+                {
+                	cd.CopyJarFiles(this.getClass(),"mobiApp",newMobApp.getAbsolutePath());
+                }
+                 
+                //copy commonmobile.js
+                File commonmobile_js = new File(System.getProperty("user.dir") + File.separator +   "xsl" + File.separator + "bridge" + File.separator + "toolkit" + File.separator + "commands" + File.separator + "commonmobile.js");
+                //check if the directory exists if it does use it else copy it from the jar
+                if (commonmobile_js.exists())
+                {
+                	cd.copyDirectory(commonmobile_js, newMobApp);
+                }
+           
+                //copy over media files           
                 File new_media_loc = new File(newMobApp.getAbsolutePath() + File.separator + "media");
                 new_media_loc.mkdir();
                 Iterator<File> srcIterator = src_files.iterator();
@@ -247,7 +337,6 @@ public class MobileBuilder implements Command
                         cd.copyDirectory(src, new_media_loc);
                     }
                 }
-
             }
             catch (IOException e)
             {
@@ -257,20 +346,61 @@ public class MobileBuilder implements Command
             }
             
             //delete the urn map from the ViewerApplication location
-            js.deleteOnExit();
+            ArrayList<String> files_to_delete = new ArrayList<String>();
+            if (jsviewer != null)
+            {
+            	DeleteDirectoryOnExit(jsviewer,files_to_delete);
+            }
+            if (js != null)
+            {
+            	files_to_delete.add(js.getAbsolutePath());
+            }
+            if (xsldir != null)
+            {
+            	DeleteDirectoryOnExit(xsldir,files_to_delete);
+            }
+            ctx.put(Keys.MOBLIE_FILES_TO_DELETE,files_to_delete);
             System.out.println("MobileBuilder processing was successful");
+            
         }
         return CONTINUE_PROCESSING;
 
     }
     
     /**
+     * Iterates over a directory and sets the files inside to be deleted when processing is complete
+     * @param dir the directory file to delete
+     */
+    private void DeleteDirectoryOnExit(File dir,ArrayList<String> files_to_delete)
+    {
+    	files_to_delete.add(dir.getAbsolutePath());
+    	if (dir.isDirectory())
+    	{
+    		String files[] = dir.list();
+    		for (int f = 0; f < files.length; f++)
+        	{
+        		File innerFile = new File(dir, files[f]);
+        		if (innerFile.isDirectory())
+        		{
+        			DeleteDirectoryOnExit(innerFile,files_to_delete);
+        		}
+        		else
+        		{
+        			files_to_delete.add(innerFile.getAbsolutePath());
+        		}
+        	}
+    	}
+    }
+    
+
+    /**
      * Creates a new directory and folder for the mobile output
+     * @param outputDirectory the directory to write the mobile web app to.
      * @return File object that represents the location of the mobile output.
      */
-    private File createOutputLocation()
+    private File createOutputLocation(String outputDirectory)
     {
-        File mobileLocation = new File("mobile");
+        File mobileLocation = new File(outputDirectory+"mobile");
         if(!mobileLocation.exists())
         {
             mobileLocation.mkdirs();
@@ -311,9 +441,16 @@ public class MobileBuilder implements Command
      * @throws FileNotFoundException
      * @throws TransformerException
      */
-    private void transformSCPM(File newMobApp) throws FileNotFoundException, TransformerException
+    private void transformSCPM(File newMobApp, Object outputType) throws FileNotFoundException, TransformerException
     {
-        transform = this.getClass().getResourceAsStream(SCPM_TRANSFORM_FILE);
+    	if (outputType != "mobileCourse")
+    	{
+    		transform = this.getClass().getResourceAsStream(SCPM_TRANSFORM_FILE);
+    	}		
+    	else
+    	{
+    		transform = this.getClass().getResourceAsStream(SCPM_TRANSFORM_FILE_WITH_ASSESSMENTS);
+    	}
         File index = new File(newMobApp +File.separator +"index.htm");
         mobileList.add("index.htm");
         TransformerFactory tFactory = TransformerFactory.newInstance();
@@ -330,14 +467,14 @@ public class MobileBuilder implements Command
      * @throws TransformerException
      * @throws IOException
      */
-    private void generateMobilePages(File newMobApp) throws JDOMException, TransformerException, IOException
+    private void generateMobilePages(File newMobApp, String outputType) throws JDOMException, TransformerException, IOException
     {
         DMParser dmp = new DMParser();
         
         XPath xp = XPath.newInstance("//scoEntry[@scoEntryType='scot01']");
         @SuppressWarnings("unchecked")
-        List<Element> scos = xp.selectNodes(dmp.getDoc(new File(scpm_file)));
         
+        List<Element> scos = xp.selectNodes(dmp.getDoc(new File(scpm_file)));
         int folderCount = 1;
         Iterator<Element> iterator = scos.iterator();
         while(iterator.hasNext())
@@ -365,95 +502,37 @@ public class MobileBuilder implements Command
                 Document currDM = dmp.getDoc(dataModule);
                 xp = XPath.newInstance("//dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnEventCode");
                 Attribute learnEventCode = (Attribute)xp.selectSingleNode(currDM);
-
                 xp = XPath.newInstance("//dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnCode");
                 Attribute learnCode = (Attribute)xp.selectSingleNode(currDM);
                 
-                if(learnEventCode==null || !learnEventCode.getValue().equals("E"))
+                if(learnEventCode==null || !learnEventCode.getValue().equals("E") || outputType == "mobileCourse")
                 {
-                    if(learnCode==null ||!learnCode.getValue().equals("T28"))
+                    if(learnCode==null ||!learnCode.getValue().equals("T28") || outputType == "mobileCourse")
                     {
                         File newChild = new File(newMobApp + File.separator + Integer.toString(folderCount));
                         newChild.mkdir();
-                        transform = this.getClass().getResourceAsStream(DM_TRANSFORM_FILE);
+                        if (outputType != "mobileCourse")
+                        {
+                        	transform = this.getClass().getResourceAsStream(DM_TRANSFORM_FILE);
+                        }
+                        else
+                        {
+                        	transform = this.getClass().getResourceAsStream(DM_TRANSFORM_FILE_WITH_ASSESSMENTS);
+                        }
                         TransformerFactory tFactory = TransformerFactory.newInstance();
                         Transformer transformer = tFactory.newTransformer(new StreamSource(transform));
 
                         String htmName = urn.getChild("target").getValue() + ".htm";
-                        File htmlFile = new File(newChild +File.separator + htmName); 
+                        File htmlFile = new File(newChild +File.separator + htmName);
                         mobileList.add(newChild.getName() + "/" + htmName);
                         transformer.transform(new StreamSource(dataModule), 
                                               new StreamResult(new FileOutputStream(htmlFile)));
-
-                        handleSlideShows(currDM, learnCode, dataModule, newChild);
                     }
                 }
              
             }
             
             folderCount++;
-        }
-    }
-    
-    /**
-     * Gathers the required ICN files and data modules needed for Flash slide shows that exist 
-     * in the example data. 
-     * 
-     * @param currDM JDom Document object that represents the current data module being processed. 
-     * @param learnCode JDome Attribute object that is found in the current data module's dmCode.
-     * @param dataModule File object that represents the location of the current data module file.
-     * @param newChild File object that represents the mobile output child folder that the current mobile
-     * output files are being output to. 
-     * @throws JDOMException
-     * @throws IOException
-     */
-    private void handleSlideShows(Document currDM, Attribute learnCode, File dataModule, File newChild) throws JDOMException, IOException
-    {
-        //check to see if the levelledPara element exists in the data module
-        XPath xp = XPath.newInstance("//levelledPara");
-        Element levelledPara = (Element)xp.selectSingleNode(currDM);
-        if(levelledPara != null && learnCode != null)
-        {
-            //check to see if the learnCode is T4J - Interactive Content Procedure
-            //Exploratory interactive simulation, animation or video used to
-            //provide the learner with a procedure to be learned.
-            if(learnCode.getValue().equals("T4J"))
-            {
-                CopyDirectory cd = new CopyDirectory();
-                cd.copyDirectory(dataModule, newChild);
-                
-                String org = currDM.getDocType().getInternalSubset();
-                
-                BufferedReader in = new BufferedReader(new StringReader(org));
-           
-                List<String> lines = new ArrayList<String>();
-                String str;
-                while ((str = in.readLine()) != null) 
-                {
-                   lines.add(str);
-                }
-                in.close();
-                
-                Iterator<String> iterator2 = lines.iterator();
-                while(iterator2.hasNext())
-                {
-                    String line = iterator2.next();
-                    
-                    if(line.contains("ENTITY"))
-                    {
-                        String[] entity = line.split("\"");
-                        String orgFileLoc = dataModule.getParent().replaceAll("\\\\", "/");
-                        String[] entityValue = entity[1].split(orgFileLoc + "/");
-                        
-                        File media = new File(src_dir + File.separator + entityValue[entityValue.length-1].replaceAll("%20", " ").replaceAll("/", "\\\\"));
-                        //File mediaLoc = new File(newChild.getAbsolutePath() + File.separator + "media");
-                        //mediaLoc.mkdir();
-                        if(!media.getName().contains(".swf"))
-                            cd.copyDirectory(media, newChild);
-                    }
-                    
-                }
-            }
         }
     }
     
@@ -482,7 +561,5 @@ public class MobileBuilder implements Command
         writer.write("function getArray()\n");
         writer.write("{\n return scoPages;\n}");
         writer.close();
-        
     }
-    
 }
