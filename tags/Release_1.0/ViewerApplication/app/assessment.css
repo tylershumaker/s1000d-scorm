@@ -1,0 +1,217 @@
+.seqAnswerList
+{
+   list-style-type: lower-alpha;
+}
+#feedbackCorrect
+{
+	text-align: center;
+	display: none;
+    color: green;
+}
+#feedbackIncorrect
+{
+	text-align: center;
+	display: none;
+	color: red;
+}
+#noAnswerChosen
+{
+	display: block;
+}
+.answerList
+{
+    margin-left:25px;
+}
+.header
+{
+	height: 50px;
+}
+.knowledgeCheckHeader
+{
+	font-size: 24pt;
+	font-weight: bold;
+	color: #374F3F;
+	/* position: absolute; */
+	position: relative; 
+	/* top: 3.5em; */
+	z-index: 10;
+	padding-left: 0.5em;
+	bottom: 0.7em;
+	margin-top: 1em; 
+}
+.fancySmallLine
+{
+    position: relative; 
+	float: left;
+	height: 0.1em;
+	width: 100%;
+	/* z-index: -1; */
+	bottom: 2.45em;
+	border: 0; /* none; */
+}
+.fancySmallLineGradient
+{
+	/* Old browsers */
+	background: rgb(206, 220, 231); 
+	/* FF3.6+ */
+	background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(165, 175, 188, 1))); 
+	/* Chrome10+,Safari5.1+ */
+	background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+	/* Opera11.10+ */
+	background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+	/* IE10+ */
+	background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#A5AFBC', GradientType=1 ); 
+	/* W3C */
+	background: linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(165, 175, 188, 1) 100%); 
+}
+.fancyLine
+{
+    position: relative; 
+	float: left;
+	height: 0.8em;
+	width: 100%;
+	/* z-index: -1; */
+	bottom: 2.4em;
+	border: 0; /* none; */
+}
+.fancyLineGradient
+{
+	/* Old browsers */
+	background: rgb(206, 220, 231); 
+	/* FF3.6+ */
+	background: -moz-linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(206, 220, 231, 1)), color-stop(100%, rgba(89, 106, 114, 1))); 
+	/* Chrome10+,Safari5.1+ */
+	background: -webkit-linear-gradient(top, rgba(206,220,231,1) 0%, rgba(89, 106, 114, 1) 100%); 
+	/* Opera11.10+ */
+	background: -o-linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
+	/* IE10+ */
+	background: -ms-linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72', GradientType=0 ); 
+	/* W3C */
+	background: linear-gradient(top, rgba(206, 220, 231, 1) 0%, rgba(89, 106, 114, 1) 100%); 
+}
+.content /* use with image*/
+{
+	/*display: inline;*/
+	width: 632px; /* how wide the picture is...may not be the best way to keep everything lined up horizontally */
+}
+.checkButton
+{
+	padding: 2px 20px 2px 20px;
+	margin: auto;
+	display: block;
+	/*rounded borders*/
+	-mox-border-radius: 10px; /* FF1-3.6 */
+	-webkit-border-radius: 10px; /* Saf3-4, iOS 1-3.2, Android < 1.6 */
+	border-radius: 10px; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+	color: white;
+	/*border-color: #5B5F65;*/
+	background: #14469D; 
+	/* FF3.6+ */
+	background: -moz-linear-gradient(top, #A8BEE4, #14469D, #A8BEE4); /* from(#E2E7E9), to(#7E929A) ? */
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, left bottom, from(#A8BEE4), to(#14469D)); /* don't know how to get it back to light)*/
+	/* Chrome10+,Safari5.1+ */
+	background: -webkit-linear-gradient(top, #A8BEE4, #14469D, #A8BEE4);
+	/* Opera11.10+ */
+	background: -o-linear-gradient(top, #A8BEE4, #14469D, #A8BEE4);
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #A8BEE4, #14469D, #A8BEE4);
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorStr='#A8BEE4', endColorStr='#14469D'); /*middleColorStr='#14469D', endColorStr='#A8BEE4'); doesn't seem to work*/
+	/* W3C */
+	background: linear-gradient(top, #A8BEE4, #14469D, #A8BEE4); /* don't know how to get it back to light)*/
+}
+.checkButtonImage
+{
+	margin: auto;
+	display: block;
+}
+.line
+{
+	height: 2px;
+	/* Old browsers (this seems to hurt the rendering on IE8)*/
+/*	background: #B6BFCB;*/ 
+	/* FF3.6+ */
+	background: -moz-linear-gradient(top, #FFFFFF, #DEE2E7, #FFFFFF);
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#DEE2E7)); 
+	/* Chrome10+,Safari5.1+ */
+	background: -webkit-linear-gradient(top, #FFFFFF, #DEE2E7, #FFFFFF);
+	/* Opera11.10+ */
+	background: -o-linear-gradient(top, #FFFFFF, #DEE2E7, #FFFFFF);
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #FFFFFF, #DEE2E7, #FFFFFF);
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorStr='#FFFFFF', endColorStr='#DEE2E7', gradientType='1');/*middleColorStr='#DEE2E7', endColorStr='#FFFFFF'); doesn't seem to work*/
+	/* W3C */
+	background: linear-gradient(top, #FFFFFF, #DEE2E7, #FFFFFF);
+}
+.sortable
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.sortable li
+{
+	margin: 0 3px 3px 3px;
+	padding: 0.4em;
+	padding-left: 1.5em;
+	height: 18px;
+}
+.sortable li span
+{
+	position: absolute;
+	margin-left: -1.3em;
+}
+.questionNumber
+{
+	display: none;
+}
+#questionNumber1 /* This needs set to block so original question will show up */
+{
+	display: block;
+}
+#grade
+{
+	display: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #919393 #E4E5E5 #E4E5E5 #E4E5E5; /*#999999 #CCCCCC #CCCCCC #CCCCCC;*/
+	padding: 10px;
+}
+#hotspotContent
+{
+	position: relative;
+}
+.hotspotImage
+{
+	z-index: 0;
+}
+.hotspotDiv
+{
+	position: absolute;
+	z-index: 1;
+	border: 1px solid #6CB7E8;
+	background-color: #C7C7C7;
+	display: none;
+	filter:alpha(opacity=70);
+}
+.hotspotCheckButton
+{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.questionCount
+{
+	font-size: 10pt;
+	float: right;
+}

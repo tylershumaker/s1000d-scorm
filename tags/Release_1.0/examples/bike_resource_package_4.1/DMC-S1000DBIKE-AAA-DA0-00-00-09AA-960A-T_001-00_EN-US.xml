@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="flat_schema/scoContent.xsd">
+	<identAndStatusSection>
+		<dmAddress>
+			<dmIdent>
+				<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="09" disassyCodeVariant="AA" infoCode="960" infoCodeVariant="A" itemLocationCode="T"/>
+				<language countryIsoCode="US" languageIsoCode="en"/>
+				<issueInfo inWork="00" issueNumber="001"/>
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate day="07" month="01" year="2010"/>
+				<dmTitle>
+					<techName>Bicycle</techName>
+					<infoName>Wheel Description</infoName>
+				</dmTitle>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus>
+			<security securityClassification="01"/>
+			<responsiblePartnerCompany enterpriseCode="06RT9">
+				<enterpriseName>IDSI</enterpriseName>
+			</responsiblePartnerCompany>
+			<originator enterpriseCode="06RT9">
+				<enterpriseName>IDSI</enterpriseName>
+			</originator>
+			<applic>
+				<displayText>
+					<simplePara>All</simplePara>
+				</displayText>
+			</applic>
+			<brexDmRef>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="A" infoCode="022" subSystemCode="0" infoCodeVariant="A" disassyCodeVariant="A" subSubSystemCode="0" itemLocationCode="D" assyCode="00" systemCode="00" disassyCode="00"/>
+					</dmRefIdent>
+				</dmRef>
+			</brexDmRef>
+			<qualityAssurance>
+				<unverified/>
+			</qualityAssurance>
+		</dmStatus>
+	</identAndStatusSection>
+	<content>
+		<scoContent>
+			<trainingStep>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T10" learnEventCode="B"/>
+					</dmRefIdent>
+				</dmRef>
+			</trainingStep>
+			<trainingStep>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T2F" learnEventCode="B"/>
+					</dmRefIdent>
+				</dmRef>
+			</trainingStep>
+			<trainingStep>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T42" learnEventCode="C"/>
+					</dmRefIdent>
+				</dmRef>
+			</trainingStep>
+			<trainingStep>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T63" learnEventCode="E"/>
+					</dmRefIdent>
+				</dmRef>
+			</trainingStep>
+			<trainingStep>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T62" learnEventCode="E"/>
+					</dmRefIdent>
+				</dmRef>
+			</trainingStep>
+			<trainingStep>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T4R" learnEventCode="C"/>
+					</dmRefIdent>
+				</dmRef>
+			</trainingStep>
+			<trainingStep>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T61" learnEventCode="E"/>
+					</dmRefIdent>
+				</dmRef>
+			</trainingStep>
+			<trainingStep>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="A" learnCode="T36" learnEventCode="D"/>
+					</dmRefIdent>
+				</dmRef>
+			</trainingStep>
+		</scoContent>
+	</content>
+</dmodule>

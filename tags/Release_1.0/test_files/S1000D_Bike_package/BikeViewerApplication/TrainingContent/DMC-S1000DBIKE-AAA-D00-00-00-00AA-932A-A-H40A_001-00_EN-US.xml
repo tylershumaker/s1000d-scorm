@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'?>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>U8025</dc:creator>
+    <dc:title>Bicycle - Planning information: Intervention implementation</dc:title>
+    <dc:subject>Bicycle - Planning information: Intervention implementation</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-08-22</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H40A_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="932" infoCodeVariant="A" itemLocationCode="A" learnCode="H40" learnEventCode="A" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="07" day="22" />
+        <dmTitle>
+          <techName>Bicycle</techName>
+          <infoName>Planning information: Intervention implementation</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningPlan>
+        <lcTechnical>
+          <title>Technical Requirements</title>
+          <shortDescr>This section lists the technical requirements needed to complete the instruction.</shortDescr>
+          <lcLMS id="lcLMS-41497872-b6a8-4165-ab03-f8a9a3879ad2">
+            <description>
+              <para>
+                <emphasis>LMS:</emphasis>
+              </para>
+              <para id="para-2b1a81c4-f047-49a6-8ac9-c29dff72992d">Lesson content packages will be tracked in the Sum Total LMS.</para>
+            </description>
+          </lcLMS>
+          <lcNoLMS>
+            <description>
+              <para>
+                <emphasis>No LMS:</emphasis>
+              </para>
+              <para>The courseware does not require any special considerations when it is running outside of an LMS</para>
+            </description>
+          </lcNoLMS>
+          <lcClassroom id="lcClas-bd24a8b6-641a-4ba6-b953-1902fdf070ba">
+            <description>
+              <para>
+                <emphasis>Classroom:</emphasis>
+              </para>
+              <para id="para-5e2462df-dba5-405a-a45b-e488bca8c87c">Instruction will be taken in the Learning Lab at Speedy Courier's main office. The training is part of the employee's first day orientation and is required. No courier assignements will be given until the employee completes the orientation and the training.</para>
+            </description>
+          </lcClassroom>
+          <lcOJT id="lcOJT-f0ed82af-ba04-40cd-b69c-541935e00eca">
+            <description>
+              <para>
+                <emphasis>OJT:</emphasis>
+              </para>
+              <para id="para-03ef8101-f8ca-47f2-b862-301bfd9687b3">There are no technical requirements for OJT</para>
+            </description>
+          </lcOJT>
+          <lcConstraints id="lcCons-b2fdeefc-98eb-4d77-964a-ddaa3013ae1a">
+            <description>
+              <para>
+                <emphasis>Constraints:</emphasis>
+              </para>
+              <para id="para-6d146c3e-3c18-400c-a00a-eaa876e656f0">There are no contstraints</para>
+            </description>
+          </lcConstraints>
+          <lcW3C id="lcW3C-2f316ea8-1770-44e5-a984-9ca56132816f">
+            <description>
+              <para>
+                <emphasis>W3C Conformance:</emphasis>
+              </para>
+              <para id="para-050693de-6bcc-4d22-ab39-725e8d8916cf">This courseware meets W3C Web Accessibility Initiative Guidelines Priority 1 checkpoints</para>
+            </description>
+          </lcW3C>
+          <lcPlayers id="lcPlay-ccce31d6-ec59-4231-b9fa-756f1ef866f6">
+            <description>
+              <para>
+                <emphasis>Players and Plug-ins:</emphasis>
+              </para>
+              <para>
+						  The courseware will make use of the following players and plug-ins:
+						  <randomList><listItem id="li-061b5a80-9972-4b01-8deb-6bee5cae891f"><para>Adobe Flash Player</para></listItem><listItem id="li-2017260f-9043-499c-967f-48becfdb12d3"><para>Acrobat Reader</para></listItem></randomList></para>
+            </description>
+          </lcPlayers>
+          <lcViewers id="lcView-8ff85476-2ff0-4591-b7c8-840fb83bbf1a">
+            <description>
+              <para>
+                <emphasis>Content Viewers:</emphasis>
+              </para>
+              <para id="para-f6604280-3835-4da4-9301-7cf82bc4a302">Standard viewers will be used</para>
+            </description>
+          </lcViewers>
+          <lcResolution id="lcReso-4453aeae-0eb5-4cb5-9bc9-63508d6cc8e2">
+            <description>
+              <para>
+                <emphasis>Screen Resolution:</emphasis>
+              </para>
+              <para id="para-37a51570-e823-4dc0-9f51-84399e36656c">Although the courseware can be viewed using different resolutions, it is best viewed in 1024x768 resolution</para>
+            </description>
+          </lcResolution>
+          <lcSecurity id="lcSecu-3ff110ed-0304-4c3f-adfe-b9e24f1de79e">
+            <description>
+              <para>
+                <emphasis>Security:</emphasis>
+              </para>
+              <para id="para-b92e5ba1-7af5-4a39-b724-ba6ccd93925e">Security level is unclassified.</para>
+            </description>
+          </lcSecurity>
+        </lcTechnical>
+      </learningPlan>
+    </learning>
+  </content>
+</dmodule>
