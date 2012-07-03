@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-D000000-A-06RT9-00151-A-001-01 SYSTEM  'ICN-S1000DBIKE-AAA-D000000-A-06RT9-00151-A-001-01.jpg' NDATA JPEG>
+<!ENTITY ICN-S1000DBIKE-AAA-D000000-A-06RT9-00152-A-001-01 SYSTEM  'ICN-S1000DBIKE-AAA-D000000-A-06RT9-00152-A-001-01.jpg' NDATA JPEG>
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Bicycle - Other procedures to clean: Static content - Procedure Expositive</dc:title>
+    <dc:subject>Bicycle - Other procedures to clean: Static content - Procedure Expositive</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-10-19</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-258A-A-T45C_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="258" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="10" day="19" />
+        <dmTitle>
+          <techName>Bicycle</techName>
+          <infoName>Other procedures to clean: Static content - Procedure Expositive</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent>
+        <title>Cleaning Your Bike</title>
+        <lcInstruction>
+          <description>
+            <warning>
+              <warningAndCautionPara>
+						  Do not get detergent A into your eyes. If it gets into your eyes, wash them immediately in clean, warm water.
+					  </warningAndCautionPara>
+            </warning>
+            <warning>
+              <warningAndCautionPara>
+						  Do not get detergent B into your eyes. If it gets into your eyes, wash them immediately in clean, warm water.
+					  </warningAndCautionPara>
+            </warning>
+            <caution>
+              <warningAndCautionPara>Do not use a water hose that has high pressure. A water hose that has high pressure can cause some parts to become loose or full of water.</warningAndCautionPara>
+            </caution>
+            <caution>
+              <warningAndCautionPara>Do not point the hose directly at the hub or at the bottom bracket bearings. This can cause damage to the parts.</warningAndCautionPara>
+            </caution>
+            <caution>
+              <warningAndCautionPara>Apply detergent B in accordance with the instructions on the container. The substance may cause damage to the bike paint if it is not applied correctly.</warningAndCautionPara>
+            </caution>
+            <para>
+					  To clean your bike, begin by rinsing it with water to remove any loose dirt. See the figure below.
+				  </para>
+            <figure>
+              <title />
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00151-A-001-01" />
+            </figure>
+            <para>
+					  Use a stiff-bristled brush to remove caked-on dirt and to reach hard-to-clean areas. Hard-to-clean areas include but are not limited to the shift levers, knobby tires, and brakes.
+				  </para>
+            <para>
+					  Clean the grime from the chain and the sprockets with a small-bladed screwdriver. Remove any grease from the freewheel assembly using the degreasing agent as shown in the figure below. Then use a brush to remove grease from the sprockets, derailleur guide and tension wheels, and chain ring teeth.
+				  </para>
+            <figure>
+              <title />
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00152-A-001-01" />
+            </figure>
+            <para>Flush the sprockets, derailleurs, chain rings, and chain with water. Repeat, as necessary.</para>
+            <para>Soak your sponge in detergent A and water. Completely rub down the bike with the soaked sponge. Flush the bicycle, and make sure that all of the detergent is removed.</para>
+            <para>Bounce the bicycle up and down on its tires to remove the excess water.</para>
+            <para>Next, soak your sponge in detergent B and water. Wash the bicycle with the sponge. </para>
+            <para>Once you have washed the bike with detergent B, soak the sponge in detergent A and water, and fully clean the bike again. Rinse the bike with water, making sure that all detergents are removed.</para>
+            <para>Bounce the bicycle up and down on its tires to remove the excess water. Use a clean, dry cloth to finish drying all parts of the bike.</para>
+            <para>
+					  Lubricate the bike (refer to <dmRef><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA4" subSystemCode="1" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="258" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" /><language countryIsoCode="US" languageIsoCode="en" /></dmRefIdent><dmRefAddressItems><dmTitle><techName>Chain</techName><infoName>Other procedures to clean</infoName></dmTitle></dmRefAddressItems><behavior linkActuate="onRequest" linkShow="newPane" /></dmRef>
+						  ).
+				  </para>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>

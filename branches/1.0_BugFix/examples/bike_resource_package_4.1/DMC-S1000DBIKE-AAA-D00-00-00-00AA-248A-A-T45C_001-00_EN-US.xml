@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule [<!NOTATION JPEG SYSTEM 'Joint Photographic Experts Group'>
+<!ENTITY ICN-S1000DBIKE-AAA-D000000-A-06RT9-00060-A-001-01 SYSTEM  'ICN-S1000DBIKE-AAA-D000000-A-06RT9-00060-A-001-01.jpg' NDATA JPEG>
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <rdf:Description>
+    <dc:creator>06RT9</dc:creator>
+    <dc:title>Bicycle - Other procedures to clean: Static content - Procedure</dc:title>
+    <dc:subject>Bicycle - Other procedures to clean: Static content - Procedure</dc:subject>
+    <dc:publisher>06RT9</dc:publisher>
+    <dc:contributor>06RT9</dc:contributor>
+    <dc:date>2009-08-20</dc:date>
+    <dc:type>text</dc:type>
+    <dc:format>text/xml</dc:format>
+    <dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-248A-A-T45C_001-00</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <dc:rights>01_cc51</dc:rights>
+  </rdf:Description>
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="248" infoCodeVariant="A" itemLocationCode="A" learnCode="T45" learnEventCode="C" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2009" month="08" day="20" />
+        <dmTitle>
+          <techName>Bicycle</techName>
+          <infoName>Other procedures to clean: Static content - Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="06RT9"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="A" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D" />
+            <issueInfo issueNumber="005" inWork="00" />
+            <language languageIsoCode="en" countryIsoCode="US" />
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>D0000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningContent id="learncont-bff031ea-d1b6-49cc-9ac0-0830abaf71c6">
+        <title>Cleaning the Drive Train</title>
+        <lcInstruction>
+          <description>
+            <para>The drive train is an area where dirt and grime will build up over time. Taking some time every week or so to clean it will prolong the life of your bike. Tools and supplies you will need to clean the drive train include:</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>
+						  Degreasing agent
+					  </para>
+                </listItem>
+                <listItem>
+                  <para>
+						  Plastic container
+					  </para>
+                </listItem>
+                <listItem>
+                  <para>
+						  Old rags and toothbrushes
+					  </para>
+                </listItem>
+              </randomList>
+            </para>
+            <para>Clean caked grime from the chain and the sprockets. Apply degreasing agent to the chain. Use a toothbrush and rag to wipe away any dirt and grease. Repeat the process until the chain is completely clean. Do the same for the sprockets. </para>
+            <para>Next, move to the back of the bike, and remove the grease from the freewheel assembly with the degreasing agent as shown in 'Degreasing the freewheel.'</para>
+            <figure>
+              <title></title>
+              <graphic infoEntityIdent="ICN-S1000DBIKE-AAA-D000000-A-06RT9-00060-A-001-01" />
+            </figure>
+            <para>Use a brush to remove the grease from the:</para>
+            <para>
+              <randomList>
+                <listItem>
+                  <para>
+						  Sprockets
+					  </para>
+                </listItem>
+                <listItem>
+                  <para>
+						  Guide and tension wheels of the derailleur
+					  </para>
+                </listItem>
+                <listItem>
+                  <para>
+						  Chain ring teeth
+					  </para>
+                </listItem>
+              </randomList>
+            </para>
+            <para>Rinse the drive train by flushing the components with water, and then dry them with a clean, dry cloth.</para>
+            <note>
+              <notePara>If necessary, repeat the flush procedure prior to drying</notePara>
+            </note>
+          </description>
+        </lcInstruction>
+      </learningContent>
+    </learning>
+  </content>
+</dmodule>
