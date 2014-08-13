@@ -6,9 +6,12 @@
 package bridge.toolkit.util;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -64,7 +67,8 @@ public class StylesheetApplier
         File[] resources = dm.listFiles();
         for(File resource: resources)
         {
-            if((!resource.isDirectory()) && (!resource.getName().contains("ICN")) && !resource.getName().endsWith(".ent"))
+            if((!resource.isDirectory()) && (resource.getName().toLowerCase().endsWith(".xml")))
+                    //(!resource.getName().contains("ICN")) && !resource.getName().endsWith(".ent"))
             {
                 SAXBuilder parser = new SAXBuilder();
                 parser.setExpandEntities(false);
@@ -89,7 +93,8 @@ public class StylesheetApplier
                 File temp = new File(iBaseDir + File.separator +"resources" + 
                                    File.separator + "s1000d" + File.separator +
                                    resource.getName());
-                FileWriter writer = new FileWriter(temp);
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(temp), "UTF-8"));
+                //FileWriter writer = new FileWriter(temp);
                 outputter.output(doc, writer);
                 writer.close();
             }
