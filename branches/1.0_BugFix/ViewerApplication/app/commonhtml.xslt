@@ -596,59 +596,18 @@
 		<xsl:apply-templates/>
 	</xsl:template>
 
-	<xsl:template match="levelledPara">
-		<xsl:choose>
-			<xsl:when test="ancestor::learning">
-				<!--suppress--><!-- Added stuff under this for slide show! If it makes something not work, we may need to revisit this -->
-				<xsl:for-each select="levelledPara">
-					<xsl:variable name="position">
-						<xsl:value-of select="position()"/>
-					</xsl:variable>
-					<div class="slide" id="slide{$position}">
-						<script type="text/javascript">
-								$(function()
-								{
-									var currentSlide = parseFloat(<xsl:value-of select="$position"/>);
-									var nextSlide = parseFloat(<xsl:value-of select="$position"/>) + 1;
-									var previousSlide = parseFloat(<xsl:value-of select="$position"/>) - 1;
-									if (!document.getElementById('slide' + nextSlide))
-									{
-										// Use the following for buttons or divs
-										document.getElementById('nextButton' + currentSlide).disabled = true;
-										// Use the following for div
-										document.getElementById('nextButton' + currentSlide).style.borderLeftColor = "#666666";
-									}
-									if (!document.getElementById('slide' + previousSlide))
-									{
-										// Use the following for buttons or divs
-										document.getElementById('previousButton' + currentSlide).disabled = true;
-										// Use the following for div
-										document.getElementById('previousButton' + currentSlide).style.borderRightColor = "#666666";
-									}
-								});
-							</script>
-						<div class="figure">
-							<xsl:apply-templates select="figure/graphic/."/>
-						</div>
-						<div class="figureDescription">
-							<xsl:apply-templates select="para/."/>
-						</div>
-						<table class="slideNavigation">
-							<tr>
-<!-- 								<td><input type="submit" class="previousButton" id="previousButton{$position}" value="Previous" onClick="javascript:showSlide('{$position}', 'previous'); return false;"/></td>
-								<td><input type="submit" class="nextButton" id="nextButton{$position}" value="Next" onClick="javascript:showSlide('{$position}', 'next'); return false;"/></td>
- -->
-<!-- This might not always work in all IE since I am using hover and div! May need to use the onmouseover event... -->
-<td><div class="previousButton" id="previousButton{$position}" onClick="javascript:showSlide('{$position}', 'previous'); return false;"/></td>
-<td><div class="nextButton" id="nextButton{$position}" onClick="javascript:showSlide('{$position}', 'next'); return false;"/></td>
+    <xsl:template match="levelledPara/title">
+        <xsl:variable name="counter">
+             <xsl:value-of select="count(preceding::levelledPara)+1"/>
+        </xsl:variable>
+        <h3>
+            <xsl:value-of select="$counter"/>.
+            <xsl:apply-templates/>
+        </h3>
+    </xsl:template>
 
- 							</tr>
-						</table>
-					</div>
-					<!-- <xsl:apply-templates/> -->
-				</xsl:for-each>
-			</xsl:when>
-			<xsl:otherwise>
+	<xsl:template match="levelledPara">
+
 			<xsl:variable name="para_id">
 				<xsl:value-of select="./@id"/>
 			</xsl:variable>
@@ -661,16 +620,22 @@
 					<xsl:apply-templates />
 				</div>
 				</xsl:otherwise>
-			</xsl:choose>
-			</xsl:otherwise>
+			<!-- </xsl:choose>
+			</xsl:otherwise>-->
 		</xsl:choose>
 	</xsl:template>
 	
 	<xsl:template match="title">
+        <xsl:variable name="counter">
+             <xsl:value-of select="count(preceding::internalRef[@internalRefTargetType='irtt01'])"/>
+        </xsl:variable>
 		<xsl:choose>
 			<xsl:when test="parent::figure">
+                <xsl:variable name="fig_id">
+                    <xsl:value-of select="../@id"/>
+                </xsl:variable>
 				<div align="center">
-					<p class ="imageTitle" ><xsl:apply-templates/></p>
+					<p class ="imageTitle" id="{$fig_id}">Fig <xsl:value-of select="$counter" /><xsl:text> </xsl:text><xsl:apply-templates/></p>
 				</div>
 			</xsl:when>
 			<xsl:when test="parent::learningAssessment | parent::learningContent | parent::learningSummary | parent::learningOverview">
