@@ -572,17 +572,28 @@
 		<p><xsl:apply-templates/></p>
 	</xsl:template>
 
-
 	<xsl:template match="listItem/para">
 		<xsl:apply-templates/>
 	</xsl:template>
 
+    <xsl:template match="levelledPara/title">
+        <xsl:variable name="counter">
+             <xsl:value-of select="count(preceding::levelledPara)+1"/>
+        </xsl:variable>
+        <h3>
+            <xsl:value-of select="$counter"/>.
+            <xsl:apply-templates/>
+        </h3>
+    </xsl:template>
+
 	<xsl:template match="levelledPara">
-		<xsl:choose>
-			<xsl:when test="ancestor::learning">
+		<!-- <xsl:choose>
+			<xsl:when test="ancestor::learning"> -->
 				<!--suppress-->
-			</xsl:when>
-			<xsl:otherwise>
+			<!-- </xsl:when>
+			<xsl:otherwise> -->
+			
+			
 			<xsl:variable name="para_id">
 				<xsl:value-of select="./@id"/>
 			</xsl:variable>
@@ -596,17 +607,23 @@
 				</div>
 				</xsl:otherwise>
 			</xsl:choose>
-			</xsl:otherwise>
-		</xsl:choose>
+			<!-- </xsl:otherwise>
+		</xsl:choose> -->
 	</xsl:template>
 	
 	<xsl:template match="title">
+        <xsl:variable name="counter">
+             <xsl:value-of select="count(preceding::internalRef[@internalRefTargetType='irtt01'])"/>
+        </xsl:variable>    
 		<xsl:choose>
 			<xsl:when test="parent::figure">
+                <xsl:variable name="fig_id">
+                    <xsl:value-of select="../@id"/>
+                </xsl:variable>
 				<div align="center">
-					<p class ="imageTitle" ><xsl:apply-templates/></p>
+					<p class ="imageTitle" id="{$fig_id}">Fig <xsl:value-of select="$counter" /><xsl:text> </xsl:text><xsl:apply-templates/></p>
 				</div>
-			</xsl:when>
+			</xsl:when>           
 			<xsl:when test="parent::learningAssessment | parent::learningContent | parent::learningSummary | parent::learningOverview">
 				<div align="center">
 					<p class ="branchTitle" >
