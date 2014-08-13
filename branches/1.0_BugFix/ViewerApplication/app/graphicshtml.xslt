@@ -50,6 +50,14 @@
 				</div>
 			</xsl:if>
 		</xsl:when>
+        <xsl:when test="$theExt ='tif'">
+            <div align="center" id="{$fig_id}">
+                <a href="{$theFileName}">
+                    <xsl:value-of select="$theFileName"/>
+                    <br/><br/>
+                </a>
+            </div>
+        </xsl:when>        
 		<xsl:otherwise>
 			<xsl:choose>
 				<xsl:when test="$hotspots = 0"> 
