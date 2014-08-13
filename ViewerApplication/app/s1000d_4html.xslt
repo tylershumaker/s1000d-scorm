@@ -13,6 +13,7 @@
 	<xsl:include href="refs.xslt"/>
 	<!--For future use 
 	 module specific elements inclusions-->
+     <xsl:include href="isolation.xslt"/>
 	
 	<!--global vars-->
   <xsl:variable name="mic" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@modelIdentCode" />
@@ -54,8 +55,15 @@
     </xsl:choose>
   </xsl:variable>
 
+    <xsl:variable name ="urn_prefix">
+        <xsl:value-of select="'URN:S1000D:DMC-'" />
+    </xsl:variable>
+    <xsl:variable name="urn_string">
+        <xsl:value-of select="concat($urn_prefix, $this_dmc)" />
+    </xsl:variable>
+    
   <xsl:variable name="global_dmc">
-    <xsl:value-of select="document('./urn_resource_map.xml')//target[parent::urn[contains(@name, $this_dmc)]]" />
+    <xsl:value-of select="document('./urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" />
   </xsl:variable>
 	<xsl:template match="/">
 	
