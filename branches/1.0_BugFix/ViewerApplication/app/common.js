@@ -4,6 +4,11 @@ var count = 0;
 // For Hotspots
 var selectedHotspot = null;
 
+function show_hide_div(hide_id, show_id){
+	toggle_visibility(hide_id);
+	toggle_visibility(show_id);
+}
+
 function toggle_visibility(id)
 {
         var e = document.getElementById(id);		
