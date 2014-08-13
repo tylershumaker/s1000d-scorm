@@ -126,7 +126,7 @@ public class PreProcess implements Command
             }
 
             urn_map = URNMapper.writeURNMap(src_files, "");
-            
+              
             transform = this.getClass().getResourceAsStream(TRANSFORM_FILE);
 
             try
@@ -219,8 +219,8 @@ public class PreProcess implements Command
         List<Element> urns = urn_map.getRootElement().getChildren();
         for (int i = 0; i < urns.toArray().length; i++)
         {
-            String the_href = "resources/s1000d/" + urns.get(i).getChildText("target", null);
-            String the_name = urns.get(i).getAttributeValue("name").replace("URN:S1000D:", "");
+            String the_href = "resources/s1000d/" + urns.get(i).getChildText("target", null).replaceAll("\\s", "%20");
+            String the_name = urns.get(i).getAttributeValue("name").replace("URN:S1000D:", "").replaceAll("\\s", "");
 
             Element resource = new Element("resource");
             Attribute id = new Attribute("identifier", the_name);
@@ -441,6 +441,7 @@ public class PreProcess implements Command
         }
         catch (NullPointerException npe)
         {
+            System.out.println("error here");
             throw new ResourceMapException(str_current, sco_key);
         }
         
