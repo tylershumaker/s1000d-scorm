@@ -299,7 +299,7 @@
 
 	<xsl:variable name="note_text">
 		<xsl:call-template name="getText">
-			<xsl:with-param name="en">Note</xsl:with-param>
+			<xsl:with-param name="en">NOTE</xsl:with-param>
 			<xsl:with-param name="sv">Anmärkning</xsl:with-param>
 			<xsl:with-param name="fr">Note</xsl:with-param>
 		</xsl:call-template>

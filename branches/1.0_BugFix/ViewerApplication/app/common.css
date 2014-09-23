@@ -15,8 +15,34 @@
 }
 .noteandwarning 
 {
-	margin-bottom:0px;
-	margin-top:10px;
+	border-top: 1pt;
+	border-right: 1pt;
+	border-left: 1pt;
+	border-bottom: 1pt;
+/* 	margin-bottom:0px;
+	margin-top:10px; */
+}
+.yellowBorder
+{
+	border-top: solid yellow 1pt;
+	border-right: solid yellow 1pt;
+	border-left: solid yellow 1pt;
+	border-bottom: solid yellow 1pt;	
+}
+.redBorder
+{
+	border-top: solid red 1pt;
+	border-right: solid red 1pt;
+	border-left: solid red 1pt;
+	border-bottom: solid red 1pt;	
+}
+.redFont
+{
+	color: red;
+}
+.yellowFont
+{
+	color: black;
 }
 .note_text
 {

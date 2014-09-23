@@ -81,7 +81,47 @@
 	<td class="tableCell">
 		<xsl:call-template name="drawRuler"/>
 		<xsl:call-template name="addAttr"/>
-		<xsl:apply-templates/>
+        <!-- 9/9/14 issue 33 handling warningRefs and cautionRefs to entry elements -->
+        <xsl:variable name="warnRef">
+            <xsl:value-of select="./@warningRefs"/>
+        </xsl:variable>
+        <xsl:variable name="cautionRef">
+            <xsl:value-of select="./@cautionRefs"></xsl:value-of>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="not($warnRef ='')">
+                <xsl:variable name="warningtext">
+                    <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"></xsl:value-of>
+                </xsl:variable>                  
+                <xsl:variable name="type">warning</xsl:variable>                  
+                <div>
+                    <xsl:call-template name="createAttention">
+                        <xsl:with-param name="text" select="$warningtext"/>
+                        <xsl:with-param name="type" select="$type"/>
+                    </xsl:call-template>
+                    <!-- <xsl:apply-templates /> -->
+                </div>
+            </xsl:when>
+            <xsl:when test="not($cautionRef ='')">
+                <xsl:variable name="cautiontext">
+                    <xsl:value-of select="//caution[@id=$cautionRef]/warningAndCautionPara"></xsl:value-of>
+                </xsl:variable>                 
+                <xsl:variable name="type">caution</xsl:variable>                 
+                 <div >
+                    <xsl:call-template name="createAttention">
+                        <xsl:with-param name="text" select="$cautiontext"/>
+                        <xsl:with-param name="type" select="$type"/>
+                    </xsl:call-template>                     
+                    <!-- <xsl:apply-templates /> -->
+                </div>               
+            </xsl:when>
+            <xsl:otherwise>                
+                <div>
+                    <xsl:apply-templates />
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>                 
+<!-- 		<xsl:apply-templates/> -->
 	</td>
 </xsl:template>
 

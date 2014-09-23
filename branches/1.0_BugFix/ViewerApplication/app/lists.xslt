@@ -44,21 +44,25 @@
 				<!--suppress-->
 			</xsl:when>
 			<xsl:otherwise>
-				<ul>
+				<!-- <ul> -->
 					<xsl:apply-templates />
-				</ul>
+				<!-- </ul> -->
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	<xsl:template match="definitionListItem">
-		<li>
-			<xsl:apply-templates />
-		</li>
+    <!-- 8/28/14 issue 35 legends not displaying correctly -->
+		<!-- <li> -->
+<!-- 			<xsl:apply-templates /> -->
+		<!-- </li> -->
+        <b><xsl:value-of select="listItemTerm"></xsl:value-of></b>
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="listItemDefinition/para"></xsl:value-of><br/>
 	</xsl:template>
-	<xsl:template match="listItemTerm">
+<!-- 	<xsl:template match="listItemTerm">
 		<b><xsl:apply-templates /></b>
 	</xsl:template>
 	<xsl:template match="listItemDefinition">
 		<xsl:apply-templates />
-	</xsl:template>
+	</xsl:template> -->
 </xsl:stylesheet>

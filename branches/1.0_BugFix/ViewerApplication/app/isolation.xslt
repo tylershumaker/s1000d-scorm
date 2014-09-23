@@ -93,6 +93,9 @@
         </xsl:variable>
         <xsl:variable name="step_id" select="./@id"/>
         <xsl:variable name="nextRefId" select="following::proceduralStep/@id"/>
+        <!-- may need to use for sub procedural steps -->
+<!--         <xsl:variable name="nextRefIdChild" select="child::proceduralStep[1]/@id"/>
+        <xsl:value-of select="$nextRefIdChild"></xsl:value-of> -->
         <xsl:choose>
             <xsl:when test="$stepCounter = 1">
                 <div id="{$step_id}" style="display: block;">
@@ -118,6 +121,7 @@
                             <xsl:otherwise>
                                 <div>
                                     <a href="#{$nextRefId}" onclick="show_hide_div('{$step_id}','{$nextRefId}')">Next</a><br/>
+                                    
                                 </div>
                             </xsl:otherwise>
                         </xsl:choose>

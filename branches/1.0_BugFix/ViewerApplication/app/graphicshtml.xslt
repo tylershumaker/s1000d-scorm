@@ -68,15 +68,16 @@
 				<xsl:when test="$hotspots > 0">
 					<div id="hotspotContent">
 						<img id="hotspotImage" src="{$theFileName}" usemap="#hotspotMap" class="imageBorder hotspotImage"/>
+                        <!-- moved variables outside of map to fix transformation error -->
+                            <xsl:variable name="correctAnswer">
+                                <xsl:if test="hotspot/lcCorrectResponse">
+                                    <xsl:value-of select="hotspot/@id"/>
+                                </xsl:if>
+                            </xsl:variable>
+                            <xsl:variable name="countTotalHotspots">
+                                <xsl:value-of select="count(hotspot)"/>
+                            </xsl:variable>                            
 						<map name="hotspotMap">
-							<xsl:variable name="correctAnswer">
-						    	<xsl:if test="hotspot/lcCorrectResponse">
-						    		<xsl:value-of select="hotspot/@id"/>
-						    	</xsl:if>
-							</xsl:variable>
-							<xsl:variable name="countTotalHotspots">
-								<xsl:value-of select="count(hotspot)"/>
-							</xsl:variable>
 							<xsl:for-each select="hotspot">
   								<xsl:variable name="hotspotID">
   									<xsl:value-of select="position()"/>
