@@ -134,14 +134,15 @@ public class SCOBuilder implements Command
                 
                 //apply the SCORM CP XSLT StyleSheet to the data modules
                 StylesheetApplier sa = new StylesheetApplier();
-                if (ctx.get(Keys.OUTPUT_TYPE) == "SCORMHTML")
-                {
-                	sa.applyStylesheetToDMCs(cpPackage, CPHTMLSTYLESHEET);
-                }
-                else
-                {
-                	sa.applyStylesheetToDMCs(cpPackage, CPSTYLESHEET);
-                }
+                //flash output is being depricated - always use html output
+//                if (ctx.get(Keys.OUTPUT_TYPE) == "SCORMHTML")
+//                {
+                sa.applyStylesheetToDMCs(cpPackage, CPHTMLSTYLESHEET);
+//                }
+//                else
+//                {
+//                	sa.applyStylesheetToDMCs(cpPackage, CPSTYLESHEET);
+//                }
                 
                 //create list.js, add to CP
                 dmp = new DMParser();

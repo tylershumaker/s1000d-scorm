@@ -154,7 +154,7 @@ public class ControllerJFrame extends javax.swing.JFrame
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SCORM With Flash Assessments", "SCORM With HTML Assessments", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version" }));
+        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SCORM With HTML Assessments", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version" }));
         SelectionDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SelectionDropDownActionPerformed(evt);
@@ -267,25 +267,25 @@ public class ControllerJFrame extends javax.swing.JFrame
         }
     }                                                                                              
 
-    private void PDFStudentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        outputType = "-pdfstudent";
-    }                                                     
-
-    private void MobileRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        outputType = "-mobile";
-    }                                                 
-
-    private void ScormFlashRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        outputType = "-scormflash";
-    }                                                
-
-    private void PDFInstructorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-        outputType = "-pdfinstructor";
-    }                                                        
-
-    private void ScormHTMLRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        outputType = "-scormhtml";
-    }
+//    private void PDFStudentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+//        outputType = "-pdfstudent";
+//    }                                                     
+//
+//    private void MobileRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+//        outputType = "-mobile";
+//    }                                                 
+//
+//    private void ScormFlashRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+//        outputType = "-scormflash";
+//    }                                                
+//
+//    private void PDFInstructorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+//        outputType = "-pdfinstructor";
+//    }                                                        
+//
+//    private void ScormHTMLRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+//        outputType = "-scormhtml";
+//    }
 
     private void SelectionDropDownActionPerformed(java.awt.event.ActionEvent evt) 
     {                                                  
@@ -293,22 +293,22 @@ public class ControllerJFrame extends javax.swing.JFrame
         int val = cb.getSelectedIndex();
         switch (val)
         {
+//            case 0:
+//                outputType = "-scormflash";
+//                break;
             case 0:
-                outputType = "-scormflash";
-                break;
-            case 1:
                 outputType = "-scormhtml";
                 break;
-            case 2:
+            case 1:
                 outputType = "-mobile";
                 break;
-            case 3:
+            case 2:
                 outputType = "-mobilecourse";
                 break;
-            case 4:
+            case 3:
                 outputType = "-pdfinstructor";
                 break;
-            case 5:
+            case 4:
                 outputType = "-pdfstudent";
                 break;
         }

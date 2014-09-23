@@ -94,7 +94,8 @@ public class Controller
         		if (args[2] != null && args[2].equalsIgnoreCase("-scormflash"))
   				{
         			toolkit = sampleCatalog.getCommand("SCORM");
-        			ctx.put(Keys.OUTPUT_TYPE, null);
+        			//flash output is being depricated - always use html output
+        			ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
    				}
         		else if (args[2] != null && args[2].equalsIgnoreCase("-scormhtml"))
   				{
