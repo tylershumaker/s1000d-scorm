@@ -36,8 +36,11 @@
 		</xsl:variable>
 		<manifest identifier="MANIFEST-{$id}" version="{$version}"
 			xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
-			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
-			xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd">
+			xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3"
+            xmlns:imsss="http://www.imsglobal.org/xsd/imsss"
+            xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+			xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd http://www/imsglobal.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd">
 			<metadata>
 				<schema>ADL SCORM</schema>
 				<schemaversion>2004 3rd Edition</schemaversion>
@@ -78,11 +81,24 @@
 							<xsl:element name="title">
 								<xsl:value-of select="scoEntryAddress/scoEntryTitle" />
 							</xsl:element>
+                            <!-- 9/1/14 issue 23 fix -->
+                            <xsl:element name="adlnav:presentation" namespace="http://www.adlnet.org/xsd/adlnav_v1p3">
+                                <xsl:element name="adlnav:navigationInterface" namespace="http://www.adlnet.org/xsd/adlnav_v1p3">
+                                    <xsl:element name="adlnav:hideLMSUI" namespace="http://www.adlnet.org/xsd/adlnav_v1p3">continue</xsl:element>
+                                    <xsl:element name="adlnav:hideLMSUI" namespace="http://www.adlnet.org/xsd/adlnav_v1p3">previous</xsl:element>
+                                </xsl:element>
+                            </xsl:element>
 						</xsl:element>
 					</xsl:for-each>
 					<metadata>
 						<xsl:copy-of select="scormContentPackage/identAndStatusSection/lom:lom" />
 					</metadata>
+                    <!-- 9/1/14 issue 23 fix -->
+                    <xsl:element name="imsss:sequencing" namespace="http://www.imsglobal.org/xsd/imsss">
+                        <xsl:element name="imsss:controlMode" namespace="http://www.imsglobal.org/xsd/imsss">
+                            <xsl:attribute name="flow">true</xsl:attribute>
+                        </xsl:element>
+                    </xsl:element>                    
 				</xsl:element>
 			</xsl:element>
 			<!--Add resources tree section -->
