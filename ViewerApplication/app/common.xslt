@@ -585,6 +585,22 @@
             <xsl:apply-templates/>
         </h3>
     </xsl:template>
+    
+    <xsl:template match="levelledPara/para">
+            <xsl:variable name="para_id">
+                <xsl:value-of select="./@id"/>
+            </xsl:variable>
+            <xsl:choose>
+                <xsl:when test="para_id=''">
+                    <xsl:apply-templates />
+                </xsl:when>
+                <xsl:otherwise>
+                <div id="{$para_id}">
+                    <xsl:apply-templates />
+                </div>
+                </xsl:otherwise>
+            </xsl:choose>        
+    </xsl:template>
 
 	<xsl:template match="levelledPara">
 		<!-- <xsl:choose>

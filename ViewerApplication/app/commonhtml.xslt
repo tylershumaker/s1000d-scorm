@@ -498,17 +498,8 @@
 		---
 	</xsl:template>
 
-	<xsl:template match="warning|caution">
-		<xsl:choose>
-			<xsl:when test="ancestor::step1|ancestor::step2|ancestor::step3|ancestor::step4|ancestor::step5">
-				<xsl:call-template name="createAttention"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<td colspan="2">
-					<xsl:call-template name="createAttention"/>
-				</td>
-			</xsl:otherwise>
-		</xsl:choose>
+ 	<xsl:template match="warning|caution">
+        <!-- 9/8/14 issue34, code removed so nothing is rendered for warnings or cautions  -->
 	</xsl:template>
 	
 <!-- Fotnote implemented as mouseover function -->
@@ -597,34 +588,127 @@
 	</xsl:template>
 
     <xsl:template match="levelledPara/title">
-        <xsl:variable name="counter">
-             <xsl:value-of select="count(preceding::levelledPara)+1"/>
-        </xsl:variable>
-        <h3>
-            <xsl:value-of select="$counter"/>.
-            <xsl:apply-templates/>
-        </h3>
+<!--         <xsl:choose>
+            <xsl:when test="ancestor::descrCrew or ../../self::levelledPara"> -->
+                <h3><xsl:value-of select="."></xsl:value-of></h3>
+<!--              </xsl:when>
+            <xsl:otherwise> 
+                <xsl:variable name="counter">
+                     <xsl:value-of select="count(parent::node()/preceding-sibling::levelledPara)+1"/>
+                </xsl:variable>
+                <h3>
+                    <xsl:value-of select="$counter"/>.
+                    <xsl:apply-templates/>
+                </h3>
+            </xsl:otherwise>
+        </xsl:choose> -->
     </xsl:template>
 
-	<xsl:template match="levelledPara">
+    <xsl:template match="levelledPara/para">
+            <xsl:variable name="para_id">
+                <xsl:value-of select="./@id"/>
+            </xsl:variable>
+            <xsl:choose>
+                <xsl:when test="para_id=''">
+                    <xsl:apply-templates />
+                </xsl:when>
+                <xsl:otherwise>
+                <div id="{$para_id}">
+                    <xsl:apply-templates />
+                </div>
+                </xsl:otherwise>
+            </xsl:choose>        
+    </xsl:template>
 
-			<xsl:variable name="para_id">
-				<xsl:value-of select="./@id"/>
-			</xsl:variable>
-			<xsl:choose>
-				<xsl:when test="para_id=''">
-					<xsl:apply-templates />
-				</xsl:when>
-				<xsl:otherwise>
-				<div id="{$para_id}">
-					<xsl:apply-templates />
-				</div>
-				</xsl:otherwise>
-			<!-- </xsl:choose>
-			</xsl:otherwise>-->
-		</xsl:choose>
-	</xsl:template>
-	
+
+
+    <xsl:template match="levelledPara/crewDrill/crewDrillStep/para[1]">
+
+            <xsl:variable name="counter">
+                 <xsl:value-of select="count(parent::node()/preceding-sibling::crewDrillStep)+1"/>
+            </xsl:variable>
+            <h3>
+                <xsl:value-of select="$counter"/>.
+                <xsl:apply-templates/>
+            </h3>        
+
+    </xsl:template>
+    
+    <!-- 9/9/14 added to handle notes in sub crewDrillStep -->
+    <xsl:template match="levelledPara/crewDrill/crewDrillStep/crewDrillStep">
+        <xsl:variable name="note">
+            <xsl:value-of select="note"/>
+        </xsl:variable>
+        <ul style="list-style-type:none">
+            <li><xsl:number format="a. "/><xsl:value-of select="para"/></li>
+            <xsl:if test="not($note ='')">
+                <p>
+                    <table  width="100%"  class="note_line" >
+                        <tr>
+                            <td>
+                                <font class="note_text"><strong><xsl:value-of select="$note_text"/></strong></font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><font class="indentMarginLeft"><xsl:value-of select="$note"/></font>
+                            </td>
+                        </tr>
+                    </table>
+                </p>            
+            </xsl:if>
+        </ul>    
+    </xsl:template>
+
+    <!-- 9/9/14 issue 33 added to handle warningRefs and cautionRefs -->
+    <xsl:template match="descrCrew | description  | levelledPara | levelledPara/crewDrill | levelledPara/crewDrill/crewDrillStep">
+        <xsl:variable name="para_id">
+            <xsl:value-of select="./@id"/>
+        </xsl:variable>
+        <xsl:variable name="warnRef">
+            <xsl:value-of select="./@warningRefs"/>
+        </xsl:variable>
+        <xsl:variable name="cautionRef">
+            <xsl:value-of select="./@cautionRefs"></xsl:value-of>
+        </xsl:variable>
+     
+        <xsl:choose>
+            <xsl:when test="para_id=''">
+                <xsl:apply-templates />
+            </xsl:when>
+            <xsl:when test="not($warnRef ='')">
+                <xsl:variable name="warningtext">
+                    <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"></xsl:value-of>
+                </xsl:variable>                  
+                <xsl:variable name="type">warning</xsl:variable>                  
+                <div id="{$para_id}">
+                    <xsl:call-template name="createAttention">
+                        <xsl:with-param name="text" select="$warningtext"/>
+                        <xsl:with-param name="type" select="$type"/>
+                    </xsl:call-template>
+                    <!-- <xsl:apply-templates /> -->
+                </div>
+            </xsl:when>
+            <xsl:when test="not($cautionRef ='')">
+                <xsl:variable name="cautiontext">
+                    <xsl:value-of select="//caution[@id=$cautionRef]/warningAndCautionPara"></xsl:value-of>
+                </xsl:variable>                 
+                <xsl:variable name="type">caution</xsl:variable>                 
+                 <div id="{$para_id}">
+                    <xsl:call-template name="createAttention">
+                        <xsl:with-param name="text" select="$cautiontext"/>
+                        <xsl:with-param name="type" select="$type"/>
+                    </xsl:call-template>                     
+                    <!-- <xsl:apply-templates /> -->
+                </div>               
+            </xsl:when>
+            <xsl:otherwise>                
+                <div id="{$para_id}">
+                    <xsl:apply-templates />
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>      
+    </xsl:template>
+
 	<xsl:template match="title">
         <xsl:variable name="counter">
              <xsl:value-of select="count(preceding::internalRef[@internalRefTargetType='irtt01'])"/>
@@ -730,7 +814,7 @@
 		<p>
 			<table  width="100%"  class="note_line" >
 				<tr>
-					<td>
+					<td align="center">
 						<font class="note_text"><strong><xsl:value-of select="$note_text"/></strong></font>
 					</td>
 				</tr>
@@ -742,16 +826,13 @@
 		</p>
 	</xsl:template>
 
+    <!-- 9/8/14 updated to handle warnings and errors -->
 	<xsl:template name="createAttention">
-		<xsl:variable name="type">
-			<xsl:choose>
-				<xsl:when test="self::warning">true</xsl:when>
-				<xsl:otherwise>false</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
+        <xsl:param name="text"/>
+        <xsl:param name="type"/>
 		<xsl:variable name="title">
 			<xsl:choose>
-				<xsl:when test="$type='true'">
+				<xsl:when test="$type='warning'">
 					<xsl:choose>
 						<xsl:when test="@type = 'danger'">
 							<xsl:value-of select="$danger_text"/>
@@ -764,39 +845,47 @@
 				<xsl:otherwise><xsl:value-of select="$caution_text"/></xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
+        <xsl:variable name="borderClass">
+            <xsl:choose>
+                <xsl:when test="$type='warning'">redBorder</xsl:when>
+                <xsl:otherwise>yellowBorder</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>        
 		<xsl:variable name="color">
 			<xsl:choose>
-				<xsl:when test="$type='true'">red</xsl:when>
-				<xsl:otherwise>blue</xsl:otherwise>
+				<xsl:when test="$type='warning'">redFont</xsl:when>
+				<xsl:otherwise>yellowFont</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
-		<table border="1" width="100%" cellspacing="0" class="noteandwarning">
-			<xsl:attribute name="bordercolor">
+        <!-- this may have to be moved based on a warning or caution -->
+        <xsl:apply-templates/>
+		<table width="100%" cellspacing="0" class="{$borderClass}">
+<!-- 			<xsl:attribute name="bordercolor">
 				<xsl:choose>
 					<xsl:when test="$color='red'">red</xsl:when>
 					<xsl:otherwise>black</xsl:otherwise>
 				</xsl:choose>
-			</xsl:attribute>
+			</xsl:attribute> -->
 			<tr>
 				<td align="center">
-					<xsl:attribute name="style">
+<!-- 					<xsl:attribute name="style">
 						<xsl:choose>
 							<xsl:when test="$color='red'">background-color:red</xsl:when>
 							<xsl:otherwise>background-color:yellow</xsl:otherwise>
 						</xsl:choose>
-					</xsl:attribute>
-					<strong>
-						<xsl:attribute name="style">
+					</xsl:attribute> -->
+					<font class="{$color}"><strong>
+<!-- 						<xsl:attribute name="style">
 							<xsl:choose>
 									<xsl:when test="$color='red'">color:white</xsl:when>
 									<xsl:otherwise>color:black</xsl:otherwise>
 								</xsl:choose>
-						</xsl:attribute>
+						</xsl:attribute> -->
 						<xsl:value-of select="$title"/>
-					</strong>
+					</strong></font>
 				</td>
 			</tr>
-			<tr><td><strong><xsl:apply-templates/></strong></td></tr>
+			<tr><td> <font class="indentMarginLeft"><strong><xsl:value-of select="$text"></xsl:value-of></strong></font></td></tr>
 		</table>
 	</xsl:template>
 

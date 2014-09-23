@@ -3,6 +3,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+    <xsl:variable name="empty_string"/>
 <!-- references -->
 	<xsl:template match="refs">
 		<xsl:if test="parent::content|parent::deftask">
@@ -254,7 +255,7 @@
      <!--ref_dmc[<xsl:value-of select="$ref_dmc"/>]-->
      
       <xsl:choose>
-        <xsl:when test="ancestor::learning">
+        <xsl:when test="ancestor::learning or ancestor::crewDrillStep">
           <xsl:variable name ="infoname">
             <xsl:value-of select ="./dmRefAddressItems/dmTitle/infoName"></xsl:value-of>
           </xsl:variable>
@@ -262,14 +263,27 @@
             <xsl:value-of select ="./dmRefAddressItems/dmTitle/techName"></xsl:value-of>
           </xsl:variable>
           <a href="javascript:void(window.open('{$ref_dmc}'))">
-            <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
+            <xsl:choose>
+                <xsl:when test="$infoname = $empty_string and $techname = $empty_string">
+                    <xsl:value-of select="$ref_dmcode" />
+                </xsl:when>
+                <xsl:when test="$infoname != $empty_string and $techname = $empty_string">
+                    <xsl:value-of select="$infoname"/>
+                </xsl:when>
+                <xsl:when test="$infoname = $empty_string and $techname != $empty_string">
+                    <xsl:value-of select="$techname"/>
+                </xsl:when>                
+                <xsl:otherwise>
+                    <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
+                </xsl:otherwise>                
+            </xsl:choose>
           </a>
         </xsl:when>
         <xsl:when test="ancestor::trainingStep or ancestor::para">
             <a href="javascript:void(window.open('{$ref_dmc}'))">
                 <xsl:value-of select="$ref_dmcode" />
             </a> 
-        </xsl:when>
+        </xsl:when>      
         <xsl:when test="parent::refs">
           <xsl:variable name ="xlinkactuate">
             <xsl:value-of select ="@xlink:actuate"></xsl:value-of>
@@ -286,6 +300,10 @@
           <xsl:variable name ="techname">
             <xsl:value-of select ="//ancestor::refs/dmRef[@xlink:href=$xlinkurn]/dmRefAddressItems/dmTitle/techName" />
           </xsl:variable>
+          <!-- 8/28/14 issue 26 no reference anchor -->
+          <xsl:variable name="referredFragment">
+            <xsl:value-of select="@referredFragment"></xsl:value-of>
+          </xsl:variable>
           <tr>
             <td>
               <xsl:apply-templates />
@@ -297,6 +315,8 @@
                 <xsl:with-param name="xlinkhref" select="$xlinkhref"></xsl:with-param>
                 <xsl:with-param name="refDmc" select="$ref_dmc"></xsl:with-param>
                 <xsl:with-param name="ref_dmcode" select="$ref_dmcode"></xsl:with-param>
+                <!-- 8/28/14 issue 26 no reference anchor -->
+                <xsl:with-param name="ref_frag" select="$referredFragment"></xsl:with-param>
               </xsl:call-template>
             </td>
           </tr>
@@ -316,6 +336,8 @@
 		<xsl:param name="xlinkhref" />
 		<xsl:param name="refDmc" />
         <xsl:param name="ref_dmcode"/>
+        <!-- 8/28/14 issue 26 no reference anchor -->
+        <xsl:param name="ref_frag"/>
 		<xsl:variable name ="infoname">
 			<xsl:value-of select ="./dmRefAddressItems/dmTitle/infoName"></xsl:value-of>
 		</xsl:variable>
@@ -351,8 +373,22 @@
 		                    <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
 		                </a>
 				    </xsl:when>
+                    <!-- 8/28/14 issue 26 no reference anchor -->
+                    <xsl:when test="$ref_frag = $empty_string">
+                        <a href="javascript:void(window.open('{$refDmc}'))">
+                            <xsl:choose>
+                                <xsl:when test="$techname = ''">
+                                    <xsl:value-of select="$ref_dmcode"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </a>                    
+                    </xsl:when>
 				    <xsl:otherwise>
-				        <a href="javascript:void(window.open('{$refDmc}'))">
+                        <!-- 8/28/14 issue 26 no reference anchor -->                        
+				        <a href="javascript:void(window.open('{$refDmc}#{$ref_frag}'))">
                             <xsl:choose>
                                 <xsl:when test="$techname = ''">
                                     <xsl:value-of select="$ref_dmcode"/>

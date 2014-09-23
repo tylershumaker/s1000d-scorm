@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:template match="proceduralStep">
+<!-- 	<xsl:template match="proceduralStep">
 		<xsl:apply-templates />
-	</xsl:template>
+	</xsl:template> -->
 	
 	<xsl:template match="*/specpara/para|step1|step2|step3|step4|step5">
 			<tr valign="top">
