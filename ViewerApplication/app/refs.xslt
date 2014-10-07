@@ -438,20 +438,58 @@
 	</xsl:template>
 	
 	<!--end added-->	
+	
+	<!-- Phase 2: Issue 6 -->
+	<!-- Figure counting not working. -->
+	<!-- When you encounter a figure (irtt01), determine the figure number to use in the refernece to the figure -->
     <xsl:template match="internalRef[@internalRefTargetType='irtt01']">
-        <xsl:variable name="intrefid" select="@internalRefId"/>
-        <xsl:variable name="figCounter">
-             <xsl:value-of select="count(preceding::internalRef)+1"/>
-        </xsl:variable>
-        <a href="#{$intrefid}">Fig <xsl:value-of select="$figCounter" /></a>
+       
+       <!-- The reference id to place at the end of the URL -->
+       <xsl:variable name="intrefid" select="@internalRefId"/>
+       
+       <!-- Identify the figure with the internalRefID and determine the figure number to reference -->
+       <xsl:variable name="identifiedFig" select="//figure[@id=$intrefid]"/>
+       <xsl:variable name="countOfFig" select="count(//figure[@id=$intrefid])"/>
+       <xsl:choose>
+          <!-- Determine if you are dealing with a <figure> -->
+          <xsl:when test="$countOfFig=1">
+             <xsl:variable name="precedingFigCount" select="count($identifiedFig/preceding::figure)+1"/>
+             <a href="#{$intrefid}">Fig <xsl:value-of select="$precedingFigCount" /></a>
+          </xsl:when>
+          <!-- Determine if you are dealing with a <figureAlts> -->
+          <xsl:when test="count(//figureAlts[@id=$intrefid])=1">      
+             <xsl:variable name="identifiedAltFig" select="//figureAlts[@id=$intrefid]"/>
+             <xsl:variable name="xxxfigAltId" select="$identifiedAltFig/figure/@id"/>
+             <xsl:variable name="precedingFigCount2" select="count($identifiedAltFig/preceding::figure)+1"/>
+             <a href="#{$xxxfigAltId}">Fig <xsl:value-of select="$precedingFigCount2" /></a>
+          </xsl:when>
+          <xsl:otherwise>  <!--  Do nothing --> </xsl:otherwise>
+       </xsl:choose>
     </xsl:template> 
-     <xsl:template match="internalRef[@internalRefTargetType='irtt02']">
+    
+    <!-- Table references = irtt02 -->
+    <xsl:template match="internalRef[@internalRefTargetType='irtt02']">
         <xsl:variable name="intrefid" select="@internalRefId"/>
+        
+        <!-- Phase 2 similar changes to tables as figures to get the count and number of table references correct. -->
+        <xsl:variable name="identifiedTable" select="//table[@id=$intrefid]"/>
+        <xsl:variable name="countOfTable" select="count(//table[@id=$intrefid])"/>
+        <xsl:choose>
+          <!-- Determine if you are dealing with a <table> -->
+          <xsl:when test="$countOfTable=1">
+             <xsl:variable name="precedingTableCount" select="count($identifiedTable/preceding::table)+1"/>
+             <a href="#{$intrefid}">Table <xsl:value-of select="$precedingTableCount" /></a>
+          </xsl:when>
+          <xsl:otherwise>  <!--  Do nothing --> </xsl:otherwise>
+       </xsl:choose>
+      <!--   
         <xsl:variable name="tableCounter">
              <xsl:value-of select="count(preceding::internalRef)+1"/>
         </xsl:variable>
         <a href="#{$intrefid}">Table <xsl:value-of select="$tableCounter" /></a>
+         -->
     </xsl:template>   
+    
      <xsl:template match="internalRef[@internalRefTargetType='irtt08']">
         <xsl:variable name="intrefid" select="@internalRefId"/>
         <xsl:variable name="stepCounter">
