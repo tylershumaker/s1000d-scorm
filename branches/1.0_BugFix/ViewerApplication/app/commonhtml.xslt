@@ -560,10 +560,15 @@
 	</xsl:template>
 
 	<xsl:template match="para">
+	   <!-- Issue 13 Emphasis not showing in Assessments -->
+	   <p><xsl:apply-templates/></p>
+    <!--  ** Issue 13: Removed this, in order to call apply-templates to pick up <emphasis> 
+          ** No need to choose now, since they all do the same thing. 
     <xsl:choose>
       <xsl:when test="ancestor::lcQuestion">
         <div class="question">
-          <p><xsl:value-of select="."/></p>
+          
+          <p><xsl:value-of select="."/></p>    
         </div>
       </xsl:when>
       <xsl:when test="ancestor::lcAnswerOptionContent">
@@ -581,6 +586,7 @@
         </p>
       </xsl:otherwise>
     </xsl:choose>
+    -->
 	</xsl:template>
 
 	<xsl:template match="listItem/para">
@@ -714,14 +720,15 @@
              <xsl:value-of select="count(preceding::internalRef[@internalRefTargetType='irtt01'])"/>
         </xsl:variable>
 		<xsl:choose>
-			<xsl:when test="parent::figure">
+		    <!--  removed for phase 2 changes.  Moved elsewhere to determine figure ids and counts -->
+			<!--  <xsl:when test="parent::figure">
                 <xsl:variable name="fig_id">
                     <xsl:value-of select="../@id"/>
                 </xsl:variable>
 				<div align="center">
 					<p class ="imageTitle" id="{$fig_id}">Fig <xsl:value-of select="$counter" /><xsl:text> </xsl:text><xsl:apply-templates/></p>
 				</div>
-			</xsl:when>
+			</xsl:when> -->
 			<xsl:when test="parent::learningAssessment | parent::learningContent | parent::learningSummary | parent::learningOverview">
 				<div align="center">
 					<p class ="branchTitle" >
