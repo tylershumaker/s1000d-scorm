@@ -84,6 +84,11 @@ public class SCOBuilder implements Command
     final String CPHTMLSTYLESHEET = "app/s1000d_4html.xslt";
     
     /**
+     * SCORM CP XSLT StyleSheet to be applied to the data modules (HTML with numbering of levelled pars)
+     */
+    final String CPHTMLNLPSTYLESHEET = "app/s1000d_4html_nlp.xslt";    
+    
+    /**
      * The unit of processing work to be performed for the SCOBuilder module.
      * 
      * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
@@ -135,9 +140,18 @@ public class SCOBuilder implements Command
                 //apply the SCORM CP XSLT StyleSheet to the data modules
                 StylesheetApplier sa = new StylesheetApplier();
                 //flash output is being depricated - always use html output
+                
+                if(ctx.get(Keys.OUTPUT_TYPE) == "SCORMLEVELLEDPARANUM")
+                {
+                	sa.applyStylesheetToDMCs(cpPackage, CPHTMLNLPSTYLESHEET);
+                }
+                else
+                {
+                	sa.applyStylesheetToDMCs(cpPackage, CPHTMLSTYLESHEET);
+                }
 //                if (ctx.get(Keys.OUTPUT_TYPE) == "SCORMHTML")
 //                {
-                sa.applyStylesheetToDMCs(cpPackage, CPHTMLSTYLESHEET);
+//                sa.applyStylesheetToDMCs(cpPackage, CPHTMLSTYLESHEET);
 //                }
 //                else
 //                {
