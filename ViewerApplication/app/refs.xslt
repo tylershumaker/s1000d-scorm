@@ -193,6 +193,7 @@
 
 	<!--added 06/12/09 STW-->
   <xsl:template name="dmref" match="dmRef">
+  
     <xsl:variable name="actuateMode" select="@xlink:actuate"/>
     <xsl:variable name="showMode" select="@xlink:show"/>
     <xsl:variable name="xlinkurn" select="@xlink:href"/>
@@ -216,36 +217,58 @@
     <xsl:variable name="refsyscode" select="./dmRefIdent/dmCode/@systemCode" />
     <xsl:variable name="refsysdif" select="./dmRefIdent/dmCode/@systemDiffCode" />
 
+
+    <!-- Phase 2 - Issue 22/40 -->
+    <xsl:variable name="dmc_lookup">
+         <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+                $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
+                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode)" />
+    </xsl:variable>
+    
     <xsl:variable name="ref_dmcode" >
+      <!-- Take the dmc and look it up to translate the dmc to techname/infoname -->  
+      <xsl:variable name="ref_translatedname">
+          <xsl:value-of select="document('./dmListing.xml')//dmtitle[parent::dmitem[@dmkey=$dmc_lookup]]" />
+      </xsl:variable>  
+    
+   
       <xsl:choose>
+      <!-- reflearncode and reflearneventcode are empty -->
         <xsl:when test="string-length($reflearncode) = 0 and string-length($reflearneventcode) = 0">
-          <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
-      $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
-      $refinfocode,$refinfocodevariant,'-',$refitemlocationcode)" />
+           <xsl:value-of select="$ref_translatedname"/>
+              <!--          <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+                            $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
+                            $refinfocode,$refinfocodevariant,'-',$refitemlocationcode)" />-->
         </xsl:when>
+        <!-- reflearncode is provided but reflearneventcode is empty -->
         <xsl:when test="string-length($reflearncode) > 0 and string-length($reflearneventcode) = 0">
-          <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
-      $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
-      $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearncode)" />
+          <xsl:value-of select="$ref_translatedname"/> 
+          <!--  <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+                                $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
+                                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearncode)" />-->
         </xsl:when>
+        <!-- reflearncode is empty but reflearneventcode is provided -->
         <xsl:when test="string-length($reflearncode) = 0 and string-length($reflearneventcode) > 0">
-          <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
-      $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
-      $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearneventcode)" />
+          <xsl:value-of select="$ref_translatedname"/>
+          <!-- <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+                                $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
+                                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearneventcode)" />-->
         </xsl:when>
-        <xsl:when test="string-length($reflearncode) > 0 and string-length($reflearneventcode) > 0">
-          <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
-      $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
-      $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearncode,$reflearneventcode)" />
+        <!-- both a the reflearncode and reflearneventcode are provided -->
+        <xsl:when test="string-length($reflearncode) > 0 and string-length($reflearneventcode) > 0"> 
+          <xsl:value-of select="$ref_translatedname"/>
+          <!--  <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+                                $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
+                                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearncode,$reflearneventcode)" />-->
         </xsl:when>
       </xsl:choose>
-    </xsl:variable>
+    </xsl:variable>  
 
     <xsl:variable name ="urn_prefix">
         <xsl:value-of select="'URN:S1000D:DMC-'" />
     </xsl:variable>
     <xsl:variable name="urn_string">
-        <xsl:value-of select="concat($urn_prefix, $ref_dmcode)" />
+        <xsl:value-of select="concat($urn_prefix, $dmc_lookup)" />
     </xsl:variable>
 
     <xsl:variable name="ref_dmc">
@@ -256,14 +279,31 @@
      
       <xsl:choose>
         <xsl:when test="ancestor::learning or ancestor::crewDrillStep">
-          <xsl:variable name ="infoname">
+ <!--  NEW for Phase 2 Issue #26  if ancestor is learning or crewDrillStep, need to make sure referredFragment is included if used -->
+           <xsl:variable name="referredFragment">
+              <xsl:value-of select="@referredFragment"></xsl:value-of>
+           </xsl:variable>
+          
+           <xsl:call-template name="createXLink">
+                <xsl:with-param name="actuateMode" select="$actuateMode"></xsl:with-param>
+                <xsl:with-param name="showMode" select="$showMode"></xsl:with-param>
+                <xsl:with-param name="xlinkhref" select="$xlinkhref"></xsl:with-param>
+                <xsl:with-param name="refDmc" select="$ref_dmc"></xsl:with-param>
+                <xsl:with-param name="ref_dmcode" select="$ref_dmcode"></xsl:with-param>
+                <!-- 8/28/14 issue 26 no reference anchor -->
+                <xsl:with-param name="ref_frag" select="$referredFragment"></xsl:with-param>
+           </xsl:call-template>          
+
+<!-- Phase 2 - Issue 26: Commented out because createXLink template takes care of building appropriate output -->          
+ <!--          <xsl:variable name ="infoname">
             <xsl:value-of select ="./dmRefAddressItems/dmTitle/infoName"></xsl:value-of>
           </xsl:variable>
           <xsl:variable name ="techname">
             <xsl:value-of select ="./dmRefAddressItems/dmTitle/techName"></xsl:value-of>
           </xsl:variable>
+          <p>ref_dmc:  <xsl:value-of select="$ref_dmc" /></p>
           <a href="javascript:void(window.open('{$ref_dmc}'))">
-            <xsl:choose>
+              <xsl:choose>
                 <xsl:when test="$infoname = $empty_string and $techname = $empty_string">
                     <xsl:value-of select="$ref_dmcode" />
                 </xsl:when>
@@ -276,13 +316,19 @@
                 <xsl:otherwise>
                     <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
                 </xsl:otherwise>                
-            </xsl:choose>
-          </a>
+            </xsl:choose> 
+          </a>-->
+          
+<!-- ************************************************* -->
         </xsl:when>
+        
+        
         <xsl:when test="ancestor::trainingStep or ancestor::para">
+        
             <a href="javascript:void(window.open('{$ref_dmc}'))">
                 <xsl:value-of select="$ref_dmcode" />
             </a> 
+
         </xsl:when>      
         <xsl:when test="parent::refs">
           <xsl:variable name ="xlinkactuate">
@@ -321,6 +367,9 @@
             </td>
           </tr>
         </xsl:when>
+        
+     
+        
       </xsl:choose>
 	</xsl:template>
     
@@ -336,8 +385,17 @@
 		<xsl:param name="xlinkhref" />
 		<xsl:param name="refDmc" />
         <xsl:param name="ref_dmcode"/>
+        
         <!-- 8/28/14 issue 26 no reference anchor -->
         <xsl:param name="ref_frag"/>
+<!--  		
+		<p>AcuateMode: <xsl:value-of select ="$actuateMode" /></p>
+        <p>showMode: <xsl:value-of select ="$showMode" /></p>
+        <p>xlinkhref: <xsl:value-of select ="$xlinkhref" /></p>
+        <p>refDmc: <xsl:value-of select ="$refDmc" /></p>
+        <p>ref_dmcode: <xsl:value-of select ="$ref_dmcode" /></p>
+        <p>ref_frag: <xsl:value-of select ="$ref_frag" /></p>
+-->  
 		<xsl:variable name ="infoname">
 			<xsl:value-of select ="./dmRefAddressItems/dmTitle/infoName"></xsl:value-of>
 		</xsl:variable>
@@ -368,11 +426,12 @@
 					</xsl:when>
 				</xsl:choose> -->
 				<xsl:choose>
-				    <xsl:when test="xlinkhref=''">
+				<!-- ISSUE 26 - had to comment out because this was being called everytime becuase xlinkhref was always empty -->
+			<!--  	    <xsl:when test="xlinkhref=''">
 				        <a href="javascript:void(window.open('{$xlinkhref}'))">
 		                    <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
 		                </a>
-				    </xsl:when>
+				    </xsl:when>-->
                     <!-- 8/28/14 issue 26 no reference anchor -->
                     <xsl:when test="$ref_frag = $empty_string">
                         <a href="javascript:void(window.open('{$refDmc}'))">
@@ -380,8 +439,16 @@
                                 <xsl:when test="$techname = ''">
                                     <xsl:value-of select="$ref_dmcode"/>
                                 </xsl:when>
+                                <!--  PHASE 2 - ISSUE 26  Updated the way the techname and infoname are displayed based on whether or not they are empty-->
                                 <xsl:otherwise>
-                                    <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
+                                    <xsl:choose>
+                                       <xsl:when test="$infoname = ''">
+                                          <xsl:value-of select="$techname" />   
+                                       </xsl:when>
+                                       <xsl:otherwise>
+                                          <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
+                                       </xsl:otherwise>
+                                       </xsl:choose>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </a>                    
@@ -393,8 +460,16 @@
                                 <xsl:when test="$techname = ''">
                                     <xsl:value-of select="$ref_dmcode"/>
                                 </xsl:when>
+                                <!--  PHASE 2 - ISSUE 26  Updated the way the techname and infoname are displayed based on whether or not they are empty-->
                                 <xsl:otherwise>
-                                    <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
+                                    <xsl:choose>
+                                       <xsl:when test="$infoname = ''">
+                                          <xsl:value-of select="$techname" />   
+                                       </xsl:when>
+                                       <xsl:otherwise>
+                                          <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
+                                       </xsl:otherwise>
+                                       </xsl:choose>
                                 </xsl:otherwise>
                             </xsl:choose>
 		                </a>
@@ -449,36 +524,50 @@
        
        <!-- Identify the figure with the internalRefID and determine the figure number to reference -->
        <xsl:variable name="identifiedFig" select="//figure[@id=$intrefid]"/>
+       
+       <!-- Retreive the Figure Title to be used in the output -->
+       <xsl:variable name="figTitle"  select="$identifiedFig/title" />
+       
        <xsl:variable name="countOfFig" select="count(//figure[@id=$intrefid])"/>
+       
        <xsl:choose>
           <!-- Determine if you are dealing with a <figure> -->
           <xsl:when test="$countOfFig=1">
              <xsl:variable name="precedingFigCount" select="count($identifiedFig/preceding::figure)+1"/>
-             <a href="#{$intrefid}">Fig <xsl:value-of select="$precedingFigCount" /></a>
+             <a href="#{$intrefid}">Fig <xsl:value-of select="$precedingFigCount" /> - <xsl:value-of select="$figTitle"/></a>
           </xsl:when>
+          
           <!-- Determine if you are dealing with a <figureAlts> -->
           <xsl:when test="count(//figureAlts[@id=$intrefid])=1">      
              <xsl:variable name="identifiedAltFig" select="//figureAlts[@id=$intrefid]"/>
-             <xsl:variable name="xxxfigAltId" select="$identifiedAltFig/figure/@id"/>
+             <xsl:variable name="figAltId" select="$identifiedAltFig/figure/@id"/>
+             <xsl:variable name="altFigTitle"  select="$identifiedAltFig/figure/title" />
+             
              <xsl:variable name="precedingFigCount2" select="count($identifiedAltFig/preceding::figure)+1"/>
-             <a href="#{$xxxfigAltId}">Fig <xsl:value-of select="$precedingFigCount2" /></a>
+             <a href="#{$figAltId}">Fig <xsl:value-of select="$precedingFigCount2" /> - <xsl:value-of select="$altFigTitle"/></a>
           </xsl:when>
           <xsl:otherwise>  <!--  Do nothing --> </xsl:otherwise>
        </xsl:choose>
     </xsl:template> 
     
+    <!-- Phase 2 - Issue 38 - Table references not coming out correctly, Issue 6 - Table counting not working -->
     <!-- Table references = irtt02 -->
     <xsl:template match="internalRef[@internalRefTargetType='irtt02']">
         <xsl:variable name="intrefid" select="@internalRefId"/>
         
         <!-- Phase 2 similar changes to tables as figures to get the count and number of table references correct. -->
         <xsl:variable name="identifiedTable" select="//table[@id=$intrefid]"/>
+        
+        <!-- Retrieve the table title to be used in the output -->
+        <xsl:variable name="tableTitle"  select="$identifiedTable/title" />
+        
         <xsl:variable name="countOfTable" select="count(//table[@id=$intrefid])"/>
+        
         <xsl:choose>
           <!-- Determine if you are dealing with a <table> -->
           <xsl:when test="$countOfTable=1">
              <xsl:variable name="precedingTableCount" select="count($identifiedTable/preceding::table)+1"/>
-             <a href="#{$intrefid}">Table <xsl:value-of select="$precedingTableCount" /></a>
+             <a href="#{$intrefid}">Table <xsl:value-of select="$precedingTableCount" /> - <xsl:value-of select="$tableTitle"/></a>
           </xsl:when>
           <xsl:otherwise>  <!--  Do nothing --> </xsl:otherwise>
        </xsl:choose>
@@ -490,8 +579,27 @@
          -->
     </xsl:template>   
     
+    <!--  Step references = rtt08 -->
      <xsl:template match="internalRef[@internalRefTargetType='irtt08']">
         <xsl:variable name="intrefid" select="@internalRefId"/>
+        
+        <!-- Phase 2 changes to fix issue 36 step counters -->
+        <xsl:variable name="identifiedStep" select="//crewDrillStep[@id=$intrefid]"/>
+        <xsl:variable name="countOfStep" select="count(//crewDrillStep[@id=$intrefid])"/>
+        
+        <xsl:choose>
+          <!-- Determine if you are dealing with a <crewDrillStep> -->
+          <xsl:when test="$countOfStep=1">
+             <xsl:variable name="precedingStepCount" select="count($identifiedStep/preceding::crewDrillStep)+1"/>
+             <!-- Need to count the preceeding sibilings crewDrill steps so you do not count the nested crewDrillSteps -->
+             <xsl:variable name="precedingStepStepCount" select="count($identifiedStep/preceding-sibling::crewDrillStep)+1"/>
+             
+             <a href="#{$intrefid}">Step <xsl:value-of select="$precedingStepStepCount" /></a>
+          </xsl:when>
+          <xsl:otherwise>  <!--  Do nothing --> </xsl:otherwise>
+       </xsl:choose>
+       
+       <!-- 
         <xsl:variable name="stepCounter">
              <xsl:value-of select="count(preceding::isolationStep)+1"/>
         </xsl:variable>
@@ -506,7 +614,9 @@
                 <a href="#{$intrefid}">Step <xsl:value-of select="$stepCounter" /></a>
             </xsl:otherwise>
         </xsl:choose>
+     --> 
     </xsl:template>      
+	
 	<xsl:template match="internalRef[@internalRefTargetType='figure']">
 		<xsl:variable name="href" select="@xlink:href"/>
 		<xsl:variable name="intrefid" select="@internalRefId"/>
