@@ -10,7 +10,12 @@
 			<xsl:apply-templates/>
 		</ul>
 	</xsl:template>
-	<xsl:template match="seqlist">
+	
+	<!-- 
+	   Phase 2 
+	     - Changed match="seqlist" to match="sequentialList"
+	-->
+	<xsl:template match="sequentialList">
 		<ol>
 			<xsl:apply-templates/>
 		</ol>
