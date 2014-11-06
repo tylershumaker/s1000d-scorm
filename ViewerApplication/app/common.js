@@ -49,14 +49,16 @@ function showNextQuestion()
 	}
 	else
 	{
+		var score = (totalCorrect/count) * 100;
+		
 		document.getElementById('grade').style.display = 'block';
 		if (totalCorrect == 1)
 		{
-			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' question correct out of ' + count + '.';
+			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' question correct out of ' + count + ' for a  ' + score + '%';
 		}
 		else
 		{
-			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' questions correct out of ' + count + '.';
+			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' questions correct out of ' + count + ' for a ' + score + '%';
 		}
 	}
 }

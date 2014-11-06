@@ -667,6 +667,9 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+	
+	
+	
 	<!-- call templates -->
 	<xsl:template name="part_table">
 		<table border="0" width="100%" class="lineTopAndBottom" cellspacing="0" cellpadding="3">

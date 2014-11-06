@@ -588,7 +588,26 @@
     </xsl:choose>
     -->
 	</xsl:template>
-
+    
+    <xsl:template match="warningAndCautionPara">
+       <xsl:apply-templates/>
+    </xsl:template>
+    
+    <xsl:template match="acronym">
+	<!--  <p>FOUND AN Acronym</p>-->
+	   <xsl:variable name="acronym_def">
+	      <xsl:value-of select="acronymDefinition" />
+	   </xsl:variable>
+	   <xsl:variable name="acronym_val">
+	      <xsl:value-of select="acronymTerm" />
+	   </xsl:variable>
+	   
+	   <!--  <p>Acro Def: <xsl:value-of select="$acronym_def" /></p> -->
+	   <!--  <p>Acro Term: <xsl:value-of select="$acronym_val" /></p> -->
+	   
+	   <span title="{$acronym_def}"><u> <xsl:value-of select="$acronym_val" /></u> </span>
+	</xsl:template>
+	
 	<xsl:template match="listItem/para">
 		<xsl:apply-templates/>
 	</xsl:template>
@@ -676,14 +695,21 @@
         <xsl:variable name="cautionRef">
             <xsl:value-of select="./@cautionRefs"></xsl:value-of>
         </xsl:variable>
-     
         <xsl:choose>
             <xsl:when test="para_id=''">
                 <xsl:apply-templates />
             </xsl:when>
+            
+            
             <xsl:when test="not($warnRef ='')">
-                <xsl:variable name="warningtext">
-                    <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"></xsl:value-of>
+              
+              <!--    <xsl:choose>   
+                   <xsl:when test="//warning[@id=$warnRef]/warningAndCautionPara/dmRef">
+                       <p>in When</p>
+                       <xsl:variable name="foo"><xsl:text>foo</xsl:text></xsl:variable>
+                      <xsl:call-template name=""></xsl:call-template>
+                      <xsl:variable name="warningtext">
+                   <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"> </xsl:value-of><xsl:value-of select="$foo"/>
                 </xsl:variable>                  
                 <xsl:variable name="type">warning</xsl:variable>                  
                 <div id="{$para_id}">
@@ -691,8 +717,37 @@
                         <xsl:with-param name="text" select="$warningtext"/>
                         <xsl:with-param name="type" select="$type"/>
                     </xsl:call-template>
-                    <!-- <xsl:apply-templates /> -->
+                  
                 </div>
+                
+                   </xsl:when>
+                   <xsl:otherwise>
+                    <xsl:variable name="warningtext">
+                   <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"> </xsl:value-of>
+                </xsl:variable>                  
+                <xsl:variable name="type">warning</xsl:variable>                  
+                <div id="{$para_id}">
+                    <xsl:call-template name="createAttention">
+                        <xsl:with-param name="text" select="$warningtext"/>
+                        <xsl:with-param name="type" select="$type"/>
+                    </xsl:call-template>
+                    
+                </div>   
+                   </xsl:otherwise>
+                </xsl:choose>
+                -->
+                <xsl:variable name="warningtext">
+                   <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"> </xsl:value-of>
+                </xsl:variable>                  
+                <xsl:variable name="type">warning</xsl:variable>                  
+                <div id="{$para_id}">
+                    <xsl:call-template name="createAttention">
+                        <xsl:with-param name="text" select="$warningtext"/>
+                        <xsl:with-param name="type" select="$type"/>
+                    </xsl:call-template>
+                    <!--  <xsl:apply-templates />--> 
+                </div>   
+                
             </xsl:when>
             <xsl:when test="not($cautionRef ='')">
                 <xsl:variable name="cautiontext">
@@ -715,6 +770,8 @@
         </xsl:choose>      
     </xsl:template>
 
+    
+	
 	<xsl:template match="title">
         <xsl:variable name="counter">
              <xsl:value-of select="count(preceding::internalRef[@internalRefTargetType='irtt01'])"/>
@@ -892,7 +949,7 @@
 					</strong></font>
 				</td>
 			</tr>
-			<tr><td> <font class="indentMarginLeft"><strong><xsl:value-of select="$text"></xsl:value-of></strong></font></td></tr>
+			<tr><td> <font class="indentMarginLeft"><strong><xsl:value-of select="$text"></xsl:value-of>  </strong></font></td></tr>
 		</table>
 	</xsl:template>
 
