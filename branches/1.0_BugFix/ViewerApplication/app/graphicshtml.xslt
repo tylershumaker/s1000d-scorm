@@ -148,6 +148,39 @@
 	
 	</xsl:choose> 
 	</xsl:template>
+
+<!--  Phase 2 - no related issue, symbols were not coming out -->
+   <xsl:template name="symbol" match="symbol">	
+	
+	<!-- Get the entity title for the graphic -->
+	<xsl:variable name ="infoIdent">
+	   <xsl:value-of select ="@infoEntityIdent"></xsl:value-of>
+	</xsl:variable>
+	
+	<!-- Build the URN of the graphic to retrieve the appropriate file -->
+	<xsl:variable name ="urn_prefix">
+		<xsl:value-of select="'URN:S1000D:'" />
+	</xsl:variable>
+	<xsl:variable name="urn_string">
+		<xsl:value-of select="concat($urn_prefix, $infoIdent)" />
+	</xsl:variable>  
+	
+	<!-- Using the urn_resource_map.xml file, retrieve the file name of the graphic to display -->
+	<xsl:variable name="theFileName">
+		<xsl:value-of select="document('./urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]"/>
+	</xsl:variable>	
+	
+	<xsl:variable name="theExt">
+		<xsl:value-of select="substring($theFileName,string-length($theFileName) - 2,string-length($theFileName))"/>
+	</xsl:variable>
+	
+    <!-- Center align the image -->
+	<div  align="center">
+		<img src="{$theFileName}" class="imageBorder" />
+	</div>
+
+	</xsl:template>
+
 	
 	<!-- Phase 2 Issue 5 & 6.  -->
 	<!-- Created <figure> template to address these issues. -->
