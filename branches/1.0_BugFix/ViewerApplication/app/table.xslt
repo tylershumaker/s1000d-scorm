@@ -160,10 +160,33 @@
 	</xsl:attribute>
 </xsl:template>
 
+<!-- Phase 2: Issue 37 - Table formatting - Data is not spanning cells correctly -->
 <xsl:template name="addAttr">
 	<xsl:if test="@namest and @nameend">
+	    <!-- Create a variable, endColName, to hold the value of the @nameend attribute on the row/entry -->
+	    <xsl:variable name="endColName" select="@nameend"/>
+	    
+	    <!-- Create a variable, endColName, to hold the value of the @nameend attribute on the row/entry -->
+	    <xsl:variable name="startColName" select="@namest"/>
+	    
+<!-- <p>endColName: <xsl:value-of select="$endColName"/></p>-->
+	    <!-- Create a variable, endingCol, to hold the place of the matching @nameend column with the column specification (colspec)  -->
+	    <xsl:variable name="endingCol" select="../../../colspec[@colname=$endColName]"/>
+	    <!-- Create a variable, startingCol, to hold the place of the matching @namest column with the column specification (colspec)  -->
+	    <xsl:variable name="startingCol" select="../../../colspec[@colname=$startColName]"/>
+	    
+	    <xsl:variable name="lenStartingCol" select="count($startingCol/preceding-sibling::colspec)"/>
+	    <xsl:variable name="lenEndingCol" select="count($endingCol/preceding-sibling::colspec)"/>
+	    <xsl:variable name ="col_len" select="($lenEndingCol - $lenStartingCol)+1"/>
+<!-- <p>endingCol: <xsl:value-of select="$endingCol/@colname"/></p>-->
+	    <!-- Create a variable, col_len, to hold the value of the col_len to span, counting previous colspecs until @namest element is found to determine place -->
+	    <xsl:variable name ="col_len1" select="count($endingCol/preceding-sibling::colspec)+1"/>
+	    
+<!-- <p>Col_len = <xsl:value-of select="$col_len"/></p>-->
+        <!-- Set the colspan attribute on the table row -->
 		<xsl:attribute name="colspan">
-			<xsl:value-of select="(@nameend - @namest) + 1"/>
+			<!--  <xsl:value-of select="(@nameend - @namest) + 1"/>-->
+			<xsl:value-of select="$col_len"/>
 		</xsl:attribute>
 	</xsl:if>
 	<xsl:if test="@morerows">
