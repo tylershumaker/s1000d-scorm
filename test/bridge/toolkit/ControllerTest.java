@@ -169,7 +169,26 @@ public class ControllerTest
 		                				System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1",
 		                				"-pdfinstructor",
 		                				System.getProperty("user.dir") +"\\other"};
+		
+		String[] SCORMMXTACHHTML = {System.getProperty("user.dir") + "\\test_files\\scpm_mx_tach\\SCP-SYS29-81205-00001-00_000-01_US-EN.xml",
+				                    System.getProperty("user.dir") + "\\test_files\\resource_package_mx_tach",
+				                    "-scormhtml"};
+		
+		String[] SCORMOPSEICASHTML = {System.getProperty("user.dir") + "\\test_files\\scpm_ops_eicas\\SCP-SYS01-81205-00001-00_000-01_US-EN.xml",
+                                      System.getProperty("user.dir") + "\\test_files\\resource_package_ops_eicas",
+                                      "-scormhtml"};
+		
+		String[] NEWSCORMOPSEICASHTML = {System.getProperty("user.dir") + "\\test_files\\scpm_ops_eicas\\SCP-SYS01-81205-00001-00_000-01_US-EN.xml",
+                System.getProperty("user.dir") + "\\test_files\\resource_pkg_ops_eicas_Oct12014",
+                "-scormhtml"};
+		
+		String[]  MX_NUMHTML = {System.getProperty("user.dir") + "\\test_files\\scpm_mx_tach\\SCP-SYS29-81205-00001-00_000-01_US-EN.xml",
+                System.getProperty("user.dir") + "\\test_files\\resource_package_mx_tach",
+                "-scormLevelledParaNum"};
+		
 
-        Controller.main(SCORM40FLASHWOUT);
+		
+	
+        Controller.main(NEWSCORMOPSEICASHTML);
     }
 }
