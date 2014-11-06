@@ -14,6 +14,7 @@
 	<!--For future use 
 	 module specific elements inclusions-->
      <xsl:include href="isolation.xslt"/>
+	 <xsl:include href="levelledparatitle.xslt"/>
 	
 	<!--global vars-->
   <xsl:variable name="mic" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@modelIdentCode" />
