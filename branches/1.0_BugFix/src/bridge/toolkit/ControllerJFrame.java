@@ -154,7 +154,7 @@ public class ControllerJFrame extends javax.swing.JFrame
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SCORM With HTML Assessments", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version" }));
+        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SCORM", "SCORM With levelledPara Numbering", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version" }));
         SelectionDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SelectionDropDownActionPerformed(evt);
@@ -300,15 +300,18 @@ public class ControllerJFrame extends javax.swing.JFrame
                 outputType = "-scormhtml";
                 break;
             case 1:
+            	outputType = "-scormLevelledParaNum";
+            	break;
+            case 2:
                 outputType = "-mobile";
                 break;
-            case 2:
+            case 3:
                 outputType = "-mobilecourse";
                 break;
-            case 3:
+            case 4:
                 outputType = "-pdfinstructor";
                 break;
-            case 4:
+            case 5:
                 outputType = "-pdfstudent";
                 break;
         }
@@ -332,7 +335,12 @@ public class ControllerJFrame extends javax.swing.JFrame
             {
             	toolkit = sampleCatalog.getCommand("SCORM");
             	ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
-            }	
+            }
+            else if (outputType.equals("-scormLevelledParaNum"))
+            {
+            	toolkit = sampleCatalog.getCommand("SCORM");
+            	ctx.put(Keys.OUTPUT_TYPE, "SCORMLEVELLEDPARANUM");
+            }            
             else if(outputType.equals("-mobile"))
             {
             	toolkit = sampleCatalog.getCommand("Mobile"); 
