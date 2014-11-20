@@ -70,7 +70,7 @@ function showNextQuestion()
 			var scaledScore = weightScore/100;
 			doSetValue("cmi.score.scaled", scaledScore.toString());
 			doSetValue("cmi.score.raw", weightScore.toString());
-			doSetValue("cmi.scaled_passing_score", minScore);
+			
 			document.getElementById('grade').innerHTML = 'You have '+status+' the assessment. <br/>'+
 			'You answered ' + totalCorrect + ' question(s) correct out of ' + count + ' for a score of ' + weightScore + '%.<br/>'+
 			'This assessment required a ' + minScore + '% or greater to be passed. ';
