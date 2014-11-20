@@ -164,7 +164,7 @@ public class SCOBuilder implements Command
                 File scpmFile = new File((String)ctx.get(Keys.SCPM_FILE));
                 scpm = dmp.getDoc(scpmFile);
             
-                generateListFile();
+                generateListFile(ctx);
             
                 //write urn map to cp app location
                 Document urn_map = (Document)ctx.get(Keys.URN_MAP);
@@ -280,7 +280,7 @@ public class SCOBuilder implements Command
      * @throws IOException
      * @throws JDOMException
      */
-    private void generateListFile() throws IOException, JDOMException
+    private void generateListFile(Context ctx) throws IOException, JDOMException
     {
         File js = new File(cpPackage + File.separator + "resources/s1000d/app/list.js");
          
@@ -346,8 +346,16 @@ public class SCOBuilder implements Command
             }
             count++;
         }
+        
+        String minScore = (String) ctx.get(Keys.MIN_SCORE);
+        if(minScore.isEmpty()){
+            minScore = "80";
+        }
+        
         writer.write("function getArray()\n");
-        writer.write("{\n return scoPages;\n}");
+        writer.write("{\n return scoPages;\n}\n");
+        writer.write("function getMinScore()\n");
+        writer.write("{\n return "+minScore +";\n}");
         writer.close();
 
         commonFiles.add(js.getAbsolutePath());
