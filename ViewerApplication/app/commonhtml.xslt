@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0"  xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:template match="preliminaryRqmts">
 		<h4>
 			Preliminary Requirements
@@ -588,11 +589,11 @@
     </xsl:choose>
     -->
 	</xsl:template>
-    
+  <!--   
     <xsl:template match="warningAndCautionPara">
        <xsl:apply-templates/>
     </xsl:template>
-    
+    -->
     <xsl:template match="acronym">
 	<!--  <p>FOUND AN Acronym</p>-->
 	   <xsl:variable name="acronym_def">
@@ -699,18 +700,26 @@
             <xsl:when test="para_id=''">
                 <xsl:apply-templates />
             </xsl:when>
-            
+<!--  TODO - start here looking into dmref in caution issue -->
             
             <xsl:when test="not($warnRef ='')">
-              
-              <!--    <xsl:choose>   
+           <!--    <xsl:call-template name="warningAndCautionPara">
+                <xsl:with-param name="para_id" select="$para_id"></xsl:with-param>
+             </xsl:call-template>-->
+            
+               
+      <!-- uncommented  -->
+                 <xsl:choose>   
                    <xsl:when test="//warning[@id=$warnRef]/warningAndCautionPara/dmRef">
-                       <p>in When</p>
+                       <apply-templates select="dmRef"/>
                        <xsl:variable name="foo"><xsl:text>foo</xsl:text></xsl:variable>
-                      <xsl:call-template name=""></xsl:call-template>
-                      <xsl:variable name="warningtext">
-                   <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"> </xsl:value-of><xsl:value-of select="$foo"/>
-                </xsl:variable>                  
+                     
+                       <xsl:variable name="warningtext1">
+                           <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara" />
+                       </xsl:variable>                  
+                <xsl:variable name="warningtext" select="concat($warningtext1,$foo)" />
+<p>UPDATE WARN: <xsl:value-of select="$warningtext" /></p>                
+                
                 <xsl:variable name="type">warning</xsl:variable>                  
                 <div id="{$para_id}">
                     <xsl:call-template name="createAttention">
@@ -735,19 +744,24 @@
                 </div>   
                    </xsl:otherwise>
                 </xsl:choose>
-                -->
+             <!-- uncommented -->
+               
+                  <!--  
                 <xsl:variable name="warningtext">
                    <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"> </xsl:value-of>
                 </xsl:variable>                  
-                <xsl:variable name="type">warning</xsl:variable>                  
+                <xsl:variable name="type">warning</xsl:variable> 
+     
+                 
                 <div id="{$para_id}">
                     <xsl:call-template name="createAttention">
                         <xsl:with-param name="text" select="$warningtext"/>
                         <xsl:with-param name="type" select="$type"/>
                     </xsl:call-template>
-                    <!--  <xsl:apply-templates />--> 
                 </div>   
-                
+     -->    
+            
+            
             </xsl:when>
             <xsl:when test="not($cautionRef ='')">
                 <xsl:variable name="cautiontext">
@@ -770,7 +784,14 @@
         </xsl:choose>      
     </xsl:template>
 
-    
+    <!--  TEMP  -->
+    <xsl:template name="warningAndCautionPara">
+        <xsl:param name="para_id"/>
+<p>Warning and Caution encountered</p>
+
+              
+        
+    </xsl:template>
 	
 	<xsl:template match="title">
         <xsl:variable name="counter">
@@ -973,6 +994,7 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+		
 
 </xsl:stylesheet>
 
