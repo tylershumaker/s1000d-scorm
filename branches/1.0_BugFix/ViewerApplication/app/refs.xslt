@@ -323,7 +323,7 @@
         </xsl:when>
         
         
-        <xsl:when test="ancestor::trainingStep or ancestor::para">
+        <xsl:when test="ancestor::trainingStep or ancestor::para or ancestor::warningAndCautionPara">
         
             <a href="javascript:void(window.open('{$ref_dmc}'))">
                 <xsl:value-of select="$ref_dmcode" />
