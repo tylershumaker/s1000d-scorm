@@ -73,7 +73,7 @@ function showNextQuestion()
 			doSetValue("cmi.scaled_passing_score", minScore);
 			document.getElementById('grade').innerHTML = 'You have '+status+' the assessment. <br/>'+
 			'You answered ' + totalCorrect + ' question(s) correct out of ' + count + ' for a score of ' + weightScore + '%.<br/>'+
-			'This assessment required a ' + minScore + ' or greater to be passed. ';
+			'This assessment required a ' + minScore + '% or greater to be passed. ';
 //		}
 //		else
 //		{
