@@ -1,5 +1,6 @@
 var totalCorrect = 0;
 var count = 0;
+var weightScore = 0;
 
 // For Hotspots
 var selectedHotspot = null;
@@ -49,17 +50,35 @@ function showNextQuestion()
 	}
 	else
 	{
-		var score = (totalCorrect/count) * 100;
+		//var score = (totalCorrect/count) * 100;
 		
 		document.getElementById('grade').style.display = 'block';
-		if (totalCorrect == 1)
-		{
-			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' question correct out of ' + count + ' for a  ' + score + '%';
+//		if (totalCorrect == 1)
+//		{
+		var status = '';
+		var minScore = getMinScore();
+		if(weightScore >= minScore ){
+			doSetValue("cmi.completion_status", "completed");
+			doSetValue("cmi.success_status", "passed");
+			status = "passed";
 		}
-		else
-		{
-			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' questions correct out of ' + count + ' for a ' + score + '%';
+		else{
+			doSetValue("cmi.completion_status", "incomplete");
+			doSetValue("cmi.success_status", "failed");
+			status = "failed";
 		}
+			var scaledScore = weightScore/100;
+			doSetValue("cmi.score.scaled", scaledScore.toString());
+			doSetValue("cmi.score.raw", weightScore.toString());
+			doSetValue("cmi.scaled_passing_score", minScore);
+			document.getElementById('grade').innerHTML = 'You have '+status+' the assessment. <br/>'+
+			'You answered ' + totalCorrect + ' question(s) correct out of ' + count + ' for a score of ' + weightScore + '%.<br/>'+
+			'This assessment required a ' + minScore + ' or greater to be passed. ';
+//		}
+//		else
+//		{
+//			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' questions correct out of ' + count + ' for a ' + weightScore + '%';
+//		}
 	}
 }
 
@@ -108,6 +127,7 @@ function checkIfSingleTrue(radioObj, quizType)
 		{
 			if (answer[1])
 			{
+				weightScore = weightScore + parseInt(answer[1]);
 				totalCorrect++;
 			}
 		}	
@@ -175,6 +195,7 @@ function checkIfMultipleTrue(checkObj, quizType)
 		{
 			if(correctChosenAnswers.length == correctAnswers.length)
 			{
+				weightScore = weightScore + parseInt(answer[1]);
 				totalCorrect++;	
 			}
 		}

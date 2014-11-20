@@ -86,6 +86,8 @@ public class ControllerJFrame extends javax.swing.JFrame
         SCPMField = new javax.swing.JTextField();
         ResourceField = new javax.swing.JTextField();
         OutputDirectoryField = new javax.swing.JTextField();
+        MinScoreField = new javax.swing.JTextField();
+        MinScoreLabel = new javax.swing.JLabel();
         SCPMBrowseButton = new javax.swing.JButton();
         ResourceBrowseButton = new javax.swing.JButton();
         OutputDirectoryBrowseButton = new javax.swing.JButton();
@@ -115,6 +117,9 @@ public class ControllerJFrame extends javax.swing.JFrame
         OutputDirectoryLabel.setFont(new java.awt.Font("Arial", 1, 12));
         OutputDirectoryLabel.setText("Output Directory");
 
+        MinScoreLabel.setFont(new java.awt.Font("Arial",1,12));
+        MinScoreLabel.setText("Min Score");
+        
         SCPMBrowseButton.setFont(new java.awt.Font("Arial", 1, 12));
         SCPMBrowseButton.setText("Browse..");
         SCPMBrowseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -173,13 +178,15 @@ public class ControllerJFrame extends javax.swing.JFrame
                             .addComponent(SCPMLabel)
                             .addComponent(ResourceLabel)
                             .addComponent(OutputDirectoryLabel)
+                            .addComponent(MinScoreLabel)
                             .addComponent(OutputLabel))
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(SCPMField)
                                 .addComponent(ResourceField)
-                                .addComponent(OutputDirectoryField, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE))
+                                .addComponent(OutputDirectoryField, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                                .addComponent(MinScoreField))
                             .addComponent(SelectionDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,6 +228,10 @@ public class ControllerJFrame extends javax.swing.JFrame
                     .addComponent(OutputDirectoryLabel)
                     .addComponent(OutputDirectoryBrowseButton))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MinScoreField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MinScoreLabel))
+                .addGap(18, 18, 18)                
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(OutputLabel)
                     .addComponent(SelectionDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -323,6 +334,14 @@ public class ControllerJFrame extends javax.swing.JFrame
         ctx.put(Keys.SCPM_FILE, SCPMField.getText());
         ctx.put(Keys.RESOURCE_PACKAGE, ResourceField.getText());
         ctx.put(Keys.OUTPUT_DIRECTORY, OutputDirectoryField.getText());
+
+        if(!MinScoreField.getText().isEmpty()){
+            ctx.put(Keys.MIN_SCORE,  MinScoreField.getText());
+        }
+        else{
+            ctx.put(Keys.MIN_SCORE, "80");
+        }
+
         try
         {
             
@@ -418,6 +437,8 @@ public class ControllerJFrame extends javax.swing.JFrame
     private javax.swing.ButtonGroup OutputButtonGroup;
     private javax.swing.JButton OutputDirectoryBrowseButton;
     private javax.swing.JTextField OutputDirectoryField;
+    private javax.swing.JTextField MinScoreField;
+    private javax.swing.JLabel MinScoreLabel;
     private javax.swing.JLabel OutputDirectoryLabel;
     private javax.swing.JLabel OutputLabel;
     private javax.swing.JButton ResourceBrowseButton;

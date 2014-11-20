@@ -75,6 +75,8 @@
 				<link rel="stylesheet" href="app/common.css" type="text/css" />
 				<link rel="stylesheet" href="app/assessment.css" type="text/css" />
 				<script type="text/javascript" src="app/common.js"></script>
+                <script type="text/javascript" src="app/list.js"></script>
+                <script type="text/javascript" src="app/SCORM_2004_APIWrapper.js"></script>                
 				<!-- Sortable -->
 				<script type="text/javascript" src="app/jquery-ui/js/jquery-1.6.2.min.js"></script>
 				<script type="text/javascript" src="app/jquery-ui/js/jquery-ui-1.8.15.custom.min.js"></script>

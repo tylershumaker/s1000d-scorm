@@ -86,6 +86,7 @@ public class Controller
         
         ctx.put(Keys.SCPM_FILE, args[0]);
         ctx.put(Keys.RESOURCE_PACKAGE, args[1]);
+        ctx.put(Keys.MIN_SCORE, "80");
         try
         {
         
