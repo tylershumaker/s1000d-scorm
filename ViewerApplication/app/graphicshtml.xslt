@@ -149,7 +149,7 @@
 	</xsl:choose> 
 	</xsl:template>
 
-<!--  Phase 2 - no related issue, symbols were not coming out -->
+<!--  Phase 2 - no related issue, were not coming out -->
    <xsl:template name="symbol" match="symbol">	
 	
 	<!-- Get the entity title for the graphic -->
