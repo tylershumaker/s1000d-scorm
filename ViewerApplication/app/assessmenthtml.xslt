@@ -35,7 +35,7 @@
 							<xsl:value-of select="count(//lcInteraction)"/>
 						</xsl:variable>
 						<form name="answerOptionsForm{$position}">
-							<div class="questionNumber" id="questionNumber{$position}">
+							<div class="questionNumber" id="questionNumber{$position}" name="questionNumber{$position}">
 								<p class="questionCount">Question <xsl:value-of select="$position"/> of <xsl:value-of select="$count"/></p><br/>
 								<ol>
 									<xsl:apply-templates/>
@@ -74,7 +74,7 @@
 					</xsl:for-each>
 				</xsl:otherwise>
 			</xsl:choose>
-			<div id="grade">
+			<div id="grade" name="grade">
 			</div>
 		</div>
     </xsl:template>
@@ -162,7 +162,7 @@
   </xsl:template>
   
   <xsl:template match="lcFeedbackIncorrect">
-  	<div id="feedbackIncorrect">
+  	<div id="feedbackIncorrect" name="feedbackIncorrect">
   		<div class="line"/>
   	  	<xsl:apply-templates />
   		<div class="line"/>
@@ -170,7 +170,7 @@
   </xsl:template>
 
   <xsl:template match="lcFeedbackCorrect">
-    <div id="feedbackCorrect">
+    <div id="feedbackCorrect" name="feedbackCorrect">
     	<div class="line"/>
   	  	<xsl:apply-templates />
   		<div class="line"/>
@@ -224,7 +224,7 @@
 	</xsl:variable>
 	<!-- NOTE:  This most likely will NOT work in assessments...would need to go be question number or something -->
 	<form name="matchingPairForm">
-		<div id="matchingQuestion">
+		<div id="matchingQuestion" name="matchingQuestion">
 		    <ul>
 		      <xsl:apply-templates />
 		    </ul>
