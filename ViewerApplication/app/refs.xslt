@@ -675,7 +675,7 @@
         </xsl:variable>
         <xsl:variable name="urn_string">
             <xsl:value-of select="concat($urn_prefix, $code)" />
-        </xsl:variable>
+        </xsl:variable>       
         <xsl:variable name="theFileName">
           <xsl:value-of select="document('./urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" />
         </xsl:variable>  
