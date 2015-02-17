@@ -118,7 +118,7 @@ public class ControllerJFrame extends javax.swing.JFrame
         OutputDirectoryLabel.setText("Output Directory");
 
         MinScoreLabel.setFont(new java.awt.Font("Arial",1,12));
-        MinScoreLabel.setText("Min Score");
+        MinScoreLabel.setText("Min Score (defaults to 80)  ");
         
         SCPMBrowseButton.setFont(new java.awt.Font("Arial", 1, 12));
         SCPMBrowseButton.setText("Browse..");
