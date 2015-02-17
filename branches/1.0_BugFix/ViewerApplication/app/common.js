@@ -2,6 +2,7 @@ var totalCorrect = 0;
 var count = 0;
 var weightScore = 0;
 
+
 // For Hotspots
 var selectedHotspot = null;
 
