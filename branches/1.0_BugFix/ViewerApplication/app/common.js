@@ -45,19 +45,17 @@ function showNextQuestion()
 	var nextCount = count + 1;
 	document.getElementById('questionNumber' + count).style.display = 'none';
 	if (document.getElementById('questionNumber' + nextCount))
-	{
+	{		
 		document.getElementById('questionNumber' + nextCount).style.display = 'block';
 	}
 	else
 	{
-		//var score = (totalCorrect/count) * 100;
-		
 		document.getElementById('grade').style.display = 'block';
-//		if (totalCorrect == 1)
-//		{
 		var status = '';
 		var minScore = getMinScore();
+
 		if(weightScore >= minScore ){
+
 			doSetValue("cmi.completion_status", "completed");
 			doSetValue("cmi.success_status", "passed");
 			status = "passed";
@@ -74,11 +72,6 @@ function showNextQuestion()
 			document.getElementById('grade').innerHTML = 'You have '+status+' the assessment. <br/>'+
 			'You answered ' + totalCorrect + ' question(s) correct out of ' + count + ' for a score of ' + weightScore + '%.<br/>'+
 			'This assessment required a ' + minScore + '% or greater to be passed. ';
-//		}
-//		else
-//		{
-//			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' questions correct out of ' + count + ' for a ' + weightScore + '%';
-//		}
 	}
 }
 
