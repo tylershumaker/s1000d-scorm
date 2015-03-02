@@ -5,6 +5,7 @@
             <xsl:value-of select="./descr"/>
         </h5>
 	</xsl:template>
+	
     <xsl:template match="isolationStep">
         <xsl:variable name="stepCounter">
              <xsl:value-of select="count(preceding::isolationStep)+1"/>
@@ -12,14 +13,20 @@
         <xsl:variable name="step_id" select="./@id"/>
         <xsl:variable name="yesRefId" select="./isolationStepAnswer/yesNoAnswer/yesAnswer/@nextActionRefId"/>
         <xsl:variable name="noRefId" select="./isolationStepAnswer/yesNoAnswer/noAnswer/@nextActionRefId"/>
+<!--  <p>SET_StepCounter: <xsl:value-of select="$stepCounter" /></p> 
+<p>SET_step_id: <xsl:value-of select="$step_id" /></p>
+<p>SET-yesRefId: <xsl:value-of select="$yesRefId" /></p>
+<p>SET-noRefId: <xsl:value-of select="$noRefId" /> </p>-->        
         <xsl:choose>
             <xsl:when test="$stepCounter = 1">
                 <div id="{$step_id}" style="display: block;">
                     Step <xsl:value-of select="$stepCounter" />
                     <xsl:text> </xsl:text>
                     <xsl:for-each select="./action">
+<!-- <p>SET-found a action child element</p>-->
                         <xsl:choose>
                             <xsl:when test="./internalRef">
+<!-- <p>SET-found a internalRef child element</p>-->
                                 <xsl:apply-templates />
                             </xsl:when>
                             <xsl:otherwise>
@@ -106,7 +113,7 @@
               <xsl:choose>
                  <!-- If first <proceduralStep>, stepCounter will = 1, display: block -->
                  <xsl:when test="$stepCounter = 1">
-                    <div id="{$step_id}" style="display: block;">
+                    <div id="{$step_id}" style="display: block;">	
                        Step <xsl:value-of select="$stepCounter" />
                        <xsl:text> </xsl:text>
                        <xsl:apply-templates /> 
