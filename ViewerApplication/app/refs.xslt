@@ -579,6 +579,20 @@
          -->
     </xsl:template>   
     
+    <!-- Phase 3 - Issue 45  -->
+    <!-- Support Equipment references = irtt05 -->
+    <xsl:template match="internalRef[@internalRefTargetType='irtt05']">
+        <xsl:variable name="intrefid" select="@internalRefId"/>
+    
+        <xsl:variable name="identifiedSupEquip" select="//supportEquipDescr[@id=$intrefid]"/>
+        
+        <!-- Retrieve the table title to be used in the output -->
+        <xsl:variable name="suppEquipName"  select="$identifiedSupEquip/name" />
+        
+        <xsl:value-of select="$suppEquipName"/>
+      
+    </xsl:template>   
+    
     <!--  Step references = rtt08 -->
      <xsl:template match="internalRef[@internalRefTargetType='irtt08']">
         <xsl:variable name="intrefid" select="@internalRefId"/>
