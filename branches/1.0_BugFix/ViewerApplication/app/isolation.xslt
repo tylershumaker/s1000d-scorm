@@ -104,11 +104,16 @@
               <xsl:variable name="stepCounter" select="count(preceding-sibling::proceduralStep)+1" />
               
               <!-- Select the current step_id -->
-              <xsl:variable name="step_id" select="./@id" />
+              <!-- <xsl:variable name="step_id" select="./@id" />-->
+              <xsl:variable name="step_id">
+                 <xsl:value-of select="@id"></xsl:value-of>
+              </xsl:variable>
               
               <!-- Since there is a child <proceduralStep> element, must get the child's id for the next reference id -->              
-              <xsl:variable name="nextRefId" select="child::proceduralStep/@id" /> 
-         
+              <!--  <xsl:variable name="nextRefId" select="child::proceduralStep/@id" />--> 
+              <xsl:variable name="nextRefId">
+                 <xsl:value-of select="child::proceduralStep[1]/@id"/>
+              </xsl:variable>
               <!-- For output (block vs. none), need to determine if this is the first <proceduralStep> -->
               <xsl:choose>
                  <!-- If first <proceduralStep>, stepCounter will = 1, display: block -->
@@ -147,11 +152,17 @@
               <!-- Count the number of preceding <proceduralStep> elements  -->
               <xsl:variable name="stepCounter" select="count(preceding-sibling::proceduralStep)+1"/> 
               
+              <xsl:variable name="step_id">
+                 <xsl:value-of select="@id"></xsl:value-of>
+              </xsl:variable>
               <!-- Get the current <proceduralStep> element's id  -->                     
-              <xsl:variable name="step_id" select="./@id"/>
+              <!-- <xsl:variable name="step_id" select="./@id"/>-->
               
               <!-- Since the current <proceduralStep> does not have any children, get the following <proceduralStep> sibling id -->
-              <xsl:variable name="nextRefId" select="following-sibling::proceduralStep/@id"/>
+              <!-- <xsl:variable name="nextRefId" select="following-sibling::proceduralStep[1]/@id"/>-->
+              <xsl:variable name="nextRefId">
+                 <xsl:value-of select="following-sibling::proceduralStep[1]/@id"/>
+              </xsl:variable>
               <xsl:choose>
                  <!-- Must check to see if the $nextRefId is empty (end of a nested child list or end of main proceduralStep list  -->
                  <xsl:when test="$nextRefId !=''">
@@ -172,7 +183,7 @@
                                 <div id="{$step_id}" style="display: none;">
                                    Step <xsl:value-of select="$finalCount" />
                                    <xsl:text> </xsl:text>
-                                   <xsl:apply-templates select ="para | note | table" />
+                                   <xsl:apply-templates select ="para | note | table | figure" />
                                    <br/>
                                 
                                    <div>
@@ -185,7 +196,7 @@
                                 <div id="{$step_id}" style="display: block;">
                                    Step <xsl:value-of select="$stepCounter" />
                                    <xsl:text> </xsl:text>
-                                   <xsl:apply-templates select ="para | note | table" />
+                                   <xsl:apply-templates select ="para | note | table | figure" />
                       
                                    <br/>
                              
@@ -209,7 +220,7 @@
                                 <div id="{$step_id}" style="display: none;">
                                    Step <xsl:value-of select="$finalCount" />
                                    <xsl:text> </xsl:text>
-                                   <xsl:apply-templates select ="para | note | table" />
+                                   <xsl:apply-templates select ="para | note | table | figure" />
                                    <br/>
                                    <div>
                                       <a href="#{$nextRefId}" onclick="show_hide_div('{$step_id}','{$nextRefId}')">Next</a><br/>
@@ -220,7 +231,7 @@
                                 <div id="{$step_id}" style="display: none;">
                                    Step <xsl:value-of select="$stepCounter" />
                                    <xsl:text> </xsl:text>
-                                   <xsl:apply-templates select ="para | note | table" />
+                                   <xsl:apply-templates select ="para | note | table | figure" />
                                    <br/>
                                    <div>
                                       <a href="#{$nextRefId}" onclick="show_hide_div('{$step_id}','{$nextRefId}')">Next</a><br/>
@@ -250,7 +261,7 @@
                           <div id="{$step_id}" style="display: none;">
                              Step <xsl:value-of select="$finalCount" />
                              <xsl:text> </xsl:text>
-                             <xsl:apply-templates select ="para | note | table" />
+                             <xsl:apply-templates select ="para | note | table | figure" />
                              <br/>
                              <div>
                                 <a href="#{$nextElementNode}" onclick="show_hide_div('{$step_id}','{$nextElementNode}')">Next</a><br/>
@@ -261,7 +272,7 @@
                           <div id="{$step_id}" style="display: none;">
                              Step <xsl:value-of select="$stepCounter" />
                              <xsl:text> </xsl:text>
-                             <xsl:apply-templates select ="para | note | table" />
+                             <xsl:apply-templates select ="para | note | table | figure" />
                              <br/>
                           </div>
                        </xsl:otherwise>
