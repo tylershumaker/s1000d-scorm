@@ -296,7 +296,21 @@
 	<xsl:template match="supportEquipDescr">
 		<tr>
 			<td>
-				<xsl:value-of select="./name" />
+			<!-- Added to choose betwee the name element or the shortName element -->
+			   <xsl:choose>
+                  <xsl:when test="./name">
+               
+                     <xsl:variable name="suppEquipName"  select="./name" />
+       
+                     <xsl:value-of select="$suppEquipName"/>   
+                  </xsl:when>
+                  <xsl:otherwise>
+              
+                     <xsl:variable name="suppEquipName"  select="./shortName" />
+       
+                     <xsl:value-of select="$suppEquipName"/>   
+                  </xsl:otherwise>
+               </xsl:choose>
 			</td>
 			<td>
 				<xsl:value-of select="./identNumber/manufacturerCode" />
@@ -711,7 +725,7 @@
       <!-- uncommented  -->
                  <xsl:choose>   
                    <xsl:when test="//warning[@id=$warnRef]/warningAndCautionPara/dmRef">
-                       <apply-templates select="dmRef"/>
+                       <xsl:apply-templates />
                        <xsl:variable name="foo"><xsl:text>foo</xsl:text></xsl:variable>
                      
                        <xsl:variable name="warningtext1">
