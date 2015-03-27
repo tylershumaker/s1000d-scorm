@@ -4,7 +4,10 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:variable name="empty_string"/>
-<!-- references -->
+
+<!-- ************************************************************************** -->
+<!-- ***  Template for <refs>                                                   -->         
+<!-- ************************************************************************** -->
 	<xsl:template match="refs">
 		<xsl:if test="parent::content|parent::deftask">
 			<h4 class="decreaseTopBottom">
@@ -28,6 +31,9 @@
 		</xsl:if>
 	</xsl:template>
 
+<!-- ************************************************************************** -->
+<!-- ***  Template for <reftp>                                                   -->         
+<!-- ************************************************************************** -->
 	<xsl:template match="reftp">
 		<xsl:choose>
 			<xsl:when test="ancestor::refs[parent::content]">
@@ -39,6 +45,9 @@
 		</xsl:choose>
 	</xsl:template>
 
+<!-- ************************************************************************** -->
+<!-- ***  Template for <refs>                                                   -->         
+<!-- ************************************************************************** -->
 	<xsl:template match="refs[norefs]">
 		<!--suppress-->
 	</xsl:template>
@@ -49,23 +58,26 @@
 		-->
 	</xsl:template>
 
-<!--
-	<xsl:template match="reqdm">
--->
+<!-- ************************************************************************** -->
+<!-- ***  Template for <refdm> sub-element of <refcondm>                        -->         
+<!-- ************************************************************************** -->
 	<xsl:template match="reqcondm/refdm">
-		<xsl:variable name="reqdm"><xsl:apply-templates mode="ref"/></xsl:variable>
-		<td>
-			<a>	
-				<xsl:attribute name="id"><xsl:number format="1" value="count(preceding::xref|preceding::refdm|preceding::reqdm) + 1"/></xsl:attribute>
-				<xsl:attribute name="href">
-					javascript:parent.frames[0].goToLink('<xsl:value-of select="document($urn_resource_file)//target[parent::urn[contains(@name, $reqdm)]]"/>', '<xsl:number format="1" value="count(preceding::xref|preceding::refdm|preceding::reqdm) + 1"/>')
-				</xsl:attribute>
-				<xsl:value-of select="$reqdm"/>
-		</a>
-		</td>
+	   <xsl:variable name="reqdm"><xsl:apply-templates mode="ref"/></xsl:variable>
+	   <td>
+		  <a>	
+             <xsl:attribute name="id"><xsl:number format="1" value="count(preceding::xref|preceding::refdm|preceding::reqdm) + 1"/></xsl:attribute>
+		     <xsl:attribute name="href">
+			   javascript:parent.frames[0].goToLink('<xsl:value-of select="document($urn_resource_file)//target[parent::urn[contains(@name, $reqdm)]]"/>', '<xsl:number format="1" value="count(preceding::xref|preceding::refdm|preceding::reqdm) + 1"/>')
+			 </xsl:attribute>
+			 <xsl:value-of select="$reqdm"/>
+		  </a>
+	   </td>
 	</xsl:template>
 
 <!-- Added 050717/SE -->
+<!-- ************************************************************************** -->
+<!-- ***  Template for <reftp> sub-element of <refcontp>                        -->         
+<!-- ************************************************************************** -->
 	<xsl:template match="reqcontp/reftp">
 		<td>
 			<a>
@@ -74,10 +86,16 @@
 		</td>
 	</xsl:template>
 
+<!-- ************************************************************************** -->
+<!-- ***  Template for <refdms>                                                 -->         
+<!-- ************************************************************************** -->
 	<xsl:template match="refdms">
 		<xsl:apply-templates/>
 	</xsl:template>
 
+<!-- ************************************************************************** -->
+<!-- ***  Template for <refdm>                                                  -->         
+<!-- ************************************************************************** -->
 	<xsl:template match="refdm">
 		<xsl:variable name="refname">
 			<xsl:apply-templates mode="ref"/>
@@ -201,7 +219,9 @@
       <xsl:value-of select="document('urn_resource_map.xml')//target[parent::urn[@name=$xlinkurn]]"/>
     </xsl:variable>    
     
-    <xsl:variable name="temp_id" select="@id"/>
+    <xsl:variable name="temp_id">
+       <xsl:value-of select="@id"/>
+    </xsl:variable>
     
     <xsl:variable name="refassycode" select="./dmRefIdent/dmCode/@assyCode" />
     <xsl:variable name="refdisassycode" select="./dmRefIdent/dmCode/@disassyCode" />
@@ -586,11 +606,21 @@
     
         <xsl:variable name="identifiedSupEquip" select="//supportEquipDescr[@id=$intrefid]"/>
         
-        <!-- Retrieve the table title to be used in the output -->
-        <xsl:variable name="suppEquipName"  select="$identifiedSupEquip/name" />
-        
-        <xsl:value-of select="$suppEquipName"/>
-      
+        <!-- Added to choose betwen the name subelement or the shortName -->
+        <xsl:choose>
+           <xsl:when test="$identifiedSupEquip/name">
+               
+               <xsl:variable name="suppEquipName"  select="$identifiedSupEquip/name" />
+       
+               <xsl:value-of select="$suppEquipName"/>   
+           </xsl:when>
+           <xsl:otherwise>
+              
+              <xsl:variable name="suppEquipName"  select="$identifiedSupEquip/shortName" />
+       
+              <xsl:value-of select="$suppEquipName"/>   
+           </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>   
     
     <!--  Step references = rtt08 -->
@@ -682,8 +712,12 @@
 		</a>
 	</xsl:template> -->
     
-    <xsl:template match="externalPubRefIdent">
-        <xsl:variable name="code" select="./externalPubCode"/>
+     <xsl:template match="externalPubRefIdent">         
+        <!--   <xsl:variable name="code" select="./externalPubCode/."/>-->
+        <xsl:variable name="code">
+	      <xsl:value-of select="externalPubCode" />
+	    </xsl:variable>
+        
         <xsl:variable name ="urn_prefix">
             <xsl:value-of select="'URN:S1000D:'" />
         </xsl:variable>
@@ -694,12 +728,15 @@
           <xsl:value-of select="document('./urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" />
         </xsl:variable>  
        
-
-             <a href="javascript:void(window.open('{$theFileName}'))">
-                <xsl:value-of select="$theFileName" />
-            </a> 
-    
-              
+        <!-- Grab the External Publication Title value -->
+        <xsl:variable name="title">
+           <xsl:value-of select="externalPubTitle" />
+        </xsl:variable>
+        
+        <!--  Bulid the link to the External Publication using the Title as the link -->
+        <a href="javascript:void(window.open('{$theFileName}'))">
+           <xsl:value-of select="$title" />
+        </a>                 
     </xsl:template>
 
 </xsl:stylesheet>
