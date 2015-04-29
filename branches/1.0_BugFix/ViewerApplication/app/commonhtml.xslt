@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0"  xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   
+   
+    <!-- *************************************************************** -->
+    <!-- Template for prelimnaryRqmts element                            -->
+    <!-- *************************************************************** -->
 	<xsl:template match="preliminaryRqmts">
 		<h4>
 			Preliminary Requirements
@@ -8,6 +13,9 @@
 		<xsl:apply-templates/>
 	</xsl:template>
 
+    <!-- *************************************************************** -->
+    <!-- Template for reqCondGroup element                               -->
+    <!-- *************************************************************** -->
 	<xsl:template match="reqCondGroup">
 		<xsl:choose>
 			<xsl:when test="./noConds">
@@ -50,7 +58,9 @@
 		</xsl:choose>		
 	</xsl:template>
 
-	
+	<!-- *************************************************************** -->
+    <!-- Template for reqPersons element                                 -->
+    <!-- *************************************************************** -->
 	<xsl:template match="reqPersons">
 		<h5>Required Persons</h5>
 		<xsl:choose>
@@ -101,10 +111,16 @@
 		</xsl:choose>
 	</xsl:template>
 
+    <!-- *************************************************************** -->
+    <!-- Template for applic element                                     -->
+    <!-- *************************************************************** -->
 	<xsl:template match="applic">
 		<xsl:call-template name="applic"/>
 	</xsl:template>
 
+    <!-- *************************************************************** -->
+    <!-- Template for applic[ancestor::content] element                  -->
+    <!-- *************************************************************** -->
 	<xsl:template match="applic[ancestor::content]">
 		<xsl:choose>
 			<xsl:when test="not (ancestor::step1 or ancestor::schedule or parent::deftask or parent::wire)">
@@ -121,12 +137,18 @@
 		</xsl:choose>
 	</xsl:template>
 
+    <!-- *************************************************************** -->
+    <!-- Template for applic[ancestor::supplies] element                 -->
+    <!-- *************************************************************** -->
 	<xsl:template match="applic[ancestor::supplies]">
 		<td>
 			<xsl:call-template name="applic"/>
 		</td>
 	</xsl:template>
 
+    <!-- *************************************************************** -->
+    <!-- Template for applics                                            -->
+    <!-- *************************************************************** -->
 	<xsl:template match="applics">
 		<td>
 			<xsl:for-each select="applic">
@@ -134,7 +156,10 @@
 			</xsl:for-each>
 		</td>
 	</xsl:template>
-
+  
+    <!-- *************************************************************** -->
+    <!-- Template for applic                                             -->
+    <!-- *************************************************************** -->
 	<xsl:template name="applic">
 		<xsl:choose>
 			<xsl:when test="parent::status">
@@ -293,6 +318,14 @@
 		<xsl:apply-templates />
 	</xsl:template>
 
+    <!-- **********************************************************************************-->
+    <!-- <supportEquipmentDescr> template                                                  -->	
+    <!--                                       											   -->
+    <!-- 4/9/2015:  Added the choosing of the <name> element if available, if not the      -->
+    <!--            the template will use the <shortName> element                          -->
+    <!--            Added support for displaying the <manufacturerCode> element if         -->
+    <!--            available and if not the <partNumber> element                          -->
+    <!-- **********************************************************************************-->
 	<xsl:template match="supportEquipDescr">
 		<tr>
 			<td>
@@ -313,7 +346,18 @@
                </xsl:choose>
 			</td>
 			<td>
-				<xsl:value-of select="./identNumber/manufacturerCode" />
+			   <xsl:variable name="manCode">
+                  <xsl:value-of select="./identNumber/manufacturerCode"></xsl:value-of>
+               </xsl:variable>
+			   
+			   <xsl:choose>
+			      <xsl:when test="$manCode = $empty_string">
+			         <xsl:value-of select="./identNumber/partAndSerialNumber/partNumber" />
+			      </xsl:when>
+			      <xsl:otherwise>
+			         <xsl:value-of select="./identNumber/manufacturerCode" />  
+			      </xsl:otherwise>
+			   </xsl:choose>		
 			</td>
 			<td>
 				<xsl:value-of select="./reqQuantity" /> : <xsl:value-of select="./reqQuantity/@unitOfMeasure" />
@@ -330,7 +374,6 @@
 				<h5>
 					<xsl:value-of select="$consumables_text"/>
 				</h5>
-			
 				<table border="0" width="100%" class="prelreq_table" cellspacing="0" cellpadding="3">
 					<tbody>
 						<tr>
@@ -603,11 +646,9 @@
     </xsl:choose>
     -->
 	</xsl:template>
-  <!--   
-    <xsl:template match="warningAndCautionPara">
-       <xsl:apply-templates/>
-    </xsl:template>
-    -->
+  
+    
+  
     <xsl:template match="acronym">
 	<!--  <p>FOUND AN Acronym</p>-->
 	   <xsl:variable name="acronym_def">
@@ -624,7 +665,8 @@
 	</xsl:template>
 	
 	<xsl:template match="listItem/para">
-		<xsl:apply-templates/>
+		<xsl:apply-templates/> 
+		<br></br>
 	</xsl:template>
 
     <xsl:template match="levelledPara/title">
@@ -667,10 +709,10 @@
             <xsl:variable name="counter">
                  <xsl:value-of select="count(parent::node()/preceding-sibling::crewDrillStep)+1"/>
             </xsl:variable>
-            <h3>
+            <h4>
                 <xsl:value-of select="$counter"/>.
                 <xsl:apply-templates/>
-            </h3>        
+            </h4>        
 
     </xsl:template>
     
@@ -699,96 +741,99 @@
         </ul>    
     </xsl:template>
 
-    <!-- 9/9/14 issue 33 added to handle warningRefs and cautionRefs -->
+    <!-- ******************************************************************************************************************* -->
+    <!-- Template to process descrCrew, description, levelledPara, levellPara/crewDrill and                                  -->
+    <!--    levelledPara/crewDrill/crewDrillStep                                                                             -->
+    <!--                                                                                                                     -->
+    <!-- 9/9/14 issue 33 added to handle warningRefs and cautionRefs                                                         -->
+    <!-- 4/6/15 issue 42 added support for processing warningRefs where the warning had more than just text (other elements) -->
+    <!-- ******************************************************************************************************************* -->
     <xsl:template match="descrCrew | description  | levelledPara | levelledPara/crewDrill | levelledPara/crewDrill/crewDrillStep">
+        
+        <!-- Assign the para_id local variable the value of the id attribute -->
         <xsl:variable name="para_id">
             <xsl:value-of select="./@id"/>
         </xsl:variable>
+        
+        <!-- Assign the warnRef local variable the value of the warningRefs attribute -->
         <xsl:variable name="warnRef">
             <xsl:value-of select="./@warningRefs"/>
         </xsl:variable>
+        
+        <!-- Assign the cautionRef local variable the value of the cautionRefs attribute -->
         <xsl:variable name="cautionRef">
             <xsl:value-of select="./@cautionRefs"></xsl:value-of>
         </xsl:variable>
+        
         <xsl:choose>
+            <!-- If the para_id local variable is empty, just apply-templates -->
             <xsl:when test="para_id=''">
                 <xsl:apply-templates />
             </xsl:when>
-<!--  TODO - start here looking into dmref in caution issue -->
-            
+   
+            <!-- If the is a warning reference, process the warning -->
             <xsl:when test="not($warnRef ='')">
-           <!--    <xsl:call-template name="warningAndCautionPara">
-                <xsl:with-param name="para_id" select="$para_id"></xsl:with-param>
-             </xsl:call-template>-->
-            
+               <div id="{$para_id}">
+                  <xsl:apply-templates />
                
-      <!-- uncommented  -->
-                 <xsl:choose>   
-                   <xsl:when test="//warning[@id=$warnRef]/warningAndCautionPara/dmRef">
-                       <xsl:apply-templates />
-                       <xsl:variable name="foo"><xsl:text>foo</xsl:text></xsl:variable>
-                     
-                       <xsl:variable name="warningtext1">
-                           <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara" />
-                       </xsl:variable>                  
-                <xsl:variable name="warningtext" select="concat($warningtext1,$foo)" />
-<p>UPDATE WARN: <xsl:value-of select="$warningtext" /></p>                
-                
-                <xsl:variable name="type">warning</xsl:variable>                  
-                <div id="{$para_id}">
-                    <xsl:call-template name="createAttention">
-                        <xsl:with-param name="text" select="$warningtext"/>
-                        <xsl:with-param name="type" select="$type"/>
-                    </xsl:call-template>
-                  
-                </div>
-                
-                   </xsl:when>
-                   <xsl:otherwise>
-                    <xsl:variable name="warningtext">
-                   <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"> </xsl:value-of>
-                </xsl:variable>                  
-                <xsl:variable name="type">warning</xsl:variable>                  
-                <div id="{$para_id}">
-                    <xsl:call-template name="createAttention">
-                        <xsl:with-param name="text" select="$warningtext"/>
-                        <xsl:with-param name="type" select="$type"/>
-                    </xsl:call-template>
-                    
-                </div>   
-                   </xsl:otherwise>
-                </xsl:choose>
-             <!-- uncommented -->
-               
-                  <!--  
-                <xsl:variable name="warningtext">
-                   <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"> </xsl:value-of>
-                </xsl:variable>                  
-                <xsl:variable name="type">warning</xsl:variable> 
-     
-                 
-                <div id="{$para_id}">
-                    <xsl:call-template name="createAttention">
-                        <xsl:with-param name="text" select="$warningtext"/>
-                        <xsl:with-param name="type" select="$type"/>
-                    </xsl:call-template>
-                </div>   
-     -->    
-            
-            
+                  <!-- Build the warning output -->
+                  <xsl:variable name="borderClass">redBorder</xsl:variable>   
+		          <xsl:variable name="color">redFont</xsl:variable>
+		          <xsl:variable name="title">WARNING</xsl:variable>
+			      <table width="100%" cellspacing="0" class="{$borderClass}">
+			         <tr>
+				        <td align="center">
+					       <font class="{$color}">
+					          <strong>
+						         <xsl:value-of select="$title"/>
+					          </strong>
+					       </font>
+				        </td>
+			         </tr>
+			         <tr>
+			            <td> 
+			               <font class="indentMarginLeft">
+			                  <strong>
+			                      <xsl:apply-templates select="//warning[@id=$warnRef]/warningAndCautionPara" />  
+			                  </strong>
+			               </font>
+			            </td>
+			         </tr>
+		          </table>
+		       </div>  
             </xsl:when>
+            
+            <!-- If the cautionRef local variable is not empty, process the cautions -->
             <xsl:when test="not($cautionRef ='')">
-                <xsl:variable name="cautiontext">
-                    <xsl:value-of select="//caution[@id=$cautionRef]/warningAndCautionPara"></xsl:value-of>
-                </xsl:variable>                 
-                <xsl:variable name="type">caution</xsl:variable>                 
-                 <div id="{$para_id}">
-                    <xsl:call-template name="createAttention">
-                        <xsl:with-param name="text" select="$cautiontext"/>
-                        <xsl:with-param name="type" select="$type"/>
-                    </xsl:call-template>                     
-                    <!-- <xsl:apply-templates /> -->
-                </div>               
+            
+               <div id="{$para_id}">
+                  <xsl:apply-templates />
+               
+                  <!-- Build the warning output -->
+                  <xsl:variable name="borderClass">yellowBorder</xsl:variable>   
+		          <xsl:variable name="color">blackFont</xsl:variable>
+		          <xsl:variable name="title">CAUTION</xsl:variable>
+			      <table width="100%" cellspacing="0" class="{$borderClass}">
+			         <tr>
+				        <td align="center">
+					       <font class="{$color}">
+					          <strong>
+						         <xsl:value-of select="$title"/>
+					          </strong>
+					       </font>
+				        </td>
+			         </tr>
+			         <tr>
+			            <td> 
+			               <font class="indentMarginLeft">
+			                  <strong>
+			                     <xsl:apply-templates select="//caution[@id=$cautionRef]/warningAndCautionPara" />
+			                  </strong>
+			               </font>
+			            </td>
+			         </tr>
+		          </table>
+		       </div>         
             </xsl:when>
             <xsl:otherwise>                
                 <div id="{$para_id}">
@@ -797,23 +842,22 @@
             </xsl:otherwise>
         </xsl:choose>      
     </xsl:template>
-
-    <!--  TEMP  -->
-    <xsl:template name="warningAndCautionPara">
-        <xsl:param name="para_id"/>
-<p>Warning and Caution encountered</p>
-
-              
-        
+ 
+ 
+    <!-- ****************************************************************** -->
+    <!-- Template for titles for levelledPara/crewDrill                     -->
+    <!-- ****************************************************************** -->
+    <xsl:template match="levelledPara/crewDrill/title" >
+       <h3><xsl:value-of select="."></xsl:value-of></h3>
     </xsl:template>
-	
+    
 	<xsl:template match="title">
         <xsl:variable name="counter">
              <xsl:value-of select="count(preceding::internalRef[@internalRefTargetType='irtt01'])"/>
         </xsl:variable>
 		<xsl:choose>
 		    <!--  removed for phase 2 changes.  Moved elsewhere to determine figure ids and counts -->
-			<!--  <xsl:when test="parent::figure">
+			<!--  <xsl:when test="parent::figure">/
                 <xsl:variable name="fig_id">
                     <xsl:value-of select="../@id"/>
                 </xsl:variable>
@@ -847,7 +891,26 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-	<!-- call templates -->
+	
+	<xsl:template match="subscrpt">
+		<sub><xsl:apply-templates/></sub>
+	</xsl:template>
+
+	<xsl:template match="supscrpt">
+		<sup><xsl:apply-templates/></sup>
+	</xsl:template>
+	
+	<xsl:template match="warningAndCautionPara">
+	   <p> <xsl:apply-templates /> </p>
+	</xsl:template> 
+	
+	<!-- ***************************************************************************************************************** -->
+	<!-- Call templates                                                                                                    -->
+	<!-- ***************************************************************************************************************** -->
+	
+	<!-- ************************************************************************ -->
+	<!-- part_table                                                               -->
+	<!-- ************************************************************************ -->
 	<xsl:template name="part_table">
 		<table border="0" width="100%" class="lineTopAndBottom" cellspacing="0" cellpadding="3">
 			<tr class="lineBottom">
@@ -897,18 +960,24 @@
 		<br/>
 	</xsl:template>
 
-<!-- Added support for remarks in supplies, spares and support equipment -->
+    <!-- ************************************************************************ -->
+	<!-- generalTblHeader                                                         -->
+	<!-- Added support for remarks in supplies, spares and support equipment      -->
+	<!-- ************************************************************************ -->
 	<xsl:template name="generalTblHeader">
 		<xsl:param name="label"/>
-		<th style='border-top:none;border-left:none;border-bottom:solid black 0.75pt;
-			border-right:none;'>
-			<xsl:value-of select="$label"/>
-			<xsl:if test="descendant::remarks">
-				<br/><xsl:value-of select="$remarks_text"/>
-</xsl:if>
-		</th>
+		   <th style='border-top:none;border-left:none;border-bottom:solid black 0.75pt;
+			   border-right:none;'>
+		      <xsl:value-of select="$label"/>
+			  <xsl:if test="descendant::remarks">
+			 	 <br/><xsl:value-of select="$remarks_text"/>
+              </xsl:if>
+		   </th>
 	</xsl:template>
 
+    <!-- ************************************************************************ -->
+	<!-- createNote                                                               -->
+	<!-- ************************************************************************ -->
 	<xsl:template name="createNote">
 		<p>
 			<table  width="100%"  class="note_line" >
@@ -918,14 +987,20 @@
 					</td>
 				</tr>
 				<tr>
-					<td><font class="indentMarginLeft"><xsl:apply-templates/></font>
+					<td>
+					   <font class="indentMarginLeft">
+					      <xsl:apply-templates/>
+					   </font>
 					</td>
 				</tr>
 			</table>
 		</p>
 	</xsl:template>
 
-    <!-- 9/8/14 updated to handle warnings and errors -->
+    <!-- ************************************************************************ -->
+	<!-- createAttention                                                          -->
+	<!-- 9/8/14 updated to handle warnings and errors                             -->
+	<!-- ************************************************************************ -->
 	<xsl:template name="createAttention">
         <xsl:param name="text"/>
         <xsl:param name="type"/>
@@ -959,27 +1034,9 @@
         <!-- this may have to be moved based on a warning or caution -->
         <xsl:apply-templates/>
 		<table width="100%" cellspacing="0" class="{$borderClass}">
-<!-- 			<xsl:attribute name="bordercolor">
-				<xsl:choose>
-					<xsl:when test="$color='red'">red</xsl:when>
-					<xsl:otherwise>black</xsl:otherwise>
-				</xsl:choose>
-			</xsl:attribute> -->
 			<tr>
 				<td align="center">
-<!-- 					<xsl:attribute name="style">
-						<xsl:choose>
-							<xsl:when test="$color='red'">background-color:red</xsl:when>
-							<xsl:otherwise>background-color:yellow</xsl:otherwise>
-						</xsl:choose>
-					</xsl:attribute> -->
 					<font class="{$color}"><strong>
-<!-- 						<xsl:attribute name="style">
-							<xsl:choose>
-									<xsl:when test="$color='red'">color:white</xsl:when>
-									<xsl:otherwise>color:black</xsl:otherwise>
-								</xsl:choose>
-						</xsl:attribute> -->
 						<xsl:value-of select="$title"/>
 					</strong></font>
 				</td>
@@ -988,14 +1045,10 @@
 		</table>
 	</xsl:template>
 
-	<xsl:template match="subscrpt">
-		<sub><xsl:apply-templates/></sub>
-	</xsl:template>
-
-	<xsl:template match="supscrpt">
-		<sup><xsl:apply-templates/></sup>
-	</xsl:template>
-
+	
+    <!-- ************************************************************************ -->
+	<!-- getUrnTarget                                                             -->
+	<!-- ************************************************************************ -->
 	<xsl:template name="getUrnTarget">
 		<xsl:param name="urn"/>
 		<xsl:param name="linkType"/>
@@ -1008,8 +1061,9 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-		
-
+		          
+	
+    
 </xsl:stylesheet>
 
   
