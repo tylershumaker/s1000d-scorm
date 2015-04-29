@@ -145,6 +145,9 @@
 		</xsl:choose>
 	</xsl:template>
 
+<!-- ************************************************************************** -->
+<!-- ***  Template for getDmTitle                                               -->         
+<!-- ************************************************************************** -->
 	<xsl:template name="getDmTitle">
 		<xsl:param name="dmFileName"/>
 		<xsl:choose>
@@ -160,6 +163,9 @@
 		</xsl:choose>
 	</xsl:template>
 
+<!-- ************************************************************************** -->
+<!-- ***  Template for <age> and <avee>                                         -->         
+<!-- ************************************************************************** -->
 	<xsl:template match="age|avee">
 		<xsl:apply-templates/>
 	</xsl:template>
@@ -209,7 +215,10 @@
 		</a>
 	</xsl:template>
 
-	<!--added 06/12/09 STW-->
+	
+<!-- ************************************************************************** -->
+<!-- ***  Template for <dmref>                                                  -->         
+<!-- ************************************************************************** -->
   <xsl:template name="dmref" match="dmRef">
   
     <xsl:variable name="actuateMode" select="@xlink:actuate"/>
@@ -239,51 +248,83 @@
 
 
     <!-- Phase 2 - Issue 22/40 -->
+    <!-- Create the concatenated DMC value for lookup in th dmListing.xml file.  -->
     <xsl:variable name="dmc_lookup">
-         <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+       <xsl:choose>
+          <xsl:when test="string-length($reflearncode) = 0 and string-length($reflearneventcode) = 0 ">
+             <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
                 $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
                 $refinfocode,$refinfocodevariant,'-',$refitemlocationcode)" />
+          </xsl:when>
+          
+          <xsl:otherwise>
+             <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+                $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
+                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearncode,$reflearneventcode)" />
+          </xsl:otherwise>
+       </xsl:choose>
+       
     </xsl:variable>
     
+    <!-- Create the ref_dmcode variable to hold the DM Code -->
     <xsl:variable name="ref_dmcode" >
-      <!-- Take the dmc and look it up to translate the dmc to techname/infoname -->  
+    
+      <!-- Take the $dmc_lookup variable and look it up to translate the dmc to its title -->  
       <xsl:variable name="ref_translatedname">
           <xsl:value-of select="document('./dmListing.xml')//dmtitle[parent::dmitem[@dmkey=$dmc_lookup]]" />
       </xsl:variable>  
-    
-   
+      
       <xsl:choose>
-      <!-- reflearncode and reflearneventcode are empty -->
-        <xsl:when test="string-length($reflearncode) = 0 and string-length($reflearneventcode) = 0">
-           <xsl:value-of select="$ref_translatedname"/>
-              <!--          <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
-                            $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
-                            $refinfocode,$refinfocodevariant,'-',$refitemlocationcode)" />-->
-        </xsl:when>
-        <!-- reflearncode is provided but reflearneventcode is empty -->
+         <!-- If the translated name is empty (DM was not in the dmListing.xml file) then use the dmc_lookup value -->
+         <xsl:when test="string-length($ref_translatedname) = 0">
+            <xsl:value-of select="$dmc_lookup"/>
+         </xsl:when>
+         <xsl:otherwise>
+            <!-- DM was found in the dmListing.xml file, so use the translated name value -->
+            <xsl:value-of select="$ref_translatedname"/>
+         </xsl:otherwise>
+      </xsl:choose>
+        
+    
+      <!--  ************************************************************************************************************** -->
+      <!--  Commenting out and keeping around for historical reasons.  Because the toolkit now uses a dm listing to look   -->
+      <!--  values up, this is no longer needed                                                                            -->
+      <!--  ************************************************************************************************************** -->
+<!--          <xsl:choose>                                                                                                   
+              // reflearncode and reflearneventcode are empty                                                           
+          <xsl:when test="string-length($reflearncode) = 0 and string-length($reflearneventcode) = 0">                 
+             <xsl:value-of select="$ref_translatedname"/>                                                              
+                        <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',                                       
+                            $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',                     
+                            $refdisassycode,$refdisassycodevariant,'-',                                                
+                            $refinfocode,$refinfocodevariant,'-',$refitemlocationcode)" />                             
+        </xsl:when>                                                                         
+        // reflearncode is provided but reflearneventcode is empty 
         <xsl:when test="string-length($reflearncode) > 0 and string-length($reflearneventcode) = 0">
           <xsl:value-of select="$ref_translatedname"/> 
-          <!--  <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+            <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
                                 $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
-                                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearncode)" />-->
+                                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearncode)" />
         </xsl:when>
-        <!-- reflearncode is empty but reflearneventcode is provided -->
+        // reflearncode is empty but reflearneventcode is provided 
         <xsl:when test="string-length($reflearncode) = 0 and string-length($reflearneventcode) > 0">
           <xsl:value-of select="$ref_translatedname"/>
-          <!-- <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+          <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
                                 $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
-                                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearneventcode)" />-->
+                                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearneventcode)" />
         </xsl:when>
-        <!-- both a the reflearncode and reflearneventcode are provided -->
+        // both a the reflearncode and reflearneventcode are provided 
         <xsl:when test="string-length($reflearncode) > 0 and string-length($reflearneventcode) > 0"> 
           <xsl:value-of select="$ref_translatedname"/>
-          <!--  <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
+            <xsl:value-of select="concat($refmic,'-',$refsysdif,'-',
                                 $refsyscode,'-',$refsubsyscode,$refsubsubsyscode,'-',$refassycode,'-',$refdisassycode,$refdisassycodevariant,'-',
-                                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearncode,$reflearneventcode)" />-->
+                                $refinfocode,$refinfocodevariant,'-',$refitemlocationcode,'-',$reflearncode,$reflearneventcode)" />
         </xsl:when>
       </xsl:choose>
+-->
     </xsl:variable>  
 
+    <!-- Now we need to build the lookup string to find the actual DM reference in the URN resource mapping file -->
     <xsl:variable name ="urn_prefix">
         <xsl:value-of select="'URN:S1000D:DMC-'" />
     </xsl:variable>
@@ -298,8 +339,11 @@
      <!--ref_dmc[<xsl:value-of select="$ref_dmc"/>]-->
      
       <xsl:choose>
-        <xsl:when test="ancestor::learning or ancestor::crewDrillStep">
- <!--  NEW for Phase 2 Issue #26  if ancestor is learning or crewDrillStep, need to make sure referredFragment is included if used -->
+      
+        <!-- Added suuport for referredFragments:  Need to make sure referredFragment is included if used -->
+        <!-- Added support for when a dmRef is found within a <note> or <warningAndCautionPara> elements  -->
+        <xsl:when test="ancestor::learning | ancestor::crewDrillStep | ancestor::isolationStep | ancestor::trainingStep | ancestor::para | ancestor::warningAndCautionPara | ancestor::note">
+           <!-- 8/28/14 issue 26 no reference anchor -->
            <xsl:variable name="referredFragment">
               <xsl:value-of select="@referredFragment"></xsl:value-of>
            </xsl:variable>
@@ -313,43 +357,8 @@
                 <!-- 8/28/14 issue 26 no reference anchor -->
                 <xsl:with-param name="ref_frag" select="$referredFragment"></xsl:with-param>
            </xsl:call-template>          
-
-<!-- Phase 2 - Issue 26: Commented out because createXLink template takes care of building appropriate output -->          
- <!--          <xsl:variable name ="infoname">
-            <xsl:value-of select ="./dmRefAddressItems/dmTitle/infoName"></xsl:value-of>
-          </xsl:variable>
-          <xsl:variable name ="techname">
-            <xsl:value-of select ="./dmRefAddressItems/dmTitle/techName"></xsl:value-of>
-          </xsl:variable>
-          <p>ref_dmc:  <xsl:value-of select="$ref_dmc" /></p>
-          <a href="javascript:void(window.open('{$ref_dmc}'))">
-              <xsl:choose>
-                <xsl:when test="$infoname = $empty_string and $techname = $empty_string">
-                    <xsl:value-of select="$ref_dmcode" />
-                </xsl:when>
-                <xsl:when test="$infoname != $empty_string and $techname = $empty_string">
-                    <xsl:value-of select="$infoname"/>
-                </xsl:when>
-                <xsl:when test="$infoname = $empty_string and $techname != $empty_string">
-                    <xsl:value-of select="$techname"/>
-                </xsl:when>                
-                <xsl:otherwise>
-                    <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
-                </xsl:otherwise>                
-            </xsl:choose> 
-          </a>-->
-          
-<!-- ************************************************* -->
         </xsl:when>
-        
-        
-        <xsl:when test="ancestor::trainingStep or ancestor::para or ancestor::warningAndCautionPara">
-        
-            <a href="javascript:void(window.open('{$ref_dmc}'))">
-                <xsl:value-of select="$ref_dmcode" />
-            </a> 
-
-        </xsl:when>      
+      
         <xsl:when test="parent::refs">
           <xsl:variable name ="xlinkactuate">
             <xsl:value-of select ="@xlink:actuate"></xsl:value-of>
@@ -387,9 +396,6 @@
             </td>
           </tr>
         </xsl:when>
-        
-     
-        
       </xsl:choose>
 	</xsl:template>
     
@@ -408,17 +414,11 @@
         
         <!-- 8/28/14 issue 26 no reference anchor -->
         <xsl:param name="ref_frag"/>
-<!--  		
-		<p>AcuateMode: <xsl:value-of select ="$actuateMode" /></p>
-        <p>showMode: <xsl:value-of select ="$showMode" /></p>
-        <p>xlinkhref: <xsl:value-of select ="$xlinkhref" /></p>
-        <p>refDmc: <xsl:value-of select ="$refDmc" /></p>
-        <p>ref_dmcode: <xsl:value-of select ="$ref_dmcode" /></p>
-        <p>ref_frag: <xsl:value-of select ="$ref_frag" /></p>
--->  
+
 		<xsl:variable name ="infoname">
 			<xsl:value-of select ="./dmRefAddressItems/dmTitle/infoName"></xsl:value-of>
 		</xsl:variable>
+		
 		<xsl:variable name ="techname">
 			<xsl:value-of select ="./dmRefAddressItems/dmTitle/techName"></xsl:value-of>
 		</xsl:variable>
@@ -702,28 +702,30 @@
 		<xsl:value-of select="$link_text" />
 	</xsl:template>
 
-	<!-- Doesn't want to work -->
-	<!-- <xsl:template match="internalRef">
-		<xsl:variable name="intrefid" select="@internalRefId"/>
-		<xsl:variable name="href" select="@xlink:href"/>
-		<xsl:variable name="link_text" select="/root/descendant::node[@id=$intrefid]/title" />
-		<a href="{$href}">
-			<xsl:value-of select="$link_text" />
-		</a>
-	</xsl:template> -->
-    
+	<!-- *************************************************************************************** -->
+	<!-- <externalPubRefIdent> template                                                          -->
+	<!--                                                                                         -->
+	<!-- 4/9/2015:  Added a choice between using the <externalPubTitle> value for the displayed  -->
+	<!--            value if available, if not it will use the filename to display               -->
+	<!-- *************************************************************************************** -->    
      <xsl:template match="externalPubRefIdent">         
-        <!--   <xsl:variable name="code" select="./externalPubCode/."/>-->
+     
+        <!-- Grab the externalPubCode value -->
         <xsl:variable name="code">
 	      <xsl:value-of select="externalPubCode" />
 	    </xsl:variable>
         
+        <!-- Create a urn_prefix variable  -->
         <xsl:variable name ="urn_prefix">
             <xsl:value-of select="'URN:S1000D:'" />
         </xsl:variable>
+     
+        <!-- Create a urn_string variable which is the urn_prefix + the externalPubCode to be used for look up -->
         <xsl:variable name="urn_string">
             <xsl:value-of select="concat($urn_prefix, $code)" />
         </xsl:variable>       
+     
+        <!-- Create a theFileName variable to hold the value of the external publication file name (and extension) -->
         <xsl:variable name="theFileName">
           <xsl:value-of select="document('./urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" />
         </xsl:variable>  
@@ -733,12 +735,52 @@
            <xsl:value-of select="externalPubTitle" />
         </xsl:variable>
         
-        <!--  Bulid the link to the External Publication using the Title as the link -->
-        <a href="javascript:void(window.open('{$theFileName}'))">
-           <xsl:value-of select="$title" />
-        </a>                 
+        
+        <xsl:choose>
+           <xsl:when test="$theFileName = $empty_string">
+              <xsl:choose>
+                 <!-- Check to see if the <externalPubTitle> element is empty -->
+                 <xsl:when test="$title = $empty_string">
+                    <!-- <externalPubTitle> is empty, use the code to display -->
+                    <xsl:value-of select="$code" /> 
+                 </xsl:when>
+                 <!-- The <externalPubTitle> element has a value -->
+                 <xsl:otherwise>
+                    <xsl:value-of select="$title" />
+                 </xsl:otherwise>
+               </xsl:choose> 
+           </xsl:when>
+        
+           <xsl:otherwise>
+              <!--  Bulid the link to the External Publication using the Title as the link, if available, if not use theFileName variable-->
+              <a href="javascript:void(window.open('{$theFileName}'))">
+                 <xsl:choose>
+                    <!-- Check to see if the <externalPubTitle> element is empty -->
+                    <xsl:when test="$title = $empty_string">
+                       <!-- <externalPubTitle> is empty, use the code to display -->
+                       <xsl:value-of select="$code" /> 
+                     </xsl:when>
+                     <!-- The <externalPubTitle> element has a value -->
+                     <xsl:otherwise>
+                        <xsl:value-of select="$title" />
+                     </xsl:otherwise>
+                  </xsl:choose> 
+               </a>              
+           </xsl:otherwise>
+        </xsl:choose>
+           
     </xsl:template>
 
+
+    <!-- ***************************************************************************************-->
+	<!-- <circuitBreakerRef> template                                                           -->
+	<!--                                                                                        -->
+	<!-- 4/9/2015:  Added new template                                                          -->
+	<!-- ***************************************************************************************-->    
+     <xsl:template match="circuitBreakerRef">  
+        <xsl:value-of select="./name" />
+     </xsl:template>
+     
 </xsl:stylesheet>
 
   
