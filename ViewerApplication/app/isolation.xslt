@@ -21,6 +21,7 @@
             <xsl:when test="$stepCounter = 1">
                 <div id="{$step_id}" style="display: block;">
                     Step <xsl:value-of select="$stepCounter" />
+                    <br></br>
                     <xsl:text> </xsl:text>
                     <xsl:for-each select="./action">
 <!-- <p>SET-found a action child element</p>-->
@@ -30,7 +31,8 @@
                                 <xsl:apply-templates />
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="text()"/><br/>
+                      <!--            <xsl:value-of select="text()"/><br/>-->
+                                <xsl:apply-templates /><br/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:for-each>
@@ -48,6 +50,7 @@
                 <div id="{$step_id}" style="display: none;">
                     <xsl:if test="*">
                         Step <xsl:value-of select="$stepCounter" />
+                        <br></br>
                         <xsl:text> </xsl:text>
                         <xsl:for-each select="./action">
                             <xsl:choose>
@@ -55,7 +58,8 @@
                                     <xsl:apply-templates />
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <xsl:value-of select="text()"/><br/>
+                      <!--               <xsl:value-of select="text()"/><br/> -->
+                                    <xsl:apply-templates /><br/>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:for-each>
