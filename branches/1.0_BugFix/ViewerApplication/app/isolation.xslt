@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
+	
+	<!-- ********************************************************************************************************** -->
+	<!-- faultDescr template                                                                                        -->
+	<!-- ********************************************************************************************************** -->
 	<xsl:template match="faultDescr">
         <h5>
             <xsl:value-of select="./descr"/>
         </h5>
 	</xsl:template>
 	
+	<!-- ********************************************************************************************************** -->
+	<!-- isolationStep template                                                                                     -->
+	<!-- ********************************************************************************************************** -->
     <xsl:template match="isolationStep">
         <xsl:variable name="stepCounter">
              <xsl:value-of select="count(preceding::isolationStep)+1"/>
@@ -13,10 +20,7 @@
         <xsl:variable name="step_id" select="./@id"/>
         <xsl:variable name="yesRefId" select="./isolationStepAnswer/yesNoAnswer/yesAnswer/@nextActionRefId"/>
         <xsl:variable name="noRefId" select="./isolationStepAnswer/yesNoAnswer/noAnswer/@nextActionRefId"/>
-<!--  <p>SET_StepCounter: <xsl:value-of select="$stepCounter" /></p> 
-<p>SET_step_id: <xsl:value-of select="$step_id" /></p>
-<p>SET-yesRefId: <xsl:value-of select="$yesRefId" /></p>
-<p>SET-noRefId: <xsl:value-of select="$noRefId" /> </p>-->        
+    
         <xsl:choose>
             <xsl:when test="$stepCounter = 1">
                 <div id="{$step_id}" style="display: block;">
@@ -24,14 +28,11 @@
                     <br></br>
                     <xsl:text> </xsl:text>
                     <xsl:for-each select="./action">
-<!-- <p>SET-found a action child element</p>-->
                         <xsl:choose>
                             <xsl:when test="./internalRef">
-<!-- <p>SET-found a internalRef child element</p>-->
                                 <xsl:apply-templates />
                             </xsl:when>
                             <xsl:otherwise>
-                      <!--            <xsl:value-of select="text()"/><br/>-->
                                 <xsl:apply-templates /><br/>
                             </xsl:otherwise>
                         </xsl:choose>
@@ -58,7 +59,6 @@
                                     <xsl:apply-templates />
                                 </xsl:when>
                                 <xsl:otherwise>
-                      <!--               <xsl:value-of select="text()"/><br/> -->
                                     <xsl:apply-templates /><br/>
                                 </xsl:otherwise>
                             </xsl:choose>
@@ -77,6 +77,9 @@
         </xsl:choose>
      </xsl:template>
      
+    <!-- ********************************************************************************************************** -->
+	<!-- isolationProcedureEnd template                                                                             -->
+	<!-- ********************************************************************************************************** --> 
      <xsl:template match="isolationProcedureEnd">
          <xsl:variable name="stepCounter">
             <xsl:value-of select="count(preceding::isolationStep)+1"/>
@@ -98,12 +101,17 @@
          </div>
      </xsl:template>
      
+     <!-- ********************************************************************************************************* -->
+     <!-- proceduralStep template                                                                                   -->
+     <!--                                                                                                           -->
+     <!-- 5/7/2015:  Added support for references to warnings and cautions to the processing of procedural steps    -->
+     <!-- ********************************************************************************************************* -->
      <xsl:template match="proceduralStep">
-                
-        <!--  NEW CODE ADDED FOR Phase 2 - ISSUE 27 -->
+               
         <xsl:choose>
            <!--  See if there is a child <proceduralStep> for the <proceduralStep> element being processed -->
            <xsl:when test="child::proceduralStep">
+              
               <!-- Count the preceding siblings <proceduralStep> elements to determine the Step number -->
               <xsl:variable name="stepCounter" select="count(preceding-sibling::proceduralStep)+1" />
               
@@ -118,11 +126,80 @@
               <xsl:variable name="nextRefId">
                  <xsl:value-of select="child::proceduralStep[1]/@id"/>
               </xsl:variable>
+              
               <!-- For output (block vs. none), need to determine if this is the first <proceduralStep> -->
               <xsl:choose>
+                 
                  <!-- If first <proceduralStep>, stepCounter will = 1, display: block -->
                  <xsl:when test="$stepCounter = 1">
-                    <div id="{$step_id}" style="display: block;">	
+                    <div id="{$step_id}" style="display: block;">
+                    
+                       <!-- check to see if there is a warning and caution for the procedural step -->
+                       <!-- Assign the warnRef local variable the value of the warningRefs attribute -->
+                       <xsl:variable name="warnRef">
+                          <xsl:value-of select="./@warningRefs"/>
+                       </xsl:variable>
+        
+                       <!-- Assign the cautionRef local variable the value of the cautionRefs attribute -->
+                       <xsl:variable name="cautionRef">
+                          <xsl:value-of select="./@cautionRefs"></xsl:value-of>
+                       </xsl:variable>
+                                   
+                       <xsl:choose>
+                          <!-- If the is a warning reference, process the warning -->
+                          <xsl:when test="not($warnRef ='')">
+                          
+                             <!-- Build the warning output -->
+                             <xsl:variable name="borderClass">redBorder</xsl:variable>   
+		                     <xsl:variable name="color">redFont</xsl:variable>
+		                     <xsl:variable name="title">WARNING</xsl:variable>
+			                 <table width="100%" cellspacing="0" class="{$borderClass}">
+			                    <tr>
+				                   <td align="center">
+					                  <font class="{$color}">
+					                     <strong><xsl:value-of select="$title"/></strong>
+					                  </font>
+				                   </td>
+			                    </tr>
+			                    <tr>
+			                       <td> 
+			                          <font class="indentMarginLeft">
+			                             <strong><xsl:apply-templates select="//warning[@id=$warnRef]/warningAndCautionPara" /></strong>
+			                          </font>
+			                       </td>
+			                    </tr>
+		                        </table>
+		                        <br></br>
+                             </xsl:when>
+                             
+                             <!-- If the is a caution reference, process the warning -->
+                             <xsl:when test="not($cautionRef ='')">
+                                
+                                <!-- Build the warning output -->
+                                <xsl:variable name="borderClass">yellowBorder</xsl:variable>   
+		                        <xsl:variable name="color">blackFont</xsl:variable>
+		                        <xsl:variable name="title">CAUTION</xsl:variable>
+			                    <table width="100%" cellspacing="0" class="{$borderClass}">
+			                    <tr>
+				                   <td align="center">
+					                  <font class="{$color}">
+					                     <strong><xsl:value-of select="$title"/></strong>
+					                  </font>
+				                   </td>
+			                    </tr>
+			                    <tr>
+			                       <td> 
+			                          <font class="indentMarginLeft">
+			                             <strong><xsl:apply-templates select="//caution[@id=$cautionRef]/warningAndCautionPara" /></strong>
+			                          </font>
+			                       </td>
+			                    </tr>
+		                        </table>
+		                        <br></br>
+                             </xsl:when>
+                             <xsl:otherwise></xsl:otherwise>
+                          </xsl:choose>
+                                                                            
                        Step <xsl:value-of select="$stepCounter" />
                        <xsl:text> </xsl:text>
                        <xsl:apply-templates /> 
@@ -135,6 +212,72 @@
                  <xsl:otherwise>
                     <!-- otherwise, this is not the first <proceduralStep>, hide the <div> tag by setting display : none -->
                     <div id="{$step_id}" style="display: none;">
+                    <!-- check to see if there is a warning and caution for the procedural step -->
+                       <!-- Assign the warnRef local variable the value of the warningRefs attribute -->
+                       <xsl:variable name="warnRef">
+                          <xsl:value-of select="./@warningRefs"/>
+                       </xsl:variable>
+        
+                       <!-- Assign the cautionRef local variable the value of the cautionRefs attribute -->
+                       <xsl:variable name="cautionRef">
+                          <xsl:value-of select="./@cautionRefs"></xsl:value-of>
+                       </xsl:variable>
+                                   
+                       <xsl:choose>
+                          <!-- If the is a warning reference, process the warning -->
+                          <xsl:when test="not($warnRef ='')">
+                          
+                             <!-- Build the warning output -->
+                             <xsl:variable name="borderClass">redBorder</xsl:variable>   
+		                     <xsl:variable name="color">redFont</xsl:variable>
+		                     <xsl:variable name="title">WARNING</xsl:variable>
+			                 <table width="100%" cellspacing="0" class="{$borderClass}">
+			                    <tr>
+				                   <td align="center">
+					                  <font class="{$color}">
+					                     <strong><xsl:value-of select="$title"/></strong>
+					                  </font>
+				                   </td>
+			                    </tr>
+			                    <tr>
+			                       <td> 
+			                          <font class="indentMarginLeft">
+			                             <strong><xsl:apply-templates select="//warning[@id=$warnRef]/warningAndCautionPara" /></strong>
+			                          </font>
+			                       </td>
+			                    </tr>
+		                        </table>
+		                        <br></br>
+                             </xsl:when>
+                             
+                             <!-- If the is a caution reference, process the warning -->
+                             <xsl:when test="not($cautionRef ='')">
+                                
+                                <!-- Build the warning output -->
+                                <xsl:variable name="borderClass">yellowBorder</xsl:variable>   
+		                        <xsl:variable name="color">blackFont</xsl:variable>
+		                        <xsl:variable name="title">CAUTION</xsl:variable>
+			                    <table width="100%" cellspacing="0" class="{$borderClass}">
+			                    <tr>
+				                   <td align="center">
+					                  <font class="{$color}">
+					                     <strong><xsl:value-of select="$title"/></strong>
+					                  </font>
+				                   </td>
+			                    </tr>
+			                    <tr>
+			                       <td> 
+			                          <font class="indentMarginLeft">
+			                             <strong><xsl:apply-templates select="//caution[@id=$cautionRef]/warningAndCautionPara" /></strong>
+			                          </font>
+			                       </td>
+			                    </tr>
+		                        </table>
+		                        <br></br>
+                             </xsl:when>
+                             <xsl:otherwise></xsl:otherwise>
+                          </xsl:choose>
+                    
                        Step <xsl:value-of select="$stepCounter" />
                        <xsl:text> </xsl:text>
                        <xsl:apply-templates select ="para | note | table" />
@@ -198,6 +341,80 @@
                              </xsl:when>
                              <xsl:otherwise>                             
                                 <div id="{$step_id}" style="display: block;">
+                                   <!-- check to see if there is a warning and caution for the procedural step -->
+                       
+                                   <!-- Assign the warnRef local variable the value of the warningRefs attribute -->
+                                   <xsl:variable name="warnRef">
+                                      <xsl:value-of select="./@warningRefs"/>
+                                   </xsl:variable>
+        
+                                   <!-- Assign the cautionRef local variable the value of the cautionRefs attribute -->
+                                   <xsl:variable name="cautionRef">
+                                     <xsl:value-of select="./@cautionRefs"></xsl:value-of>
+                                   </xsl:variable>
+                                   
+                                   <xsl:choose>
+                                      <!-- If the is a warning reference, process the warning -->
+                                      <xsl:when test="not($warnRef ='')">
+                                            <!-- Build the warning output -->
+                                            <xsl:variable name="borderClass">redBorder</xsl:variable>   
+		                                    <xsl:variable name="color">redFont</xsl:variable>
+		                                    <xsl:variable name="title">WARNING</xsl:variable>
+			                                <table width="100%" cellspacing="0" class="{$borderClass}">
+			                                <tr>
+				                               <td align="center">
+					                              <font class="{$color}">
+					                                 <strong>
+						                                <xsl:value-of select="$title"/>
+					                                 </strong>
+					                              </font>
+				                               </td>
+			                                </tr>
+			                                <tr>
+			                                   <td> 
+			                                      <font class="indentMarginLeft">
+			                                         <strong>
+			                                            <xsl:apply-templates select="//warning[@id=$warnRef]/warningAndCautionPara" />  
+			                                         </strong>
+			                                      </font>
+			                                   </td>
+			                                </tr>
+		                                    </table>
+		                                    <br></br>
+                                      </xsl:when>
+                                      <!-- If the is a caution reference, process the warning -->
+                                      <xsl:when test="not($cautionRef ='')">
+                                         
+                                            <!-- Build the warning output -->
+                                            <xsl:variable name="borderClass">yellowBorder</xsl:variable>   
+		                                    <xsl:variable name="color">blackFont</xsl:variable>
+		                                    <xsl:variable name="title">CAUTION</xsl:variable>
+			                                <table width="100%" cellspacing="0" class="{$borderClass}">
+			                                <tr>
+				                               <td align="center">
+					                              <font class="{$color}">
+					                                 <strong>
+						                                <xsl:value-of select="$title"/>
+					                                 </strong>
+					                              </font>
+				                               </td>
+			                                </tr>
+			                                <tr>
+			                                   <td> 
+			                                      <font class="indentMarginLeft">
+			                                         <strong>
+			                                            <xsl:apply-templates select="//caution[@id=$cautionRef]/warningAndCautionPara" />  
+			                                         </strong>
+			                                      </font>
+			                                   </td>
+			                                </tr>
+		                                    </table>
+		                                  <br></br>
+                                      </xsl:when>
+                                      <xsl:otherwise></xsl:otherwise>
+                                      </xsl:choose>
+                                
+                                   
                                    Step <xsl:value-of select="$stepCounter" />
                                    <xsl:text> </xsl:text>
                                    <xsl:apply-templates select ="para | note | table | figure" />
@@ -233,6 +450,80 @@
                              </xsl:when>
                              <xsl:otherwise>
                                 <div id="{$step_id}" style="display: none;">
+                                <!-- check to see if there is a warning and caution for the procedural step -->
+                       
+                                   <!-- Assign the warnRef local variable the value of the warningRefs attribute -->
+                                   <xsl:variable name="warnRef">
+                                      <xsl:value-of select="./@warningRefs"/>
+                                   </xsl:variable>
+        
+                                   <!-- Assign the cautionRef local variable the value of the cautionRefs attribute -->
+                                   <xsl:variable name="cautionRef">
+                                     <xsl:value-of select="./@cautionRefs"></xsl:value-of>
+                                   </xsl:variable>
+                                   
+                                   <xsl:choose>
+                                      <!-- If the is a warning reference, process the warning -->
+                                      <xsl:when test="not($warnRef ='')">
+                                            <!-- Build the warning output -->
+                                            <xsl:variable name="borderClass">redBorder</xsl:variable>   
+		                                    <xsl:variable name="color">redFont</xsl:variable>
+		                                    <xsl:variable name="title">WARNING</xsl:variable>
+			                                <table width="100%" cellspacing="0" class="{$borderClass}">
+			                                <tr>
+				                               <td align="center">
+					                              <font class="{$color}">
+					                                 <strong>
+						                                <xsl:value-of select="$title"/>
+					                                 </strong>
+					                              </font>
+				                               </td>
+			                                </tr>
+			                                <tr>
+			                                   <td> 
+			                                      <font class="indentMarginLeft">
+			                                         <strong>
+			                                            <xsl:apply-templates select="//warning[@id=$warnRef]/warningAndCautionPara" />  
+			                                         </strong>
+			                                      </font>
+			                                   </td>
+			                                </tr>
+		                                    </table>
+		                                    <br></br>
+                                      </xsl:when>
+                                      <!-- If the is a caution reference, process the warning -->
+                                      <xsl:when test="not($cautionRef ='')">
+                                         
+               
+                                            <!-- Build the warning output -->
+                                            <xsl:variable name="borderClass">yellowBorder</xsl:variable>   
+		                                    <xsl:variable name="color">blackFont</xsl:variable>
+		                                    <xsl:variable name="title">CAUTION</xsl:variable>
+			                                <table width="100%" cellspacing="0" class="{$borderClass}">
+			                                <tr>
+				                               <td align="center">
+					                              <font class="{$color}">
+					                                 <strong>
+						                                <xsl:value-of select="$title"/>
+					                                 </strong>
+					                              </font>
+				                               </td>
+			                                </tr>
+			                                <tr>
+			                                   <td> 
+			                                      <font class="indentMarginLeft">
+			                                         <strong>
+			                                            <xsl:apply-templates select="//caution[@id=$cautionRef]/warningAndCautionPara" />  
+			                                         </strong>
+			                                      </font>
+			                                   </td>
+			                                </tr>
+		                                    </table>
+		                                    <br></br>
+                                      </xsl:when>
+                                      <xsl:otherwise></xsl:otherwise>
+                                      </xsl:choose>
+                                
                                    Step <xsl:value-of select="$stepCounter" />
                                    <xsl:text> </xsl:text>
                                    <xsl:apply-templates select ="para | note | table | figure" />
