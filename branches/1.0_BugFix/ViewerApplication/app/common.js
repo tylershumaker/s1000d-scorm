@@ -465,3 +465,13 @@ function changeCallout(id, coords, countTotal)
 	
 	document.getElementById('callout' + id).style.display = "block";
 }
+
+function doChoice(dmc)
+{
+	
+	doSetValue("adl.nav.request", "{target=ACT-DMC-"+dmc+"}choice");
+	doSetValue("cmi.exit", "normal");
+	var api = getAPIHandle();
+	api.Terminate("");
+		
+}
