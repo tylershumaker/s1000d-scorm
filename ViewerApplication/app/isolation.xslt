@@ -202,12 +202,19 @@
                                                                             
                        Step <xsl:value-of select="$stepCounter" />
                        <xsl:text> </xsl:text>
-                       <xsl:apply-templates /> 
+                       
+                       <!--  Selectively apply templates to elements within <proceduralStep> --> 
+                       <xsl:apply-templates select ="para" />
+                       
                        <br/>
                        <div>
                           <a href="#{$nextRefId}" onclick="show_hide_div('{$step_id}','{$nextRefId}')">Next</a><br/>
                        </div>
-                    </div>                
+                    </div>  
+                       
+                    <!-- Process the child <proceduralStep> -->
+                    <xsl:apply-templates select="proceduralStep" /> 
+                               
                  </xsl:when>
                  <xsl:otherwise>
                     <!-- otherwise, this is not the first <proceduralStep>, hide the <div> tag by setting display : none -->
@@ -564,8 +571,16 @@
                           </div>
                        </xsl:when>
                        <xsl:otherwise>
-                          <div id="{$step_id}" style="display: none;">
-                             Step <xsl:value-of select="$stepCounter" />
+                       
+                       <xsl:variable name="parentCount"> 
+                             <xsl:value-of select="count(parent::node()/preceding-sibling::proceduralStep)+1" />
+                          </xsl:variable>
+                          <xsl:variable name="tempCount" select="concat($parentCount,'.')" />   
+                          <xsl:variable name="finalCount" select="concat($tempCount,$stepCounter)" />
+                          
+                            <div id="{$step_id}" style="display: none;">
+                      
+                             Step <xsl:value-of select="$finalCount" />
                              <xsl:text> </xsl:text>
                              <xsl:apply-templates select ="para | note | table | figure" />
                              <br/>
