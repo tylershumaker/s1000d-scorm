@@ -70,60 +70,60 @@
 						sco type assets -->
 					<xsl:for-each select="scormContentPackage/content/scoEntry[@scoEntryType='scot01']">
 						<xsl:variable name="mic">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@modelIdentCode" />
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@modelIdentCode" />
 							<xsl:text>-</xsl:text>
 						</xsl:variable>
 		
 						<xsl:variable name="sysdif">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@systemDiffCode" />
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@systemDiffCode" />
 							<xsl:text>-</xsl:text>
 						</xsl:variable>
 		
 						<xsl:variable name="syscode">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@systemCode" />
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@systemCode" />
 							<xsl:text>-</xsl:text>
 						</xsl:variable>
 		
-						<xsl:variable name="subsyscode" select="scoEntryItem/dmRef/dmRefIdent/dmCode/@subSystemCode" />
+						<xsl:variable name="subsyscode" select="scoEntryContent/dmRef/dmRefIdent/dmCode/@subSystemCode" />
 						<xsl:variable name="subsubsyscode">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@subSubSystemCode" />
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@subSubSystemCode" />
 							<xsl:text>-</xsl:text>
 						</xsl:variable>
 		
 						<xsl:variable name="assycode">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@assyCode" />
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@assyCode" />
 							<xsl:text>-</xsl:text>
 						</xsl:variable>
 		
-						<xsl:variable name="disassycode" select="scoEntryItem/dmRef/dmRefIdent/dmCode/@disassyCode" />
+						<xsl:variable name="disassycode" select="scoEntryContent/dmRef/dmRefIdent/dmCode/@disassyCode" />
 						<xsl:variable name="disassycodevariant">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@disassyCodeVariant" />
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@disassyCodeVariant" />
 							<xsl:text>-</xsl:text>
 						</xsl:variable>
 		
-						<xsl:variable name="infocode" select="scoEntryItem/dmRef/dmRefIdent/dmCode/@infoCode" />
+						<xsl:variable name="infocode" select="scoEntryContent/dmRef/dmRefIdent/dmCode/@infoCode" />
 						<xsl:variable name="infocodevariant">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@infoCodeVariant" />
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@infoCodeVariant" />
 							<xsl:text>-</xsl:text>
 						</xsl:variable>
 		
 						<xsl:variable name="itemlocationcode">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@itemLocationCode" />
-							<xsl:if test='string-length(scoEntryItem/dmRef/dmRefIdent/dmCode/@learnEventCode)&gt;0'>
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@itemLocationCode" />
+							<xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/dmCode/@learnEventCode)&gt;0'>
 								<xsl:text>-</xsl:text>
 							</xsl:if>
 						</xsl:variable>
 		
 						<xsl:variable name="learncode">
-							<xsl:if test='string-length(scoEntryItem/dmRef/dmRefIdent/dmCode/@learnCode)&gt;0'>
-								<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@learnCode" />
+							<xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/dmCode/@learnCode)&gt;0'>
+								<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@learnCode" />
 							</xsl:if>
 						</xsl:variable>
 		
 						<xsl:variable name="learneventcode">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/dmCode/@learnEventCode" />
-							 <xsl:if test='string-length(scoEntryItem/dmRef/dmRefIdent/dmCode/@learnEventCode)&gt;0'>
-								<xsl:text>_</xsl:text>
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@learnEventCode" />
+							 <xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/dmCode/@learnEventCode)&gt;0'>
+								
 							</xsl:if>
 						</xsl:variable>
 		
@@ -142,15 +142,16 @@
 						</xsl:variable>-->
 		
 						<xsl:variable name="lang_code">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/language/@languageIsoCode" />
-							<xsl:if test='string-length(scoEntryItem/dmRef/dmRefIdent/language/@languageIsoCode)&gt;0'>
+							<xsl:text>_</xsl:text>
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/language/@languageIsoCode" />
+							<xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/language/@languageIsoCode)&gt;0'>
 								<xsl:text>-</xsl:text>
 							</xsl:if>
 						</xsl:variable>
 		
 						<xsl:variable name="lang_country">
-							<xsl:value-of select="scoEntryItem/dmRef/dmRefIdent/language/@countryIsoCode" />
-							<xsl:if test='string-length(scoEntryItem/dmRef/dmRefIdent/language/@countryIsoCode)&gt;0'>
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/language/@countryIsoCode" />
+							<xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/language/@countryIsoCode)&gt;0'>
 					<!-- 			<xsl:text>-</xsl:text> -->
 							</xsl:if>
 						</xsl:variable>
@@ -161,7 +162,7 @@
 							select="concat('DMC-',$mic,$sysdif,
 								  $syscode,$subsyscode,$subsubsyscode,$assycode,$disassycode,$disassycodevariant,
 								  $infocode,$infocodevariant,$itemlocationcode,$learncode,
-								  $learneventcode,$lang_code,$lang_country)" />
+								  $learneventcode)" />
 									
 						<xsl:element name="item">
 							<xsl:attribute name="identifier">
@@ -210,8 +211,8 @@
 	<!--Add indivual resources to sco type assets in resources tree -->
 	<xsl:template match="scoEntryContent">
 		<xsl:variable name="res_ident">
-<!--  			<xsl:value-of select="generate-id(../scoEntryAddress/scoEntryTitle)" />-->
-           <xsl:value-of select="generate-id(../scoEntryTitle)" />
+  			<xsl:value-of select="generate-id(../scoEntryAddress/scoEntryTitle)" />
+           
 		</xsl:variable>
 		<!--TODO: devise means to extract launch page value -->
 		<xsl:variable name="launchPage">
