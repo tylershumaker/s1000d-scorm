@@ -22,10 +22,15 @@
 				<!--suppress-->
 			</xsl:when>
 			<xsl:otherwise>
+			
 				<table border="0" width="100%" cellspacing="0" cellpadding="0">
+					<br></br>
+			        <br></br>
 					<tr>
 						<td>
+						<p></p>
 							<table border="0" width="100%" class="prelreq_table"  cellspacing="0" cellpadding="3">
+								
 								<tr>
 									<xsl:call-template name="generalTblHeader">
 										<xsl:with-param name="label" select="'Condition'"></xsl:with-param>
@@ -45,9 +50,11 @@
 								<xsl:for-each select="./reqCondDm">
 									<tr>
 										<td>
-											<!--<xsl:value-of select="'FOOO'" />-->
+											<!--  <xsl:value-of select="./reqCond" />-->
+										 	<xsl:apply-templates />
 										</td>
-										<!--<td>DMC</td>-->
+										<!--  <td></td>-->
+										
 									</tr>
 								</xsl:for-each>
 							</table>
@@ -310,6 +317,8 @@
 						<xsl:apply-templates/>
 					</tbody>
 				</table>
+				<br></br>
+				<br></br>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
