@@ -163,6 +163,7 @@ function doInitialize()
 *******************************************************************************/
 function doTerminate()
 {  
+	
    if (! initialized) return "true";
    
    var api = getAPIHandle();
@@ -173,6 +174,7 @@ function doTerminate()
    }
    else
    {
+	  
       // call the Terminate function that should be implemented by the API
       var result = api.Terminate("");
       if (result.toString() != "true")
@@ -428,6 +430,7 @@ function ErrorHandler()
 *******************************************************************************/
 function getAPIHandle()
 {
+	
    if (apiHandle == null)
    {
       apiHandle = getAPI();
