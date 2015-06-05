@@ -50,10 +50,11 @@
 								<xsl:for-each select="./reqCondDm">
 									<tr>
 										<td>
-											<!--  <xsl:value-of select="./reqCond" />-->
-										 	<xsl:apply-templates />
+											 <xsl:apply-templates select ="reqCond" />
 										</td>
-										<!--  <td></td>-->
+										<td>
+										   <xsl:apply-templates select ="dmRef" />
+										</td>
 										
 									</tr>
 								</xsl:for-each>
@@ -64,7 +65,15 @@
 			</xsl:otherwise>
 		</xsl:choose>		
 	</xsl:template>
-
+	
+	<!-- *************************************************************** -->
+    <!-- Template for reqCond element                                    -->
+    <!-- *************************************************************** -->
+	<xsl:template match="reqCond">
+	   <xsl:apply-templates/>
+	</xsl:template>
+	
+	
 	<!-- *************************************************************** -->
     <!-- Template for reqPersons element                                 -->
     <!-- *************************************************************** -->
