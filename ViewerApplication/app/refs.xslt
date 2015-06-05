@@ -398,7 +398,7 @@
 			<!-- Added support for when a dmRef is found within a <note> or <warningAndCautionPara> 
 				elements -->
 			<xsl:when
-				test="ancestor::reqCondDm | ancestor::learning | ancestor::crewDrillStep | ancestor::isolationStep | ancestor::trainingStep | ancestor::para | ancestor::warningAndCautionPara | ancestor::note">
+				test="ancestor::reqCondDm | ancestor::learning | ancestor::crewDrillStep | ancestor::isolationStep | ancestor::trainingStep | ancestor::para | ancestor::warningAndCautionPara | ancestor::note | ancestor::isolationProcedureEnd">
 
 				<xsl:variable name="referredFragment">
 					<xsl:value-of select="@referredFragment"></xsl:value-of>
@@ -517,7 +517,7 @@
 			<xsl:when test="$ref_frag = $empty_string">
 				<xsl:choose>
 				   <xsl:when test="$ref_learneventcode='E'">
-				   <a href="javascript:doChoice('{$ref_dmcode}')">
+				   <a href="javascript:doChoice('{$dmcode}')">
 				      <xsl:choose>
 					     <xsl:when test="$parentRefElem = 'true'">
 					        <xsl:value-of select="$dmcode" />
