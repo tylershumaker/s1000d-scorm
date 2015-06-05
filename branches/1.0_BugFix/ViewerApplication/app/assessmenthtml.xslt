@@ -15,6 +15,7 @@
   			<div class="header">
 		    	<!-- <h1 class="knowledgeCheckHeader"><xsl:value-of select="//title/." /></h1> -->
 		    	<div class="knowledgeCheckHeader"><xsl:value-of select="//title/." /></div>
+		    	<br></br>
 		    	<div class="fancySmallLine fancySmallLineGradient" />
 		    	<div class="fancyLine fancyLineGradient" />
 		    </div>
