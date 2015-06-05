@@ -94,7 +94,8 @@
                         <xsl:apply-templates />
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="text()"/><br/>
+                        <xsl:apply-templates />
+                        <!--  <xsl:value-of select="text()"/><br/>-->
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:for-each>
@@ -293,10 +294,12 @@
                           <a href="#{$nextRefId}" onclick="show_hide_div('{$step_id}','{$nextRefId}')">Next</a>
                           <br/> 
                        </div>
-                     </div>
+                       </div>
+                       
+                      
    
-                     <xsl:apply-templates select="proceduralStep" />
-                  
+                       <xsl:apply-templates select="proceduralStep" />
+                                         
                   </xsl:otherwise>
               </xsl:choose>
            </xsl:when>
@@ -580,11 +583,16 @@
                           
                             <div id="{$step_id}" style="display: none;">
                       
-                             Step <xsl:value-of select="$finalCount" />
+                             Step <xsl:value-of select="$stepCounter" />
                              <xsl:text> </xsl:text>
-                             <xsl:apply-templates select ="para | note | table | figure" />
+                             <xsl:apply-templates select ="para | note | table | figure " />
+                             
+                          <!-- | ../../closeRqmts -->
+                            
                              <br/>
-                          </div>
+                             </div>
+                          
+                          
                        </xsl:otherwise>
                     </xsl:choose>
                     
