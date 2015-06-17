@@ -585,7 +585,7 @@
                       
                              Step <xsl:value-of select="$stepCounter" />
                              <xsl:text> </xsl:text>
-                             <xsl:apply-templates select ="para | note | table | figure " />
+                             <xsl:apply-templates select ="para | note | table | figure | ../../closeRqmts/reqCondGroup " />
                              
                           <!-- | ../../closeRqmts -->
                             
