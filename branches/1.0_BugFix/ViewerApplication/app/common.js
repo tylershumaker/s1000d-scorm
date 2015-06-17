@@ -54,7 +54,7 @@ function showNextQuestion()
 		document.getElementById('grade').style.display = 'block';
 		var status = '';
 		var minScore = getMinScore();
-
+		
 		if(weightScore >= minScore ){
 
 			doSetValue("cmi.completion_status", "completed");
@@ -67,6 +67,7 @@ function showNextQuestion()
 			status = "failed";
 		}
 			var scaledScore = weightScore/100;
+
 			doSetValue("cmi.score.scaled", scaledScore.toString());
 			doSetValue("cmi.score.raw", weightScore.toString());
 			
@@ -132,6 +133,7 @@ function checkIfSingleTrue(radioObj, quizType)
 
 function checkIfMultipleTrue(checkObj, quizType)
 {
+	
 	var feedbackCorrect = document.getElementById('feedbackCorrect');
 	var feedbackIncorrect = document.getElementById('feedbackIncorrect');
 	var checkLength = checkObj.answerChoiceCheckbox.length;
@@ -145,6 +147,7 @@ function checkIfMultipleTrue(checkObj, quizType)
 	for(var i=0; i < checkLength; i++)
 	{
 		answer = checkObj.answerChoiceCheckbox[i].value.split(", ");
+		
 		if (answer[1] != "")
 		{
 			correctAnswers.push(answer[1]);
@@ -157,6 +160,8 @@ function checkIfMultipleTrue(checkObj, quizType)
 				correctChosenAnswers.push(answer[1]);
 			}
 		}
+		
+		
 	}
 
 	// Show feedback if Knowledge Check or go to next question for Assessment
@@ -184,15 +189,21 @@ function checkIfMultipleTrue(checkObj, quizType)
 	}
 	else
 	{
-		// Check if answer is correct
+	    // Check if answer is correct
 		if (chosenAnswers.length == correctChosenAnswers.length)
 		{
+			
 			if(correctChosenAnswers.length == correctAnswers.length)
 			{
-				weightScore = weightScore + parseInt(answer[1]);
+				
+				
+				weightScore = weightScore + parseInt(correctChosenAnswers[0]);
+
 				totalCorrect++;	
+								
 			}
 		}
+		
 		count++;
 		showNextQuestion();
 	}
