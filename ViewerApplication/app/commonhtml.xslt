@@ -494,8 +494,22 @@
 		</xsl:choose>
 	</xsl:template>
 
+     <!-- ********************************************************************************************************* -->
+     <!-- closeRqmts template                                                                                       -->
+     <!--                                                                                                           -->
+     <!-- 6/16/2015: Added a test to make sure the closeRqmts element is not placed in the transform data twice.    -->
+     <!--            The main template match="/" was picking it up along with the procedureStep processing.         -->
+     <!--            Only want to output the closeRqmts in the last procedureStep (see isolation.xslt)              -->
+     <!-- ********************************************************************************************************* -->
 	<xsl:template match="closeRqmts">
-		<xsl:apply-templates />
+	   <xsl:choose>
+	      <xsl:when test="preceding-sibling::mainProcedure">
+	         <!--  do nothing -->
+	      </xsl:when>
+	      <xsl:otherwise>
+	         <xsl:apply-templates />
+	      </xsl:otherwise>
+	   </xsl:choose>
 	</xsl:template>
 				  
 
