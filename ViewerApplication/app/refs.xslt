@@ -869,12 +869,25 @@
 		<xsl:value-of select="$link_text" />
 	</xsl:template>
 
+    <!-- *************************************************************************************** -->
+	<!-- <externalPubRef> template                                                               -->
+	<!--                                                                                         -->
+	<!-- 6/22/2015: Added <externalPubRef> template                                              -->
+	<!--  	                                                                                     -->
 	<!-- *************************************************************************************** -->
-	<!-- <externalPubRefIdent> template -->
-	<!-- -->
-	<!-- 4/9/2015: Added a choice between using the <externalPubTitle> value 
-		for the displayed -->
-	<!-- value if available, if not it will use the filename to display -->
+	<xsl:template match="externalPubRef">
+	   <xsl:apply-templates/>
+	</xsl:template>
+	
+	<!-- *************************************************************************************** -->
+	<!-- <externalPubRefIdent> template                                                          -->
+	<!--                                                                                         -->
+	<!-- 4/9/2015: Added a choice between using the <externalPubTitle> value for the             -->
+	<!--  	       displayed value if available, if not it will use the filename to display      -->
+	<!--                                                                                         -->
+	<!-- 6/22/2015: Updated to support the creation of a new <tr> if the <externalPubRefIdent>   -->
+	<!--            is a child of a <refs> element.  Switched around to make the                 -->
+	<!--            <externalPubCode> as the linkable element and the title is not.              -->
 	<!-- *************************************************************************************** -->
 	<xsl:template match="externalPubRefIdent">
 
@@ -907,7 +920,48 @@
 		</xsl:variable>
 
 
-		<xsl:choose>
+        <xsl:choose>
+           <xsl:when test="ancestor::refs">
+           <tr> 
+			  <td>
+			     <xsl:choose>
+			        <xsl:when test="$theFileName = $empty_string">
+				       <xsl:choose>
+					      <!-- Check to see if the <externalPubTitle> element is empty -->
+					      <xsl:when test="$title = $empty_string">
+					         <!-- <externalPubTitle> is empty, use the code to display -->
+						     <xsl:value-of select="$code" />
+					      </xsl:when>
+					      <!-- The <externalPubTitle> element has a value -->
+					      <xsl:otherwise>
+					         <xsl:value-of select="$title" />
+					      </xsl:otherwise>
+				       </xsl:choose>
+			        </xsl:when>
+			        <xsl:otherwise>
+					   <xsl:choose>
+					      <!-- Check to see if the <externalPubTitle> element is empty -->
+						   <xsl:when test="$title = $empty_string">
+						      <!-- <externalPubTitle> is empty, use the code to display -->
+							  <xsl:value-of select="$code" />
+						   </xsl:when>
+						   <!-- The <externalPubTitle> element has a value -->
+						   <xsl:otherwise>
+							 <xsl:value-of select="$title" />
+						   </xsl:otherwise>
+					    </xsl:choose>
+			        </xsl:otherwise>
+		         </xsl:choose>	
+			  </td>
+			  <td>
+			     <a href="javascript:void(window.open('{$theFileName}'))">
+			     <xsl:value-of select="$code"/>
+			     </a>
+			  </td>
+			</tr>
+           </xsl:when>
+           <xsl:otherwise>
+           <xsl:choose>
 			<xsl:when test="$theFileName = $empty_string">
 				<xsl:choose>
 					<!-- Check to see if the <externalPubTitle> element is empty -->
@@ -940,7 +994,10 @@
 				</a>
 			</xsl:otherwise>
 		</xsl:choose>
-
+           
+           </xsl:otherwise>
+        </xsl:choose>
+		
 	</xsl:template>
 
 
