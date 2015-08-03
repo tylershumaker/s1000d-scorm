@@ -16,22 +16,33 @@
       <!-- Variable to hold the number of levelledPara elements of a child in order to determine outher number for the count -->
       <xsl:variable name="parent_counter" select="count(parent::node()/parent::node()/preceding-sibling::levelledPara)" />
                 
-      <xsl:choose>   
-            <!-- Determine if the current levelledPara/title is a child of another levelledPara -->
-            <xsl:when test="$parent_counter > 0">
-               <h3>
-                  <xsl:value-of select="$parent_counter + 1"/>.<xsl:value-of select="$counter"/>.
-                  <xsl:apply-templates/>
-               </h3>   
+      <xsl:variable name="grandParentCount"> 
+         <xsl:value-of select="count(parent::node()/parent::node()/parent::node()/preceding-sibling::levelledPara)" />
+      </xsl:variable>
+
+      <xsl:variable name="finalCount">
+         <xsl:choose>
+            <xsl:when test="$grandParentCount > 0">
+               <xsl:value-of select="concat(concat(concat(concat($grandParentCount+1,'.'), concat($parent_counter+1,'.')),$counter), ' ')" />
             </xsl:when>
             <xsl:otherwise>
-               <h3>
-                  <xsl:value-of select="$counter"/>.
-                  <xsl:apply-templates/>
-               </h3>
+               <xsl:choose>
+                  <xsl:when test="$parent_counter=0">
+                     <xsl:value-of select="concat($counter,'. ')" />      
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:variable name="tempCount" select="concat($parent_counter+1,'.')" />
+                     <xsl:value-of select="concat(concat($tempCount,$counter),' ')" />
+                  </xsl:otherwise>
+               </xsl:choose>
             </xsl:otherwise>
          </xsl:choose>
-                    
+      </xsl:variable>
+      
+      <h3>
+         <xsl:value-of select="$finalCount"/>
+         <xsl:apply-templates />
+      </h3>
     </xsl:template>
 
 </xsl:stylesheet>  
