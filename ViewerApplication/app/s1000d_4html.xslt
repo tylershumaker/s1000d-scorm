@@ -13,6 +13,8 @@
 	<xsl:include href="refs.xslt"/>
 	<!--For future use 
 	 module specific elements inclusions-->
+     <xsl:include href="isolation.xslt"/>
+	 <xsl:include href="levelledparatitle.xslt"/>
 	
 	<!--global vars-->
   <xsl:variable name="mic" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@modelIdentCode" />
@@ -54,8 +56,15 @@
     </xsl:choose>
   </xsl:variable>
 
+    <xsl:variable name ="urn_prefix">
+        <xsl:value-of select="'URN:S1000D:DMC-'" />
+    </xsl:variable>
+    <xsl:variable name="urn_string">
+        <xsl:value-of select="concat($urn_prefix, $this_dmc)" />
+    </xsl:variable>
+    
   <xsl:variable name="global_dmc">
-    <xsl:value-of select="document('./urn_resource_map.xml')//target[parent::urn[contains(@name, $this_dmc)]]" />
+    <xsl:value-of select="document('./urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" />
   </xsl:variable>
 	<xsl:template match="/">
 	
@@ -66,6 +75,8 @@
 				<link rel="stylesheet" href="app/common.css" type="text/css" />
 				<link rel="stylesheet" href="app/assessment.css" type="text/css" />
 				<script type="text/javascript" src="app/common.js"></script>
+                <script type="text/javascript" src="app/list.js"></script>
+                <script type="text/javascript" src="app/SCORM_2004_APIWrapper.js"></script>                
 				<!-- Sortable -->
 				<script type="text/javascript" src="app/jquery-ui/js/jquery-1.6.2.min.js"></script>
 				<script type="text/javascript" src="app/jquery-ui/js/jquery-ui-1.8.15.custom.min.js"></script>

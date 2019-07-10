@@ -86,6 +86,8 @@ public class ControllerJFrame extends javax.swing.JFrame
         SCPMField = new javax.swing.JTextField();
         ResourceField = new javax.swing.JTextField();
         OutputDirectoryField = new javax.swing.JTextField();
+        MinScoreField = new javax.swing.JTextField();
+        MinScoreLabel = new javax.swing.JLabel();
         SCPMBrowseButton = new javax.swing.JButton();
         ResourceBrowseButton = new javax.swing.JButton();
         OutputDirectoryBrowseButton = new javax.swing.JButton();
@@ -115,6 +117,9 @@ public class ControllerJFrame extends javax.swing.JFrame
         OutputDirectoryLabel.setFont(new java.awt.Font("Arial", 1, 12));
         OutputDirectoryLabel.setText("Output Directory");
 
+        MinScoreLabel.setFont(new java.awt.Font("Arial",1,12));
+        MinScoreLabel.setText("Min Score (defaults to 80)  ");
+        
         SCPMBrowseButton.setFont(new java.awt.Font("Arial", 1, 12));
         SCPMBrowseButton.setText("Browse..");
         SCPMBrowseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +159,7 @@ public class ControllerJFrame extends javax.swing.JFrame
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SCORM With Flash Assessments", "SCORM With HTML Assessments", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version" }));
+        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SCORM", "SCORM With levelledPara Numbering", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version" }));
         SelectionDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SelectionDropDownActionPerformed(evt);
@@ -173,13 +178,15 @@ public class ControllerJFrame extends javax.swing.JFrame
                             .addComponent(SCPMLabel)
                             .addComponent(ResourceLabel)
                             .addComponent(OutputDirectoryLabel)
+                            .addComponent(MinScoreLabel)
                             .addComponent(OutputLabel))
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(SCPMField)
                                 .addComponent(ResourceField)
-                                .addComponent(OutputDirectoryField, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE))
+                                .addComponent(OutputDirectoryField, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                                .addComponent(MinScoreField))
                             .addComponent(SelectionDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,6 +228,10 @@ public class ControllerJFrame extends javax.swing.JFrame
                     .addComponent(OutputDirectoryLabel)
                     .addComponent(OutputDirectoryBrowseButton))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MinScoreField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MinScoreLabel))
+                .addGap(18, 18, 18)                
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(OutputLabel)
                     .addComponent(SelectionDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -267,25 +278,25 @@ public class ControllerJFrame extends javax.swing.JFrame
         }
     }                                                                                              
 
-    private void PDFStudentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        outputType = "-pdfstudent";
-    }                                                     
-
-    private void MobileRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        outputType = "-mobile";
-    }                                                 
-
-    private void ScormFlashRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        outputType = "-scormflash";
-    }                                                
-
-    private void PDFInstructorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-        outputType = "-pdfinstructor";
-    }                                                        
-
-    private void ScormHTMLRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        outputType = "-scormhtml";
-    }
+//    private void PDFStudentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+//        outputType = "-pdfstudent";
+//    }                                                     
+//
+//    private void MobileRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+//        outputType = "-mobile";
+//    }                                                 
+//
+//    private void ScormFlashRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+//        outputType = "-scormflash";
+//    }                                                
+//
+//    private void PDFInstructorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+//        outputType = "-pdfinstructor";
+//    }                                                        
+//
+//    private void ScormHTMLRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+//        outputType = "-scormhtml";
+//    }
 
     private void SelectionDropDownActionPerformed(java.awt.event.ActionEvent evt) 
     {                                                  
@@ -293,12 +304,15 @@ public class ControllerJFrame extends javax.swing.JFrame
         int val = cb.getSelectedIndex();
         switch (val)
         {
+//            case 0:
+//                outputType = "-scormflash";
+//                break;
             case 0:
-                outputType = "-scormflash";
-                break;
-            case 1:
                 outputType = "-scormhtml";
                 break;
+            case 1:
+            	outputType = "-scormLevelledParaNum";
+            	break;
             case 2:
                 outputType = "-mobile";
                 break;
@@ -320,6 +334,14 @@ public class ControllerJFrame extends javax.swing.JFrame
         ctx.put(Keys.SCPM_FILE, SCPMField.getText());
         ctx.put(Keys.RESOURCE_PACKAGE, ResourceField.getText());
         ctx.put(Keys.OUTPUT_DIRECTORY, OutputDirectoryField.getText());
+
+        if(!MinScoreField.getText().isEmpty()){
+            ctx.put(Keys.MIN_SCORE,  MinScoreField.getText());
+        }
+        else{
+            ctx.put(Keys.MIN_SCORE, "80");
+        }
+
         try
         {
             
@@ -332,7 +354,12 @@ public class ControllerJFrame extends javax.swing.JFrame
             {
             	toolkit = sampleCatalog.getCommand("SCORM");
             	ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
-            }	
+            }
+            else if (outputType.equals("-scormLevelledParaNum"))
+            {
+            	toolkit = sampleCatalog.getCommand("SCORM");
+            	ctx.put(Keys.OUTPUT_TYPE, "SCORMLEVELLEDPARANUM");
+            }            
             else if(outputType.equals("-mobile"))
             {
             	toolkit = sampleCatalog.getCommand("Mobile"); 
@@ -410,6 +437,8 @@ public class ControllerJFrame extends javax.swing.JFrame
     private javax.swing.ButtonGroup OutputButtonGroup;
     private javax.swing.JButton OutputDirectoryBrowseButton;
     private javax.swing.JTextField OutputDirectoryField;
+    private javax.swing.JTextField MinScoreField;
+    private javax.swing.JLabel MinScoreLabel;
     private javax.swing.JLabel OutputDirectoryLabel;
     private javax.swing.JLabel OutputLabel;
     private javax.swing.JButton ResourceBrowseButton;

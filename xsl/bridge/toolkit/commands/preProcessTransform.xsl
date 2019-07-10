@@ -36,8 +36,11 @@
 		</xsl:variable>
 		<manifest identifier="MANIFEST-{$id}" version="{$version}"
 			xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
-			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
-			xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd">
+			xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3"
+            xmlns:imsss="http://www.imsglobal.org/xsd/imsss"
+            xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+			xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd http://www/imsglobal.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd">
 			<metadata>
 				<schema>ADL SCORM</schema>
 				<schemaversion>2004 3rd Edition</schemaversion>
@@ -66,23 +69,133 @@
 					<!--Business rule: scoEntryType attribute value 'scot01' reserved for 
 						sco type assets -->
 					<xsl:for-each select="scormContentPackage/content/scoEntry[@scoEntryType='scot01']">
+						<xsl:variable name="mic">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@modelIdentCode" />
+							<xsl:text>-</xsl:text>
+						</xsl:variable>
+		
+						<xsl:variable name="sysdif">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@systemDiffCode" />
+							<xsl:text>-</xsl:text>
+						</xsl:variable>
+		
+						<xsl:variable name="syscode">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@systemCode" />
+							<xsl:text>-</xsl:text>
+						</xsl:variable>
+		
+						<xsl:variable name="subsyscode" select="scoEntryContent/dmRef/dmRefIdent/dmCode/@subSystemCode" />
+						<xsl:variable name="subsubsyscode">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@subSubSystemCode" />
+							<xsl:text>-</xsl:text>
+						</xsl:variable>
+		
+						<xsl:variable name="assycode">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@assyCode" />
+							<xsl:text>-</xsl:text>
+						</xsl:variable>
+		
+						<xsl:variable name="disassycode" select="scoEntryContent/dmRef/dmRefIdent/dmCode/@disassyCode" />
+						<xsl:variable name="disassycodevariant">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@disassyCodeVariant" />
+							<xsl:text>-</xsl:text>
+						</xsl:variable>
+		
+						<xsl:variable name="infocode" select="scoEntryContent/dmRef/dmRefIdent/dmCode/@infoCode" />
+						<xsl:variable name="infocodevariant">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@infoCodeVariant" />
+							<xsl:text>-</xsl:text>
+						</xsl:variable>
+		
+						<xsl:variable name="itemlocationcode">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@itemLocationCode" />
+							<xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/dmCode/@learnEventCode)&gt;0'>
+								<xsl:text>-</xsl:text>
+							</xsl:if>
+						</xsl:variable>
+		
+						<xsl:variable name="learncode">
+							<xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/dmCode/@learnCode)&gt;0'>
+								<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@learnCode" />
+							</xsl:if>
+						</xsl:variable>
+		
+						<xsl:variable name="learneventcode">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/dmCode/@learnEventCode" />
+							 <xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/dmCode/@learnEventCode)&gt;0'>
+								
+							</xsl:if>
+						</xsl:variable>
+		
+						<!-- <xsl:variable name="issno">
+							<xsl:value-of select="issueInfo/@issueNumber" />
+							<xsl:if test='string-length(issueInfo/@issueNumber)&gt;0'>
+								<xsl:text>-</xsl:text>
+							</xsl:if>
+						</xsl:variable>
+		
+						<xsl:variable name="inwork">
+							<xsl:value-of select="issueInfo/@inWork" />
+							<xsl:if test='string-length(/language/@languageIsoCode)&gt;0 '>
+								<xsl:text>_</xsl:text>
+							</xsl:if>
+						</xsl:variable>-->
+		
+						<xsl:variable name="lang_code">
+							<xsl:text>_</xsl:text>
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/language/@languageIsoCode" />
+							<xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/language/@languageIsoCode)&gt;0'>
+								<xsl:text>-</xsl:text>
+							</xsl:if>
+						</xsl:variable>
+		
+						<xsl:variable name="lang_country">
+							<xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/language/@countryIsoCode" />
+							<xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/language/@countryIsoCode)&gt;0'>
+					<!-- 			<xsl:text>-</xsl:text> -->
+							</xsl:if>
+						</xsl:variable>
+		
+						<!--concat the variables from the scoentryAddress to form the map urn 
+							element value -->
+						<xsl:variable name="actInfoIdent"
+							select="concat('DMC-',$mic,$sysdif,
+								  $syscode,$subsyscode,$subsubsyscode,$assycode,$disassycode,$disassycodevariant,
+								  $infocode,$infocodevariant,$itemlocationcode,$learncode,
+								  $learneventcode)" />
+									
 						<xsl:element name="item">
 							<xsl:attribute name="identifier">
                    				<xsl:text>ACT-</xsl:text>
-                   				<xsl:value-of select="generate-id(scoEntryAddress/scoEntryTitle)" />
+<!--                    				<xsl:value-of select="generate-id(scoEntryAddress/scoEntryTitle)" />-->
+                   				<xsl:value-of select="$actInfoIdent" />
                  			</xsl:attribute>
 							<xsl:attribute name="identifierref">
                    				<xsl:text>RES-</xsl:text>
+                   				<!-- scoEntryAddress: removed, element does NOT exist -->
                    				<xsl:value-of select="generate-id(scoEntryAddress/scoEntryTitle)" />
                  			</xsl:attribute>
 							<xsl:element name="title">
 								<xsl:value-of select="scoEntryAddress/scoEntryTitle" />
 							</xsl:element>
+                            <!-- 9/1/14 issue 23 fix -->
+                            <xsl:element name="adlnav:presentation" namespace="http://www.adlnet.org/xsd/adlnav_v1p3">
+                                <xsl:element name="adlnav:navigationInterface" namespace="http://www.adlnet.org/xsd/adlnav_v1p3">
+                                    <xsl:element name="adlnav:hideLMSUI" namespace="http://www.adlnet.org/xsd/adlnav_v1p3">continue</xsl:element>
+                                    <xsl:element name="adlnav:hideLMSUI" namespace="http://www.adlnet.org/xsd/adlnav_v1p3">previous</xsl:element>
+                                </xsl:element>
+                            </xsl:element>
 						</xsl:element>
 					</xsl:for-each>
 					<metadata>
 						<xsl:copy-of select="scormContentPackage/identAndStatusSection/lom:lom" />
 					</metadata>
+                    <!-- 9/1/14 issue 23 fix -->
+                    <xsl:element name="imsss:sequencing" namespace="http://www.imsglobal.org/xsd/imsss">
+                        <xsl:element name="imsss:controlMode" namespace="http://www.imsglobal.org/xsd/imsss">
+                            <xsl:attribute name="flow">true</xsl:attribute>
+                        </xsl:element>
+                    </xsl:element>                    
 				</xsl:element>
 			</xsl:element>
 			<!--Add resources tree section -->
@@ -98,7 +211,8 @@
 	<!--Add indivual resources to sco type assets in resources tree -->
 	<xsl:template match="scoEntryContent">
 		<xsl:variable name="res_ident">
-			<xsl:value-of select="generate-id(../scoEntryAddress/scoEntryTitle)" />
+  			<xsl:value-of select="generate-id(../scoEntryAddress/scoEntryTitle)" />
+           
 		</xsl:variable>
 		<!--TODO: devise means to extract launch page value -->
 		<xsl:variable name="launchPage">
@@ -164,12 +278,12 @@
 
 				<xsl:variable name="learneventcode">
 					<xsl:value-of select="dmCode/@learnEventCode" />
-					<xsl:if test='string-length(issueInfo/@issueNumber)&gt;0'>
+					<!-- <xsl:if test='string-length(issueInfo/@issueNumber)&gt;0'>
 						<xsl:text>_</xsl:text>
-					</xsl:if>
+					</xsl:if> -->
 				</xsl:variable>
 
-				<xsl:variable name="issno">
+				<!-- <xsl:variable name="issno">
 					<xsl:value-of select="issueInfo/@issueNumber" />
 					<xsl:if test='string-length(issueInfo/@issueNumber)&gt;0'>
 						<xsl:text>-</xsl:text>
@@ -181,7 +295,7 @@
 					<xsl:if test='string-length(/language/@languageIsoCode)&gt;0 '>
 						<xsl:text>_</xsl:text>
 					</xsl:if>
-				</xsl:variable>
+				</xsl:variable>-->
 
 				<xsl:variable name="lang_code">
 					<xsl:value-of select="/language/@languageIsoCode" />
@@ -203,7 +317,8 @@
 					select="concat('DMC-',$mic,$sysdif,
 						  $syscode,$subsyscode,$subsubsyscode,$assycode,$disassycode,$disassycodevariant,
 						  $infocode,$infocodevariant,$itemlocationcode,$learncode,
-						  $learneventcode,$issno,$inwork,$lang_code,$lang_country)" />
+						  $learneventcode,$lang_code,$lang_country)" />
+                          <!-- removed  ,$issno,$inwork-->
 				<!--Add the resource file element -->
 				<dependency identifierref="{$infoIdent}" />
 			</xsl:for-each>

@@ -1,6 +1,6 @@
 /****************************************************************************
 SCORM_2004_APIwrapper.js
-© 2000, 2011 Advanced Distributed Learning (ADL). Some Rights Reserved.
+ï¿½ 2000, 2011 Advanced Distributed Learning (ADL). Some Rights Reserved.
 *****************************************************************************
 
 Advanced Distributed Learning ("ADL") grants you ("Licensee") a  non-exclusive, 
@@ -96,7 +96,7 @@ With the understanding that:
 **
 *******************************************************************************/
 
-var debug = true;  // set this to false to turn debugging off
+var debug = false;  // set this to false to turn debugging off
 
 var output = window.console; // output can be set to any object that has a log(string) function
                              // such as: var output = { log: function(str){alert(str);} };
@@ -163,6 +163,7 @@ function doInitialize()
 *******************************************************************************/
 function doTerminate()
 {  
+	
    if (! initialized) return "true";
    
    var api = getAPIHandle();
@@ -173,6 +174,7 @@ function doTerminate()
    }
    else
    {
+	  
       // call the Terminate function that should be implemented by the API
       var result = api.Terminate("");
       if (result.toString() != "true")
@@ -428,6 +430,7 @@ function ErrorHandler()
 *******************************************************************************/
 function getAPIHandle()
 {
+	
    if (apiHandle == null)
    {
       apiHandle = getAPI();

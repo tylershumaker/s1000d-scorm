@@ -64,4 +64,9 @@ public class Keys
      * String that represents whether or not to render in html
      */
     public static final String OUTPUT_TYPE = null; 
+    
+    /**
+     * String that represents Min passing score
+     */
+    public static final String MIN_SCORE = "80"; 
 }

@@ -91,12 +91,16 @@ public class URNMapper
             if (!file.isDirectory())
             {
                 file_name = file.getName();
-                String[] split = file_name.split("\\.");
-                name = split[0];
+             
+                // Split the string on the last occurrence of a period (the extension part of the file name)
+                // This permits the use of periods in the filename itself
+                name = file_name.substring(0, file_name.lastIndexOf('.'));
+             
                 if(name.contains("_"))
                 {
-                    split = name.split("_");
-                    name = split[0];
+                    String underscore_split[] = name.split("_");
+                	
+                    name = underscore_split[0];
                     urn = writeUrn(name, file_name, "");
                 }
                 else

@@ -15,8 +15,34 @@
 }
 .noteandwarning 
 {
-	margin-bottom:0px;
-	margin-top:10px;
+	border-top: 1pt;
+	border-right: 1pt;
+	border-left: 1pt;
+	border-bottom: 1pt;
+/* 	margin-bottom:0px;
+	margin-top:10px; */
+}
+.yellowBorder
+{
+	border-top: solid yellow 5pt;
+	border-right: solid yellow 5pt;
+	border-left: solid yellow 5pt;
+	border-bottom: solid yellow 5pt;	
+}
+.redBorder
+{
+	border-top: solid red 5pt;
+	border-right: solid red 5pt;
+	border-left: solid red 5pt;
+	border-bottom: solid red 5pt;	
+}
+.redFont
+{
+	color: red;
+}
+.yellowFont
+{
+	color: black;
 }
 .note_text
 {
@@ -26,10 +52,10 @@
 }
 .note_line
 {
-	border-top: solid blue 1pt;
-	border-right: solid blue 1pt;
-	border-left: solid blue 1pt;
-	border-bottom: solid blue 1pt;
+	border-top: solid blue 5pt;
+	border-right: solid blue 5pt;
+	border-left: solid blue 5pt;
+	border-bottom: solid blue 5pt;
 }
 .prelreq_table
 {

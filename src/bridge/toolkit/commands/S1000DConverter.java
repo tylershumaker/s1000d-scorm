@@ -107,6 +107,7 @@ public class S1000DConverter implements Command
                     return CONTINUE_PROCESSING;
                 }
                 tempSCPM = File.createTempFile(new File(ctx.get(Keys.SCPM_FILE).toString()).getName(), ".xml");
+                System.out.println(tempSCPM.toString());
                 copy(ctx.get(Keys.SCPM_FILE).toString(), tempSCPM.toString());
                 ctx.put(Keys.SCPM_FILE, tempSCPM.getAbsolutePath());
             }

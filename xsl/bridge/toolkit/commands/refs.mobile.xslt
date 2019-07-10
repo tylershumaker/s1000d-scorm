@@ -242,8 +242,24 @@
       </xsl:choose>
     </xsl:variable>
 
+    <xsl:variable name ="urn_prefix">
+        <xsl:value-of select="'URN:S1000D:DMC-'" />
+    </xsl:variable>
+    <xsl:variable name="urn_string">
+        <xsl:value-of select="concat($urn_prefix, $ref_dmcode)" />
+    </xsl:variable>
+
+    <xsl:variable name="ref_dmcFile">
+      <xsl:value-of select="document('../../../../ViewerApplication/app/urn_resource_map.xml')//target[parent::urn[@name=$urn_string]]" />
+    </xsl:variable>
+    <xsl:variable name="html_prefix">
+        <xsl:value-of select="'../'"/>
+    </xsl:variable>
+    <xsl:variable name="html_ext">
+        <xsl:value-of select="'.htm'"/>
+    </xsl:variable>
     <xsl:variable name="ref_dmc">
-      <xsl:value-of select="document('../../../../ViewerApplication/app/urn_resource_map.xml')//target[parent::urn[contains(@name, $ref_dmcode)]]" />
+        <xsl:value-of select="concat($html_prefix, $ref_dmcFile, $html_ext)" />
     </xsl:variable>
       <xsl:choose>
         <xsl:when test="ancestor::learning">
@@ -253,10 +269,16 @@
           <xsl:variable name ="techname">
             <xsl:value-of select ="./dmRefAddressItems/dmTitle/techName"></xsl:value-of>
           </xsl:variable>
-          <!-- <a href="javascript:void(window.open('{$ref_dmc}'))">-->
+
             <xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
-          
+          </a>
         </xsl:when>
+        <xsl:when test="ancestor::trainingStep">
+            <div>
+                    <xsl:value-of select="$ref_dmcode" />
+                </a> 
+             </div>
+        </xsl:when>        
         <xsl:when test="parent::refs">
           <xsl:variable name ="xlinkactuate">
             <xsl:value-of select ="@xlink:actuate"></xsl:value-of>
@@ -282,6 +304,7 @@
                 <xsl:with-param name="actuateMode" select="$actuateMode"></xsl:with-param>
                 <xsl:with-param name="showMode" select="$showMode"></xsl:with-param>
                 <xsl:with-param name="xlinkhref" select="$xlinkhref"></xsl:with-param>
+                <xsl:with-param name="refDmc" select="$ref_dmc"></xsl:with-param>
               </xsl:call-template>
             </td>
           </tr>
@@ -299,6 +322,7 @@
 		<xsl:param name="actuateMode" />
 		<xsl:param name="showMode" />
 		<xsl:param name="xlinkhref" />
+        <xsl:param name="refDmc" />
 		<xsl:variable name ="infoname">
 			<xsl:value-of select ="./dmRefAddressItems/dmTitle/infoName"></xsl:value-of>
 		</xsl:variable>
@@ -306,7 +330,7 @@
 			<xsl:value-of select ="./dmRefAddressItems/dmTitle/techName"></xsl:value-of>
 		</xsl:variable>
 		
-		<xsl:choose>
+ 		<xsl:choose>
 			<xsl:when test="$actuateMode='onRequest'">
 				<xsl:choose>
 					<xsl:when test="$showMode='replace'">
@@ -314,13 +338,13 @@
 					</xsl:when>
 				</xsl:choose>
 				<!--add conditons for new window here-->
-				<xsl:choose>
+ 				<xsl:choose>
 					<xsl:when test="$showMode='new'">
 						<xsl:value-of select="$techname" /> - <xsl:value-of select="$infoname" />
 					</xsl:when>
 				</xsl:choose>
 			</xsl:when>
-		</xsl:choose>
+		</xsl:choose>       
 	</xsl:template>
 	
 	<xsl:template match="//internalRef">
@@ -351,7 +375,6 @@
 	</xsl:template>
 	
 	<!--end added-->	
-
 	<xsl:template match="internalRef[@internalRefTargetType='figure']">
 		<xsl:variable name="href" select="@xlink:href"/>
 		<xsl:variable name="intrefid" select="@internalRefId"/>
@@ -367,7 +390,6 @@
 		<xsl:variable name="link_text" select="//levelledPara[@id=$intrefid]/title" />
 			<xsl:value-of select="$link_text" />
 	</xsl:template>
-
 </xsl:stylesheet>
 
   

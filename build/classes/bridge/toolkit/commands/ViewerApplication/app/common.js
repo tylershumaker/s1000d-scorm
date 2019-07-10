@@ -1,8 +1,15 @@
 var totalCorrect = 0;
 var count = 0;
+var weightScore = 0;
+
 
 // For Hotspots
 var selectedHotspot = null;
+
+function show_hide_div(hide_id, show_id){
+	toggle_visibility(hide_id);
+	toggle_visibility(show_id);
+}
 
 function toggle_visibility(id)
 {
@@ -39,20 +46,34 @@ function showNextQuestion()
 	var nextCount = count + 1;
 	document.getElementById('questionNumber' + count).style.display = 'none';
 	if (document.getElementById('questionNumber' + nextCount))
-	{
+	{		
 		document.getElementById('questionNumber' + nextCount).style.display = 'block';
 	}
 	else
 	{
 		document.getElementById('grade').style.display = 'block';
-		if (totalCorrect == 1)
-		{
-			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' question correct out of ' + count + '.';
+		var status = '';
+		var minScore = getMinScore();
+		
+		if(weightScore >= minScore ){
+
+			doSetValue("cmi.completion_status", "completed");
+			doSetValue("cmi.success_status", "passed");
+			status = "passed";
 		}
-		else
-		{
-			document.getElementById('grade').innerHTML = 'This completes the assessment. Your score is ' + totalCorrect + ' questions correct out of ' + count + '.';
+		else{
+			doSetValue("cmi.completion_status", "incomplete");
+			doSetValue("cmi.success_status", "failed");
+			status = "failed";
 		}
+			var scaledScore = weightScore/100;
+
+			doSetValue("cmi.score.scaled", scaledScore.toString());
+			doSetValue("cmi.score.raw", weightScore.toString());
+			
+			document.getElementById('grade').innerHTML = 'You have '+status+' the assessment. <br/>'+
+			'You answered ' + totalCorrect + ' question(s) correct out of ' + count + ' for a score of ' + weightScore + '%.<br/>'+
+			'This assessment required a ' + minScore + '% or greater to be passed. ';
 	}
 }
 
@@ -101,6 +122,7 @@ function checkIfSingleTrue(radioObj, quizType)
 		{
 			if (answer[1])
 			{
+				weightScore = weightScore + parseInt(answer[1]);
 				totalCorrect++;
 			}
 		}	
@@ -111,6 +133,7 @@ function checkIfSingleTrue(radioObj, quizType)
 
 function checkIfMultipleTrue(checkObj, quizType)
 {
+	
 	var feedbackCorrect = document.getElementById('feedbackCorrect');
 	var feedbackIncorrect = document.getElementById('feedbackIncorrect');
 	var checkLength = checkObj.answerChoiceCheckbox.length;
@@ -124,6 +147,7 @@ function checkIfMultipleTrue(checkObj, quizType)
 	for(var i=0; i < checkLength; i++)
 	{
 		answer = checkObj.answerChoiceCheckbox[i].value.split(", ");
+		
 		if (answer[1] != "")
 		{
 			correctAnswers.push(answer[1]);
@@ -136,6 +160,8 @@ function checkIfMultipleTrue(checkObj, quizType)
 				correctChosenAnswers.push(answer[1]);
 			}
 		}
+		
+		
 	}
 
 	// Show feedback if Knowledge Check or go to next question for Assessment
@@ -163,14 +189,21 @@ function checkIfMultipleTrue(checkObj, quizType)
 	}
 	else
 	{
-		// Check if answer is correct
+	    // Check if answer is correct
 		if (chosenAnswers.length == correctChosenAnswers.length)
 		{
+			
 			if(correctChosenAnswers.length == correctAnswers.length)
 			{
+				
+				
+				weightScore = weightScore + parseInt(correctChosenAnswers[0]);
+
 				totalCorrect++;	
+								
 			}
 		}
+		
 		count++;
 		showNextQuestion();
 	}
@@ -442,4 +475,14 @@ function changeCallout(id, coords, countTotal)
 	document.getElementById('callout' + id).style.maxWidth = maxXCoord - minXCoord;
 	
 	document.getElementById('callout' + id).style.display = "block";
+}
+
+function doChoice(dmc)
+{
+	
+	doSetValue("adl.nav.request", "{target=ACT-DMC-"+dmc+"}choice");
+	doSetValue("cmi.exit", "normal");
+	var api = getAPIHandle();
+	api.Terminate("");
+		
 }

@@ -41,13 +41,11 @@ function scoInit()
         initialized = doInitialize();
         is_initialized = true;
     }
-    document.getElementById('btnBack').disabled = true;
-    document.getElementById('btnBack').style.cursor = "default"; // for Firefox and Chrome
-    if (scoPages[loc].length == 1)
-    {
-    	document.getElementById('btnNext').disabled = true;
-    	document.getElementById('btnNext').style.cursor = "default"; // for Firefox and Chrome
-    }
+	if(loc == 0){
+	    document.getElementById('btnBack').src = "images/toolkit_footer_11.jpg";
+	    document.getElementById('btnBack').disabled = true;
+	    document.getElementById('btnBack').style.cursor = "default"; // for Firefox and Chrome
+	}
     if (scoPages[loc].length > 1)
     {
     	doSetValue("cmi.completion_status", "incomplete");
@@ -82,32 +80,41 @@ function setStatus(status)
 
 function goNext()
 {
-   // Only enable the back button if section is not an assessment
-   var inString = scoPages[loc][1].indexOf("-T88");
-   if (inString == -1)
-   {
-	   document.getElementById('btnBack').disabled = false;
-	   document.getElementById('btnBack').style.cursor = "pointer"; // for Firefox and Chrome
+	//9/1/14 issue 23 fix
+   if(count >= scoPages[loc].length){
+	   setStatus("true");
+	   doSetValue("adl.nav.request", "continue");
+	   doSetValue("cmi.exit", "normal");
+	   if (is_initialized != false)
+	   {
+		   scoTerminate();
+	   }	   
    }
-
-   if (count < scoPages[loc].length)
+   else if (count < scoPages[loc].length)
    {
        var nextPage = "";
        nextPage = scoPages[loc][count];
        count++;
        setStatus("false");
        parent.content.location=nextPage;  
+      
+       // Only enable the back button if section is not an assessment
+
+       var inString = scoPages[loc][1].indexOf("-T88");
+
+       if (inString == -1)
+       {
+    	   document.getElementById('btnBack').disabled = false;
+    	   document.getElementById('btnBack').style.cursor = "pointer"; // for Firefox and Chrome
+    	   document.getElementById('btnBack').src = "images/toolkit_footer_04.jpg";
+       }
+       else{
+    	   document.getElementById('btnBack').src = "images/toolkit_footer_11.jpg";
+    	   document.getElementById('btnBack').disabled = true;
+    	   document.getElementById('btnBack').style.cursor = "default";
+       }       
    }
-   if (count == scoPages[loc].length)
-   {   
-	   setStatus("true");
-	   if (is_initialized != false)
-	   {
-		   scoTerminate();
-	   }
-	   document.getElementById('btnNext').disabled = true;
-	   document.getElementById('btnNext').style.cursor = "default"; // for Firefox and Chrome
-   } 
+
    parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 }
 
@@ -115,6 +122,7 @@ function goBack()
 {
     document.getElementById('btnNext').disabled = false;
     document.getElementById('btnNext').style.cursor = "pointer"; // for Firefox and Chrome
+    document.getElementById('btnBack').src = "images/toolkit_footer_04.jpg";
     if (count > 1)
     {
     	count--;
@@ -123,8 +131,19 @@ function goBack()
     }
     if (count == 1)
     {
-    	document.getElementById('btnBack').disabled = true;
-    	document.getElementById('btnBack').style.cursor = "default"; // for Firefox and Chrome
+    	if(loc != 0){
+		   doSetValue("adl.nav.request", "previous");
+		   doSetValue("cmi.exit", "normal");
+		   if (is_initialized != false)
+		   {
+			   scoTerminate();
+		   }
+    	}
+    	else{
+	    	document.getElementById('btnBack').src = "images/toolkit_footer_11.jpg";
+	    	document.getElementById('btnBack').disabled = true;
+	    	document.getElementById('btnBack').style.cursor = "default"; // for Firefox and Chrome
+    	}
     }
     parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 }

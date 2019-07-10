@@ -81,7 +81,47 @@
 	<td class="tableCell">
 		<xsl:call-template name="drawRuler"/>
 		<xsl:call-template name="addAttr"/>
-		<xsl:apply-templates/>
+        <!-- 9/9/14 issue 33 handling warningRefs and cautionRefs to entry elements -->
+        <xsl:variable name="warnRef">
+            <xsl:value-of select="./@warningRefs"/>
+        </xsl:variable>
+        <xsl:variable name="cautionRef">
+            <xsl:value-of select="./@cautionRefs"></xsl:value-of>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="not($warnRef ='')">
+                <xsl:variable name="warningtext">
+                    <xsl:value-of select="//warning[@id=$warnRef]/warningAndCautionPara"></xsl:value-of>
+                </xsl:variable>                  
+                <xsl:variable name="type">warning</xsl:variable>                  
+                <div>
+                    <xsl:call-template name="createAttention">
+                        <xsl:with-param name="text" select="$warningtext"/>
+                        <xsl:with-param name="type" select="$type"/>
+                    </xsl:call-template>
+                    <!-- <xsl:apply-templates /> -->
+                </div>
+            </xsl:when>
+            <xsl:when test="not($cautionRef ='')">
+                <xsl:variable name="cautiontext">
+                    <xsl:value-of select="//caution[@id=$cautionRef]/warningAndCautionPara"></xsl:value-of>
+                </xsl:variable>                 
+                <xsl:variable name="type">caution</xsl:variable>                 
+                 <div >
+                    <xsl:call-template name="createAttention">
+                        <xsl:with-param name="text" select="$cautiontext"/>
+                        <xsl:with-param name="type" select="$type"/>
+                    </xsl:call-template>                     
+                    <!-- <xsl:apply-templates /> -->
+                </div>               
+            </xsl:when>
+            <xsl:otherwise>                
+                <div>
+                    <xsl:apply-templates />
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>                 
+<!-- 		<xsl:apply-templates/> -->
 	</td>
 </xsl:template>
 
@@ -120,10 +160,33 @@
 	</xsl:attribute>
 </xsl:template>
 
+<!-- Phase 2: Issue 37 - Table formatting - Data is not spanning cells correctly -->
 <xsl:template name="addAttr">
 	<xsl:if test="@namest and @nameend">
+	    <!-- Create a variable, endColName, to hold the value of the @nameend attribute on the row/entry -->
+	    <xsl:variable name="endColName" select="@nameend"/>
+	    
+	    <!-- Create a variable, endColName, to hold the value of the @nameend attribute on the row/entry -->
+	    <xsl:variable name="startColName" select="@namest"/>
+	    
+<!-- <p>endColName: <xsl:value-of select="$endColName"/></p>-->
+	    <!-- Create a variable, endingCol, to hold the place of the matching @nameend column with the column specification (colspec)  -->
+	    <xsl:variable name="endingCol" select="../../../colspec[@colname=$endColName]"/>
+	    <!-- Create a variable, startingCol, to hold the place of the matching @namest column with the column specification (colspec)  -->
+	    <xsl:variable name="startingCol" select="../../../colspec[@colname=$startColName]"/>
+	    
+	    <xsl:variable name="lenStartingCol" select="count($startingCol/preceding-sibling::colspec)"/>
+	    <xsl:variable name="lenEndingCol" select="count($endingCol/preceding-sibling::colspec)"/>
+	    <xsl:variable name ="col_len" select="($lenEndingCol - $lenStartingCol)+1"/>
+<!-- <p>endingCol: <xsl:value-of select="$endingCol/@colname"/></p>-->
+	    <!-- Create a variable, col_len, to hold the value of the col_len to span, counting previous colspecs until @namest element is found to determine place -->
+	    <xsl:variable name ="col_len1" select="count($endingCol/preceding-sibling::colspec)+1"/>
+	    
+<!-- <p>Col_len = <xsl:value-of select="$col_len"/></p>-->
+        <!-- Set the colspan attribute on the table row -->
 		<xsl:attribute name="colspan">
-			<xsl:value-of select="(@nameend - @namest) + 1"/>
+			<!--  <xsl:value-of select="(@nameend - @namest) + 1"/>-->
+			<xsl:value-of select="$col_len"/>
 		</xsl:attribute>
 	</xsl:if>
 	<xsl:if test="@morerows">
