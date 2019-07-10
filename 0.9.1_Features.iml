@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/lib/commons-beanutils-core-1.8.3.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/commons-chain-1.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/commons-digester-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/commons-logging-1.1.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/jaxen-1.1.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/jdom.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/core-renderer.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/iText-5.0.6.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/xml-apis-xerces-2.9.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/ListBuilder/buildlist.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+      <src_folder value="file://$MODULE_DIR$/mobiApp" expected_position="1" />
+      <src_folder value="file://$MODULE_DIR$/pdfCSS" expected_position="2" />
+      <src_folder value="file://$MODULE_DIR$/conf" expected_position="3" />
+      <src_folder value="file://$MODULE_DIR$/xsd" expected_position="4" />
+      <src_folder value="file://$MODULE_DIR$/test" expected_position="5" />
+      <src_folder value="file://$MODULE_DIR$/resources" expected_position="6" />
+      <src_folder value="file://$MODULE_DIR$/xsl" expected_position="7" />
+      <src_folder value="file://$MODULE_DIR$/ViewerApplication" expected_position="8" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mobiApp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pdfCSS" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/conf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/xsd" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/xsl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ViewerApplication" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test_files" isTestSource="true" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library name="commons-beanutils-core-1.8.3.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/commons-beanutils-core-1.8.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-chain-1.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/commons-chain-1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-digester-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/commons-digester-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-logging-1.1.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/commons-logging-1.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jaxen-1.1.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jaxen-1.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jdom.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jdom.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="junit4">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="core-renderer.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/core-renderer.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="iText-5.0.6.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/iText-5.0.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xml-apis-xerces-2.9.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/xml-apis-xerces-2.9.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="buildlist.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/ListBuilder/buildlist.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="hamcrest-junit-2.0.0.0" level="project" />
+    <orderEntry type="library" name="java-hamcrest-2.0.0.0" level="project" />
+  </component>
+</module>

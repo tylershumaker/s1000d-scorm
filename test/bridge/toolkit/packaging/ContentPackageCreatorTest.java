@@ -23,7 +23,11 @@ import org.junit.Test;
 public class ContentPackageCreatorTest
 {
 
-    String testLocation = System.getProperty("user.dir") + File.separator + "test_files\\packages";
+    String testLocation = System.getProperty("user.dir")
+        + File.separator
+        + "test_files"
+        + File.separator
+        + "packages";
     ContentPackageCreator cpc;
     List<File> vr;
     File test;
@@ -53,8 +57,11 @@ public class ContentPackageCreatorTest
     @Test
     public void testContentPackageCreatorString()
     {
-        String resourcePackage = System.getProperty("user.dir") + File.separator +
-        "test_files\\resource_package_slim";
+        String resourcePackage = System.getProperty("user.dir")
+            + File.separator
+            + "test_files"
+            + File.separator
+            + "resource_package_slim";
         cpc = new ContentPackageCreator(resourcePackage);
         cpc.setPackagesLocation(testLocation);
         try
@@ -82,9 +89,19 @@ public class ContentPackageCreatorTest
             e.printStackTrace();
         }
         
-        assertTrue(new File(testLocation+File.separator+"package1"+File.separator+"resources"
-                +File.separator + "s1000d" + File.separator +
-                "DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H10A_001-00_EN-us.xml").exists());
+        assertTrue(
+            new File(
+                testLocation
+                + File.separator
+                + "package1"
+                + File.separator
+                + "resources"
+                + File.separator
+                + "s1000d"
+                + File.separator +
+                "DMC-S1000DBIKE-AAA-D00-00-00-00AA-932A-A-H10A_001-00_EN-us.xml"
+            ).exists()
+        );
     }
     
     static public boolean deleteDirectory(File path) {

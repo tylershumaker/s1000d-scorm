@@ -30,12 +30,25 @@ public class MobileBuilderTest
     public void setUp(String src)
     {
         ctx = new ContextBase();
-        ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator
-                + "examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+        ctx.put(
+            Keys.SCPM_FILE,
+            System.getProperty("user.dir")
+                + File.separator
+                + "examples"
+                + File.separator
+                + "bike_SCPM"
+                + File.separator
+                + "SMC-S1000DBIKE-06RT9-00001-00.xml"
+        );
         
         File srcPath = new File(src);
-        dstPath = new File(System.getProperty("user.dir") + File.separator +
-                "test_files\\resMap");
+        dstPath = new File(
+            System.getProperty("user.dir")
+                + File.separator
+                + "test_files"
+                + File.separator
+                + "resMap"
+        );
         CopyDirectory cd = new CopyDirectory();
         
         try
@@ -71,8 +84,13 @@ public class MobileBuilderTest
     @Test
     public void testExecute()
     {
-        setUp(System.getProperty("user.dir") + File.separator +
-        "examples\\bike_resource_package");
+        setUp(
+            System.getProperty("user.dir")
+                + File.separator
+                + "examples"
+                + File.separator
+                + "bike_resource_package"
+        );
         try
         {
             mobileBuilder.execute(ctx);

@@ -55,18 +55,54 @@ public class SCOBuilderTest
     {
         ctx = new ContextBase();
         parser = new XMLParser();
-        ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator
-                + "examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml");
-        ctx.put(Keys.XML_SOURCE, parser.getDoc(new File(System.getProperty("user.dir") + File.separator
-                + "test_files\\bike_imsmanifest_after_preprocess.xml")));
-        ctx.put(Keys.URN_MAP, parser.getDoc(new File(System.getProperty("user.dir") + File.separator +
-                                            "test_files\\bike_urn_resource_map.xml")));
-        String resources = System.getProperty("user.dir") + File.separator +
-        "examples\\bike_resource_package";
+        ctx.put(
+            Keys.SCPM_FILE,
+            System.getProperty("user.dir")
+                + File.separator
+                + "examples"
+                + File.separator
+                + "bike_SCPM"
+                + File.separator
+                + "SMC-S1000DBIKE-06RT9-00001-00.xml"
+        );
+        ctx.put(
+            Keys.XML_SOURCE,
+            parser.getDoc(
+                new File(
+                    System.getProperty("user.dir")
+                    + File.separator
+                    + "test_files"
+                    + File.separator
+                    + "bike_imsmanifest_after_preprocess.xml"
+                )
+            )
+        );
+        ctx.put(
+            Keys.URN_MAP,
+            parser.getDoc(
+                new File(
+                    System.getProperty("user.dir")
+                        + File.separator
+                        + "test_files"
+                        + File.separator
+                        + "bike_urn_resource_map.xml"
+                )
+            )
+        );
+        String resources = System.getProperty("user.dir")
+            + File.separator
+            + "examples"
+            + File.separator
+            + "bike_resource_package";
         
         File srcPath = new File(resources);
-        tempRes = new File(System.getProperty("user.dir") + File.separator +
-                "test_files\\tempRes");
+        tempRes = new File(
+            System.getProperty("user.dir")
+            + File.separator
+            + "test_files"
+            + File.separator
+            + "tempRes"
+        );
         CopyDirectory cd = new CopyDirectory();
         
         try

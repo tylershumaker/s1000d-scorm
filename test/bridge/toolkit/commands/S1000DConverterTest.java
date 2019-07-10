@@ -42,14 +42,29 @@ public class S1000DConverterTest
     {
         ctx = new ContextBase();
         parser = new XMLParser();
-        ctx.put(Keys.SCPM_FILE, System.getProperty("user.dir") + File.separator
-                + "examples\\bike_SCPM_4.1\\SMC-S1000DBIKE-06RT9-00001-00.xml");
-        String resources = System.getProperty("user.dir") + File.separator +
-        "examples\\bike_resource_package_4.1";
+        ctx.put(
+            Keys.SCPM_FILE,
+            System.getProperty("user.dir")
+                + File.separator
+                + "examples"
+                + File.separator
+                + "bike_SCPM_4.1"
+                + File.separator
+                + "SMC-S1000DBIKE-06RT9-00001-00.xml"
+        );
+        String resources = System.getProperty("user.dir")
+            + File.separator
+            + "examples"
+            + File.separator
+            + "bike_resource_package_4.1";
         
         File srcPath = new File(resources);
-        tempRes = new File(System.getProperty("user.dir") + File.separator +
-                "test_files\\tempRes");
+        tempRes = new File(
+            System.getProperty("user.dir")
+            + File.separator
+            + "test_files"
+            + File.separator
+            + "tempRes");
         tempRes.mkdir();
         CopyDirectory cd = new CopyDirectory();
         

@@ -33,8 +33,15 @@ public class DMParserTest
     @Test
     public void testSearchForDMRefsSCPM()
     {
-        File scpm = new File(System.getProperty("user.dir") + File.separator + 
-                    "test_files\\scpm_slim\\SMC-S1000DBIKE-06RT9-00001-00.xml");
+        File scpm = new File(
+            System.getProperty("user.dir")
+            + File.separator
+            + "test_files"
+            + File.separator
+            + "scpm_slim"
+            + File.separator
+            + "SMC-S1000DBIKE-06RT9-00001-00.xml"
+        );
         Document test = null;
         try
         {

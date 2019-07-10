@@ -49,13 +49,27 @@ public class SCOContentDMCheckerTest
     {
 
 
-        File lDM = new File(System.getProperty("user.dir") + File.separator + "examples\\bike_resource_package_4.1"
-                + File.separator + "DMC-S1000DBIKE-AAA-D00-00-00-00AA-151A-A-T45C_001-00_EN-US.xml");
+        File lDM = new File(
+            System.getProperty("user.dir")
+            + File.separator
+            + "examples"
+            + File.separator
+            + "bike_resource_package_4.1"
+            + File.separator
+            + "DMC-S1000DBIKE-AAA-D00-00-00-00AA-151A-A-T45C_001-00_EN-US.xml"
+        );
         
         assertFalse(checker.isSCOContentDM(lDM));
         
-        File scDM = new File(System.getProperty("user.dir") + File.separator + "examples\\bike_resource_package_4.1"
-                + File.separator + "DMC-S1000DBIKE-AAA-D00-00-00-00AA-960A-T_001-00_EN-US.xml");
+        File scDM = new File(
+            System.getProperty("user.dir")
+            + File.separator
+            + "examples"
+            + File.separator
+            + "bike_resource_package_4.1"
+            + File.separator
+            + "DMC-S1000DBIKE-AAA-D00-00-00-00AA-960A-T_001-00_EN-US.xml"
+        );
         
         assertTrue(checker.isSCOContentDM(scDM));
     }

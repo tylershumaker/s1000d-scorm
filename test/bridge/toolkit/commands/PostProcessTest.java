@@ -1,6 +1,6 @@
 /**
- * This file is part of the S1000D Transformation Toolkit 
- * project hosted on Sourceforge.net. See the accompanying 
+ * This file is part of the S1000D Transformation Toolkit
+ * project hosted on Sourceforge.net. See the accompanying
  * license.txt file for applicable licenses.
  */
 package bridge.toolkit.commands;
@@ -31,7 +31,7 @@ public class PostProcessTest
     Command postProcess;
     XMLParser parser;
     File tempRes;
-    
+
     /**
      * @throws java.lang.Exception
      */
@@ -40,17 +40,30 @@ public class PostProcessTest
     {
         ctx = new ContextBase();
         parser = new XMLParser();
-        ctx.put(Keys.XML_SOURCE, parser.getDoc(new File(System.getProperty("user.dir") + File.separator
-                + "test_files\\bike_imsmanifest_after_scobuilder.xml")));
-        String resources = System.getProperty("user.dir") + File.separator +
-        "examples\\bike_resource_package";
-        
-        
+        ctx.put(
+                Keys.XML_SOURCE,
+                parser.getDoc(
+                        new File(System.getProperty("user.dir")
+                                + File.separator
+                                + "test_files"
+                                + File.separator
+                                + "bike_imsmanifest_after_scobuilder.xml")));
+
+        String resources = System.getProperty("user.dir")
+                + File.separator
+                + "examples"
+                + File.separator
+                + "bike_resource_package";
+
+
         File srcPath = new File(resources);
-        tempRes = new File(System.getProperty("user.dir") + File.separator +
-                "test_files\\tempRes");
+        tempRes = new File(System.getProperty("user.dir")
+                + File.separator
+                + "test_files"
+                + File.separator
+                + "tempRes");
         CopyDirectory cd = new CopyDirectory();
-        
+
         try
         {
             cd.copyDirectory(srcPath, tempRes);
@@ -65,13 +78,13 @@ public class PostProcessTest
         {
             e.printStackTrace();
         }
-        
+
         ctx.put(Keys.RESOURCE_PACKAGE, tempRes.getAbsolutePath());
-        
+
         ContentPackageCreator cpc = new ContentPackageCreator((String) ctx.get(Keys.RESOURCE_PACKAGE));
         File cpPackage = cpc.createPackage();
         ctx.put(Keys.CP_PACKAGE, cpPackage);
-        
+
         postProcess = new PostProcess();
     }
 
@@ -100,7 +113,7 @@ public class PostProcessTest
             e.printStackTrace();
         }
     }
-    
+
     @Test
     public void testNullXMLSource()
     {
@@ -114,7 +127,7 @@ public class PostProcessTest
             e.printStackTrace();
         }
     }
-    
+
     @Test
     public void testNullCPPackage()
     {
@@ -128,8 +141,8 @@ public class PostProcessTest
             e.printStackTrace();
         }
     }
-    
-    
+
+
     static public boolean deleteDirectory(File path) {
         if( path.exists() ) {
           File[] files = path.listFiles();
