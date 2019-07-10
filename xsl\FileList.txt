@@ -1,9 +1,0 @@
-bridge/toolkit/commands/scpmStylesheetCourse.mobile.xsl
-bridge/toolkit/commands/commonmobile.js
-bridge/toolkit/commands/graphics.mobile.xslt
-bridge/toolkit/commands/dmStylesheetCourse.mobile.xsl
-bridge/toolkit/commands/dmStylesheet.mobile.xsl
-bridge/toolkit/commands/preProcessTransform.xsl
-bridge/toolkit/commands/assessmentmobile.xslt
-bridge/toolkit/commands/refs.mobile.xslt
-bridge/toolkit/commands/scpmStylesheet.mobile.xsl

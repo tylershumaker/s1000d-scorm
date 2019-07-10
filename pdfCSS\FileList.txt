@@ -1,2 +1,0 @@
-s1000d_student.css
-s1000d_instructor.css
