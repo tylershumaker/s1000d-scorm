@@ -19,6 +19,9 @@ import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
 
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
@@ -31,9 +34,6 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
 
 import bridge.toolkit.util.Keys;
-
-import com.sun.org.apache.xpath.internal.NodeSet;
-import com.sun.org.apache.xpath.internal.XPathAPI;
 
 /**
  *  Converts S1000D 4.1 learning data into S1000D 4.0 learning data so that 
@@ -489,7 +489,8 @@ public class S1000DConverter implements Command
      */
     public static org.w3c.dom.Node processXPathSingleNode(String xpath, Node node) throws Exception
     {
-        return XPathAPI.selectSingleNode(node, xpath);
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        return (org.w3c.dom.Node) xPath.compile(xpath).evaluate(node, XPathConstants.NODE);
     }
 
     /**
@@ -787,9 +788,8 @@ public class S1000DConverter implements Command
      */
     public static NodeList processXPath(String xpath, org.w3c.dom.Document document) throws Exception
     {
-
-        NodeSet set = new NodeSet(XPathAPI.selectNodeIterator(document, xpath));
-        return (NodeList) set;
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        return (NodeList) xPath.compile(xpath).evaluate(document, XPathConstants.NODESET);
     }
 
     /**

@@ -48,7 +48,12 @@ public class ZipCreatorTest
    @Test
    public void testZipFiles() throws IOException
    {
-      File directory = new File(System.getProperty("user.dir") + File.separator + "examples\\bike_resource_package");
+      File directory = new File(
+          System.getProperty("user.dir")
+          + File.separator
+          + "examples"
+          + File.separator
+          + "bike_resource_package");
 
       contentPackage.zipFiles(directory, testZip);
       

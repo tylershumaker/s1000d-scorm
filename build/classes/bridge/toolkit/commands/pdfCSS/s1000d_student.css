@@ -1,0 +1,55 @@
+
+Description{
+	display:none;
+	}
+
+techName, infoName{
+	font-size: 12pt;
+	display:block;
+	font-weight: bold;
+	}
+	
+systemBreakdownCode{
+	display:none;
+}	
+
+
+title, emphasis{
+	font-size: 12pt;
+	font-weight: bold;
+	display:block;
+	position: relative:
+	left: -20px;
+}
+
+listItem>para{
+	list-style-type: circle;
+	font-size: 12pt;
+	display:block;
+	font-style: italic;
+
+	
+}
+
+para, shortDescr{
+	font-size: 12pt;
+	display:block;
+	position: relative;
+	left:20px;
+	width:7in;
+}
+
+lcFeedback description para
+{
+	display:none;
+}
+
+lcFeedbackCorrect description para
+{
+	display:none;
+}
+
+lcFeedbackIncorrect description para
+{
+	display:none;
+}

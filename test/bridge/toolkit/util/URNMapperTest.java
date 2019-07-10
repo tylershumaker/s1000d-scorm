@@ -50,7 +50,13 @@ public class URNMapperTest
         List<File> resourceFiles = new ArrayList<File>();
         try
         {
-            resourceFiles = URNMapper.getSourceFiles(System.getProperty("user.dir") +"\\examples\\bike_resource_package_4.1");
+            resourceFiles = URNMapper.getSourceFiles(
+                System.getProperty("user.dir")
+                + File.separator
+                + "examples"
+                + File.separator
+                + "bike_resource_package_4.1"
+            );
         }
         catch (JDOMException e)
         {
