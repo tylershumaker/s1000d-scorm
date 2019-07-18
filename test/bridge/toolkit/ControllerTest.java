@@ -187,6 +187,6 @@ public class ControllerTest
                 "-scormLevelledParaNum"};
 
 
-        Controller.main(NEWSCORMOPSEICASHTML);
+        Controller.main(SCORM41HTML);
     }
 }

@@ -137,6 +137,8 @@ public class PreProcessTest
                          returned.getRootElement().getChildren().size());
             assertEquals(expected.getRootElement().getChild("resources", null).getChildren().size(),
                          returned.getRootElement().getChild("resources", null).getChildren().size());
+            System.out.println(expected.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren());
+            System.out.println(returned.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren());
             assertEquals(expected.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size(),
                          returned.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size());
             XPath xp = XPath.newInstance("//ns:resource[@identifier='RES-N66055']");
