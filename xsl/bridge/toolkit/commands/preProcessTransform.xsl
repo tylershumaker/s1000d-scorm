@@ -185,6 +185,15 @@
                                     <xsl:element name="adlnav:hideLMSUI" namespace="http://www.adlnet.org/xsd/adlnav_v1p3">previous</xsl:element>
                                 </xsl:element>
                             </xsl:element>
+							<!-- 7/16/2019 -->
+							<xsl:if test="not(contains($learncode, 'T28'))">
+								<xsl:element name="imsss:sequencing" namespace="http://www.imsglobal.org/xsd/imsss">
+									<xsl:element name="imsss:rollupRules" namespace="http://www.imsglobal.org/xsd/imsss">
+										<xsl:attribute name="objectiveMeasureWeight">0</xsl:attribute>
+									</xsl:element>
+								</xsl:element>
+							</xsl:if>
+
 						</xsl:element>
 					</xsl:for-each>
 					<metadata>

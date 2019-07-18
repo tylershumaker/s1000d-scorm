@@ -1,10 +1,11 @@
 Toolkit.jar
 ToolkitGUI.jar
+s1000DToolkit1.1/*
 S1000D_BIKE_Learning_Sample.zip
-bin/
+bin/*
+build/*
 .idea/workspace.xml
-mobile/
-build/
+mobile/*
 *.zip
 *.pdf
 *.log
