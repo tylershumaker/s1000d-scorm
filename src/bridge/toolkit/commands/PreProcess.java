@@ -30,6 +30,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.Namespace;
+import org.jdom.output.XMLOutputter;
 import org.jdom.xpath.XPath;
 
 import bridge.toolkit.ResourceMapException;
@@ -62,6 +63,11 @@ public class PreProcess implements Command
      * Location of the XSLT transform file.
      */
     private static final String TRANSFORM_FILE = "preProcessTransform.xsl";
+
+    /**
+     * Location of the XSLT transform file for SCORM 1.2.
+     */
+    private static final String TRANSFORM_FILE_SCORM12 = "preProcessTransform12.xsl";
 
     /**
      * InputStream for the xsl file that is used to transform the SCPM file to 
@@ -126,14 +132,19 @@ public class PreProcess implements Command
             }
 
             urn_map = URNMapper.writeURNMap(src_files, "");
-              
-            transform = this.getClass().getResourceAsStream(TRANSFORM_FILE);
+
+            if (ctx.get(Keys.OUTPUT_TYPE) == "SCORM12") {
+                transform = this.getClass().getResourceAsStream(TRANSFORM_FILE_SCORM12);
+            }
+            else {
+                transform = this.getClass().getResourceAsStream(TRANSFORM_FILE);
+            }
 
             try
             {
                 doTransform((String) ctx.get(Keys.SCPM_FILE));
 
-                addResources(urn_map);
+                addResources(urn_map, (String) ctx.get(Keys.OUTPUT_TYPE), (String) ctx.get(Keys.SCPM_FILE));
                 
                 processDeps(mapDependencies());
             }
@@ -174,6 +185,9 @@ public class PreProcess implements Command
                     + " command to be executed was null");
             return PROCESSING_COMPLETE;
         }
+//  Print xml source to console for debugging
+//        XMLOutputter outputter = new XMLOutputter();
+//        System.out.print(outputter.outputString((Document)ctx.get(Keys.XML_SOURCE)));
         return CONTINUE_PROCESSING;
     }
 
@@ -205,18 +219,20 @@ public class PreProcess implements Command
      * in the resource package that is provided.
      * 
      * @param urn_map JDOM Document that is used to create the urn_resource_map.xml file.
+     * @param output String that represents the desired output type.
      * @throws ResourceMapException  Exception that is thrown when a URN is generated from in two different 
      * files in the Resource Package.
      * @throws IOException 
      * @throws JDOMException 
      */
     @SuppressWarnings("unchecked")
-    private static void addResources(Document urn_map) throws ResourceMapException, JDOMException, IOException
+    private static void addResources(Document urn_map, String output, String scpm_file) throws ResourceMapException, JDOMException, IOException
     {
         Element resources = manifest.getRootElement().getChild("resources", null);
         Namespace ns = resources.getNamespace();
         Namespace adlcpNS = Namespace.getNamespace("adlcp", "http://www.adlnet.org/xsd/adlcp_v1p3");
         List<Element> urns = urn_map.getRootElement().getChildren();
+
         for (int i = 0; i < urns.toArray().length; i++)
         {
             String the_href = "resources/s1000d/" + urns.get(i).getChildText("target", null).replaceAll("\\s", "%20");
@@ -225,7 +241,12 @@ public class PreProcess implements Command
             Element resource = new Element("resource");
             Attribute id = new Attribute("identifier", the_name);
             Attribute type = new Attribute("type", "webcontent");
-            Attribute scormtype = new Attribute("scormType", "asset", adlcpNS);
+            String scorm_type_name = "scormType";
+            if (output == "SCORM12") {
+                scorm_type_name = "scormtype";
+            }
+
+            Attribute scormtype = new Attribute(scorm_type_name, "asset", adlcpNS);
             Attribute href = new Attribute("href", the_href);
             resource.setAttribute(id);
             resource.setAttribute(type);

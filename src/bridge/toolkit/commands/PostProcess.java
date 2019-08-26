@@ -45,27 +45,35 @@ public class PostProcess implements Command
             
             XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
             File temp = new File(cpPackage + File.separator +"imsmanifest.xml");
-            try 
-            {
+            try {
                 //writes the imsmanfest.xml file out to the content package
-                FileWriter writer = new FileWriter(temp,false);
+                FileWriter writer = new FileWriter(temp, false);
                 outputter.output(manifest, writer);
                 writer.flush();
                 writer.close();
-                
-                //copies the required xsd files over to the content package
-                CopyDirectory cd = new CopyDirectory();
-                //check if the directory exists if it does use it else copy it from the jar
-                File xsd_loc = new File(System.getProperty("user.dir") + File.separator + "xsd");
-                if (xsd_loc.exists())
-                {
-                	cd.copyDirectory(xsd_loc, cpPackage);
+
+                if (ctx.get(Keys.OUTPUT_TYPE) == "SCORM12") {
+                    //copies the required xsd files over to the content package
+                    CopyDirectory cd = new CopyDirectory();
+                    //check if the directory exists if it does use it else copy it from the jar
+                    File xsd_loc = new File(System.getProperty("user.dir") + File.separator + "xsd_12");
+                    if (xsd_loc.exists()) {
+                        cd.copyDirectory(xsd_loc, cpPackage);
+                    } else {
+                        cd.CopyJarFiles(this.getClass(), "xsd_12", cpPackage.getAbsolutePath());
+                    }
+                } else {
+                    //copies the required xsd files over to the content package
+                    CopyDirectory cd = new CopyDirectory();
+                    //check if the directory exists if it does use it else copy it from the jar
+                    File xsd_loc = new File(System.getProperty("user.dir") + File.separator + "xsd");
+                    if (xsd_loc.exists()) {
+                        cd.copyDirectory(xsd_loc, cpPackage);
+                    } else {
+                        cd.CopyJarFiles(this.getClass(), "xsd", cpPackage.getAbsolutePath());
+                    }
                 }
-                else
-                {
-                	cd.CopyJarFiles(this.getClass(), "xsd", cpPackage.getAbsolutePath());
-                }
-            } 
+            }
             catch (java.io.IOException e) 
             {
                 System.out.println("Content Package creation was unsuccessful");

@@ -40,6 +40,7 @@ public class PostProcessTest
     {
         ctx = new ContextBase();
         parser = new XMLParser();
+
         ctx.put(
                 Keys.XML_SOURCE,
                 parser.getDoc(

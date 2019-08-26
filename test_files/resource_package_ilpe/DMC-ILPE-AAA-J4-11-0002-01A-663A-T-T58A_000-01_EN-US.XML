@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/learning.xsd">
+<!-- Source: LESSON PLAN, SECTION: (U) Integrated Low Pressure Electrolyzer (ILPE) Repair -->
+	<identAndStatusSection>
+		<dmAddress>
+			<dmIdent>
+				<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+					subSubSystemCode="1" assyCode="0002" disassyCode="01" disassyCodeVariant="A"
+					infoCode="663" infoCodeVariant="A" itemLocationCode="T" learnCode="T58" learnEventCode="A"/>
+				<language languageIsoCode="en" countryIsoCode="US"/>
+				<issueInfo issueNumber="000" inWork="01"/>
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate year="2018" month="12" day="06"/>
+				<dmTitle>
+					<techName>Blower motor</techName>
+					<infoName>Standard repair procedure</infoName>
+				</dmTitle>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus issueType="new">
+			<security securityClassification="01"/>
+			<dataRestrictions>
+				<restrictionInstructions>
+					<dataDistribution></dataDistribution>
+					<exportControl>
+						<exportRegistrationStmt>
+							<simplePara>This document contains technical data whose export is restricted by the Arms Export Control Act (Title 22, U.S.C., Sec. 2751 et seq.) or the Export Administration Act of 1979, as amended (Title 50, U.S.C., App. 2401, et seq.). Violation of these export-control laws is subject to severe criminal penalties. Dissemination of this document is controlled under DoD Directive 5230.25.</simplePara>
+						</exportRegistrationStmt>
+					</exportControl>
+					<dataDestruction>For unclassified, limited documents, destroy by any method that shall prevent disclosure of contents or reconstruction of the document.</dataDestruction>
+				</restrictionInstructions>
+			</dataRestrictions>
+			<responsiblePartnerCompany enterpriseCode="55910">
+				<enterpriseName>NAVY UNITED STATES DEPARTMENT OF</enterpriseName>
+			</responsiblePartnerCompany>
+			<originator enterpriseCode=" ">
+				<enterpriseName> </enterpriseName>
+			</originator>
+			<applic>
+				<displayText>
+					<simplePara>All</simplePara>
+				</displayText>
+			</applic>
+			<brexDmRef>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="ILPE" systemDiffCode="A" systemCode="00"
+							subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00"
+							disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A"
+							itemLocationCode="D"/>
+					</dmRefIdent>
+					<dmRefAddressItems>
+						<dmTitle>
+							<techName>ILPE</techName>
+							<infoName>BREX</infoName>
+						</dmTitle>
+					</dmRefAddressItems>
+				</dmRef>
+			</brexDmRef>
+			<qualityAssurance>
+				<unverified/>
+			</qualityAssurance>
+		</dmStatus>
+	</identAndStatusSection>
+	<content>
+		<learning>
+			<learningPlan>
+				<lcProject>
+					<description>
+						<levelledPara>
+							<title>Enabling Objective</title>
+							<para>(U) REPAIR THE ILPE WITH MINIMAL SUPERVISION TO THE AUTHORIZED MAINTENANCE LEVEL IN ACCORDANCE WITH DOCUMENTED CORRECTIVE MAINTENANCE PROCEDURES EFFICIENTLY, WITH MINIMUM ERRORS.</para>
+						</levelledPara>
+					</description>
+				</lcProject>
+			</learningPlan>
+		</learning>
+	</content>
+</dmodule>

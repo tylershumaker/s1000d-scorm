@@ -63,7 +63,7 @@ public class Keys
     /**
      * String that represents whether or not to render in html
      */
-    public static final String OUTPUT_TYPE = null; 
+    public static final String OUTPUT_TYPE = "output_type";
     
     /**
      * String that represents Min passing score

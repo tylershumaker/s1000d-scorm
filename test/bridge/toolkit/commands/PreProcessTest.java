@@ -87,6 +87,55 @@ public class PreProcessTest
         ctx.put(Keys.RESOURCE_PACKAGE, dstPath.getAbsolutePath());
         preProcess = new PreProcess();
     }
+
+    //Setup for SCORM 1.2
+    public void setUp12(String src)
+    {
+        ctx = new ContextBase();
+        ctx.put(Keys.OUTPUT_TYPE, "SCORM12");
+
+        ctx.put(
+                Keys.SCPM_FILE,
+                System.getProperty("user.dir")
+                        + File.separator
+                        + "examples"
+                        + File.separator
+                        + "bike_SCPM"
+                        + File.separator
+                        + "SMC-S1000DBIKE-06RT9-00001-00.xml"
+        );
+
+        File srcPath = new File(src);
+
+        dstPath = new File(
+                System.getProperty("user.dir")
+                        + File.separator
+                        + "test_files"
+                        + File.separator
+                        + "resMap"
+        );
+
+        CopyDirectory cd = new CopyDirectory();
+
+        try
+        {
+            cd.copyDirectory(srcPath, dstPath);
+            File svn = new File(dstPath.getAbsolutePath()+ File.separator + ".svn");
+            if (svn.exists())
+            {
+                deleteDirectory(svn);
+            }
+
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        //
+        ctx.put(Keys.RESOURCE_PACKAGE, dstPath.getAbsolutePath());
+        preProcess = new PreProcess();
+    }
     
     @After
     public void tearDown()
@@ -151,7 +200,65 @@ public class PreProcessTest
             e.printStackTrace();
         }
     }
-    
+    /**
+     * Test method for {@link bridge.toolkit.PreProcess#execute(org.apache.commons.chain.Context)}.
+     * Testing SCORM 1.2 PreProcess
+     */
+    @Test
+    public void testExecute12()
+    {
+        try
+        {
+            setUp12(
+                    System.getProperty("user.dir")
+                            + File.separator
+                            + "examples"
+                            + File.separator
+                            + "bike_resource_package"
+            );
+            preProcess.execute(ctx);
+            Document returned = (Document)ctx.get(Keys.XML_SOURCE);
+
+            XMLParser parser = new XMLParser();
+            Document expected = parser.getDoc(
+                    new File(
+                            System.getProperty("user.dir")
+                                    + File.separator
+                                    + "test_files"
+                                    + File.separator
+                                    + "bike_imsmanifest_after_preprocess12.xml"
+                    )
+            );
+
+//          XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+//          String output = outputter.outputString(returned);
+//          System.out.println(output);
+//
+//          Document urnmap = (Document)ctx.get(Keys.URN_MAP);
+//          output = outputter.outputString(urnmap);
+//          System.out.println(output);
+
+            assertEquals(expected.getRootElement().getName(),
+                    returned.getRootElement().getName());
+            assertEquals(expected.getRootElement().getChildren().size(),
+                    returned.getRootElement().getChildren().size());
+            assertEquals(expected.getRootElement().getChild("resources", null).getChildren().size(),
+                    returned.getRootElement().getChild("resources", null).getChildren().size());
+            System.out.println(expected.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren());
+            System.out.println(returned.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren());
+            assertEquals(expected.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size(),
+                    returned.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren().size());
+            XPath xp = XPath.newInstance("//ns:resource[@identifier='RES-N66055']");
+            xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
+            assertEquals(((Element)xp.selectSingleNode(expected)).getChildren().size(),
+                    ((Element)xp.selectSingleNode(returned)).getChildren().size());
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Test method for {@link bridge.toolkit.PreProcess#execute(org.apache.commons.chain.Context)}.
      */

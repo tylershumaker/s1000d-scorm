@@ -186,7 +186,22 @@ public class ControllerTest
                 System.getProperty("user.dir") + "\\test_files\\resource_package_mx_tach",
                 "-scormLevelledParaNum"};
 
+        String[]  SCORM_12 = {System.getProperty("user.dir") +"\\examples\\bike_SCPM\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+                    System.getProperty("user.dir") +"\\examples\\bike_resource_package",
+                    "-SCORM12"};
 
-        Controller.main(SCORM41HTML);
+        String[]  SCORM_ILPE = {System.getProperty("user.dir") +"\\test_files\\scpm_ilpe\\SMC-ILPE-06RT9-00001-00.xml",
+                System.getProperty("user.dir") +"\\test_files\\resource_package_ilpe",
+                "-SCORM12"};
+
+        String[]  SCORM_ILPE_2004 = {System.getProperty("user.dir") +"\\test_files\\scpm_ilpe\\SMC-ILPE-06RT9-00001-00.xml",
+                System.getProperty("user.dir") +"\\test_files\\resource_package_ilpe",
+                "-scormhtml"};
+
+        String[]  SCORM12_slim = {System.getProperty("user.dir") +"\\test_files\\scpm_slim\\SMC-S1000DBIKE-06RT9-00001-00.xml",
+                System.getProperty("user.dir") +"\\test_files\\resource_package_slim",
+                "-SCORM12"};
+
+        Controller.main(SCORM12_slim);
     }
 }
