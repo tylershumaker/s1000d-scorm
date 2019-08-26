@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/learning.xsd">
+	<!-- Source: LESSON PLAN, SECTION: (U) Integrated Low Pressure Electrolyzer (ILPE) Repair -->
+	<identAndStatusSection>
+		<dmAddress>
+			<dmIdent>
+				<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+					subSubSystemCode="1" assyCode="0002" disassyCode="01" disassyCodeVariant="A"
+					infoCode="663" infoCodeVariant="A" itemLocationCode="T" learnCode="T58" learnEventCode="C"/>
+				<language languageIsoCode="en" countryIsoCode="US"/>
+				<issueInfo issueNumber="000" inWork="01"/>
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate year="2018" month="12" day="06"/>
+				<dmTitle>
+					<techName>Blower motor</techName>
+					<infoName>Standard repair procedure</infoName>
+				</dmTitle>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus issueType="new">
+			<security securityClassification="01"/>
+			<dataRestrictions>
+				<restrictionInstructions>
+					<dataDistribution></dataDistribution>
+					<exportControl>
+						<exportRegistrationStmt>
+							<simplePara>This document contains technical data whose export is restricted by the Arms Export Control Act (Title 22, U.S.C., Sec. 2751 et seq.) or the Export Administration Act of 1979, as amended (Title 50, U.S.C., App. 2401, et seq.). Violation of these export-control laws is subject to severe criminal penalties. Dissemination of this document is controlled under DoD Directive 5230.25.</simplePara>
+						</exportRegistrationStmt>
+					</exportControl>
+					<dataDestruction>For unclassified, limited documents, destroy by any method that shall prevent disclosure of contents or reconstruction of the document.</dataDestruction>
+				</restrictionInstructions>
+			</dataRestrictions>
+			<responsiblePartnerCompany enterpriseCode="55910">
+				<enterpriseName>NAVY UNITED STATES DEPARTMENT OF</enterpriseName>
+			</responsiblePartnerCompany>
+			<originator enterpriseCode=" ">
+				<enterpriseName> </enterpriseName>
+			</originator>
+			<applic>
+				<displayText>
+					<simplePara>All</simplePara>
+				</displayText>
+			</applic>
+			<brexDmRef>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="ILPE" systemDiffCode="A" systemCode="00"
+							subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00"
+							disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A"
+							itemLocationCode="D"/>
+					</dmRefIdent>
+					<dmRefAddressItems>
+						<dmTitle>
+							<techName>ILPE</techName>
+							<infoName>BREX</infoName>
+						</dmTitle>
+					</dmRefAddressItems>
+				</dmRef>
+			</brexDmRef>
+			<qualityAssurance>
+				<unverified/>
+			</qualityAssurance>
+		</dmStatus>
+	</identAndStatusSection>
+	<content>
+		<learning>
+			<learningContent>
+				<title>(U) Integrated Low Pressure Electrolyzer (ILPE) Repair</title>
+				<description>
+					<table frame="none" id="tbl0002" orient="port" pgwide="1" rowsep="0" tocentry="0">
+						<tgroup cols="8">
+							<colspec align="left" colname="1" colnum="1" colsep="0" colwidth="1*"/>
+							<colspec align="left" colname="2" colnum="2" colsep="0" colwidth="1.04*"/>
+							<colspec align="left" colname="3" colnum="3" colsep="0" colwidth="1.48*"/>
+							<colspec align="left" colname="4" colnum="4" colsep="0" colwidth="22.85*"/>
+							<colspec align="left" colname="5" colnum="5" colsep="0" colwidth="1.18*"/>
+							<colspec align="left" colname="6" colnum="6" colsep="0" colwidth="1.31*"/>
+							<colspec align="left" colname="7" colnum="7" colsep="0" colwidth="1.51*"/>
+							<colspec align="left" colname="8" colnum="8" colsep="0" colwidth="26.3*"/>
+							<spanspec align="center" nameend="10" namest="7" spanname="7-10"/>
+							<spanspec align="center" nameend="10" namest="8" spanname="8-10"/>
+							<spanspec align="center" nameend="4" namest="3" spanname="3-4"/>
+							<spanspec align="center" nameend="10" namest="6" spanname="6-10"/>
+							<spanspec align="center" nameend="4" namest="2" spanname="2-4"/>
+							<spanspec align="center" nameend="10" namest="5" spanname="5-10"/>
+							<spanspec align="center" nameend="4" namest="1" spanname="1-4"/>
+							<thead valign="top">
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" namest="1" nameend="4" align="left">
+										<para>DISCUSSION POINT</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" namest="5" nameend="8" align="left">
+										<para>RELATED INSTRUCTOR ACTIVITY</para>
+									</entry>
+								</row>
+							</thead>
+							<tbody valign="top">
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left">
+										<para>1.</para>
+									</entry>
+									<entry colname="2" colsep="0" valign="top" namest="2" nameend="4" align="left">
+										<para>(U) Introduction</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left">
+										<para>1.</para>
+									</entry>
+									<entry colname="6" colsep="0" valign="top" namest="6" nameend="8" align="left">
+										<para>(U) Display A-652-0093_M3L1S3V1, Integrated Low Pressure Electrolyzer (ILPE) Repair, Slides 1 through 1</para>
+										<para>(U) Refer to and direct trainee to refer to Outline Sheet 3-1-3-1.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left">
+										<para>2.</para>
+									</entry>
+									<entry colname="2" colsep="0" valign="top" namest="2" nameend="4" align="left">
+										<para>(U) Personnel and Equipment Safety Precautions</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left">
+										<para>2.</para>
+									</entry>
+									<entry colname="6" colsep="0" valign="top" namest="6" nameend="8" align="left">
+										<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.3 REPAIRS.:6.3.2 General Repair Practices.:6.3.2.1 Torque Requirements. through 6.3.2.4 Drain Cap Removal.</para>
+										<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.3 REPAIRS.:6.3.3 Safety Precautions.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left">
+										<para>3.</para>
+									</entry>
+									<entry colname="2" colsep="0" valign="top" namest="2" nameend="4" align="left">
+										<para>(U) Special Tools and Test Equipment</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left">
+										<para>3.</para>
+									</entry>
+									<entry colname="6" colsep="0" valign="top" namest="6" nameend="8" align="left">
+										<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.1 INTRODUCTION.:6.1.2 Tools and Test Equipment. and Table 6-1</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" namest="1" nameend="4" align="left">
+										<note>
+											<notePara>(U) All special lifting devices utilized during the labs were included with the ILPE FPS.</notePara>
+										</note>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" namest="6" nameend="8" align="left"/>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left">
+										<para>4.</para>
+									</entry>
+									<entry colname="2" colsep="0" valign="top" namest="2" nameend="4" align="left">
+										<para>(U) Repair Procedures</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" namest="6" nameend="8" align="left"/>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left">
+										<para>a.</para>
+									</entry>
+									<entry colname="3" colsep="0" valign="top" namest="3" nameend="4" align="left">
+										<para>(U) Blower/Motor Assembly Maintenance Procedures (Classroom)</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left"/>
+									<entry colname="8" colsep="0" valign="top" align="left"/>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" namest="1" nameend="4" align="left">
+										<note>
+											<notePara>(U) This is a Disassembly/Reassembly procedure found in Chapter 6.</notePara>
+										</note>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left"/>
+									<entry colname="8" colsep="0" valign="top" align="left"/>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(1)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) ILPE Set Up For Blower Motor Access</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(1)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Refer to and direct trainee to refer to <dmRef>
+											<dmRefIdent>
+												<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+													subSubSystemCode="1" assyCode="0001" disassyCode="01" disassyCodeVariant="A"
+													infoCode="540" infoCodeVariant="A" itemLocationCode="A"/>
+											</dmRefIdent>
+										</dmRef>.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(2)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Blower Motor Interference Removal</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(2)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Refer to and direct trainee to refer to <dmRef>
+											<dmRefIdent>
+												<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+													subSubSystemCode="1" assyCode="0001" disassyCode="01" disassyCodeVariant="A"
+													infoCode="540" infoCodeVariant="B" itemLocationCode="A"/>
+											</dmRefIdent>
+										</dmRef>.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(3)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Blower Motor Replacement</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(3)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Refer to and direct trainee to refer to <dmRef>
+											<dmRefIdent>
+												<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+													subSubSystemCode="1" assyCode="0002" disassyCode="01" disassyCodeVariant="A"
+													infoCode="921" infoCodeVariant="A" itemLocationCode="A"/>
+											</dmRefIdent>
+										</dmRef>.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(4)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Blower Motor Housing Seal Replacement</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(4)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.3 REPAIRS.:6.3.5 GPU Mechanical Repair Procedures.:6.3.5.11 Blower Motor Housing Seal Replacement.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(5)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Blower Motor Interference Installation</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(5)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Refer to and direct trainee to refer to <dmRef>
+											<dmRefIdent>
+												<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+													subSubSystemCode="1" assyCode="0001" disassyCode="01" disassyCodeVariant="A"
+													infoCode="740" infoCodeVariant="A" itemLocationCode="A"/>
+											</dmRefIdent>
+										</dmRef>.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(6)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) ILPE Set-up After Blower Motor Access</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left"/>
+									<entry colname="8" colsep="0" valign="top" align="left"/>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(7)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) ICW Lesson</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left"/>
+									<entry colname="8" colsep="0" valign="top" align="left"/>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left">
+										<para>b.</para>
+									</entry>
+									<entry colname="3" colsep="0" valign="top" namest="3" nameend="4" align="left">
+										<para>(U) Repair Procedures (Lab)</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left">
+										<para>b.</para>
+									</entry>
+									<entry colname="7" colsep="0" valign="top" namest="7" nameend="8" align="left">
+										<para>(U) Prepare the ILPE Front Panel Simulator for use. Ensure the applicable tools are made available to the students.</para>
+										<para>(U) Refer to NAWCTSD P-8437 for ILPE FPS operation</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(1)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Safety Precautions</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(1)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Direct trainee to adhere to all applicable safety precautions while in the Lab.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(2)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Blower Motor Interference Removal</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(2)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Direct trainee to perform <dmRef>
+											<dmRefIdent>
+												<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+													subSubSystemCode="1" assyCode="0001" disassyCode="01" disassyCodeVariant="A"
+													infoCode="540" infoCodeVariant="B" itemLocationCode="A"/>
+											</dmRefIdent>
+										</dmRef>.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(3)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Blower Motor Replacement</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(3)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Direct trainee to perform <dmRef>
+											<dmRefIdent>
+												<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+													subSubSystemCode="1" assyCode="0002" disassyCode="01" disassyCodeVariant="A"
+													infoCode="921" infoCodeVariant="A" itemLocationCode="A"/>
+											</dmRefIdent>
+										</dmRef>.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(4)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Blower Motor Housing Seal Replacement</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(4)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Direct trainee to perform S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.3 REPAIRS.:6.3.5 GPU Mechanical Repair Procedures.:6.3.5.11 Blower Motor Housing Seal Replacement.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(5)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Blower Motor Interference Installation</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(5)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Direct trainee to perform as required <dmRef>
+											<dmRefIdent>
+												<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+													subSubSystemCode="1" assyCode="0001" disassyCode="01" disassyCodeVariant="A"
+													infoCode="740" infoCodeVariant="A" itemLocationCode="A"/>
+											</dmRefIdent>
+										</dmRef>.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(6)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) ILPE Set-up After Blower Motor Access</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left">
+										<para>(6)</para>
+									</entry>
+									<entry colname="8" colsep="0" valign="top" align="left">
+										<para>(U) Direct trainee to perform as required <dmRef>
+											<dmRefIdent>
+												<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+													subSubSystemCode="1" assyCode="0001" disassyCode="01" disassyCodeVariant="A"
+													infoCode="740" infoCodeVariant="B" itemLocationCode="A"/>
+											</dmRefIdent>
+										</dmRef>.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left"/>
+									<entry colname="2" colsep="0" valign="top" align="left"/>
+									<entry colname="3" colsep="0" valign="top" align="left">
+										<para>(7)</para>
+									</entry>
+									<entry colname="4" colsep="0" valign="top" align="left">
+										<para>(U) Critique</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left"/>
+									<entry colname="8" colsep="0" valign="top" align="left"/>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left">
+										<para>5.</para>
+									</entry>
+									<entry colname="2" colsep="0" valign="top" namest="2" nameend="4" align="left">
+										<para>(U) Section Review</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left">
+										<para>5.</para>
+									</entry>
+									<entry colname="6" colsep="0" valign="top" namest="6" nameend="8" align="left">
+										<para>(U) Display A-652-0093_M3L1S3V1, Integrated Low</para>
+										<para>Pressure Electrolyzer (ILPE) Repair, Slides 2 through 2</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left">
+										<para>6.</para>
+									</entry>
+									<entry colname="2" colsep="0" valign="top" namest="2" nameend="4" align="left">
+										<para>(U) Assignment</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left">
+										<para>6.</para>
+									</entry>
+									<entry colname="6" colsep="0" valign="top" namest="6" nameend="8" align="left">
+										<para>(U) Make study assignments if required.</para>
+									</entry>
+								</row>
+								<row rowsep="0">
+									<entry colname="1" colsep="0" valign="top" align="left">
+										<para>7.</para>
+									</entry>
+									<entry colname="2" colsep="0" valign="top" namest="2" nameend="4" align="left">
+										<para>(U) Practice Questions: Not Used</para>
+										<para>No practice items</para>
+									</entry>
+									<entry colname="5" colsep="0" valign="top" align="left"/>
+									<entry colname="6" colsep="0" valign="top" align="left"/>
+									<entry colname="7" colsep="0" valign="top" align="left"/>
+									<entry colname="8" colsep="0" valign="top" align="left"/>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</description>
+			</learningContent>
+		</learning>
+	</content>
+</dmodule>

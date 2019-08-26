@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/learning.xsd">
+	<!-- Source: LESSON PLAN, SECTION: (U) Integrated Low Pressure Electrolyzer (ILPE) Troubleshooting -->
+	<identAndStatusSection>
+		<dmAddress>
+			<dmIdent>
+				<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="J4" subSystemCode="1"
+					subSubSystemCode="1" assyCode="0002" disassyCode="01" disassyCodeVariant="A"
+					infoCode="421" infoCodeVariant="A" itemLocationCode="T" learnCode="T58" learnEventCode="A"/>
+				<language languageIsoCode="en" countryIsoCode="US"/>
+				<issueInfo issueNumber="000" inWork="01"/>
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate year="2018" month="11" day="13"/>
+				<dmTitle>
+					<techName>Blower motor</techName>
+					<infoName>Fault isolation procedure</infoName>
+				</dmTitle>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus issueType="new">
+			<security securityClassification="01"/>
+			<dataRestrictions>
+				<restrictionInstructions>
+					<dataDistribution></dataDistribution>
+					<exportControl>
+						<exportRegistrationStmt>
+							<simplePara>This document contains technical data whose export is restricted by the Arms Export Control Act (Title 22, U.S.C., Sec. 2751 et seq.) or the Export Administration Act of 1979, as amended (Title 50, U.S.C., App. 2401, et seq.). Violation of these export-control laws is subject to severe criminal penalties. Dissemination of this document is controlled under DoD Directive 5230.25.</simplePara>
+						</exportRegistrationStmt>
+					</exportControl>
+					<dataDestruction>For unclassified, limited documents, destroy by any method that shall prevent disclosure of contents or reconstruction of the document.</dataDestruction>
+				</restrictionInstructions>
+			</dataRestrictions>
+			<responsiblePartnerCompany enterpriseCode="55910">
+				<enterpriseName>NAVY UNITED STATES DEPARTMENT OF</enterpriseName>
+			</responsiblePartnerCompany>
+			<originator enterpriseCode=" ">
+				<enterpriseName> </enterpriseName>
+			</originator>
+			<applic>
+				<displayText>
+					<simplePara>All</simplePara>
+				</displayText>
+			</applic>
+			<brexDmRef>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="ILPE" systemDiffCode="A" systemCode="00"
+							subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00"
+							disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A"
+							itemLocationCode="D"/>
+					</dmRefIdent>
+					<dmRefAddressItems>
+						<dmTitle>
+							<techName>ILPE</techName>
+							<infoName>BREX</infoName>
+						</dmTitle>
+					</dmRefAddressItems>
+				</dmRef>
+			</brexDmRef>
+			<qualityAssurance>
+				<unverified/>
+			</qualityAssurance>
+		</dmStatus>
+	</identAndStatusSection>
+	<content>
+		<learning>
+			<learningOverview>
+				<title>(U) Integrated Low Pressure Electrolyzer (ILPE) Troubleshooting</title>
+				<description>
+					<levelledPara>
+						<title>Enabling Objective</title>
+						<para>(U) TROUBLESHOOT THE ILPE WITH MINIMAL SUPERVISION IN ACCORDANCE WITH DOCUMENTED CORRECTIVE MAINTENANCE PROCEDURES EFFICIENTLY, WITH MINIMUM ERRORS.</para>
+					</levelledPara>
+				</description>
+				<lcDuration>
+					<lcTime>
+						<description>
+							<table>
+								<tgroup cols="2">
+									<tbody>
+										<row>
+											<entry>
+												<para>CLASS TIME:</para>
+											</entry>
+											<entry>
+												<para>180</para>
+											</entry>
+										</row>
+										<row>
+											<entry>
+												<para>LAB TIME:</para>
+											</entry>
+											<entry>
+												<para>360</para>
+											</entry>
+										</row>
+									</tbody>
+								</tgroup>
+							</table>
+						</description>
+					</lcTime>
+				</lcDuration>
+				<lcResources>
+					<description>
+						<levelledPara>
+							<title>Trainee Preparation</title>
+							<levelledPara>
+								<!-- A. -->
+								<!-- Using levelledPara: -->
+								<title>Trainee Support Materials</title>
+								<para>None</para>
+							</levelledPara>
+							<levelledPara>
+								<!-- B. -->
+								<title>Reference Publications</title>
+								<para>None</para>
+							</levelledPara>
+						</levelledPara>
+						<levelledPara>
+							<title>Instructor Preparation</title>
+							<levelledPara>
+								<!-- A. -->
+								<title>Review Assigned Trainee Material</title>
+							</levelledPara>
+							<levelledPara>
+								<!-- B. -->
+								<title>Reference Publications</title>
+								<!-- Using sequentialList. Limited to two levels! -->
+								<para>
+									<sequentialList>
+										<listItem>
+											<!-- 1. -->
+											<para>(U) COMSUBLANT/COMSUBPAC INST 5400.49 w/ ACN 2-5, Submarine Organization and Regulations Manual</para>
+										</listItem>
+										<listItem>
+											<!-- 2. -->
+											<para>IETM: <sequentialList>
+													<listItem>
+														<!-- 2.a. -->
+														<para>(U) JFMM Vol IV, V. Rev C Chg 6</para>
+													</listItem>
+													<listItem>
+														<!-- 2.b. -->
+														<para>(U) NAWCTSD P-8437, V. 11 January 2011</para>
+													</listItem>
+													<listItem>
+														<!-- 2.c. -->
+														<para>(U) S9086-KC-STM-010 - NSTM CHAPTER 300 ELECTRIC PLANT - GENERAL, V. Rev 9</para>
+													</listItem>
+													<listItem>
+														<!-- 2.d. -->
+														<para>(U) S9515-AL-MMA-010, V. 15 APRIL 2016</para>
+													</listItem>
+												</sequentialList>
+											</para>
+										</listItem>
+									</sequentialList>
+								</para>
+							</levelledPara>
+							<levelledPara>
+								<!-- C. -->
+								<title>Training Materials Required</title>
+								<para>
+									<sequentialList>
+										<listItem>
+											<!-- 1. -->
+											<para>Trainee Guide</para>
+										</listItem>
+										<listItem>
+											<!-- 2. -->
+											<para>References: <sequentialList>
+													<listItem>
+														<!-- 2.a. -->
+														<para>(U) COMSUBLANT/COMSUBPAC INST 5400.49 w/ ACN 2-5, Submarine Organization and Regulations Manual</para>
+													</listItem>
+												</sequentialList>
+											</para>
+										</listItem>
+										<listItem>
+											<!-- 3. -->
+											<para>IETM: <sequentialList>
+													<listItem>
+														<!-- 3.a. -->
+														<para>(U) S9515-AL-MMA-010, V. 15 APRIL 2016</para>
+													</listItem>
+												</sequentialList>
+											</para>
+										</listItem>
+										<listItem>
+											<!-- 4. -->
+											<para>IMM: <sequentialList>
+													<listItem>
+														<!-- 4.a. -->
+														<para>(U) A-652-0093_M3L1S2V1, Integrated Low Pressure Electrolyzer (ILPE) Troubleshooting</para>
+													</listItem>
+													<listItem>
+														<!-- 4.b. -->
+														<para>(U) A-652-0093-ICW-MECH MAINT, Integrated Low Pressure Electrolyzer Mechanical Maintenance (Apr 2008)</para>
+													</listItem>
+												</sequentialList>
+											</para>
+										</listItem>
+										<listItem>
+											<!-- 5. -->
+											<para>Test Equipment: <sequentialList>
+													<listItem>
+														<!-- 5.a. -->
+														<para>(U) Simulator Test Box Assembly (ILPE)</para>
+													</listItem>
+												</sequentialList>
+											</para>
+										</listItem>
+										<listItem>
+											<!-- 6. -->
+											<para>Training Devices: <sequentialList>
+													<listItem>
+														<!-- 6.a. -->
+														<para>(U) ILPE Front Panel Simulator</para>
+													</listItem>
+												</sequentialList>
+											</para>
+										</listItem>
+									</sequentialList>
+								</para>
+							</levelledPara>
+						</levelledPara>
+					</description>
+				</lcResources>
+				<lcSection>
+					<!-- DISCUSSION POINT, RELATED INSTRUCTOR ACTIVITY -->
+					<description>
+						<table frame="none" id="tbl0002" orient="port" pgwide="1" rowsep="0" tocentry="0">
+							<tgroup cols="12">
+								<colspec align="left" colname="1" colnum="1" colsep="1" colwidth="1.03*"/>
+								<colspec align="left" colname="2" colnum="2" colsep="1" colwidth="1.15*"/>
+								<colspec align="left" colname="3" colnum="3" colsep="1" colwidth="1.09*"/>
+								<colspec align="left" colname="4" colnum="4" colsep="1" colwidth="1.25*"/>
+								<colspec align="left" colname="5" colnum="5" colsep="1" colwidth="1.35*"/>
+								<colspec align="left" colname="6" colnum="6" colsep="1" colwidth="17.51*"/>
+								<colspec align="left" colname="7" colnum="7" colsep="1" colwidth="1.12*"/>
+								<colspec align="left" colname="8" colnum="8" colsep="1" colwidth="1*"/>
+								<colspec align="left" colname="9" colnum="9" colsep="1" colwidth="1.19*"/>
+								<colspec align="left" colname="10" colnum="10" colsep="1" colwidth="1.25*"/>
+								<colspec align="left" colname="11" colnum="11" colsep="1" colwidth="1.25*"/>
+								<colspec align="left" colname="12" colnum="12" colsep="1" colwidth="24.87*"/>
+								<spanspec align="center" nameend="12" namest="10" spanname="10-12"/>
+								<spanspec align="center" nameend="6" namest="4" spanname="4-6"/>
+								<spanspec align="center" nameend="12" namest="9" spanname="9-12"/>
+								<spanspec align="center" nameend="6" namest="3" spanname="3-6"/>
+								<spanspec align="center" nameend="12" namest="8" spanname="8-12"/>
+								<spanspec align="center" nameend="6" namest="2" spanname="2-6"/>
+								<spanspec align="center" nameend="12" namest="7" spanname="7-12"/>
+								<spanspec align="center" nameend="6" namest="1" spanname="1-6"/>
+								<thead valign="top">
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" namest="1" nameend="6" align="left">
+											<para>DISCUSSION POINT</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" namest="7" nameend="12" align="left">
+											<para>RELATED INSTRUCTOR ACTIVITY</para>
+										</entry>
+									</row>
+								</thead>
+								<tbody valign="top">
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>1.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Introduction</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left">
+											<para>1.</para>
+										</entry>
+										<entry colname="8" colsep="0" valign="top" namest="8" nameend="12" align="left">
+											<para>(U) Display A-652-0093_M3L1S2V1, Integrated Low Pressure Electrolyzer (ILPE) Troubleshooting, Slides 1 through 1</para>
+											<para>(U) Refer to and direct trainee to refer to Outline Sheet 3-1-2-1.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>2.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Corrective Maintenance Philosophy</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left">
+											<para>2.</para>
+										</entry>
+										<entry colname="8" colsep="0" valign="top" namest="8" nameend="12" align="left">
+											<para>(U) Reference S9515-AL-MMA-010:CHAPTER 4 SCHEDULED MAINTENANCE:4.1 INTRODUCTION.</para>
+											<para>(U) Reference S9515-AL-MMA-010:CHAPTER 4 SCHEDULED MAINTENANCE:4.1 INTRODUCTION.</para>
+											<para>(U) Reference Joint Fleet Maintenance Manual Vol IV Chapter 6 paragraph 6.4 and Chapter 21 paragraph 21.3</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>3.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Personnel and Equipment Safety Precautions</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left">
+											<para>3.</para>
+										</entry>
+										<entry colname="8" colsep="0" valign="top" namest="8" nameend="12" align="left">
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.3 REPAIRS.:6.3.2 General Repair Practices.:6.3.2.1 Torque Requirements. through 6.3.2.4 Drain Cap Removal.</para>
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.3 REPAIRS.:6.3.3 Safety Precautions.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>a.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) Electrical Safety</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left">
+											<para>a.</para>
+										</entry>
+										<entry colname="9" colsep="0" valign="top" namest="9" nameend="12" align="left">
+											<para>(U) Reference S9086-KC-STM-010 - NSTM CHAPTER 300 ELECTRIC PLANT -GENERAL:CHAPTER 300 ELECTRICAL PLANT GENERAL:2 ELECTRICAL SAFETY PRECAUTIONS:300-2.3 ELECTRICAL SAFETY REQUIREMENTS FOR EQUIPMENT MAINTENANCE. through 300-2.6.4</para>
+											<para>(U) Reference COMSUBLANT/COMSUBPAC INST 5400.49 w/ ACN 2-5, Submarine Organization and Regulations Manual, Article 4308.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(1)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) General Requirements</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(1)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Reference S9086-KC-STM-010 - NSTM CHAPTER 300 ELECTRIC PLANT -GENERAL:CHAPTER 300 ELECTRICAL PLANT GENERAL:2 ELECTRICAL SAFETY PRECAUTIONS:300-2.3 ELECTRICAL SAFETY REQUIREMENTS FOR EQUIPMENT MAINTENANCE.:300-2.3.1 EQUIPMENT MAINTENANCE.:300-2.3.1.2 Requirements. Paragraph e.</para>
+											<para>(U) Reference COMSUBLANT/COMSUBPAC INST 5400.49 w/ ACN 2-5, Submarine Organization and Regulations Manual, Article 4308 paragraph 1.a.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" namest="1" nameend="6" align="left">
+											<note>
+												<notePara>(U) Ensure to account for the pen and ink changes of ACN 1-2 of the SORM when you discuss figure 4308-2.</notePara>
+											</note>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(2)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Work on Energized Equipment</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(2)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Reference S9086-KC-STM-010 - NSTM CHAPTER 300 ELECTRIC PLANT -GENERAL:CHAPTER 300 ELECTRICAL PLANT GENERAL:2 ELECTRICAL SAFETY PRECAUTIONS:300-2.4 ENERGIZED WORK GENERAL REQUIREMENTS.:300-2.4.3 ENERGIZED WORK - SPECIFIC REQUIREMENTS.:300-2.4.3.1 Principles.:TABLE 300-2-1a ENERGIZED EQUIPMENT WORK REQUIREMENTS</para>
+											<para>(U) Reference COMSUBLANT/COMSUBPAC INST 5400.49 w/ ACN 2-5, Submarine Organization and Regulations Manual, Article 4308 Para 1.f.</para>
+											<para>(U) Refer to and direct trainee to refer to COMSUBLANT/COMSUBPAC INST 5400.49 w/ ACN 2-5, Submarine Organization and Regulations Manual, Figure 4308-2.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(3)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Circumstances not Considered Work on Energized Equipment</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(3)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Reference S9086-KC-STM-010 - NSTM CHAPTER 300 ELECTRIC PLANT -GENERAL:CHAPTER 300 ELECTRICAL PLANT GENERAL:2 ELECTRICAL SAFETY PRECAUTIONS:300-2.5 EXCEPTIONS TO ENERGIZED WORK REQUIREMENTS.:300-2.5.1 INITIAL VOLTAGE VERIFICATION (IVV).:300-2.5.1.3 Identification and Control of Stray Voltage.:300-2.5.1.3.2 Discussion.:TABLE 300-2-1b IVV CHECKS</para>
+											<para>(U) Reference COMSUBLANT/COMSUBPAC INST 5400.49 w/ ACN 2-5, Submarine Organization and Regulations Manual, Article 4308 Para 1.f.(4).</para>
+											<para>(U) Refer to and direct trainee to refer to COMSUBLANT/COMSUBPAC INST 5400.49 w/ ACN 2-5, Submarine Organization and Regulations Manual, Figure 4308-3.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>4.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Special Tools and Test Equipment</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left">
+											<para>4.</para>
+										</entry>
+										<entry colname="8" colsep="0" valign="top" namest="8" nameend="12" align="left">
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.1 INTRODUCTION.:6.1.2 Tools and Test Equipment. and Table 6-1</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>5.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Troubleshooting Procedures</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" namest="8" nameend="12" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>a.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) System and Failure Messages</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left">
+											<para>a.</para>
+										</entry>
+										<entry colname="9" colsep="0" valign="top" namest="9" nameend="12" align="left">
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 5 TROUBLESHOOTING:5.3 FAULT LOGIC DIAGRAMS.:5.3.1 System and Failure Messages.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>b.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) Fault Historical Data Log</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left">
+											<para>b.</para>
+										</entry>
+										<entry colname="9" colsep="0" valign="top" namest="9" nameend="12" align="left">
+											<para>(U) Reference S9515-AL-MMA-010:CHAPTER 5 TROUBLESHOOTING:5.3 FAULT LOGIC DIAGRAMS.:5.3.2 Normal and Fault Historical Data Log.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>c.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) Performance Monitoring/Fault Localization</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" namest="9" nameend="12" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(1)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Ambiguity Group</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(1)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Reference S9515-AL-MMA-010:CHAPTER 5 TROUBLESHOOTING:5.3 FAULT LOGIC DIAGRAMS.:5.3.3 Ambiguity Group.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(2)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Level 3 Screens</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(2)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Reference S9515-AL-MMA-010:CHAPTER 5 TROUBLESHOOTING:5.3 FAULT LOGIC DIAGRAMS.:5.3.3 Ambiguity Group.:5.3.3.1 Level 3 Screens.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(3)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Level 4 Screens</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(3)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Reference S9515-AL-MMA-010:CHAPTER 5 TROUBLESHOOTING:5.3 FAULT LOGIC DIAGRAMS.:5.3.3 Ambiguity Group.:5.3.3.2 Level 4 Screens.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>d.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) Trouble Shooting Aides</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left">
+											<para>d.</para>
+										</entry>
+										<entry colname="9" colsep="0" valign="top" namest="9" nameend="12" align="left">
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 5 TROUBLESHOOTING:5.4 TROUBLESHOOTING AIDS.</para>
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 5 TROUBLESHOOTING:5.4 TROUBLESHOOTING AIDS.:5.4.1 Ambiguity Group Tables. Table 5-7 Fault Logic Diagram Index</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>e.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) Malfunction Indications (Lab Demonstration)</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left">
+											<para>e.</para>
+										</entry>
+										<entry colname="9" colsep="0" valign="top" namest="9" nameend="12" align="left">
+											<para>(U) Demonstrate use of ILPE Front Panel Simulator to analyze faults. Insert a fault into the ILPE FPS. Using the proxima, display the different screens previously discussed. Display the Fault History Log and the faulted level 3 and 4 screens as applicable. Repeat with a different fault if necessary.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>6.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Operational Tests</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left">
+											<para>6.</para>
+										</entry>
+										<entry colname="8" colsep="0" valign="top" namest="8" nameend="12" align="left">
+											<para>(U) Reference S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.3 REPAIRS.:6.3.2 General Repair Practices.:6.3.2.5 Test Criteria.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>a.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) Leakage Tests</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left">
+											<para>a.</para>
+										</entry>
+										<entry colname="9" colsep="0" valign="top" namest="9" nameend="12" align="left">
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 6 CORRECTIVE MAINTENANCE:6.3 REPAIRS.:6.3.2 General Repair Practices.:6.3.2.5 Test Criteria. TABLE 6-3. LEAKAGE TESTS.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>b.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) ILPE Drop Test</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left">
+											<para>b.</para>
+										</entry>
+										<entry colname="9" colsep="0" valign="top" namest="9" nameend="12" align="left">
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010:CHAPTER 2 OPERATION:2.4 OPERATING PROCEDURES.:2.4.9 Support Operations.:2.4.9.9 ILPE Drop Tests.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>c.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) Solenoid Valve Test and Temperature Sensor Test</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" namest="9" nameend="12" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(1)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Solenoid Valve Test Procedures (Classroom)</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(1)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010 Appendix H, paragraph H.7.2.1 through paragraph H.7.2.2.2</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(2)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Temperature Sensor Test Procedures (Classroom)</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(2)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Refer to and direct trainee to refer to S9515-AL-MMA-010 Appendix H paragraph H.7.1 through paragraph H.7.1.2</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(3)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Solenoid Valve Test and Temperature Sensor Test (Group Lab)</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(3)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Prepare the ILPE Front Panel Simulator for use. Ensure the applicable tools are made available to the students.</para>
+											<para>(U) Refer to NAWCTSD P-8437 for ILPE FPS operation</para>
+											<para>(U) Prepare the Simulator Test Box Assembly (ILPE) for use.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left"/>
+										<entry colname="4" colsep="0" valign="top" align="left">
+											<para>(a)</para>
+										</entry>
+										<entry colname="5" colsep="0" valign="top" namest="5" nameend="6" align="left">
+											<para>(U) Safety</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left">
+											<para>(a)</para>
+										</entry>
+										<entry colname="11" colsep="0" valign="top" namest="11" nameend="12" align="left">
+											<para>(U) Direct trainee to adhere to all applicable safety precautions while in the Lab.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left"/>
+										<entry colname="4" colsep="0" valign="top" align="left">
+											<para>(b)</para>
+										</entry>
+										<entry colname="5" colsep="0" valign="top" namest="5" nameend="6" align="left">
+											<para>(U) Procedures</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left"/>
+										<entry colname="11" colsep="0" valign="top" align="left"/>
+										<entry colname="12" colsep="0" valign="top" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left"/>
+										<entry colname="4" colsep="0" valign="top" align="left"/>
+										<entry colname="5" colsep="0" valign="top" align="left">
+											<para>[1]</para>
+										</entry>
+										<entry colname="6" colsep="0" valign="top" align="left">
+											<para>(U) Solenoid Valve Test</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left"/>
+										<entry colname="11" colsep="0" valign="top" align="left">
+											<para>[1]</para>
+										</entry>
+										<entry colname="12" colsep="0" valign="top" align="left">
+											<para>(U) Direct trainee to perform S9515-AL-MMA-010 Appendix H, paragraph H.7.2.1 through paragraph H.7.2.2.2</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" namest="1" nameend="6" align="left">
+											<note>
+												<notePara>(U) There are only two functional solenoid valves in the ILPE FPS SV140-1 and SV140-2. Ensure that one of these is used for the testing of the circuitry.</notePara>
+											</note>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left"/>
+										<entry colname="11" colsep="0" valign="top" align="left"/>
+										<entry colname="12" colsep="0" valign="top" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left"/>
+										<entry colname="4" colsep="0" valign="top" align="left"/>
+										<entry colname="5" colsep="0" valign="top" align="left">
+											<para>[2]</para>
+										</entry>
+										<entry colname="6" colsep="0" valign="top" align="left">
+											<para>(U) Temperature Sensor Test</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left"/>
+										<entry colname="11" colsep="0" valign="top" align="left">
+											<para>[2]</para>
+										</entry>
+										<entry colname="12" colsep="0" valign="top" align="left">
+											<para>(U) Direct trainee to perform S9515-AL-MMA-010 Appendix H paragraph H.7.1 through paragraph H.7.1.2</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" namest="1" nameend="6" align="left">
+											<note>
+												<notePara>(U) The ILPE FPS must be set up properly for this test to work. Follow the instructions of the ILPE FPS to allow temperature inputs from the simulator test box.</notePara>
+											</note>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left"/>
+										<entry colname="11" colsep="0" valign="top" align="left"/>
+										<entry colname="12" colsep="0" valign="top" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left"/>
+										<entry colname="4" colsep="0" valign="top" align="left">
+											<para>(c)</para>
+										</entry>
+										<entry colname="5" colsep="0" valign="top" namest="5" nameend="6" align="left">
+											<para>(U) Critique</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left"/>
+										<entry colname="11" colsep="0" valign="top" align="left"/>
+										<entry colname="12" colsep="0" valign="top" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>7.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Troubleshooting Procedures ICW</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left"/>
+										<entry colname="11" colsep="0" valign="top" align="left"/>
+										<entry colname="12" colsep="0" valign="top" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left">
+											<para>a.</para>
+										</entry>
+										<entry colname="3" colsep="0" valign="top" namest="3" nameend="6" align="left">
+											<para>(U) FS004: Leak Detected Degasser (P-1342B)</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left"/>
+										<entry colname="11" colsep="0" valign="top" align="left"/>
+										<entry colname="12" colsep="0" valign="top" align="left"/>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(1)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Fault Isolation ICW Lesson</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(1)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Direct trainee to complete A-652-0093-ICW-MECH MAINT, Integrated Low Pressure Electrolyzer Mechanical Maintenance (Apr 2008), Fault Isolation Lesson: FS0004: Leak Detected Degasser (P-1342B).</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left"/>
+										<entry colname="2" colsep="0" valign="top" align="left"/>
+										<entry colname="3" colsep="0" valign="top" align="left">
+											<para>(2)</para>
+										</entry>
+										<entry colname="4" colsep="0" valign="top" namest="4" nameend="6" align="left">
+											<para>(U) Degasser Level Sensor Replacement ICW Lesson</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left">
+											<para>(2)</para>
+										</entry>
+										<entry colname="10" colsep="0" valign="top" namest="10" nameend="12" align="left">
+											<para>(U) Direct trainee to complete A-652-0093-ICW-MECH MAINT, Integrated Low Pressure Electrolyzer Mechanical Maintenance (Apr 2008), Corrective Maintenance Lesson: Degasser Level Sensor Replacement.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>8.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Fault Isolation Exam (ICW)</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left">
+											<para>8.</para>
+										</entry>
+										<entry colname="8" colsep="0" valign="top" namest="8" nameend="12" align="left">
+											<para>(U) Direct trainee to complete A-652-0093-ICW-MECH MAINT, Integrated Low Pressure Electrolyzer Mechanical Maintenance (Apr 2008), Exam.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>9.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Section Review</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left">
+											<para>9.</para>
+										</entry>
+										<entry colname="8" colsep="0" valign="top" namest="8" nameend="12" align="left">
+											<para>(U) Display A-652-0093_M3L1S2V1, Integrated Low Pressure Electrolyzer (ILPE) Troubleshooting, Slides 2 through 2</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>10.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Assignment</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left">
+											<para>10.</para>
+										</entry>
+										<entry colname="8" colsep="0" valign="top" namest="8" nameend="12" align="left">
+											<para>(U) Make study assignments if required.</para>
+										</entry>
+									</row>
+									<row rowsep="0">
+										<entry colname="1" colsep="0" valign="top" align="left">
+											<para>11.</para>
+										</entry>
+										<entry colname="2" colsep="0" valign="top" namest="2" nameend="6" align="left">
+											<para>(U) Practice Questions: Not Used No practice items</para>
+										</entry>
+										<entry colname="7" colsep="0" valign="top" align="left"/>
+										<entry colname="8" colsep="0" valign="top" align="left"/>
+										<entry colname="9" colsep="0" valign="top" align="left"/>
+										<entry colname="10" colsep="0" valign="top" align="left"/>
+										<entry colname="11" colsep="0" valign="top" align="left"/>
+										<entry colname="12" colsep="0" valign="top" align="left"/>
+									</row>
+								</tbody>
+							</tgroup>
+						</table>
+					</description>
+				</lcSection>
+			</learningOverview>
+		</learning>
+	</content>
+</dmodule>

@@ -92,7 +92,14 @@ public class Controller
         
         	if (args.length > 2)
         	{
-        		if (args[2] != null && args[2].equalsIgnoreCase("-scormflash"))
+
+                if (args[2] != null && args[2].equalsIgnoreCase("-scorm12"))
+                {
+                    toolkit = sampleCatalog.getCommand("SCORM");
+                    //flash output is being depricated - always use html output
+                    ctx.put(Keys.OUTPUT_TYPE, "SCORM12");
+                }
+        		else if (args[2] != null && args[2].equalsIgnoreCase("-scormflash"))
   				{
         			toolkit = sampleCatalog.getCommand("SCORM");
         			//flash output is being depricated - always use html output

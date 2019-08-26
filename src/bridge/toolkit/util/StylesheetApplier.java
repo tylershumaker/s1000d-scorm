@@ -152,22 +152,21 @@ public class StylesheetApplier
              }
              if(line.contains("ENTITY"))
              {
-            	 if (line.contains("\""))
-                 {
-            		 String[] entity = line.split("\"");
-                 
-            		 String orgFileLoc = dm.getParent().replaceAll("\\\\", "/");
-                 	String[] entityValue = entity[1].split(orgFileLoc + "/");
-                 
-                 	internalSubset.append(entity[0] + "'" +entityValue[entityValue.length-1].replaceAll("%20", " ")+
-                                       "'" + entity[entity.length-1] );
-                 	internalSubset.append("\n");
+                 if(line.contains("ICN")) {
+                     if (line.contains("\"")) {
+                         String[] entity = line.split("\"");
+
+                         String orgFileLoc = dm.getParent().replaceAll("\\\\", "/");
+                         String[] entityValue = entity[1].split(orgFileLoc + "/");
+
+                         internalSubset.append(entity[0] + "'" + entityValue[entityValue.length - 1].replaceAll("%20", " ") +
+                                 "'" + entity[entity.length - 1]);
+                         internalSubset.append("\n");
+                     } else {
+                         internalSubset.append(line);
+                         internalSubset.append("\n");
+                     }
                  }
-            	 else
-            	 {
-            		 internalSubset.append(line);
-            		 internalSubset.append("\n"); 
-            	 }
             	 
              }
              
