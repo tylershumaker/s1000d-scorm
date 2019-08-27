@@ -80,6 +80,31 @@
                             <xsl:value-of
                                     select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle"/>
                         </xsl:element>
+                        <xsl:element name="adlcp:dataFromLMS">
+                                {
+                                  "lrs":{
+                                  "endpoint":"https://lrs.arttproject.org/test/xapi/",
+                                  "user":"bosoka",
+                                  "password":"luwger"
+                                  },
+                                  "courseId":"http://adlnet.gov/courses/<xsl:value-of select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle"/>",
+                                  "lmsHomePage":"http://lms.adlnet.gov",
+                                  "isScorm2004":false,
+                                  "activityId":"http://adlnet.gov/courses/<xsl:value-of select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle"/>",
+                                  "groupingContextActivity":{
+                                  "definition": {
+                                  "name": {
+                                  "en-US": "Bike Example"
+                                  },
+                                  "description": {
+                                  "en-US": "Bike Example - New"
+                                  }
+                                  },
+                                  "id": "http://adlnet.gov/event/bike_example",
+                                  "objectType": "Activity"
+                                  }
+                                  }
+                        </xsl:element>
                     </xsl:element>
 
                     <!--Add organization tree items (SCOs) -->
@@ -88,7 +113,6 @@
                     <metadata>
                         <xsl:copy-of select="scormContentPackage/identAndStatusSection/lom:lom"/>
                     </metadata>
-                    <!-- 9/1/14 issue 23 fix -->
 
                 </xsl:element>
             </xsl:element>
