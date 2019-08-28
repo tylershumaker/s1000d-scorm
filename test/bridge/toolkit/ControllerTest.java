@@ -35,30 +35,22 @@ public class ControllerTest
      * @throws java.lang.Exception
      */
     @After
-    public void tearDown() throws Exception
-    {
-        File output = new File(System.getProperty("user.dir") +"\\output");
-        if (output.exists())
-        {
+    public void tearDown() throws Exception {
+        File output = new File(System.getProperty("user.dir") + "\\output");
+        if (output.exists()) {
             System.out.println("Attempting to delete");
             DeleteDirectoryOnExit(output);
         }
     }
 
-    private void DeleteDirectoryOnExit(File dir)
-    {
-        if (dir.isDirectory())
-        {
+    private void DeleteDirectoryOnExit(File dir) {
+        if (dir.isDirectory()) {
             String files[] = dir.list();
-            for (int f = 0; f < files.length; f++)
-            {
+            for (int f = 0; f < files.length; f++) {
                 File innerFile = new File(dir, files[f]);
-                if (innerFile.isDirectory())
-                {
+                if (innerFile.isDirectory()) {
                     DeleteDirectoryOnExit(innerFile);
-                }
-                else
-                {
+                } else {
                     innerFile.delete();
                 }
             }
@@ -202,6 +194,7 @@ public class ControllerTest
                 System.getProperty("user.dir") +"\\test_files\\resource_package_slim",
                 "-SCORM12"};
 
-        Controller.main(SCORM12_slim);
+        Controller.main(SCORM40HTMLSLIM);
+        //Controller.main(SCORM12_slim);
     }
 }
