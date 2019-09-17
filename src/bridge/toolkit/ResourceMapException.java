@@ -1,6 +1,6 @@
 /**
- * This file is part of the S1000D Transformation Toolkit 
- * project hosted on Sourceforge.net. See the accompanying 
+ * This file is part of the S1000D Transformation Toolkit
+ * project hosted on Sourceforge.net. See the accompanying
  * license.txt file for applicable licenses.
  */
 package bridge.toolkit;
@@ -11,10 +11,9 @@ package bridge.toolkit;
  * urn_resource_map.xml file that prevents the correct file href to be added 
  * to the imsmanifest.xml file during the transform. 
  */
-public class ResourceMapException extends Exception
-{
+public class ResourceMapException extends Exception {
     /**
-     * 
+     *
      */
     private static final long serialVersionUID = 8601716686561938845L;
 
@@ -27,17 +26,16 @@ public class ResourceMapException extends Exception
      * The first file that was identified and already exists in the 
      * urn_resource_map.xml file.
      */
-    private String file1; 
-   
+    private String file1;
+
     /**
      * Constructor
-     * 
+     *
      * @param urnFormat String the represents the URN.
      * @param firstFile String that represents the first file that has already 
      * been added to the urn_resource_map.xml.
      */
-    public ResourceMapException(String urnFormat,String firstFile)
-    {
+    public ResourceMapException(String urnFormat, String firstFile) {
         urn = urnFormat;
         file1 = firstFile;
     }
@@ -45,8 +43,7 @@ public class ResourceMapException extends Exception
     /**
      * Writes the exception message out.
      */
-    public void printTrace()
-    {
+    public void printTrace() {
         StringBuffer trace = new StringBuffer();
         trace.append("Resource " + file1 + " contains a dependency of Resource " + urn + ",\n");
         trace.append("however the Resource " + urn + "was not found in the imsmanifest.xml \n");
@@ -55,5 +52,5 @@ public class ResourceMapException extends Exception
         trace.append("it contains all of the files referenced in the SCPM.");
         System.out.println(trace);
     }
-    
+
 }

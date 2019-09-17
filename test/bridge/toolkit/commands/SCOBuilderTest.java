@@ -1,6 +1,6 @@
 /**
- * This file is part of the S1000D Transformation Toolkit 
- * project hosted on Sourceforge.net. See the accompanying 
+ * This file is part of the S1000D Transformation Toolkit
+ * project hosted on Sourceforge.net. See the accompanying
  * license.txt file for applicable licenses.
  */
 package bridge.toolkit.commands;
@@ -38,97 +38,91 @@ import bridge.toolkit.util.XMLParser;
 /**
  *
  */
-public class SCOBuilderTest
-{
+public class SCOBuilderTest {
 
     Context ctx;
     Command rb;
     File tempRes;
     List<String> commonFiles = new ArrayList<String>();
     XMLParser parser;
-    
+
     /**
      * @throws java.lang.Exception
      */
     @Before
-    public void setUp() throws Exception
-    {
+    public void setUp() throws Exception {
         ctx = new ContextBase();
         parser = new XMLParser();
         ctx.put(
-            Keys.SCPM_FILE,
-            System.getProperty("user.dir")
+                Keys.SCPM_FILE,
+                System.getProperty("user.dir")
+                        + File.separator
+                        + "examples"
+                        + File.separator
+                        + "bike_SCPM"
+                        + File.separator
+                        + "SMC-S1000DBIKE-06RT9-00001-00.xml"
+        );
+        ctx.put(
+                Keys.XML_SOURCE,
+                parser.getDoc(
+                        new File(
+                                System.getProperty("user.dir")
+                                        + File.separator
+                                        + "test_files"
+                                        + File.separator
+                                        + "bike_imsmanifest_after_preprocess.xml"
+                        )
+                )
+        );
+        ctx.put(
+                Keys.URN_MAP,
+                parser.getDoc(
+                        new File(
+                                System.getProperty("user.dir")
+                                        + File.separator
+                                        + "test_files"
+                                        + File.separator
+                                        + "bike_urn_resource_map.xml"
+                        )
+                )
+        );
+
+        String resources = System.getProperty("user.dir")
                 + File.separator
                 + "examples"
                 + File.separator
-                + "bike_SCPM"
-                + File.separator
-                + "SMC-S1000DBIKE-06RT9-00001-00.xml"
-        );
-        ctx.put(
-            Keys.XML_SOURCE,
-            parser.getDoc(
-                new File(
-                    System.getProperty("user.dir")
-                    + File.separator
-                    + "test_files"
-                    + File.separator
-                    + "bike_imsmanifest_after_preprocess.xml"
-                )
-            )
-        );
-        ctx.put(
-            Keys.URN_MAP,
-            parser.getDoc(
-                new File(
-                    System.getProperty("user.dir")
+                + "bike_resource_package";
+
+        File srcPath = new File(resources);
+        tempRes = new File(
+                System.getProperty("user.dir")
                         + File.separator
                         + "test_files"
                         + File.separator
-                        + "bike_urn_resource_map.xml"
-                )
-            )
-        );
-        String resources = System.getProperty("user.dir")
-            + File.separator
-            + "examples"
-            + File.separator
-            + "bike_resource_package";
-        
-        File srcPath = new File(resources);
-        tempRes = new File(
-            System.getProperty("user.dir")
-            + File.separator
-            + "test_files"
-            + File.separator
-            + "tempRes"
+                        + "tempRes"
         );
         CopyDirectory cd = new CopyDirectory();
-        
-        try
-        {
+
+        try {
             cd.copyDirectory(srcPath, tempRes);
-            File svn = new File(tempRes.getAbsolutePath()+ File.separator + ".svn");
-            if (svn.exists())
-            {
+            File svn = new File(tempRes.getAbsolutePath() + File.separator + ".svn");
+            if (svn.exists()) {
                 deleteDirectory(svn);
             }
 
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         ctx.put(Keys.RESOURCE_PACKAGE, tempRes.getAbsolutePath());
         rb = new SCOBuilder();
-        
-        
+
+
     }
-    
+
     @After
-    public void tearDown() throws Exception
-    {
+    public void tearDown() throws Exception {
         deleteDirectory(tempRes);
     }
 
@@ -136,19 +130,15 @@ public class SCOBuilderTest
      * Test method for {@link bridge.toolkit.commands.SCOBuilder#execute(org.apache.commons.chain.Context)}.
      */
     @Test
-    public void testExecute()
-    {
-        try
-        {
+    public void testExecute() {
+        try {
             assertFalse(rb.execute(ctx));
-            
+
 //          Document returned = (Document)ctx.get(Keys.XML_SOURCE);
 //          XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
 //          String output = outputter.outputString(returned);
 //          System.out.println(output);               
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -171,7 +161,7 @@ public class SCOBuilderTest
 //
 //        
 //    }
-    
+
 //    @Test
 //    public void changeFile() throws JDOMException, IOException
 //    {
@@ -231,9 +221,9 @@ public class SCOBuilderTest
 //
 //        System.out.println(newDocType.toString());
 //    }
-   
 
-//    @Test
+
+    //    @Test
 //    public void removeStylesheet() throws IOException, JDOMException
 //    {
 //        File dm = new File(System.getProperty("user.dir") + File.separator +
@@ -329,17 +319,16 @@ public class SCOBuilderTest
 //         return newDocType;
 //    }    
     static public boolean deleteDirectory(File path) {
-        if( path.exists() ) {
-          File[] files = path.listFiles();
-          for(int i=0; i<files.length; i++) {
-             if(files[i].isDirectory()) {
-               deleteDirectory(files[i]);
-             }
-             else {
-               files[i].delete();
-             }
-          }
+        if (path.exists()) {
+            File[] files = path.listFiles();
+            for (int i = 0; i < files.length; i++) {
+                if (files[i].isDirectory()) {
+                    deleteDirectory(files[i]);
+                } else {
+                    files[i].delete();
+                }
+            }
         }
-        return( path.delete() );
-      }
+        return (path.delete());
+    }
 }
