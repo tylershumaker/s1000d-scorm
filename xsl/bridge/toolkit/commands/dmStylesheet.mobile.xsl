@@ -12,7 +12,7 @@
     <xsl:include href="ViewerApplication/app/commonhtml.xslt" />
     <xsl:include href="ViewerApplication/app/lists.xslt" />
     <xsl:include href="xsl/bridge/toolkit/commands/graphics.mobile.xslt" />
-    <xsl:include href="ViewerApplication/app/assessment.xslt" />
+    <xsl:include href="ViewerApplication/app/assessmenthtml.xslt" />
     <!--<xsl:include href="header.xslt"/> -->
     <xsl:include href="ViewerApplication/app/table.xslt" />
     <!--<xsl:include href="steps.xslt"/> -->

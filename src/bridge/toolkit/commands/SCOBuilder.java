@@ -39,7 +39,7 @@ import bridge.toolkit.util.Keys;
 import bridge.toolkit.util.StylesheetApplier;
 
 /**
- * Builds the launchable learning resources (SCOs) from the DMs found in the 
+ * Builds the launchable learning resources (SCOs) from the DMs found in the
  * SCPM.
  */
 public class SCOBuilder implements Command {
@@ -51,7 +51,7 @@ public class SCOBuilder implements Command {
 
     /**
      * List of Strings that represent the file found in the Viewer Application
-     * directory. 
+     * directory.
      */
     List<String> commonFiles;
 
@@ -181,31 +181,25 @@ public class SCOBuilder implements Command {
     }
 
     /**
-     * Copies the Viewer Application files to the content package directory 
+     * Copies the Viewer Application files to the content package directory
      * location.
      *
      * @throws IOException
      */
     private void copyViewerAppFiles(Context ctx) throws IOException {
         if ((ctx.get(Keys.OUTPUT_TYPE)) == "SCORM12") {
-            File trainingContent = new File(System.getProperty("user.dir") + File.separator + "12");
-            File trainingContent2 = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
-            File shared = new File(System.getProperty("user.dir") + File.separator + "shared");
+            File trainingContent = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
+            File shared = new File(System.getProperty("user.dir") + File.separator + "resources" + File.separator + "shared");
             File cpTrainingContent = new File(cpPackage + File.separator +
-                    "resources" + File.separator +
-                    "s1000d" + File.separator + "app");
-            File cpTrainingContent2 = new File(cpPackage + File.separator +
                     "resources" + File.separator +
                     "s1000d");
             File cpShared = new File(cpPackage + File.separator + "resources" + File.separator + "shared");
             CopyDirectory cd = new CopyDirectory();
             //check if the directory exists, if it does use it, else copy it from the jar
-            if (trainingContent.exists() && trainingContent2.exists()) {
+            if (trainingContent.exists() ) {
                 cd.copyDirectory(trainingContent, cpTrainingContent);
-                cd.copyDirectory(trainingContent2, cpTrainingContent2);
             } else {
-                cd.CopyJarFiles(this.getClass(), "12", cpTrainingContent.getAbsolutePath());
-                cd.CopyJarFiles(this.getClass(), "ViewerApplication", cpTrainingContent2.getAbsolutePath());
+                cd.CopyJarFiles(this.getClass(), "ViewerApplication", cpTrainingContent.getAbsolutePath());
             }
             if (shared.exists()) {
                 cd.copyDirectory(shared, cpShared);
@@ -214,10 +208,9 @@ public class SCOBuilder implements Command {
             }
 
             listViewerAppFiles(cpTrainingContent);
-        } else if ((ctx.get(Keys.OUTPUT_TYPE)) == "SCORMHTML") {
-            File trainingContent = new File(System.getProperty("user.dir") + File.separator + "2004");
+        } else  {
+            File trainingContent = new File(System.getProperty("user.dir") + File.separator + "resources" + File.separator + "2004");
             File trainingContent2 = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
-            File trainingContent3 = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication2");
             File cpTrainingContent = new File(cpPackage + File.separator +
                     "resources" + File.separator +
                     "s1000d" + File.separator + "app");
@@ -229,50 +222,24 @@ public class SCOBuilder implements Command {
                     "s1000d" + File.separator + "app");
             CopyDirectory cd = new CopyDirectory();
             //check if the directory exists if it does use it else copy it from the jar
-            if (trainingContent.exists() && trainingContent2.exists() && trainingContent3.exists()) {
+            if (trainingContent.exists() && trainingContent2.exists() ) {
                 cd.copyDirectory(trainingContent, cpTrainingContent);
                 cd.copyDirectory(trainingContent2, cpTrainingContent2);
-                cd.copyDirectory(trainingContent3, cpTrainingContent3);
             } else {
                 cd.CopyJarFiles(this.getClass(), "2004", cpTrainingContent.getAbsolutePath());
                 cd.CopyJarFiles(this.getClass(), "ViewerApplication", cpTrainingContent2.getAbsolutePath());
-                cd.CopyJarFiles(this.getClass(), "ViewerApplication2", cpTrainingContent3.getAbsolutePath());
             }
-            listViewerAppFiles(cpTrainingContent);
-        } else {
-
-            File trainingContent = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
-            File cpTrainingContent = new File(cpPackage + File.separator +
-                    "resources" + File.separator +
-                    "s1000d");
-            File trainingContent2 = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication2");
-            File cpTrainingContent2 = new File(cpPackage + File.separator +
-                    "resources" + File.separator +
-                    "s1000d" + File.separator + "app");
-
-            CopyDirectory cd = new CopyDirectory();
-            //check if the directory exists if it does use it else copy it from the jar
-            if (trainingContent.exists() && trainingContent2.exists()) {
-                cd.copyDirectory(trainingContent, cpTrainingContent);
-                cd.copyDirectory(trainingContent2, cpTrainingContent2);
-            } else {
-                cd.CopyJarFiles(this.getClass(), "ViewerApplication", cpTrainingContent.getAbsolutePath());
-                cd.CopyJarFiles(this.getClass(), "ViewerApplication2", cpTrainingContent2.getAbsolutePath());
-            }
-            //System.out.println("After SCO Copy");
-            //System.out.flush();
             listViewerAppFiles(cpTrainingContent);
         }
-
     }
 
     /**
-     * Adds all of the Viewer Application files to a List that will be used to 
+     * Adds all of the Viewer Application files to a List that will be used to
      * generate a common 'resource' element to be added to the imsmanifest.xml
-     * file. 
+     * file.
      *
-     * @param srcFolder File object that represents the location of the 
-     * Viewer Application files in the content package.  
+     * @param srcFolder File object that represents the location of the
+     *                  Viewer Application files in the content package.
      */
     private void listViewerAppFiles(File srcFolder) {
 
@@ -294,7 +261,7 @@ public class SCOBuilder implements Command {
 
     /**
      * Generates a JavaScript file that is used to navigate between the data
-     * modules inside of each SCO. 
+     * modules inside of each SCO.
      *
      * @throws IOException
      * @throws JDOMException
@@ -440,7 +407,7 @@ public class SCOBuilder implements Command {
             }
 
             String minScore = (String) ctx.get(Keys.MIN_SCORE);
-            if (minScore.isEmpty()) {
+            if (minScore == null || minScore.isEmpty()) {
                 minScore = "80";
             }
 
@@ -457,7 +424,7 @@ public class SCOBuilder implements Command {
 
     /**
      * Generates a common 'resource' element that contains all of the files
-     * in the View Application and adds a dependency element for the 
+     * in the View Application and adds a dependency element for the
      * RES-common-files to all resource elements that have scormType = 'sco'.
      *
      * @throws JDOMException
@@ -524,7 +491,7 @@ public class SCOBuilder implements Command {
     }
 
     /**
-     * Searches through the imsmanifest.xml file for all of the 'resource' 
+     * Searches through the imsmanifest.xml file for all of the 'resource'
      * elements that have scormType = 'sco'.
      *
      * @return Iterator<Element> Iterator of JDOM Elements that are 'resource'
@@ -540,10 +507,10 @@ public class SCOBuilder implements Command {
     }
 
     /**
-     * Generates a unique htm file for each 'resource' element that has 
-     * scormType = 'sco' found in the imsmanifest.xml file and applies the 
+     * Generates a unique htm file for each 'resource' element that has
+     * scormType = 'sco' found in the imsmanifest.xml file and applies the
      * unique htm file name to the 'href' values for each of the SCO 'resource'
-     * elements.  
+     * elements.
      *
      * @throws JDOMException
      * @throws IOException
@@ -574,7 +541,7 @@ public class SCOBuilder implements Command {
 
     /**
      * Builds an unique html file for each 'resource' element that has
-     * scormType = 'sco' found in the imsmanifest.xml file.  
+     * scormType = 'sco' found in the imsmanifest.xml file.
      *
      * @param scoNum
      * @throws IOException
