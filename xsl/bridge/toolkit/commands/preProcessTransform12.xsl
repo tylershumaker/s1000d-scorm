@@ -74,11 +74,44 @@
                         </xsl:attribute>
                         <xsl:attribute name="identifierref">
                             <xsl:text>RES-</xsl:text>
-                            <xsl:value-of select="generate-id(scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle)" />
+                            <xsl:value-of
+                                    select="generate-id(scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle)"/>
                         </xsl:attribute>
                         <xsl:element name="title">
                             <xsl:value-of
                                     select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle"/>
+                        </xsl:element>
+                        <xsl:element name="adlcp:dataFromLMS">
+                               <xsl:text> {
+                                  "lrs":{
+                                  "endpoint":"https://lrs.arttproject.org/test/xapi/",
+                                  "user":"bosoka",
+                                  "password":"luwger"
+                                   },
+                                  "courseId":"http://adlnet.gov/courses/</xsl:text><xsl:value-of
+                                select="normalize-space(translate(scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle, ' ', ''))"/><xsl:text>",
+                                  "lmsHomePage":"https://lms.arttproject.org",
+                                  "isScorm2004":false,
+                                  "activityId":"http://adlnet.gov/courses/</xsl:text><xsl:value-of
+                                select="normalize-space(translate(scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle, ' ', ''))"/><xsl:text>/</xsl:text><xsl:value-of
+                                select="normalize-space(translate(scormContentPackage/content/scoEntry/scoEntryAddress/scoEntryTitle, ' ', ''))"/><xsl:text>",
+                                  "groupingContextActivity":{
+                                  "definition": {
+                                  "name": {
+                                  "en-US": "</xsl:text><xsl:value-of
+                                select="scormContentPackage/content/lom:lom/lom:general/lom:title/lom:string"/><xsl:text>"
+                                  },
+                                  "description": {
+                                  "en-US": "</xsl:text><xsl:value-of
+                                select="scormContentPackage/content/lom:lom/lom:general/lom:description/lom:string"/><xsl:text>"
+                                  }
+                                  },
+                                  "id": "http://adlnet.gov/event/</xsl:text><xsl:value-of
+                                select="$id"/><xsl:text>",
+                                  "objectType": "Activity"
+                                  }
+                                  }
+                            </xsl:text>
                         </xsl:element>
                     </xsl:element>
 
@@ -88,14 +121,14 @@
                     <metadata>
                         <xsl:copy-of select="scormContentPackage/identAndStatusSection/lom:lom"/>
                     </metadata>
-                    <!-- 9/1/14 issue 23 fix -->
 
                 </xsl:element>
             </xsl:element>
             <!--Add resources tree section -->
             <xsl:element name="resources">
                 <xsl:variable name="res_ident">
-                    <xsl:value-of select="generate-id(scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle)"/>
+                    <xsl:value-of
+                            select="generate-id(scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle)"/>
 
                 </xsl:variable>
                 <!--TODO: devise means to extract launch page value -->

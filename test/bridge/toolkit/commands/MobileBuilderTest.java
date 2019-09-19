@@ -1,6 +1,6 @@
 /**
- * This file is part of the S1000D Transformation Toolkit 
- * project hosted on Sourceforge.net. See the accompanying 
+ * This file is part of the S1000D Transformation Toolkit
+ * project hosted on Sourceforge.net. See the accompanying
  * license.txt file for applicable licenses.
  */
 package bridge.toolkit.commands;
@@ -20,99 +20,86 @@ import org.junit.Test;
 import bridge.toolkit.util.CopyDirectory;
 import bridge.toolkit.util.Keys;
 
-public class MobileBuilderTest
-{
+public class MobileBuilderTest {
 
     Context ctx;
     Command mobileBuilder;
     File dstPath;
-    
-    public void setUp(String src)
-    {
+
+    public void setUp(String src) {
         ctx = new ContextBase();
         ctx.put(
-            Keys.SCPM_FILE,
-            System.getProperty("user.dir")
-                + File.separator
-                + "examples"
-                + File.separator
-                + "bike_SCPM"
-                + File.separator
-                + "SMC-S1000DBIKE-06RT9-00001-00.xml"
+                Keys.SCPM_FILE,
+                System.getProperty("user.dir")
+                        + File.separator
+                        + "examples"
+                        + File.separator
+                        + "bike_SCPM"
+                        + File.separator
+                        + "SMC-S1000DBIKE-06RT9-00001-00.xml"
         );
-        
+
         File srcPath = new File(src);
         dstPath = new File(
-            System.getProperty("user.dir")
-                + File.separator
-                + "test_files"
-                + File.separator
-                + "resMap"
+                System.getProperty("user.dir")
+                        + File.separator
+                        + "test_files"
+                        + File.separator
+                        + "resMap"
         );
         CopyDirectory cd = new CopyDirectory();
-        
-        try
-        {
+
+        try {
             cd.copyDirectory(srcPath, dstPath);
-            File svn = new File(dstPath.getAbsolutePath()+ File.separator + ".svn");
-            if (svn.exists())
-            {
+            File svn = new File(dstPath.getAbsolutePath() + File.separator + ".svn");
+            if (svn.exists()) {
                 deleteDirectory(svn);
             }
-            File mediaSvn = new File(dstPath.getAbsolutePath()+ File.separator + "media" + File.separator + ".svn");
-            if (mediaSvn.exists())
-            {
+            File mediaSvn = new File(dstPath.getAbsolutePath() + File.separator + "media" + File.separator + ".svn");
+            if (mediaSvn.exists()) {
                 deleteDirectory(mediaSvn);
             }
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        
-        
+
+
         ctx.put(Keys.RESOURCE_PACKAGE, dstPath.getAbsolutePath());
         mobileBuilder = new MobileBuilder();
     }
 
     @After
-    public void tearDown() throws Exception
-    {
-       deleteDirectory(dstPath);
+    public void tearDown() throws Exception {
+        deleteDirectory(dstPath);
     }
 
     @Test
-    public void testExecute()
-    {
+    public void testExecute() {
         setUp(
-            System.getProperty("user.dir")
-                + File.separator
-                + "examples"
-                + File.separator
-                + "bike_resource_package"
+                System.getProperty("user.dir")
+                        + File.separator
+                        + "examples"
+                        + File.separator
+                        + "bike_resource_package"
         );
-        try
-        {
+        try {
             mobileBuilder.execute(ctx);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     static public boolean deleteDirectory(File path) {
-        if( path.exists() ) {
-          File[] files = path.listFiles();
-          for(int i=0; i<files.length; i++) {
-             if(files[i].isDirectory()) {
-               deleteDirectory(files[i]);
-             }
-             else {
-               files[i].delete();
-             }
-          }
+        if (path.exists()) {
+            File[] files = path.listFiles();
+            for (int i = 0; i < files.length; i++) {
+                if (files[i].isDirectory()) {
+                    deleteDirectory(files[i]);
+                } else {
+                    files[i].delete();
+                }
+            }
         }
-        return( path.delete() );
-      }
+        return (path.delete());
+    }
 }
