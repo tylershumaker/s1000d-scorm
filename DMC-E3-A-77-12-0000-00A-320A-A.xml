@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE dmodule [<!NOTATION cgm  PUBLIC "-//USA-DOD//NOTATION Computer Graphics Metafile//EN"><!NOTATION jpeg  PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN"><!NOTATION png  PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"><!--Figure Entities--><!ENTITY ICN-81205-771201C003-001-01 SYSTEM "dm.graphics/ICN-81205-771201C003-001-01.cgm" NDATA cgm><!ENTITY ICN-81205-771201C004-001-01 SYSTEM "dm.graphics/ICN-81205-771201C004-001-01.cgm" NDATA cgm>]>
+<dmodule xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://www.purl.org/dc/elements/1.1/"
+         xmlns:fn="http://www.w3.org/2005/02/xpath-functions" xmlns:xlink="http://www.w3.org/1999/xlink" ITAR="COMM"
+         xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-1-DRG/xml_schema_flat/proced.xsd">
+    <rdf:Description>
+        <dc:creator>The Boeing Company</dc:creator>
+        <dc:title>Engine Tachometer System - Operational
+            Test
+        </dc:title>
+        <dc:subject>Engine Tachometer System - Operational
+            Test
+        </dc:subject>
+        <dc:publisher>The Boeing Company</dc:publisher>
+        <dc:contributor>The Boeing Company</dc:contributor>
+        <dc:date>2013-04-12</dc:date>
+        <dc:type>text</dc:type>
+        <dc:format>text/xml</dc:format>
+        <dc:identifier>_000_02</dc:identifier>
+        <dc:language>en-US</dc:language>
+        <dc:rights>01_cc00_cv00</dc:rights>
+    </rdf:Description>
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="320" infoCodeVariant="A"
+                        itemLocationCode="A" modelIdentCode="E3" subSubSystemCode="2" subSystemCode="1" systemCode="77"
+                        systemDiffCode="A"/>
+                <language countryIsoCode="US" languageIsoCode="en"/>
+                <issueInfo inWork="02" issueNumber="000"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate day="12" month="04" year="2013"/>
+                <dmTitle>
+                    <techName>Engine Tachometer System</techName>
+                    <infoName>Operational
+                        Test
+                    </infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D APPLIES: DISTRIBUTION AUTHORIZED
+                        TO THE DEPARTMENT OF DEFENSE AND U.S. DOD CONTRACTORS: FURTHER DISSEMINATION
+                        ONLY AS DIRECTED BY AFLCMC/HBSG; 3 EGLIN ST., HANSCOM AFB, MA 01731
+                        WHICH IS THE HIGHER DOD CONTROLLING OFFICE. (CRITICAL TECHNOLOGY)
+                        (DATE OF DETERMINATION – 13 APR 2012), U.S. GOVERNMENT INFORMATION
+                        IS FURNISHED TO NAPMO AND NAPMO NATIONS PARTICIPATING IN THE NATO
+                        E-3A PROGRAM UPON THE CONDITION THAT IT WILL NOT BE RELEASED TO ANOTHER
+                        NATION WITHOUT SPECIFIC AUTHORITY OF THE DEPARTMENT OF THE AIR FORCE
+                        OF THE UNITED STATES; THAT IT WILL BE USED FOR MILITARY PURPOSES ONLY;
+                        THAT INDIVIDUAL OR CORPORATE RIGHTS ORIGINATING IN THE INFORMATION,
+                        WHETHER PATENTED OR NOT, WILL BE RESPECTED; THAT THE RECIPIENT WILL
+                        REPORT PROMPTLY TO THE UNITED STATES ANY KNOWN OR SUSPECTED COMPROMISE;
+                        AND THAT THE INFORMATION WILL BE PROVIDED SUBSTANTIALLY THE SAME DEGREE
+                        OF SECURITY AFFORDED IT BY THE DEPARTMENT OF DEFENSE OF THE UNITED
+                        STATES. NAPMO MAY FURNISH EXPORT-CONTROLLED INFORMATION TO NAPMO CONTRACTORS,
+                        SUBCONTRACTORS, PROSPECTIVE CONTRACTORS, AND PROSPECTIVE SUBCONTRACTORS
+                        IN SUPPORT OF THE NAWE&amp;C NE-3A PROGRAM.
+                    </dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING - This document contains
+                                technical data whose export is restricted by the Arms Export Control
+                                Act (Title 22, U.S.C., Sec 2751, et seq). Violations of these export
+                                laws are subject to severe criminal penalties. Disseminate in accordance
+                                with provisions of DoD Directive 5230.25.
+                            </simplePara>
+                            <simplePara id="disclos-t">THIS INFORMATION IS FURNISHED UPON THE CONDITION THAT
+                                IT WILL NOT BE RELEASED TO ANOTHER NATION WITHOUT SPECIFIC AUTHORITY
+                                OF THE DEPARTMENT OF THE AIR FORCE OF THE UNITED STATES. THAT IT WILL
+                                BE USED FOR MILITARY PURPOSES ONLY. THAT INDIVIDUAL OR CORPORATE RIGHTS
+                                ORIGINATING IN THE INFORMATION, WHETHER PATENTED OR NOT, WILL BE RESPECTED.
+                                THAT THE RECIPIENT WILL REPORT PROMPTLY TO THE UNITED STATES ANY KNOWN
+                                OR SUSPECTED COMPROMISE, AND THAT THE INFORMATION WILL BE PROVIDED
+                                SUBSTANTIALLY THE SAME DEGREE OF SECURITY AFFORDED IT BY THE DEPARTMENT
+                                OF DEFENSE OF THE UNITED STATES. ALSO, REGARDLESS OF ANY OTHER MARKINGS
+                                ON THE DOCUMENT, IT WILL NOT BE DOWNGRADED OR DECLASSIFIED WITHOUT
+                                WRITTEN APPROVAL OF THE ORIGINATING U.S. AGENCY.
+                            </simplePara>
+                            <simplePara id="disclos-1">THIS DOCUMENT IS RELEASABLE TO NATO &amp;
+                                NATO MEMBER COUNTRIES PARTICIPATING IN THE NATO E-3A PROGRAM.
+                            </simplePara>
+                            <simplePara id="disclos-2">Case: XXXXX</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="81205">
+                <enterpriseName>The Boeing Company</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="81205">
+                <enterpriseName>The Boeing Company</enterpriseName>
+            </originator>
+            <applicCrossRefTableRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="00W"
+                                infoCodeVariant="A" itemLocationCode="D" modelIdentCode="E3" subSubSystemCode="0"
+                                subSystemCode="0" systemCode="00" systemDiffCode="A"/>
+                    </dmRefIdent>
+                </dmRef>
+            </applicCrossRefTableRef>
+            <applic>
+                <displayText>
+                    <simplePara>NATO E-3 AWACS AIRCRAFT</simplePara>
+                </displayText>
+            </applic>
+            <techStandard>
+                <authorityInfo>Published Under Authority of NATO</authorityInfo>
+                <authorityExceptions/>
+                <authorityNotes>None</authorityNotes>
+            </techStandard>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="022"
+                                infoCodeVariant="A" itemLocationCode="D" modelIdentCode="E3" subSubSystemCode="0"
+                                subSystemCode="0" systemCode="00" systemDiffCode="A"/>
+                    </dmRefIdent>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+            <reasonForUpdate id="rfu001" updateHighlight="1" updateReasonType="urt02">
+                <simplePara>Incorporate IPR comments</simplePara>
+            </reasonForUpdate>
+            <reasonForUpdate id="rfu002" updateHighlight="1" updateReasonType="urt02">
+                <simplePara>Updated with 50% IPR comment</simplePara>
+            </reasonForUpdate>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <refs><!-- refs element generated on: Mon Aug 04 13:51:08 PDT 2014-->
+            <externalPubRef ITAR="NATO">
+                <externalPubRefIdent>
+                    <externalPubCode>T.O. NN1E-3A-2-1-1</externalPubCode>
+                </externalPubRefIdent>
+            </externalPubRef>
+            <externalPubRef ITAR="NATO">
+                <externalPubRefIdent>
+                    <externalPubCode>T.O. NN1E-3A-2-7</externalPubCode>
+                </externalPubRefIdent>
+            </externalPubRef>
+            <externalPubRef ITAR="NATO">
+                <externalPubRefIdent>
+                    <externalPubCode>T.O. NN1E-3A-2-71-1</externalPubCode>
+                </externalPubRefIdent>
+            </externalPubRef>
+        </refs>
+        <warningsAndCautions>
+            <warning id="WM0008">
+                <warningAndCautionPara>When connected directly to an external power
+                    unit, ensure test set is properly grounded to power unit as a potential
+                    electric hazard to personnel and equipment may exist.
+                </warningAndCautionPara>
+            </warning>
+        </warningsAndCautions>
+        <procedure>
+            <preliminaryRqmts>
+                <reqCondGroup>
+                    <noConds/>
+                </reqCondGroup>
+                <reqSupportEquips>
+                    <noSupportEquips/>
+                </reqSupportEquips>
+                <reqSupplies>
+                    <noSupplies/>
+                </reqSupplies>
+                <reqSpares>
+                    <noSpares/>
+                </reqSpares>
+                <reqSafety>
+                    <noSafety/>
+                </reqSafety>
+            </preliminaryRqmts>
+            <mainProcedure>
+                <proceduralStep id="stp-d74e94">
+                    <para ITAR="COMM" changeMark="1" changeType="modify" reasonForUpdateRefIds="rfu001" id="par-d74e95">
+                        The N1 tachometer indicators provide
+                        their own self-test when the engines are running. With engines off,
+                        each tachometer indicator (N1 and N2) can be checked on the flight
+                        line by means of a TTU-27/E test set.
+                    </para>
+                </proceduralStep>
+                <proceduralStep id="step172step1722">
+                    <note ITAR="COMM">
+                        <notePara ITAR="COMM">For access to N1 tachometer generator, remove
+                            engine nose dome.
+                        </notePara>
+                        <notePara ITAR="COMM">For access to N2 tachometer generator, open
+                            right hand engine side cowl.
+                        </notePara>
+                    </note>
+                    <para ITAR="COMM" id="par-d74e103">For N1 or N2 indicator RPM check perform the following:</para>
+                    <proceduralStep id="step172step1723">
+                        <para ITAR="COMM" id="par-d74e106">Gain access to applicable tachometer generator per
+                            <externalPubRef ITAR="NATO">
+                                <externalPubRefIdent>
+                                    <externalPubCode>T.O. NN1E-3A-2-71-1</externalPubCode>
+                                </externalPubRefIdent>
+                            </externalPubRef>
+                            .
+                        </para>
+                    </proceduralStep>
+                    <proceduralStep id="step172step1724">
+                        <para ITAR="COMM" id="par-d74e114">Remove safety wire and disconnect tachometer generator
+                            electrical connector.
+                        </para>
+                    </proceduralStep>
+                    <proceduralStep id="step172step1725">
+                        <para ITAR="COMM" id="par-d74e117">Connect applicable cable to connector. (Use 204-90057-2
+                            for N1 or 204-90057-5 for N2. See
+                            <internalRef internalRefId="to1029fig07000000" internalRefTargetType="irtt01"/>
+                            and<internalRef internalRefId="to1029fig07100000" internalRefTargetType="irtt01"/>.) Connect
+                            other end
+                            of cable to MAST GEN OUTPUT of TTU-27/E test set.
+                        </para>
+                    </proceduralStep>
+                    <proceduralStep changeMark="1" changeType="modify" id="step172step1727"
+                                    reasonForUpdateRefIds="rfu002" warningRefs="WM0008">
+                        <para ITAR="COMM" id="par-d74e124">Connect test set to 115 VAC, 400 (±5) Hz power supply.</para>
+                    </proceduralStep>
+                    <proceduralStep id="step172step1728">
+                        <para ITAR="COMM" id="par-d74e127">Set MASTER GEN - TEST GEN switch to MASTER GEN position.
+                        </para>
+                    </proceduralStep>
+                    <proceduralStep id="step172step1729">
+                        <para ITAR="COMM" id="par-d74e130">Set MAST GEN OUTPUT control to its extreme clockwise
+                            position.
+                        </para>
+                    </proceduralStep>
+                    <proceduralStep id="step173step1730">
+                        <para ITAR="COMM" id="par-d74e133">Set LOAD OHMS switch and TEST GEN-MASTER GEN phase
+                            switch to OFF.
+                        </para>
+                    </proceduralStep>
+                    <proceduralStep id="step173step1731">
+                        <para ITAR="COMM" id="par-d74e136">Set MASTER INDICATOR switch ON.</para>
+                    </proceduralStep>
+                    <proceduralStep id="step173step1732">
+                        <para ITAR="COMM" id="par-d74e139">Provide aircraft power if N1 is to be checked, per
+                            <externalPubRef ITAR="NATO">
+                                <externalPubRefIdent>
+                                    <externalPubCode>T.O. NN1E-3A-2-1-1</externalPubCode>
+                                </externalPubRefIdent>
+                            </externalPubRef>
+                            .
+                        </para>
+                    </proceduralStep>
+                    <proceduralStep id="step173step1733">
+                        <para ITAR="COMM" id="par-d74e148">Select desired RPM by operating INCREASE SPEED knob.</para>
+                    </proceduralStep>
+                    <proceduralStep id="step173step1734">
+                        <para ITAR="COMM" id="par-d74e151">Compare aircraft indicator RPM readings with test
+                            set at speeds specified below. Below 95%, the readings shall agree
+                            within 2%. Above 95%, the readings shall agree within 1%.
+                        </para>
+                        <table ITAR="COMM" frame="all" id="tab-d74e153">
+                            <tgroup cols="2">
+                                <colspec colname="1" colnum="1" colwidth="1.77in"/>
+                                <colspec colname="2" colnum="2" colwidth="1.61in"/>
+                                <thead>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e160">Generator Frequency (CPM) (RPM) (RPM X 1
+                                                SCALE)
+                                            </para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e163">Indicator Reading (%)</para>
+                                        </entry>
+                                    </row>
+                                </thead>
+                                <tbody>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e168">200</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e171">4.8</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e175">400</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e178">9.5</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e182">800</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e185">19.0</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e189">1600</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e192">38.1</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e196">2400</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e199">57.1</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e203">3200</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e206">76.2</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e210">3400</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e213">80.9</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e217">3600</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e220">85.7</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e224">3800</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e227">90.5</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e231">4000</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e234">95.2</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e238">4200</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e241">100.0</para>
+                                        </entry>
+                                    </row>
+                                    <row rowsep="0">
+                                        <entry align="center" colname="1">
+                                            <para ITAR="COMM" id="par-d74e246">4400</para>
+                                        </entry>
+                                        <entry align="center" colname="2">
+                                            <para ITAR="COMM" id="par-d74e249">104.8</para>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                    </proceduralStep>
+                </proceduralStep>
+                <proceduralStep id="step173step1735">
+                    <para ITAR="COMM" id="par-d74e252">Decrease TTU-27/E test set RPM to zero.</para>
+                </proceduralStep>
+                <proceduralStep id="step173step1736">
+                    <para ITAR="COMM" id="par-d74e255">Set MASTER INDICATOR switch to OFF.</para>
+                </proceduralStep>
+                <proceduralStep id="step173step1737">
+                    <para ITAR="COMM" id="par-d74e258">Remove electrical power from aircraft, if no longer
+                        needed for other maintenance, per
+                        <externalPubRef ITAR="NATO">
+                            <externalPubRefIdent>
+                                <externalPubCode>T.O. NN1E-3A-2-1-1</externalPubCode>
+                            </externalPubRefIdent>
+                        </externalPubRef>
+                        .
+                    </para>
+                </proceduralStep>
+                <proceduralStep id="step173step1738">
+                    <para ITAR="COMM" id="par-d74e266">Remove power cables and test set.</para>
+                </proceduralStep>
+                <proceduralStep id="step173step1739">
+                    <para ITAR="COMM" id="par-d74e269">Reconnect and safety wire tachometer generator electrical
+                        connector.
+                    </para>
+                </proceduralStep>
+                <proceduralStep id="step174step1740">
+                    <para ITAR="COMM" id="par-d74e272">Install nose dome or close side cowl as applicable
+                        per
+                        <externalPubRef ITAR="NATO">
+                            <externalPubRefIdent>
+                                <externalPubCode>T.O. NN1E-3A-2-7</externalPubCode>
+                            </externalPubRefIdent>
+                        </externalPubRef>
+                        .
+                    </para>
+                </proceduralStep>
+                <figure ITAR="COMM" id="to1029fig07000000">
+                    <title>TTU-27/E Test Set</title>
+                    <graphic infoEntityIdent="ICN-81205-771201C003-001-01"/>
+                </figure>
+                <figure ITAR="COMM" id="to1029fig07100000">
+                    <title>Tachometer/Generator Cable Test Set</title>
+                    <graphic infoEntityIdent="ICN-81205-771201C004-001-01"/>
+                </figure>
+            </mainProcedure>
+            <closeRqmts>
+                <reqCondGroup>
+                    <noConds/>
+                </reqCondGroup>
+            </closeRqmts>
+        </procedure>
+    </content>
+</dmodule>

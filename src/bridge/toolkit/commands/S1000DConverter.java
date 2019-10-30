@@ -322,7 +322,7 @@ public class S1000DConverter implements Command
     /**
      * Receive the node with the refdm, returns the dm file name
      * 
-     * @param e
+     * @param theAncestor
      * @return
      */
     public static String gettingDmfilename(Node theAncestor)

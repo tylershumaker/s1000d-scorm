@@ -7,7 +7,9 @@ build/*
 .idea/workspace.xml
 .idea/*
 mobile/*
+S1000D_BIKE_Learning_Sample/
 *.zip
+!test_files/*.zip
 *.pdf
 *.log
 *.class
