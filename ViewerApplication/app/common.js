@@ -7,21 +7,51 @@ var weightScore = 0;
 var selectedHotspot = null;
 
 function show_hide_div(hide_id, show_id) {
-    toggle_visibility(hide_id);
-    toggle_visibility(show_id);
+    // toggle_visibility(hide_id);
+    // toggle_visibility(show_id);
+    remove_highlight(hide_id)
+    add_highlight(show_id)
+}
+
+function remove_highlight(id) {
+    console.log("In Highlight");
+    var e = document.getElementById(id);
+    e.classList.remove("active");
+    next = e.getElementsByTagName('a');
+    next[0].classList.remove("active");
+    next[0].classList.add("inactive")
+    // next[0].style.display = 'none'
+}
+
+function add_highlight(id) {
+    var e = document.getElementById(id);
+    e.classList.add("active");
+    next = e.getElementsByTagName('a');
+    next[0].classList.remove("inactive")
+    next[0].classList.add("active")
+    // next[0].style.display = 'block'
+
+    // Make the step xAPI call
+    xapi.setComplete();
 }
 
 function toggle_visibility(id) {
     var e = document.getElementById(id);
-    if (e.style.display == 'block' | e.style == null) {
-        e.style.display = 'none';
+    if (e.style.visibility == "visible") {
+        // e.style.visibility = "hidden"
+        // e.style.height = 0
+        console.log(e.classList)
+        e.classList.remove("active");
+        next = e.getElementsByTagName('a');
+        next[0].style.display = 'none'
+
         return false;
-    }
-    else {
-        e.style.display = 'block';
+    } else {
+        e.style.visibility = "visible"
         return true;
     }
 }
+
 
 function navToContent(url) {
 }
@@ -41,26 +71,24 @@ function showNextQuestion() {
     document.getElementById('questionNumber' + count).style.display = 'none';
     if (document.getElementById('questionNumber' + nextCount)) {
         document.getElementById('questionNumber' + nextCount).style.display = 'block';
-    }
-    else {
+    } else {
         document.getElementById('grade').style.display = 'block';
         var status = '';
         var minScore = getMinScore();
 
-        var score = (weightScore/count) * 100;
+        var score = (weightScore / count) * 100;
 
         if (score >= minScore) {
 
             doSetValue("cmi.completion_status", "completed");
             doSetValue("cmi.success_status", "passed");
             status = "passed";
-        }
-        else {
+        } else {
             doSetValue("cmi.completion_status", "incomplete");
             doSetValue("cmi.success_status", "failed");
             status = "failed";
         }
-        var scaledScore = weightScore/count;
+        var scaledScore = weightScore / count;
 
         doSetValue("cmi.score.scaled", scaledScore.toString());
         doSetValue("cmi.score.raw", weightScore.toString());
@@ -92,18 +120,15 @@ function checkIfSingleTrue(radioObj, quizType) {
             if (answer[1]) {
                 feedbackCorrect.style.display = 'block';
                 feedbackIncorrect.style.display = 'none';
-            }
-            else {
+            } else {
                 feedbackIncorrect.style.display = 'block';
                 feedbackCorrect.style.display = 'none';
             }
-        }
-        else {
+        } else {
             feedbackCorrect.style.display = 'none';
             feedbackIncorrect.style.display = 'none';
         }
-    }
-    else {
+    } else {
         // Check if answer is correct
         if (answer) {
             if (answer[1]) {
@@ -151,18 +176,15 @@ function checkIfMultipleTrue(checkObj, quizType) {
             if (correctChosenAnswers.length == correctAnswers.length) {
                 feedbackIncorrect.style.display = 'none';
                 feedbackCorrect.style.display = 'block';
-            }
-            else {
+            } else {
                 feedbackIncorrect.style.display = 'block';
                 feedbackCorrect.style.display = 'none';
             }
-        }
-        else {
+        } else {
             feedbackIncorrect.style.display = 'block';
             feedbackCorrect.style.display = 'none';
         }
-    }
-    else {
+    } else {
         // Check if answer is correct
         if (chosenAnswers.length == correctChosenAnswers.length) {
 
@@ -211,8 +233,7 @@ function checkIfMatchingTrue(selectObj, selectBoxCount) {
                 }
             }
         }
-    }
-    else {
+    } else {
         feedbackIncorrect.style.display = 'none';
         feedbackCorrect.style.display = 'block';
     }
@@ -371,8 +392,7 @@ function checkHotspotCorrect(correctAnswer, countTotal) {
     if (correctId == selectedHotspot) {
         feedbackIncorrect.style.display = 'none';
         feedbackCorrect.style.display = 'block';
-    }
-    else {
+    } else {
         if (selectedHotspot) {
             feedbackIncorrect.style.display = 'block';
             feedbackCorrect.style.display = 'none';

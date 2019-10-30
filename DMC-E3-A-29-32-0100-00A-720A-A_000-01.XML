@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='app/s1000d_4.xslt'
+        ?><!DOCTYPE dmodule [
+        <!NOTATION cgm PUBLIC 'EN'>
+        <!NOTATION JPEG PUBLIC 'EN'>
+        <!ENTITY fig117egm SYSTEM 'fig117egm.cgm' NDATA cgm>
+        ]>
+<?xml-stylesheet href="file:////nw/data/awacs_techpubs/PTC/Arbortext%20Editor/custom/doctypes/PROGRAMS/S1000D_4-1_DRG/xml_schema_flat/proced/proced.style" type="text/x-styler" media="editor" alternate="yes"?><!--Arbortext, Inc., 1988-2010, v.4002-->
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fn="http://www.w3.org/2005/02/xpath-functions"
+         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://www.purl.org/dc/elements/1.1/"
+         xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-1/xml_schema_flat/proced.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode assyCode="0100" disassyCode="00" disassyCodeVariant="A" infoCode="720" infoCodeVariant="A"
+                        itemLocationCode="A" modelIdentCode="E3" subSubSystemCode="2" subSystemCode="3" systemCode="29"
+                        systemDiffCode="A"/>
+                <language countryIsoCode="US" languageIsoCode="en"/>
+                <issueInfo inWork="01" issueNumber="000"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate day="21" month="12" year="2012"/>
+                <dmTitle>
+                    <techName>Utility Hydraulic Pressure Indicator</techName>
+                    <infoName>INSTALL PROCEDURES</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D APPLIES: DISTRIBUTION AUTHORIZED
+                        TO THE DEPARTMENT OF DEFENSE AND U.S. DOD CONTRACTORS: FURTHER DISSEMINATION
+                        ONLY AS DIRECTED BY AFLCMC/HBSG; 3 EGLIN ST., HANSCOM AFB, MA 01731
+                        WHICH IS THE HIGHER DOD CONTROLLING OFFICE. (CRITICAL TECHNOLOGY)
+                        (DATE OF DETERMINATION - 13 APR 2012), U.S. GOVERNMENT INFORMATION
+                        IS FURNISHED TO NAPMO AND NAPMO NATIONS PARTICIPATING IN THE NATO
+                        E-3A PROGRAM UPON THE CONDITION THAT IT WILL NOT BE RELEASED TO ANOTHER
+                        NATION WITHOUT SPECIFIC AUTHORITY OF THE DEPARTMENT OF THE AIR FORCE
+                        OF THE UNITED STATES; THAT IT WILL BE USED FOR MILITARY PURPOSES ONLY;
+                        THAT INDIVIDUAL OR CORPORATE RIGHTS ORIGINATING IN THE INFORMATION,
+                        WHETHER PATENTED OR NOT, WILL BE RESPECTED; THAT THE RECIPIENT WILL
+                        REPORT PROMPTLY TO THE UNITED STATES ANY KNOWN OR SUSPECTED COMPROMISE;
+                        AND THAT THE INFORMATION WILL BE PROVIDED SUBSTANTIALLY THE SAME DEGREE
+                        OF SECURITY AFFORDED IT BY THE DEPARTMENT OF DEFENSE OF THE UNITED
+                        STATES. NAPMO MAY FURNISH EXPORT-CONTROLLED INFORMATION TO NAPMO CONTRACTORS,
+                        SUBCONTRACTORS, PROSPECTIVE CONTRACTORS, AND PROSPECTIVE SUBCONTRACTORS
+                        IN SUPPORT OF THE NAWE&amp;C NE-3A PROGRAM.
+                    </dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING - This document contains
+                                technical data whose export is restricted by the Arms Export Control
+                                Act (Title 22, U.S.C., Sec 2751, et seq). Violations of these export
+                                laws are subject to severe criminal penalties. Disseminate in accordance
+                                with provisions of DoD Directive 5230.25.
+                            </simplePara>
+                            <simplePara id="disclos-t">THIS INFORMATION IS FURNISHED UPON THE CONDITION THAT
+                                IT WILL NOT BE RELEASED TO ANOTHER NATION WITHOUT SPECIFIC AUTHORITY
+                                OF THE DEPARTMENT OF THE AIR FORCE OF THE UNITED STATES. THAT IT WILL
+                                BE USED FOR MILITARY PURPOSES ONLY. THAT INDIVIDUAL OR CORPORATE RIGHTS
+                                ORIGINATING IN THE INFORMATION, WHETHER PATENTED OR NOT, WILL BE RESPECTED.
+                                THAT THE RECIPIENT WILL REPORT PROMPTLY TO THE UNITED STATES ANY KNOWN
+                                OR SUSPECTED COMPROMISE, AND THAT THE INFORMATION WILL BE PROVIDED
+                                SUBSTANTIALLY THE SAME DEGREE OF SECURITY AFFORDED IT BY THE DEPARTMENT
+                                OF DEFENSE OF THE UNITED STATES. ALSO, REGARDLESS OF ANY OTHER MARKINGS
+                                ON THE DOCUMENT, IT WILL NOT BE DOWNGRADED OR DECLASSIFIED WITHOUT
+                                WRITTEN APPROVAL OF THE ORIGINATING U.S. AGENCY.
+                            </simplePara>
+                            <simplePara id="disclos-1">THIS DOCUMENT IS RELEASABLE TO NATO &amp;
+                                NATO MEMBER COUNTRIES PARTICIPATING IN THE NATO E-3A PROGRAM.
+                            </simplePara>
+                            <simplePara id="disclos-2">Case: XXXXX</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="81205">
+                <enterpriseName>The Boeing Company</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="81205">
+                <enterpriseName>The Boeing Company</enterpriseName>
+            </originator>
+            <applicCrossRefTableRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="00W"
+                                infoCodeVariant="A" itemLocationCode="D" modelIdentCode="E3" subSubSystemCode="0"
+                                subSystemCode="0" systemCode="00" systemDiffCode="A"/>
+                    </dmRefIdent>
+                </dmRef>
+            </applicCrossRefTableRef>
+            <applic>
+                <displayText>
+                    <simplePara>NATO E-3 AWACS AIRCRAFT</simplePara>
+                </displayText>
+            </applic>
+            <techStandard>
+                <authorityInfo>Published Under Authority of NATO</authorityInfo>
+                <authorityExceptions/>
+                <authorityNotes>None</authorityNotes>
+            </techStandard>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="022"
+                                infoCodeVariant="A" itemLocationCode="D" modelIdentCode="E3" subSubSystemCode="0"
+                                subSystemCode="0" systemCode="00" systemDiffCode="A"/>
+                    </dmRefIdent>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <procedure>
+            <preliminaryRqmts>
+                <reqCondGroup>
+                    <noConds/>
+                </reqCondGroup>
+                <reqSupportEquips>
+                    <noSupportEquips/>
+                </reqSupportEquips>
+                <reqSupplies>
+                    <noSupplies/>
+                </reqSupplies>
+                <reqSpares>
+                    <noSpares/>
+                </reqSpares>
+                <reqSafety>
+                    <noSafety/>
+                </reqSafety>
+            </preliminaryRqmts>
+            <mainProcedure>
+                <proceduralStep id="step075">
+                    <para>Verify that the applicable HYDRAULIC-GAGES-UTILITY PRESS - ENG
+                        2 or ENG 3 circuit breaker on the P61-4 panel, and the FLIGHT ENGINEERS
+                        INST PNL-LOWER-IND.L circuit breaker on the P7 are open. (see
+                        <internalRef internalRefId="to102to1029fig11300000" internalRefTargetType="irtt01"/>
+                        for component location)
+                    </para>
+                </proceduralStep>
+<!--                <proceduralStep id="step076">-->
+<!--                    <para>Uncap the aircraft wiring connector and connect to the indicator.</para>-->
+<!--                </proceduralStep>-->
+<!--                <proceduralStep id="step077">-->
+<!--                    <para>Carefully slide the indicator into its position in the panel.</para>-->
+<!--                </proceduralStep>-->
+<!--                <proceduralStep id="step078">-->
+<!--                    <para>Secure the indicator mounting clamp by tightening the round-->
+<!--                        head screw adjacent to the indicator.-->
+<!--                    </para>-->
+<!--                </proceduralStep>-->
+<!--                <proceduralStep id="step079">-->
+<!--                    <para>Reset the circuit breakers called out in<internalRef internalRefId="step075"-->
+<!--                                                                               internalRefTargetType="irtt08"/>.-->
+<!--                    </para>-->
+<!--                </proceduralStep>-->
+<!--                <proceduralStep id="step080">-->
+<!--                    <para>Perform operational check out per-->
+<!--                        <dmRef>-->
+<!--                            <dmRefIdent>-->
+<!--                                <identExtension extensionCode="7.55" extensionProducer="61"/>-->
+<!--                                <dmCode assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="320"-->
+<!--                                        infoCodeVariant="A" itemLocationCode="A" modelIdentCode="E3"-->
+<!--                                        subSubSystemCode="0" subSystemCode="4" systemCode="32" systemDiffCode="A"/>-->
+<!--                            </dmRefIdent>-->
+<!--                        </dmRef>-->
+<!--                        of pressure indicator during the next engine-->
+<!--                        run.-->
+<!--                    </para>-->
+<!--                </proceduralStep>-->
+                <proceduralStep id="step081">
+                    <para>Eastern conference</para>
+                    <proceduralStep id="step082">
+                        <para>Atlantic Division</para>
+                        <proceduralStep id="step083">
+                            <para>Bruins</para>
+                            <proceduralStep id="step183">
+                                <para>Boston</para>
+                            </proceduralStep>
+                        </proceduralStep>
+                        <proceduralStep id="step084">
+                            <para>Sabres</para>
+                            <proceduralStep id="step184">
+                                <para>Buffalo</para>
+                            </proceduralStep>
+                        </proceduralStep>
+                    </proceduralStep>
+                    <proceduralStep id="step085">
+                        <para>Metro Division</para>
+                        <proceduralStep id="step086">
+                            <para>Hurricans</para>
+                            <proceduralStep id="step0186">
+                                <para>Carolina</para>
+                            </proceduralStep>
+                        </proceduralStep>
+                        <proceduralStep id="step087">
+                            <para>Blue Jackets</para>
+                            <proceduralStep id="step187">
+                                <para>Columbus</para>
+                            </proceduralStep>
+                        </proceduralStep>
+                    </proceduralStep>
+                </proceduralStep>
+                <proceduralStep id="step088">
+                    <para>Western conference</para>
+                    <proceduralStep id="step089">
+                        <para>Central Division</para>
+                        <proceduralStep id="step090">
+                            <para>Blackhawks</para>
+                            <proceduralStep id="step190">
+                                <para>Chicago</para>
+                            </proceduralStep>
+                        </proceduralStep>
+                        <proceduralStep id="step091">
+                            <para>Avalanche</para>
+                            <proceduralStep id="step191">
+                                <para>Colorado</para>
+                            </proceduralStep>
+                        </proceduralStep>
+                    </proceduralStep>
+                    <proceduralStep id="step092">
+                        <para>Pacific Division</para>
+                        <proceduralStep id="step093">
+                            <para>Ducks</para>
+                            <proceduralStep id="step193">
+                                <para>Anaheim</para>
+                            </proceduralStep>
+                        </proceduralStep>
+                        <proceduralStep id="step094">
+                            <para>Coyotes</para>
+                            <proceduralStep id="step194">
+                                <para>Arizona</para>
+                            </proceduralStep>
+                        </proceduralStep>
+                    </proceduralStep>
+                </proceduralStep>
+
+                <figure id="to102to1029fig11300000">
+                    <title>Hydraulic Pressure Indicating System</title>
+                    <graphic infoEntityIdent="fig117egm" reproductionHeight="8.5in" reproductionWidth="7.0in"/>
+                </figure>
+            </mainProcedure>
+            <closeRqmts>
+                <reqCondGroup>
+                    <noConds/>
+                </reqCondGroup>
+            </closeRqmts>
+        </procedure>
+    </content>
+</dmodule><?Pub Caret -2?><?Pub *0000007445 0?>

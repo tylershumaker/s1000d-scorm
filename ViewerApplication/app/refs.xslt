@@ -326,8 +326,8 @@
 			<!-- Take the $dmc_lookup variable and look it up to translate the dmc 
 				to its title -->
 			<xsl:variable name="ref_translatedname">
-				<xsl:value-of
-					select="document('../dmListing.xml')//dmtitle[parent::dmitem[@dmkey=$dmc_lookup]]" />
+<!--				<xsl:value-of-->
+<!--					select="document('../dmListing.xml')//dmtitle[parent::dmitem[@dmkey=$dmc_lookup]]" />-->
 			</xsl:variable>
 
 			<xsl:choose>

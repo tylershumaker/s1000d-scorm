@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
 	<xsl:output method="html" indent="yes"/>
+	<xsl:strip-space elements="*"/>
 	<xsl:include href="params.xslt"/>
 	<xsl:include href="funcs.xslt" />
 	<xsl:include href="commonhtml.xslt"/>
