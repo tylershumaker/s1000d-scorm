@@ -207,6 +207,6 @@ public class ControllerTest
         //Controller.main(SCORM40HTMLWOUT);
         //Controller.main(SCORM12_slim);
         //Controller.main(SCORM12_slim_Zip_Resource);
-        Controller.main(SCORM41HTMLWOUT);
+        Controller.main(SCORM12_slim_ZIP_SCPM);
     }
 }

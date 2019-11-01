@@ -101,18 +101,20 @@ xapi = function () {
                             definition: {
                                 type: "http://adlnet.gov/expapi/activities/attempt"
                             }
-                  },
+                        },
                         {
                             id: config.courseId,
                             objectType: "Activity",
                             definition: {
                                 type: "http://adlnet.gov/expapi/activities/course"
                             }
-                  }
-               ],
+                        }
+                    ],
+
                     category: [
                         {
-                            id: "https://w3id.org/xapi/scorm"
+                            id: "https://w3id.org/xapi/scorm",
+                            id: "https://w3id.org/xapi/ARTT_Profile"
                   }
                ]
                 }
@@ -160,8 +162,8 @@ xapi = function () {
                             definition: {
                                 type: "http://adlnet.gov/expapi/activities/lesson"
                             }
-                     }
-                  ],
+                        }
+                    ],
                     grouping: [
                         {
                             id: "",
@@ -169,18 +171,19 @@ xapi = function () {
                             definition: {
                                 type: "http://adlnet.gov/expapi/activities/attempt"
                             }
-                     },
+                        },
                         {
                             id: config.courseId,
                             objectType: "Activity",
                             definition: {
                                 type: "http://adlnet.gov/expapi/activities/course"
                             }
-                     }
-                  ],
+                        }
+                    ],
                     category: [
                         {
-                            id: "https://w3id.org/xapi/scorm"
+                            id: "https://w3id.org/xapi/scorm",
+                            id: "https://w3id.org/xapi/ARTT_Profile"
                      }
                   ]
                 }
@@ -282,6 +285,7 @@ xapi = function () {
 
         // Execute the statement
         sendSimpleStatement(startVerb);
+
     }
 
     /*******************************************************************************
@@ -310,7 +314,14 @@ xapi = function () {
             voidedStmt.verb = ADL.verbs.voided;
             voidedStmt.object.id = terminateStmt.id;
 
-            var response = ADL.XAPIWrapper.sendStatement(voidedStmt);
+            console.log(voidedStmt)
+            try {
+                var response = ADL.XAPIWrapper.sendStatement(voidedStmt);
+            }
+            catch(err) {
+                console.log(err.message);
+            }
+
 
             // send a suspended statement to replace the (voided) terminated statement
             suspendAttempt(terminateStmt.timestamp);
@@ -353,7 +364,13 @@ xapi = function () {
         stmt.context.contextActivities.grouping.push(config.groupingContextActivity);
 
         var stmtWithResult = getStmtWithResult(stmt);
-        var response = ADL.XAPIWrapper.sendStatement(stmtWithResult);
+        console.log(stmtWithResult)
+        try {
+            var response = ADL.XAPIWrapper.sendStatement(stmtWithResult);
+        }
+        catch(err) {
+            console.log(err.message);
+        }
     }
 
     /*******************************************************************************
@@ -379,7 +396,14 @@ xapi = function () {
         stmt.context.contextActivities.grouping.push(config.groupingContextActivity);
 
         var stmtWithResult = getStmtWithResult(stmt);
-        var response = ADL.XAPIWrapper.sendStatement(stmtWithResult);
+
+        console.log(stmtWithResult)
+        try {
+            var response = ADL.XAPIWrapper.sendStatement(stmtWithResult);
+        }
+        catch(err) {
+            console.log(err.message);
+        }
 
         window.localStorage.removeItem("learnerId");
     }
@@ -815,7 +839,13 @@ xapi = function () {
 
                     // todo: make the subelement that you send stmt on configurable
                     // send statement
-                    var response = ADL.XAPIWrapper.sendStatement(stmt);
+                    console.log(stmt)
+                    try {
+                        var response = ADL.XAPIWrapper.sendStatement(stmt);
+                    }
+                    catch(err) {
+                        console.log(err.message);
+                    }
 
                     // remove interaction from local storage array so its not processed again
                     cachedInteractions.splice(i, 1);
@@ -858,7 +888,13 @@ xapi = function () {
             }
         };
 
-        var response = ADL.XAPIWrapper.sendStatement(stmt);
+        console.log(stmt)
+        try {
+            var response = ADL.XAPIWrapper.sendStatement(stmt);
+        }
+        catch(err) {
+            console.log(err.message);
+        }
     }
 
     /*******************************************************************************
@@ -1031,7 +1067,14 @@ xapi = function () {
         // for an event
         stmt.context.contextActivities.grouping.push(config.groupingContextActivity);
 
-        var response = ADL.XAPIWrapper.sendStatement(stmt);
+        console.log(stmt)
+        try {
+            var response = ADL.XAPIWrapper.sendStatement(stmt);
+        }
+        catch(err) {
+            console.log(err.message);
+        }
+
     }
 
 

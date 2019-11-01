@@ -201,7 +201,7 @@
                                   },
                                   "description": {
                                   "en-US": "</xsl:text><xsl:value-of
-                                    select="lom:lom/lom:general/lom:description/lom:string"/><xsl:text>"
+                                    select="lom:lom/lom:general/lom:title/lom:string"/><xsl:text>"
                                   }
                                   },
                                   "id": "http://adlnet.gov/event/</xsl:text><xsl:value-of

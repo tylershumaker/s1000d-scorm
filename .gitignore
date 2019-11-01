@@ -15,3 +15,4 @@ S1000D_BIKE_Learning_Sample/
 *.class
 other/*
 urn_resource_map.xml
+.DS_Store
