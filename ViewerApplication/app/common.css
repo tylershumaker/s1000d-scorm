@@ -151,8 +151,8 @@ table {
     font-size: 10pt;
     padding-top: 3px;
     padding-bottom: 5px;
-	margin-left: -25px;
-	margin-bottom: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
 }
 
 .indentMarginLeft {
@@ -166,6 +166,7 @@ table {
 
 .decreaseBottom {
     margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .nomarginbottom {
@@ -242,13 +243,13 @@ ol {
 }
 
 li::before {
-    counter-increment: section;
+    /*counter-increment: section;*/
     /* Increments only this instance
-                                    of the section counter */
-    content: "Step " counters(section, ".") " ";
+      of the section counter */
+
+    /*content: "Step " counters(section, ".") " ";*/
     /* Combines the values of all instances
-                                             of the section counter, separated
-                                             by a period */
+      of the section counter, separated by a period */
 }
 
 li.active::before {
@@ -306,7 +307,9 @@ intendentPadding {
 }
 
 .imageBorder {
-    border: solid black .5pt;
+    border: solid black 1pt;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .imageTitle {

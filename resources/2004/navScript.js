@@ -3,6 +3,7 @@
 // initialize a counter for navigation clicks
 var count = 1;
 
+var current_dmc = null;
 
 var loc = get_location('loc');
 //alert(param);
@@ -26,11 +27,14 @@ function startSCO()
 {
 	var scoPages = getArray();
 	var newLocation = scoPages[loc][0];
+    current_dmc = newLocation.substring(3).split("_")[0];
 	parent.content.location=newLocation;
 	parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
+
 	// call course and sco initialize
 	scoInit();
 	//alert("This is the course and first sco page");
+
 }
 
 function scoInit() 
@@ -40,6 +44,9 @@ function scoInit()
     {
         initialized = doInitialize();
         is_initialized = true;
+
+        //Make xAPI call, starting SCO
+		xapi.initializeAttempt();
     }
 	if(loc == 0){
 	    document.getElementById('btnBack').src = "images/toolkit_footer_11.jpg";
@@ -58,6 +65,10 @@ function scoTerminate()
     initialized = doTerminate();
     is_initialized = false;
     //alert(initialized);
+
+	//Make xAPI call, moved to the next DM
+	xapi.setComplete("completed");
+	xapi.terminateAttempt();
 }
 
 function setStatus(status)
@@ -85,10 +96,11 @@ function goNext()
 	   setStatus("true");
 	   doSetValue("adl.nav.request", "continue");
 	   doSetValue("cmi.exit", "normal");
+
 	   if (is_initialized != false)
 	   {
 		   scoTerminate();
-	   }	   
+	   }
    }
    else if (count < scoPages[loc].length)
    {
@@ -96,7 +108,13 @@ function goNext()
        nextPage = scoPages[loc][count];
        count++;
        setStatus("false");
-       parent.content.location=nextPage;  
+       parent.content.location=nextPage;
+
+       current_dmc = nextPage.substring(3).split("_")[0];
+
+       //Make xAPI call, viewed DMC
+       var statement = getDMStatement();
+       ADL.XAPIWrapper.sendStatement(statement);
       
        // Only enable the back button if section is not an assessment
 
@@ -154,4 +172,68 @@ function goHome()
     var nextPage = scoPages[loc][count-1];
     parent.content.location=nextPage;
     parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
+}
+
+var getDMStatement = function () {
+    // if (window.localStorage.learnerId == null) {
+    //     window.localStorage.learnerId = retrieveDataValue(scormVersionConfig.learnerIdElement);
+    // }
+
+    return {
+        actor: {
+            objectType: "Agent",
+            account: {
+                homePage: scormLaunchDataJSON.lmsHomePage,
+                name: window.localStorage.learnerId
+            }
+        },
+        verb: ADL.verbs.responded,
+        object: {
+            objectType: "Attempt",
+            id: "URN:"+current_dmc,
+            definition: {
+                type: "http://adlnet.gov/expapi/activities/cmi.interaction",
+                interactionType: "",
+                correctResponsesPattern: []
+            }
+        },
+        context: {
+            contextAttempts: {
+                parent: [
+                    {
+                        id: scormLaunchDataJSON.activityId,
+                        objectType: "Attempt",
+                        definition: {
+                            type: "http://adlnet.gov/expapi/activities/lesson"
+                        }
+                    }
+                ],
+                grouping: [
+                    {
+                        id: "",
+                        objectType: "Activity",
+                        definition: {
+                            type: "http://adlnet.gov/expapi/activities/attempt"
+                        }
+                    },
+                    {
+                        id: scormLaunchDataJSON.courseId,
+                        objectType: "Activity",
+                        definition: {
+                            type: "http://adlnet.gov/expapi/activities/course"
+                        }
+                    }
+                ],
+                category: [
+                    {
+                        id: "https://w3id.org/xapi/scorm",
+                        id: "https://w3id.org/xapi/ARTT_Profile"
+                    }
+                ]
+            }
+        },
+        result: {
+            response: ""
+        }
+    };
 }

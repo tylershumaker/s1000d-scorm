@@ -15,7 +15,7 @@
 	<!--For future use 
 	 module specific elements inclusions-->
      <xsl:include href="isolation.xslt"/>
-     <xsl:include href="levelledparatitle_num.xslt"/>
+	 <xsl:include href="levelledparatitle.xslt"/>
 	
 	<!--global vars-->
   <xsl:variable name="mic" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@modelIdentCode" />
@@ -77,7 +77,7 @@
 				<link rel="stylesheet" href="app/assessment.css" type="text/css" />
 				<script type="text/javascript" src="app/common.js"></script>
                 <script type="text/javascript" src="app/list.js"></script>
-                <script type="text/javascript" src="app/SCORM_12_APIWrapper.js"></script>
+				<script type="text/javascript" src="app/SCORM_12_APIWrapper.js"></script>
 				<!-- Sortable -->
 				<script type="text/javascript" src="app/jquery-ui/js/jquery-1.6.2.min.js"></script>
 				<script type="text/javascript" src="app/jquery-ui/js/jquery-ui-1.8.15.custom.min.js"></script>

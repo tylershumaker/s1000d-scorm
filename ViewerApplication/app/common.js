@@ -31,8 +31,15 @@ function add_highlight(id) {
     next[0].classList.add("active")
     // next[0].style.display = 'block'
 
+
+    // Make the step visited xAPI call
+    setStatus("true");
+    doSetValue("adl.nav.request", "continue");
+    doSetValue("cmi.exit", "normal");
+
     // Make the step xAPI call
     xapi.setComplete();
+    console.log("XAPI SET COPPLETE")
 }
 
 function toggle_visibility(id) {
