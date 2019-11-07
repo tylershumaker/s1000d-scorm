@@ -243,11 +243,11 @@ ol {
 }
 
 li::before {
-    /*counter-increment: section;*/
+    counter-increment: section;
     /* Increments only this instance
       of the section counter */
 
-    /*content: "Step " counters(section, ".") " ";*/
+    content: "Step " counters(section, ".") " ";
     /* Combines the values of all instances
       of the section counter, separated by a period */
 }

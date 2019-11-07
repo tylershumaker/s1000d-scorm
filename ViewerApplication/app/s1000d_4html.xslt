@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
 	<xsl:output method="html" indent="yes"/>
+	<xsl:strip-space elements="*"/>
 	<xsl:include href="params.xslt"/>
 	<xsl:include href="funcs.xslt" />
 	<xsl:include href="commonhtml.xslt"/>
@@ -76,12 +77,17 @@
 				<link rel="stylesheet" href="app/assessment.css" type="text/css" />
 				<script type="text/javascript" src="app/common.js"></script>
                 <script type="text/javascript" src="app/list.js"></script>
-                <script type="text/javascript" src="app/SCORM_2004_APIWrapper.js"></script>                
+                <script type="text/javascript" src="app/SCORM_2004_APIWrapper.js"></script>
+				<script type="text/javascript" src="app/SCORMToXAPIFunctions.js"></script>
+                <script type="text/javascript" src="app/xapiwrapper.min.js"></script>
 				<!-- Sortable -->
 				<script type="text/javascript" src="app/jquery-ui/js/jquery-1.6.2.min.js"></script>
 				<script type="text/javascript" src="app/jquery-ui/js/jquery-ui-1.8.15.custom.min.js"></script>
 			</head>
 			<body bgcolor="#FFFFFF" class="bodyText" onload="initializeXAPI()">
+				<div id="dmc" style="visibility: hidden; height: 0px;">
+					<xsl:value-of select="$this_dmc"/>
+				</div>
 				<xsl:apply-templates/>
 			</body>
 		</html>

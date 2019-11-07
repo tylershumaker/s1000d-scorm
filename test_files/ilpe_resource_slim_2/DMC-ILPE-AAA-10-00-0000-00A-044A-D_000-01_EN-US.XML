@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Gas Processing Unit (GPU-700)</techName>
+                    <infoName>Description of function (physical breakdown)</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara id="par-1.3.2">
+                        <title>Gas Processing Unit (GPU)</title>
+                        <para>The GPU (refer to <internalRef internalRefId="fig-01-2"/>) performs three functions: a) the production of product gas in the GGS, b) the disposal of byproduct gas and waste gas in the BMP and c) the operational control over the ILPE. The GGS is a totally enclosed unit. The GGS houses all the components necessary to produce product gas. The major components involved in the production are: <randomList> <listItem><para>the electrolysis cell stack (CSK-050G)</para></listItem> <listItem><para>the water filter (FLT-637G)</para></listItem> <listItem><para>the chiller (HX-635G)</para></listItem> <listItem><para>the circulation pump (PMP-633G)</para></listItem> <listItem><para>the low pressure phase separator (PHS-030G)</para></listItem> <listItem><para>the dehumidifier (HX-031G)</para></listItem> <listItem><para>the demineralizer bed (DIB-623G)</para></listItem> <listItem><para>the resistivity sensor (RS-1611G)</para></listItem> <listItem><para>the high pressure
+                            phase separator (PHS-138G).</para></listItem> </randomList> </para>
+                        <figure id="fig-01-2">
+                            <title>Gas Processing Unit</title>
+                            <graphic infoEntityIdent="ICN-1G6E8-ILPE000002-001-01"/>
+                        </figure>
+                        
+                            <para>A venturi (VN-636G) and differential pressure transducers (DPT-1617-1G and DPT-1617-2G) provide flow indication. Temperature sensors are located within the piping, in wells, to provide thermal monitoring of the process. Manual valves, flow restrictors, solenoid valves and pressure transducers provide control for the process. These components are housed in manifolds. The manifolds are readily accessible and eliminate the need to disassemble piping connections when maintenance or repair is required. Electrical power distribution is provided by the LIB (LIB-776E).</para>
+                        
+                        
+                            <para>The BMP houses all the components necessary to perform a chemical conversion process. The primary purpose of the BMP is to perform the chemical conversion process that combines byproduct gas and waste gas resulting in a liquid product. The major components involved in the conversion are: <randomList> <listItem><para>the collector (PHS275B)</para></listItem> <listItem><para>the blower (BLR371B)</para></listItem> <listItem><para>the regenerator (HX369B)</para></listItem> <listItem><para>condenser (HX368B)</para></listItem> <listItem><para>the recycle heater (HTR364B)</para></listItem> <listItem><para>the converter (CNV365B)</para></listItem> <listItem><para>the degasser (PHS280B).</para></listItem> </randomList> </para>
+                        
+                        
+                            <para>Fluids required for cooling, gases for processing and the liquid product formed enter or leave at the fluid interfaces. A venturi (VN-370B) and differential pressure transducers (DPT-1335B and DPT-1336B) provide flow indication. Manual valves, flow restrictors, flow control valves, solenoid valves and pressure transducers are housed in manifolds. These manifolds are readily accessible and eliminate the need to disassemble piping connections when maintenance or repair is required.</para>
+                        
+                        
+                            <para>A bus based controller provides the operational control of the ILPE. The process controller includes: <randomList> <listItem><para>a microprocessor board (CPM-770E)</para></listItem> <listItem><para>memory and input/output (I/O) boards</para></listItem> <listItem><para>an independent shutdown monitor board (ISM-774E)</para></listItem> <listItem><para>the Electrolysis Power Supply (EPS) (EPS-777E)</para></listItem> <listItem><para>a logic power supply (LPS-775E).</para></listItem> </randomList> </para>
+                        
+                        
+                            <para>The process controller controls: <randomList> <listItem><para>start-up</para></listItem> <listItem><para>operation</para></listItem> <listItem><para>self-health monitoring</para></listItem> <listItem><para>contingency mode operation</para></listItem> <listItem><para>fault identification</para></listItem> <listItem><para>troubleshooting</para></listItem> </randomList> </para>
+                        
+                        
+                            <para>verification after repair.</para>
+                        
+                    <levelledPara id="par-1.3.2.1">
+                <title>GPU Access Panels</title>
+                <para>Access to the GPU internal components is provided by removable panels (refer to <internalRef internalRefId="fig-01-3"/>) listed in <internalRef internalRefId="tbl1-4"/>.</para>
+                <figure id="fig-01-3">
+                    <title>GPU Panels</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000003-001-01"/>
+                </figure>
+                <table frame="all" id="tbl1-4" orient="port" pgwide="1" rowsep="0" tocentry="1">
+                    <title>GPU Panel Information</title>
+                    <tgroup cols="2">
+                        <colspec colname="1" colnum="1" align="left" colsep="1" colwidth="2.1*"/>
+                        <colspec colname="2" colnum="2" align="left" colsep="1" colwidth="1.2*"/>
+                        <thead valign="top">
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>Index Number (refer to figure 1-3)</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>Designator</para>
+                                </entry>
+                            </row>
+                        </thead>
+                        <tbody valign="top">
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>1</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU-1</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>2</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU Door</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="middle">
+                                    <para>3</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>EPS Door</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="middle">
+                                    <para>4</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU-7</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>5</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>GPU-6 (Frangible Panel)</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>6</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU-2</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>7</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>GPU-3</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>8</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU-5</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>9</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>GPU-4</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>10</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU-14</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>11</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU-13</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>12</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU-11</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>13</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>GPU-10</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>14</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>Chilled Water Plates</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>15</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>Stuffing Tube Plate</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>16</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU-8</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>17</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>GPU-12</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>18</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>GPU-9</para>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </levelledPara>
+            
+            <levelledPara id="par-1.3.2.2">
+                <title>GPU Manifolds</title>
+                <para>(Refer to <internalRef internalRefId="fig-01-4"/>) The 13 manifolds (refer to <internalRef internalRefId="tbl1-5"/>) in the GPU contain valves, flow restrictors, pressure sensors, a resistivity sensor and drain fittings needed for operation. The manifolds are numbered for identification. The manifolds and other components are connected by removable tubing and flexible hoses. The manifolds are accessed by removing the panels listed in <internalRef internalRefId="tbl1-5"/>.</para>
+                <figure id="fig-01-4">
+                    <title>GPU Manifolds</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000004-001-01"/>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000005-001-01"/>
+                </figure>
+                <table frame="all" id="tbl1-5" orient="port" pgwide="1" rowsep="0" tocentry="1">
+                    <title>GPU Manifolds</title>
+                    <tgroup cols="4">
+                        <colspec colname="1" colnum="1" align="left" colsep="1" colwidth="1.0*"/>
+                        <colspec colname="2" colnum="2" align="left" colsep="1" colwidth="1.6*"/>
+                        <colspec colname="3" colnum="3" align="left" colsep="1" colwidth="1.0*"/>
+                        <colspec colname="4" colnum="4" align="left" colsep="1" colwidth="3.5*"/>
+                        <spanspec namest="1" nameend="4" spanname="1-4" align="center"/>
+                        <thead valign="top">
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>Manifold</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>Index Number  (refer to figure 1-4, Sh 1 figure 1-4, Sh 2)</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="bottom">
+                                    <para>Panel</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="bottom">
+                                    <para>Components</para>
+                                </entry>
+                            </row>
+                        </thead>
+                        <tbody valign="top">
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="middle">
+                                    <para>M140</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>1</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="middle">
+                                    <para>GPU Door</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="middle">
+                                    <para>MV-520G, RV-525G</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="middle">
+                                    <para>M90</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>2</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="middle">
+                                    <para>GPU Door</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="middle">
+                                    <para>MV-373B, P-1334-1B, P-1334-2B, F-33 (Test port)</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>M80</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="top">
+                                    <para>3</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="top">
+                                    <para>GPU Door</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="bottom">
+                                    <para>CV-156G, CV-390B, MV-155G, MV-294B, SV-154G,  FR-153G</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>M20</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="top">
+                                    <para>4</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="top">
+                                    <para>GPU-3</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="bottom">
+                                    <para>CV-418-1G, CV-418-2G, SV-417-1G, SV-417-2G,  FR-416-1G, FR-416-2G</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>M110</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="top">
+                                    <para>5</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="top">
+                                    <para>GPU-3</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="bottom">
+                                    <para>MV-276B, MV-277B, MV-389B, SV-278B, SV-279B,  SV-293B</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>M120</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>6</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="top">
+                                    <para>GPU-3</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="middle">
+                                    <para>MV-285B, SV-398B, SV-399B, FR-384B, P-1342-1B,  P-1342-2B</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>M30</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="top">
+                                    <para>7</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="top">
+                                    <para>GPU Door</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="top">
+                                    <para>CV-414G, MV-413G, MV-430B, FR-412G, P-1426-1G,  P-1426-2G</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>M10</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>8</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="top">
+                                    <para>GPU-11</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="bottom">
+                                    <para>MV-282B, MV-397-1B, MV-397-2B, SV-281B, RV-144G,  F6 (Drain)</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>M70</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="top">
+                                    <para>9</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="top">
+                                    <para>GPU-11</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="bottom">
+                                    <para>CV-141B, CV-923B, SV-140-2G, SV-922B, FR-139G,  FR-921B, RV-920B</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="middle">
+                                    <para>CG</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>10</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="middle">
+                                    <para>GPU-12</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="middle">
+                                    <para>CG-1012-1G, CG-1012-2G</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>M50</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>11</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="top">
+                                    <para>GPU-12</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="bottom">
+                                    <para>SV-143-1G, SV-143-2G, FR-142-1G, FR-142-2G,  P-1124-1G, P-1124-2G</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="middle">
+                                    <para>M130</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>12</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="middle">
+                                    <para>GPU-12</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="middle">
+                                    <para>CV-626G, SV-625G, SV-627G, RV-628G, RS-1611G</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="top">
+                                    <para>M40</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="top">
+                                    <para>13</para>
+                                </entry>
+                                <entry colname="3" colsep="1" valign="top">
+                                    <para>GPU-12</para>
+                                </entry>
+                                <entry colname="4" colsep="1" valign="bottom">
+                                    <para>CV-622G, MV-651G, SV-621G, SV-649G, SV-652G,  FR-648G, F32 (Drain)</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="bottom" namest="1" nameend="4">
+                                    <para>MV-634G is the non-manifold mounted circulating pump drain and is located behind access panel GPU-14. CG-1890-1S and CG-1890-2S are located behind access panel GPU-12.</para>
+                                    <para>CG-1890-3S is located behind the LCD and is normally accessed via panel GPU-2</para>
+                                    <para>CG-1890-4S is located behind access panel GPU-3.</para>
+                                    <para>CV-891S is the non-manifold mounted valve located behind the GPU-12 panel.</para>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </levelledPara>
+            <levelledPara id="par-1.3.2.3">
+                <title>GPU Major Components</title>
+                <para>GPU Major Components. The GPU major internal components (refer to <internalRef internalRefId="fig-01-5"/>) and the panels (refer to <internalRef internalRefId="tbl1-4"/>) removed for access are listed in table 1-6.</para>
+                <figure id="fig-01-5">
+                    <title>GPU Major Components</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000006-001-01"/>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000007-001-01"/>
+                </figure>
+            </levelledPara></levelledPara>
+        </description>
+    </content>
+</dmodule>

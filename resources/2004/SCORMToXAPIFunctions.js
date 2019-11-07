@@ -1,7 +1,7 @@
 /*******************************************************************************
  **
  ** xapi object to be used in SCORM wrapper
- ** 
+ **
  ** Version 1.1
  **
  ** Converts many SCORM 2004 data model elements to associated xAPI data
@@ -16,7 +16,7 @@ xapi = function () {
      **
      ** Configuration object for a specific instance of the wrapper
      **
-     ** The following configuration values must be set in order for this 
+     ** The following configuration values must be set in order for this
      ** wrapper to function correctly:
      **
      ** LRS Data
@@ -39,7 +39,7 @@ xapi = function () {
      *******************************************************************************/
     var config = {
         lrs: {
-            endpoint: "https://lrs.arttproject.org/test/xapi/",
+            endpoint: "https://lrs.adlnet.gov/xapi/",
             user: "",
             password: ""
         },
@@ -68,7 +68,7 @@ xapi = function () {
     /*******************************************************************************
      **
      ** Base statement
-     ** 
+     **
      ** Must update verb, attempt and result (if applicable) to execute
      **
      *******************************************************************************/
@@ -110,13 +110,11 @@ xapi = function () {
                             }
                         }
                     ],
-
                     category: [
                         {
-                            id: "https://w3id.org/xapi/scorm",
-                            id: "https://w3id.org/xapi/ARTT_Profile"
-                  }
-               ]
+                            id: "https://w3id.org/xapi/scorm"
+                        }
+                    ]
                 }
             }
         };
@@ -125,8 +123,8 @@ xapi = function () {
     /*******************************************************************************
      **
      ** Interactions base statement
-     ** 
-     ** Must update object iri, attempt, result and interaction 
+     **
+     ** Must update object iri, attempt, result and interaction
      ** type/description to execute
      **
      *******************************************************************************/
@@ -182,10 +180,9 @@ xapi = function () {
                     ],
                     category: [
                         {
-                            id: "https://w3id.org/xapi/scorm",
-                            id: "https://w3id.org/xapi/ARTT_Profile"
-                     }
-                  ]
+                            id: "https://w3id.org/xapi/scorm"
+                        }
+                    ]
                 }
             },
             result: {
@@ -197,7 +194,7 @@ xapi = function () {
     /*******************************************************************************
      **
      ** Voided base statement
-     ** 
+     **
      ** Must set verb and object to execute
      **
      *******************************************************************************/
@@ -225,7 +222,7 @@ xapi = function () {
     /*******************************************************************************
      **
      ** Gets agent - account corresponding to LMS user registration
-     ** 
+     **
      ** Used when accessing state objects
      **
      *******************************************************************************/
@@ -249,10 +246,10 @@ xapi = function () {
      ** This function is used to initiate an xAPI attempt
      **
      *******************************************************************************/
-    var initializeAttempt = function () {        
+    var initializeAttempt = function () {
         // configure SCORM version and data elements, get launch data from lms, etc
         configureXAPIData();
-        
+
         // configure lrs
         configureLRS();
 
@@ -266,7 +263,7 @@ xapi = function () {
 
         var isResumed = (entry == "resume");
 
-        // if "resume", determine if the user issued a suspend sequencing nav 
+        // if "resume", determine if the user issued a suspend sequencing nav
         // request and a terminate was called instead of a suspend and if so, fix
         if (isResumed) {
             adjustFinishStatementForResume();
@@ -285,7 +282,6 @@ xapi = function () {
 
         // Execute the statement
         sendSimpleStatement(startVerb);
-
     }
 
     /*******************************************************************************
@@ -304,7 +300,7 @@ xapi = function () {
 
         if (res.statements.length == 1) {
             // there is a terminate verb, so must void it and replace with suspended
-            // Note: if there is length == 0, no issue.  
+            // Note: if there is length == 0, no issue.
             //       if length > 1, things are very messed up. Do nothing.
 
             var terminateStmt = res.statements[0];
@@ -314,14 +310,7 @@ xapi = function () {
             voidedStmt.verb = ADL.verbs.voided;
             voidedStmt.object.id = terminateStmt.id;
 
-            console.log(voidedStmt)
-            try {
-                var response = ADL.XAPIWrapper.sendStatement(voidedStmt);
-            }
-            catch(err) {
-                console.log(err.message);
-            }
-
+            var response = ADL.XAPIWrapper.sendStatement(voidedStmt);
 
             // send a suspended statement to replace the (voided) terminated statement
             suspendAttempt(terminateStmt.timestamp);
@@ -358,19 +347,13 @@ xapi = function () {
         // window.localStorage[activity] uses activity id to return the most recent
         // attempt
         stmt.context.contextActivities.grouping[0].id = window.localStorage[config.activityId];
-        
+
         // set the context activity from the manifest/launch_data to group together
         // for an event
         stmt.context.contextActivities.grouping.push(config.groupingContextActivity);
 
         var stmtWithResult = getStmtWithResult(stmt);
-        console.log(stmtWithResult)
-        try {
-            var response = ADL.XAPIWrapper.sendStatement(stmtWithResult);
-        }
-        catch(err) {
-            console.log(err.message);
-        }
+        var response = ADL.XAPIWrapper.sendStatement(stmtWithResult);
     }
 
     /*******************************************************************************
@@ -390,20 +373,13 @@ xapi = function () {
         // window.localStorage[activity] uses activity id to return the most recent
         // attempt
         stmt.context.contextActivities.grouping[0].id = window.localStorage[config.activityId];
-        
+
         // set the context activity from the manifest/launch_data to group together
         // for an event
         stmt.context.contextActivities.grouping.push(config.groupingContextActivity);
 
         var stmtWithResult = getStmtWithResult(stmt);
-
-        console.log(stmtWithResult)
-        try {
-            var response = ADL.XAPIWrapper.sendStatement(stmtWithResult);
-        }
-        catch(err) {
-            console.log(err.message);
-        }
+        var response = ADL.XAPIWrapper.sendStatement(stmtWithResult);
 
         window.localStorage.removeItem("learnerId");
     }
@@ -426,7 +402,7 @@ xapi = function () {
         var scoreSet = false;
         var scoreJson = {};
 
-        // create all of the statement json 
+        // create all of the statement json
 
         // set success if known
         if (success == "passed") {
@@ -532,7 +508,7 @@ xapi = function () {
 
     /*******************************************************************************
      **
-     ** This function is used to set activity profile information 
+     ** This function is used to set activity profile information
      **
      ** Note: this data is scoped to an activity and does not (normally) change
      **
@@ -580,7 +556,7 @@ xapi = function () {
      **
      ** Note: State data about an activity that is different for each user
      **
-     **       This is used to also update attempt iri array associated with 
+     **       This is used to also update attempt iri array associated with
      **       the user and activity
      **
      *******************************************************************************/
@@ -624,10 +600,10 @@ xapi = function () {
         var attemptIri = window.localStorage[config.activityId];
         var agent = getAgent();
 
-        // location, preferences object, credit, lesson_mode, suspend_data, 
+        // location, preferences object, credit, lesson_mode, suspend_data,
         // total_time, adl_data
         var cmi_location = retrieveDataValue(scormVersionConfig.locationElement);
-        
+
         var cmi_language = retrieveDataValue(scormVersionConfig.languageElement);
         var cmi_audio_level = retrieveDataValue(scormVersionConfig.audioLevelElement);
         var cmi_delivery_speed = retrieveDataValue(scormVersionConfig.deliverySpeedElement);
@@ -668,7 +644,6 @@ xapi = function () {
             state.total_time = cmi_total_time;
 
 
-
         // see if the profile is already set
         var as = ADL.XAPIWrapper.getState(attemptIri, agent, constants.attemptStateIri);
 
@@ -689,35 +664,35 @@ xapi = function () {
      **
      *******************************************************************************/
     var saveDataValue = function (name, value) {
-            var isInteraction = name.indexOf("cmi.interactions") > -1;
+        var isInteraction = name.indexOf("cmi.interactions") > -1;
 
-            if (isInteraction) {
-                setInteraction(name, value);
-            } else {
-                // Handle only non-array scorm data model elements  
-                switch (name) {
-                    case scormVersionConfig.scoreScaledElement:
-                        setScore(value);
-                        break;
-                    case scormVersionConfig.completionElement:
-                        setComplete(value);
-                        break;
-                    case scormVersionConfig.successElement:
-                        setSuccess(value);
-                        break;
-                    case scormVersionConfig.exitElement:
-                        exitSetToSuspend = (value == "suspend");
-                        break;
-                    default:
-                        break;
-                }
+        if (isInteraction) {
+            setInteraction(name, value);
+        } else {
+            // Handle only non-array scorm data model elements
+            switch (name) {
+                case scormVersionConfig.scoreScaledElement:
+                    setScore(value);
+                    break;
+                case scormVersionConfig.completionElement:
+                    setComplete(value);
+                    break;
+                case scormVersionConfig.successElement:
+                    setSuccess(value);
+                    break;
+                case scormVersionConfig.exitElement:
+                    exitSetToSuspend = (value == "suspend");
+                    break;
+                default:
+                    break;
             }
         }
-        /*******************************************************************************
-         **
-         ** This function/vars is used to handle the interaction type
-         **
-         *******************************************************************************/
+    }
+    /*******************************************************************************
+     **
+     ** This function/vars is used to handle the interaction type
+     **
+     *******************************************************************************/
     var setInteraction = function (name, value) {
         // key for interactions in local storage is scoped to an attempt
         var interactionsKey = window.localStorage[config.activityId] + "_interactions";
@@ -797,7 +772,7 @@ xapi = function () {
                     var stmt = getInteractionsBaseStatement();
                     stmt.object.id = getInteractionIri(cachedInteractions[i].id);
                     stmt.context.contextActivities.grouping[0].id = window.localStorage[config.activityId];
-                    
+
                     // set the context activity from the manifest/launch_data to group together
                     // for an event
                     stmt.context.contextActivities.grouping.push(config.groupingContextActivity);
@@ -839,13 +814,7 @@ xapi = function () {
 
                     // todo: make the subelement that you send stmt on configurable
                     // send statement
-                    console.log(stmt)
-                    try {
-                        var response = ADL.XAPIWrapper.sendStatement(stmt);
-                    }
-                    catch(err) {
-                        console.log(err.message);
-                    }
+                    var response = ADL.XAPIWrapper.sendStatement(stmt);
 
                     // remove interaction from local storage array so its not processed again
                     cachedInteractions.splice(i, 1);
@@ -876,7 +845,7 @@ xapi = function () {
         var stmt = getBaseStatement();
         stmt.verb = ADL.verbs.scored;
         stmt.context.contextActivities.grouping[0].id = window.localStorage[config.activityId];
-        
+
         // set the context activity from the manifest/launch_data to group together
         // for an event
         stmt.context.contextActivities.grouping.push(config.groupingContextActivity);
@@ -888,13 +857,7 @@ xapi = function () {
             }
         };
 
-        console.log(stmt)
-        try {
-            var response = ADL.XAPIWrapper.sendStatement(stmt);
-        }
-        catch(err) {
-            console.log(err.message);
-        }
+        var response = ADL.XAPIWrapper.sendStatement(stmt);
     }
 
     /*******************************************************************************
@@ -974,7 +937,7 @@ xapi = function () {
         scormLaunchDataJSON = JSON.parse(scormLaunchData);
 
         // todo: confirm launch data exists, if not default values
-        
+
         // set local config object with launch data information
         config.lrs.endpoint = scormLaunchDataJSON.lrs.endpoint;
         config.lrs.user = scormLaunchDataJSON.lrs.user;
@@ -1055,32 +1018,25 @@ xapi = function () {
 
     /*******************************************************************************
      **
-     ** Sends same basic statement with varying verbs 
+     ** Sends same basic statement with varying verbs
      **
      *******************************************************************************/
     var sendSimpleStatement = function (verb) {
         var stmt = getBaseStatement();
         stmt.verb = verb;
         stmt.context.contextActivities.grouping[0].id = window.localStorage[config.activityId];
-        
+
         // set the context activity from the manifest/launch_data to group together
         // for an event
         stmt.context.contextActivities.grouping.push(config.groupingContextActivity);
 
-        console.log(stmt)
-        try {
-            var response = ADL.XAPIWrapper.sendStatement(stmt);
-        }
-        catch(err) {
-            console.log(err.message);
-        }
-
+        var response = ADL.XAPIWrapper.sendStatement(stmt);
     }
 
 
     /*******************************************************************************
      **
-     ** This function is used to (most likely) get a unique guid to identify 
+     ** This function is used to (most likely) get a unique guid to identify
      ** an attempt
      **
      *******************************************************************************/
@@ -1101,58 +1057,55 @@ xapi = function () {
             output.log(str);
         }
     }
-    
+
     // extra credit extension
-    var GetCompleteStatementListFromLRS = function(search)
-    {
+    var GetCompleteStatementListFromLRS = function (search) {
         var result = ADL.XAPIWrapper.getStatements(search);
         var statements = result.statements;
 
-        while(result.more && result.more !== "")
-        {
+        while (result.more && result.more !== "") {
             var res = ADL.XAPIWrapper.getStatements(null, result.more);
             var stmts = res.statements;
 
             statements.push.apply(statements, stmts);
 
             result = res;
-        }   
+        }
 
         return statements;
     }
-    
+
     // extra credit extension
-    var getScoreData = function()
-    {
-       // Set up object for score data
-       var scoreStructure = new Object();
-       scoreStructure.totalNumberOfScores = 0;
-       scoreStructure.totalScores = 0;
-       scoreStructure.average = 0;
+    var getScoreData = function () {
+        // Set up object for score data
+        var scoreStructure = new Object();
+        scoreStructure.totalNumberOfScores = 0;
+        scoreStructure.totalScores = 0;
+        scoreStructure.average = 0;
 
 
-       var search = ADL.XAPIWrapper.searchParams();
-       search['activity'] = config.activityId;
-       search['verb'] = ADL.verbs.scored.id;
+        var search = ADL.XAPIWrapper.searchParams();
+        search['activity'] = config.activityId;
+        search['verb'] = ADL.verbs.scored.id;
 
-       var statements = GetCompleteStatementListFromLRS(search);
+        var statements = GetCompleteStatementListFromLRS(search);
 
-       for (var i=0; i < statements.length; i++)
-       {
-          // figure out the average
-          if (statements[i].result != undefined)
-          {
-             scoreStructure.totalNumberOfScores++;
-             scoreStructure.totalScores = scoreStructure.totalScores + statements[i].result.score.scaled;         
-          }
-       }  
+        for (var i = 0; i < statements.length; i++) {
+            // figure out the average
+            if (statements[i].result != undefined) {
+                scoreStructure.totalNumberOfScores++;
+                scoreStructure.totalScores = scoreStructure.totalScores + statements[i].result.score.scaled;
+            }
+        }
 
-       scoreStructure.average = scoreStructure.totalScores / scoreStructure.totalNumberOfScores;
+        scoreStructure.average = scoreStructure.totalScores / scoreStructure.totalNumberOfScores;
 
-       return scoreStructure;
+        return scoreStructure;
     }
 
     return {
+        //newSetConfig: newSetConfig,
+        //setConfig:setConfig,
         initializeAttempt: initializeAttempt,
         resumeAttempt: resumeAttempt,
         suspendAttempt: suspendAttempt,
@@ -1162,8 +1115,7 @@ xapi = function () {
         setComplete: setComplete,
         setSuccess: setSuccess,
         configureLRS: configureLRS,
-        getScoreData:getScoreData
+        getScoreData: getScoreData
     }
 
-    // 
 }(); // end xapi object
