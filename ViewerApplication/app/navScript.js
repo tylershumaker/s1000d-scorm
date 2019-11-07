@@ -10,7 +10,6 @@ var loc = get_location('loc');
 var initialized = null;
 var is_initialized = null;
 
-var current_dmc = null;
 var fileref = document.createElement('script');
 fileref.setAttribute("type", "text/javascript");
 fileref.setAttribute("src", "list.js");
@@ -48,9 +47,7 @@ function scoInit()
         initialized = doInitialize();
         is_initialized = true;
 
-        //Make xAPI call, starting SCO
-		xapi.initializeAttempt();
-        recordDMAttempt();
+        recordDM(ADL.verbs.attempted);
     }
 
 	if(loc == 0){
@@ -70,12 +67,6 @@ function scoTerminate()
 //trigger call to terminate the sco through the APIWrapper.js
     initialized = doTerminate();
     is_initialized = false;
-    //alert(initialized);
-
-	//Make xAPI call, finished SCO
-	// xapi.setComplete("completed");
-	xapi.terminateAttempt()
-    recordDMAttempt();
 }
 
 function setStatus(status)
@@ -96,10 +87,11 @@ function setStatus(status)
 	}
 }
 
-function recordDMAttempt() {
+function recordDM(verb) {
 //Make xAPI call, viewed DMC
-    var statement = getDMStatement();
-    console.log(statement)
+    var statement = getDMStatement(verb);
+    console.log(statement);
+    console.log(JSON.stringify(statement));
 
     try {
         ADL.XAPIWrapper.sendStatement(statement);
@@ -113,6 +105,7 @@ function goNext()
 
     //9/1/14 issue 23 fix
    if(count >= scoPages[loc].length){
+       recordDM(ADL.verbs.completed);
 	   setStatus("true");
 	   doSetValue("adl.nav.request", "continue");
 	   doSetValue("cmi.exit", "normal");
@@ -124,6 +117,7 @@ function goNext()
    }
    else if (count < scoPages[loc].length)
    {
+       recordDM(ADL.verbs.completed);
        var nextPage = "";
        nextPage = scoPages[loc][count];
        count++;
@@ -131,7 +125,7 @@ function goNext()
        parent.content.location=nextPage;
 
        current_dmc = nextPage.substring(3).split("_")[0];
-       recordDMAttempt();
+       recordDM(ADL.verbs.attempted);
        // Only enable the back button if section is not an assessment
        var inString = scoPages[loc][1].indexOf("-T88");
 
@@ -158,14 +152,16 @@ function goBack()
     document.getElementById('btnBack').src = "images/toolkit_footer_04.jpg";
     if (count > 1)
     {
+        recordDM(ADL.verbs.completed);
     	count--;
     	var backPage = scoPages[loc][count-1];
         parent.content.location=backPage;
         current_dmc = backPage.substring(3).split("_")[0];
-        recordDMAttempt();
+        recordDM(ADL.verbs.attempted);
     }
     if (count == 1)
     {
+        recordDM(ADL.verbs.completed);
     	if(loc != 0){
 		   doSetValue("adl.nav.request", "previous");
 		   doSetValue("cmi.exit", "normal");
@@ -191,7 +187,8 @@ function goHome()
     parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 }
 
-var getDMStatement = function () {
+
+function getDMStatement(verb) {
 
     return {
         actor: {
@@ -201,18 +198,15 @@ var getDMStatement = function () {
                 name: window.localStorage.learnerId
             }
         },
-        verb: ADL.verbs.attempted,
+        verb: verb,
         object: {
-            objectType: "Attempt",
-            id: "URN:"+current_dmc,
+            id: "urn:s1000d:"+current_dmc,
             definition: {
-                type: "http://adlnet.gov/expapi/verbs/attempted",
-                interactionType: "",
-                correctResponsesPattern: []
+                type: "https://w3id.org/xapi/artt/activity-types/s1000d/data-module",
             }
         },
         context: {
-            contextAttempts: {
+            contextActivities: {
                 parent: [
                     {
                         id: scormLaunchDataJSON.activityId,
@@ -224,7 +218,7 @@ var getDMStatement = function () {
                 ],
                 grouping: [
                     {
-                        id: "",
+                        id: "urn:s1000d:"+current_dmc,
                         objectType: "Activity",
                         definition: {
                             type: "http://adlnet.gov/expapi/activities/attempt"
@@ -240,7 +234,6 @@ var getDMStatement = function () {
                 ],
                 category: [
                     {
-                        id: "https://w3id.org/xapi/scorm",
                         id: "https://w3id.org/xapi/ARTT_Profile"
                     }
                 ]

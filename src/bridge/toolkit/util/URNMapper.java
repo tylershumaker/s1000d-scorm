@@ -16,6 +16,8 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 
+import bridge.toolkit.util.FileUtils;
+
 /**
  * Generates a urn_resource_map.xml file that is used
  * to map each file in the resource package by file name to the S1000D URN. 
@@ -133,7 +135,7 @@ public class URNMapper
         Element target = new Element("target");
         Attribute type = new Attribute("type", "file");
         target.setAttribute(type);
-        target.setText(directoryDepth + file_name);
+        target.setText(directoryDepth + FileUtils.updateFileExtensionLowerCase(file_name));
 
         urn.addContent(target);
         return urn;

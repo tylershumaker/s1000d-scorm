@@ -5,6 +5,8 @@
  */
 package bridge.toolkit.packaging;
 
+import bridge.toolkit.util.FileUtils;
+
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -48,8 +50,8 @@ public class ZipCreator
                 directory = queue.pop();         
                 for (File kid : directory.listFiles()) 
                 {           
-                    String name = base.relativize(kid.toURI()).getPath();           
-                    if (kid.isDirectory()) 
+                    String name = FileUtils.updateFileExtensionLowerCase(base.relativize(kid.toURI()).getPath());
+                    if (kid.isDirectory())
                     {             
                         queue.push(kid);             
                         name = name.endsWith("/") ? name : name + "/";             

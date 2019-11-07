@@ -252,8 +252,8 @@ function doSetValue(name, value) {
     } else {
         // xAPI Extension
         xapi.saveDataValue(name, value);
-
         result = api.SetValue(name, value);
+
         if (result.toString() != "true") {
             var err = ErrorHandler();
             message("SetValue(" + name + ", " + value + ") failed. \n" + err.code + ": " + err.string);

@@ -6,9 +6,16 @@ var weightScore = 0;
 // For Hotspots
 var selectedHotspot = null;
 
+function initializeXAPI(){
+    output.log("XAPI Configured");
+    var stepId = $('ol#mp li:first').attr('id');
+    if (stepId != undefined){
+        recordStep(stepId, ADL.verbs.attempted);
+    }
+
+}
+
 function show_hide_div(hide_id, show_id) {
-    // toggle_visibility(hide_id);
-    // toggle_visibility(show_id);
     remove_highlight(hide_id)
     add_highlight(show_id)
 }
@@ -20,52 +27,37 @@ function remove_highlight(id) {
     next = e.getElementsByTagName('a');
     next[0].classList.remove("active");
     next[0].classList.add("inactive")
-    // next[0].style.display = 'none'
+
+    recordStep(id, ADL.verbs.completed);
 }
 
 function add_highlight(id) {
     var e = document.getElementById(id);
     e.classList.add("active");
     next = e.getElementsByTagName('a');
-    next[0].classList.remove("inactive")
-    next[0].classList.add("active")
-    // next[0].style.display = 'block'
+    next[0].classList.add("active");
+    next[0].classList.remove("inactive");
 
+    recordStep(id, ADL.verbs.attempted);
 
-    // Make the step visited xAPI call
-    setStatus("true");
-    doSetValue("adl.nav.request", "continue");
-    doSetValue("cmi.exit", "normal");
-
-    // Make the step xAPI call
-    xapi.setComplete();
-    console.log("XAPI SET COPPLETE")
 }
 
 function toggle_visibility(id) {
     var e = document.getElementById(id);
-    if (e.style.visibility == "visible") {
-        // e.style.visibility = "hidden"
-        // e.style.height = 0
-        console.log(e.classList)
-        e.classList.remove("active");
-        next = e.getElementsByTagName('a');
-        next[0].style.display = 'none'
-
+    if (e.style.display == 'block' | e.style == null) {
+        e.style.display = 'none';
         return false;
     } else {
-        e.style.visibility = "visible"
+        e.style.display = 'block';
         return true;
     }
 }
 
 
-function navToContent(url) {
-}
-
 function activate_flash_hotspots(hs_id, hs_title, icn) {
     alert(icn + " \r\n" + hs_id + " \r\n" + hs_title);
 }
+
 
 function openWindow(theFileName) {
 
@@ -108,6 +100,29 @@ function showNextQuestion() {
     }
 }
 
+
+function setInteractions(_id, _type, _response, _result, _description) {
+    var num = parseInt(doGetValue("cmi.interactions._count"));
+
+    current_dmc = document.getElementById("dmc").innerHTML
+
+    doSetValue("cmi.interactions." + num + ".id", "URN:" + current_dmc + "_" + _id);
+    doSetValue("cmi.interactions." + num + ".type", _type);
+
+    // case "1.2" :
+    //     scorm.set("cmi.interactions." + num + ".student_response", _response);
+    //     var result = (_result) ? "correct":"wrong";
+    //     scorm.set("cmi.interactions." + num + ".result", result);
+    //     break;
+    //2004
+
+    var result = (_result) ? "correct" : "incorrect";
+    doSetValue("cmi.interactions." + num + ".result", result);
+    doSetValue("cmi.interactions." + num + ".learner_response", _response);
+    doSetValue("cmi.interactions." + num + ".description", _description);
+
+}
+
 function checkIfSingleTrue(radioObj, quizType) {
     var radioLength = radioObj.answerChoiceRadio.length;
     var feedbackCorrect = document.getElementById('feedbackCorrect');
@@ -119,6 +134,12 @@ function checkIfSingleTrue(radioObj, quizType) {
             answer = radioObj.answerChoiceRadio[i].value.split(", ");
         }
     }
+
+    var countPlusOne = count + 1;
+    var qCountStr = 'questionCount' + countPlusOne.toString();
+    var description = document.getElementById(qCountStr).innerHTML;
+
+    setInteractions(count.toString(), "choice", answer[0], answer[1], description)
 
     // Show feedback if Knowledge Check or go to next question for Assessment
     if (quizType == 'Knowledge Check') {
@@ -173,8 +194,14 @@ function checkIfMultipleTrue(checkObj, quizType) {
             }
         }
 
-
     }
+
+    var countPlusOne = count + 1;
+    var qCountStr = 'questionCount' + countPlusOne.toString();
+    var description = document.getElementById(qCountStr).innerHTML;
+
+    setInteractions(count.toString(), "choice", chosenAnswers.length == correctChosenAnswers.length,
+        chosenAnswers, description)
 
     // Show feedback if Knowledge Check or go to next question for Assessment
     if (quizType == 'Knowledge Check') {
@@ -268,6 +295,12 @@ function checkSortableCorrect(position) {
             isCorrect = false;
         }
     }
+
+    var countPlusOne = count + 1;
+    var qCountStr = 'questionCount' + countPlusOne.toString();
+    var description = document.getElementById(qCountStr).innerHTML;
+
+    setInteractions(count.toString(), "sequencing", isCorrect, newOrdering, description)
 
     // WOULD HAVE SOMETHING LIKE THE FOLLOWING IF ABLE TO TEST AND WOULD NEED TO PASS IN quizType
     // Show feedback if Knowledge Check or go to next question for Assessment
@@ -455,4 +488,89 @@ function doChoice(dmc) {
     var api = getAPIHandle();
     api.Terminate("");
 
+}
+
+function recordStep(id, verb) {
+//Make xAPI call, viewed DMC
+    var statement = getStepStatement(id, verb);
+    console.log(statement);
+    console.log(JSON.stringify(statement));
+
+    try {
+        ADL.XAPIWrapper.sendStatement(statement);
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+function getStepStatement(id, verb) {
+
+    var current_dmc = document.getElementById("dmc").innerHTML;
+    var learnerID = null;
+    if (window.localStorage.learnerId == null) {
+        learnerID = retrieveDataValue(scormVersionConfig.learnerIdElement);
+    } else {
+        learnerID = window.localStorage.learnerId;
+    }
+
+    var scormLaunchData = retrieveDataValue("cmi.launch_data");
+    scormLaunchDataJSON = JSON.parse(scormLaunchData);
+
+    var lmsHomePage = scormLaunchDataJSON.lmsHomePage;
+    var activityId = scormLaunchDataJSON.activityId;
+    var courseId = scormLaunchDataJSON.courseId;
+
+    return {
+        actor: {
+            objectType: "Agent",
+            account: {
+                homePage: lmsHomePage,
+                name: learnerID
+            }
+        },
+        verb: verb,
+        object: {
+            id: "urn:s1000d:" + current_dmc + "#" + id,
+            definition: {
+                type: "https://w3id.org/xapi/artt/activity-types/s1000d/step"
+            }
+        },
+        context: {
+            contextActivities: {
+                parent: [
+                    {
+                        id: activityId,
+                        objectType: "Activity",
+                        definition: {
+                            type: "http://adlnet.gov/expapi/activities/lesson"
+                        }
+                    }
+                ],
+                grouping: [
+                    {
+                        id: "urn:s1000d:" + current_dmc + "#" + id,
+                        objectType: "Activity",
+                        definition: {
+                            type: "http://adlnet.gov/expapi/activities/attempt"
+                        }
+                    },
+                    {
+                        id: courseId,
+                        objectType: "Activity",
+                        definition: {
+                            type: "http://adlnet.gov/expapi/activities/course"
+                        }
+                    }
+                ],
+                category: [
+                    {
+                        id: "https://w3id.org/xapi/ARTT_Profile"
+                    }
+                ]
+            }
+        },
+        result: {
+            response: ""
+        }
+    };
 }

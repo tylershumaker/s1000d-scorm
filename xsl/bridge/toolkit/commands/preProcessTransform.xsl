@@ -186,11 +186,11 @@
                                   "user":"bosoka",
                                   "password":"luwger"
                                    },
-                                  "courseId":"http://adlnet.gov/courses/</xsl:text><xsl:value-of
+                                  "courseId":"http://lms.arttproject.org/courses/</xsl:text><xsl:value-of
                                     select="normalize-space(translate(../../../scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle, ' ', ''))"/><xsl:text>",
                                   "lmsHomePage":"https://lms.arttproject.org",
                                   "isScorm2004":true,
-                                  "activityId":"http://adlnet.gov/courses/</xsl:text><xsl:value-of
+                                  "activityId":"http://lms.arttproject.org/courses/</xsl:text><xsl:value-of
                                     select="normalize-space(translate(../../../scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle, ' ', ''))"/><xsl:text>/</xsl:text><xsl:value-of
                                     select="normalize-space(translate(scoEntryAddress/scoEntryTitle, ' ', ''))"/><xsl:text>",
                                   "groupingContextActivity":{
@@ -204,7 +204,7 @@
                                     select="lom:lom/lom:general/lom:title/lom:string"/><xsl:text>"
                                   }
                                   },
-                                  "id": "http://adlnet.gov/event/</xsl:text><xsl:value-of
+                                  "id": "urn:s1000d:</xsl:text><xsl:value-of
                                     select="$actInfoIdent"/><xsl:text>",
                                   "objectType": "Activity"
                                   }

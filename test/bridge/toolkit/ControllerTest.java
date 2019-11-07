@@ -188,9 +188,9 @@ public class ControllerTest
                 System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "resource_package_ilpe",
                 "-SCORM12"};
 
-        String[]  SCORM_ILPE_2004 = {System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "scpm_ilpe" + File.separator + "SMC-ILPE-06RT9-00001-00.xml",
-                System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "resource_package_ilpe",
-                "-scormhtml"};
+        String[]  SCORM_ILPE_2004 = {System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "ilpe_SCPM_2" + File.separator + "SMC-ILPE-06RT9-00001-00.xml",
+            System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "ilpe_resource_slim_2",
+            "-scormhtml"};
 
         String[]  SCORM12_slim = {System.getProperty("user.dir")  + File.separator + "test_files" + File.separator + "scpm_slim" + File.separator + "SMC-S1000DBIKE-06RT9-00001-00.xml",
                 System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "resource_package_slim",
@@ -207,6 +207,6 @@ public class ControllerTest
         //Controller.main(SCORM40HTMLWOUT);
         //Controller.main(SCORM12_slim);
         //Controller.main(SCORM12_slim_Zip_Resource);
-        Controller.main(SCORM12_slim_ZIP_SCPM);
+        Controller.main(SCORM_ILPE_2004);
     }
 }
