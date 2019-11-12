@@ -242,6 +242,10 @@ ol {
 
 }
 
+ul li::before{
+    content: none;
+}
+
 li::before {
     counter-increment: section;
     /* Increments only this instance
@@ -296,6 +300,7 @@ a.inactive {
 .randlistItemBullet {
     list-style-type: disc;
     text-indent: 3em;
+
 }
 
 .randlistItemHyphen {
