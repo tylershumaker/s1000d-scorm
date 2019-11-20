@@ -29,7 +29,10 @@ function startSCO()
 {
 	var scoPages = getArray();
 	var newLocation = scoPages[loc][0];
-    current_dmc = newLocation.substring(3).split("_")[0];
+
+   // current_dmc = newLocation.substring(3).split("_")[0];
+    current_dmc = newLocation.substring(3).split(".")[0];
+
 	parent.content.location=newLocation;
 	parent.topframe.indexPage("Page " + count + " of " + scoPages[loc].length + "    ");
 
@@ -124,7 +127,7 @@ function goNext()
        setStatus("false");
        parent.content.location=nextPage;
 
-       current_dmc = nextPage.substring(3).split("_")[0];
+       current_dmc = newLocation.substring(3).split(".")[0];
        recordDM(ADL.verbs.attempted);
        // Only enable the back button if section is not an assessment
        var inString = scoPages[loc][1].indexOf("-T88");
@@ -156,7 +159,7 @@ function goBack()
     	count--;
     	var backPage = scoPages[loc][count-1];
         parent.content.location=backPage;
-        current_dmc = backPage.substring(3).split("_")[0];
+        current_dmc = newLocation.substring(3).split(".")[0];
         recordDM(ADL.verbs.attempted);
     }
     if (count == 1)

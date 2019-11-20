@@ -2,6 +2,69 @@ var totalCorrect = 0;
 var count = 0;
 var weightScore = 0;
 
+// Create step IDs
+function countLI(element) {
+    var prevLICount = 0;
+    for (i = 0; i < element.length; i++) {
+
+        if (element[i].tagName.toLowerCase() == 'li') {
+            prevLICount = prevLICount + 1;
+        }
+    }
+
+    return prevLICount;
+}
+function getParentIndex(element, arr) {
+    if (element.parent().index() !== 'undefinded' && element.get(0).tagName.toLowerCase() !== 'html' ) {
+        if (element.parent().get(0).tagName.toLowerCase() == 'ol') {
+            var prevParents = element.parent().parent().prevAll();
+            prevLICount = countLI(prevParents);
+            arr.push(prevLICount);
+
+            return getParentIndex(element.parent(), arr);
+        } else {
+            return getParentIndex(element.parent(), arr);
+        }
+    } else {
+        return arr;
+    }
+}
+
+function createStepIds (stepID) {
+    stepID = stepID.replace(".", "\\.");
+
+    var output = $("#"+stepID).index(); // get index of the current list item
+    if(output == -1){
+        return "1";
+    }
+    else {
+
+        var step = $('#'+stepID);
+        var _arr = [];
+        _arr = getParentIndex($("#"+stepID), _arr);
+        _arr.reverse()
+        _arr.shift();
+
+        console.log($("#"+stepID).prevAll("li"));
+        _arr.push($("#"+stepID).prevAll("li").length);
+        _arr = _arr.map(function (val) {
+            return ++val;
+        });
+
+        console.log(_arr.join("."));
+        return (_arr.join("."))
+
+    }
+};
+
+function getStepNumber(stepID) {
+    var stepNumber = createStepIds(stepID);
+
+    console.log("stepID : " + stepID);
+    console.log("stepNumber : " + stepNumber);
+
+    return stepNumber;
+}
 
 // For Hotspots
 var selectedHotspot = null;
@@ -505,7 +568,6 @@ function recordStep(id, verb) {
 
 function getStepStatement(id, verb) {
 
-    var current_dmc = document.getElementById("dmc").innerHTML;
     var learnerID = null;
     if (window.localStorage.learnerId == null) {
         learnerID = retrieveDataValue(scormVersionConfig.learnerIdElement);
@@ -520,17 +582,25 @@ function getStepStatement(id, verb) {
     var activityId = scormLaunchDataJSON.activityId;
     var courseId = scormLaunchDataJSON.courseId;
 
+    var stepByID = document.getElementById(id).childNodes;
+    var stepContentHTML = stepByID[2].innerText;
+
+    var stepNumber = getStepNumber(id);
+    //var current_dmc = document.getElementById("dmc").innerHTML;
+    var current_dmc = document.getElementById("meta-dmc").innerHTML;
+
+    //Possibly change name to mbox:mailto:.... depending on learnerID
     return {
         actor: {
             objectType: "Agent",
             account: {
                 homePage: lmsHomePage,
-                name: learnerID
+                name: learnerID,
             }
         },
         verb: verb,
         object: {
-            id: "urn:s1000d:" + current_dmc + "#" + id,
+            id: "urn:s1000d:" + current_dmc,
             definition: {
                 type: "https://w3id.org/xapi/artt/activity-types/s1000d/step"
             }
@@ -548,7 +618,7 @@ function getStepStatement(id, verb) {
                 ],
                 grouping: [
                     {
-                        id: "urn:s1000d:" + current_dmc + "#" + id,
+                        id: "urn:s1000d:" + current_dmc,
                         objectType: "Activity",
                         definition: {
                             type: "http://adlnet.gov/expapi/activities/attempt"
@@ -567,10 +637,17 @@ function getStepStatement(id, verb) {
                         id: "https://w3id.org/xapi/ARTT_Profile"
                     }
                 ]
+            },
+            extensions: {
+                "https://w3id.org/xapi/artt/extensions/s1000d/step": {
+                    number: stepNumber,
+                    id: id,
+                    content: stepContentHTML
+                }
             }
         },
-        result: {
-            response: ""
+            result: {
+                response: ""
         }
     };
 }
