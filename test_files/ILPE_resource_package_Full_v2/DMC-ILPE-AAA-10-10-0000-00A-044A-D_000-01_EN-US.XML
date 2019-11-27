@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+<!ENTITY ICN-1G6E8-ILPE000002-001-01 SYSTEM "ICN-1G6E8-ILPE000002-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000003-001-01 SYSTEM "ICN-1G6E8-ILPE000003-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000004-001-01 SYSTEM "ICN-1G6E8-ILPE000004-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000005-001-01 SYSTEM "ICN-1G6E8-ILPE000005-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000006-001-01 SYSTEM "ICN-1G6E8-ILPE000006-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000007-001-01 SYSTEM "ICN-1G6E8-ILPE000007-001-01.PNG" NDATA png>
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="1" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Gas Generator Section (GGS)</techName>
+                    <infoName>Description of function (physical breakdown)</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara id="par-1.3.2">
+                        <title>Gas Processing Unit (GPU)</title>
+                        <para>The GPU (refer to <internalRef internalRefId="fig-01-2"/>) performs three functions: a) the production of product gas in the GGS, b) the disposal of byproduct gas and waste gas in the BMP and c) the operational control over the ILPE. The GGS is a totally enclosed unit. The GGS houses all the components necessary to produce product gas. The major components involved in the production are: <randomList> <listItem><para>the electrolysis cell stack (CSK-050G)</para></listItem> <listItem><para>the water filter (FLT-637G)</para></listItem> <listItem><para>the chiller (HX-635G)</para></listItem> <listItem><para>the circulation pump (PMP-633G)</para></listItem> <listItem><para>the low pressure phase separator (PHS-030G)</para></listItem> <listItem><para>the dehumidifier (HX-031G)</para></listItem> <listItem><para>the demineralizer bed (DIB-623G)</para></listItem> <listItem><para>the resistivity sensor (RS-1611G)</para></listItem> <listItem><para>the high pressure
+                            phase separator (PHS-138G).</para></listItem> </randomList> </para>
+                        <figure id="fig-01-2">
+                            <title>Gas Processing Unit</title>
+                            <graphic infoEntityIdent="ICN-1G6E8-ILPE000002-001-01"/>
+                        </figure>
+                        
+                            <para>A venturi (VN-636G) and differential pressure transducers (DPT-1617-1G and DPT-1617-2G) provide flow indication. Temperature sensors are located within the piping, in wells, to provide thermal monitoring of the process. Manual valves, flow restrictors, solenoid valves and pressure transducers provide control for the process. These components are housed in manifolds. The manifolds are readily accessible and eliminate the need to disassemble piping connections when maintenance or repair is required. Electrical power distribution is provided by the LIB (LIB-776E).</para>
+                        
+                        
+                            <para>The BMP houses all the components necessary to perform a chemical conversion process. The primary purpose of the BMP is to perform the chemical conversion process that combines byproduct gas and waste gas resulting in a liquid product. The major components involved in the conversion are: <randomList> <listItem><para>the collector (PHS275B)</para></listItem> <listItem><para>the blower (BLR371B)</para></listItem> <listItem><para>the regenerator (HX369B)</para></listItem> <listItem><para>condenser (HX368B)</para></listItem> <listItem><para>the recycle heater (HTR364B)</para></listItem> <listItem><para>the converter (CNV365B)</para></listItem> <listItem><para>the degasser (PHS280B).</para></listItem> </randomList> </para>
+                        
+                        
+                            <para>Fluids required for cooling, gases for processing and the liquid product formed enter or leave at the fluid interfaces. A venturi (VN-370B) and differential pressure transducers (DPT-1335B and DPT-1336B) provide flow indication. Manual valves, flow restrictors, flow control valves, solenoid valves and pressure transducers are housed in manifolds. These manifolds are readily accessible and eliminate the need to disassemble piping connections when maintenance or repair is required.</para>
+                        
+                        
+                            <para>A bus based controller provides the operational control of the ILPE. The process controller includes: <randomList> <listItem><para>a microprocessor board (CPM-770E)</para></listItem> <listItem><para>memory and input/output (I/O) boards</para></listItem> <listItem><para>an independent shutdown monitor board (ISM-774E)</para></listItem> <listItem><para>the Electrolysis Power Supply (EPS) (EPS-777E)</para></listItem> <listItem><para>a logic power supply (LPS-775E).</para></listItem> </randomList> </para>
+                        
+                        
+                            <para>The process controller controls: <randomList> <listItem><para>start-up</para></listItem> <listItem><para>operation</para></listItem> <listItem><para>self-health monitoring</para></listItem> <listItem><para>contingency mode operation</para></listItem> <listItem><para>fault identification</para></listItem> <listItem><para>troubleshooting</para></listItem> </randomList> </para>
+                        
+                        
+                            <para>verification after repair.</para>
+                        
+                    </levelledPara>
+        </description>
+    </content>
+</dmodule>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0001" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Blower motor assembly BLR-371B)</techName>
+                    <infoName>Description of function</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara id="par-3.7.2.3.1">
+                <title>Blower Motor Assembly</title>
+                <para>The blower motor assembly (BLR-371B) consists of: <randomList><listItem><para>a blower</para></listItem> <listItem><para>a motor</para></listItem> <listItem><para>a liquid level sensor</para></listItem> <listItem><para>an outlet muffler assembly</para></listItem> <listItem><para>isolation mounts</para></listItem> <listItem><para>a sound absorption assembly.</para></listItem> </randomList> </para>
+                <para>These components are contained in a pressure vessel which acts as a housing for the blower motor assembly. This blower motor housing is located on the ILPE baseplate under the LIB. The blower performance data (refer to <internalRef internalRefId="tbl3-14"/>) is provided for reference.</para>
+                <table frame="all" id="tbl3-14" orient="port" pgwide="1" rowsep="0" tocentry="1">
+                    <title>Blower Performance Data</title>
+                    <tgroup cols="2">
+                        <colspec colname="1" colnum="1" align="left" colsep="1" colwidth="3.5*"/>
+                        <colspec colname="2" colnum="2" align="left" colsep="1" colwidth="2.9*"/>
+                        <thead valign="top">
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="middle">
+                                    <para>Characteristic</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>Performance</para>
+                                </entry>
+                            </row>
+                        </thead>
+                        <tbody valign="top">
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="middle">
+                                    <para>Minimum flow</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="middle">
+                                    <para>5 acfm</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>Minimum pressure rise</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>2.5 psid @ 405 psi</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>Maximum pressure rise</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>15.3 psid @ 700 psi</para>
+                                </entry>
+                            </row>
+                            <row rowsep="0">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>Maximum inlet temperature</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>&#60;120 degrees F</para>
+                                </entry>
+                            </row>
+                            <row rowsep="1">
+                                <entry colname="1" colsep="1" valign="bottom">
+                                    <para>Maximum assembly pressure</para>
+                                </entry>
+                                <entry colname="2" colsep="1" valign="bottom">
+                                    <para>15.3 psid</para>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+                <para>The motor is a 3600 rpm, 60 Hz, 3-phase, three wire, Delta connected unit, operating on 440 VAC, 60 Hz, 3-phase power. The motor bearings are lubricated and sealed at the factory. The blower motor is factory balanced as an assembly, then shock mounted to the housing to minimize vibration and noise. Electrical power is supplied through a high pressure, hermetically sealed, bulkhead connector in the housing wall. A second bulkhead connector is provided as an instrument feed for the liquid level sensor.</para>
+                <para>The motor's current is measured by two current sensors (MC-1732-1B and MC-1732-2B) to calculate power consumption and to provide fault location and failure information.</para>
+                <para>Motor closure contact (MCC-1759B) and vibration pickup (VIB-1744G) accelerometer are directly wired to an external connector for periodic hookup to the portable vibration monitoring system to aid in fault detection and failure determination. The vibration pickup is oriented relative to the blower motor axis of rotation to maximize sensitivity to bearing wear, while the motor contact closure provides status.</para>
+                <para>The liquid level sensor consists of three bare electrodes mounted in a Teflon insulator with the wires connected to the instrument feed. The liquid level sensor is located on the bottom mounting plate of the blower motor assembly. If liquid contacts two of the electrodes, the decrease in resistance between them causes the process controller to shutdown, and display failure message (refer to Appendix B, table B-1) FS068. The third electrode is a spare.</para>
+                <para>The outlet muffler assembly is composed of various lengths (8, 10, 12, 14, 16, 18, 20 inches) of 5/16 inch parallel flexible tubes between stainless steel inlet and outlet headers. The inlet header is a simple manifold with the inlet tube inserted in and hard-mounted to the blower outlet tube. Polyolefin shrink tubing provides a seal between the blower outlet tube and the header inlet tube. The inlet header is connected to the blower outlet tube by means of a Teflon tube installed on the outside diameter of the blower tube and muffler. Both ends are secured with hose clamps. The outlet header is hard mounted to a tube protruding through the plenum wall. The outlet header contains a plenum at the tube end and a flow baffle before entering the outlet tube section. The flow baffle is installed such that the six baffle holes align with the flexible tubes. The outlet header is mounted to the tube protruding through the plenum wall in the same manner as the inlet header. The muffler aids in the attenuation of noise.</para>
+                <para>A heat sealed and stitched nylon mesh bag with absorptive material (stainless steel Chore-Boy) fills the housing sump area below the lower shock mounting plate. The bag assumes the shape of the sump and shock mount relief areas. A three inch diameter perforated nylon disk at the top and bottom center of the bag prevents intrusion into the liquid level sensor cavity and the aspirator outlet drain.</para>
+                <para>The blower motor housing is completely encased with armor-flex blanket insulation. This prevents housing sweating due to water vapor condensing on its external surfaces.</para>
+                <para>The process controller initiates four messages (refer to Appendix B, table B-1), FS055, FS071 and FS-73 for blower failures and FS069 for blower flooded.</para>
+            </levelledPara>
+        </description>
+    </content>
+</dmodule>

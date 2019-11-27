@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="012" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>S9515-AL-MMA-010-0910-LP-111-0289 ILPE O-Level Maintenance</techName>
+                    <infoName>General hazard. Warnings and cautions information</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara>
+                <title>SAFETY SUMMARY</title>
+                <levelledPara>
+                    <title>GENERAL</title>
+                    <para>The following general environmental, safety, and occupational health (ESOH) notices supplement the specific warnings and cautions appearing elsewhere in this manual. They are recommended precautions that must be understood and applied during operation and maintenance of the equipment cover herein. Should situations arise that are not covered in the general or specific safety precautions, the commanding officer or other authority will issue orders as necessary to cover the situation. All maintenance operations shall comply with OPNAVINST 5100.19: Navy Safety and Occupational Health (SOH) Program Manual for Forces Afloat or OPNAVINST 5100.23: Navy Safety and Occupational Health (SOH) Program Manual, as applicable.</para>
+                </levelledPara>
+                <levelledPara>
+                    <title>KEEP AWAY FROM LIVE CIRCUITS</title>
+                    <para>Operating personnel must observe safety regulations at all times. Do not replace components or make adjustments inside equipment with a voltage supply turned on without specific orders from appropriate authority.</para>
+                </levelledPara>
+                <levelledPara>
+                    <title>DO NOT SERVICE ALONE</title>
+                    <para>Personnel shall not, under any circumstances, reach inside or enter any enclosure to service or adjust equipment except in the presence of someone who is capable of rendering aid.</para>
+                </levelledPara>
+                <levelledPara>
+                    <title>USE CAUTION WHEN SERVICING LIVE EQUIPMENT</title>
+                    <para>In general, use only one hand when servicing live equipment.</para>
+                    <para>If a test meter is to be held or adjusted while voltage is being measured, ground the meter case before starting measurement, and do not touch the live equipment or the personnel working on live equipment while holding the meter.</para>
+                </levelledPara>
+                <levelledPara>
+                    <title>RESUSCITATION</title>
+                    <para>Personnel working with or near electrical equipment should be familiar with modern methods of resuscitation. An approved poster illustrating the rules for resuscitation by mouth-to-mouth method shall be prominently displayed. Posters may be obtained on request from the Bureau of Medicine and Surgery.</para>
+                </levelledPara>
+                <levelledPara>
+                    <title>HANDLING HEAVY EQUIPMENT</title>
+                    <para>Personnel moving heavy equipment must ensure that proper lifting and handling equipment and techniques are used. </para>
+                </levelledPara>
+                <levelledPara>
+                    <title>INDUSTRIAL HYGIENE</title>
+                    <para>Personnel must observe industrial hygiene requirements. Review requirements for appropriate engineering controls and personal protective equipment with the ship's safety officer, or the maintaining activity's Industrial Hygiene department, to determine appropriate personal protective equipment and waste handling procedures.</para>
+                </levelledPara>
+                <levelledPara>
+                    <title>SERVICING EQUIPMENT CONNECTED TO SEAWATER SYSTEMS</title>
+                    <para>Personnel must isolate the Integrated Low Pressure Electrolyzer (ILPE) equipment from connected water systems prior to performing maintenance.</para>
+                </levelledPara>
+                <levelledPara>
+                    <title>CONSUMABLE MATERIALS</title>
+                   <para>Consumable materials are potential submarine atmosphere contaminants and may be toxic to personnel. Review requirements for appropriate stowage, engineering controls, and personal protective equipment with Ship Safety Officer or Industrial Hygiene department for all consumable materials used in performing the stated procedures.</para>
+                    <para>Disposal of all non-metallic waste products (e.g. O-rings, gaskets, greases, oils, cleaners, rags, etc.) must be in accordance with approved maintenance activity requirements and procedures. At-sea disposal must comply with OPNAVINST 5090.1, Navy Environmental and Natural Resources Program Manual.</para>
+                </levelledPara>
+            </levelledPara>
+        </description>
+    </content>
+</dmodule>

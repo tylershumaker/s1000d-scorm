@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION gif PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION CompuServe Graphic Interchange Format//EN" >
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION svg PUBLIC "-//TEI//NOTATION W3C Scalable Vector Graphics Format//EN" >
+<!NOTATION jpeg PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN" >
+]>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-1-A/xml_schema_flat/proced.xsd">
+	<identAndStatusSection>
+		<dmAddress>
+			<dmIdent>
+				<dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2"
+					subSubSystemCode="1" assyCode="0006" disassyCode="01" disassyCodeVariant="A"
+					infoCode="560" infoCodeVariant="A" itemLocationCode="D"/>
+				<language languageIsoCode="en" countryIsoCode="US"/>
+				<issueInfo issueNumber="000" inWork="01"/>
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate year="2019" month="12" day="01"/>
+				<dmTitle>
+					<techName>Converter catalyst</techName>
+					<infoName>Deactivation procedure</infoName>
+				</dmTitle>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus issueType="new">
+			<security securityClassification="01" caveat="cv51"/>
+			<dataRestrictions>
+				<restrictionInstructions>
+					<dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+					<exportControl>
+						<exportRegistrationStmt>
+							<simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+						</exportRegistrationStmt>
+					</exportControl>
+					<dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+				</restrictionInstructions>
+			</dataRestrictions>
+			<responsiblePartnerCompany enterpriseCode="53711">
+				<enterpriseName>Naval Sea Systems Command</enterpriseName>
+			</responsiblePartnerCompany>
+			<originator enterpriseCode="53711">
+				<enterpriseName>Naval Sea Systems Command</enterpriseName>
+			</originator>
+			<applic>
+				<displayText>
+					<simplePara>All</simplePara>
+				</displayText>
+			</applic>
+			<brexDmRef>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+					</dmRefIdent>
+					<dmRefAddressItems>
+						<dmTitle>
+							<techName>S1000D</techName>
+							<infoName>Default business rules exchange data module</infoName>
+						</dmTitle>
+					</dmRefAddressItems>
+				</dmRef>
+			</brexDmRef>
+			<qualityAssurance>
+				<unverified/>
+			</qualityAssurance>
+		</dmStatus>
+	</identAndStatusSection>
+	<content>
+		<procedure>
+			<commonInfo>
+				<commonInfoDescrPara id="par-0001">					
+					<title>MAINTENANCE REQUIREMENT DESCRIPTION</title>
+					<para><internalRef internalRefId="stp-2"/>.</para>
+				</commonInfoDescrPara>
+			</commonInfo>
+			<preliminaryRqmts>
+				<productionMaintData>
+					<thresholdInterval thresholdUnitOfMeasure="th51"><!-- LU-1 --></thresholdInterval>
+				</productionMaintData>
+				<reqCondGroup>
+					<noConds/>
+				</reqCondGroup>
+				<reqPersons>
+					<personnel>
+						<trade>MM2</trade>
+						<estimatedTime unitOfMeasure="h">3.5</estimatedTime>
+					</personnel>
+				</reqPersons>
+				<reqSupportEquips>
+					<noSupportEquips/>
+				</reqSupportEquips>
+				<reqSupplies>
+					<supplyDescrGroup>
+						<supplyDescr id="sup-0001">
+							<name>[00096] Pen, ball-point, black</name>
+							<identNumber>
+								<manufacturerCode>- - -</manufacturerCode>
+								<partAndSerialNumber>
+									<partNumber></partNumber>
+								</partAndSerialNumber>
+							</identNumber>
+							<reqQuantity>As required</reqQuantity>
+							<footnoteRemarks>
+								<footnoteRef internalRefId="ftn-001"/>
+							</footnoteRemarks>
+						</supplyDescr>
+						<supplyDescr id="sup-0002">
+							<name>[02366] Watch, wrist, No NSN --W/C provide</name>
+							<identNumber>
+								<manufacturerCode>- - -</manufacturerCode>
+								<partAndSerialNumber>
+									<partNumber></partNumber>
+								</partAndSerialNumber>
+							</identNumber>
+							<reqQuantity>As required</reqQuantity>
+							<footnoteRemarks>
+								<footnoteRef internalRefId="ftn-001"/>
+							</footnoteRemarks>
+						</supplyDescr>
+						<supplyDescr id="sup-0003">
+							<name>[00419] Faceshield, industrial</name>
+							<identNumber>
+								<manufacturerCode>- - -</manufacturerCode>
+								<partAndSerialNumber>
+									<partNumber></partNumber>
+								</partAndSerialNumber>
+							</identNumber>
+							<reqQuantity>As required</reqQuantity>
+							<footnoteRemarks>
+								<footnoteRef internalRefId="ftn-001"/>
+							</footnoteRemarks>
+						</supplyDescr>
+						<supplyDescr id="sup-0004">
+							<name>[00653] Hose assembly, air service, No NSN --W/C provide</name>
+							<identNumber>
+								<manufacturerCode>- - -</manufacturerCode>
+								<partAndSerialNumber>
+									<partNumber></partNumber>
+								</partAndSerialNumber>
+							</identNumber>
+							<reqQuantity>As required</reqQuantity>
+							<footnoteRemarks>
+								<footnoteRef internalRefId="ftn-001"/>
+							</footnoteRemarks>
+						</supplyDescr>
+						<supplyDescr id="sup-0005">
+							<name>[01365] Technical manuals/drawings/forms, W/C to provide (NAVSEA S9515-AL-MMA-010, Integrated Low Pressure Electrolyzer)</name>
+							<identNumber>
+								<manufacturerCode>- - -</manufacturerCode>
+								<partAndSerialNumber>
+									<partNumber></partNumber>
+								</partAndSerialNumber>
+							</identNumber>
+							<reqQuantity>As required</reqQuantity>
+							<footnoteRemarks>
+								<footnoteRef internalRefId="ftn-001"/>
+							</footnoteRemarks>
+						</supplyDescr>
+						<supplyDescr id="sup-0006">
+							<name>[01365] Technical manuals/drawings/forms, W/C to provide (Ship Operating Instruction (OI) 635-06)</name>
+							<identNumber>
+								<manufacturerCode>- - -</manufacturerCode>
+								<partAndSerialNumber>
+									<partNumber></partNumber>
+								</partAndSerialNumber>
+							</identNumber>
+							<reqQuantity>As required</reqQuantity>
+							<footnoteRemarks>
+								<footnoteRef internalRefId="ftn-001"/>
+							</footnoteRemarks>
+						</supplyDescr>
+						<supplyDescr id="sup-0007">
+							<name>[01575] Records &amp; logs, No NSN --W/C provide (ILPE LOGS)</name>
+							<identNumber>
+								<manufacturerCode>- - -</manufacturerCode>
+								<partAndSerialNumber>
+									<partNumber></partNumber>
+								</partAndSerialNumber>
+							</identNumber>
+							<reqQuantity>As required</reqQuantity>
+							<footnoteRemarks>
+								<footnoteRef internalRefId="ftn-001"/>
+							</footnoteRemarks>
+						</supplyDescr>
+						<supplyDescr id="sup-0008">
+							<name>[02212] Tools/test equipment, special, No NSN --W/C provide (Special transition fitting - male hose quick disconnect to fitting F6)</name>
+							<identNumber>
+								<manufacturerCode>- - -</manufacturerCode>
+								<partAndSerialNumber>
+									<partNumber></partNumber>
+								</partAndSerialNumber>
+							</identNumber>
+							<reqQuantity>As required</reqQuantity>
+							<footnoteRemarks>
+								<footnoteRef internalRefId="ftn-001"/>
+							</footnoteRemarks>
+						</supplyDescr>
+						<footnote id="ftn-001">
+							<para>Numbers in brackets can be referenced to Standard PMS Materials Identification Guide (SPMIG) for identification.</para>
+						</footnote>
+					</supplyDescrGroup>
+				</reqSupplies>
+				<reqSpares>
+					<noSpares/>
+				</reqSpares>
+				<reqSafety>
+					<safetyRqmts>
+						<caution id="cau-0001">
+							<warningAndCautionPara>Forces afloat comply with Navy Safety and Occupational Health (SOH) Program Manual for Forces Afloat, OPNAVINST 5100.19 series; shore activities comply with SOH Program Manual, OPNAVINST 5100.23 series.</warningAndCautionPara>
+							<warningAndCautionPara>Use care when removing cap from fitting F6 as pressure may exist between cap and manual valve. Personal protection equipment, including eye protection, is mandatory.</warningAndCautionPara>
+						</caution>
+					</safetyRqmts>
+				</reqSafety>
+			</preliminaryRqmts>
+			<mainProcedure>
+				<proceduralStep id="stp-1">
+					<title>Preliminary</title>
+					<proceduralStep id="stp-1.a">
+						<para>Obtain permission of cognizant Officer(s) to perform Maintenance Requirement.</para>
+					</proceduralStep>
+				</proceduralStep>
+				<proceduralStep id="stp-2">
+					<title>Deactivate ILPE-BMP Catalyst</title>
+					<proceduralStep id="stp-2.a">
+						<para>Verify GPU is energized and in OFF mode.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.b">
+						<para>Verify BMP is OFF and converter outlet temperature is less than 140&#176;F as indicated on temperature sensor T-1340B.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.c">
+						<para>Vent BMP to ambient in accordance with ship operating instructions.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.d">
+						<para>Remove access panel GPU-11. Shut MV-397-2B.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.e">
+						<warning id="wrn-0001">
+							<warningAndCautionPara>Use care when removing cap from fitting F6 as pressure may exist between cap and manual valve.</warningAndCautionPara>
+							<warningAndCautionPara>Personal protection equipment, including eye protection, is mandatory.</warningAndCautionPara>
+						</warning>
+						<para>Put on faceshield.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.f">
+						<para>Remove cap from blower housing drain fitting F6.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.g">
+						<para>Connect air source to BMP:</para>
+						<proceduralStep id="stp-2.g.1">
+							<para>Attach transition fitting to BMP fitting F6.</para>
+						</proceduralStep>
+						<proceduralStep id="stp-2.g.2">
+							<para>Attach one end of air hose to BMP transition fitting.</para>
+						</proceduralStep>
+						<proceduralStep id="stp-2.g.3">
+							<para>Attach other end of air hose to valve ALP-215.</para>
+						</proceduralStep>
+					</proceduralStep>
+					<proceduralStep id="stp-2.h">
+						<para>Verify 440 VAC circuit breaker that supplies power to ILPE is closed.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.i">
+						<para>Select BMP from menu; observe BMP Level 2 Screen is displayed.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.j">
+						<para>Open ALP-215.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.k">
+						<para>Open MV-397-1B.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.l">
+						<caution id="cau-0002">
+							<warningAndCautionPara>Admission of air at too rapid a rate will cause excessive temperature differential across catalyst resulting in catalyst degradation. Continually monitor temperature differential across catalyst bed to prevent temperature differential of 25&#176; F.</warningAndCautionPara>
+						</caution>
+						<para>Slowly open MV-397-2B.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.m">
+						<para>Monitor recycle loop pressure as indicated on pressure indicators P-1334-1B and P-1334-2B.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.n">
+						<para>When recycle loop pressure is between 40 to 60 psig, as indicated on pressure indicators P-1334-1B and P-1334-2B, shut MV-397-2B.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.o">
+						<para>Manually start blower/motor.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.p">
+						<para>Purge recycle loop with air and run blower/motor minimum of 3 hours. Open MV-397-2B as necessary to maintain recycle loop pressure between 40 to 60 psig.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.q">
+						<para>After first 2 hours of operation, raise recycle loop pressure to between 90 and 100 psig.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.r">
+						<para>Record highest temperature achieved, as indicated on temperature sensor T-1340B, while raising recycle loop pressure.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.s">
+						<para>After third hour of blower/motor operation, verify temperature as read on T-1340B, T-1333-1B, T-1333-2B, T-1339-1B, and T-1339-2B is below 100&#176; F.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.t">
+						<para>If any temperature is 100 &#176;F or higher on temperature sensor T-1340B, T-1333-1B, T-1333-2B, T-1339-1B, T-1339-2B, continue running blower/motor until all temperature sensors indicate less than 100&#176; F.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.u">
+						<para>Manually secure blower/motor.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.v">
+						<para>Shut ALP-215.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.w">
+						<para>Vent BMP to ambient in accordance with ship operating instructions.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.x">
+						<para>Remove faceshield.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.y">
+						<para>Remove hose and transition fitting from BMP fitting F6, reinstall cap on fitting F6.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.z">
+						<para>Reinstall cover panel. Secure ILPE in accordance with ship's operating instructions.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.aa">
+						<para>Report discrepancies to work center supervisor.</para>
+					</proceduralStep>
+					<proceduralStep id="stp-2.ab">
+						<para>Report completion of Maintenance Requirement to cognizant Officer(s).</para>
+					</proceduralStep>
+				</proceduralStep>
+			</mainProcedure>
+			<closeRqmts>
+				<reqCondGroup>
+					<noConds/>
+				</reqCondGroup>
+			</closeRqmts>
+		</procedure>
+	</content>
+</dmodule>

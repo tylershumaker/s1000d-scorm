@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="T12" infoCodeVariant="H" itemLocationCode="T"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>ILPE Course A-652-0093 M2L1</techName>
+                    <infoName>Learning unit metadata</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara>
+                <para>LESSON 1: (U) Integrated Low Pressure Electrolyzer (ILPE) Operation</para>
+            </levelledPara>
+            <levelledPara>
+                <para>CLASS TIME: 120</para>
+            </levelledPara>
+            <levelledPara>
+                <para>LAB TIME: 300</para>
+            </levelledPara>
+            <levelledPara>
+                <para>Enabling Objectives:</para>
+            <levelledPara>
+                <para>(U) OPERATE THE ILPE WITH MINIMAL SUPERVISION IN ACCORDANCE WITH DOCUMENTED OPERATIONAL PROCEDURES EFFICIENTLY, WITH MINIMUM ERRORS.</para>
+            </levelledPara></levelledPara>
+            <levelledPara>
+                <para>Trainee Preparation</para>
+            <levelledPara>
+                <para>Trainee Support Materials:</para>
+            <levelledPara>
+                <para>None</para>
+            </levelledPara></levelledPara>
+            <levelledPara>
+                <para>Reference Publications:</para>
+             <levelledPara>
+                <para>None</para>
+            </levelledPara></levelledPara></levelledPara>
+            <levelledPara>
+                <para>Instructor Preparation</para>
+           <levelledPara>
+                <para>Review Assigned Trainee Material.</para>
+            </levelledPara>
+            <levelledPara>
+                <para>Reference Publications:</para>
+            <levelledPara>
+                <para>(U) S9SSN-ZQ-SSM-QE0/(C)774V6P3, OI 635-6, ILPE Plant Operation</para>
+            </levelledPara>
+            <levelledPara>
+                <para>IETM:</para>
+            <levelledPara>
+                <para>(U) JFMM Vol IV, V. Rev C Chg 6</para>
+            </levelledPara>
+            <levelledPara>
+                <para>(U) S9515-AL-MMA-010, V. 15 APRIL 2016</para>
+            </levelledPara></levelledPara></levelledPara>
+            <levelledPara>
+                <para>Training Materials Required:</para>
+            <levelledPara>
+                <para>Trainee Guide</para>
+            </levelledPara>
+            <levelledPara>
+                <para>References:</para>
+            <levelledPara>
+                <para>(U) S9SSN-ZQ-SSM-QE0/(C)774V6P3, OI 635-6, ILPE Plant Operation</para>
+            </levelledPara></levelledPara>
+            <levelledPara>
+                <para>IETM:</para>
+            <levelledPara>
+                <para>(U) S9515-AL-MMA-010, V. 15 APRIL 2016</para>
+            </levelledPara></levelledPara>
+            <levelledPara>
+                <para>Computers:</para>
+            <levelledPara>
+                <para>(U) Laptop Computer</para>
+            </levelledPara></levelledPara>
+            <levelledPara>
+                <para>IMM:</para>
+            <levelledPara>
+                <para>(U) A-652-0093_M2L1S1V1, Integrated Low Pressure Electrolyzer (ILPE) Operation</para>
+            </levelledPara>
+            <levelledPara>
+                <para>(U) NAWCTSD P-8437, ILPE FPS Trainer Manual</para>
+            </levelledPara></levelledPara>
+            <levelledPara>
+                <para>Software:</para>
+            <levelledPara>
+                <para>(U) WINILPE, WINILPE</para>
+            </levelledPara></levelledPara>
+            <levelledPara>
+                <para>Training Devices:</para>
+            <levelledPara>
+                <para>(U) ILPE Front Panel Simulator</para>
+            </levelledPara></levelledPara></levelledPara></levelledPara>
+        </description>
+    </content>
+</dmodule>

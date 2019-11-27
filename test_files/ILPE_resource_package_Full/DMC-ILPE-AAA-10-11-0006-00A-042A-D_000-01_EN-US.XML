@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+<!ENTITY ICN-1G6E8-ILPE000013-001-01 SYSTEM "ICN-1G6E8-ILPE000013-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000014-001-01 SYSTEM "ICN-1G6E8-ILPE000014-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000015-001-01 SYSTEM "ICN-1G6E8-ILPE000015-001-01.PNG" NDATA png>
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="1" subSubSystemCode="1" assyCode="0006" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Low pressure phase seperator (PHS-030G)</techName>
+                    <infoName>Description of function</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara id="par-3.7.1.2.4">
+                <title>Low Pressure Phase Separator</title>
+                <para>(Refer to <internalRef internalRefId="fig-3-22"/>) The LP phase separator (PHS-030G) is a large vessel in which the product gas/water mixture from the electrolysis cell stack separates into the product gas and process water. The product gas being lighter rises above the liquid level. The product gas is then sent through the dehumidifier to the atmosphere. The separated process water is directed to the circulation pump to recirculate within the process loop.</para>
+                <figure id="fig-3-22">
+                    <title>LP Phase Separator</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000013-001-01"/>
+                </figure>
+
+                <levelledPara id="par-3.7.1.2.4.1">
+                    <title>Low Pressure Phase Separator Level Control</title>
+                    <para>The liquid level sensor (L-1013G) monitors the water level in the LP phase separator and transmits a status signal to the process controller. The process controller maintains the water level between 20% and 50% full by adding DI water. The process controller adds DI water by opening the feed water solenoid valve (SV-621G) as water is consumed. As DI water is consumed, the recirculation water concentrates any impurities within it, and should therefore be flushed occasionally.</para>
+                    <para>The LP phase separator has four discrete level switches (refer to <internalRef internalRefId="par-3.7.1.2.4.2"/>) beyond the normal float range. Two high level discrete switches (LS-1014-1G, LS-1014-2G) are located at the high end to detect an overfill condition. An overfill condition may be caused by DI water leaking into the ILPE from the feed water system (solenoid valve SV-621G) or a CW system leak into the process loop through the chiller or the dehumidifier.</para>
+                    <para>Two low level discrete switches (LS-1015-1G, LS-1015-2G) are located at the low end of the level sensor assembly to detect a low level condition. A low level condition is most likely caused by a lack of DI water (low pressure or isolated from the ILPE), but may be caused by a rapid process water leak, failure of the feed water solenoid valve SV-621G, or a blockage in the lines, including a clogged DI bed.</para>
+                    <para>The process controller initiates three messages (refer to Appendix B, table B-1), FS089 for a low level condition, FS090 for a high level condition and FS099 for a faulty sensor.</para>
+                </levelledPara>
+                <levelledPara id="par-3.7.1.2.4.2">
+                    <title>Liquid Level Sensor</title>
+                    <para>The liquid level sensors (refer to <internalRef internalRefId="fig-3-23"/>) used in both the HP phase separator (PHS-138G) and LP phase separator (PHS-030G) are an internal float operated type, of nearly identical design. The HP phase separator version has different spacing of the level indicators. The actuating float with built-in magnets moves up and down on the sensing rod which contains a string of magnetic reed switches. The switches operate when an external magnetic field passes over them. As the float passes, successive switches close sending signals to the process controller. The sensor actually provides five different signals, consisting of four discrete high and low level indicators (two each) and an analog signal roughly corresponding to a percent full indication from 0 percent to 100 percent full. These signals from the sensor are conditioned and based on their values, the process controller maintains the proper level within the respective phase separators, or shuts the system down with a fault condition. For the analog sensor signal, with the float in position on the rod, at least one of the magnetic switches is always closed, providing a resistance value to the process controller. This is an aid in troubleshooting the liquid level sensor/control.</para>
+                    <figure id="fig-3-23">
+                        <title>LP Phase Separator Level Sensor</title>
+                        <graphic infoEntityIdent="ICN-1G6E8-ILPE000014-001-01"/>
+                    </figure>
+
+                    <para>The two high level discrete and the two low level discrete switches are an integral part of the liquid level sensor. These redundant alarm switches will activate within 0.125 inches of each other.</para>
+
+                    <para>The liquid level sensor characteristics (refer to table 3-13) and the connector wiring diagram (refer to <internalRef internalRefId="fig-3-24"/>) are provided for reference.</para>
+                    <figure id="fig-3-24">
+                        <title>Liquid Level Sensor Connector</title>
+                        <graphic infoEntityIdent="ICN-1G6E8-ILPE000015-001-01 "/>
+                    </figure>
+                </levelledPara>
+            </levelledPara>
+        </description>
+    </content>
+</dmodule>

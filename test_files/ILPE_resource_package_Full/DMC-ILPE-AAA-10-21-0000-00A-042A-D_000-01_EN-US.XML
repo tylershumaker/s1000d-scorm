@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+<!ENTITY ICN-1G6E8-ILPE000021-001-01 SYSTEM "ICN-1G6E8-ILPE000021-001-01.PNG" NDATA png>
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Recycle loop components</techName>
+                    <infoName>Description of function</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara id="par-3.7.2.2">
+                <title>Recycle Process</title>
+                <para>Byproduct gas and waste gas are pre-mixed in the supply line and enter the recycle process at the main flow inlet to the blower housing. The gas mixture enters the blower motor housing (BLR-371B) and flows through the motor windings and into the blower. The blower circulates the recycle gas mixture around the recycle loop. The high pressure gas leaving the blower is piped through the housing into the venturi (VN-370B).</para>
+            
+                <para>A line mounted venturi (VN-370B) provides a recoverable pressure drop which is measured by a differential pressure transducer (DPT-1335B) and used to calculate the molecular weight and the actual flow of the recycle gas mixture.</para>
+           
+                <para>The recycle gas mixture is heated in two steps. The gas mixture is preheated by the regenerator heat exchanger (HX-369B) to approximately 350 degrees F. By reclaiming the heat, the recycle heater size is kept to a minimum.</para>
+           
+                <para>The second step is the recycle heaters (HTR-364B). The desired temperature of 445 degrees F for the recycle gas is attained in the recycle heaters prior to entering the converter (CNV-365B). The chemical conversion occurs in the presence of the catalyst contained in two converter cartridges. After the gas leaves the converter, it enters the regenerator heat exchanger tube side where heat input from the exothermic chemical reaction and the recycle heater is used to pre-heat the gas leaving the blower. The gas continues flowing through the tubes and enters the condensing portion of the heat exchanger (HTX-368B).</para>
+            
+                <para>As the gas mixture is cooled, the liquid product is condensed. The liquid product droplets travel along the tubes and drop into the collector (PHS-275B). In the collector, the liquid product is separated from the recycle gas by gravity. The liquid product collects in the collector and fills the drain bucket. The gas completes its loop by returning to the blower motor housing.</para>
+            
+                <para>An aspirator (ASP-372B) is used to suck out any liquid which may collect within the blower motor housing. A small amount of gas flow from a tap in the blower outlet allows the pressure head developed by the blower to serve as the driving force for the aspirator. The suction side of the aspirator is connected to the blower motor housing drain line from the very bottom of the blower housing. Any carry-over and/or condensed liquid product that collects in the blower motor housing is pumped back into the collector by the aspirator. The aspirator return flow is joined with the cooled gas mixture exiting from the tube side of the condensing heat exchanger in the collector housing. The collector housing, which is physically attached to the condensing heat exchanger, collects condensed liquid product from the condenser tubes and from the aspirator return line along with any liquid contaminants included in the byproduct gas and waste gas. Liquid product is drained
+                    periodically from the collector and enters the product disposal section.</para>
+            
+                <para>In the recycle process, approximately five to eight actual cubic feet per minute (acfm) of gas mixture is recirculated by the blower. In the converter, 10 percent of the gas mixture is converted into vaporized liquid product each pass and subsequently condensed and removed. The byproduct gas is fed into the recycle loop at the rate determined by the product gas production rate set by the operator. Waste gas is controlled by the duty cycle of the supply solenoid valve (SV-922B) to maintain the gas mixture ratio of byproduct gas to waste gas between zero to one and four to one as determined by recycle loop pressure and the molecular weight measurement. The recycle process pressure varies with the byproduct gas production rate, age of the catalyst, and method of liquid product disposal.</para>
+            
+                <para>Recycle process pressure, blower differential pressure and known blower characteristics are used to determine recycle gas flow. Venturi differential pressure is used along with blower flow to determine molecular weight of the recycle gas mixture. If differential pressure is abnormally low, it is an indication that there is no gas flow and a shutdown of the BMP will occur.</para>
+            
+                <para>The temperature and composition of the gas mixture are controlled automatically by the process controller while the operator manually sets product gas production flow rate. The resultant recycle process pressure puts the chemical process into equilibrium.</para>
+            </levelledPara>
+            <levelledPara id="par-3.7.2.3">
+                <title>Recycle Loop Function</title>
+                <para>(Refer to <internalRef internalRefId="fig-3-30"/>) The recycle loop system contains the following major components: <randomList> <listItem><para>blower motor assembly (BLR-371B)</para></listItem> <listItem><para>aspirator (ASP-372B)</para></listItem> <listItem><para>flow venturi (VN-370B)</para></listItem> <listItem><para>regenerator (HX-369B)/condenser (HX-368B) heat exchanger</para></listItem> <listItem><para>recycle heater (HTR-364B)</para></listItem> <listItem><para>collector (PHS-275B)</para></listItem> <listItem><para>pressure transducers</para></listItem> <listItem><para>differential pressure transducers</para></listItem> <listItem><para>pressure gauge</para></listItem> <listItem><para>manual valves</para></listItem> <listItem><para>check valves</para></listItem> <listItem><para>solenoid valves</para></listItem> <listItem><para>insulation.</para></listItem> </randomList> </para>
+                <figure id="fig-3-30">
+                    <title>Recycle Loop Fluid Block Diagram</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000021-001-01 "/>
+                </figure>
+            
+                <para>The major recycle components working in conjunction with each other provide the means for the chemical conversion process. A detailed description of each major component is provided in the following paragraph. Item designators are in parentheses and referenced in <internalRef internalRefId="fig-3-30"/>.</para>
+            </levelledPara>
+        </description>
+    </content>
+</dmodule>
