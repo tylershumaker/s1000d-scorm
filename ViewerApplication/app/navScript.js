@@ -4,6 +4,7 @@
 var count = 1;
 
 var current_dmc = null;
+var newLocation = null;
 
 var loc = get_location('loc');
 //alert(param);
@@ -28,7 +29,7 @@ function get_location(name)
 function startSCO()
 {
 	var scoPages = getArray();
-	var newLocation = scoPages[loc][0];
+	newLocation = scoPages[loc][0];
 
    // current_dmc = newLocation.substring(3).split("_")[0];
     current_dmc = newLocation.substring(3).split(".")[0];
