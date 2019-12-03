@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+<!ENTITY ICN-1G6E8-ILPE000008-001-01 SYSTEM "ICN-1G6E8-ILPE000008-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000009-001-01 SYSTEM "ICN-1G6E8-ILPE000009-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000010-001-01 SYSTEM "ICN-1G6E8-ILPE000010-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000011-001-01 SYSTEM "ICN-1G6E8-ILPE000011-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000012-001-01 SYSTEM "ICN-1G6E8-ILPE000012-001-01.PNG" NDATA png>
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="1" subSubSystemCode="1" assyCode="0005" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Electrolysis cell stack (CSK-050G)</techName>
+                    <infoName>Description of function</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara id="par-3.7.1.1">
+                <title>Electrolysis Cell Stack Description</title>
+                <para>The electrolysis cell stack (refer to <internalRef internalRefId="fig-3-18A"/> and <internalRef internalRefId="fig-3-18B"/>) utilizes 65 SPE cells each having an active area of 0.23 square feet. The 65 cells are arranged electrically in series. These cells are oriented horizontally and stacked between a base plate and fluid plate. Tie rods, nuts and spherical washers hold the overall stack together with a force of about 1200 psi (over 43,000 lb) to assure proper sealing of the electrolysis cell stack components and good electrical contact from cell to cell. The electrolysis cell stack is then housed in the electrolysis cell stack housing/frame. Needed electrical connections, the electrolysis cell stack monitor assembly (CSM-750E), the stack discharge assembly (SDA-705A) and fluid fittings are added to form the electrolysis cell stack.</para>
+                <figure id="fig-3-18A">
+                    <title>Electrolysis Cell Stack (NV822257-2 Configuration)</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000008-001-01"/>
+                </figure>
+                <figure id="fig-3-18B">
+                    <title>Electrolysis Cell Stack (NV1015258-1 Configuration)</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000009-001-01"/>
+                </figure>
+           
+            <levelledPara id="par-3.7.1.1.1">
+                <title>Electrolysis Cell Stack Function</title>
+                <para>DI water and DC power are provided to each cell (refer to <internalRef internalRefId="fig-3-19"/>) within the electrolysis cell stack. The water is provided to the product gas evolution electrode (anode) and is electrochemically decomposed to produce product gas, byproduct gas ions and electrons. The byproduct gas ions move through the SPE to the byproduct gas evolution electrode (cathode). The electrons move through the external circuit. At the cathode, the byproduct gas ions and the electrons recombine electrochemically to produce byproduct gas. An excess of water is supplied to the product gas side of the cell and recirculated to remove waste heat and ensure a good fluid distribution within the cell anode cavity. A portion of this water is transported through the SPE to the byproduct gas side and exists with the generated byproduct gas (protonic pumping). The byproduct gas fluid stream is routed to the HP phase separation in order to separate the byproduct gas from the water and then directed to the BMP. The product gas and process water stream is routed to the LP phase separator. The product gas is delivered to the atmosphere.</para>
+            <figure id="fig-3-19">
+                    <title>Electrolysis Cell Schematic</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000010-001-01"/>
+                    <legend>
+                        <definitionList>
+                            <definitionListItem>
+                                <listItemTerm>A =</listItemTerm>
+                                <listItemDefinition>
+                                    <para>PRODUCT GAS</para>
+                                </listItemDefinition>
+                            </definitionListItem>
+                            <definitionListItem>
+                                <listItemTerm>B =</listItemTerm>
+                                <listItemDefinition>
+                                    <para>BYPRODUCT GAS</para>
+                                </listItemDefinition>
+                            </definitionListItem>
+                            <definitionListItem>
+                                <listItemTerm>H2O =</listItemTerm>
+                                <listItemDefinition>
+                                    <para>WATER</para>
+                                </listItemDefinition>
+                            </definitionListItem>
+                            <definitionListItem>
+                                <listItemTerm>E =</listItemTerm>
+                                <listItemDefinition>
+                                    <para>ELECTRONS</para>
+                                </listItemDefinition>
+                            </definitionListItem>
+                        </definitionList>
+                    </legend>
+                </figure></levelledPara>
+            <levelledPara id="par-3.7.1.1.2">
+                <title>Single SPE Cell Assembly</title>
+                <para>The single SPE cell assembly (refer to <internalRef internalRefId="fig-3-20"/>) is built around the membrane and catalytic electrodes sandwiched in the middle of the assembly. On the byproduct gas side are membrane screens in direct contact with the membrane and on the product gas side is a porous plate. Above the porous plates are additional screens, made of thin metal foils. Etched patterns in the foils provide passage and fluid transport to and from the membrane's surface. The foils are laminated together with a nonmetallic material in the cell frame perimeter. The non-metallic material serves as a bonding and sealing agent and electrical insulator. The electrolysis current flows through the active area of the cell, through the screens, porous plate, through the catalytic electrodes of the membrane, through the remaining screens, then through a separator sheet, pressure pad and into the separator sheet of the next cell. Of note on the LP side of the membrane is
+                    the support provided by the electrically conductive porous media. The cell includes an electrically conductive metal pressure pad which maintains electrical continuity through the multiple cells in the stack, provides adequate pre-load of over 1200 psi under various pressures and temperatures, and mechanically compensates for component thickness variations within the cell assembly.</para>
+                <figure id="fig-3-20">
+                    <title>Single Cell Assembly</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000011-001-01"/>
+                </figure>
+            </levelledPara>
+            <levelledPara id="par-3.7.1.1.3">
+                <title>Electrolysis Performance Monitoring</title>
+                <para>The performance of the electrolysis cell stack is monitored several ways. The first is with the electrolysis cell stack monitor assembly which measures electrolysis cell stack voltages in groups of three cells, second is by electrolysis cell stack current, third by electrolysis cell stack temperature rise and fourth by overall cell stack voltage. The production rate is a calculated number based on the measured current, and is a consequence of the physics of electrolysis. Electrolysis of water requires 1.48 volts per cell just to decompose the water. Additional voltage is lost through the cell membrane. At any given production rate, the power required is the current times the total voltage across all cells in the electrolysis cell stack. For example, at 115 scfh, about 230 amps of current are required, and the voltage on the 65 cell stack is about 130 volts. Total power is about 30,000 watts. As an electrolysis cell stack ages, conductivity through the membrane drops off, so higher voltage is required to produce a given current. The ILPE is designed to handle three volts per cell at the maximum production rate of 225 scfh (444 amps) at the effective end-of-life of the electrolysis cell stack. This same condition requires only 2.2 volts per cell at the beginning-of-life of the electrolysis cell stack. The cell voltage required to achieve a given current is also a function of the temperature of the electrolysis cell stack, as can be seen with careful observation during ILPE operation. With proper care and clean water, an electrolysis cell stack assembly should last over 30,000 hours of operation before reaching end-of-life, and can be used at lower production rates (adjust production rate so there is less than three volts per cell) even longer. Graphs of the relationship between total electrolysis cell stack voltage and current are shown below. (refer to <internalRef internalRefId="fig-3-21"/>).</para>
+                <figure id="fig-3-21">
+                    <title>Electrolysis Performance</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000012-001-01"/>
+                </figure>
+            </levelledPara></levelledPara>
+            <levelledPara id="par-3.7.1.2.1">
+                <title>Electrolysis Cell Stack</title>
+                <para>In the electrolysis cell stack, the process water is electrochemically decomposed into product gas and byproduct gas. The electrolysis cell stack output is a product gas/water mixture and a byproduct gas/water mixture. These two mixtures enter phase separators to separate the water (liquid phase) from the gas. The product gas is then dehumidified prior to delivery to atmosphere. The water is recirculated by a circulation pump through the chiller for cooling, filtered to protect the electrolysis cell stack from debris, and returned to the electrolysis cell stack to complete the loop.</para><para>Within the electrolysis cell stack assembly, fluids flow through manifolds provided in the top end plate. The end plate is circular, 300 series stainless steel, measuring two inches thick. This end plate has three ports for the passage of fluids into and out of the electrolysis cell stack. Each electrolysis cell stack frame which supports the electrolysis cell stack has mounting holes located at each corner to bolt the electrolysis cell stack to the GPU base plate.</para>
+           
+                <para>The negative electrical terminal protrudes from the top of the electrolysis cell stack and the positive electrical terminal is attached to the compression plate. Current flows in series through each cell in the electrolysis cell stack. The electrolysis cell stack is powered by the EPS. The applied current flows from the positive terminal to the negative terminal (electrons flow from the negative terminal to the positive terminal).</para>
+            </levelledPara>
+        </description>
+    </content>
+</dmodule>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+<!ENTITY ICN-1G6E8-ILPE000024-001-01 SYSTEM "ICN-1G6E8-ILPE000024-001-01.PNG" NDATA png>
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="2" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Liquid product disposal system</techName>
+                    <infoName>Description of function</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara id="par-3.7.2.4">
+                <title>Liquid Product Disposal System</title>
+                <para>The product disposal system (refer to <internalRef internalRefId="fig-3-33"/>) directs the liquid product from the collector to either the degasser and then to sanitary tank #3 or directly overboard. The major components of the product disposal system consist of: a) the degasser (PHS-280B), b) manual/solenoid valves, c) pressure transducers and d) a flow restrictor. A detailed description of each major component is provided in the following paragraphs.</para>
+                <figure id="fig-3-33">
+                    <title>Simpified Product Disposal System Diagram</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000024-001-01"/>
+                </figure>
+                <para>The routing of liquid product is dependent on the BMP liquid product disposal mode selected by the operator. When the dump to sanitary mode is selected, solenoid valves SV-278B and SV-279B will direct the liquid product to the degasser. In the degasser, recycle gas is out gassed and the remaining liquid product is directed to sanitary tank #3 for storage. Any residual recycle gas is directed to the oxidizer(s) via valves SV-398B or SV-399B. When the overboard dump mode is selected, liquid product is directed overboard via solenoid valves SV-293B with no additional processing of the liquid product taking place (i.e., the liquid product contains considerable waste gas and a small amount of other recycle loop gases, which are dumped overboard as well as the liquid product). Six manual shut-off valves (refer to table 3-21) allow maintenance functions including manual draining and depressurizing to be performed on the product disposal system components.</para>
+                <para>A major component of the product disposal system is the degasser, which is located in the center of the GPU, behind the blower motor. The degasser is used as a plenum to out gas recycle loop gas from the liquid product. About 98 percent of the gas is waste gas. Liquid product is dumped to the top of the degasser during each bucket dump cycle. Since the degasser provides a pressure lower than the recycle loop's operating pressure, dissolved recycle loop gas comes out of solution from the liquid product. Recycle loop gas is then vented to the oxidizer(s) and the liquid product is drained to sanitary tank #3.</para>
+            </levelledPara>
+        </description>
+    </content>
+</dmodule>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/learning.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="T01" infoCodeVariant="A" itemLocationCode="D" learnCode="T42" learnEventCode="B"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>ILPE Course A-652-0093</techName>
+                    <infoName>Safety precautions/Hazard awareness</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <learning>
+            <learningOverview>
+                <title>ILPE Course A-652-0093</title>
+                <description>
+                    
+                        
+                   
+                        <para>All personnel involved in operation or maintenance of electronic equipment must be thoroughly familiar with the safety precautions contained in Naval Ships' Technical Manual, Chapter 300, S9086-KC-STM-010/CH-300, Section 2, Electrical Safety Precautions and also COMSUBLANT/COMSUBPACINST 5400.49, Article 4308, Electrical Safety. In addition, attention is directed to the Navy Safety Program Instructions, OPNAVINST 5100.19 (series) and 5100.23 (series).</para>
+                    
+                        <para>While every practical precaution has been incorporated into this equipment, it is not possible or practical to try to list every condition or hazard that you may encounter. Therefore, all operating or maintenance personnel must at all times observe as a minimum, the following:</para>
+                    
+                    <levelledPara>
+                        <title>DON'T SERVICE OR ADJUST ALONE</title>
+                    
+                        <para>Under no circumstances will a person operate or maintain equipment without the immediate presence or assistance of another person capable of rendering aid. Unless under direct supervision of a qualified person, no person shall operate or maintain equipment for which he is unqualified.</para>
+                    </levelledPara>
+                    <levelledPara>
+                        <title>DON'T TAMPER WITH INTERLOCKS</title>
+                    
+                        <para>Reliance on interlock circuits to remove power from the equipment is never to be assumed. Until operation of the interlock is verified, equipment is assumed to be in the hazardous mode of operation. Under no circumstances will any access gate, door, or interlock switch be removed, bypassed, or modified in any way by other than authorized maintenance personnel and then only after observing proper tag-out procedures.</para>
+                    </levelledPara>
+                    <levelledPara>
+                        <title>REPORT ALL HAZARDS</title>
+                    
+                        <para>If at any time you detect a hazard, it is your responsibility to report the hazard to ensure that it is corrected. If at any time you detect a "new" or "suspected new" hazard, particularly due to equipment installation, modification, or repair, it is your responsibility to ensure that a SAFETYGRAM is submitted to the Naval Safety Center, Norfolk, VA, in accordance with OPNAVINST 5102.1 (series). This will ensure that this hazard will be investigated, publicized, or corrected, as required.</para>
+                    </levelledPara>
+                    <levelledPara>
+                        <title>TRAINING TIME OUT</title>
+                    
+                        <para>This course is not designated RAC 3 Severity level II or higher. IAW NETCINST 1500.13A CH-1, Training Time Out procedures do not apply to this course and have been deleted.</para>
+                    </levelledPara>
+                    <levelledPara>
+                        <title>EMERGENCY ACTION PLAN</title>
+                    
+                        <para>The Emergency Action Plan explains the procedures to follow and essential telephone numbers to call in case of an accident or emergency. It is located by the emergency exit in the laboratory.</para>
+                    </levelledPara>
+                </description>
+            </learningOverview>
+        </learning>
+    </content>
+</dmodule>

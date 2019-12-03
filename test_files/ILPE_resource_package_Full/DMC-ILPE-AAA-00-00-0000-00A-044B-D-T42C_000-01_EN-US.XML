@@ -1,0 +1,1374 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+<!ENTITY ICN-1G6E8-00003-001-01 SYSTEM "ICN-1G6E8-00003-001-01.PPT" NDATA ppt>
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/learning.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="B" itemLocationCode="D" learnCode="T42" learnEventCode="C"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>ILPE Course A-652-0093 M1L1S3DP3</techName>
+                    <infoName>Description of function (physical breakdown)</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <refs>
+            <dmRef>
+                <dmRefIdent>
+                    <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/>
+                </dmRefIdent>
+                <dmRefAddressItems>
+                    <dmTitle>
+                        <techName>Integrated Low Pressure Electrolyzer (ILPE) </techName>
+                        <infoName>Description of function (physical breakdown)</infoName>
+                    </dmTitle>
+                </dmRefAddressItems>
+            </dmRef>
+            <dmRef>
+                <dmRefIdent>
+                    <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/>
+                </dmRefIdent>
+                <dmRefAddressItems>
+                    <dmTitle>
+                        <techName>Gas Processing Unit (GPU-700)</techName>
+                        <infoName>Description of function</infoName>
+                    </dmTitle>
+                </dmRefAddressItems>
+            </dmRef>
+            <externalPubRef>
+                <externalPubRefIdent>
+                    <externalPubCode>S9515-AL-MMA-010</externalPubCode>
+                    <externalPubTitle>3.5 ELECTRICAL POWER DISTRIBUTION.</externalPubTitle>
+                </externalPubRefIdent>
+            </externalPubRef>
+        </refs>
+        <learning>
+            <learningOverview>
+                <title>ILPE Course A-652-0093 M1L1S3DP3</title>
+                <description>
+                    <table frame="none" id="tbl0001" orient="port" pgwide="1" rowsep="0" tocentry="0">
+                        <tgroup cols="11">
+                            <colspec colname="1" colnum="1" align="left" colsep="1" colwidth="0.3*"/>
+                            <colspec colname="2" colnum="2" align="left" colsep="1" colwidth="0.3*"/>
+                            <colspec colname="3" colnum="3" align="left" colsep="1" colwidth="0.5*"/>
+                            <colspec colname="4" colnum="4" align="left" colsep="1" colwidth="0.7*"/>
+                            <colspec colname="5" colnum="5" align="left" colsep="1" colwidth="0.4*"/>
+                            <colspec colname="6" colnum="6" align="left" colsep="1" colwidth="2.8*"/>
+                            <colspec colname="7" colnum="7" align="left" colsep="1" colwidth="0.9*"/>
+                            <colspec colname="8" colnum="8" align="left" colsep="1" colwidth="0.4*"/>
+                            <colspec colname="9" colnum="9" align="left" colsep="1" colwidth="0.6*"/>
+                            <colspec colname="10" colnum="10" align="left" colsep="1" colwidth="0.6*"/>
+                            <colspec colname="11" colnum="11" align="left" colsep="1" colwidth="2.9*"/>
+                            <spanspec namest="10" nameend="11" spanname="10-11" align="center"/>
+                            <spanspec namest="5" nameend="6" spanname="5-6" align="center"/>
+                            <spanspec namest="4" nameend="6" spanname="4-6" align="center"/>
+                            <spanspec namest="8" nameend="11" spanname="8-11" align="center"/>
+                            <spanspec namest="3" nameend="6" spanname="3-6" align="center"/>
+                            <spanspec namest="9" nameend="11" spanname="9-11" align="center"/>
+                            <spanspec namest="2" nameend="6" spanname="2-6" align="center"/>
+                            <spanspec namest="7" nameend="11" spanname="7-11" align="center"/>
+                            <spanspec namest="1" nameend="6" spanname="1-6" align="center"/>
+                            <thead valign="top">
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="middle" namest="1" nameend="6">
+                                        <para>DISCUSSION POINT</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="middle" namest="7" nameend="11">
+                                        <para>RELATED INSTRUCTOR ACTIVITY</para>
+                                    </entry>
+                                </row>
+                            </thead>
+                            <tbody valign="top">
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="bottom">
+                                        <para>3.</para>
+                                    </entry>
+                                    <entry colname="2" colsep="0" valign="bottom" namest="2" nameend="6">
+                                        <para>(U) Units and Major Components Physical Description</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top" namest="9" nameend="11"/>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top">
+                                        <para>a.</para>
+                                    </entry>
+                                    <entry colname="3" colsep="0" valign="top" namest="3" nameend="6">
+                                        <para>(U) Gas Processing Unit (GPU)</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top">
+                                        <para>a.</para>
+                                    </entry>
+                                    <entry colname="8" colsep="0" valign="top" namest="8" nameend="11">
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 8 thru Slide 8</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(1)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) GPU Doors and Access Panels</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(1)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="bottom" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Integrated Low Pressure Electrolyzer (ILPE) </techName><infoName>Description of function (physical breakdown)</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Reference <dmRef referredFragment="tbl-0004"><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Integrated Low Pressure Electrolyzer (ILPE) </techName><infoName>Description of function (physical breakdown)</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Reference <dmRef referredFragment="fig-0003"><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Integrated Low Pressure Electrolyzer (ILPE) </techName><infoName>Description of function (physical breakdown)</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 9 thru Slide 14</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(2)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Load Interface Box (LIB)</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(2)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="top" namest="9" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.5 ELECTRICAL POWER DISTRIBUTION.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 15 thru Slide 17</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle">
+                                        <para>(3)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="middle" namest="4" nameend="6">
+                                        <para>(U) Electrolysis Power Supply (EPS) Cabinet</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle">
+                                        <para>(3)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 18 thru Slide 18</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) ILPE Controller Assembly</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="middle" namest="10" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.6 ILPE CONTROLLER ASSEMBLY. .</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 19 thru Slide 20</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Process Controller</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.6 ILPE CONTROLLER ASSEMBLY.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 21 thru Slide 21</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) EPS Controller</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.6 ILPE CONTROLLER ASSEMBLY.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 22 thru Slide 22</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) SCR Drawers</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="bottom" namest="10" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.5 ELECTRICAL POWER DISTRIBUTION.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 23 thru Slide 23</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(4)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Gas Generator Section (GGS)</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(4)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) Process Loop Components</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="middle" namest="10" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 24 thru Slide 25</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Circulation Pump</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 26 thru Slide 26</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Chiller</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="top">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 27 thru Slide 27</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[3]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Filter</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[3]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="top">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 28 thru Slide 28</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[4]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Venturi</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[4]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 29 thru Slide 29</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[5]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Electrolysis Cell Stack</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[5]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 30 thru Slide 42</para>
+                                        <para>(U) Show the ILPE Electrolysis Cell Stack Training Aid to the class.</para>
+                                        <para>(U) Show the ILPE Solid Polymer Electrolyte (SPE) Cell to the class.</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top" namest="1" nameend="6">
+                                        
+                                        <note><notePara>(U) The next two training devices are not available at NAVSUBTRACENPAC until the summer of 2016. Pearl Harbor instructors ignor the next two related instructor activities.</notePara></note>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top"/>
+                                    <entry colname="11" colsep="0" valign="middle"/>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[6]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Low Pressure Phase Separator</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[6]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 43 thru Slide 43</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[7]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Dehumidifier</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[7]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="top">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 44 thru Slide 44</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[8]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) High Pressure Phase Separator</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[8]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 45 thru Slide 46</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) Feed Water System Components</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="top" namest="10" nameend="11">
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 47 thru Slide 47</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) DI Bed</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 48 thru Slide 48</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Resistivity Sensor</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="middle"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="top">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 49 thru Slide 50</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(5)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Byproduct Management Plant</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(5)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference S9515-AL-MMA-010, V. 15 APRIL 2016 Chapter 1 GENERAL INFORMATION AND SAFETY PRECAUTIONS:1.3 EQUIPMENT DESCRIPTION.:1.3.2 GAS PROCESSING UNIT (GPU).</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) Recycle Loop Components</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="top" namest="10" nameend="11">
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 51 thru Slide 51</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Blower Motor Assembly</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 52 thru Slide 55</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Aspirator</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="top">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 56 thru Slide 57</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[3]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Flow Venturi</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[3]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="top">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 58 thru Slide 58</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[4]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Regenerator/Condenser Heat Exchanger</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[4]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 59 thru Slide 61</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[5]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Recycle Heater</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[5]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 62 thru Slide 65</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[6]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Converter</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[6]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 66 thru Slide 69</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[7]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Collector</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[7]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 70 thru Slide 73</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) Liquid Product Disposal System</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="middle" namest="10" nameend="11">
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 74 thru Slide 74</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Degasser</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="top">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.7 GAS PROCESSING UNIT (GPU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 75 thru Slide 76</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(6)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Miscellaneous Components</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(6)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="top" namest="9" nameend="11">
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 77 thru Slide 77</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) Purge Gas System</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="top" namest="10" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.11 PURGE GAS SYSTEM.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.11 PURGE GAS SYSTEM.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 78 thru Slide 78</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) GPU Manifolds</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="middle" namest="10" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Integrated Low Pressure Electrolyzer (ILPE) </techName><infoName>Description of function (physical breakdown)</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Reference <dmRef referredFragment="tbl-0005"><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Integrated Low Pressure Electrolyzer (ILPE) </techName><infoName>Description of function (physical breakdown)</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>1.7 ATMOSPHERE CONTROL EQUIPMENT.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 79 thru Slide 80</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="middle"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Solenoid Valves</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[1]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 81 thru Slide 82</para>
+                                        <para>(U) Refer to and direct trainee to refer to <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Manual Valves</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[2]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="top">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 83 thru Slide 84</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top"/>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>[3]</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="top">
+                                        <para>(U) Check Valves</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top"/>
+                                    <entry colname="10" colsep="0" valign="top">
+                                        <para>[3]</para>
+                                    </entry>
+                                    <entry colname="11" colsep="0" valign="top">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 85 thru Slide 86</para>
+                                        <para>(U) Refer to and direct trainee to refer to <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle> 3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(c)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) Pressure Transducers</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(c)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="top" namest="10" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 87 thru Slide 88</para>
+                                        <para>(U) Refer to and direct trainee to refer to <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(d)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) Differential Pressure Transducers</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle">
+                                        <para>(d)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="top" namest="10" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 89 thru Slide 91</para>
+                                        <para>(U) Refer to and direct trainee to refer to <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(e)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) Temperature Sensors (RTDs)</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="middle">
+                                        <para>(e)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="top" namest="10" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 92 thru Slide 94</para>
+                                        <para>(U) Refer to and direct trainee to refer to <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(f)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) Combustible Gas Sensors</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(f)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="middle" namest="10" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 95 thru Slide 96</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top">
+                                        <para>b.</para>
+                                    </entry>
+                                    <entry colname="3" colsep="0" valign="top" namest="3" nameend="6">
+                                        <para>(U) Active Storage Unit (ASU)</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top">
+                                        <para>b.</para>
+                                    </entry>
+                                    <entry colname="8" colsep="0" valign="middle" namest="8" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Integrated Low Pressure Electrolyzer (ILPE) </techName><infoName>Description of function (physical breakdown)</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Reference <dmRef referredFragment="tbl-0009"><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Integrated Low Pressure Electrolyzer (ILPE) </techName><infoName>Description of function (physical breakdown)</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 97 thru Slide 98</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(1)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) ASU Trap</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(1)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 99 thru Slide 99</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(2)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) ASU Tank</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(2)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="top" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 100 thru Slide 100</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(3)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Cooling Coils</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="middle"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(3)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.10 COOLING WATER SYSTEMS.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 101 thru Slide 101</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(4)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) ASU Tank Heater (Belly Band Heater)</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="middle"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(4)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 102 thru Slide 102</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(5)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Line Heaters</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="middle"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(5)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 103 thru Slide 103</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(6)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) ASU Manual/Check/Solenoid/Relief Valves</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(6)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 104 thru Slide 104</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(7)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) ASU Rupture Disk</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(7)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 105 thru Slide 106</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(8)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) ASU Temperature Sensors</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(8)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="top" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 107 thru Slide 107</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(9)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) ASU Pressure Transducers</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(9)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 108 thru Slide 108</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(10)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) ASU Tank Level Indicating</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(10)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Gas Processing Unit (GPU-700)</techName><infoName>Description of function</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 109 thru Slide 109</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) ASU Differential Pressure Transducer (DPT-1910A)</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(a)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="bottom" namest="10" nameend="11">
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 110 thru Slide 110</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top"/>
+                                    <entry colname="4" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="5" colsep="0" valign="top" namest="5" nameend="6">
+                                        <para>(U) ASU Level Sensor (L-1910A)</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top"/>
+                                    <entry colname="9" colsep="0" valign="top">
+                                        <para>(b)</para>
+                                    </entry>
+                                    <entry colname="10" colsep="0" valign="top" namest="10" nameend="11">
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 111 thru Slide 112</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top">
+                                        <para>c.</para>
+                                    </entry>
+                                    <entry colname="3" colsep="0" valign="top" namest="3" nameend="6">
+                                        <para>(U) Remote Control Unit (RCU)</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top">
+                                        <para>c.</para>
+                                    </entry>
+                                    <entry colname="8" colsep="0" valign="middle" namest="8" nameend="11">
+                                        <para>(U) Reference <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Integrated Low Pressure Electrolyzer (ILPE) </techName><infoName>Description of function (physical breakdown)</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Reference <dmRef referredFragment="tbl-0010"><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="044" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Integrated Low Pressure Electrolyzer (ILPE) </techName><infoName>Description of function (physical breakdown)</infoName></dmTitle></dmRefAddressItems></dmRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>1.7 ATMOSPHERE CONTROL EQUIPMENT.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>1.7 ATMOSPHERE CONTROL EQUIPMENT.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 113 thru Slide 114</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(1)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Controller</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(1)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.8 REMOTE CONTROL UNIT (RCU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 115 thru Slide 115</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(2)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Heater</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(2)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.8 REMOTE CONTROL UNIT (RCU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 116 thru Slide 116</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(3)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Manual/Solenoid/Check/Relief Valves</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(3)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="top" namest="9" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.8 REMOTE CONTROL UNIT (RCU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.8 REMOTE CONTROL UNIT (RCU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.8 REMOTE CONTROL UNIT (RCU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.8 REMOTE CONTROL UNIT (RCU).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 117 thru Slide 117</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top"/>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(4)</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top" namest="4" nameend="6">
+                                        <para>(U) Fluid Regulator Valves</para>
+                                    </entry>
+                                    <entry colname="7" colsep="0" valign="top"/>
+                                    <entry colname="8" colsep="0" valign="top">
+                                        <para>(4)</para>
+                                    </entry>
+                                    <entry colname="9" colsep="0" valign="middle" namest="9" nameend="11">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.9 LOWEST REPLACEABLE UNITS (LRU'S).</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 118 thru Slide 118</para>
+                                        <para>(U) Show the ILPE Remote Control Unit (RCU) Simulator to the class.</para>
+                                    </entry>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </table>
+                    <multimedia id="mma-0001">
+                        <multimediaObject infoEntityIdent="ICN-1G6E8-00003-001-01" multimediaType="other"/>
+                    </multimedia>
+                </description>
+            </learningOverview>
+        </learning>
+    </content>
+</dmodule>

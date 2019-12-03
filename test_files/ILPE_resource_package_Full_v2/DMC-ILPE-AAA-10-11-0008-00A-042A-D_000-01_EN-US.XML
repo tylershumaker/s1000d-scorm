@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+<!ENTITY ICN-1G6E8-ILPE000019-001-01 SYSTEM "ICN-1G6E8-ILPE000019-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000015-001-01 SYSTEM "ICN-1G6E8-ILPE000015-001-01.PNG" NDATA png>
+<!ENTITY ICN-1G6E8-ILPE000020-001-01 SYSTEM "ICN-1G6E8-ILPE000020-001-01.PNG" NDATA png>
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="1" subSubSystemCode="1" assyCode="0008" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>High pressure phase seperator (PHS-138G)</techName>
+                    <infoName>Description of function</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara id="par-3.7.1.4.1">
+                <title>High Pressure Phase Separator</title>
+                <para>(Refer to <internalRef internalRefId="fig-3-28"/>). The HP phase separator (PHS-138G) is a simple columnar shaped pressure vessel which separates byproduct gas from the byproduct gas/water mixture. The byproduct gas being lighter, rises above the water level. The byproduct gas is delivered to the BMP at the natural floating pressure needed to force gas into the BMP. The water settles to the bottom of the HP phase separator and is returned to the process loop through the feed water system.</para>
+                <figure id="fig-3-28">
+                    <title>HP Phase Separator</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000019-001-01"/>
+                </figure>
+            </levelledPara>
+            <levelledPara id="par-3.7.1.4.2">
+                <title>High Pressure Phase Separator Level Control</title>
+                <para>The liquid level sensor (L-1120G) monitors the accumulated water level in the HP phase separator and transmits a status signal to the process controller. (Refer to <dmRef><dmRefIdent> <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="1" subSubSystemCode="1" assyCode="0006" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle> <techName>Low pressure phase seperator (PHS-030G)</techName> <infoName>Description of function</infoName> </dmTitle></dmRefAddressItems></dmRef>). The process controller provides a signal to cycle solenoid valve SV-649G open and shut to maintain the HP phase separator level at about 37 percent. This cycle is performed every 20 seconds. At low production rates, solenoid valve SV-649G will be open less than one second, and occasionally skip an opening cycle. At maximum production rates, solenoid valve SV-649G is open seven to 12
+                    seconds out of every 20 second cycle. This causes a minor pressure swing within the HP phase separator of about 50 psig at the maximum pressure and production rate.</para>
+            
+                <para>The liquid level sensor characteristics (refer to table 3-13) and the connector wiring diagram (refer to <internalRef internalRefId="fig-3-24"/>) are provided for reference.</para>
+                <figure id="fig-3-24">
+                    <title>Liquid Level Sensor Connector</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000015-001-01 "/>
+                </figure>
+            </levelledPara>
+            <levelledPara id="par-3.7.1.4.3">
+                <title>High Pressure Phase Separator Level Fault Function</title>
+                <para>The HP phase separator has five discrete level switches (refer to <internalRef internalRefId="fig-3-29"/>). Twohighleveldiscreteswitches(LS-1121-1G,LS-1121-2G)provideahighlevelcondition indication. Two low level discrete switches (LS-1122-1G, LS-1122-2G) provide a low level condition indication. The high or low level condition may be caused by the failure of solenoid valve (SV-649G). The analog signal indicates a level between zero percent and 100 percent full, over the normal four inch working range of the sensor.</para>
+                <figure id="fig-3-29">
+                    <title>HP Phase Separator Level Control</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000020-001-01"/>
+                </figure>
+           
+                <para>The process controller initiates three messages (refer to Appendix B, table B-1), FS091 a high level condition, FS102 for a faulty sensor and FW040 for a low level condition.</para>
+            
+                <para>One independent level switch (LS-1123G) is a magnetic float and reed switch assembly that is used to detect the presence of gas below the HP phase separator (PHS-138). This device is hard wired to form an interlock with backup solenoid valve (SV-652G). Upon sensing a lack of fluid (dry) below the HP phase separator, LS-1123G sends a signal directly to solenoid valve (SV-652G) causing it to shut. This switch operates as detailed below.</para>
+                <levelledPara id="par-3.7.1.4.3.a"><note>
+                    <notePara>The GGS recirculation loop and component enclosures are designed to contain an explosion within its plumbing of product gas and byproduct gas, with no shrapnel or other resulting hazard to personnel outside of the GPU structure. This containment is possible only if all GPU shear panels are installed and properly fastened.</notePara>
+                </note><para>A magnetic reed switch is mounted vertically and screwed into the bottom of a housing attached below the HP phase separator. Water leaving the HP phase separator must pass through the level switch (LS-1123G) housing. Within the housing, positioned around a hollow rod containing the reed switch is a magnet/float assembly.</para>
+            
+                <para>When water is present in the HP phase separator, it flows out of the separator and completely fills the level switch housing causing the magnet/float assembly to float and hold the reed switch closed. This is the normal position for the float and magnetic reed switch. If water is drained from the HP phase separator circuit to a point where the level switch housing no longer contains enough water, the magnet/float assembly falls causing the magnetic reed switch to open and initiate the hardwired solenoid valve interlock. The system will also shutdown. The process controller initiates message FW088.</para>
+            
+                
+                <para>Even though the ILPE is designed to contain any explosion within the product gas circuit, it is desirable to keep high pressure byproduct gas separated from pure product gas in the LP phase separator. Two independent protection systems prevent high pressure byproduct gas from flowing into the LP phase separator in the event of any single component failure (except failure of the membrane within the electrolysis cell stack). The first consists of the process controller shutting solenoid valve (SV-649G) when a low level condition is detected by the low level discrete switches (LS-1122-1G, LS-1122-2G). The second is the electrically hard wired interlock between independent level switch (LS-1123G) and solenoid valve (SV-652G).</para>
+            </levelledPara></levelledPara>
+        </description>
+    </content>
+</dmodule>

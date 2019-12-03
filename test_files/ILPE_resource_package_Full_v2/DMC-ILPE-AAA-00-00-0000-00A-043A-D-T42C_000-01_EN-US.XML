@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+<!ENTITY ICN-1G6E8-00001-001-01 SYSTEM "ICN-1G6E8-00001-001-01.PPT" NDATA ppt>
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/learning.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="00" subSystemCode="0" subSubSystemCode="0" assyCode="0000" disassyCode="00" disassyCodeVariant="A" infoCode="043" infoCodeVariant="A" itemLocationCode="D" learnCode="T42" learnEventCode="C"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>ILPE Course A-652-0093 M1L2S1DP2</techName>
+                    <infoName>Description of function attributed to crew (functional breakdown)</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <refs>
+            <externalPubRef>
+                <externalPubRefIdent>
+                    <externalPubCode>S9515-AL-MMA-010</externalPubCode>
+                    <externalPubTitle>3.1 INTEGRATED LOW PRESSURE ELECTROLYZER (ILPE) OVERVIEW.</externalPubTitle>
+                </externalPubRefIdent>
+            </externalPubRef>
+        </refs>
+        <learning>
+            <learningOverview>
+                <title>ILPE Course A-652-0093 M1L2S1DP2</title>
+                <description>
+                    <table frame="bottom" id="tbl0001" orient="port" pgwide="1" rowsep="0" tocentry="0">
+                        <tgroup cols="6">
+                            <colspec colname="1" colnum="1" align="left" colsep="1" colwidth="0.4*"/>
+                            <colspec colname="2" colnum="2" align="left" colsep="1" colwidth="0.4*"/>
+                            <colspec colname="3" colnum="3" align="left" colsep="1" colwidth="3.4*"/>
+                            <colspec colname="4" colnum="4" align="left" colsep="1" colwidth="0.7*"/>
+                            <colspec colname="5" colnum="5" align="left" colsep="1" colwidth="0.4*"/>
+                            <colspec colname="6" colnum="6" align="left" colsep="1" colwidth="3.8*"/>
+                            <spanspec namest="2" nameend="3" spanname="2-3" align="center"/>
+                            <spanspec namest="4" nameend="6" spanname="4-6" align="center"/>
+                            <spanspec namest="1" nameend="3" spanname="1-3" align="center"/>
+                            <thead valign="top">
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="middle" namest="1" nameend="3">
+                                        <para>DISCUSSION POINT</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="middle" namest="4" nameend="6">
+                                        <para>RELATED INSTRUCTOR ACTIVITY</para>
+                                    </entry>
+                                </row>
+                            </thead>
+                            <tbody valign="top">
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="bottom">
+                                        <para>2.</para>
+                                    </entry>
+                                    <entry colname="2" colsep="0" valign="bottom" namest="2" nameend="3">
+                                        <para>(U) ILPE Functional Operation and Mechanization</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top"/>
+                                    <entry colname="6" colsep="0" valign="top"/>
+                                </row>
+                                <row rowsep="0">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top">
+                                        <para>a.</para>
+                                    </entry>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(U) Simplified Block Diagram</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>a.</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="bottom">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.1 INTEGRATED LOW PRESSURE ELECTROLYZER (ILPE) OVERVIEW.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.11 PURGE GAS SYSTEM.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 2 thru Slide 6</para>
+                                    </entry>
+                                </row>
+                                <row rowsep="1">
+                                    <entry colname="1" colsep="0" valign="top"/>
+                                    <entry colname="2" colsep="0" valign="top">
+                                        <para>b.</para>
+                                    </entry>
+                                    <entry colname="3" colsep="0" valign="top">
+                                        <para>(U) Power Distribution</para>
+                                    </entry>
+                                    <entry colname="4" colsep="0" valign="top"/>
+                                    <entry colname="5" colsep="0" valign="top">
+                                        <para>b.</para>
+                                    </entry>
+                                    <entry colname="6" colsep="0" valign="middle">
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.5 ELECTRICAL POWER DISTRIBUTION.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Reference <externalPubRef><externalPubRefIdent><externalPubCode>S9515-AL-MMA-010</externalPubCode><externalPubTitle>3.5 ELECTRICAL POWER DISTRIBUTION.</externalPubTitle></externalPubRefIdent></externalPubRef></para>
+                                        <para>(U) Display <internalRef internalRefId="mma-0001"/> Slides 7 thru Slide 8</para>
+                                    </entry>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </table>
+                    <multimedia id="mma-0001">
+                        <multimediaObject infoEntityIdent="ICN-1G6E8-00001-001-01" multimediaType="other"/>
+                    </multimedia>
+                </description>
+            </learningOverview>
+        </learning>
+    </content>
+</dmodule>

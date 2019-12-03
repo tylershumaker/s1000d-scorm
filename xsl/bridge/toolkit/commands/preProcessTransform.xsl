@@ -129,22 +129,22 @@
                             </xsl:if>
                         </xsl:variable>
 
-                        <!-- <xsl:variable name="issno">
-                            <xsl:value-of select="issueInfo/@issueNumber" />
-                            <xsl:if test='string-length(issueInfo/@issueNumber)&gt;0'>
+                        <xsl:variable name="issno">
+                            <xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/issueInfo/@issueNumber" />
+                            <xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/issueInfo/@issueNumber)&gt;0'>
                                 <xsl:text>-</xsl:text>
                             </xsl:if>
                         </xsl:variable>
 
                         <xsl:variable name="inwork">
-                            <xsl:value-of select="issueInfo/@inWork" />
-                            <xsl:if test='string-length(/language/@languageIsoCode)&gt;0 '>
+                            <xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/issueInfo/@inWork" />
+                            <xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/issueInfo/@inWork)&gt;0 '>
                                 <xsl:text>_</xsl:text>
                             </xsl:if>
-                        </xsl:variable>-->
+                        </xsl:variable>
 
                         <xsl:variable name="lang_code">
-                            <xsl:text>_</xsl:text>
+                            <xsl:text></xsl:text>
                             <xsl:value-of select="scoEntryContent/dmRef/dmRefIdent/language/@languageIsoCode"/>
                             <xsl:if test='string-length(scoEntryContent/dmRef/dmRefIdent/language/@languageIsoCode)&gt;0'>
                                 <xsl:text>-</xsl:text>
@@ -165,6 +165,13 @@
 								  $syscode,$subsyscode,$subsubsyscode,$assycode,$disassycode,$disassycodevariant,
 								  $infocode,$infocodevariant,$itemlocationcode,$learncode,
 								  $learneventcode)"/>
+
+                        <!-- added ,$issno,$inwork,$lang_code,$lang_country-->
+                        <xsl:variable name="actInfoIdent2"
+                                      select="concat('DMC-',$mic,$sysdif,
+						  $syscode,$subsyscode,$subsubsyscode,$assycode,$disassycode,$disassycodevariant,
+						  $infocode,$infocodevariant,$itemlocationcode,$learncode,
+						  $learneventcode, '_', $issno, $inwork, $lang_code, $lang_country)"/>
 
                         <xsl:element name="item">
                             <xsl:attribute name="identifier">
@@ -205,7 +212,7 @@
                                   }
                                   },
                                   "id": "urn:s1000d:</xsl:text><xsl:value-of
-                                    select="$actInfoIdent"/><xsl:text>",
+                                    select="$actInfoIdent2"/><xsl:text>",
                                   "objectType": "Activity"
                                   }
                                   }
@@ -331,7 +338,7 @@
                     </xsl:if> -->
                 </xsl:variable>
 
-                <!-- <xsl:variable name="issno">
+                <xsl:variable name="issno">
                     <xsl:value-of select="issueInfo/@issueNumber" />
                     <xsl:if test='string-length(issueInfo/@issueNumber)&gt;0'>
                         <xsl:text>-</xsl:text>
@@ -343,7 +350,7 @@
                     <xsl:if test='string-length(/language/@languageIsoCode)&gt;0 '>
                         <xsl:text>_</xsl:text>
                     </xsl:if>
-                </xsl:variable>-->
+                </xsl:variable>
 
                 <xsl:variable name="lang_code">
                     <xsl:value-of select="/language/@languageIsoCode"/>
@@ -366,7 +373,14 @@
 						  $syscode,$subsyscode,$subsubsyscode,$assycode,$disassycode,$disassycodevariant,
 						  $infocode,$infocodevariant,$itemlocationcode,$learncode,
 						  $learneventcode,$lang_code,$lang_country)"/>
-                <!-- removed  ,$issno,$inwork-->
+
+                <!-- added ,$issno,$inwork-->
+                <xsl:variable name="infoIdent2"
+                              select="concat('DMC-',$mic,$sysdif,
+						  $syscode,$subsyscode,$subsubsyscode,$assycode,$disassycode,$disassycodevariant,
+						  $infocode,$infocodevariant,$itemlocationcode,$learncode,
+						  $learneventcode, '_', $issno, '-', $inwork,'_', $lang_code, '-', $lang_country)"/>
+
                 <!--Add the resource file element -->
                 <dependency identifierref="{$infoIdent}"/>
             </xsl:for-each>

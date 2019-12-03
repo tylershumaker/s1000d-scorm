@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/proced.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0006" disassyCode="00" disassyCodeVariant="A" infoCode="540" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Converter (CNV-365B)</techName>
+                    <infoName>Open for access procedure</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <procedure>
+            <preliminaryRqmts>
+                <reqCondGroup>
+                    <noConds/>
+                </reqCondGroup>
+                <reqSupportEquips>
+                    <noSupportEquips/>
+                </reqSupportEquips>
+                <reqSupplies>
+                    <noSupplies/>
+                </reqSupplies>
+                <reqSpares>
+                    <noSpares/>
+                </reqSpares>
+                <reqSafety>
+                    <noSafety/>
+                </reqSafety>
+            </preliminaryRqmts>
+            <mainProcedure>
+                <proceduralStep id="par-6.6.3.4.1.1">
+                    <title>GPU Set-Up for Converter Access</title>
+                    <proceduralStep id="stp-a">
+                        <para>Verify that the BMP is energized and in the off mode.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-b">
+                        <para>Align the ILPE to operate with the BMP secured (refer to paragraph 2.4.8.2).</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-c">
+                        <para>Lower the level in the ASU tank to less than 50 percent.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-d">
+                        <para>Shut manual valve MV-910A.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-e">
+                        <caution id="cau-0001">
+                            <warningAndCautionPara>Carefully monitor ASU tank level and pressure, making sure it stays below 1000 psig. A burst rupture disk in the ASU will vent gas to the BMP. Due to this risk, it is recommended that the operator have adequate ventilation in the AMR, have a breathing mask available, and be prepared to have the ASU contents dumped overboard.</warningAndCautionPara>
+                        </caution>
+                        <para>Remove access panel GPU-11.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-f">
+                        <para>Deactivate the catalyst in accordance with paragraph 2.4.9.4.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-g">
+                        <warning id="wrn-0001">
+                            <warningAndCautionPara>Oxidizer(s) must be operational or the ship must be surface ventilating prior to inboard venting of the recycle loop. Recycle gases are combustible.</warningAndCautionPara>
+                        </warning>
+                        <para>Vent the BMP to ambient pressure in accordance with paragraph 2.4.9.1.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-h">
+                        <para>Verify power is removed from the BMP.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-i">
+                        <para>Open the EPS 115 VAC circuit breaker (CB-1).</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-j">
+                        <para>Open the circuit breaker that supplies 440 VAC and 115 VAC power to the ILPE.</para>
+                    </proceduralStep>
+                </proceduralStep>
+            </mainProcedure>
+            <closeRqmts>
+                <reqCondGroup>
+                    <noConds/>
+                </reqCondGroup>
+            </closeRqmts>
+        </procedure>
+    </content>
+</dmodule>

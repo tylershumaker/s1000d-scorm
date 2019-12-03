@@ -32,6 +32,11 @@
   <xsl:variable name="learncode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnCode" />
   <xsl:variable name="learneventcode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/dmCode/@learnEventCode" />
 
+	<xsl:variable name="languageIsoCode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/language/@languageIsoCode" />
+	<xsl:variable name="countryIsoCode" select="dmodule/identAndStatusSection/dmAddress/dmIdent/language/@countryIsoCode"/>
+	<xsl:variable name="issueNumber" select="dmodule/identAndStatusSection/dmAddress/dmIdent/issueInfo/@issueNumber" />
+	<xsl:variable name="inWork" select="dmodule/identAndStatusSection/dmAddress/dmIdent/issueInfo/@inWork"/>
+
   <xsl:variable name="this_dmc" >
     <xsl:choose>
       <xsl:when test="string-length($learncode) = 0 and string-length($learneventcode) = 0">
@@ -87,6 +92,9 @@
 			<body bgcolor="#FFFFFF" class="bodyText" onload="initializeXAPI()">
 				<div id="dmc" style="visibility: hidden; height: 0px;">
 					<xsl:value-of select="$this_dmc"/>
+				</div>
+				<div id="meta-dmc" style="visibility: hidden; height: 0px;">
+					<xsl:value-of select="concat($this_dmc, '_', $issueNumber, '-', $inWork,'_', $languageIsoCode, '-', $countryIsoCode)"/>
 				</div>
 				<xsl:apply-templates/>
 			</body>

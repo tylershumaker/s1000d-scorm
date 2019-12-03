@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+<!NOTATION ppt PUBLIC "-//USA-DOD//NOTATION Power Point//EN" >
+<!ENTITY ICN-1G6E8-ILPE000016-001-01 SYSTEM "ICN-1G6E8-ILPE000016-001-01.PNG" NDATA png>
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/descript.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="1" subSubSystemCode="1" assyCode="0001" disassyCode="00" disassyCodeVariant="A" infoCode="042" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Circulation pump PMP-633G)</techName>
+                    <infoName>Description of function</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <description>
+            <levelledPara id="par-3.7.1.2.8">
+                <title>Circulation Pump</title>
+                <caution>
+                    <warningAndCautionPara>The circulation pump requires flow to cool and lubricate the motor and bearings. Any configuration or testing which could allow the pump to run at or near shutoff head (low or no flow,ordry)isnot recommended and may damage the circulation pump.</warningAndCautionPara>
+                </caution><para>Circulation Pump. (Refer to <internalRef internalRefId="fig-3-25"/>) The circulation pump (PMP-633G) is a centrifugal type, single-speed, common rotor shaft, canned electrical motor driven pump. The pump circulates DI water through the process loop. The pump provides 10-12 gpm fluid flow to cool the electrolysis cell stack and flush the product gas from the membrane surface. The pump adds about 20 to 25 psid of pressure rise, and pumps the process water through the chiller (HX-635G), then through the filter (FLT-637G), through the flow venturi (VN-636G) and into the electrolysis cell stack (CSK-050G). The pump is placed below the LP phase separator to take advantage of the water head above the pump to satisfy the pump's net positive suction head requirement. This net positive suction head reduces cavitation noise and associated premature pump wear.</para>
+                <figure id="fig-3-25">
+                    <title>Circulation Pump</title>
+                    <graphic infoEntityIdent="ICN-1G6E8-ILPE000016-001-01"/>
+                </figure>
+                <para>All plumbing connections, including the pump's drain line, are maintained at a level above the electrolysis cell stack fluid connections to assure the electrolysis cell stack is maintained in a wet condition and not siphoned dry. A manual valve (MV-634G), attached to fitting (F-29), is provided to drain the system for maintenance of the process loop components.</para>
+                <para>The pump, receives 440 VAC, 60 Hz, 3-phase electrical power from the LIB through an electromechanical relay. The pump's current is measured by two current sensors (MC-1716-1G, MC-1716-2G) to calculate power consumption and to provide FI and failure determination.</para>
+                
+                <para>Motor closure contact (MCC-1733G) and vibration pickup (VIB-1757G) accelerometer are directly wired to an external connector for periodic hookup to the portable vibration monitoring system to aid in fault detection and failure determination. The vibration pickup is oriented relative to the pump axis of rotation to maximize sensitivity to bearing wear, while the motor contact closure provides pump status.</para>
+                <para>The circulation pump is a combination centrifugal pump and a canned induction motor, built together into a single hermetically sealed unit. The pump propeller is a closed type and is mounted on one end of the rotor shaft which extends from the motor section into the pump casing. The rotor is submerged in the fluid being pumped and is therefore &#8220;canned&#8221; to isolate the motor parts from contact with the fluid. The stator winding is also canned. The bearings are submerged in the system fluid to provide continuous lubrication.</para>
+                <para>The circulation pump has only one moving part, a combined rotor-impeller assembly which is driven by an induction motor. A small amount of the pumped fluid is allowed to recirculate through the rotor cavity to cool the motor and lubricate the bearings. The recirculating fluid passes through a self cleaning cylindrical filter fitted to the discharge nozzle of the pump casing, through the circulation tube, to the rear of the pump. The recirculating fluid then flows across the rear bearing, the rotor, the front bearing and back into the LP side of the main discharge flow. The filter is open at the top and bottom and is constantly washed by the discharge flow.</para>
+                <para>The circulation pump's thrust balance is automatically accomplished by the pressure of the pumped fluid itself, operating in a balance chamber just to the rear of the impeller. When a change in load tends to change the position of the impeller away from the balance condition, there is an equalizing change in hydraulic pressure in the balance chamber to immediately return the impeller/rotor assembly to the balance position.</para>
+               <para>The process controller initiates three messages (refer to Appendix B, table B-1), FS-56 for pump failed ON, FS072 for pump failed off and FS074 for a motor failure.</para>
+            </levelledPara>
+        </description>
+    </content>
+</dmodule>

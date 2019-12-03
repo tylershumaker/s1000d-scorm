@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE dmodule [
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN"> 
+<!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN" >
+]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/proced.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0006" disassyCode="02" disassyCodeVariant="A" infoCode="921" infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Converter housing seal</techName>
+                    <infoName>Change = Remove and install a new item</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY. CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT OFFICE.</dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE WITH PROVISIONS OF OPNAVINST 5510.161.</simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS OR RECONSTRUCTION OF THE DOCUMENT.</dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <procedure>
+            <preliminaryRqmts>
+                <reqCondGroup>
+                    <noConds/>
+                </reqCondGroup>
+                <reqSupportEquips>
+                    <noSupportEquips/>
+                </reqSupportEquips>
+                <reqSupplies>
+                    <noSupplies/>
+                </reqSupplies>
+                <reqSpares>
+                    <noSpares/>
+                </reqSpares>
+                <reqSafety>
+                    <noSafety/>
+                </reqSafety>
+            </preliminaryRqmts>
+            <mainProcedure>
+                <proceduralStep id="par-6.6.3.5.5">
+                    <title>Converter Housing Seal Replacement</title>
+                    <para>This procedure contains the instructions for the replacement of a leaky converter housing metallic seal. If cartridge replacement is to be accomplished concurrently, refer to the Planned Maintenance System. <dmRef referredFragment="fig7-9A"><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0006" disassyCode="00" disassyCodeVariant="A" infoCode="941" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Converter (CNV-365B)</techName><infoName>Illustrated parts diagram</infoName></dmTitle></dmRefAddressItems></dmRef>, provides an illustrated breakdown of the component to assist the operator.</para>
+                </proceduralStep>
+                <proceduralStep id="stp-a">
+                    <para>Perform the preliminary actions to access the converter housing refer to <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0006" disassyCode="00" disassyCodeVariant="A" infoCode="540" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Converter (CNV-365B)</techName><infoName>Open for access procedure</infoName></dmTitle></dmRefAddressItems></dmRef> and <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0006" disassyCode="00" disassyCodeVariant="A" infoCode="540" infoCodeVariant="B" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Converter (CNV-365B)</techName><infoName>Open for access procedure</infoName></dmTitle></dmRefAddressItems></dmRef>).</para>
+                </proceduralStep>
+                <proceduralStep id="stp-b">
+                    <para>Isolate the ASU from the BMP as follows:</para>
+                    <proceduralStep id="par-b.1">
+                        <para>Lower the level in the ASU tank to less than 50 percent full.</para>
+                    </proceduralStep>
+                    <proceduralStep id="par-b.2">
+                        <para>Align the ILPE to operate with the BMP secured (refer to paragraph 2.4.8.2).</para>
+                    </proceduralStep>
+                    <proceduralStep id="par-b.3">
+                        <warning id="wrn-0001">
+                            <warningAndCautionPara>Oxidizer(s) must be operational or the ship must be surface ventilating prior to inboard venting of the recycle loop. Recycle gases are combustible.</warningAndCautionPara>
+                        </warning>
+                        <para>Shut manual valve MV-910A.</para>
+                    </proceduralStep>
+                    <proceduralStep id="par-b.4">
+                        <para>Vent the BMP to ambient (refer to paragraph 2.4.9.1).</para>
+                    </proceduralStep>
+                    <proceduralStep id="par-b.5">
+                        <para>Disconnect fitting F23 from the ASU and install the test cap and plug (cap and plug are stored on face of ASU).Torqueto 54 -67 ft-lb.</para>
+                    </proceduralStep>
+                </proceduralStep>
+                <proceduralStep id="stp-c">
+                    <warning id="wrn-0002"><warningAndCautionPara>Converter housing may be hot. Exercise caution to prevent burns.</warningAndCautionPara></warning>
+                    <caution id="cau-0001">
+                        <warningAndCautionPara>Carefully monitor ASU tank level and pressure, making sure it stays below 1000 psig. A burst rupture disk in the ASU will vent gas to the BMP if F23 is not capped. Due to this risk, it is recommended that the operator have adequate ventilation in the AMR, have a breathing mask available, and be prepared to have the ASU contents dumped overboard.</warningAndCautionPara>
+                    </caution>
+                    <para>Deactivate the catalyst in accordance with paragraph 2.4.9.4.</para>
+                </proceduralStep>
+                <proceduralStep id="stp-d">
+                    <para>ove the converter housing top insulation blanket. Retain for reuse.</para>
+                </proceduralStep>
+                <proceduralStep id="stp-e">
+                    <note id="not-0001">
+                        <notePara>If an eyebolt is not installed, coat the thread bearing surfaces of the lifting eyebolt (CP032-401) with MOLYKOTE P-37 lubricant or an approved lubricant and install on the cover. Torque to 9.5 - 11.5 ft-lb.</notePara>
+                    </note>
+                    <para>Verify lifting eyebolt (CP032-401) is installed in converter cover.</para>
+                </proceduralStep>
+                <proceduralStep id="stp-f">
+                    <warning id="wrn-0003"><warningAndCautionPara>Do not move converter housing cover without assistance. The cover weighs approximately 200 pounds.</warningAndCautionPara></warning>                        
+                    <para>Remove the converter housing cover as follows:</para>
+                    <proceduralStep id="stp-f.1">
+                        <note id="not-0002">
+                            <notePara>Some ships have torque nuts securing converter housing cover instead of standard nuts. Use alternate torque nut removal procedure.</notePara>
+                        </note>
+                        <para>Remove the nuts from the converter housing cover.</para>
+                        <para>Alternate torque nut removal procedure:</para>
+                        <proceduralStep id="stp-f.1.a">
+                            <caution id="cau-0002">
+                                <warningAndCautionPara>Fastener removal must follow this procedure. Unloading jackbolts prematurely or out of sequence will cause remaining jackbolts to carry full load leading to jackbolt damage.</warningAndCautionPara>
+                            </caution>
+                            <para>Loosen jackbolts 1/8 turn following a circular pattern around each torque nut. Perform this on all torque nuts.</para>
+                        </proceduralStep>
+                        <proceduralStep id="stp-f.1.b">
+                            <para>Repeat step a for all torque nuts, loosing jackbolts 1/4 turn. Repeat this step as required until all jackbolts are loose.</para>
+                        </proceduralStep></proceduralStep>
+                    
+                    <proceduralStep id="stp-f.2">
+                        <para>Attach the lifting ring (part of the lifting arm) to the GPU frame.</para> 
+                    </proceduralStep>
+                    <proceduralStep id="stp-f.3">
+                        <para>Attach one end of a lifting device to lifting ring located on frame above converter, and the other to the converter housing cover lifting eyebolt.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-f.4">
+                        <para>Carefully remove the converter housing cover, keeping the cover level to prevent binding of the bolts. Set the cover aside on something soft (cardboard, rags, etc).</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-f.5">
+                        <para>Remove the metallic compression gasket from the converter housing and discard.</para>
+                    </proceduralStep>
+                </proceduralStep>
+                <proceduralStep id="stp-g">
+                    <para>Visually inspect the bolts for damage. Refer to <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0006" disassyCode="03" disassyCodeVariant="A" infoCode="921" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Converter housing flange bolt</techName><infoName>Change = Remove and install a new item</infoName></dmTitle></dmRefAddressItems></dmRef> of flange bolt(s) require replacement.</para>
+                </proceduralStep>
+                <proceduralStep id="stp-h">
+                    <para>Install the metallic compression gasket in the converter housing as follows:</para>
+                    <proceduralStep id="stp-h.1">
+                        <para>Clean the top surface of the converter housing using a soft cloth and warm potable water.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-h.2">
+                        <para>Inspect the new metallic compression gasket for damage.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-h.3">
+                        <para>Carefully place the metallic compression gasket into the sealing groove on the converter housing.</para>
+                    </proceduralStep>
+                </proceduralStep>
+                <proceduralStep id="stp-i">
+                    <warning id="wrn-0004"><warningAndCautionPara>Do not move converter housing cover without assistance. The cover weighs approximately 200 pounds.</warningAndCautionPara></warning>
+                    <para>Install the converter housing cover as follows:</para>
+                    <proceduralStep id="stp-i.1">
+                        <para>Clean the sealing surface of the cover.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-i.2">
+                        <para>Attach the lifting arm hook to the converter housing cover and carefully set the cover in place.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-i.3">
+                        <para>Remove the lifting arm hook from the converter housing cover eyebolt.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-i.4">
+                        <para>Remove the lifting arm and lifting ring from the GPU frame.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-i.5">
+                        <para>Light coat the threads of the converter housing bolts with MOLYKOTE P-37 lubricant or an approved lubricant.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-i.6">
+                        <note id="not-0003">
+                            <notePara>Some ships have torque nuts securing converter housing cover instead of standard nuts. Use alternate torque nut tightening procedure.</notePara>
+                        </note>
+                        <para>Install the housing cover nuts. Torque to 290 - 300 ft-lb in a diametrically opposite pattern.</para>
+                        <para>Alternate torque nut tightening procedure:</para><proceduralStep id="stp-i-6.a">
+                            <para>Ensure jackbolts are flush or recessed into torque nut</para>
+                        </proceduralStep>
+                        <proceduralStep id="stp-i-6.b">
+                            <para>Slide washer over T-Bolt until flush with cover</para>
+                        </proceduralStep>
+                        <proceduralStep id="stp-i-6.c">
+                            <para>Spin torque nut onto T-Bolt thread until it seats against the washer.</para>
+                        </proceduralStep>
+                        <proceduralStep id="stp-i-6.d">
+                            <para>Tighten four jackbolts as close to 90 degrees apart as possible on all 14 T-Bolts. Torque jackbolts to 45 in-lb at this time.</para>
+                        </proceduralStep>
+                        <proceduralStep id="stp-i-6.e">
+                            <para>When all 14 T-Bolts have been tightened, repeat step d on the same jackbolts and torque to 90 in-lb.</para>
+                        </proceduralStep>
+                        <proceduralStep id="stp-i-6.f">
+                            <para>Torque all 10 jackbolts on each torque nut to 90 in-lb in a circular pattern. Torque each jackbolt once then move to the next T-Bolt/torque nut. T-Bolt/torquenuts should be tightened in a crossing pattern. This process may require 2-4 passes around the converter cover until all jackbolts are at final torque.</para>
+                        </proceduralStep>
+                    </proceduralStep>
+                </proceduralStep>
+                <proceduralStep id="stp-j">
+                    <para>Position the insulation blanket on the top of the converter housing cover.</para>
+                </proceduralStep>
+                <proceduralStep id="stp-k">
+                    <para>Align the ASU to the BMP as follows:</para>
+                    <proceduralStep id="stp-k.1">
+                        <para>Carefully remove the test cap (cap and plug store on the face of ASU) from bulkhead fitting F23 and install the line leading to the BMP.</para>
+                    </proceduralStep>
+                    <proceduralStep id="stp-k.2">
+                        <para>Open manual valve MV-910A.</para>
+                    </proceduralStep>
+                </proceduralStep>
+                <proceduralStep id="stp-l">
+                    <para>Activate the BMP and perform the steps to return the ILPE to an operational condition refer to <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0006" disassyCode="00" disassyCodeVariant="A" infoCode="740" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Converter (CNV-365B)</techName><infoName>Close after access procedure</infoName></dmTitle></dmRefAddressItems></dmRef> and <dmRef><dmRefIdent><dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2" subSubSystemCode="1" assyCode="0006" disassyCode="00" disassyCodeVariant="A" infoCode="740" infoCodeVariant="B" itemLocationCode="D"/></dmRefIdent><dmRefAddressItems><dmTitle><techName>Converter (CNV-365B)</techName><infoName>Close after access procedure</infoName></dmTitle></dmRefAddressItems></dmRef>).</para>
+                </proceduralStep>
+            </mainProcedure>
+            <closeRqmts>
+                <reqCondGroup>
+                    <noConds/>
+                </reqCondGroup>
+            </closeRqmts>
+        </procedure>
+    </content>
+</dmodule>
