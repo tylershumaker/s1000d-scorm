@@ -583,7 +583,13 @@ function getStepStatement(id, verb) {
     var courseId = scormLaunchDataJSON.courseId;
 
     var stepByID = document.getElementById(id).childNodes;
-    var stepContentHTML = stepByID[2].innerText;
+    //console.log(stepByID);
+
+    //Check if the title element is empty, if so use para content
+    var stepContentHTML = stepByID[3].innerText;
+    if (stepContentHTML == "") {
+        stepContentHTML = stepByID[5].innerText;
+    }
 
     var stepNumber = getStepNumber(id);
     //var current_dmc = document.getElementById("dmc").innerHTML;
