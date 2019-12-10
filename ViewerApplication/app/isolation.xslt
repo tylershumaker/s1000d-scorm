@@ -126,10 +126,6 @@
             <xsl:value-of select="generate-id(para)"/>
         </xsl:variable>
 
-        <xsl:variable name="styler">
-            <xsl:text>visible</xsl:text>
-        </xsl:variable>
-
         <xsl:variable name="active">
             <xsl:choose>
                 <xsl:when test="parent::mainProcedure and position()=1">
@@ -146,12 +142,19 @@
                 <xsl:variable name="nextRefId">
                     <xsl:value-of select="generate-id(child::proceduralStep/child::para)"/>
                 </xsl:variable>
-                <li id="{$step_id}" style="visibility:{$styler}" class="{$active}">
+                <li id="{$step_id}" class="{$active}">
 
                     <a class="{$active}" href="#{$nextRefId}" onclick="show_hide_div('{$step_id}','{$nextRefId}')">
                         Next
                     </a>
                     <br/>
+                    <div>
+                        <p>
+                            <strong>
+                                <xsl:value-of select="title"/>
+                            </strong>
+                        </p>
+                    </div>
                     <div>
                         <p>
                             <xsl:value-of select="para"/>
@@ -192,7 +195,7 @@
                 </xsl:variable>
 
 
-                <li id="{$step_id}" style="visibility:{$styler}" class="{$active}">
+                <li id="{$step_id}" class="{$active}">
 
                     <a class="{$active}" href="#{$nextRefId}" onclick="show_hide_div('{$step_id}','{$nextRefId}')">
                         Next
@@ -218,8 +221,6 @@
         <xsl:variable name="step_id">
             <xsl:value-of select="@id"></xsl:value-of>
         </xsl:variable>
-        <xsl:variable name="styler">
-        </xsl:variable>
 
         <xsl:variable name="active">
             <xsl:choose>
@@ -237,11 +238,18 @@
                 <xsl:variable name="nextRefId">
                     <xsl:value-of select="child::proceduralStep[1]/@id"/>
                 </xsl:variable>
-                <li id="{$step_id}" class="{$active}" style="visibility:{$styler}">
+                <li id="{$step_id}" class="{$active}">
                     <a class="{$active}" href="#{$nextRefId}" onclick="show_hide_div('{$step_id}','{$nextRefId}')">
                         Next
                     </a>
                     <br/>
+                    <div>
+                        <p>
+                            <strong>
+                                <xsl:value-of select="title"/>
+                            </strong>
+                        </p>
+                    </div>
                     <div>
                         <p>
                             <xsl:value-of select="para"/>
@@ -280,14 +288,13 @@
                 </xsl:variable>
                 <xsl:apply-templates/>
 
-                <li id="{$step_id}" class="{$active}" style="visibility:{$styler}">
+                <li id="{$step_id}" class="{$active}">
                     <a href="#{$nextRefId}"
                        class="{$active}"
                        onclick="show_hide_div('{$step_id}','{$nextRefId}')">Next
                     </a>
                     <br/>
                     <div>
-                        <!--                        <xsl:apply-templates select ="para | note | table | figure" />-->
                         <p>
                             <xsl:value-of select="para"/>
                         </p>
