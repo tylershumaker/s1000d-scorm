@@ -14,144 +14,144 @@ function isDate(a) {
     return '[object Date]' === Object.prototype.toString.call(b) ? (isNaN(b.valueOf()) ? (ADL.XAPIWrapper.log('Invalid date String passed'), null) : b) : (ADL.XAPIWrapper.log('Invalid date object'), null);
 }
 var CryptoJS =
-        CryptoJS ||
-        (function(a, b) {
-            var c = {},
-                d = (c.lib = {}),
-                e = (d.Base = (function() {
-                    function a() {}
-                    return {
-                        extend: function(b) {
-                            a.prototype = this;
-                            var c = new a();
-                            return (
-                                b && c.mixIn(b),
-                                c.hasOwnProperty('init') ||
-                                    (c.init = function() {
-                                        c.$super.init.apply(this, arguments);
-                                    }),
+    CryptoJS ||
+    (function(a, b) {
+        var c = {},
+            d = (c.lib = {}),
+            e = (d.Base = (function() {
+                function a() {}
+                return {
+                    extend: function(b) {
+                        a.prototype = this;
+                        var c = new a();
+                        return (
+                            b && c.mixIn(b),
+                            c.hasOwnProperty('init') ||
+                            (c.init = function() {
+                                c.$super.init.apply(this, arguments);
+                            }),
                                 (c.init.prototype = c),
                                 (c.$super = this),
                                 c
-                            );
-                        },
-                        create: function() {
-                            var a = this.extend();
-                            return a.init.apply(a, arguments), a;
-                        },
-                        init: function() {},
-                        mixIn: function(a) {
-                            for (var b in a) a.hasOwnProperty(b) && (this[b] = a[b]);
-                            a.hasOwnProperty('toString') && (this.toString = a.toString);
-                        },
-                        clone: function() {
-                            return this.init.prototype.extend(this);
-                        },
-                    };
-                })()),
-                f = (d.WordArray = e.extend({
-                    init: function(a, c) {
-                        (a = this.words = a || []), c != b ? (this.sigBytes = c) : (this.sigBytes = 4 * a.length);
+                        );
                     },
-                    toString: function(a) {
-                        return (a || h).stringify(this);
+                    create: function() {
+                        var a = this.extend();
+                        return a.init.apply(a, arguments), a;
                     },
-                    concat: function(a) {
-                        var b = this.words,
-                            c = a.words,
-                            d = this.sigBytes,
-                            e = a.sigBytes;
-                        if ((this.clamp(), d % 4))
-                            for (var f = 0; e > f; f++) {
-                                var g = (c[f >>> 2] >>> (24 - (f % 4) * 8)) & 255;
-                                b[(d + f) >>> 2] |= g << (24 - ((d + f) % 4) * 8);
-                            }
-                        else if (c.length > 65535) for (var f = 0; e > f; f += 4) b[(d + f) >>> 2] = c[f >>> 2];
-                        else b.push.apply(b, c);
-                        return (this.sigBytes += e), this;
-                    },
-                    clamp: function() {
-                        var b = this.words,
-                            c = this.sigBytes;
-                        (b[c >>> 2] &= 4294967295 << (32 - (c % 4) * 8)), (b.length = a.ceil(c / 4));
+                    init: function() {},
+                    mixIn: function(a) {
+                        for (var b in a) a.hasOwnProperty(b) && (this[b] = a[b]);
+                        a.hasOwnProperty('toString') && (this.toString = a.toString);
                     },
                     clone: function() {
-                        var a = e.clone.call(this);
-                        return (a.words = this.words.slice(0)), a;
+                        return this.init.prototype.extend(this);
                     },
-                    random: function(b) {
-                        for (var c = [], d = 0; b > d; d += 4) c.push((4294967296 * a.random()) | 0);
-                        return new f.init(c, b);
-                    },
-                })),
-                g = (c.enc = {}),
-                h = (g.Hex = {
-                    stringify: function(a) {
-                        for (var b = a.words, c = a.sigBytes, d = [], e = 0; c > e; e++) {
-                            var f = (b[e >>> 2] >>> (24 - (e % 4) * 8)) & 255;
-                            d.push((f >>> 4).toString(16)), d.push((15 & f).toString(16));
+                };
+            })()),
+            f = (d.WordArray = e.extend({
+                init: function(a, c) {
+                    (a = this.words = a || []), c != b ? (this.sigBytes = c) : (this.sigBytes = 4 * a.length);
+                },
+                toString: function(a) {
+                    return (a || h).stringify(this);
+                },
+                concat: function(a) {
+                    var b = this.words,
+                        c = a.words,
+                        d = this.sigBytes,
+                        e = a.sigBytes;
+                    if ((this.clamp(), d % 4))
+                        for (var f = 0; e > f; f++) {
+                            var g = (c[f >>> 2] >>> (24 - (f % 4) * 8)) & 255;
+                            b[(d + f) >>> 2] |= g << (24 - ((d + f) % 4) * 8);
                         }
-                        return d.join('');
-                    },
-                    parse: function(a) {
-                        for (var b = a.length, c = [], d = 0; b > d; d += 2) c[d >>> 3] |= parseInt(a.substr(d, 2), 16) << (24 - (d % 8) * 4);
-                        return new f.init(c, b / 2);
-                    },
-                }),
-                i = (g.Latin1 = {
-                    stringify: function(a) {
-                        for (var b = a.words, c = a.sigBytes, d = [], e = 0; c > e; e++) {
-                            var f = (b[e >>> 2] >>> (24 - (e % 4) * 8)) & 255;
-                            d.push(String.fromCharCode(f));
+                    else if (c.length > 65535) for (var f = 0; e > f; f += 4) b[(d + f) >>> 2] = c[f >>> 2];
+                    else b.push.apply(b, c);
+                    return (this.sigBytes += e), this;
+                },
+                clamp: function() {
+                    var b = this.words,
+                        c = this.sigBytes;
+                    (b[c >>> 2] &= 4294967295 << (32 - (c % 4) * 8)), (b.length = a.ceil(c / 4));
+                },
+                clone: function() {
+                    var a = e.clone.call(this);
+                    return (a.words = this.words.slice(0)), a;
+                },
+                random: function(b) {
+                    for (var c = [], d = 0; b > d; d += 4) c.push((4294967296 * a.random()) | 0);
+                    return new f.init(c, b);
+                },
+            })),
+            g = (c.enc = {}),
+            h = (g.Hex = {
+                stringify: function(a) {
+                    for (var b = a.words, c = a.sigBytes, d = [], e = 0; c > e; e++) {
+                        var f = (b[e >>> 2] >>> (24 - (e % 4) * 8)) & 255;
+                        d.push((f >>> 4).toString(16)), d.push((15 & f).toString(16));
+                    }
+                    return d.join('');
+                },
+                parse: function(a) {
+                    for (var b = a.length, c = [], d = 0; b > d; d += 2) c[d >>> 3] |= parseInt(a.substr(d, 2), 16) << (24 - (d % 8) * 4);
+                    return new f.init(c, b / 2);
+                },
+            }),
+            i = (g.Latin1 = {
+                stringify: function(a) {
+                    for (var b = a.words, c = a.sigBytes, d = [], e = 0; c > e; e++) {
+                        var f = (b[e >>> 2] >>> (24 - (e % 4) * 8)) & 255;
+                        d.push(String.fromCharCode(f));
+                    }
+                    return d.join('');
+                },
+                parse: function(a) {
+                    for (var b = a.length, c = [], d = 0; b > d; d++) c[d >>> 2] |= (255 & a.charCodeAt(d)) << (24 - (d % 4) * 8);
+                    return new f.init(c, b);
+                },
+            }),
+            j = (g.Utf8 = {
+                stringify: function(a) {
+                    try {
+                        return decodeURIComponent(escape(i.stringify(a)));
+                    } catch (b) {
+                        throw new Error('Malformed UTF-8 data');
+                    }
+                },
+                parse: function(a) {
+                    return i.parse(unescape(encodeURIComponent(a)));
+                },
+            }),
+            k = ((g.Base64 = {
+                stringify: function(a) {
+                    var b = a.words,
+                        c = a.sigBytes,
+                        d = this._map;
+                    a.clamp();
+                    for (var e = [], f = 0; c > f; f += 3) for (var g = (b[f >>> 2] >>> (24 - (f % 4) * 8)) & 255, h = (b[(f + 1) >>> 2] >>> (24 - ((f + 1) % 4) * 8)) & 255, i = (b[(f + 2) >>> 2] >>> (24 - ((f + 2) % 4) * 8)) & 255, j = (g << 16) | (h << 8) | i, k = 0; 4 > k && c > f + 0.75 * k; k++) e.push(d.charAt((j >>> (6 * (3 - k))) & 63));
+                    var l = d.charAt(64);
+                    if (l) for (; e.length % 4; ) e.push(l);
+                    return e.join('');
+                },
+                parse: function(a) {
+                    var b = a.length,
+                        c = this._map,
+                        d = c.charAt(64);
+                    if (d) {
+                        var e = a.indexOf(d);
+                        -1 != e && (b = e);
+                    }
+                    for (var g = [], h = 0, i = 0; b > i; i++)
+                        if (i % 4) {
+                            var j = c.indexOf(a.charAt(i - 1)) << ((i % 4) * 2),
+                                k = c.indexOf(a.charAt(i)) >>> (6 - (i % 4) * 2);
+                            (g[h >>> 2] |= (j | k) << (24 - (h % 4) * 8)), h++;
                         }
-                        return d.join('');
-                    },
-                    parse: function(a) {
-                        for (var b = a.length, c = [], d = 0; b > d; d++) c[d >>> 2] |= (255 & a.charCodeAt(d)) << (24 - (d % 4) * 8);
-                        return new f.init(c, b);
-                    },
-                }),
-                j = (g.Utf8 = {
-                    stringify: function(a) {
-                        try {
-                            return decodeURIComponent(escape(i.stringify(a)));
-                        } catch (b) {
-                            throw new Error('Malformed UTF-8 data');
-                        }
-                    },
-                    parse: function(a) {
-                        return i.parse(unescape(encodeURIComponent(a)));
-                    },
-                }),
-                k = ((g.Base64 = {
-                    stringify: function(a) {
-                        var b = a.words,
-                            c = a.sigBytes,
-                            d = this._map;
-                        a.clamp();
-                        for (var e = [], f = 0; c > f; f += 3) for (var g = (b[f >>> 2] >>> (24 - (f % 4) * 8)) & 255, h = (b[(f + 1) >>> 2] >>> (24 - ((f + 1) % 4) * 8)) & 255, i = (b[(f + 2) >>> 2] >>> (24 - ((f + 2) % 4) * 8)) & 255, j = (g << 16) | (h << 8) | i, k = 0; 4 > k && c > f + 0.75 * k; k++) e.push(d.charAt((j >>> (6 * (3 - k))) & 63));
-                        var l = d.charAt(64);
-                        if (l) for (; e.length % 4; ) e.push(l);
-                        return e.join('');
-                    },
-                    parse: function(a) {
-                        var b = a.length,
-                            c = this._map,
-                            d = c.charAt(64);
-                        if (d) {
-                            var e = a.indexOf(d);
-                            -1 != e && (b = e);
-                        }
-                        for (var g = [], h = 0, i = 0; b > i; i++)
-                            if (i % 4) {
-                                var j = c.indexOf(a.charAt(i - 1)) << ((i % 4) * 2),
-                                    k = c.indexOf(a.charAt(i)) >>> (6 - (i % 4) * 2);
-                                (g[h >>> 2] |= (j | k) << (24 - (h % 4) * 8)), h++;
-                            }
-                        return f.create(g, h);
-                    },
-                    _map: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
-                }),
+                    return f.create(g, h);
+                },
+                _map: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
+            }),
                 (d.BufferedBlockAlgorithm = e.extend({
                     reset: function() {
                         (this._data = new f.init()), (this._nDataBytes = 0);
@@ -182,66 +182,66 @@ var CryptoJS =
                     },
                     _minBufferSize: 0,
                 }))),
-                l = (d.Hasher = k.extend({
-                    cfg: e.extend(),
-                    init: function(a) {
-                        (this.cfg = this.cfg.extend(a)), this.reset();
-                    },
-                    reset: function() {
-                        k.reset.call(this), this._doReset();
-                    },
-                    update: function(a) {
-                        return this._append(a), this._process(), this;
-                    },
-                    finalize: function(a) {
-                        a && this._append(a);
-                        var b = this._doFinalize();
-                        return b;
-                    },
-                    blockSize: 16,
-                    _createHelper: function(a) {
-                        return function(b, c) {
-                            return new a.init(c).finalize(b);
-                        };
-                    },
-                    _createHmacHelper: function(a) {
-                        return function(b, c) {
-                            return new m.HMAC.init(a, c).finalize(b);
-                        };
-                    },
-                })),
-                m = (c.algo = {}),
-                n = [],
-                o = (m.SHA1 = l.extend({
-                    _doReset: function() {
-                        this._hash = new f.init([1732584193, 4023233417, 2562383102, 271733878, 3285377520]);
-                    },
-                    _doProcessBlock: function(a, b) {
-                        for (var c = this._hash.words, d = c[0], e = c[1], f = c[2], g = c[3], h = c[4], i = 0; 80 > i; i++) {
-                            if (16 > i) n[i] = 0 | a[b + i];
-                            else {
-                                var j = n[i - 3] ^ n[i - 8] ^ n[i - 14] ^ n[i - 16];
-                                n[i] = (j << 1) | (j >>> 31);
-                            }
-                            var k = ((d << 5) | (d >>> 27)) + h + n[i];
-                            (k += 20 > i ? ((e & f) | (~e & g)) + 1518500249 : 40 > i ? (e ^ f ^ g) + 1859775393 : 60 > i ? ((e & f) | (e & g) | (f & g)) - 1894007588 : (e ^ f ^ g) - 899497514), (h = g), (g = f), (f = (e << 30) | (e >>> 2)), (e = d), (d = k);
+            l = (d.Hasher = k.extend({
+                cfg: e.extend(),
+                init: function(a) {
+                    (this.cfg = this.cfg.extend(a)), this.reset();
+                },
+                reset: function() {
+                    k.reset.call(this), this._doReset();
+                },
+                update: function(a) {
+                    return this._append(a), this._process(), this;
+                },
+                finalize: function(a) {
+                    a && this._append(a);
+                    var b = this._doFinalize();
+                    return b;
+                },
+                blockSize: 16,
+                _createHelper: function(a) {
+                    return function(b, c) {
+                        return new a.init(c).finalize(b);
+                    };
+                },
+                _createHmacHelper: function(a) {
+                    return function(b, c) {
+                        return new m.HMAC.init(a, c).finalize(b);
+                    };
+                },
+            })),
+            m = (c.algo = {}),
+            n = [],
+            o = (m.SHA1 = l.extend({
+                _doReset: function() {
+                    this._hash = new f.init([1732584193, 4023233417, 2562383102, 271733878, 3285377520]);
+                },
+                _doProcessBlock: function(a, b) {
+                    for (var c = this._hash.words, d = c[0], e = c[1], f = c[2], g = c[3], h = c[4], i = 0; 80 > i; i++) {
+                        if (16 > i) n[i] = 0 | a[b + i];
+                        else {
+                            var j = n[i - 3] ^ n[i - 8] ^ n[i - 14] ^ n[i - 16];
+                            n[i] = (j << 1) | (j >>> 31);
                         }
-                        (c[0] = (c[0] + d) | 0), (c[1] = (c[1] + e) | 0), (c[2] = (c[2] + f) | 0), (c[3] = (c[3] + g) | 0), (c[4] = (c[4] + h) | 0);
-                    },
-                    _doFinalize: function() {
-                        var b = this._data,
-                            c = b.words,
-                            d = 8 * this._nDataBytes,
-                            e = 8 * b.sigBytes;
-                        return (c[e >>> 5] |= 128 << (24 - e % 32)), (c[(((e + 64) >>> 9) << 4) + 14] = a.floor(d / 4294967296)), (c[(((e + 64) >>> 9) << 4) + 15] = d), (b.sigBytes = 4 * c.length), this._process(), this._hash;
-                    },
-                    clone: function() {
-                        var a = l.clone.call(this);
-                        return (a._hash = this._hash.clone()), a;
-                    },
-                }));
-            return (c.SHA1 = l._createHelper(o)), (c.HmacSHA1 = l._createHmacHelper(o)), c;
-        })(Math),
+                        var k = ((d << 5) | (d >>> 27)) + h + n[i];
+                        (k += 20 > i ? ((e & f) | (~e & g)) + 1518500249 : 40 > i ? (e ^ f ^ g) + 1859775393 : 60 > i ? ((e & f) | (e & g) | (f & g)) - 1894007588 : (e ^ f ^ g) - 899497514), (h = g), (g = f), (f = (e << 30) | (e >>> 2)), (e = d), (d = k);
+                    }
+                    (c[0] = (c[0] + d) | 0), (c[1] = (c[1] + e) | 0), (c[2] = (c[2] + f) | 0), (c[3] = (c[3] + g) | 0), (c[4] = (c[4] + h) | 0);
+                },
+                _doFinalize: function() {
+                    var b = this._data,
+                        c = b.words,
+                        d = 8 * this._nDataBytes,
+                        e = 8 * b.sigBytes;
+                    return (c[e >>> 5] |= 128 << (24 - e % 32)), (c[(((e + 64) >>> 9) << 4) + 14] = a.floor(d / 4294967296)), (c[(((e + 64) >>> 9) << 4) + 15] = d), (b.sigBytes = 4 * c.length), this._process(), this._hash;
+                },
+                clone: function() {
+                    var a = l.clone.call(this);
+                    return (a._hash = this._hash.clone()), a;
+                },
+            }));
+        return (c.SHA1 = l._createHelper(o)), (c.HmacSHA1 = l._createHmacHelper(o)), c;
+    })(Math),
     CryptoJS =
         CryptoJS ||
         (function(a, b) {
@@ -255,12 +255,12 @@ var CryptoJS =
                         return (
                             a && b.mixIn(a),
                             b.hasOwnProperty('init') ||
-                                (b.init = function() {
-                                    b.$super.init.apply(this, arguments);
-                                }),
-                            (b.init.prototype = b),
-                            (b.$super = this),
-                            b
+                            (b.init = function() {
+                                b.$super.init.apply(this, arguments);
+                            }),
+                                (b.init.prototype = b),
+                                (b.$super = this),
+                                b
                         );
                     },
                     create: function() {
@@ -518,16 +518,16 @@ var CryptoJS =
             waived: { id: 'https://w3id.org/xapi/adl/verbs/waived', display: { 'en-US': 'waived' } },
         };
     })((window.ADL = window.ADL || {})),
-    Date.prototype.toISOString ||
-        !(function() {
-            function a(a) {
-                var b = String(a);
-                return 1 === b.length && (b = '0' + b), b;
-            }
-            Date.prototype.toISOString = function() {
-                return this.getUTCFullYear() + '-' + a(this.getUTCMonth() + 1) + '-' + a(this.getUTCDate()) + 'T' + a(this.getUTCHours()) + ':' + a(this.getUTCMinutes()) + ':' + a(this.getUTCSeconds()) + '.' + String((this.getUTCMilliseconds() / 1e3).toFixed(3)).slice(2, 5) + 'Z';
-            };
-        })(),
+Date.prototype.toISOString ||
+!(function() {
+    function a(a) {
+        var b = String(a);
+        return 1 === b.length && (b = '0' + b), b;
+    }
+    Date.prototype.toISOString = function() {
+        return this.getUTCFullYear() + '-' + a(this.getUTCMonth() + 1) + '-' + a(this.getUTCDate()) + 'T' + a(this.getUTCHours()) + ':' + a(this.getUTCMinutes()) + ':' + a(this.getUTCSeconds()) + '.' + String((this.getUTCMilliseconds() / 1e3).toFixed(3)).slice(2, 5) + 'Z';
+    };
+})(),
     (function(a) {
         function b() {
             try {
@@ -586,9 +586,9 @@ var CryptoJS =
         c.debug = !1;
         var i = (function() {
             var a = {};
-                a.endpoint = 'https://lrs.arttproject.org:443/ilpe/xapi/';
+            a.endpoint = 'https://lrs.arttproject.org:443/test/xapi/';
             try {
-                a.auth = 'Basic ' + toBase64('ebnika:fozavc');
+                a.auth = 'Basic ' + toBase64('bosoka:luwger');
             } catch (b) {
                 c('Exception in Config trying to encode auth: ' + b);
             }
@@ -603,42 +603,42 @@ var CryptoJS =
                 a.auth = 'Basic ' + toBase64(b + ':' + c);
             }
             (this.lrs = e(c || {})),
-                this.lrs.user && this.lrs.password && h(this.lrs, this.lrs.user, this.lrs.password),
+            this.lrs.user && this.lrs.password && h(this.lrs, this.lrs.user, this.lrs.password),
                 (this.base = g(this.lrs.endpoint)),
                 (this.withCredentials = !1),
                 (this.withCredentials = c && c.withCredentials),
                 (this.strictCallbacks = !1),
                 (this.strictCallbacks = c && c.strictCallbacks),
-                f &&
-                    b.call(this) &&
-                    window.ADL.XHR_request(
-                        this.lrs,
-                        this.lrs.endpoint + 'about',
-                        'GET',
-                        null,
-                        null,
-                        function(b) {
-                            if (200 == b.status)
-                                try {
-                                    var c = JSON.parse(b.response),
-                                        d = !1;
-                                    for (var e in c.version)
-                                        if (c.version[e] == a.XAPIWrapper.xapiVersion) {
-                                            d = !0;
-                                            break;
-                                        }
-                                    d || a.XAPIWrapper.log('The lrs version [' + c.version + "] does not match this wrapper's XAPI version [" + a.XAPIWrapper.xapiVersion + ']');
-                                } catch (f) {
-                                    a.XAPIWrapper.log('The response was not an about object');
+            f &&
+            b.call(this) &&
+            window.ADL.XHR_request(
+                this.lrs,
+                this.lrs.endpoint + 'about',
+                'GET',
+                null,
+                null,
+                function(b) {
+                    if (200 == b.status)
+                        try {
+                            var c = JSON.parse(b.response),
+                                d = !1;
+                            for (var e in c.version)
+                                if (c.version[e] == a.XAPIWrapper.xapiVersion) {
+                                    d = !0;
+                                    break;
                                 }
-                            else a.XAPIWrapper.log('The request to get information about the LRS failed: ' + b);
-                        },
-                        null,
-                        !1,
-                        null,
-                        this.withCredentials,
-                        !1
-                    ),
+                            d || a.XAPIWrapper.log('The lrs version [' + c.version + "] does not match this wrapper's XAPI version [" + a.XAPIWrapper.xapiVersion + ']');
+                        } catch (f) {
+                            a.XAPIWrapper.log('The response was not an about object');
+                        }
+                    else a.XAPIWrapper.log('The request to get information about the LRS failed: ' + b);
+                },
+                null,
+                !1,
+                null,
+                this.withCredentials,
+                !1
+            ),
                 (this.searchParams = function() {
                     var a = { format: 'exact' };
                     return a;
@@ -663,10 +663,10 @@ var CryptoJS =
             (XAPIWrapper.prototype.xapiVersion = '1.0.1'),
             (XAPIWrapper.prototype.prepareStatement = function(a) {
                 void 0 === a.actor ? (a.actor = JSON.parse(this.lrs.actor)) : 'string' == typeof a.actor && (a.actor = JSON.parse(a.actor)),
-                    (this.lrs.grouping || this.lrs.registration || this.lrs.activity_platform) && (a.context || (a.context = {})),
-                    this.lrs.grouping && (a.context.contextActivities || (a.context.contextActivities = {}), (a.context.contextActivities.grouping = [{ id: this.lrs.grouping }])),
-                    this.lrs.registration && (a.context.registration = this.lrs.registration),
-                    this.lrs.activity_platform && (a.context.platform = this.lrs.activity_platform);
+                (this.lrs.grouping || this.lrs.registration || this.lrs.activity_platform) && (a.context || (a.context = {})),
+                this.lrs.grouping && (a.context.contextActivities || (a.context.contextActivities = {}), (a.context.contextActivities.grouping = [{ id: this.lrs.grouping }])),
+                this.lrs.registration && (a.context.registration = this.lrs.registration),
+                this.lrs.activity_platform && (a.context.platform = this.lrs.activity_platform);
             }),
             (XAPIWrapper.prototype.testConfig = b),
             (XAPIWrapper.prototype.log = c),
@@ -932,10 +932,10 @@ var CryptoJS =
                     ((p.onreadystatechange = function() {
                         return 4 === p.readyState ? o() : void 0;
                     }),
-                    (p.onload = o),
-                    (p.onerror = o),
-                    p.send(w ? q.data : e),
-                    !i)
+                        (p.onload = o),
+                        (p.onerror = o),
+                        p.send(w ? q.data : e),
+                        !i)
                 ) {
                     if (w) for (t = 1e3 + new Date(); new Date() < t && 4 !== p.readyState && !u; ) g();
                     return o();
@@ -973,10 +973,10 @@ var CryptoJS =
                 c ? (c instanceof f ? (this.verb = c) : (this.verb = new f(c))) : (this.verb = null),
                 j
                     ? 'Activity' !== j.objectType && j.objectType
-                      ? 'Agent' === j.objectType
+                    ? 'Agent' === j.objectType
                         ? j instanceof d ? (this.object = j) : (this.object = new d(j))
                         : 'Group' === j.objectType ? (j instanceof e ? (this.object = j) : (this.object = new e(j))) : 'StatementRef' === j.objectType ? (j instanceof h ? (this.object = j) : (this.object = new h(j))) : 'SubStatement' === j.objectType ? (j instanceof i ? (this.object = j) : (this.object = new i(j))) : (this.object = null)
-                      : j instanceof g ? (this.object = j) : (this.object = new g(j))
+                    : j instanceof g ? (this.object = j) : (this.object = new g(j))
                     : (this.object = null),
                 (this.generateId = function() {
                     this.id = a.ruuid();
