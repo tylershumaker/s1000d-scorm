@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dmodule [
+        <!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN">
+        <!NOTATION GIF89a PUBLIC "-//CompuServe//NOTATION Graphics Interchange Format 89a//EN">
+        <!ENTITY % ISOEntities PUBLIC "ISO 8879-1986//ENTITIES ISO Character Entities 20030531//EN//XML" "http://www.s1000d.org/S1000D_4-2/ent/ISOEntities">
+        <!ENTITY ICN-1G6E8-ILPE000036-001-01 SYSTEM "ICN-1G6E8-ILPE000036-001-01.PNG" NDATA png>
+        ]>
+<dmodule xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://www.purl.org/dc/elements/1.1/"
+         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-2/xml_schema_flat/ipd.xsd">
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10" subSystemCode="2"
+                        subSubSystemCode="1" assyCode="0006" disassyCode="09" disassyCodeVariant="0" infoCode="941"
+                        infoCodeVariant="A" itemLocationCode="D"/>
+                <language languageIsoCode="en" countryIsoCode="US"/>
+                <issueInfo issueNumber="000" inWork="01"/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="2019" month="12" day="01"/>
+                <dmTitle>
+                    <techName>Converter (CNV-365B)</techName>
+                    <infoName>Illustrated parts data</infoName>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus issueType="new">
+            <security securityClassification="01" caveat="cv51"/>
+            <dataRestrictions>
+                <restrictionInstructions>
+                    <dataDistribution>DISTRIBUTION STATEMENT D: DISTRIBUTION AUTHORIZED TO DOD AND DOD CONTRACTORS ONLY.
+                        CRITICAL TECHNOLOGY, JULY 2012. OTHER REQUESTS SHALL BE REFERRED TO NAVSEA 07L. NO SECONDARY
+                        DISTRIBUTION AUTHORIZED WITHOUT WRITTEN APPROVAL OF THE APPLICABLE NAVSEA PROGRAM MANAGEMENT
+                        OFFICE.
+                    </dataDistribution>
+                    <exportControl>
+                        <exportRegistrationStmt>
+                            <simplePara>WARNING: THIS DOCUMENT CONTAINS TECHNICAL DATA WHOSE EXPORT IS RESTRICTED BY THE
+                                ARMS EXPORT CONTROL ACT (TITLE 22, U.S.C., SEC. 2751, ET SEQ.) OR THE EXPORT
+                                ADMINISTRATION ACT OF 1979, AS AMENDED, TITLE 50, U.S.C. APP. 2401 ET. SEQ. VIOLATIONS
+                                OF THESE EXPORT LAWS ARE SUBJECT TO SEVERE CRIMINAL PENALTIES. DISSEMINATE IN ACCORDANCE
+                                WITH PROVISIONS OF OPNAVINST 5510.161.
+                            </simplePara>
+                        </exportRegistrationStmt>
+                    </exportControl>
+                    <dataDestruction>DESTRUCTION NOTICE: DESTROY BY ANY METHOD THAT WILL PREVENT DISCLOSURE OF CONTENTS
+                        OR RECONSTRUCTION OF THE DOCUMENT.
+                    </dataDestruction>
+                </restrictionInstructions>
+            </dataRestrictions>
+            <responsiblePartnerCompany enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </responsiblePartnerCompany>
+            <originator enterpriseCode="53711">
+                <enterpriseName>Naval Sea Systems Command</enterpriseName>
+            </originator>
+            <applic>
+                <displayText>
+                    <simplePara>All</simplePara>
+                </displayText>
+            </applic>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1"
+                                subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A"
+                                infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+                    </dmRefIdent>
+                    <dmRefAddressItems>
+                        <dmTitle>
+                            <techName>S1000D</techName>
+                            <infoName>Default business rules exchange data module</infoName>
+                        </dmTitle>
+                    </dmRefAddressItems>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance>
+                <unverified/>
+            </qualityAssurance>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <illustratedPartsCatalog>
+            <figure id="fig7-9A">
+                <title></title>
+                <graphic infoEntityIdent="ICN-1G6E8-ILPE000036-001-01"/>
+            </figure>
+            <catalogSeqNumber item="001" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>RF</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="NV822178-1" manufacturerCodeValue="73030"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Converter Enclosure</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                    <partLocationSegment>
+                        <referTo refType="rft01">
+                            <refs>
+                                <dmRef>
+                                    <dmRefIdent>
+                                        <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="10"
+                                                subSystemCode="2" subSubSystemCode="1" assyCode="0006" disassyCode="03"
+                                                disassyCodeVariant="0" infoCode="941" infoCodeVariant="A"
+                                                itemLocationCode="D"/>
+                                    </dmRefIdent>
+                                    <dmRefAddressItems>
+                                        <dmTitle>
+                                            <techName>Gas Processing Unit (GPU-700)</techName>
+                                            <infoName>Illustrated parts diagram</infoName>
+                                        </dmTitle>
+                                    </dmRefAddressItems>
+                                </dmRef>
+                            </refs>
+                        </referTo>
+                    </partLocationSegment>
+                    <genericPartDataGroup>
+                        <genericPartData genericPartDataName="NOTE">
+                            <genericPartDataValue>Refer to table 7-6 for alternate number</genericPartDataValue>
+                        </genericPartData>
+                    </genericPartDataGroup>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="002" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>1</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="CP032-401" manufacturerCodeValue="39428"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Eye Bolt</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="003" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>1</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="MS51831-106L" manufacturerCodeValue="96906"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Insert</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="004" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>14</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="MS21046C14" manufacturerCodeValue="96906"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Nut, Self-Locking</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                    <genericPartDataGroup>
+                        <genericPartData genericPartDataName="NOTE">
+                            <genericPartDataValue>Refer to table 7-6 for alternate number</genericPartDataValue>
+                        </genericPartData>
+                    </genericPartDataGroup>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="005" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>1</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="SV779387-1" manufacturerCodeValue="73030"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Cover and Inserts</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                    <genericPartDataGroup>
+                        <genericPartData genericPartDataName="NOTE">
+                            <genericPartDataValue>Refer to table 7-6 for alternate number</genericPartDataValue>
+                        </genericPartData>
+                    </genericPartDataGroup>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="006" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>AR</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="SV783958-1" manufacturerCodeValue="73030"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Shim, Solid</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="007" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>1</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="NV822189-1" manufacturerCodeValue="73030"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Cartridge Upper, Converter</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                    <genericPartDataGroup>
+                        <genericPartData genericPartDataName="NOTE">
+                            <genericPartDataValue>Refer to table 7-6 for alternate number</genericPartDataValue>
+                        </genericPartData>
+                    </genericPartDataGroup>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="008" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>1</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="NV822189-2" manufacturerCodeValue="73030"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Cartridge Lower, Converter</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                    <genericPartDataGroup>
+                        <genericPartData genericPartDataName="NOTE">
+                            <genericPartDataValue>Refer to table 7-6 for alternate number</genericPartDataValue>
+                        </genericPartData>
+                    </genericPartDataGroup>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="009" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>14</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="MS16624-4087" manufacturerCodeValue="96906"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Retainer, Ring</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="010" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>1</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="SV779320-2" manufacturerCodeValue="58156"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Gasket, Compression</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                    <genericPartDataGroup>
+                        <genericPartData genericPartDataName="NOTE">
+                            <genericPartDataValue>Refer to table 7-6 for alternate number</genericPartDataValue>
+                        </genericPartData>
+                    </genericPartDataGroup>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="011" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>14</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="SV779438-1" manufacturerCodeValue="73030"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Bolt, Mounting</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                    <genericPartDataGroup>
+                        <genericPartData genericPartDataName="NOTE">
+                            <genericPartDataValue>Refer to table 7-6 for alternate number</genericPartDataValue>
+                        </genericPartData>
+                    </genericPartDataGroup>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="012" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>1</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="SV822178-100" manufacturerCodeValue="73030"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Housing and Inserts, Converter</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+            <catalogSeqNumber item="013" figureNumber="09" systemCode="10" subSystemCode="2" subSubSystemCode="1"
+                              assyCode="0006" indenture="1">
+                <itemSeqNumber itemSeqNumberValue="00A">
+                    <quantityPerNextHigherAssy>7</quantityPerNextHigherAssy>
+                    <partRef partNumberValue="NV1013235-1" manufacturerCodeValue="73030"/>
+                    <partSegment>
+                        <itemIdentData>
+                            <descrForPart>Seal, C-Ring</descrForPart>
+                        </itemIdentData>
+                    </partSegment>
+                </itemSeqNumber>
+            </catalogSeqNumber>
+        </illustratedPartsCatalog>
+    </content>
+</dmodule>

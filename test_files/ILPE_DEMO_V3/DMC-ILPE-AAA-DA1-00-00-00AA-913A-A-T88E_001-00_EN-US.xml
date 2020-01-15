@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dmodule []>
+<dmodule xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-0/xml_schema_flat/learning.xsd">
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="ILPE" systemDiffCode="AAA" systemCode="DA1" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="913" infoCodeVariant="A" itemLocationCode="A" learnCode="T88" learnEventCode="E" />
+        <language countryIsoCode="US" languageIsoCode="en" />
+        <issueInfo issueNumber="001" inWork="00" />
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2019" month="12" day="01" />
+        <dmTitle>
+          <techName>Integrated Low Pressure Electrolyzer (ILPE)</techName>
+          <infoName>Converter catalyst maintenance procedure: Post-test</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"></security>
+      <responsiblePartnerCompany enterpriseCode="0W151"></responsiblePartnerCompany>
+      <originator></originator>
+      <applic>
+        <displayText></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="S1000D" systemDiffCode="F" systemCode="04" subSystemCode="1" subSubSystemCode="0" assyCode="0301" disassyCode="00" disassyCodeVariant="A" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+          </dmRefIdent>
+          <dmRefAddressItems>
+            <dmTitle>
+              <techName>S1000D</techName>
+              <infoName>Default business rules exchange data module</infoName>
+            </dmTitle>
+          </dmRefAddressItems>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified></unverified>
+      </qualityAssurance>
+      <systemBreakdownCode>DA100</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningAssessment>
+        <title>Converter catalyst maintenance procedure - Assessment</title>
+        <lcInteraction>
+          <lcSingleSelect>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>What is the correct pattern for torquing the ILPE converter's cover bolts?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Clockwise</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Counterclockwise</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>90-degree cross-pattern</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>45-degree cross-pattern </para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction id="ia-002">
+          <lcSingleSelect>
+            <title></title>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>What percentage of final torque should be applied during the first pass of tightening the ILPE converter's cover bolts?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>20%</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>50%</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>75%</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>100%</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+        <lcInteraction id="ia-003">
+          <lcSingleSelect>
+            <title></title>
+            <lcQuestion>
+              <description>
+                <para>Select your answer, and then click NEXT.</para>
+                <para>Which maintenance procedure may fail due to improper seating of the ILPE converter's cover?</para>
+              </description>
+            </lcQuestion>
+            <lcAnswerOptionGroup>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>ASU/RCU Drop Test</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>HP Phase Separator Drop Test</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>Purge Gas Tank Drop Test</para>
+                  </description>
+                </lcAnswerOptionContent>
+              </lcAnswerOption>
+              <lcAnswerOption>
+                <lcAnswerOptionContent>
+                  <description>
+                    <para>BMP Drop Test</para>
+                  </description>
+                </lcAnswerOptionContent>
+                <lcCorrectResponse lcName="lcCorrectResponse"></lcCorrectResponse>
+              </lcAnswerOption>
+            </lcAnswerOptionGroup>
+          </lcSingleSelect>
+        </lcInteraction>
+      </learningAssessment>
+    </learning>
+  </content>
+</dmodule>

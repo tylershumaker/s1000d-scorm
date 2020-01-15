@@ -207,6 +207,7 @@ function getDMStatement(verb) {
             id: "urn:s1000d:"+current_dmc,
             definition: {
                 type: "https://w3id.org/xapi/artt/activity-types/s1000d/data-module",
+                name:{"en-US":current_dmc}
             }
         },
         context: {
