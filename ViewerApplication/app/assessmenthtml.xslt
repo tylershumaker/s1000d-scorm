@@ -118,8 +118,7 @@
 		    </xsl:variable>
 		    <xsl:variable name="correct">
 		    	<xsl:if test="lcCorrectResponse">
-		    		<!-- <xsl:value-of select="$id"/> -->
-                    <xsl:value-of select="//@lcValue"/>
+					<xsl:text>1</xsl:text>
 		    	</xsl:if>
 		    </xsl:variable>
 		    <xsl:choose>

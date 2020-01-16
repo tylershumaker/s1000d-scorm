@@ -608,7 +608,8 @@ function getStepStatement(id, verb) {
         object: {
             id: "urn:s1000d:" + current_dmc,
             definition: {
-                type: "https://w3id.org/xapi/artt/activity-types/s1000d/step"
+                type: "https://w3id.org/xapi/artt/activity-types/s1000d/step",
+                name:{"en-US":"Step " + id}
             }
         },
         context: {

@@ -184,22 +184,6 @@ public class ControllerTest
                     System.getProperty("user.dir") + File.separator + "examples" + File.separator + "bike_resource_package",
                     "-SCORM12"};
 
-        String[]  SCORM_ILPE = {System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "scpm_ilpe" + File.separator + "SMC-ILPE-06RT9-00001-00.xml",
-                System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "resource_package_ilpe",
-                "-SCORM12"};
-
-        String[]  SCORM_ILPE_2004 = {System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "ilpe_SCPM_2" + File.separator + "SMC-ILPE-06RT9-00001-00.xml",
-            System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "ilpe_resource_slim_2",
-            "-scormhtml"};
-
-        String[]  SCORM_ILPE_2004_Full = {System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "ILPE_SCPM_Full" + File.separator + "SMC-ILPE-06RT9-00001-00.xml",
-                System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "ILPE_resource_package_Full",
-                "-scormhtml"};
-
-        String[]  SCORM_ILPE_2004_Full_v2 = {System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "ILPE_SCPM_Full" + File.separator + "SMC-ILPE-06RT9-00001-00.xml",
-                System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "ILPE_resource_package_Full_v2",
-                "-scormhtml"};
-
         String[]  SCORM12_slim = {System.getProperty("user.dir")  + File.separator + "test_files" + File.separator + "scpm_slim" + File.separator + "SMC-S1000DBIKE-06RT9-00001-00.xml",
                 System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "resource_package_slim",
                 "-SCORM12"};
@@ -212,11 +196,6 @@ public class ControllerTest
                 System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "resource_package_slim",
                 "-SCORM12"};
 
-        //Controller.main(SCORM40HTMLWOUT);
-        //Controller.main(SCORM12_slim);
-        //Controller.main(SCORM12_slim_Zip_Resource);
-        //Controller.main(SCORM_ILPE_2004);
-        //Controller.main(SCORM_ILPE_2004_Full);
-        Controller.main(SCORM_ILPE_2004_Full_v2);
+        Controller.main(SCORM40HTMLWOUT);
     }
 }

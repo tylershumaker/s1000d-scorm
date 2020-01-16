@@ -91,10 +91,10 @@
 			</head>
 			<body bgcolor="#FFFFFF" class="bodyText" onload="initializeXAPI()">
 				<div id="dmc" style="visibility: hidden; height: 0px;">
-					<xsl:value-of select="$this_dmc"/>
+					<xsl:value-of select="concat('DMC-', $this_dmc)"/>
 				</div>
 				<div id="meta-dmc" style="visibility: hidden; height: 0px;">
-					<xsl:value-of select="concat($this_dmc, '_', $issueNumber, '-', $inWork,'_', $languageIsoCode, '-', $countryIsoCode)"/>
+					<xsl:value-of select="concat('DMC-', $this_dmc, '_', $issueNumber, '-', $inWork,'_', $languageIsoCode, '-', $countryIsoCode)"/>
 				</div>
 				<xsl:apply-templates/>
 			</body>

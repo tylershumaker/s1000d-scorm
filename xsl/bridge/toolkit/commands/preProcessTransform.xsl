@@ -66,6 +66,10 @@
                                 select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle"/>
                     </xsl:element>
 
+                    <xsl:variable name="scoCount">
+                        <xsl:value-of select="count(scormContentPackage/content/scoEntry[@scoEntryType='scot01'])" />
+                    </xsl:variable>
+
                     <!--Add organization tree items (SCOs) -->
                     <!--Business rule: scoEntryType attribute value 'scot01' reserved for
                         sco type assets -->
@@ -189,9 +193,9 @@
                             <xsl:element name="adlcp:dataFromLMS">
                                <xsl:text> {
                                   "lrs":{
-                                  "endpoint":"https://lrs.arttproject.org/test/xapi/",
-                                  "user":"bosoka",
-                                  "password":"luwger"
+                                  "endpoint":"https://lrs.arttproject.org/ilpe/xapi/",
+                                  "user":"ebnika",
+                                  "password":"fozavc"
                                    },
                                   "courseId":"http://lms.arttproject.org/courses/</xsl:text><xsl:value-of
                                     select="normalize-space(translate(../../../scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle, ' ', ''))"/><xsl:text>",
@@ -231,7 +235,7 @@
                                 </xsl:element>
                             </xsl:element>
                             <!-- 7/16/2019 -->
-                            <xsl:if test="not(contains($learncode, 'T28'))">
+                            <xsl:if test="not(contains($learncode, 'T28')) and $scoCount > 1">
                                 <xsl:element name="imsss:sequencing" namespace="http://www.imsglobal.org/xsd/imsss">
                                     <xsl:element name="imsss:rollupRules"
                                                  namespace="http://www.imsglobal.org/xsd/imsss">
