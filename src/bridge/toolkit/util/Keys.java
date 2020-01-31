@@ -68,5 +68,15 @@ public class Keys
     /**
      * String that represents Min passing score
      */
-    public static final String MIN_SCORE = "80"; 
+    public static final String MIN_SCORE = "80";
+
+    /**
+     * String that represents XAPI Endpoint URL
+     */
+    public static final Object XAPI_ENDPOINT = "endpoint";
+
+    /**
+     * String that represents XAPI User and Password
+     */
+    public static final Object XAPI_AUTH = "user";
 }

@@ -10,6 +10,7 @@
     <libelement value="jar://$MODULE_DIR$/lib/core-renderer.jar!/" />
     <libelement value="jar://$MODULE_DIR$/lib/iText-5.0.6.jar!/" />
     <libelement value="jar://$MODULE_DIR$/lib/xml-apis-xerces-2.9.1.jar!/" />
+        <libelement value="jar://$MODULE_DIR$/lib/json.jar!/" />
     <libelement value="jar://$MODULE_DIR$/ListBuilder/buildlist.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
@@ -125,6 +126,15 @@
       <library name="xml-apis-xerces-2.9.1.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/xml-apis-xerces-2.9.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="json.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/json.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

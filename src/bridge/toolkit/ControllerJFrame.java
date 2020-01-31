@@ -1,6 +1,6 @@
 /**
- * This file is part of the S1000D Transformation Toolkit 
- * project hosted on Sourceforge.net. See the accompanying 
+ * This file is part of the S1000D Transformation Toolkit
+ * project hosted on Sourceforge.net. See the accompanying
  * license.txt file for applicable licenses.
  */
 package bridge.toolkit;
@@ -31,8 +31,7 @@ import bridge.toolkit.util.Keys;
 /**
  * GUI created to execute the S1000D Transformation Toolkit.
  */
-public class ControllerJFrame extends javax.swing.JFrame
-{
+public class ControllerJFrame extends javax.swing.JFrame {
     /**
      * Location of the XML configuration file that defines and configures
      * commands and command chains to be registered in a Catalog.
@@ -57,13 +56,12 @@ public class ControllerJFrame extends javax.swing.JFrame
     Catalog sampleCatalog;
 
     /** Creates new form NewJFrame */
-    public ControllerJFrame()
-    {
+    public ControllerJFrame() {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
         Date date = new Date();
 
         currentTime = dateFormat.format(date);
-        
+
         parser = new ConfigParser();
         Controller loader = new Controller();
         sampleCatalog = loader.createCatalog();
@@ -88,6 +86,10 @@ public class ControllerJFrame extends javax.swing.JFrame
         OutputDirectoryField = new javax.swing.JTextField();
         MinScoreField = new javax.swing.JTextField();
         MinScoreLabel = new javax.swing.JLabel();
+        XAPIEndpointField = new javax.swing.JTextField();
+        XAPIEndpointLabel = new javax.swing.JLabel();
+        XAPIAuthField = new javax.swing.JTextField();
+        XAPIAuthLabel = new javax.swing.JLabel();
         SCPMBrowseButton = new javax.swing.JButton();
         ResourceBrowseButton = new javax.swing.JButton();
         OutputDirectoryBrowseButton = new javax.swing.JButton();
@@ -117,9 +119,15 @@ public class ControllerJFrame extends javax.swing.JFrame
         OutputDirectoryLabel.setFont(new java.awt.Font("Arial", 1, 12));
         OutputDirectoryLabel.setText("Output Directory");
 
-        MinScoreLabel.setFont(new java.awt.Font("Arial",1,12));
+        MinScoreLabel.setFont(new java.awt.Font("Arial", 1, 12));
         MinScoreLabel.setText("Min Score (defaults to 80)  ");
-        
+
+        XAPIEndpointLabel.setFont(new java.awt.Font("Arial", 1, 12));
+        XAPIEndpointLabel.setText("xAPI Endpoint");
+
+        XAPIAuthLabel.setFont(new java.awt.Font("Arial", 1, 12));
+        XAPIAuthLabel.setText("xAPI Auth (user:password)");
+
         SCPMBrowseButton.setFont(new java.awt.Font("Arial", 1, 12));
         SCPMBrowseButton.setText("Browse..");
         SCPMBrowseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +167,7 @@ public class ControllerJFrame extends javax.swing.JFrame
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SCORM 2004 3rd Edition", "SCORM 1.2", "SCORM With levelledPara Numbering", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version" }));
+        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"SCORM 2004 3rd Edition", "SCORM 1.2", "SCORM With levelledPara Numbering", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version"}));
         SelectionDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SelectionDropDownActionPerformed(evt);
@@ -169,114 +177,123 @@ public class ControllerJFrame extends javax.swing.JFrame
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SCPMLabel)
-                            .addComponent(ResourceLabel)
-                            .addComponent(OutputDirectoryLabel)
-                            .addComponent(MinScoreLabel)
-                            .addComponent(OutputLabel))
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(SCPMField)
-                                .addComponent(ResourceField)
-                                .addComponent(OutputDirectoryField, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
-                                .addComponent(MinScoreField))
-                            .addComponent(SelectionDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RunButton)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(SCPMBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ResourceBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(OutputDirectoryBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(TitleLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)))
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(16, 16, 16)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(SCPMLabel)
+                                                        .addComponent(ResourceLabel)
+                                                        .addComponent(OutputDirectoryLabel)
+                                                        .addComponent(MinScoreLabel)
+                                                        .addComponent(XAPIEndpointLabel)
+                                                        .addComponent(XAPIAuthLabel)
+                                                        .addComponent(OutputLabel))
+                                                .addGap(4, 4, 4)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                .addComponent(SCPMField)
+                                                                .addComponent(ResourceField)
+                                                                .addComponent(OutputDirectoryField, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                                                                .addComponent(MinScoreField))
+                                                                .addComponent(XAPIEndpointField)
+                                                                .addComponent(XAPIAuthField)
+                                                        .addComponent(SelectionDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(RunButton)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                .addComponent(SCPMBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(ResourceBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(OutputDirectoryBrowseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(139, 139, 139)
+                                                .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(189, 189, 189)
+                                                .addComponent(TitleLabel))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)))
+                                .addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(TitleLabel)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SCPMField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SCPMLabel)
-                    .addComponent(SCPMBrowseButton))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ResourceLabel)
-                    .addComponent(ResourceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ResourceBrowseButton))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(OutputDirectoryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(OutputDirectoryLabel)
-                    .addComponent(OutputDirectoryBrowseButton))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MinScoreField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MinScoreLabel))
-                .addGap(18, 18, 18)                
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(OutputLabel)
-                    .addComponent(SelectionDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RunButton))
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(ImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(3, 3, 3)
+                                .addComponent(TitleLabel)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(SCPMField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(SCPMLabel)
+                                        .addComponent(SCPMBrowseButton))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ResourceLabel)
+                                        .addComponent(ResourceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ResourceBrowseButton))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(OutputDirectoryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(OutputDirectoryLabel)
+                                        .addComponent(OutputDirectoryBrowseButton))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(MinScoreField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(MinScoreLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(XAPIEndpointField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(XAPIEndpointLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(XAPIAuthField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(XAPIAuthLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(OutputLabel)
+                                        .addComponent(SelectionDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(RunButton))
+                                .addGap(29, 29, 29)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
         );
 
         pack();
     }
 
-    
-    private void SCPMBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-    	int returnVal = SCPMFileChooser.showOpenDialog(ControllerJFrame.this);
 
-        if (returnVal == JFileChooser.APPROVE_OPTION)
-        {
+    private void SCPMBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        int returnVal = SCPMFileChooser.showOpenDialog(ControllerJFrame.this);
+
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = SCPMFileChooser.getSelectedFile();
             SCPMField.setText(file.getAbsolutePath());
         }
-    }                                                
+    }
 
-    private void ResourceBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-    	ResourceFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+    private void ResourceBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        ResourceFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnVal = ResourceFileChooser.showOpenDialog(ControllerJFrame.this);
 
-        if (returnVal == JFileChooser.APPROVE_OPTION)
-        {
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = ResourceFileChooser.getSelectedFile();
             ResourceField.setText(file.getAbsolutePath());
         }
-    }                                                    
+    }
 
-    private void OutputDirectoryBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                            
-       
-    	OutputFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+    private void OutputDirectoryBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {
+
+        OutputFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnVal = OutputFileChooser.showOpenDialog(ControllerJFrame.this);
 
-        if (returnVal == JFileChooser.APPROVE_OPTION)
-        {
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = OutputFileChooser.getSelectedFile();
             OutputDirectoryField.setText(file.getAbsolutePath());
         }
-    }                                                                                              
+    }
 
 //    private void PDFStudentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
 //        outputType = "-pdfstudent";
@@ -298,12 +315,10 @@ public class ControllerJFrame extends javax.swing.JFrame
 //        outputType = "-scormhtml";
 //    }
 
-    private void SelectionDropDownActionPerformed(java.awt.event.ActionEvent evt) 
-    {                                                  
-        javax.swing.JComboBox cb = (javax.swing.JComboBox)(evt.getSource());
+    private void SelectionDropDownActionPerformed(java.awt.event.ActionEvent evt) {
+        javax.swing.JComboBox cb = (javax.swing.JComboBox) (evt.getSource());
         int val = cb.getSelectedIndex();
-        switch (val)
-        {
+        switch (val) {
 //            case 0:
 //                outputType = "-scormflash";
 //                break;
@@ -314,8 +329,8 @@ public class ControllerJFrame extends javax.swing.JFrame
                 outputType = "-SCORM12";
                 break;
             case 2:
-            	outputType = "-scormLevelledParaNum";
-            	break;
+                outputType = "-scormLevelledParaNum";
+                break;
             case 3:
                 outputType = "-mobile";
                 break;
@@ -330,70 +345,61 @@ public class ControllerJFrame extends javax.swing.JFrame
                 break;
         }
     }
-    
-    private void RunButtonActionPerformed(java.awt.event.ActionEvent evt)
-    {
+
+    private void RunButtonActionPerformed(java.awt.event.ActionEvent evt) {
 
         ctx.put(Keys.SCPM_FILE, SCPMField.getText());
         ctx.put(Keys.RESOURCE_PACKAGE, ResourceField.getText());
         ctx.put(Keys.OUTPUT_DIRECTORY, OutputDirectoryField.getText());
 
-        if(!MinScoreField.getText().isEmpty()){
-            ctx.put(Keys.MIN_SCORE,  MinScoreField.getText());
-        }
-        else{
+        if (!MinScoreField.getText().isEmpty()) {
+            ctx.put(Keys.MIN_SCORE, MinScoreField.getText());
+        } else {
             ctx.put(Keys.MIN_SCORE, "80");
         }
 
-        try
-        {
-            
-            if (outputType.equals("-scormflash"))
-            {
-            	toolkit = sampleCatalog.getCommand("SCORM");
-            	ctx.put(Keys.OUTPUT_TYPE, null);
-            }
-            else if (outputType.equals("-scormhtml"))
-            {
-            	toolkit = sampleCatalog.getCommand("SCORM");
-            	ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
-            }
-            else if (outputType.equals("-SCORM12"))
-            {
+        if (!XAPIEndpointField.getText().isEmpty()) {
+            ctx.put(Keys.XAPI_ENDPOINT, XAPIEndpointField.getText());
+        } else {
+            ctx.put(Keys.XAPI_ENDPOINT, "test.lrs.com");
+        }
+
+        if (!XAPIAuthField.getText().isEmpty()) {
+            ctx.put(Keys.XAPI_AUTH, XAPIAuthField.getText());
+        } else {
+            ctx.put(Keys.XAPI_AUTH, "user:password");
+        }
+
+        try {
+
+            if (outputType.equals("-scormflash")) {
+                toolkit = sampleCatalog.getCommand("SCORM");
+                ctx.put(Keys.OUTPUT_TYPE, null);
+            } else if (outputType.equals("-scormhtml")) {
+                toolkit = sampleCatalog.getCommand("SCORM");
+                ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
+            } else if (outputType.equals("-SCORM12")) {
                 toolkit = sampleCatalog.getCommand("SCORM");
                 ctx.put(Keys.OUTPUT_TYPE, "SCORM12");
-            }
-            else if (outputType.equals("-scormLevelledParaNum"))
-            {
-            	toolkit = sampleCatalog.getCommand("SCORM");
-            	ctx.put(Keys.OUTPUT_TYPE, "SCORMLEVELLEDPARANUM");
-            }            
-            else if(outputType.equals("-mobile"))
-            {
-            	toolkit = sampleCatalog.getCommand("Mobile"); 
-            }
-            else if(outputType.equals("-mobilecourse"))
-            {
-            	toolkit = sampleCatalog.getCommand("Mobile");
-            	ctx.put(Keys.OUTPUT_TYPE, "mobileCourse");
-            }
-            else if(outputType.equals("-pdfinstructor"))
-            {
-            	toolkit = sampleCatalog.getCommand("PDF");
-            	ctx.put(Keys.PDF_OUTPUT_OPTION,"-instructor");
-            }
-            else if(outputType.equals("-pdfstudent"))
-            {
+            } else if (outputType.equals("-scormLevelledParaNum")) {
+                toolkit = sampleCatalog.getCommand("SCORM");
+                ctx.put(Keys.OUTPUT_TYPE, "SCORMLEVELLEDPARANUM");
+            } else if (outputType.equals("-mobile")) {
+                toolkit = sampleCatalog.getCommand("Mobile");
+            } else if (outputType.equals("-mobilecourse")) {
+                toolkit = sampleCatalog.getCommand("Mobile");
+                ctx.put(Keys.OUTPUT_TYPE, "mobileCourse");
+            } else if (outputType.equals("-pdfinstructor")) {
                 toolkit = sampleCatalog.getCommand("PDF");
-                ctx.put(Keys.PDF_OUTPUT_OPTION,"-student");
+                ctx.put(Keys.PDF_OUTPUT_OPTION, "-instructor");
+            } else if (outputType.equals("-pdfstudent")) {
+                toolkit = sampleCatalog.getCommand("PDF");
+                ctx.put(Keys.PDF_OUTPUT_OPTION, "-student");
             }
-            if (toolkit != null)
-            {
-            	toolkit.execute(ctx);
+            if (toolkit != null) {
+                toolkit.execute(ctx);
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println(e.getCause().toString());
         }
@@ -402,23 +408,16 @@ public class ControllerJFrame extends javax.swing.JFrame
 
     /**
      * Creates the Catalog object based off of the configuration file.
-     * 
+     *
      * @return Catalog object that contains the set of commands to be performed.
      */
-    public Catalog createCatalog()
-    {
-        if (catalog == null)
-        {
-            try
-            {
+    public Catalog createCatalog() {
+        if (catalog == null) {
+            try {
                 parser.parse(this.getClass().getResource(CONFIG_FILE));
-            }
-            catch (MalformedURLException e)
-            {
+            } catch (MalformedURLException e) {
                 e.printStackTrace();
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -430,12 +429,9 @@ public class ControllerJFrame extends javax.swing.JFrame
      * @param args
      *            the command line arguments
      */
-    public static void main(String args[])
-    {
-        java.awt.EventQueue.invokeLater(new Runnable()
-        {
-            public void run()
-            {
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
                 new ControllerJFrame().setVisible(true);
             }
         });
@@ -447,6 +443,10 @@ public class ControllerJFrame extends javax.swing.JFrame
     private javax.swing.JTextField OutputDirectoryField;
     private javax.swing.JTextField MinScoreField;
     private javax.swing.JLabel MinScoreLabel;
+    private javax.swing.JTextField XAPIEndpointField;
+    private javax.swing.JLabel XAPIEndpointLabel;
+    private javax.swing.JTextField XAPIAuthField;
+    private javax.swing.JLabel XAPIAuthLabel;
     private javax.swing.JLabel OutputDirectoryLabel;
     private javax.swing.JLabel OutputLabel;
     private javax.swing.JButton ResourceBrowseButton;
@@ -467,31 +467,26 @@ public class ControllerJFrame extends javax.swing.JFrame
     PrintStream aPrintStream = new PrintStream(new FilteredStream(new ByteArrayOutputStream()));
     private String outputType = "-scormflash";
 
-    class FilteredStream extends FilterOutputStream
-    {
-        public FilteredStream(OutputStream aStream)
-        {
+    class FilteredStream extends FilterOutputStream {
+        public FilteredStream(OutputStream aStream) {
             super(aStream);
         }
 
-        public void write(byte b[]) throws IOException
-        {
+        public void write(byte b[]) throws IOException {
             String aString = new String(b);
             jTextArea1.append(aString);
         }
 
-        public void write(byte b[], int off, int len) throws IOException
-        {
+        public void write(byte b[], int off, int len) throws IOException {
             String aString = new String(b, off, len);
             jTextArea1.append(aString);
-            
+
             File logLocation = new File("logs");
-            if(!logLocation.exists())
-            {
+            if (!logLocation.exists()) {
                 logLocation.mkdirs();
             }
-            
-            FileWriter aWriter = new FileWriter("logs/toolkit-"+currentTime+".log", true);
+
+            FileWriter aWriter = new FileWriter("logs/toolkit-" + currentTime + ".log", true);
             aWriter.write(aString);
             aWriter.close();
         }
