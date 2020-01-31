@@ -192,11 +192,6 @@
                             </xsl:element>
                             <xsl:element name="adlcp:dataFromLMS">
                                <xsl:text> {
-                                  "lrs":{
-                                  "endpoint":"https://lrs.arttproject.org/ilpe/xapi/",
-                                  "user":"ebnika",
-                                  "password":"fozavc"
-                                   },
                                   "courseId":"http://lms.arttproject.org/courses/</xsl:text><xsl:value-of
                                     select="normalize-space(translate(../../../scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageAddressItems/scormContentPackageTitle, ' ', ''))"/><xsl:text>",
                                   "lmsHomePage":"https://lms.arttproject.org",

@@ -35,6 +35,7 @@
 			<pathelement location="${lib}/xalan.jar"/>
 			<pathelement location="${lib}/xercesImpl.jar"/>
 			<pathelement location="${lib}/xml-apis.jar"/>
+            <pathelement location="${lib}/json.jar"/>
         </classpath>
         </javac>
     	<mkdir dir="${build.dir}/bridge/toolkit/commands/mobiApp"/>
@@ -124,6 +125,7 @@
         	<zipfileset includes="**" src="${lib}/xalan.jar"/>
         	<zipfileset includes="**" src="${lib}/xercesImpl.jar"/>
         	<zipfileset includes="**" src="${lib}/xml-apis.jar"/>
+            <zipfileset includes="**" src="${lib}/json.jar"/>
         </jar>
 
     </target>

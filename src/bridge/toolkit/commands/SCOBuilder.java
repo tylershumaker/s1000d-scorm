@@ -196,7 +196,7 @@ public class SCOBuilder implements Command {
             File cpShared = new File(cpPackage + File.separator + "resources" + File.separator + "shared");
             CopyDirectory cd = new CopyDirectory();
             //check if the directory exists, if it does use it, else copy it from the jar
-            if (trainingContent.exists() ) {
+            if (trainingContent.exists()) {
                 cd.copyDirectory(trainingContent, cpTrainingContent);
             } else {
                 cd.CopyJarFiles(this.getClass(), "ViewerApplication", cpTrainingContent.getAbsolutePath());
@@ -208,7 +208,7 @@ public class SCOBuilder implements Command {
             }
 
             listViewerAppFiles(cpTrainingContent);
-        } else  {
+        } else {
             File trainingContent = new File(System.getProperty("user.dir") + File.separator + "resources" + File.separator + "2004");
             File trainingContent2 = new File(System.getProperty("user.dir") + File.separator + "ViewerApplication");
             File cpTrainingContent = new File(cpPackage + File.separator +
@@ -222,7 +222,7 @@ public class SCOBuilder implements Command {
                     "s1000d" + File.separator + "app");
             CopyDirectory cd = new CopyDirectory();
             //check if the directory exists if it does use it else copy it from the jar
-            if (trainingContent.exists() && trainingContent2.exists() ) {
+            if (trainingContent.exists() && trainingContent2.exists()) {
                 cd.copyDirectory(trainingContent, cpTrainingContent);
                 cd.copyDirectory(trainingContent2, cpTrainingContent2);
             } else {
@@ -533,7 +533,7 @@ public class SCOBuilder implements Command {
                 file.setAttribute("href",
                         "resources/scos/index" + scoCounter + ".htm");
 
-                buildHTMLFile(scoCounter);
+                buildHTMLFile(scoCounter, ctx);
                 scoCounter++;
             }
         }
@@ -546,7 +546,7 @@ public class SCOBuilder implements Command {
      * @param scoNum
      * @throws IOException
      */
-    public void buildHTMLFile(int scoNum) throws IOException {
+    public void buildHTMLFile(int scoNum, Context ctx) throws IOException {
         String num = Integer.toString(scoNum);
         Element html = new Element("html");
         Element head = new Element("head");
@@ -558,8 +558,22 @@ public class SCOBuilder implements Command {
         script.setAttributes(scriptAtts);
         script.addContent("/*        */");
 
+        String string = (String) ctx.get(Keys.XAPI_AUTH);
+        String[] parts = string.split(":");
+        String part1 = parts[0]; //user
+        String part2 = parts[1]; //password
+
+        Element xapi = new Element("script");
+        xapi.addContent("\nvar conf = { \n" +
+                "      \"endpoint\" : \"" + (String) ctx.get(Keys.XAPI_ENDPOINT) + "\",\n" +
+                "      \"user\" : \"" + part1 + "\",\n" +
+                "      \"password\" : \"" + part2 + "\",\n" +
+                "   };\n" +
+                "   ADL.XAPIWrapper.changeConfig(conf);\n");
 
         head.addContent(script);
+        head.addContent(xapi);
+
         html.addContent(head);
         Element frameset = new Element("frameset");
         List<Attribute> framesetAtts = new ArrayList<Attribute>();

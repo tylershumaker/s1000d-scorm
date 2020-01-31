@@ -196,6 +196,13 @@ public class ControllerTest
                 System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "resource_package_slim",
                 "-SCORM12"};
 
-        Controller.main(SCORM40HTMLWOUT);
+        String[]  SCORM12_slim_xapi_config = {System.getProperty("user.dir")  + File.separator + "test_files" + File.separator + "scpm_slim.zip",
+                System.getProperty("user.dir") + File.separator + "test_files" + File.separator + "resource_package_slim",
+                "-scormhtml", System.getProperty("user.dir") + File.separator + "other", "https://lrs.org/xapi/" , "user:password"};
+
+        //Controller.main(SCORM40HTMLWOUT);
+        //Controller.main(SCORM12_slim);
+        //Controller.main(SCORM12_slim_Zip_Resource);
+        Controller.main(SCORM12_slim_xapi_config);
     }
 }

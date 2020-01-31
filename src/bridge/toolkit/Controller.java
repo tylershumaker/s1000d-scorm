@@ -123,6 +123,7 @@ public class Controller {
         String tempUnzipSCPM = new String(System.getProperty("java.io.tmpdir") + "SCPM");
         String tempUnzipResource = new String(System.getProperty("java.io.tmpdir") + "Resource");
 
+
         //Check if passed a zip file or directory
         if (SCPM.endsWith(".zip")) {
 
@@ -182,6 +183,14 @@ public class Controller {
 
                 if (args.length > 3 && args[3] != null) {
                     ctx.put(Keys.OUTPUT_DIRECTORY, args[3]);
+                }
+
+                if (args.length > 5 && args[4] != null && args[5] != null) {
+                    ctx.put(Keys.XAPI_ENDPOINT, args[4]);
+                    ctx.put(Keys.XAPI_AUTH, args[5]);
+                } else {
+                    ctx.put(Keys.XAPI_ENDPOINT, "https://lrs.endpoint.com");
+                    ctx.put(Keys.XAPI_AUTH, "userName:abc123");
                 }
             }
 

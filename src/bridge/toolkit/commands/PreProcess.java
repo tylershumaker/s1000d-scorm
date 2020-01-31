@@ -32,6 +32,7 @@ import org.jdom.JDOMException;
 import org.jdom.Namespace;
 import org.jdom.output.XMLOutputter;
 import org.jdom.xpath.XPath;
+import org.json.JSONObject;
 
 import bridge.toolkit.ResourceMapException;
 import bridge.toolkit.util.DMParser;
@@ -145,6 +146,8 @@ public class PreProcess implements Command
                 doTransform((String) ctx.get(Keys.SCPM_FILE));
 
                 addResources(urn_map, (String) ctx.get(Keys.OUTPUT_TYPE), (String) ctx.get(Keys.SCPM_FILE));
+
+                addxAPI((String) ctx.get(Keys.XAPI_ENDPOINT), (String) ctx.get(Keys.XAPI_AUTH));
                 
                 processDeps(mapDependencies());
             }
@@ -213,7 +216,42 @@ public class PreProcess implements Command
         manifest = dmParser.getDoc(the_manifest);
 
     }
-    
+
+    /**
+     * Adds xapi authentication values to dataFromLMS element in each item in the imsmanifest.xml file.
+     *
+     * @param endpoint  String that represents the LRS endpoint
+     * @param auth String that represents the LRS username and password to connect to the endpoint
+     * @throws ResourceMapException
+     * @throws JDOMException
+     * @throws IOException
+     */
+    @SuppressWarnings("unchecked")
+    private static void addxAPI(String endpoint, String auth) throws ResourceMapException, JDOMException, IOException
+    {
+        String[] parts = auth.split(":");
+        String part1 = parts[0]; //user
+        String part2 = parts[1]; //password
+
+        List<Element> items = manifest.getRootElement().getChild("organizations", null).getChild("organization", null).getChildren("item", null);
+
+        Namespace adlcpNS = Namespace.getNamespace("adlcp", "http://www.adlnet.org/xsd/adlcp_v1p3");
+        for(Element ele : items) {
+            Element dataFromLMS = ele.getChild("dataFromLMS", adlcpNS);
+
+            JSONObject jsonObject = new JSONObject(dataFromLMS.getText());
+
+            jsonObject.put("lrs", new JSONObject()
+                    .put("endpoint", endpoint)
+                    .put("user", part1)
+                    .put("password",part2));
+
+            dataFromLMS.setText(jsonObject.toString());
+
+        }
+    }
+
+
     /**
      * Adds 'resource' elements to the imsmanifest.xml file for every file found
      * in the resource package that is provided.
