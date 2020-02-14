@@ -165,6 +165,9 @@ public class Controller {
                 } else if (args[2] != null && args[2].equalsIgnoreCase("-scormhtml")) {
                     toolkit = sampleCatalog.getCommand("SCORM");
                     ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
+                } else if (args[2] != null && args[2].equalsIgnoreCase("-scorm2004_4")) {
+                    toolkit = sampleCatalog.getCommand("SCORM");
+                    ctx.put(Keys.OUTPUT_TYPE, "SCORM2004_4");
                 } else if (args[2] != null && args[2].equalsIgnoreCase("-scormLevelledParaNum")) {
                     toolkit = sampleCatalog.getCommand("SCORM");
                     ctx.put(Keys.OUTPUT_TYPE, "SCORMLEVELLEDPARANUM");

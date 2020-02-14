@@ -59,11 +59,16 @@ public class PreProcess implements Command
      * JDOM Document that is used to create the urn_resource_map.xml file.
      */
     private static Document urn_map;
-    
+
     /**
-     * Location of the XSLT transform file.
+     * Location of the XSLT transform file for SCORM 2004 3RD.
      */
     private static final String TRANSFORM_FILE = "preProcessTransform.xsl";
+
+    /**
+     * Location of the XSLT transform file for SCORM 2004 4TH.
+     */
+    private static final String TRANSFORM_FILE_2004_4 = "preProcessTransform2004_4.xsl";
 
     /**
      * Location of the XSLT transform file for SCORM 1.2.
@@ -137,13 +142,18 @@ public class PreProcess implements Command
             if (ctx.get(Keys.OUTPUT_TYPE) == "SCORM12") {
                 transform = this.getClass().getResourceAsStream(TRANSFORM_FILE_SCORM12);
             }
-            else {
+//            else if (ctx.get(Keys.OUTPUT_TYPE) == "SCORM2004_4"){
+//                transform = this.getClass().getResourceAsStream(TRANSFORM_FILE_2004_4);
+//
+//
+//                //Default to 2004 V3
+             else {
                 transform = this.getClass().getResourceAsStream(TRANSFORM_FILE);
             }
 
             try
             {
-                doTransform((String) ctx.get(Keys.SCPM_FILE));
+                doTransform((String) ctx.get(Keys.SCPM_FILE), ctx);
 
                 addResources(urn_map, (String) ctx.get(Keys.OUTPUT_TYPE), (String) ctx.get(Keys.SCPM_FILE));
 
@@ -203,11 +213,20 @@ public class PreProcess implements Command
      * @throws JDOMException
      * @throws TransformerException
      */
-    private static void doTransform(String scpm_source) throws IOException, JDOMException, TransformerException
+    private static void doTransform(String scpm_source, Context ctx) throws IOException, JDOMException, TransformerException
     {
         TransformerFactory tFactory = TransformerFactory.newInstance();
 
         Transformer transformer = tFactory.newTransformer(new StreamSource(transform));
+
+        if (ctx.get(Keys.OUTPUT_TYPE) == "SCORM2004_4") {
+            transformer.setParameter("scorm_version", "2004 4th Edition");
+
+            //Default to 2004 V3
+        }else {
+            transformer.setParameter("scorm_version", "2004 3rd Edition");
+            }
+
 
         File the_manifest = File.createTempFile("imsmanifest", ".xml");
 

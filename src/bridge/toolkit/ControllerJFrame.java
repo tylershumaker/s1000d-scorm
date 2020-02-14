@@ -55,7 +55,9 @@ public class ControllerJFrame extends javax.swing.JFrame {
     String currentTime;
     Catalog sampleCatalog;
 
-    /** Creates new form NewJFrame */
+    /**
+     * Creates new form NewJFrame
+     */
     public ControllerJFrame() {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
         Date date = new Date();
@@ -167,7 +169,7 @@ public class ControllerJFrame extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"SCORM 2004 3rd Edition", "SCORM 1.2", "SCORM With levelledPara Numbering", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version"}));
+        SelectionDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"SCORM 2004 4th Edition","SCORM 2004 3rd Edition", "SCORM 1.2", "SCORM With levelledPara Numbering", "Mobile Web App", "Mobile Web App With Assessments", "PDF Instructor Version", "PDF Student Version"}));
         SelectionDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SelectionDropDownActionPerformed(evt);
@@ -197,8 +199,8 @@ public class ControllerJFrame extends javax.swing.JFrame {
                                                                 .addComponent(ResourceField)
                                                                 .addComponent(OutputDirectoryField, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
                                                                 .addComponent(MinScoreField))
-                                                                .addComponent(XAPIEndpointField)
-                                                                .addComponent(XAPIAuthField)
+                                                        .addComponent(XAPIEndpointField)
+                                                        .addComponent(XAPIAuthField)
                                                         .addComponent(SelectionDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,52 +297,33 @@ public class ControllerJFrame extends javax.swing.JFrame {
         }
     }
 
-//    private void PDFStudentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-//        outputType = "-pdfstudent";
-//    }                                                     
-//
-//    private void MobileRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-//        outputType = "-mobile";
-//    }                                                 
-//
-//    private void ScormFlashRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-//        outputType = "-scormflash";
-//    }                                                
-//
-//    private void PDFInstructorRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-//        outputType = "-pdfinstructor";
-//    }                                                        
-//
-//    private void ScormHTMLRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
-//        outputType = "-scormhtml";
-//    }
-
     private void SelectionDropDownActionPerformed(java.awt.event.ActionEvent evt) {
         javax.swing.JComboBox cb = (javax.swing.JComboBox) (evt.getSource());
         int val = cb.getSelectedIndex();
+
         switch (val) {
-//            case 0:
-//                outputType = "-scormflash";
-//                break;
             case 0:
-                outputType = "-scormhtml";
+                outputType = "-scorm2004_4";
                 break;
             case 1:
-                outputType = "-SCORM12";
+                outputType = "-scormhtml";
                 break;
             case 2:
-                outputType = "-scormLevelledParaNum";
+                outputType = "-scorm12";
                 break;
             case 3:
-                outputType = "-mobile";
+                outputType = "-scormLevelledParaNum";
                 break;
             case 4:
-                outputType = "-mobilecourse";
+                outputType = "-mobile";
                 break;
             case 5:
-                outputType = "-pdfinstructor";
+                outputType = "-mobilecourse";
                 break;
             case 6:
+                outputType = "-pdfinstructor";
+                break;
+            case 7:
                 outputType = "-pdfstudent";
                 break;
         }
@@ -372,15 +355,15 @@ public class ControllerJFrame extends javax.swing.JFrame {
 
         try {
 
-            if (outputType.equals("-scormflash")) {
+            if (outputType.equals("-scorm2004_4")) {
                 toolkit = sampleCatalog.getCommand("SCORM");
-                ctx.put(Keys.OUTPUT_TYPE, null);
+                ctx.put(Keys.OUTPUT_TYPE, "SCORM2004_4");
+            } else if (outputType.equals("-scorm12")) {
+                toolkit = sampleCatalog.getCommand("SCORM");
+                ctx.put(Keys.OUTPUT_TYPE, "SCORM12");
             } else if (outputType.equals("-scormhtml")) {
                 toolkit = sampleCatalog.getCommand("SCORM");
                 ctx.put(Keys.OUTPUT_TYPE, "SCORMHTML");
-            } else if (outputType.equals("-SCORM12")) {
-                toolkit = sampleCatalog.getCommand("SCORM");
-                ctx.put(Keys.OUTPUT_TYPE, "SCORM12");
             } else if (outputType.equals("-scormLevelledParaNum")) {
                 toolkit = sampleCatalog.getCommand("SCORM");
                 ctx.put(Keys.OUTPUT_TYPE, "SCORMLEVELLEDPARANUM");
@@ -396,9 +379,13 @@ public class ControllerJFrame extends javax.swing.JFrame {
                 toolkit = sampleCatalog.getCommand("PDF");
                 ctx.put(Keys.PDF_OUTPUT_OPTION, "-student");
             }
+            else{
+                System.out.println("There is a problem! Please check your parameters and run again.");
+            }
             if (toolkit != null) {
                 toolkit.execute(ctx);
             }
+
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println(e.getCause().toString());
@@ -426,8 +413,7 @@ public class ControllerJFrame extends javax.swing.JFrame {
     }
 
     /**
-     * @param args
-     *            the command line arguments
+     * @param args the command line arguments
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -465,7 +451,7 @@ public class ControllerJFrame extends javax.swing.JFrame {
     private javax.swing.JFileChooser ResourceFileChooser = new JFileChooser();
     private javax.swing.JFileChooser OutputFileChooser = new JFileChooser();
     PrintStream aPrintStream = new PrintStream(new FilteredStream(new ByteArrayOutputStream()));
-    private String outputType = "-scormflash";
+    private String outputType = "-scorm2004_4";
 
     class FilteredStream extends FilterOutputStream {
         public FilteredStream(OutputStream aStream) {

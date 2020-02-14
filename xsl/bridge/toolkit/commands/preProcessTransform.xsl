@@ -15,6 +15,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="xml" indent="yes"/>
     <xsl:strip-space elements="*"/>
+    <xsl:param name="scorm_version" />
     <xsl:template match="/">
         <!--Configure the manifest id -->
         <xsl:variable name="id">
@@ -43,7 +44,9 @@
                   xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd http://www/imsglobal.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd">
             <metadata>
                 <schema>ADL SCORM</schema>
-                <schemaversion>2004 3rd Edition</schemaversion>
+                <schemaversion>
+                    <xsl:value-of select = "$scorm_version" />
+                </schemaversion>
             </metadata>
             <!--Add organizations tree element -->
             <xsl:element name="organizations">

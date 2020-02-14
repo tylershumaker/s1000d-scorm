@@ -159,6 +159,7 @@
         	<zipfileset includes="**" src="${lib}/xalan.jar"/>
         	<zipfileset includes="**" src="${lib}/xercesImpl.jar"/>
         	<zipfileset includes="**" src="${lib}/xml-apis.jar"/>
+            <zipfileset includes="**" src="${lib}/json.jar"/>
         </jar>
 
     </target>
