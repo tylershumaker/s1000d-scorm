@@ -34,6 +34,9 @@
         <xsl:variable name="version">
             <xsl:value-of
                     select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageIdent/issueInfo/@issueNumber"/>
+            <xsl:text>-</xsl:text>
+            <xsl:value-of
+                    select="scormContentPackage/identAndStatusSection/scormContentPackageAddress/scormContentPackageIdent/issueInfo/@inWork"/>
         </xsl:variable>
         <manifest identifier="MANIFEST-{$id}" version="{$version}"
                   xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"

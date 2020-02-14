@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import bridge.toolkit.util.DMParser;
 import org.apache.commons.chain.Command;
 import org.apache.commons.chain.Context;
 import org.jdom.Document;
@@ -29,6 +30,15 @@ import bridge.toolkit.util.Keys;
 public class PostProcess implements Command
 {
     /**
+     * JDOM Document that is used for the S1000D SCPM file.
+     */
+    Document scpm;
+
+    /**
+     * Provides a way to parse S1000D files and to find data model codes.
+     */
+    DMParser dmp;
+    /**
      * The unit of processing work to be performed for the PostProcess module.
      * @see org.apache.commons.chain.Command#execute(org.apache.commons.chain.Context)
      */
@@ -37,7 +47,7 @@ public class PostProcess implements Command
     {
     	System.out.println("Executing Post Process");
         if ((ctx.get(Keys.XML_SOURCE) != null) &&
-            (ctx.get(Keys.CP_PACKAGE) != null))
+            (ctx.get(Keys.CP_PACKAGE) != null) && (ctx.get(Keys.SCPM_FILE) != null))
         {
             File cpPackage = (File)ctx.get(Keys.CP_PACKAGE);
             
@@ -81,20 +91,40 @@ public class PostProcess implements Command
                 return PROCESSING_COMPLETE;
             }
 
-            //get the organization title from the manifest file 
-            //replace any white spaces with 
-            Element title = null;
+            dmp = new DMParser();
+            File scpmFile = new File((String) ctx.get(Keys.SCPM_FILE));
+
             XPath xp = null;
+            String zipName = "";
             try
             {
-                xp = XPath.newInstance("//ns:organization//ns:title");
-                xp.addNamespace("ns", "http://www.imsglobal.org/xsd/imscp_v1p1");
-                title = (Element) xp.selectSingleNode(manifest);
+                scpm = dmp.getDoc(scpmFile);
+                xp = XPath.newInstance("scormContentPackage//identAndStatusSection//scormContentPackageAddress//scormContentPackageIdent//scormContentPackageCode");
+                Element scormContentPackageCode = (Element) xp.selectSingleNode(scpm);
+                xp = XPath.newInstance("scormContentPackage//identAndStatusSection//scormContentPackageAddress//scormContentPackageIdent//issueInfo");
+                Element issueInfo = (Element) xp.selectSingleNode(scpm);
+                StringBuilder packageCode = new StringBuilder();
+                packageCode.append(scormContentPackageCode.getAttributeValue("modelIdentCode"));
+                packageCode.append("-");
+                packageCode.append(scormContentPackageCode.getAttributeValue("scormContentPackageNumber"));
+                packageCode.append("-");
+                packageCode.append(scormContentPackageCode.getAttributeValue("scormContentPackageIssuer"));
+                packageCode.append("-");
+                packageCode.append(scormContentPackageCode.getAttributeValue("scormContentPackageVolume"));
+                packageCode.append("_");
+                packageCode.append(issueInfo.getAttributeValue("issueNumber"));
+                packageCode.append("-");
+                packageCode.append(issueInfo.getAttributeValue("inWork"));
+                zipName = packageCode.toString();
             }
             catch (JDOMException e)
             {
                 System.out.println("Content Package creation was unsuccessful");
                 e.printStackTrace();
+                return PROCESSING_COMPLETE;
+            }catch (IOException ioe) {
+                System.out.println("Content Package creation was unsuccessful");
+                ioe.printStackTrace();
                 return PROCESSING_COMPLETE;
             }
             String outputPath = "";
@@ -112,7 +142,6 @@ public class PostProcess implements Command
                 outputDir.mkdirs();
             }    
             
-            String zipName = title.getValue();
             zipName = zipName.replace(" ", "_").trim();
             zipName = zipName.replace("\n", "").trim();    
             
