@@ -8,4 +8,4 @@ The S1000D Transformation Toolkit is an open source tool that converts S1000D
 * A mobile web application
 * Portable Document Format (PDF)
 
-### View the projects **[Wiki](../wikis/home)** for more information and project documentation. 
+### View the projects **[Wiki](../../wikis/home)** for more information and project documentation. 
