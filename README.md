@@ -1,5 +1,4 @@
 # S1000D Transformation Toolkit
-### Version 4.0
 
 The S1000D Transformation Toolkit is an open source tool that converts S1000D
 4.0, 4.1, and 4.2 data into your choice of  :
