@@ -14,8 +14,9 @@ function countLI(element) {
 
     return prevLICount;
 }
+
 function getParentIndex(element, arr) {
-    if (element.parent().index() !== 'undefinded' && element.get(0).tagName.toLowerCase() !== 'html' ) {
+    if (element.parent().index() !== 'undefinded' && element.get(0).tagName.toLowerCase() !== 'html') {
         if (element.parent().get(0).tagName.toLowerCase() == 'ol') {
             var prevParents = element.parent().parent().prevAll();
             prevLICount = countLI(prevParents);
@@ -30,23 +31,22 @@ function getParentIndex(element, arr) {
     }
 }
 
-function createStepIds (stepID) {
+function createStepIds(stepID) {
     stepID = stepID.replace(".", "\\.");
 
-    var output = $("#"+stepID).index(); // get index of the current list item
-    if(output == -1){
+    var output = $("#" + stepID).index(); // get index of the current list item
+    if (output == -1) {
         return "1";
-    }
-    else {
+    } else {
 
-        var step = $('#'+stepID);
+        var step = $('#' + stepID);
         var _arr = [];
-        _arr = getParentIndex($("#"+stepID), _arr);
+        _arr = getParentIndex($("#" + stepID), _arr);
         _arr.reverse()
         _arr.shift();
 
-        console.log($("#"+stepID).prevAll("li"));
-        _arr.push($("#"+stepID).prevAll("li").length);
+        console.log($("#" + stepID).prevAll("li"));
+        _arr.push($("#" + stepID).prevAll("li").length);
         _arr = _arr.map(function (val) {
             return ++val;
         });
@@ -69,22 +69,28 @@ function getStepNumber(stepID) {
 // For Hotspots
 var selectedHotspot = null;
 
-function initializeXAPI(){
+function initializeXAPI() {
     output.log("XAPI Configured");
     var stepId = $('ol#mp li:first').attr('id');
-    if (stepId != undefined){
+    if (stepId != "" && stepId != undefined) {
         recordStep(stepId, ADL.verbs.attempted);
     }
 
 }
 
 function show_hide_div(hide_id, show_id) {
-    remove_highlight(hide_id)
-    add_highlight(show_id)
+    if(hide_id != undefined) {
+        remove_highlight(hide_id);
+    }
+    if (show_id != undefined) {
+        add_highlight(show_id);
+    }
 }
 
 function remove_highlight(id) {
-    console.log("In Highlight");
+    // console.log("In Remove Highlight");
+    // console.log(id)
+
     var e = document.getElementById(id);
     e.classList.remove("active");
     next = e.getElementsByTagName('a');
@@ -95,6 +101,9 @@ function remove_highlight(id) {
 }
 
 function add_highlight(id) {
+    // console.log("In Add Highlight");
+    // console.log(id)
+
     var e = document.getElementById(id);
     e.classList.add("active");
     next = e.getElementsByTagName('a');
@@ -574,22 +583,31 @@ function getStepStatement(id, verb) {
     } else {
         learnerID = window.localStorage.learnerId;
     }
-
     var scormLaunchData = retrieveDataValue("cmi.launch_data");
     scormLaunchDataJSON = JSON.parse(scormLaunchData);
 
     var lmsHomePage = scormLaunchDataJSON.lmsHomePage;
     var activityId = scormLaunchDataJSON.activityId;
     var courseId = scormLaunchDataJSON.courseId;
-
     var stepByID = document.getElementById(id).childNodes;
-    //console.log(stepByID);
 
+    // console.log(stepByID);
+    var stepContentHTML = "";
+
+    // Find the correct div type node in NodeList
     //Check if the title element is empty, if so use para content
-    var stepContentHTML = stepByID[3].innerText;
-    if (stepContentHTML == "") {
-        stepContentHTML = stepByID[5].innerText;
+    if (stepByID[3].nodeName == "DIV") {
+        stepContentHTML = stepByID[3].innerText;
+        if (stepContentHTML == "") {
+            stepContentHTML = stepByID[5].innerText;
+        }
+    } else if (stepByID[2].nodeName == "DIV") {
+        stepContentHTML = stepByID[2].innerText;
+    } else {
+        stepContentHTML = "Check NodeList Structure";
     }
+
+   // console.log(stepContentHTML);
 
     var stepNumber = getStepNumber(id);
     //var current_dmc = document.getElementById("dmc").innerHTML;
@@ -609,7 +627,7 @@ function getStepStatement(id, verb) {
             id: "urn:s1000d:" + current_dmc,
             definition: {
                 type: "https://w3id.org/xapi/artt/activity-types/s1000d/step",
-                name:{"en-US":"Step " + id}
+                name: {"en-US": "Step " + id}
             }
         },
         context: {
@@ -641,7 +659,10 @@ function getStepStatement(id, verb) {
                 ],
                 category: [
                     {
-                        id: "https://w3id.org/xapi/ARTT_Profile"
+                        id: "https://w3id.org/xapi/scorm"
+                    },
+                    {
+                        id: "https://w3id.org/xapi/artt"
                     }
                 ]
             },
@@ -653,8 +674,8 @@ function getStepStatement(id, verb) {
                 }
             }
         },
-            result: {
-                response: ""
+        result: {
+            response: ""
         }
     };
 }

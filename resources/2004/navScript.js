@@ -240,8 +240,10 @@ var getDMStatement = function () {
                 ],
                 category: [
                     {
-                        id: "https://w3id.org/xapi/scorm",
-                        id: "https://w3id.org/xapi/ARTT_Profile"
+                        id: "https://w3id.org/xapi/scorm"
+                    },
+                    {
+                        id: "https://w3id.org/xapi/artt"
                     }
                 ]
             }
