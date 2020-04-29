@@ -10,7 +10,7 @@
     <libelement value="jar://$MODULE_DIR$/lib/core-renderer.jar!/" />
     <libelement value="jar://$MODULE_DIR$/lib/iText-5.0.6.jar!/" />
     <libelement value="jar://$MODULE_DIR$/lib/xml-apis-xerces-2.9.1.jar!/" />
-        <libelement value="jar://$MODULE_DIR$/lib/json.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/json.jar!/" />
     <libelement value="jar://$MODULE_DIR$/ListBuilder/buildlist.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
@@ -40,7 +40,7 @@
       <sourceFolder url="file://$MODULE_DIR$/test_files" isTestSource="true" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="module-library">
       <library name="commons-beanutils-core-1.8.3.jar">
         <CLASSES>

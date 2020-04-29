@@ -106,9 +106,9 @@ public class PostProcess implements Command
                 StringBuilder packageCode = new StringBuilder();
                 packageCode.append(scormContentPackageCode.getAttributeValue("modelIdentCode"));
                 packageCode.append("-");
-                packageCode.append(scormContentPackageCode.getAttributeValue("scormContentPackageNumber"));
-                packageCode.append("-");
                 packageCode.append(scormContentPackageCode.getAttributeValue("scormContentPackageIssuer"));
+                packageCode.append("-");
+                packageCode.append(scormContentPackageCode.getAttributeValue("scormContentPackageNumber"));
                 packageCode.append("-");
                 packageCode.append(scormContentPackageCode.getAttributeValue("scormContentPackageVolume"));
                 packageCode.append("_");

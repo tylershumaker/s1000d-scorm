@@ -113,6 +113,9 @@ xapi = function () {
                     category: [
                         {
                             id: "https://w3id.org/xapi/scorm"
+                        },
+                        {
+                            id: "https://w3id.org/xapi/artt"
                         }
                     ]
                 }
@@ -181,6 +184,9 @@ xapi = function () {
                     category: [
                         {
                             id: "https://w3id.org/xapi/scorm"
+                        },
+                        {
+                            id: "https://w3id.org/xapi/artt"
                         }
                     ]
                 }
